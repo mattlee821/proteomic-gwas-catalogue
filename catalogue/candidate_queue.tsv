@@ -1,4 +1,7 @@
 candidate_id	run_id	source	identifier	detected_platform	detected_n	title	auto_classification	curation_status
+cand_20261118_001	run_20261118_1734	MED	10.1371/journal.pgen.1012377	Unspecified Proteomics	Check full text	Proteogenomic analysis of 5,411 plasma proteins in sickle cell disease patients.	Likely Primary pGWAS	Pending Curator Review
+cand_20261118_003	run_20261118_1734	MED	10.1038/s41467-026-77378-3	Unspecified Proteomics	Check full text	Prospective and genetic analyses implicate lower immunosurveillance in the aetiology of prostate cancer.	Needs Human Check	Pending Curator Review
+cand_20261118_002	run_20261118_1734	MED	10.1093/jnci/djag447	Unspecified Proteomics	Check full text	Cross-ancestry proteome-wide mendelian randomization of plasma proteins and breast cancer susceptibility.	Auto-Deprioritised: Secondary 2SMR	Auto-Triage: Low Priority
 cand_2026_11_01	run_2026_11_15	bioRxiv	10.1101/2026.02.19.581022	SomaScan v4.1 (7k)	13,445	Beyond the classical plasma secretome: expanded SomaScan 7k genetic architecture in 13,445 Europeans	Likely Primary pGWAS	Accepted -> v0.2.0-sim
 cand_2026_11_02	run_2026_11_15	medRxiv	10.1101/2026.04.12.26305118	Alamar NULISAseq CNS 120	118	Pediatric cerebrospinal fluid pQTL mapping using attomolar NULISAseq immunoassays	Likely Primary pGWAS (Small N)	Accepted -> v0.2.0-sim
 cand_2026_11_03	run_2026_11_15	bioRxiv	10.1101/2026.09.03.611408	Olink Explore HT / SomaScan 11k	8,420	Multi-ancestry pGWAS of 5,400 plasma proteins using Olink Explore HT and SomaScan 11k Pilot	Likely Primary pGWAS	Accepted -> v0.2.0-sim

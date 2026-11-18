@@ -4,3 +4,4 @@ run_2026_08_01	2026-08-01	Scheduled GitHub Action (cron)	PubMed; Europe PMC; bio
 run_2026_09_01	2026-09-01	Scheduled GitHub Action (cron)	PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball	192	81	70	11	0	0	PR #7		Merged (0 primary)
 run_2026_10_01	2026-10-01	Scheduled GitHub Action (cron)	PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball	178	74	66	8	0	0	PR #11		Merged (0 primary)
 run_2026_11_15	2026-11-15	Scheduled GitHub Action (cron)	PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball	211	89	78	11	3	0	PR #14	v0.2.0-sim	Open Triage / v0.2.0-sim
+run_20261118_1734	2026-11-18	Scheduled GitHub Action (workflow_dispatch)	Europe PMC (PubMed + Preprints) [2026-11-10..2026-11-18]	3	3	1	2	0	0	Automated PR		Pending Triage (2 candidates)
