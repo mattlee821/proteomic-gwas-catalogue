@@ -1,0 +1,6 @@
+run_id	run_date	trigger	sources_queried	raw_records	deduplicated_new	auto_flagged_secondary_mr	candidates_for_review	studies_added	preprints_upgraded	pr_number	release_tag	status
+run_2026_07_01	2026-07-01	Initial seed + retrospective sweep (2015–2026)	PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball	2840	1910	1685	225	19	1	PR #1	v0.1.0-sim	Merged & Released
+run_2026_08_01	2026-08-01	Scheduled GitHub Action (cron)	PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball	164	68	59	9	0	0	PR #4		Merged (0 primary)
+run_2026_09_01	2026-09-01	Scheduled GitHub Action (cron)	PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball	192	81	70	11	0	0	PR #7		Merged (0 primary)
+run_2026_10_01	2026-10-01	Scheduled GitHub Action (cron)	PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball	178	74	66	8	0	0	PR #11		Merged (0 primary)
+run_2026_11_15	2026-11-15	Scheduled GitHub Action (cron)	PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball	211	89	78	11	3	0	PR #14	v0.2.0-sim	Open Triage / v0.2.0-sim

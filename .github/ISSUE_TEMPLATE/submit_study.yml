@@ -1,0 +1,88 @@
+name: Submit a Protein GWAS or Preprint
+description: Add a published paper or preprint with primary protein GWAS / pQTL summary statistics to the catalogue
+title: "[New Study]: <First Author et al. Year>"
+labels: ["new-study", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to the **Proteomic GWAS Catalogue**! Both peer-reviewed studies and preprints are welcome, with **no minimum sample-size requirement**.
+
+  - type: input
+    id: doi_or_pmid
+    attributes:
+      label: DOI and/or PubMed ID
+      description: Provide the journal or bioRxiv/medRxiv DOI (and PMID if indexed).
+      placeholder: "e.g. 10.1038/s41586-023-06592-6 / PMID: 37794186"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Publication Status
+      options:
+        - Published
+        - Preprint
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Proteomic Technology
+      multiple: true
+      options:
+        - SomaScan
+        - Olink
+        - Mass Spectrometry
+        - NULISA
+        - Luminex
+        - Other Immunoassay
+    validations:
+      required: true
+
+  - type: input
+    id: platform_version
+    attributes:
+      label: Platform Version & Number of Assays / Proteins
+      placeholder: "e.g. Olink Explore HT (5,416 assays) or SomaScan v4.1 7k"
+    validations:
+      required: true
+
+  - type: input
+    id: cohorts_and_n
+    attributes:
+      label: Cohort(s), Ancestry, Sample Matrix & Sample Size (N)
+      description: List each ancestry/sex stratum if separate summary statistics are available.
+      placeholder: "e.g.INTERVAL + CHRIS; EUR; EDTA plasma; N = 13,445"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: coverage
+    attributes:
+      label: Summary Statistics Scope & Build
+      options:
+        - Genome-wide (GRCh38)
+        - Genome-wide (GRCh37)
+        - Cis-windows only (GRCh38)
+        - Cis-windows only (GRCh37)
+        - Significant / top hits only
+        - Not publicly available
+    validations:
+      required: true
+
+  - type: input
+    id: data_url
+    attributes:
+      label: Summary Statistics Repository & URL / Accession
+      placeholder: "e.g. Synapse syn51364943 / EBI GWAS Catalog GCST... / Zenodo URL"
+    validations:
+      required: true
+
+  - type: textarea
+    id: model_notes
+    attributes:
+      label: Phenotype Transformation, Covariates & Harmonisation Notes (Optional)
+      placeholder: "e.g. IRNT of residuals; age, sex, 10 PCs; REGENIE; signed EAF included."

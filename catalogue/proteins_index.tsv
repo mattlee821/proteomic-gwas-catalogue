@@ -1,0 +1,781 @@
+uniprot	gene_symbol	protein_name	assay_id	stratum_id	study_id	cis_pqtl_reported	pav_epitope_flag
+P05231	IL6	Interleukin-6	4673-13	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	suhre_2017_EUR	suhre_2017_28240269	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	suhre_2017_EUR	suhre_2017_28240269	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	suhre_2017_EUR	suhre_2017_28240269	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P02741	CRP	C-reactive protein	4337-49	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	suhre_2017_EUR	suhre_2017_28240269	FALSE	TRUE
+Q99523	SORT1	Sortilin	4929-55	suhre_2017_EUR	suhre_2017_28240269	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	suhre_2017_EUR	suhre_2017_28240269	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	suhre_2017_EUR	suhre_2017_28240269	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	suhre_2017_EUR	suhre_2017_28240269	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	suhre_2017_EUR	suhre_2017_28240269	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	suhre_2017_EUR	suhre_2017_28240269	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	suhre_2017_EUR	suhre_2017_28240269	FALSE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	suhre_2017_EUR	suhre_2017_28240269	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+P01034	CST3	Cystatin-C	2609-59	suhre_2017_EUR	suhre_2017_28240269	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	suhre_2017_EUR	suhre_2017_28240269	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	folk_2017_EUR	folk_2017_28369058	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	folk_2017_EUR	folk_2017_28369058	TRUE	FALSE
+P41159	LEP	Leptin	OID20190	folk_2017_EUR	folk_2017_28369058	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	folk_2017_EUR	folk_2017_28369058	TRUE	TRUE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	folk_2017_EUR	folk_2017_28369058	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	folk_2017_EUR	folk_2017_28369058	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	folk_2017_EUR	folk_2017_28369058	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	folk_2017_EUR	folk_2017_28369058	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	folk_2017_EUR	folk_2017_28369058	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	folk_2017_EUR	folk_2017_28369058	TRUE	FALSE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	folk_2017_EUR	folk_2017_28369058	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	folk_2017_EUR	folk_2017_28369058	TRUE	TRUE
+P05231	IL6	Interleukin-6	4673-13	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P02741	CRP	C-reactive protein	4337-49	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+Q99523	SORT1	Sortilin	4929-55	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	sun_2018_EUR	sun_2018_29875488	FALSE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	10082-7	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	13666-190	sun_2018_EUR	sun_2018_29875488	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+P01034	CST3	Cystatin-C	2609-59	sun_2018_EUR	sun_2018_29875488	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	sun_2018_EUR	sun_2018_29875488	TRUE	TRUE
+P05231	IL6	Interleukin-6	LUM_IL6	yao_2018_EUR	yao_2018_30148068	TRUE	FALSE
+P41159	LEP	Leptin	LUM_LEP	yao_2018_EUR	yao_2018_30148068	TRUE	FALSE
+P02741	CRP	C-reactive protein	LUM_CRP	yao_2018_EUR	yao_2018_30148068	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	LUM_GDF15	yao_2018_EUR	yao_2018_30148068	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	LUM_MMP12	yao_2018_EUR	yao_2018_30148068	TRUE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	LUM_TIMP1	yao_2018_EUR	yao_2018_30148068	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	LUM_VCAM1	yao_2018_EUR	yao_2018_30148068	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	LUM_ICAM1	yao_2018_EUR	yao_2018_30148068	TRUE	TRUE
+P08519	LPA	Apolipoprotein(a)	LUM_LPA	yao_2018_EUR	yao_2018_30148068	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	LUM_NPPB	yao_2018_EUR	yao_2018_30148068	TRUE	FALSE
+P01034	CST3	Cystatin-C	LUM_CST3	yao_2018_EUR	yao_2018_30148068	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20101	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	FALSE
+P41159	LEP	Leptin	OID20190	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	TRUE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	FALSE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	folkersen_2020_EUR	folkersen_2020_33067605	TRUE	TRUE
+P05231	IL6	Interleukin-6	4673-13	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	13104-55	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+P02649	APOE	Apolipoprotein E	2937-10	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	16300-4	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P02741	CRP	C-reactive protein	4337-49	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+Q99523	SORT1	Sortilin	4929-55	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	ferkingstad_2021_EUR	ferkingstad_2021_34857953	FALSE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	10082-7	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	15509-2	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	13666-190	ferkingstad_2021_EUR	ferkingstad_2021_34857953	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+P01034	CST3	Cystatin-C	2609-59	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	ferkingstad_2021_EUR	ferkingstad_2021_34857953	TRUE	TRUE
+P05231	IL6	Interleukin-6	4673-13	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	13104-55	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+P02649	APOE	Apolipoprotein E	2937-10	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	16300-4	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P02741	CRP	C-reactive protein	4337-49	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+Q99523	SORT1	Sortilin	4929-55	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	pietzner_2021_EUR	pietzner_2021_34648354	FALSE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	10082-7	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	15509-2	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	13666-190	pietzner_2021_EUR	pietzner_2021_34648354	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+P01034	CST3	Cystatin-C	2609-59	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	pietzner_2021_EUR	pietzner_2021_34648354	TRUE	TRUE
+P05231	IL6	Interleukin-6	4673-13	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P02741	CRP	C-reactive protein	4337-49	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	TRUE
+Q99523	SORT1	Sortilin	4929-55	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+P01034	CST3	Cystatin-C	2609-59	yang_2021_CSF_EUR	yang_2021_34239129	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	yang_2021_CSF_EUR	yang_2021_34239129	TRUE	TRUE
+P05231	IL6	Interleukin-6	4673-13	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P02741	CRP	C-reactive protein	4337-49	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	TRUE
+Q99523	SORT1	Sortilin	4929-55	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+P01034	CST3	Cystatin-C	2609-59	yang_2021_BRAIN_EUR	yang_2021_34239129	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	yang_2021_BRAIN_EUR	yang_2021_34239129	TRUE	TRUE
+P05231	IL6	Interleukin-6	4673-13	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	13104-55	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+P02649	APOE	Apolipoprotein E	2937-10	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	16300-4	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P02741	CRP	C-reactive protein	4337-49	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+Q99523	SORT1	Sortilin	4929-55	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	gudjonsson_2022_EUR	gudjonsson_2022_35078996	FALSE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	10082-7	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	15509-2	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	13666-190	gudjonsson_2022_EUR	gudjonsson_2022_35078996	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+P01034	CST3	Cystatin-C	2609-59	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	gudjonsson_2022_EUR	gudjonsson_2022_35078996	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+Q99523	SORT1	Sortilin	OID20312	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+P01034	CST3	Cystatin-C	OID20355	sun_2022_pre_EUR	sun_2022_preprint	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	sun_2022_pre_EUR	sun_2022_preprint	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20563	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20911	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID21276	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+Q99523	SORT1	Sortilin	OID20312	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+P01034	CST3	Cystatin-C	OID20355	sun_2023_ALL	sun_2023_37794186	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	sun_2023_ALL	sun_2023_37794186	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20563	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20911	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID21276	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+Q99523	SORT1	Sortilin	OID20312	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+P01034	CST3	Cystatin-C	OID20355	sun_2023_EUR	sun_2023_37794186	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	sun_2023_EUR	sun_2023_37794186	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID20563	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID20911	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID21276	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	sun_2023_AFR	sun_2023_37794186	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	sun_2023_AFR	sun_2023_37794186	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	sun_2023_AFR	sun_2023_37794186	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	sun_2023_AFR	sun_2023_37794186	FALSE	TRUE
+Q99523	SORT1	Sortilin	OID20312	sun_2023_AFR	sun_2023_37794186	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	sun_2023_AFR	sun_2023_37794186	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	sun_2023_AFR	sun_2023_37794186	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	sun_2023_AFR	sun_2023_37794186	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	sun_2023_AFR	sun_2023_37794186	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	sun_2023_AFR	sun_2023_37794186	FALSE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	sun_2023_AFR	sun_2023_37794186	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+P01034	CST3	Cystatin-C	OID20355	sun_2023_AFR	sun_2023_37794186	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	sun_2023_AFR	sun_2023_37794186	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID20563	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID20911	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID21276	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	sun_2023_CSA	sun_2023_37794186	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	sun_2023_CSA	sun_2023_37794186	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	sun_2023_CSA	sun_2023_37794186	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	sun_2023_CSA	sun_2023_37794186	FALSE	TRUE
+Q99523	SORT1	Sortilin	OID20312	sun_2023_CSA	sun_2023_37794186	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	sun_2023_CSA	sun_2023_37794186	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	sun_2023_CSA	sun_2023_37794186	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	sun_2023_CSA	sun_2023_37794186	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	sun_2023_CSA	sun_2023_37794186	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	sun_2023_CSA	sun_2023_37794186	FALSE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	sun_2023_CSA	sun_2023_37794186	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+P01034	CST3	Cystatin-C	OID20355	sun_2023_CSA	sun_2023_37794186	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	sun_2023_CSA	sun_2023_37794186	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID20563	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID20911	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID21276	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	sun_2023_EAS	sun_2023_37794186	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	sun_2023_EAS	sun_2023_37794186	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	sun_2023_EAS	sun_2023_37794186	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	sun_2023_EAS	sun_2023_37794186	FALSE	TRUE
+Q99523	SORT1	Sortilin	OID20312	sun_2023_EAS	sun_2023_37794186	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	sun_2023_EAS	sun_2023_37794186	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	sun_2023_EAS	sun_2023_37794186	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	sun_2023_EAS	sun_2023_37794186	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	sun_2023_EAS	sun_2023_37794186	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	sun_2023_EAS	sun_2023_37794186	FALSE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	sun_2023_EAS	sun_2023_37794186	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+P01034	CST3	Cystatin-C	OID20355	sun_2023_EAS	sun_2023_37794186	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	sun_2023_EAS	sun_2023_37794186	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20563	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20911	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID21276	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+Q99523	SORT1	Sortilin	OID20312	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+P01034	CST3	Cystatin-C	OID20355	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	eldjarn_2023_OLINK_EUR	eldjarn_2023_37794188	TRUE	TRUE
+P02649	APOE	Apolipoprotein E	TMT_P02649	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	TRUE	FALSE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	TMT_Q9NZC2	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	TMT_Q99988	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	FALSE	FALSE
+Q99523	SORT1	Sortilin	TMT_Q99523	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	FALSE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	TMT_P01033	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	TMT_P05362	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	FALSE	FALSE
+P10636	MAPT	Microtubule-associated protein tau	TMT_P10636	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	TRUE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	TMT_P07196	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	FALSE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	TMT_P14136	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	TMT_P37840	wingo_2023_DLPFC_EUR	wingo_2023_brain_ms	FALSE	FALSE
+P05231	IL6	Interleukin-6	OID20101	schlosser_2023_URINE_EUR	schlosser_2023_urine	FALSE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20074	schlosser_2023_URINE_EUR	schlosser_2023_urine	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	schlosser_2023_URINE_EUR	schlosser_2023_urine	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	schlosser_2023_URINE_EUR	schlosser_2023_urine	FALSE	TRUE
+P09237	MMP7	Matrilysin	OID20087	schlosser_2023_URINE_EUR	schlosser_2023_urine	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	schlosser_2023_URINE_EUR	schlosser_2023_urine	FALSE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	schlosser_2023_URINE_EUR	schlosser_2023_urine	TRUE	TRUE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	schlosser_2023_URINE_EUR	schlosser_2023_urine	FALSE	FALSE
+P01034	CST3	Cystatin-C	OID20355	schlosser_2023_URINE_EUR	schlosser_2023_urine	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	schlosser_2023_URINE_EUR	schlosser_2023_urine	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20563	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20911	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID21276	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+Q99523	SORT1	Sortilin	OID20312	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P01034	CST3	Cystatin-C	OID20355	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	chen_2024_OLINK_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P05231	IL6	Interleukin-6	4673-13	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	13104-55	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P02649	APOE	Apolipoprotein E	2937-10	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	16300-4	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P02741	CRP	C-reactive protein	4337-49	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+Q99523	SORT1	Sortilin	4929-55	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	chen_2024_SOMA_EAS	chen_2024_ckb_dual	FALSE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	10082-7	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	15509-2	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	13666-190	chen_2024_SOMA_EAS	chen_2024_ckb_dual	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+P01034	CST3	Cystatin-C	2609-59	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	chen_2024_SOMA_EAS	chen_2024_ckb_dual	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20563	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20911	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID21276	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+Q99523	SORT1	Sortilin	OID20312	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P01034	CST3	Cystatin-C	OID20355	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	koprulu_2025_FEMALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20563	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20911	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID21276	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+Q99523	SORT1	Sortilin	OID20312	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+P01034	CST3	Cystatin-C	OID20355	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	koprulu_2025_MALE_EUR	koprulu_2025_sex_pgwas	TRUE	TRUE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	MS_Q8NBP7	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	MS_P02649	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P02741	CRP	C-reactive protein	MS_P02741	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P01019	AGT	Angiotensinogen	MS_P01019	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P03951	F11	Coagulation factor XI	MS_P03951	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	MS_P00734	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	MS_P01009	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	MS_P01033	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	MS_P19320	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	MS_P05362	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	MS_P08519	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P01034	CST3	Cystatin-C	MS_P01034	campbell_2025_MS_EUR	campbell_2025_gs_diams	TRUE	FALSE
+P05231	IL6	Interleukin-6	NPMS_P05231	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	NPMS_Q8NBP7	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	NPMS_P01375	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	NPMS_P10145	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	NPMS_P02649	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	NPMS_Q9NZC2	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P41159	LEP	Leptin	NPMS_P41159	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P02741	CRP	C-reactive protein	NPMS_P02741	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	NPMS_Q99988	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+Q99523	SORT1	Sortilin	NPMS_Q99523	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	NPMS_P08887	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P39900	MMP12	Macrophage metalloelastase	NPMS_P39900	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P09237	MMP7	Matrilysin	NPMS_P09237	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P01579	IFNG	Interferon gamma	NPMS_P01579	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	NPMS_P13500	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P01019	AGT	Angiotensinogen	NPMS_P01019	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P03951	F11	Coagulation factor XI	NPMS_P03951	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	NPMS_P00734	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	NPMS_P01009	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	NPMS_Q03405	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	NPMS_P01033	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	NPMS_P19320	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	NPMS_P05362	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P10636	MAPT	Microtubule-associated protein tau	NPMS_P10636	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P37840	SNCA	Alpha-synuclein	NPMS_P37840	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	NPMS_Q15389	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	NPMS_P08519	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P16860	NPPB	Natriuretic peptides B (BNP)	NPMS_P16860	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+P01034	CST3	Cystatin-C	NPMS_P01034	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	NPMS_Q96D42	suhre_2025_NPMS_MULTI	suhre_2025_proteograph	TRUE	FALSE
+P05231	IL6	Interleukin-6	NULISA_IL6	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	FALSE
+P01375	TNF	Tumor necrosis factor	NULISA_TNF	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	NULISA_CXCL8	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	NULISA_APOE	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	NULISA_TREM2	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	TRUE	TRUE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	NULISA_IL6R	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	TRUE
+P01579	IFNG	Interferon gamma	NULISA_IFNG	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	NULISA_CCL2	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	NULISA_PLAUR	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	NULISA_MAPT	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	TRUE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	NULISA_NEFL	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	NULISA_GFAP	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	NULISA_SNCA	lopez_2026_CSF_AMR	lopez_2026_csf_nulisa_pre	FALSE	FALSE
+P05231	IL6	Interleukin-6	4673-13	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	13104-55	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+P02649	APOE	Apolipoprotein E	2937-10	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	16300-4	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P02741	CRP	C-reactive protein	4337-49	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+Q99523	SORT1	Sortilin	4929-55	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	FALSE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	10082-7	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	15509-2	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	13666-190	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+P01034	CST3	Cystatin-C	2609-59	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	patel_2026_SOMA7K_EUR	patel_2026_somascan7k_pre	TRUE	TRUE
+P05231	IL6	Interleukin-6	OID20101	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20563	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID20911	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P05231	IL6	Interleukin-6	OID21276	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	OID20235	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	OID20074	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	OID20555	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20153	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	OID20631	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P02649	APOE	Apolipoprotein E	OID20918	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	OID20844	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P41159	LEP	Leptin	OID20190	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P02741	CRP	C-reactive protein	OID45008	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	OID20251	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+Q99523	SORT1	Sortilin	OID20312	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	OID20611	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	OID21439	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P09237	MMP7	Matrilysin	OID20087	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P01579	IFNG	Interferon gamma	OID20495	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	OID21004	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P01019	AGT	Angiotensinogen	OID45016	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P03951	F11	Coagulation factor XI	OID20389	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	OID45018	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	OID45019	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	OID20690	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	OID20219	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	OID20301	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	OID20305	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	OID30912	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	OID20871	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	OID20899	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P37840	SNCA	Alpha-synuclein	OID31044	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	OID20288	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P08519	LPA	Apolipoprotein(a)	OID20341	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	OID20112	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P01034	CST3	Cystatin-C	OID20355	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	OID20188	nakamura_2026_OLINKHT_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P05231	IL6	Interleukin-6	4673-13	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	5231-79	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	13104-55	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P01375	TNF	Tumor necrosis factor	5936-53	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	3447-64	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	2418-55	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P02649	APOE	Apolipoprotein E	2937-10	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	11851-21	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	16300-4	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P41159	LEP	Leptin	2575-5	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P02741	CRP	C-reactive protein	4337-49	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	4374-45	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	TRUE
+Q99523	SORT1	Sortilin	4929-55	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	4139-71	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P39900	MMP12	Macrophage metalloelastase	4496-60	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P09237	MMP7	Matrilysin	4924-32	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P01579	IFNG	Interferon gamma	15346-31	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	2578-67	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P01019	AGT	Angiotensinogen	4880-21	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P03951	F11	Coagulation factor XI	2797-56	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	FALSE
+P00734	F2	Prothrombin (Coagulation factor II)	4157-2	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	3580-25	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	2652-15	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P01033	TIMP1	Metalloproteinase inhibitor 1	2211-9	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	2967-8	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	4342-10	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	TRUE
+P10636	MAPT	Microtubule-associated protein tau	4878-3	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	10082-7	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	15509-2	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P37840	SNCA	Alpha-synuclein	13666-190	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+Q15389	ANGPTL3	Angiopoietin-related protein 3	10391-1	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	4990-87	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE
+P16860	NPPB	Natriuretic peptides B (BNP)	3723-1	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+P01034	CST3	Cystatin-C	2609-59	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1 (KIM-1)	9283-8	nakamura_2026_SOMA11K_EAS	nakamura_2026_olinkht_pre	TRUE	TRUE

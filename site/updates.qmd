@@ -1,0 +1,208 @@
+---
+title: "Search Log, PR Queue & Tagged Releases"
+---
+
+```{ojs}
+catData = FileAttachment("data/catalogue.json").json()
+runs = catData.search_runs
+queue = catData.candidate_queue
+releases = catData.releases
+meta = catData.metadata
+```
+
+```{ojs}
+htl.html`<div class="hero-header">
+  <h1>Automated Literature Search Log, PR Queue &amp; Releases</h1>
+  <p>Every scheduled search run across PubMed, Europe PMC, bioRxiv/medRxiv, OpenAlex, and the EBI GWAS Catalog is logged in Git, triaged through a human-reviewed Pull Request, and published as a citable tagged GitHub Release.</p>
+</div>`
+```
+
+```{ojs}
+// Cumulative PRISMA metrics across logged runs
+{
+  const totRaw = runs.reduce((acc, r) => acc + r.raw_records, 0);
+  const totDedup = runs.reduce((acc, r) => acc + r.deduplicated_new, 0);
+  const totAutoMr = runs.reduce((acc, r) => acc + r.auto_flagged_secondary_mr, 0);
+  const totRev = runs.reduce((acc, r) => acc + r.candidates_for_review, 0);
+  const totAdded = runs.reduce((acc, r) => acc + r.studies_added, 0);
+
+  return htl.html`<div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">1. Raw API Hits</div>
+      <div class="kpi-value">${totRaw.toLocaleString()}</div>
+      <div class="kpi-sub">Across ${runs.length} logged search runs</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">2. Deduplicated Unseen</div>
+      <div class="kpi-value">${totDedup.toLocaleString()}</div>
+      <div class="kpi-sub">Filtered by DOI &amp; PMID history</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">3. Secondary 2SMR / EWAS</div>
+      <div class="kpi-value">${totAutoMr.toLocaleString()}</div>
+      <div class="kpi-sub">Auto-deprioritised (~88% noise cut)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">4. Human-Screened</div>
+      <div class="kpi-value">${totRev.toLocaleString()}</div>
+      <div class="kpi-sub">Reviewed in GitHub Pull Requests</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">5. Included Primary pGWAS</div>
+      <div class="kpi-value">${totAdded}</div>
+      <div class="kpi-sub">Verified against full text &amp; data portals</div>
+    </div>
+  </div>`;
+}
+```
+
+```{ojs}
+// Tagged Releases & Machine-Readable Downloads
+htl.html`<div class="panel-card">
+  <div class="panel-title">
+    <span>Tagged Catalogue Releases &amp; Downloads</span>
+    <span style="font-size:0.78rem;font-weight:400;color:#64748b;">Pushing a Git tag (e.g. <code>v2026.12</code>) automatically builds release assets &amp; Zenodo DOI metadata</span>
+  </div>
+
+  <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.9rem;">
+    <a class="btn-pill btn-pill-primary" href="data/catalogue.json" download>⬇ catalogue.json (Full Bundle)</a>
+    <a class="btn-pill" href="data/studies.tsv" download>⬇ studies.tsv</a>
+    <a class="btn-pill" href="data/strata.tsv" download>⬇ strata.tsv</a>
+    <a class="btn-pill" href="data/proteins_index.tsv" download>⬇ proteins_index.tsv</a>
+    <a class="btn-pill" href="data/cohort_membership.tsv" download>⬇ cohort_membership.tsv</a>
+    <a class="btn-pill" href="data/search_runs.tsv" download>⬇ search_runs.tsv</a>
+  </div>
+
+  ${releases.length > 0
+    ? htl.html`<div class="cat-table-wrap">
+      <table class="cat-table">
+        <thead>
+          <tr>
+            <th>Release Tag</th>
+            <th>Date</th>
+            <th>Studies</th>
+            <th>Strata</th>
+            <th>Active Preprints</th>
+            <th>Archive DOI</th>
+            <th>Release Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${releases.map(r => htl.html`<tr>
+            <td class="mono"><strong>${r.version}</strong></td>
+            <td class="mono">${r.release_date}</td>
+            <td class="num-col">${r.n_studies}</td>
+            <td class="num-col">${r.n_strata}</td>
+            <td class="num-col">${r.n_preprints_active}</td>
+            <td class="mono">${r.doi_badge}</td>
+            <td>${r.summary}</td>
+          </tr>`)}
+        </tbody>
+      </table>
+    </div>`
+    : htl.html`<div style="padding:0.75rem 1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;color:#475569;font-size:0.86rem;">
+      <strong>No tagged releases published yet.</strong> Once the first systematic search and curation pass are finalised, pushing a release tag (e.g. <code>v0.1.0</code>) or running the manual <em>Publish Tagged Catalogue Release</em> workflow will list the immutable snapshot here.
+    </div>`}
+</div>`
+```
+
+```{ojs}
+// Automated Search Runs History Table
+htl.html`<div class="panel-card">
+  <div class="panel-title">
+    <span>Automated Search Execution History (<code>catalogue/search_runs.tsv</code>)</span>
+    <span style="font-size:0.78rem;font-weight:400;color:#64748b;">Executed by <code>.github/workflows/scheduled-search.yml</code></span>
+  </div>
+  <div class="cat-table-wrap">
+    <table class="cat-table">
+      <thead>
+        <tr>
+          <th>Run ID</th>
+          <th>Date</th>
+          <th>Trigger</th>
+          <th style="text-align:right;">Raw Hits</th>
+          <th style="text-align:right;">Unseen</th>
+          <th style="text-align:right;">Auto-Flagged 2SMR</th>
+          <th style="text-align:right;">Screened</th>
+          <th style="text-align:right;">Added</th>
+          <th>Pull Request</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${[...runs].reverse().map(r => htl.html`<tr>
+          <td class="mono">${r.run_id}</td>
+          <td class="mono">${r.run_date}</td>
+          <td>${r.trigger}</td>
+          <td class="num-col">${r.raw_records.toLocaleString()}</td>
+          <td class="num-col">${r.deduplicated_new.toLocaleString()}</td>
+          <td class="num-col">${r.auto_flagged_secondary_mr.toLocaleString()}</td>
+          <td class="num-col"><strong>${r.candidates_for_review}</strong></td>
+          <td class="num-col"><strong>+${r.studies_added}</strong></td>
+          <td class="mono">${r.pr_number}</td>
+          <td><span class="pg-badge ${r.studies_added > 0 ? "ready-Full" : "ready-Limited"}">${r.status}</span></td>
+        </tr>`)}
+      </tbody>
+    </table>
+  </div>
+</div>`
+```
+
+::: {.panel-card}
+<div class="panel-title">
+  <span>Latest Automated Candidate Triage Queue (<code>catalogue/candidate_queue.tsv</code> · PR #14)</span>
+  <span style="font-size:0.78rem;font-weight:400;color:#64748b;">Demonstrates how scheduled search separates primary pGWAS &amp; preprint upgrades from secondary 2SMR papers</span>
+</div>
+
+```{ojs}
+viewof queueFilter = Inputs.radio(
+  ["All candidates", "Actionable only (Primary & Preprint upgrades)", "Auto-deprioritised (2SMR / EWAS)"],
+  { value: "All candidates", label: "Filter Triage Queue" }
+)
+```
+
+```{ojs}
+{
+  const rows = queue.filter(q => {
+    if (queueFilter.startsWith("Actionable")) return !q.auto_classification.startsWith("Auto-Deprioritised");
+    if (queueFilter.startsWith("Auto-deprioritised")) return q.auto_classification.startsWith("Auto-Deprioritised");
+    return true;
+  });
+
+  return htl.html`<div class="cat-table-wrap" style="margin-top:0.65rem;">
+    <table class="cat-table">
+      <thead>
+        <tr>
+          <th>Source</th>
+          <th>Identifier</th>
+          <th>Detected Platform</th>
+          <th>Detected N</th>
+          <th>Title</th>
+          <th>Automated Classification</th>
+          <th>Curator Decision</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map(q => htl.html`<tr>
+          <td><strong>${q.source}</strong></td>
+          <td class="mono">${q.identifier}</td>
+          <td>${q.detected_platform}</td>
+          <td class="mono">${q.detected_n}</td>
+          <td style="max-width:340px;">${q.title}</td>
+          <td>
+            <span class="pg-badge ${q.auto_classification.startsWith("Auto-Deprioritised") ? "ready-Limited" : q.auto_classification.startsWith("Preprint") ? "status-Preprint" : "ready-Cis"}">
+              ${q.auto_classification}
+            </span>
+          </td>
+          <td>
+            <span class="pg-badge ${q.curation_status.startsWith("Accepted") ? "ready-Full" : q.curation_status.startsWith("Pending") ? "ready-Caution" : "ready-Limited"}">
+              ${q.curation_status}
+            </span>
+          </td>
+        </tr>`)}
+      </tbody>
+    </table>
+  </div>`;
+}
+```
+:::

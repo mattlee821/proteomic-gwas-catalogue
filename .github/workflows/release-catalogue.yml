@@ -1,0 +1,99 @@
+name: Publish Tagged Catalogue Release
+
+# Manual / explicit release workflow ONLY:
+# Triggered solely when you push an explicit v* git tag or manually dispatch a release.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag to create and publish (e.g. v0.1.0 or v2026.12)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Validate & Publish Versioned Release Bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Resolve target release tag
+        id: check_tag
+        env:
+          INPUT_TAG: ${{ github.event.inputs.release_tag }}
+          REF_TYPE: ${{ github.ref_type }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          if [[ "${REF_TYPE}" == "tag" ]]; then
+            TAG="${REF_NAME}"
+          else
+            TAG="${INPUT_TAG}"
+          fi
+          if [[ -z "${TAG}" ]]; then
+            echo "No release tag specified." >&2
+            exit 1
+          fi
+          echo "tag=${TAG}" >> "${GITHUB_OUTPUT}"
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install jsonlite
+        run: Rscript -e 'if (!requireNamespace("jsonlite", quietly = TRUE)) install.packages("jsonlite")'
+
+      - name: Validate catalogue & package release artefacts
+        env:
+          TAG: ${{ steps.check_tag.outputs.tag }}
+        run: |
+          Rscript src/build_site_data.R
+          mkdir -p dist
+          cp catalogue/studies.tsv "dist/proteomic_gwas_studies_${TAG}.tsv"
+          cp catalogue/strata.tsv "dist/proteomic_gwas_strata_${TAG}.tsv"
+          cp catalogue/cohort_membership.tsv "dist/proteomic_gwas_cohort_membership_${TAG}.tsv"
+          cp catalogue/proteins_index.tsv "dist/proteomic_gwas_proteins_index_${TAG}.tsv"
+          cp catalogue/search_runs.tsv "dist/proteomic_gwas_search_runs_${TAG}.tsv"
+          cp site/data/catalogue.json "dist/proteomic_gwas_catalogue_${TAG}.json"
+          (cd dist && sha256sum * > "SHA256SUMS_${TAG}.txt")
+
+      - name: Generate release notes
+        env:
+          TAG: ${{ steps.check_tag.outputs.tag }}
+        run: |
+          Rscript -e '
+            rel <- read.delim("catalogue/releases.tsv", stringsAsFactors = FALSE, quote = "")
+            st  <- read.delim("catalogue/studies.tsv", stringsAsFactors = FALSE, quote = "")
+            sr  <- read.delim("catalogue/strata.tsv", stringsAsFactors = FALSE, quote = "")
+            tag <- Sys.getenv("TAG")
+            row <- rel[rel$version == tag, , drop = FALSE]
+            summary_txt <- if (nrow(row) > 0 && nzchar(row$summary[1])) row$summary[1] else "Tagged snapshot of the Proteomic GWAS Catalogue."
+            lines <- c(
+              paste0("## Proteomic GWAS Catalogue `", tag, "`"),
+              "",
+              summary_txt,
+              "",
+              paste0("- **Total studies:** ", nrow(st), " (", sum(st$status == "Preprint"), " active preprints)"),
+              paste0("- **Total strata:** ", nrow(sr)),
+              "",
+              "Attached below are immutable TSV and JSON snapshots plus `SHA256SUMS`."
+            )
+            writeLines(lines, "RELEASE_NOTES.md")
+          '
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ steps.check_tag.outputs.tag }}
+          name: "Proteomic GWAS Catalogue ${{ steps.check_tag.outputs.tag }}"
+          body_path: RELEASE_NOTES.md
+          files: dist/*
+          prerelease: ${{ contains(steps.check_tag.outputs.tag, '-alpha') || contains(steps.check_tag.outputs.tag, '-beta') || contains(steps.check_tag.outputs.tag, '-rc') }}

@@ -1,0 +1,32 @@
+name: Update an Existing Study or Preprint Link
+description: Report a new summary-statistics link, metadata correction, or preprint-to-published upgrade
+title: "[Update]: <study_id or First Author Year>"
+labels: ["study-update", "triage"]
+body:
+  - type: input
+    id: study_id
+    attributes:
+      label: Existing Study ID or Citation
+      placeholder: "e.g. patel_2026_somascan7k_pre"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: update_type
+    attributes:
+      label: Type of Update
+      options:
+        - Preprint now published in peer-reviewed journal
+        - New or updated summary statistics download URL
+        - Correction to sample size / ancestry / model metadata
+        - Harmonisation or allele/indel note
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details & Supporting Link / DOI
+      placeholder: "Provide the new journal DOI, repository accession, or corrected field values."
+    validations:
+      required: true

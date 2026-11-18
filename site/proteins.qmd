@@ -1,0 +1,222 @@
+---
+title: "Protein & Assay Lookup"
+---
+
+```{ojs}
+catData = FileAttachment("data/catalogue.json").json()
+protSummary = catData.protein_summary
+protIndex = catData.proteins_index
+```
+
+```{ojs}
+htl.html`<div class="hero-header">
+  <h1>Protein &amp; Platform Assay Lookup</h1>
+  <p>Search by gene symbol, UniProt accession, SomaScan SeqId, or OlinkID to compare sample sizes, ancestries, biological matrices, and epitope-binding flags across every study in the catalogue.</p>
+</div>`
+```
+
+```{ojs}
+mutable activeUniprot = "P05231"
+```
+
+::: {.panel-card}
+<div class="panel-title">
+  <span>Search Target Protein or Platform Assay ID</span>
+  <span style="font-size:0.78rem;font-weight:400;color:#64748b;">Click any protein chip or directory row to load all cross-study summary-statistics options</span>
+</div>
+
+::: {.filter-grid}
+```{ojs}
+viewof protQuery = Inputs.text({
+  label: "Filter by Gene Symbol, UniProt, Protein Name, SeqId, or OlinkID",
+  placeholder: "e.g. IL6, PCSK9, APOE, P05231, OID20101, 4673-13..."
+})
+
+viewof protMatrixFilter = Inputs.select(
+  ["All matrices", "EDTA plasma", "Citrate plasma", "Serum", "CSF", "Brain tissue", "Urine"],
+  { label: "Filter Strata by Matrix", value: "All matrices" }
+)
+
+viewof protAncestryFilter = Inputs.select(
+  ["All ancestries", "EUR", "AFR", "EAS", "CSA", "AMR", "Multi-ancestry"],
+  { label: "Filter Strata by Ancestry", value: "All ancestries" }
+)
+```
+:::
+
+```{ojs}
+{
+  const q = protQuery.trim().toLowerCase();
+  const matchingUniprots = q
+    ? new Set(
+        protIndex
+          .filter(r =>
+            [r.gene_symbol, r.uniprot, r.protein_name, r.assay_id]
+              .join(" ")
+              .toLowerCase()
+              .includes(q)
+          )
+          .map(r => r.uniprot)
+      )
+    : null;
+
+  const chips = protSummary.filter(p => !matchingUniprots || matchingUniprots.has(p.uniprot));
+
+  return htl.html`<div style="margin-top:0.75rem;">
+    <div style="font-size:0.75rem;font-weight:600;color:#64748b;text-transform:uppercase;margin-bottom:0.35rem;">
+      Indexed Proteins (${chips.length} matching)
+    </div>
+    <div>
+      ${chips.map(p => htl.html`<button
+        class="quick-chip ${p.uniprot === activeUniprot ? "active" : ""}"
+        onclick=${() => { mutable activeUniprot = p.uniprot; }}>
+        <strong>${p.gene_symbol}</strong> <span class="mono" style="opacity:0.8;">(${p.uniprot})</span>
+      </button>`)}
+    </div>
+  </div>`;
+}
+```
+:::
+
+```{ojs}
+selectedProteinMeta = protSummary.find(p => p.uniprot === activeUniprot) || protSummary[0]
+
+selectedProteinAssays = protIndex
+  .filter(r =>
+    r.uniprot === selectedProteinMeta.uniprot &&
+    r.status !== "Superseded Preprint" &&
+    (protMatrixFilter === "All matrices" || r.sample_matrix === protMatrixFilter) &&
+    (protAncestryFilter === "All ancestries" || r.ancestry_group === protAncestryFilter)
+  )
+  .sort((a, b) => b.n_samples - a.n_samples)
+```
+
+```{ojs}
+// Deep-dive banner + PAV warning if relevant
+{
+  const hasMS = selectedProteinAssays.some(d => d.platform_category === "Mass Spectrometry");
+  const hasPav = selectedProteinAssays.some(d => d.pav_epitope_flag);
+
+  return htl.html`<div class="panel-card">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;">
+      <div>
+        <span class="mono" style="font-size:0.78rem;color:#0f4c81;font-weight:700;">UNIPROT ${selectedProteinMeta.uniprot}</span>
+        <h2 style="margin:0.15rem 0;font-size:1.3rem;font-weight:700;">${selectedProteinMeta.gene_symbol} — ${selectedProteinMeta.protein_name}</h2>
+        <div style="font-size:0.86rem;color:#475569;">
+          Measured across <strong>${selectedProteinMeta.n_studies}</strong> active studies ·
+          <strong>${selectedProteinAssays.length}</strong> matching assay-stratum records ·
+          Max sample size <strong>N = ${selectedProteinMeta.max_n.toLocaleString()}</strong> ·
+          Platforms: <strong>${selectedProteinMeta.platforms}</strong>
+        </div>
+      </div>
+      <div style="display:flex;gap:0.45rem;">
+        <a class="btn-pill" href="https://www.uniprot.org/uniprotkb/${selectedProteinMeta.uniprot}/entry" target="_blank" rel="noopener">UniProt ↗</a>
+        <a class="btn-pill" href="https://www.ebi.ac.uk/gwas/search?query=${selectedProteinMeta.gene_symbol}" target="_blank" rel="noopener">GWAS Catalog ↗</a>
+      </div>
+    </div>
+
+    ${hasPav ? htl.html`<div class="overlap-warn" style="margin-top:0.85rem;margin-bottom:0;">
+      <strong>Epitope / Coding Variant (PAV) Sensitivity Note:</strong> Affinity assays targeting <strong>${selectedProteinMeta.gene_symbol}</strong> have documented coding-variant binding sensitivity in platform comparison studies.
+      ${hasMS
+        ? htl.html` Orthogonal <strong>Mass Spectrometry</strong> summary statistics are available below to validate cis-pQTL directionality before MR.`
+        : htl.html` Check colocalisation with eQTLs and coding missense variants carefully before causal inference.`}
+    </div>` : ""}
+  </div>`;
+}
+```
+
+::: {.panel-card}
+<div class="panel-title">
+  <span>Sample Size Across Studies, Platforms &amp; Assays for Selected Protein</span>
+  <span style="font-size:0.78rem;font-weight:400;color:#64748b;">Multi-panel Olink (e.g. 4 panels for IL6) and multi-aptamer SomaScan SeqIds appear as distinct rows</span>
+</div>
+
+```{ojs}
+selectedProteinAssays.length > 0
+  ? Plot.plot({
+      height: Math.max(220, selectedProteinAssays.length * 25 + 60),
+      marginLeft: 255,
+      marginRight: 75,
+      style: { background: "transparent", fontSize: "11.5px" },
+      x: { label: "Sample Size (N)", grid: true },
+      y: {
+        label: null,
+        domain: selectedProteinAssays.map(d => `${d.first_author} ${d.year} [${d.ancestry_group}${d.sex !== "Combined" ? "/" + d.sex[0] : ""}] · ${d.assay_id}`)
+      },
+      color: {
+        legend: true,
+        domain: ["SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex"],
+        range: ["#4338ca", "#0d9488", "#d97706", "#db2777", "#64748b"]
+      },
+      marks: [
+        Plot.barX(selectedProteinAssays, {
+          y: d => `${d.first_author} ${d.year} [${d.ancestry_group}${d.sex !== "Combined" ? "/" + d.sex[0] : ""}] · ${d.assay_id}`,
+          x: "n_samples",
+          fill: "platform_category",
+          fillOpacity: d => d.status === "Preprint" ? 0.55 : 0.88,
+          tip: true,
+          title: d => `${d.first_author} (${d.year}) [${d.status}]\nAssay: ${d.assay_id} (${d.platform_version})\nMatrix: ${d.sample_matrix} | Ancestry: ${d.ancestry_group}\nN = ${d.n_samples.toLocaleString()} | Coverage: ${d.coverage}`
+        }),
+        Plot.text(selectedProteinAssays, {
+          y: d => `${d.first_author} ${d.year} [${d.ancestry_group}${d.sex !== "Combined" ? "/" + d.sex[0] : ""}] · ${d.assay_id}`,
+          x: "n_samples",
+          text: d => ` ${d.n_samples.toLocaleString()} (${d.sample_matrix})`,
+          textAnchor: "start",
+          dx: 4,
+          fill: "#334155"
+        })
+      ]
+    })
+  : htl.html`<p style="color:#64748b;">No strata match the selected matrix/ancestry filters for this protein.</p>`
+```
+:::
+
+```{ojs}
+// Assay-level table showing exact GWASprocessing output_name convention
+htl.html`<div class="panel-card">
+  <div class="panel-title">
+    <span>Assay-Level Summary Statistics Records for ${selectedProteinMeta.gene_symbol} (${selectedProteinAssays.length})</span>
+    <a class="btn-pill" href="data/proteins_index.tsv" download>Download Full proteins_index.tsv</a>
+  </div>
+  <div class="cat-table-wrap">
+    <table class="cat-table">
+      <thead>
+        <tr>
+          <th>Study &amp; Stratum</th>
+          <th>Status</th>
+          <th>Assay ID</th>
+          <th>Standardised Output Name</th>
+          <th>Platform</th>
+          <th>Matrix</th>
+          <th>Ancestry</th>
+          <th style="text-align:right;">Sample N</th>
+          <th>Build &amp; Scope</th>
+          <th>Cis-pQTL</th>
+          <th>Data Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${selectedProteinAssays.map(r => {
+          const stdName = `${r.uniprot}_${r.assay_id}`;
+          return htl.html`<tr>
+            <td>
+              <strong>${r.first_author} (${r.year})</strong>
+              <div class="mono" style="font-size:0.72rem;color:#64748b;">${r.stratum_id}</div>
+            </td>
+            <td><span class="pg-badge status-${r.status}">${r.status}</span></td>
+            <td class="mono"><strong>${r.assay_id}</strong></td>
+            <td class="mono" style="color:#0f4c81;">${stdName}</td>
+            <td>${r.platform_version}</td>
+            <td>${r.sample_matrix}</td>
+            <td><strong>${r.ancestry_group}</strong>${r.sex !== "Combined" ? ` (${r.sex})` : ""}</td>
+            <td class="num-col"><strong>${r.n_samples.toLocaleString()}</strong></td>
+            <td><span class="mono">${r.genome_build}</span> · <span class="pg-badge cov-${r.coverage}">${r.coverage}</span></td>
+            <td>${r.cis_pqtl_reported ? htl.html`<span class="pg-badge ready-Full">Yes</span>` : htl.html`<span class="pg-badge ready-Limited">Not reported</span>`}</td>
+            <td><a class="btn-pill btn-pill-primary" style="padding:0.15rem 0.45rem;font-size:0.72rem;" href=${r.accession_or_url} target="_blank" rel="noopener">Data ↗</a></td>
+          </tr>`;
+        })}
+      </tbody>
+    </table>
+  </div>
+</div>`
+```

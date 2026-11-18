@@ -1,0 +1,57 @@
+---
+title: "Schema, Pipeline & Contributing"
+toc: true
+---
+
+## Architecture Overview
+
+The **Proteomic GWAS Catalogue** separates canonical, Git-versioned flat TSV tables (`catalogue/*.tsv`) from the static Quarto + Observable JS interface (`site/`), validated and deployed automatically via GitHub Actions.
+
+```{mermaid}
+flowchart LR
+  A["Scheduled Search Action\n(1st & 15th monthly)"] -->|"Queries PubMed, Europe PMC,\nbioRxiv/medRxiv, GWAS Catalog"| B["src/run_literature_search.R"]
+  B -->|"Opens Candidate PR\n(primary vs 2SMR triage)"| C["Curator Review & Full-Text Check"]
+  D["Community Submission\n(GitHub Issue Form)"] --> C
+  C -->|"Merge to main"| E["src/validate_catalogue.R\n& src/build_site_data.R"]
+  E -->|"Deploy static site"| F["GitHub Pages Web App"]
+  E -->|"git tag vYYYY.MM"| G["GitHub Release + Zenodo DOI\n(TSV & JSON snapshots)"]
+  G -->|"study_id / stratum_id"| H["GWASprocessing Manifests"]
+```
+
+---
+
+## Three-Tier Relational Table Design
+
+| File | Primary Key | Unit of Observation | Purpose |
+| :--- | :--- | :--- | :--- |
+| `catalogue/studies.tsv` | `study_id` | 1 row per paper or preprint (`<author>_<year>_PMID<pmid>`) | Tracks citation metadata, `Published` vs `Preprint` vs `Superseded Preprint`, `superseded_by` lineage, repository, URL, and access conditions. |
+| `catalogue/strata.tsv` | `stratum_id` | 1 row per downloadable GWAS dataset within a study | Captures ancestry, sex, `n_samples` (no sample-size cutoff), biological matrix, platform & version, `n_assays`, genome build, `coverage` (`genome_wide`, `cis_only`, `top_hits_only`), phenotype transformation, `effect_scale`, `has_eaf`, `indel_encoding`, and `gwasprocessing_yaml`. |
+| `catalogue/cohort_membership.tsv` | `(study_id, cohort)` | 1 row per participating biobank/cohort in a study | Powers exact participant-overlap detection before meta-analysis or two-sample MR. |
+| `catalogue/proteins_index.tsv` | `(stratum_id, assay_id)` | 1 row per assayed protein target per stratum | Maps `UniProt` + `gene_symbol` + platform `assay_id` (`SeqId`, `OlinkID`, MS peptide, `NULISA`) to standardized `UNIPROT_ASSAYID` names. |
+
+---
+
+## Integration with `GWASprocessing`
+
+To keep public metadata decoupled from private local server paths:
+
+1. **Public catalogue (`proteomic-gwas-catalogue`):** Stores study provenance, stratum metadata, assay mappings, and public download URLs/accessions, plus the optional `gwasprocessing_yaml` filename (e.g. `ferkingstad_2021_34857953.yaml`, `sun_2023_37794186.yaml`).
+2. **Harmonisation pipeline (`GWASprocessing`):** Keeps parser-specific YAML directives (multiallelic flags, sidecar join tables, local `GWAS_location` server paths) and joins directly on `study_id`, `stratum_id`, and `UNIPROT_ASSAYID`.
+
+---
+
+## Local Development & Verification Commands
+
+```bash
+# 1. Ensure Quarto CLI is installed in ~/.local/bin (outside OneDrive)
+bash src/setup_quarto.sh
+
+# 2. Validate catalogue/*.tsv integrity & rebuild site/data/catalogue.json
+Rscript src/build_site_data.R
+
+# 3. Preview or render the static Quarto + Observable JS website
+~/.local/bin/quarto render site
+
+# 4. Run automated literature search locally (dry-run or live date window)
+Rscript src/run_literature_search.R --since 2026-10-01 --dry-run
+```

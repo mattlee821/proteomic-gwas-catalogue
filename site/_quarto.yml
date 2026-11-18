@@ -1,0 +1,53 @@
+project:
+  type: website
+  output-dir: _site
+  pre-render: pre_render.R
+  resources:
+    - data/*.json
+    - data/*.tsv
+
+website:
+  title: "Proteomic GWAS Catalogue"
+  site-url: https://mattlee821.github.io/proteomic-gwas-catalogue
+  repo-url: https://github.com/mattlee821/proteomic-gwas-catalogue
+  issue-url: https://github.com/mattlee821/proteomic-gwas-catalogue/issues/new/choose
+  navbar:
+    background: "#0f172a"
+    foreground: "#f8fafc"
+    pinned: true
+    left:
+      - text: "Catalogue Explorer"
+        href: index.qmd
+      - text: "Protein Lookup"
+        href: proteins.qmd
+      - text: "Cohort Overlap"
+        href: overlap.qmd
+      - text: "Search Log & Releases"
+        href: updates.qmd
+      - text: "Schema & Pipeline"
+        href: schema.qmd
+    right:
+      - text: "+ Submit Study"
+        href: https://github.com/mattlee821/proteomic-gwas-catalogue/issues/new?template=submit_study.yml
+      - icon: github
+        href: https://github.com/mattlee821/proteomic-gwas-catalogue
+        aria-label: GitHub Repository
+  page-footer:
+    background: "#f8fafc"
+    left: "Proteomic GWAS Catalogue · Living open-source reference of published & preprint protein GWAS"
+    right: "Built with R, Quarto & Observable JS · Versioned via GitHub Releases"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.scss
+    page-layout: full
+    toc: false
+    smooth-scroll: true
+    code-copy: true
+
+execute:
+  echo: false
+  warning: false
+  message: false

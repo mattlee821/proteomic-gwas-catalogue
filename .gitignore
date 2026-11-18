@@ -1,0 +1,50 @@
+# Quarto build outputs, cache, and compiled site data bundle (built in CI from catalogue/*.tsv)
+site/_site/
+site/.quarto/
+site/data/
+.quarto/
+
+# Local working folders (raw search dumps, scratch outputs, logs, internal notes)
+data/
+docs/
+analysis/
+export/
+log/
+output/
+released/
+
+# Local toolchains and environments
+.tools/
+.venv/
+.env
+
+# R, Python and OS clutter
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+__pycache__/
+*.pyc
+.DS_Store
+._*
+CLAUDE.md
+
+# Never commit binary or individual-level data files, anywhere in the repo
+*.sas7bdat
+*.sas7bcat
+*.[rR][dD][sS]
+*.[rR][dD]ata
+*.[rR][dD][aA]
+*.adat
+*.parquet
+*.feather
+*.dta
+*.sav
+*.fst
+*.qs
+*.bgen
+*.pgen
+*.bed
+*.vcf
+*.vcf.gz
+*.h5

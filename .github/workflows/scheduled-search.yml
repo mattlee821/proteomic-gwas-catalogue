@@ -1,0 +1,70 @@
+name: Scheduled Literature Search (PR-Gated)
+
+on:
+  schedule:
+    # Runs at 07:00 UTC on the 1st and 15th of every month
+    - cron: "0 7 1,15 * *"
+  workflow_dispatch:
+    inputs:
+      since_date:
+        description: "Search start date (YYYY-MM-DD). Defaults to 35 days ago."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  literature-scan:
+    name: Query Literature & Open Triage PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install jsonlite
+        run: Rscript -e 'if (!requireNamespace("jsonlite", quietly = TRUE)) install.packages("jsonlite")'
+
+      - name: Set up Quarto CLI
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Run multi-source proteomic GWAS search & triage
+        env:
+          SINCE_INPUT: ${{ github.event.inputs.since_date }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          TRIGGER_LABEL="Scheduled GitHub Action (${EVENT_NAME})"
+          if [[ -n "${SINCE_INPUT}" ]]; then
+            Rscript src/run_literature_search.R --since "${SINCE_INPUT}" --trigger "${TRIGGER_LABEL}"
+          else
+            Rscript src/run_literature_search.R --trigger "${TRIGGER_LABEL}"
+          fi
+
+      - name: Verify Quarto site renders cleanly with updated search logs
+        run: quarto render site
+
+      - name: Open Pull Request for Curator Verification
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "chore(search): automated proteomic GWAS scan (${{ github.run_number }})"
+          branch: automated/literature-scan
+          delete-branch: true
+          title: "Automated Literature Scan: Candidate Protein GWAS & Search Log Update"
+          body: |
+            ## Automated Proteomic GWAS Discovery Scan
+
+            `src/run_literature_search.R` queried Europe PMC (PubMed/MEDLINE + bioRxiv/medRxiv preprints), logged the run in `catalogue/search_runs.tsv`, and updated `catalogue/candidate_queue.tsv`.
+
+            ### Curator Verification Checklist
+            - [ ] Review rows marked `Likely Primary pGWAS` or `Needs Human Check` in `catalogue/candidate_queue.tsv`
+            - [ ] Verify full text and Data Availability Statement for sample size, ancestry, matrix, genome build, transformation, covariates, and summary-statistics URL
+            - [ ] Check whether any active `Preprint` in `catalogue/studies.tsv` has now been published in a peer-reviewed journal (`superseded_by`)
+            - [ ] Add verified studies/strata to `catalogue/studies.tsv`, `catalogue/strata.tsv`, and `catalogue/cohort_membership.tsv`
+            - [ ] Move rejected secondary MR/EWAS IDs into `catalogue/excluded_records.tsv`
+            - [ ] Optionally add a new row to `catalogue/releases.tsv` if cutting a new versioned release on merge
