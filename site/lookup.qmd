@@ -67,11 +67,24 @@ mutable selectedUniprot = "P05231"
     closeMenu();
   };
 
+  const elevateAncestors = () => {
+    let anc = searchInput.parentElement;
+    while (anc && anc !== document.body) {
+      anc.style.overflow = "visible";
+      if (anc.classList && (anc.classList.contains("cell") || anc.classList.contains("cell-output-display") || anc.classList.contains("observablehq"))) {
+        anc.style.position = "relative";
+        anc.style.zIndex = "100";
+      }
+      anc = anc.parentElement;
+    }
+  };
+
   const renderMenu = () => {
     if (matches.length === 0) {
       closeMenu();
       return;
     }
+    elevateAncestors();
     const items = matches.map((p, idx) =>
       htl.html`<div
         class="typeahead-item ${idx === activeIdx ? "is-active" : ""}"
@@ -151,8 +164,8 @@ mutable selectedUniprot = "P05231"
     onblur=${() => setTimeout(closeMenu, 120)}
   >`;
 
-  return htl.html`<div class="pg-shell" style="padding-bottom:0;">
-    <div class="hero-banner" style="flex-direction:column;align-items:stretch;gap:0.6rem;">
+  return htl.html`<div class="pg-shell lookup-search-shell" style="padding-bottom:0;">
+    <div class="hero-banner" style="flex-direction:column;align-items:stretch;gap:0.6rem;position:relative;z-index:105;overflow:visible;">
       <h1 style="margin:0;">Protein Lookup</h1>
       <div style="display:flex;justify-content:center;width:100%;">
         <div class="typeahead-wrap">
