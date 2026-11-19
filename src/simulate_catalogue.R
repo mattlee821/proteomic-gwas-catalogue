@@ -175,8 +175,8 @@ studies <- data.frame(
   ),
   access_level = c(
     "Open download", "Open download", "Open download", "Controlled access", "Open download",
-    "Open download", "Open download", "Portal registration", "Upon request", "Open download",
-    "Portal registration", "Portal registration", "Open download", "Portal registration", "Open download",
+    "Portal registration", "Open download", "Portal registration", "Upon request", "Open download",
+    "Portal registration", "Portal registration", "Portal registration", "Portal registration", "Open download",
     "Portal registration", "Open download", "Open download", "Open download", "Open download",
     "Open download", "Portal registration"
   ),
@@ -370,7 +370,7 @@ strata <- data.frame(
   platform_category = c(
     "SomaScan", "Olink", "SomaScan", "Luminex", "Olink",
     "SomaScan", "SomaScan", "SomaScan", "SomaScan", "SomaScan",
-    "Olink", "Olink", "Olink", "Olink", "Olink",
+    "SomaScan", "SomaScan", "Olink", "Olink", "Olink",
     "Olink", "Olink", "Olink", "Olink", "Mass Spectrometry",
     "Olink", "Olink", "SomaScan", "Olink", "Olink",
     "Mass Spectrometry", "Mass Spectrometry", "NULISA", "SomaScan", "Olink",
@@ -946,6 +946,35 @@ candidate_queue <- data.frame(
     "Excluded (Secondary MR)",
     "Excluded (DNA methylation EWAS)",
     "Pending Curator Review (PR #14)"
+  ),
+  pmid = c("", "", "", "41990112", "41488603", "41398839", "41782372", ""),
+  doi = c(
+    "10.1101/2026.02.19.581022",
+    "10.1101/2026.04.12.26305118",
+    "10.1101/2026.09.03.611408",
+    "10.1038/s41588-026-09912-1",
+    "10.1161/strokeaha.126.041111",
+    "10.1038/s41398-025-03110-2",
+    "10.1038/s41467-026-44100-1",
+    "10.1101/2026.11.02.26311904"
+  ),
+  pmcid = c("", "", "", "PMC11882011", "", "", "PMC11900122", ""),
+  epmc_id = c("PPR811022", "PPR830511", "PPR891408", "41990112", "41488603", "41398839", "41782372", "PPR911904"),
+  matched_sources = c(
+    "EuropePMC_PPR;bioRxiv",
+    "EuropePMC_PPR;medRxiv",
+    "EuropePMC_PPR;Snowball",
+    "PubMed;EuropePMC_MED;Snowball",
+    "PubMed;EuropePMC_MED",
+    "PubMed;EuropePMC_MED",
+    "PubMed;EuropePMC_MED",
+    "EuropePMC_PPR;medRxiv"
+  ),
+  p_score = c(21L, 16L, 22L, 23L, 0L, 0L, 0L, 14L),
+  s_score = c(0L, 0L, 0L, 0L, 17L, 17L, 0L, 0L),
+  preprint_lineage_note = c(
+    "", "", "", "Matches active preprint patel_2026_somascan7k_pre (10.1101/2026.02.19.581022)",
+    "", "", "", ""
   ),
   stringsAsFactors = FALSE
 )

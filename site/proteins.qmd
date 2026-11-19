@@ -33,12 +33,15 @@ viewof protQuery = Inputs.text({
 })
 
 viewof protMatrixFilter = Inputs.select(
-  ["All matrices", "EDTA plasma", "Citrate plasma", "Serum", "CSF", "Brain tissue", "Urine"],
+  [
+    "All matrices", "EDTA plasma", "Citrate plasma", "Heparin plasma", "Plasma (unspecified)",
+    "Serum", "Whole blood / DBS", "CSF", "Brain tissue", "Urine", "Saliva", "Cell line / LCL", "Other tissue"
+  ],
   { label: "Filter Strata by Matrix", value: "All matrices" }
 )
 
 viewof protAncestryFilter = Inputs.select(
-  ["All ancestries", "EUR", "AFR", "EAS", "CSA", "AMR", "Multi-ancestry"],
+  ["All ancestries", "EUR", "AFR", "EAS", "CSA", "AMR", "MID", "Multi-ancestry"],
   { label: "Filter Strata by Ancestry", value: "All ancestries" }
 )
 ```

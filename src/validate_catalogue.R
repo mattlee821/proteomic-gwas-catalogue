@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
-# Validate schema, primary keys, foreign keys, and controlled vocabularies across catalogue/*.tsv.
-# Exits with code 1 if any check fails (used in GitHub Actions PR gates).
+# Validate schema, primary keys, foreign keys, controlled vocabularies, and blinding guardrails
+# across catalogue/*.tsv. Exits with code 1 if any check fails (used in GitHub Actions PR gates).
 
 cat_dir <- "catalogue"
 errors <- character(0)
@@ -25,6 +25,7 @@ proteins  <- read_cat("proteins_index.tsv")
 runs      <- read_cat("search_runs.tsv")
 queue     <- read_cat("candidate_queue.tsv")
 releases  <- read_cat("releases.tsv")
+excluded  <- read_cat("excluded_records.tsv")
 
 check_cols <- function(df, name, req) {
   if (is.null(df)) return()
@@ -55,10 +56,21 @@ check_cols(proteins, "proteins_index.tsv", c(
   "stratum_id", "study_id", "cis_pqtl_reported", "pav_epitope_flag"
 ))
 check_cols(runs, "search_runs.tsv", c(
-  "run_id", "run_date", "trigger", "raw_records", "deduplicated_new",
-  "candidates_for_review", "studies_added", "status"
+  "run_id", "run_date", "trigger", "sources_queried", "raw_records",
+  "deduplicated_new", "auto_flagged_secondary_mr", "candidates_for_review",
+  "studies_added", "preprints_upgraded", "pr_number", "release_tag", "status"
 ))
-check_cols(releases, "releases.tsv", c("version", "release_date", "n_studies", "n_strata", "summary"))
+check_cols(queue, "candidate_queue.tsv", c(
+  "candidate_id", "run_id", "source", "identifier", "detected_platform",
+  "detected_n", "title", "auto_classification", "curation_status",
+  "pmid", "doi", "pmcid", "epmc_id", "matched_sources",
+  "p_score", "s_score", "preprint_lineage_note"
+))
+check_cols(releases, "releases.tsv", c(
+  "version", "release_date", "doi_badge", "n_studies",
+  "n_strata", "n_preprints_active", "summary"
+))
+check_cols(excluded, "excluded_records.tsv", c("identifier", "reason", "screened_date"))
 
 if (!is.null(studies) && !is.null(strata)) {
   # Uniqueness
@@ -97,6 +109,7 @@ if (!is.null(studies) && !is.null(strata)) {
 
   # Controlled vocabularies
   check_vocab <- function(vals, allowed, label) {
+    if (length(vals) == 0) return()
     bad <- setdiff(unique(vals), allowed)
     if (length(bad) > 0) {
       fail("Invalid values in ", label, ": ", paste(bad, collapse = ", "),
@@ -108,21 +121,55 @@ if (!is.null(studies) && !is.null(strata)) {
   check_vocab(studies$access_level, c("Open download", "Portal registration", "Controlled access", "Upon request", "Not available"), "studies$access_level")
   check_vocab(strata$ancestry_group, c("EUR", "AFR", "EAS", "CSA", "AMR", "MID", "Multi-ancestry"), "strata$ancestry_group")
   check_vocab(strata$sex, c("Combined", "Female", "Male"), "strata$sex")
-  check_vocab(strata$sample_matrix, c("EDTA plasma", "Citrate plasma", "Serum", "CSF", "Brain tissue", "Urine", "Saliva", "Other tissue"), "strata$sample_matrix")
-  check_vocab(strata$platform_category, c("SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex", "Other Immunoassay"), "strata$platform_category")
+  check_vocab(strata$sample_matrix, c(
+    "EDTA plasma", "Citrate plasma", "Heparin plasma", "Plasma (unspecified)",
+    "Serum", "Whole blood / DBS", "CSF", "Brain tissue", "Urine",
+    "Saliva", "Cell line / LCL", "Other tissue"
+  ), "strata$sample_matrix")
+  check_vocab(strata$platform_category, c(
+    "SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex", "Other Immunoassay"
+  ), "strata$platform_category")
   check_vocab(strata$genome_build, c("GRCh36", "GRCh37", "GRCh38", "T2T-CHM13", "Unknown"), "strata$genome_build")
   check_vocab(strata$coverage, c("genome_wide", "cis_only", "top_hits_only", "none"), "strata$coverage")
-  check_vocab(strata$effect_scale, c("SD_IRNT", "SD_Z", "NPX_log2", "log10_RFU", "log2_intensity", "raw_units", "Z_score_only"), "strata$effect_scale")
+  check_vocab(strata$effect_scale, c(
+    "SD_IRNT", "SD_Z", "NPX_log2", "log10_RFU", "log2_intensity", "raw_units", "Z_score_only"
+  ), "strata$effect_scale")
+
+  # Booleans must be non-NA logicals
+  if (any(is.na(as.logical(strata$has_beta_se)))) {
+    fail("strata$has_beta_se must be non-NA TRUE/FALSE")
+  }
+  if (any(is.na(as.logical(strata$has_eaf)))) {
+    fail("strata$has_eaf must be non-NA TRUE/FALSE")
+  }
 
   # Sample size sanity (positive integers, explicitly NO minimum threshold)
   if (any(is.na(strata$n_samples) | strata$n_samples < 1L)) {
     fail("strata$n_samples must be >= 1 (no sample-size floor, but must be positive)")
   }
 
-  # Cis-only strata should document cis_window_kb
+  # Cis-only strata must document cis_window_kb
   cis_missing <- strata$stratum_id[strata$coverage == "cis_only" & is.na(strata$cis_window_kb)]
   if (length(cis_missing) > 0) {
     fail("cis_only strata missing cis_window_kb: ", paste(cis_missing, collapse = ", "))
+  }
+}
+
+# Blinding & air-gap guardrails for positive controls
+tracked_pc <- tryCatch(
+  system2("git", c("ls-files", "data/positive_controls.tsv"), stdout = TRUE, stderr = FALSE),
+  error = function(e) character(0)
+)
+if (length(tracked_pc) > 0 && any(nzchar(tracked_pc))) {
+  fail("BLINDING VIOLATION: data/positive_controls.tsv must never be tracked in Git!")
+}
+
+for (search_script in c("src/run_literature_search.R", "src/search/lexicons.R")) {
+  if (file.exists(search_script)) {
+    code_txt <- paste(readLines(search_script, warn = FALSE), collapse = "\n")
+    if (grepl("positive_controls", code_txt, fixed = TRUE)) {
+      fail("BLINDING VIOLATION: ", search_script, " references 'positive_controls' (search engine must stay air-gapped from positive controls!)")
+    }
   }
 }
 

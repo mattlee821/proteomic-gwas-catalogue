@@ -3,6 +3,7 @@ site/_site/
 site/.quarto/
 site/data/
 .quarto/
+staging/verify_run/
 
 # Local working folders (raw search dumps, scratch outputs, logs, internal notes)
 data/

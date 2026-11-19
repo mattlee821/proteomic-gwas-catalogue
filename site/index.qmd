@@ -81,22 +81,25 @@ viewof searchText = Inputs.text({
 })
 
 viewof platformSel = Inputs.select(
-  ["All platforms", "SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex"],
+  ["All platforms", "SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex", "Other Immunoassay"],
   { label: "Proteomic Technology", value: "All platforms" }
 )
 
 viewof matrixSel = Inputs.select(
-  ["All matrices", "EDTA plasma", "Citrate plasma", "Serum", "CSF", "Brain tissue", "Urine"],
+  [
+    "All matrices", "EDTA plasma", "Citrate plasma", "Heparin plasma", "Plasma (unspecified)",
+    "Serum", "Whole blood / DBS", "CSF", "Brain tissue", "Urine", "Saliva", "Cell line / LCL", "Other tissue"
+  ],
   { label: "Biological Matrix", value: "All matrices" }
 )
 
 viewof ancestrySel = Inputs.select(
-  ["All ancestries", "EUR", "AFR", "EAS", "CSA", "AMR", "Multi-ancestry"],
+  ["All ancestries", "EUR", "AFR", "EAS", "CSA", "AMR", "MID", "Multi-ancestry"],
   { label: "Ancestry Group", value: "All ancestries" }
 )
 
 viewof coverageSel = Inputs.select(
-  ["All scopes", "genome_wide", "cis_only", "top_hits_only"],
+  ["All scopes", "genome_wide", "cis_only", "top_hits_only", "none"],
   {
     label: "Genomic Coverage",
     value: "All scopes",
@@ -104,18 +107,19 @@ viewof coverageSel = Inputs.select(
       "All scopes": "All scopes",
       "genome_wide": "Genome-wide (Cis + Trans)",
       "cis_only": "Cis-windows only",
-      "top_hits_only": "Top hits / supplement only"
+      "top_hits_only": "Top hits / supplement only",
+      "none": "No public sumstats"
     }[x] || x)
   }
 )
 
 viewof accessSel = Inputs.select(
-  ["All access levels", "Open download", "Portal registration", "Controlled access", "Upon request"],
+  ["All access levels", "Open download", "Portal registration", "Controlled access", "Upon request", "Not available"],
   { label: "Summary Stats Access", value: "All access levels" }
 )
 
 viewof buildSel = Inputs.select(
-  ["All builds", "GRCh38", "GRCh37"],
+  ["All builds", "GRCh38", "GRCh37", "GRCh36", "T2T-CHM13", "Unknown"],
   { label: "Genome Build", value: "All builds" }
 )
 
@@ -181,7 +185,10 @@ Plot.plot({
   x: {
     label: "Publication / Preprint Year",
     tickFormat: d => String(d),
-    domain: [2016.5, 2026.5]
+    domain: [
+      filteredStrata.length ? Math.min(2016.5, Math.min(...filteredStrata.map(d => d.year)) - 0.5) : 2016.5,
+      filteredStrata.length ? Math.max(2026.5, Math.max(...filteredStrata.map(d => d.year)) + 0.5) : 2026.5
+    ]
   },
   y: {
     type: "log",
@@ -251,7 +258,7 @@ sortedStrata = {
 
 ```{ojs}
 // Helper badge formatters and client-side TSV exporter
-platClass = p => p === "Mass Spectrometry" ? "plat-MS" : `plat-${p}`
+platClass = p => p === "Mass Spectrometry" ? "plat-MS" : p === "Other Immunoassay" ? "plat-Other" : `plat-${p}`
 statusClass = s => s === "Superseded Preprint" ? "status-Superseded" : `status-${s}`
 readyClass = r => r.startsWith("Full") ? "ready-Full" : r.startsWith("Cis") ? "ready-Cis" : r.startsWith("Caution") ? "ready-Caution" : "ready-Limited"
 
@@ -336,7 +343,7 @@ downloadFilteredTSV = () => {
               <td class="num-col">${d.n_assays.toLocaleString()}<div style="font-size:0.71rem;color:#64748b;">(${d.n_unique_proteins.toLocaleString()} prot)</div></td>
               <td>
                 <span class="mono" style="font-weight:600;">${d.genome_build}</span>
-                <div><span class="pg-badge cov-${d.coverage}">${d.coverage === "genome_wide" ? "Genome-wide" : d.coverage === "cis_only" ? `Cis (±${d.cis_window_kb}kb)` : "Top hits"}</span></div>
+                <div><span class="pg-badge cov-${d.coverage}">${d.coverage === "genome_wide" ? "Genome-wide" : d.coverage === "cis_only" ? `Cis (±${d.cis_window_kb}kb)` : d.coverage === "none" ? "No sumstats" : "Top hits"}</span></div>
               </td>
               <td>
                 <span class="pg-badge ${readyClass(d.mr_coloc_readiness)}">${d.mr_coloc_readiness}</span>

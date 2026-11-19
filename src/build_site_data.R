@@ -47,12 +47,16 @@ strata_enriched <- strata_enriched[match(strata$stratum_id, strata_enriched$stra
 # - Cis Ready: cis_only with beta/se + eaf
 # - Caution (Missing EAF / Indel codes): missing EAF or D/I indels
 # - Limited: top_hits_only or Controlled/Upon request
+has_eaf_clean  <- !is.na(strata_enriched$has_eaf) & as.logical(strata_enriched$has_eaf)
+has_beta_clean <- !is.na(strata_enriched$has_beta_se) & as.logical(strata_enriched$has_beta_se)
+
 strata_enriched$mr_coloc_readiness <- ifelse(
-  strata_enriched$coverage == "top_hits_only" | strata_enriched$access_level %in% c("Controlled access", "Upon request"),
+  strata_enriched$coverage %in% c("top_hits_only", "none") |
+    strata_enriched$access_level %in% c("Controlled access", "Upon request", "Not available"),
   "Limited (Access / Top-hits)",
   ifelse(
-    !strata_enriched$has_eaf,
-    "Caution (No signed EAF)",
+    !has_beta_clean | !has_eaf_clean,
+    "Caution (No signed EAF / SE)",
     ifelse(
       strata_enriched$coverage == "genome_wide",
       "Full (Cis + Trans Ready)",

@@ -23,29 +23,28 @@ Protein GWAS are spread across dozens of papers, preprints, cohorts, proteomic p
   4. **Search Log & Releases (`site/updates.qmd`):** PRISMA screening metrics, automated search run logs, candidate PR triage preview, and versioned TSV/JSON downloads.
 - `src/`: R and shell scripts:
   - `src/setup_quarto.sh`: Installs Quarto CLI into `~/.local/share/quarto` and `~/.local/bin/quarto` (outside OneDrive).
-  - `src/simulate_catalogue.R`: Generates the simulated `v0.2.0-sim` dataset.
-  - `src/validate_catalogue.R`: Validates primary/foreign keys and controlled vocabularies (enforced in CI).
+  - `src/simulate_catalogue.R`: Generates the simulated prototype dataset (`unreleased (dev)`).
+  - `src/validate_catalogue.R`: Validates primary/foreign keys, controlled vocabularies, and positive-control blinding guardrails (enforced in CI).
   - `src/build_site_data.R`: Validates `catalogue/*.tsv` and compiles `site/data/catalogue.json`.
-  - `src/run_literature_search.R`: Queries Europe PMC (PubMed + preprints), deduplicates against screened studies, deprioritises secondary 2SMR/EWAS papers, and writes `catalogue/candidate_queue.tsv`.
+  - `src/run_literature_search.R` & `src/search/lexicons.R`: Multi-resource discovery engine (PubMed POST, Europe PMC journal + preprint `searchPOST` + `METHODS:` rescue, EBI GWAS Catalog REST v2, and blinded 6-seed citation snowballing), graph deduplication, 4-tier preprint-to-published upgrade detector, and Two-Stage Dual-Axis (`P_score` vs `S_score`) triage scorer.
+  - `src/extract_candidate_study.R` & `src/extract/*.R`: 4-tier cascading paper, low-RSS supplementary `.xlsx`/`.docx`/BioC, repository access-gate preflight, sentinel `rsID` coordinate genome-build resolver (`catalogue/schema/sentinel_build_anchors.tsv`), atomic field provenance, and `NEEDS_MANUAL_REVIEW` escalation checklist generator.
+  - `src/evaluate_positive_controls.R`: Strictly air-gapped post-hoc evaluator (`--mode blinded-summary`) for testing recall and triage survival against `data/positive_controls.tsv` (template in `catalogue/schema/positive_controls_template.tsv`).
 - `.github/`:
-  - `workflows/scheduled-search.yml`: Runs on the 1st and 15th of each month (or manually), opening a Pull Request with new candidate studies and preprint upgrade checks.
-  - `workflows/validate-and-deploy.yml`: Validates `catalogue/*.tsv`, renders `site/`, and deploys to GitHub Pages on merge to `main`.
-  - `workflows/release-catalogue.yml`: Publishes versioned TSV/JSON snapshots and `SHA256SUMS` as a GitHub Release whenever a `v*` tag is pushed.
+  - `workflows/scheduled-search.yml`: PR-gated search + 4-tier staging pipeline (cron paused until final search strategy sign-off; manual `workflow_dispatch` supports targeted `--verify-pmids` tests).
+  - `workflows/validate-and-deploy.yml`: Validates `catalogue/*.tsv`, renders `site/`, and deploys to GitHub Pages when enabled.
+  - `workflows/release-catalogue.yml`: Manual/tag-triggered workflow publishing versioned TSV/JSON snapshots and `SHA256SUMS` as a GitHub Release only when explicitly requested.
   - `ISSUE_TEMPLATE/`: Structured forms for community submissions and study updates.
 
 ## Quick Start
 
 ```bash
-# 1. Ensure Quarto CLI is available in ~/.local/bin
-bash src/setup_quarto.sh
+# 1. Launch local interactive website preview anytime (Ctrl+C to stop)
+cd ~/research/proteomic-gwas-catalogue && ~/.local/bin/quarto preview site
 
-# 2. (Prototype only) Regenerate simulated catalogue tables
-Rscript src/simulate_catalogue.R
+# 2. Targeted 2-paper verification of search + 4-tier extraction (no broad search)
+Rscript src/run_literature_search.R --verify-pmids 37794186,34857953 --out-dir output/verify
+Rscript src/extract_candidate_study.R --queue-file output/verify/candidate_queue_preview.tsv --batch-pending --out-dir output/verify/staging
 
-# 3. Validate tables and build site/data/catalogue.json
-Rscript src/build_site_data.R
-
-# 4. Render or preview the website locally
-~/.local/bin/quarto render site
-~/.local/bin/quarto preview site
+# 3. Evaluate search recall & triage survival against a blinded positive-control table
+Rscript src/evaluate_positive_controls.R --controls data/positive_controls.tsv --dump data/search_dump_<run_id>.tsv --mode blinded-summary
 ```

@@ -1,15 +1,23 @@
-name: Scheduled Literature Search (PR-Gated)
+name: Literature Search & Extraction Pipeline (PR-Gated)
 
 on:
-  schedule:
-    # Runs at 07:00 UTC on the 1st and 15th of every month
-    - cron: "0 7 1,15 * *"
+  # Uncomment schedule once the search strategy is finalised and signed off:
+  # schedule:
+  #   - cron: "0 7 1,15 * *"
   workflow_dispatch:
     inputs:
+      verify_pmids:
+        description: "Optional comma-separated PMIDs for targeted verification only (e.g. 37794186,34857953). Leave blank for date-window scan."
+        required: false
+        default: "37794186,34857953"
       since_date:
-        description: "Search start date (YYYY-MM-DD). Defaults to 35 days ago."
+        description: "Search start date (YYYY-MM-DD) when running a date-window scan."
         required: false
         default: ""
+      max_extract:
+        description: "Maximum pending primary candidates to run 4-tier paper/supplement extraction on."
+        required: false
+        default: "5"
 
 permissions:
   contents: write
@@ -17,54 +25,86 @@ permissions:
 
 jobs:
   literature-scan:
-    name: Query Literature & Open Triage PR
+    name: Discover, Triage & Extract Candidate Studies
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Set up R
+      - name: Set up R (RSPM binary packages)
         uses: r-lib/actions/setup-r@v2
         with:
           use-public-rspm: true
 
-      - name: Install jsonlite
-        run: Rscript -e 'if (!requireNamespace("jsonlite", quietly = TRUE)) install.packages("jsonlite")'
+      - name: Install R dependencies
+        run: |
+          Rscript -e '
+            pkgs <- c("jsonlite", "httr2", "xml2", "readxl")
+            miss <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+            if (length(miss) > 0) install.packages(miss)
+          '
 
       - name: Set up Quarto CLI
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Run multi-source proteomic GWAS search & triage
+      - name: Stage 1 — Multi-source literature discovery & dual-axis triage
         env:
+          VERIFY_PMIDS: ${{ github.event.inputs.verify_pmids }}
           SINCE_INPUT: ${{ github.event.inputs.since_date }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
-          TRIGGER_LABEL="Scheduled GitHub Action (${EVENT_NAME})"
-          if [[ -n "${SINCE_INPUT}" ]]; then
-            Rscript src/run_literature_search.R --since "${SINCE_INPUT}" --trigger "${TRIGGER_LABEL}"
+          TRIGGER_LABEL="GitHub Action (${EVENT_NAME})"
+          if [[ -n "${VERIFY_PMIDS}" ]]; then
+            mkdir -p staging/verify_run
+            Rscript src/run_literature_search.R \
+              --verify-pmids "${VERIFY_PMIDS}" \
+              --out-dir staging/verify_run \
+              --trigger "${TRIGGER_LABEL}"
+          elif [[ -n "${SINCE_INPUT}" ]]; then
+            Rscript src/run_literature_search.R \
+              --since "${SINCE_INPUT}" \
+              --trigger "${TRIGGER_LABEL}"
           else
-            Rscript src/run_literature_search.R --trigger "${TRIGGER_LABEL}"
+            Rscript src/run_literature_search.R \
+              --trigger "${TRIGGER_LABEL}"
           fi
 
-      - name: Verify Quarto site renders cleanly with updated search logs
+      - name: Stage 2 — 4-tier cascading paper, supplement & portal extraction
+        env:
+          VERIFY_PMIDS: ${{ github.event.inputs.verify_pmids }}
+          MAX_EXTRACT: ${{ github.event.inputs.max_extract }}
+        run: |
+          QUEUE_PATH="catalogue/candidate_queue.tsv"
+          if [[ -n "${VERIFY_PMIDS}" && -f "staging/verify_run/candidate_queue_preview.tsv" ]]; then
+            QUEUE_PATH="staging/verify_run/candidate_queue_preview.tsv"
+          fi
+          Rscript src/extract_candidate_study.R \
+            --queue-file "${QUEUE_PATH}" \
+            --batch-pending \
+            --max-extract "${MAX_EXTRACT:-5}" \
+            --cache-dir "${RUNNER_TEMP}/pgwas-extract-cache" \
+            --out-dir staging
+
+      - name: Validate catalogue & verify Quarto website renders cleanly
         run: quarto render site
 
-      - name: Open Pull Request for Curator Verification
+      - name: Open Pull Request for Curator Verification (date-window scans only)
+        if: ${{ github.event.inputs.verify_pmids == '' }}
         uses: peter-evans/create-pull-request@v8
         with:
-          commit-message: "chore(search): automated proteomic GWAS scan (${{ github.run_number }})"
+          commit-message: "chore(search): automated proteomic GWAS scan & staging (${{ github.run_number }})"
           branch: automated/literature-scan
           delete-branch: true
-          title: "Automated Literature Scan: Candidate Protein GWAS & Search Log Update"
+          title: "Automated Literature Scan: Candidate Protein GWAS & Staged Extractions"
           body: |
-            ## Automated Proteomic GWAS Discovery Scan
+            ## Automated Proteomic GWAS Discovery & 4-Tier Extraction
 
-            `src/run_literature_search.R` queried Europe PMC (PubMed/MEDLINE + bioRxiv/medRxiv preprints), logged the run in `catalogue/search_runs.tsv`, and updated `catalogue/candidate_queue.tsv`.
+            1. **Stage 1 (`src/run_literature_search.R`):** Queried PubMed, Europe PMC (journal articles + preprints), EBI GWAS Catalog REST v2, and blinded citation snowballs; deduplicated records; checked active preprints for published upgrades; and scored candidates via the Two-Stage Dual-Axis (`P_score` vs `S_score`) triage rubric.
+            2. **Stage 2 (`src/extract_candidate_study.R`):** Executed the 4-tier cascading extractor (Structured APIs -> Legal OA Full-Text XML/BioC -> Low-RSS Supplementary Tables/Docs & Repository Preflight -> Provenance & `NEEDS_MANUAL_REVIEW` Escalation) into `staging/`.
 
-            ### Curator Verification Checklist
-            - [ ] Review rows marked `Likely Primary pGWAS` or `Needs Human Check` in `catalogue/candidate_queue.tsv`
-            - [ ] Verify full text and Data Availability Statement for sample size, ancestry, matrix, genome build, transformation, covariates, and summary-statistics URL
-            - [ ] Check whether any active `Preprint` in `catalogue/studies.tsv` has now been published in a peer-reviewed journal (`superseded_by`)
-            - [ ] Add verified studies/strata to `catalogue/studies.tsv`, `catalogue/strata.tsv`, and `catalogue/cohort_membership.tsv`
-            - [ ] Move rejected secondary MR/EWAS IDs into `catalogue/excluded_records.tsv`
-            - [ ] Optionally add a new row to `catalogue/releases.tsv` if cutting a new versioned release on merge
+            ### Curator Review Checklist
+            - [ ] Inspect `staging/*_review.md` checklists for any candidates flagged `NEEDS_MANUAL_REVIEW` (closed-license `Methods`, ambiguous `access_level`, or missing mandatory fields)
+            - [ ] Promote verified rows from `staging/*_draft_{studies,strata,cohorts}.tsv` into `catalogue/`
+            - [ ] Apply any `staging/*_preprint_supersede_patch.tsv` updates to superseded preprints in `catalogue/studies.tsv`
+            - [ ] Move rejected secondary 2SMR / EWAS identifiers into `catalogue/excluded_records.tsv`

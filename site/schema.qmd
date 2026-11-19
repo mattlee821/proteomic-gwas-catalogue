@@ -5,53 +5,63 @@ toc: true
 
 ## Architecture Overview
 
-The **Proteomic GWAS Catalogue** separates canonical, Git-versioned flat TSV tables (`catalogue/*.tsv`) from the static Quarto + Observable JS interface (`site/`), validated and deployed automatically via GitHub Actions.
+The **Proteomic GWAS Catalogue** combines a 4-source literature discovery & dual-axis triage engine (`src/run_literature_search.R`), a 4-tier cascading paper/supplement/portal metadata extractor (`src/extract_candidate_study.R`), a strictly blinded positive-control benchmark evaluator (`src/evaluate_positive_controls.R`), and canonical Git-versioned TSV tables (`catalogue/*.tsv`) rendered via Quarto + Observable JS (`site/`).
 
 ```{mermaid}
-flowchart LR
-  A["Scheduled Search Action\n(1st & 15th monthly)"] -->|"Queries PubMed, Europe PMC,\nbioRxiv/medRxiv, GWAS Catalog"| B["src/run_literature_search.R"]
-  B -->|"Opens Candidate PR\n(primary vs 2SMR triage)"| C["Curator Review & Full-Text Check"]
-  D["Community Submission\n(GitHub Issue Form)"] --> C
-  C -->|"Merge to main"| E["src/validate_catalogue.R\n& src/build_site_data.R"]
-  E -->|"Deploy static site"| F["GitHub Pages Web App"]
-  E -->|"git tag vYYYY.MM"| G["GitHub Release + Zenodo DOI\n(TSV & JSON snapshots)"]
-  G -->|"study_id / stratum_id"| H["GWASprocessing Manifests"]
+flowchart TD
+  subgraph Search["1. Multi-Source Discovery & Dual-Axis Triage"]
+    S1["PubMed E-utilities POST\n+ Europe PMC (MED/PMC/PPR)\n+ GWAS Catalog v2 + 6-Seed Snowball"] --> S2["Graph Deduplication &\n4-Tier Preprint Upgrade Check"]
+    S2 --> S3["Stage 1 Hard Gates +\nStage 2 P_score vs S_score Rubric"]
+  end
+
+  subgraph Extract["2. Four-Tier Paper & Supplement Extraction"]
+    S3 -->|"Actionable Primary Candidates\n(17-col candidate_queue.tsv)"| E1["Tier 1: Europe PMC, PubMed XML,\nCrossref, Unpaywall, GWAS Catalog v2"]
+    E1 --> E2["Tier 2: Legal OA Full-Text JATS XML /\nPMC BioC Section Parser"]
+    E2 --> E3["Tier 3: BioStudies / supplmat BioC /\nLow-RSS .xlsx Streamer + Portal Preflight\n+ Sentinel rsID Genome-Build Resolver"]
+    E3 --> E4{"Tier 4: All Mandatory Fields\nVerified & Conflict-Free?"}
+    E4 -- "Yes" --> R1["staging/*_draft_*.tsv\n(Ready for Curator Sign-Off)"]
+    E4 -- "Missing / Closed Methods /\nPortal Gate" --> R2["NEEDS_MANUAL_REVIEW\nstaging/*_review.md Checklist"]
+  end
+
+  R1 & R2 -->|"Curator PR Merge"| V["src/validate_catalogue.R &\nsrc/build_site_data.R"]
+  V -->|"Static Site"| W["Quarto + Observable JS App"]
+  S3 -.->|"Air-gapped post-hoc check"| PC["src/evaluate_positive_controls.R\n(--mode blinded-summary)"]
 ```
 
 ---
 
-## Three-Tier Relational Table Design
+## Relational Table Design (`catalogue/`)
 
 | File | Primary Key | Unit of Observation | Purpose |
 | :--- | :--- | :--- | :--- |
-| `catalogue/studies.tsv` | `study_id` | 1 row per paper or preprint (`<author>_<year>_PMID<pmid>`) | Tracks citation metadata, `Published` vs `Preprint` vs `Superseded Preprint`, `superseded_by` lineage, repository, URL, and access conditions. |
-| `catalogue/strata.tsv` | `stratum_id` | 1 row per downloadable GWAS dataset within a study | Captures ancestry, sex, `n_samples` (no sample-size cutoff), biological matrix, platform & version, `n_assays`, genome build, `coverage` (`genome_wide`, `cis_only`, `top_hits_only`), phenotype transformation, `effect_scale`, `has_eaf`, `indel_encoding`, and `gwasprocessing_yaml`. |
-| `catalogue/cohort_membership.tsv` | `(study_id, cohort)` | 1 row per participating biobank/cohort in a study | Powers exact participant-overlap detection before meta-analysis or two-sample MR. |
+| `catalogue/studies.tsv` | `study_id` | 1 row per paper or preprint (`<author>_<year>_PMID<pmid>`) | Citation metadata, `Published` vs `Preprint` vs `Superseded Preprint`, `superseded_by` lineage, repository, URL, and HTTP-verified `access_level`. |
+| `catalogue/strata.tsv` | `stratum_id` | 1 row per downloadable GWAS dataset within a study | Ancestry (`EUR`, `AFR`, `EAS`, `CSA`, `AMR`, `MID`, `Multi-ancestry`), sex, post-QC genetic `n_samples` (no sample-size cutoff), 12-category `sample_matrix`, platform & version, `n_assays`, `genome_build`, `coverage`, transformation, `effect_scale`, `has_eaf`, `indel_encoding`, and `gwasprocessing_yaml`. |
+| `catalogue/cohort_membership.tsv` | `(study_id, cohort)` | 1 row per participating biobank/cohort | Powers exact participant-overlap warnings before meta-analysis or two-sample MR. |
 | `catalogue/proteins_index.tsv` | `(stratum_id, assay_id)` | 1 row per assayed protein target per stratum | Maps `UniProt` + `gene_symbol` + platform `assay_id` (`SeqId`, `OlinkID`, MS peptide, `NULISA`) to standardized `UNIPROT_ASSAYID` names. |
+| `catalogue/candidate_queue.tsv` | `candidate_id` | 17-column discovery-to-extraction handoff queue | Passes `pmid`, `doi`, `pmcid`, `epmc_id`, `matched_sources`, `p_score`, `s_score`, and `preprint_lineage_note` into `src/extract_candidate_study.R`. |
 
 ---
 
-## Integration with `GWASprocessing`
-
-To keep public metadata decoupled from private local server paths:
-
-1. **Public catalogue (`proteomic-gwas-catalogue`):** Stores study provenance, stratum metadata, assay mappings, and public download URLs/accessions, plus the optional `gwasprocessing_yaml` filename (e.g. `ferkingstad_2021_34857953.yaml`, `sun_2023_37794186.yaml`).
-2. **Harmonisation pipeline (`GWASprocessing`):** Keeps parser-specific YAML directives (multiallelic flags, sidecar join tables, local `GWAS_location` server paths) and joins directly on `study_id`, `stratum_id`, and `UNIPROT_ASSAYID`.
-
----
-
-## Local Development & Verification Commands
+## Key CLI Workflows
 
 ```bash
-# 1. Ensure Quarto CLI is installed in ~/.local/bin (outside OneDrive)
-bash src/setup_quarto.sh
+# 1. Launch local interactive preview anytime (Ctrl+C to stop)
+cd ~/research/proteomic-gwas-catalogue && ~/.local/bin/quarto preview site
 
-# 2. Validate catalogue/*.tsv integrity & rebuild site/data/catalogue.json
-Rscript src/build_site_data.R
+# 2. Targeted 2-paper verification of search + triage (no broad search executed)
+Rscript src/run_literature_search.R \
+  --verify-pmids 37794186,34857953 \
+  --out-dir output/verify_search
 
-# 3. Preview or render the static Quarto + Observable JS website
-~/.local/bin/quarto render site
+# 3. 4-tier cascading extraction on a candidate study (paper -> supplements -> portal -> provenance)
+Rscript src/extract_candidate_study.R \
+  --pmid 37794186 \
+  --out-dir output/extract_test
 
-# 4. Run automated literature search locally (dry-run or live date window)
-Rscript src/run_literature_search.R --since 2026-10-01 --dry-run
+# 4. Blinded positive-control recall & triage-survival evaluation (strictly air-gapped)
+#    See catalogue/schema/positive_controls_template.tsv for input format
+Rscript src/evaluate_positive_controls.R \
+  --controls data/positive_controls.tsv \
+  --dump data/search_dump_<run_id>.tsv \
+  --mode blinded-summary
 ```
