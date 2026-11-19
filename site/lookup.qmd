@@ -46,48 +46,119 @@ mutable selectedUniprot = "P05231"
 ```
 
 ```{ojs}
-// Banner box with "Protein Lookup" header on line 1 and centered search bar on line 2
+// Banner box with "Protein Lookup" header on line 1 and centered typeahead search bar on line 2
+// (Suggestions appear ONLY as the user types — never when merely clicking an empty input)
 {
-  const resolveProteinQuery = (raw) => {
-    const q = (raw || "").trim().toLowerCase();
-    if (!q) return;
-    const exact = protSummary.find(p =>
-      p.gene_symbol.toLowerCase() === q ||
-      p.uniprot.toLowerCase() === q ||
-      `${p.gene_symbol} (${p.uniprot}) — ${p.protein_name}`.toLowerCase() === q
-    );
-    if (exact) {
-      mutable selectedUniprot = exact.uniprot;
+  let matches = [];
+  let activeIdx = -1;
+
+  const menu = htl.html`<div class="typeahead-menu"></div>`;
+
+  const closeMenu = () => {
+    menu.style.display = "none";
+    menu.replaceChildren();
+    matches = [];
+    activeIdx = -1;
+  };
+
+  const selectProtein = (p) => {
+    mutable selectedUniprot = p.uniprot;
+    searchInput.value = `${p.gene_symbol} (${p.uniprot}) — ${p.protein_name}`;
+    closeMenu();
+  };
+
+  const renderMenu = () => {
+    if (matches.length === 0) {
+      closeMenu();
       return;
     }
-    const partial = protSummary.find(p =>
-      `${p.gene_symbol} ${p.uniprot} ${p.protein_name}`.toLowerCase().includes(q)
+    const items = matches.map((p, idx) =>
+      htl.html`<div
+        class="typeahead-item ${idx === activeIdx ? "is-active" : ""}"
+        onmousedown=${e => {
+          e.preventDefault();
+          selectProtein(p);
+        }}
+      >
+        <div>
+          <strong>${p.gene_symbol}</strong>
+          <span class="mono" style="color:#64748b;margin-left:4px;">(${p.uniprot})</span>
+          <span style="color:#475569;margin-left:6px;">${p.protein_name}</span>
+        </div>
+        <span class="mono" style="color:#64748b;white-space:nowrap;">${p.n_studies} studies</span>
+      </div>`
     );
-    if (partial) {
-      mutable selectedUniprot = partial.uniprot;
+    menu.replaceChildren(...items);
+    menu.style.display = "block";
+  };
+
+  const handleInput = (raw) => {
+    const q = (raw || "").trim().toLowerCase();
+    if (!q) {
+      closeMenu();
+      return;
+    }
+
+    const scored = [];
+    for (const p of protSummary) {
+      const gs = p.gene_symbol.toLowerCase();
+      const up = p.uniprot.toLowerCase();
+      const nm = p.protein_name.toLowerCase();
+      let rank = 99;
+      if (gs === q || up === q) rank = 1;
+      else if (gs.startsWith(q) || up.startsWith(q)) rank = 2;
+      else if (nm.startsWith(q)) rank = 3;
+      else if (`${gs} ${up} ${nm}`.includes(q)) rank = 4;
+      if (rank < 99) scored.push({ p, rank });
+    }
+    scored.sort((a, b) => (a.rank - b.rank) || a.p.gene_symbol.localeCompare(b.p.gene_symbol));
+    matches = scored.slice(0, 10).map(s => s.p);
+    activeIdx = matches.length > 0 ? 0 : -1;
+    renderMenu();
+
+    // Update live view immediately if exact gene symbol or UniProt match is typed
+    const exact = protSummary.find(p => p.gene_symbol.toLowerCase() === q || p.uniprot.toLowerCase() === q);
+    if (exact) {
+      mutable selectedUniprot = exact.uniprot;
     }
   };
 
   const searchInput = htl.html`<input
     class="col-filter-input"
-    list="protein-lookup-options"
-    style="width:520px;max-width:100%;font-size:0.88rem;padding:0.48rem 0.75rem;"
+    autocomplete="off"
+    spellcheck="false"
+    style="width:100%;font-size:0.88rem;padding:0.48rem 0.75rem;"
     type="search"
-    placeholder="Search UniProt, gene symbol, or protein name (e.g. IL6, P05231)..."
-    oninput=${e => resolveProteinQuery(e.target.value)}
-    onchange=${e => resolveProteinQuery(e.target.value)}
+    placeholder="Type UniProt, gene symbol, or protein name (e.g. IL6, P05231)..."
+    oninput=${e => handleInput(e.target.value)}
+    onkeydown=${e => {
+      if (menu.style.display === "none" || matches.length === 0) return;
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        activeIdx = (activeIdx + 1) % matches.length;
+        renderMenu();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        activeIdx = (activeIdx - 1 + matches.length) % matches.length;
+        renderMenu();
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (activeIdx >= 0 && matches[activeIdx]) selectProtein(matches[activeIdx]);
+      } else if (e.key === "Escape") {
+        closeMenu();
+      }
+    }}
+    onblur=${() => setTimeout(closeMenu, 120)}
   >`;
-
-  const datalist = htl.html`<datalist id="protein-lookup-options">
-    ${protSummary.map(p => htl.html`<option value="${p.gene_symbol} (${p.uniprot}) — ${p.protein_name}"></option>`)}
-  </datalist>`;
 
   return htl.html`<div class="pg-shell" style="padding-bottom:0;">
     <div class="hero-banner" style="flex-direction:column;align-items:stretch;gap:0.6rem;">
       <h1 style="margin:0;">Protein Lookup</h1>
       <div style="display:flex;justify-content:center;width:100%;">
-        ${searchInput}
-        ${datalist}
+        <div class="typeahead-wrap">
+          ${searchInput}
+          ${menu}
+        </div>
       </div>
     </div>
   </div>`;

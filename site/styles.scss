@@ -43,6 +43,52 @@ $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
+  overflow: visible;
+}
+
+/* Typeahead suggestion dropdown on Protein Lookup (hidden until user types) */
+.typeahead-wrap {
+  position: relative;
+  width: 520px;
+  max-width: 100%;
+}
+
+.typeahead-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+  max-height: 280px;
+  overflow-y: auto;
+  display: none;
+  text-align: left;
+}
+
+.typeahead-item {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.83rem;
+  color: #0f172a;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.typeahead-item:last-child {
+  border-bottom: none;
+}
+
+.typeahead-item:hover,
+.typeahead-item.is-active {
+  background: #eff6ff;
+  color: #0f4c81;
 }
 
 .hero-banner h1 {
