@@ -26,9 +26,15 @@ runs     <- read_cat("search_runs.tsv")
 queue    <- read_cat("candidate_queue.tsv")
 releases <- read_cat("releases.tsv")
 
-# Copy raw TSVs into site/data/ for static downloads
+copy_if_changed <- function(src, dst) {
+  if (!file.exists(dst) || unname(tools::md5sum(src)) != unname(tools::md5sum(dst))) {
+    file.copy(src, dst, overwrite = TRUE)
+  }
+}
+
+# Copy raw TSVs into site/data/ for static downloads (only updating mtime when content changes)
 for (f in c("studies.tsv", "strata.tsv", "cohort_membership.tsv", "proteins_index.tsv", "search_runs.tsv", "releases.tsv")) {
-  file.copy(file.path(cat_dir, f), file.path(site_data_dir, f), overwrite = TRUE)
+  copy_if_changed(file.path(cat_dir, f), file.path(site_data_dir, f))
 }
 
 # Compute pairwise study overlap from cohort_membership.tsv (excluding superseded preprints)
@@ -155,8 +161,7 @@ payload <- list(
     data_mode = "simulated_prototype",
     current_version = cur_ver,
     last_updated = last_upd,
-    last_search_date = last_src,
-    generated_at = format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")
+    last_search_date = last_src
   ),
   studies = studies,
   strata = strata_enriched,
@@ -169,5 +174,8 @@ payload <- list(
 )
 
 json_path <- file.path(site_data_dir, "catalogue.json")
-jsonlite::write_json(payload, path = json_path, auto_unbox = TRUE, pretty = TRUE, na = "null")
+tmp_json  <- tempfile(fileext = ".json")
+jsonlite::write_json(payload, path = tmp_json, auto_unbox = TRUE, pretty = TRUE, na = "null")
+copy_if_changed(tmp_json, json_path)
+unlink(tmp_json)
 message("Built ", json_path, " (", round(file.info(json_path)$size / 1024, 1), " KB)")

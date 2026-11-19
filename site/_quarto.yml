@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: _site
-  pre-render: pre_render.R
   resources:
     - data/*.json
     - data/*.tsv

@@ -87,7 +87,9 @@ jobs:
             --out-dir staging
 
       - name: Validate catalogue & verify Quarto website renders cleanly
-        run: quarto render site
+        run: |
+          Rscript src/build_site_data.R
+          quarto render site
 
       - name: Open Pull Request for Curator Verification (date-window scans only)
         if: ${{ github.event.inputs.verify_pmids == '' }}

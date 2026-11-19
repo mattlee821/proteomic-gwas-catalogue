@@ -37,7 +37,10 @@ jobs:
       - name: Set up Quarto CLI
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render Quarto + Observable JS website (runs pre_render.R validation & JSON build)
+      - name: Validate catalogue & build site data bundle
+        run: Rscript src/build_site_data.R
+
+      - name: Render Quarto + Observable JS website
         run: quarto render site
 
       - name: Check whether GitHub Pages is enabled on this repository
