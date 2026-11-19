@@ -5,90 +5,182 @@ pagetitle: "Search Update Log · Proteomic GWAS Catalogue"
 ```{ojs}
 catData = FileAttachment("data/catalogue.json").json()
 runs = catData.search_runs
+meta = catData.metadata
+replacedPreprints = Array.isArray(catData.preprints_replaced) ? catData.preprints_replaced : []
 ```
 
 ```{ojs}
+// Log page: 4 exact banner boxes (UPDATED, DATE, SCREENED, INCLUDED) + expandable date-stamped log table + preprint replacement ledger
 {
-  const totFound    = runs.reduce((acc, r) => acc + Number(r.deduplicated_new || 0), 0);
-  const totRaw      = runs.reduce((acc, r) => acc + Number(r.raw_records || 0), 0);
-  const totIncluded = runs.reduce((acc, r) => acc + Number(r.studies_added || 0), 0);
-  const totExcluded = runs.reduce((acc, r) => acc + Number(r.excluded_records || 0), 0);
-  const totManual   = runs.reduce((acc, r) => acc + Number(r.manual_review_required || 0), 0);
+  const expanded = new Set();
+  const tbody = htl.html`<tbody></tbody>`;
+
+  function renderLogRows() {
+    const trs = [];
+    for (const r of runs) {
+      const isOpen = expanded.has(r.run_id);
+      const toggle = () => {
+        if (expanded.has(r.run_id)) expanded.delete(r.run_id);
+        else expanded.add(r.run_id);
+        renderLogRows();
+      };
+
+      const addedIds = (r.studies_added_ids || "").trim();
+      const replacedTxt = (r.preprints_replaced_details || "").trim();
+
+      trs.push(htl.html`<tr class="data-row ${isOpen ? "is-open" : ""}" onclick=${toggle}>
+        <td class="mono" style="font-weight:700;white-space:nowrap;">
+          <span style="display:inline-block;width:12px;color:#64748b;font-size:0.7rem;">${isOpen ? "▾" : "▸"}</span>
+          ${r.run_date}
+        </td>
+        <td class="mono">${r.date_from || r.run_date} → ${r.date_to || r.run_date}</td>
+        <td class="num-col"><strong>${Number(r.deduplicated_new).toLocaleString()}</strong></td>
+        <td class="num-col"><span class="pg-badge data-gw">+${Number(r.studies_added).toLocaleString()}</span></td>
+        <td class="num-col">${Number(r.excluded_records).toLocaleString()}</td>
+        <td class="num-col"><span class="pg-badge overlap-yes">${Number(r.manual_review_required).toLocaleString()}</span></td>
+        <td class="num-col">
+          ${Number(r.preprints_upgraded || 0) > 0
+            ? htl.html`<span class="pg-badge cur-ai-extracted">${Number(r.preprints_upgraded)} replaced</span>`
+            : htl.html`<span class="overlap-none">0</span>`}
+        </td>
+        <td><span class="pg-badge ${Number(r.studies_added) > 0 ? "cur-human-reviewed" : "data-unavail"}">${r.status}</span></td>
+      </tr>`);
+
+      if (isOpen) {
+        trs.push(htl.html`<tr class="detail-row">
+          <td colspan="8">
+            <div class="detail-topbar">
+              <div>
+                <p class="detail-title">Search Run <span class="mono">${r.run_id}</span> (${r.run_date})</p>
+                <div style="font-size:0.78rem;color:#475569;margin-top:2px;">
+                  Trigger: ${r.trigger} · Window: <span class="mono">${r.date_from || r.run_date}</span> to <span class="mono">${r.date_to || r.run_date}</span>
+                </div>
+              </div>
+              <div class="detail-links">
+                ${r.pr_number ? htl.html`<span class="pg-badge data-unavail">${r.pr_number}</span>` : ""}
+                ${r.release_tag ? htl.html`<span class="pg-badge cur-human-curated">${r.release_tag}</span>` : ""}
+              </div>
+            </div>
+
+            <div class="detail-3col">
+              <div class="detail-col-box">
+                <h4>SEARCH PARAMETERS</h4>
+                <div class="detail-kv"><strong>Databases queried:</strong> ${r.sources_queried}</div>
+                <div class="detail-kv"><strong>Raw API records:</strong> ${Number(r.raw_records).toLocaleString()}</div>
+                <div class="detail-kv"><strong>Unseen screened:</strong> ${Number(r.deduplicated_new).toLocaleString()}</div>
+              </div>
+
+              <div class="detail-col-box">
+                <h4>SCREENING &amp; REVIEW</h4>
+                <div class="detail-kv"><strong>Auto-excluded (2SMR / non-pGWAS):</strong> ${Number(r.auto_flagged_secondary_mr).toLocaleString()}</div>
+                <div class="detail-kv"><strong>Total excluded:</strong> ${Number(r.excluded_records).toLocaleString()}</div>
+                <div class="detail-kv"><strong>Manual review required:</strong> ${Number(r.manual_review_required).toLocaleString()}</div>
+              </div>
+
+              <div class="detail-col-box">
+                <h4>CATALOGUE UPDATES</h4>
+                <div class="detail-kv"><strong>Studies included (${Number(r.studies_added)}):</strong> <span class="mono">${addedIds || "None"}</span></div>
+                <div class="detail-kv"><strong>Preprints replaced by published record (${Number(r.preprints_upgraded || 0)}):</strong> <span class="mono">${replacedTxt || "None"}</span></div>
+              </div>
+            </div>
+          </td>
+        </tr>`);
+      }
+    }
+    tbody.replaceChildren(...trs);
+  }
+
+  renderLogRows();
 
   return htl.html`<div class="pg-shell">
     <div class="hero-banner">
       <div>
         <h1>Log</h1>
-        <p>Date-stamped log of literature search updates (newest at top), recording records retrieved, included, excluded, and flagged for manual review.</p>
+        <p>Date-stamped search update history (newest at top) and tracker of preprints replaced by peer-reviewed publications.</p>
       </div>
       <div>
-        <a class="btn-pill btn-pill-primary" href="data/search_runs.tsv" download>⬇ Download Search Log (.tsv)</a>
+        <a class="btn-pill btn-pill-primary" href="data/search_runs.tsv" download>⬇ Download Log (.tsv)</a>
       </div>
     </div>
 
     <div class="kpi-grid">
       <div class="kpi-card">
-        <div class="kpi-label">Search Updates Run</div>
-        <div class="kpi-value">${runs.length}</div>
-        <div class="kpi-sub">Latest run: ${runs.length ? runs[0].run_date : "—"}</div>
+        <div class="kpi-label">UPDATED</div>
+        <div class="kpi-value" style="font-size:1.18rem;">${meta.last_updated}</div>
+        <div class="kpi-sub">Version: <span class="mono">${meta.current_version}</span></div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Unseen Records Found</div>
-        <div class="kpi-value">${totFound.toLocaleString()}</div>
-        <div class="kpi-sub">${totRaw.toLocaleString()} raw API hits across sources</div>
+        <div class="kpi-label">DATE</div>
+        <div class="kpi-value" style="font-size:1.12rem;">${meta.date_from} → ${meta.date_to}</div>
+        <div class="kpi-sub">Search coverage window</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Included Studies</div>
-        <div class="kpi-value">${totIncluded.toLocaleString()}</div>
-        <div class="kpi-sub">Verified primary protein GWAS</div>
+        <div class="kpi-label">SCREENED</div>
+        <div class="kpi-value">${Number(meta.total_screened).toLocaleString()}</div>
+        <div class="kpi-sub">Total deduplicated records screened</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Excluded Records</div>
-        <div class="kpi-value">${totExcluded.toLocaleString()}</div>
-        <div class="kpi-sub">Secondary 2SMR, PWAS, EWAS &amp; non-GWAS</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Manual Review Flagged</div>
-        <div class="kpi-value">${totManual.toLocaleString()}</div>
-        <div class="kpi-sub">Candidates routed to human review</div>
+        <div class="kpi-label">INCLUDED</div>
+        <div class="kpi-value">${Number(meta.total_included).toLocaleString()}</div>
+        <div class="kpi-sub">Active primary studies in catalogue</div>
       </div>
     </div>
 
-    <div class="cat-table-wrap">
+    <div class="table-toolbar">
+      <span>Showing ${runs.length} search updates (newest at top) · Click any row to expand run details</span>
+    </div>
+
+    <div class="cat-table-wrap" style="margin-bottom:1.1rem;">
       <table class="cat-table">
         <thead>
           <tr class="sort-row" style="cursor:default;">
             <th>DATE</th>
-            <th>RUN ID &amp; TRIGGER</th>
-            <th>DATABASES QUERIED</th>
+            <th>SEARCH WINDOW</th>
             <th style="text-align:right;">RECORDS FOUND</th>
             <th style="text-align:right;">INCLUDED</th>
             <th style="text-align:right;">EXCLUDED</th>
             <th style="text-align:right;">MANUAL REVIEW</th>
+            <th style="text-align:right;">PREPRINTS REPLACED</th>
             <th>STATUS</th>
           </tr>
         </thead>
-        <tbody>
-          ${runs.map(r => htl.html`<tr class="data-row" style="cursor:default;">
-            <td class="mono" style="font-weight:700;white-space:nowrap;">${r.run_date}</td>
-            <td>
-              <div class="mono" style="font-weight:600;color:#0f172a;">${r.run_id}</div>
-              <div style="font-size:0.74rem;color:#64748b;">${r.trigger}</div>
-            </td>
-            <td style="max-width:300px;font-size:0.78rem;color:#334155;">${r.sources_queried}</td>
-            <td class="num-col">
-              <strong>${Number(r.deduplicated_new).toLocaleString()}</strong>
-              <div style="font-size:0.7rem;color:#64748b;">(${Number(r.raw_records).toLocaleString()} raw)</div>
-            </td>
-            <td class="num-col"><span class="pg-badge data-gw">+${Number(r.studies_added).toLocaleString()}</span></td>
-            <td class="num-col">${Number(r.excluded_records).toLocaleString()}</td>
-            <td class="num-col"><span class="pg-badge overlap-yes">${Number(r.manual_review_required).toLocaleString()}</span></td>
-            <td>
-              <span class="pg-badge ${Number(r.studies_added) > 0 ? "cur-human-reviewed" : "data-unavail"}">${r.status}</span>
-            </td>
-          </tr>`)}
-        </tbody>
+        ${tbody}
       </table>
+    </div>
+
+    <div class="panel-card">
+      <div class="panel-title">
+        <span>Preprints Replaced by Published Studies (${replacedPreprints.length})</span>
+        <span style="font-size:0.76rem;font-weight:400;color:#64748b;">Tracked automatically via <code>src/apply_preprint_upgrades.R</code></span>
+      </div>
+      ${replacedPreprints.length > 0
+        ? htl.html`<div class="cat-table-wrap">
+            <table class="cat-table">
+              <thead>
+                <tr class="sort-row" style="cursor:default;">
+                  <th>PREVIOUS PREPRINT ID</th>
+                  <th>PREPRINT CITATION &amp; DOI</th>
+                  <th>REPLACED BY PUBLISHED ID</th>
+                  <th>PUBLISHED CITATION &amp; LINKS</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${replacedPreprints.map(p => htl.html`<tr>
+                  <td class="mono">${p.preprint_study_id}</td>
+                  <td>
+                    ${p.preprint_citation} · <a class="mono" href="https://doi.org/${p.preprint_doi}" target="_blank" rel="noopener">${p.preprint_doi}</a>
+                  </td>
+                  <td class="mono" style="font-weight:700;color:#166534;">${p.published_study_id}</td>
+                  <td>
+                    ${p.published_citation}
+                    ${p.published_pmid ? htl.html` · <a class="mono" href="https://pubmed.ncbi.nlm.nih.gov/${p.published_pmid}/" target="_blank" rel="noopener">PMID: ${p.published_pmid}</a>` : ""}
+                    ${p.published_doi ? htl.html` · <a class="mono" href="https://doi.org/${p.published_doi}" target="_blank" rel="noopener">${p.published_doi}</a>` : ""}
+                  </td>
+                </tr>`)}
+              </tbody>
+            </table>
+          </div>`
+        : htl.html`<div style="font-size:0.84rem;color:#64748b;">No preprints have been replaced by published records yet.</div>`}
     </div>
   </div>`;
 }

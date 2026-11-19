@@ -870,6 +870,20 @@ search_runs <- data.frame(
     "2026-10-01",
     "2026-11-15"
   ),
+  date_from = c(
+    "2015-01-01",
+    "2026-07-01",
+    "2026-08-01",
+    "2026-09-01",
+    "2026-10-01"
+  ),
+  date_to = c(
+    "2026-07-01",
+    "2026-08-01",
+    "2026-09-01",
+    "2026-10-01",
+    "2026-11-15"
+  ),
   trigger = c(
     "Initial seed + retrospective sweep (2015–2026)",
     "Scheduled GitHub Action (cron)",
@@ -878,11 +892,11 @@ search_runs <- data.frame(
     "Scheduled GitHub Action (cron)"
   ),
   sources_queried = c(
-    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball",
-    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball",
-    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball",
-    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball",
-    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; OpenAlex Snowball"
+    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; Citation Snowball",
+    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; Citation Snowball",
+    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; Citation Snowball",
+    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; Citation Snowball",
+    "PubMed; Europe PMC; bioRxiv/medRxiv; EBI GWAS Catalog; Citation Snowball"
   ),
   raw_records = c(2840L, 164L, 192L, 178L, 211L),
   deduplicated_new = c(1910L, 68L, 81L, 74L, 89L),
@@ -892,7 +906,21 @@ search_runs <- data.frame(
   preprints_upgraded = c(1L, 0L, 0L, 0L, 0L),
   pr_number = c("PR #1", "PR #4", "PR #7", "PR #11", "PR #14"),
   release_tag = c("v0.1.0-sim", "", "", "", "v0.2.0-sim"),
-  status = c("Merged & Released", "Merged (0 primary)", "Merged (0 primary)", "Merged (0 primary)", "Open Triage / v0.2.0-sim"),
+  status = c("Completed", "Completed (0 new)", "Completed (0 new)", "Completed (0 new)", "Completed"),
+  studies_added_ids = c(
+    "suhre_2017_28240269; folk_2017_28369058; sun_2018_29875488; yao_2018_30148068; folkersen_2020_33067605; ferkingstad_2021_34857953; pietzner_2021_34648354; yang_2021_34239129; gudjonsson_2022_35078996; zhang_2022_35501419; sun_2023_37794186; eldjarn_2023_37794188; wingo_2023_brain_ms; schlosser_2023_urine; chen_2024_ckb_dual; koprulu_2025_sex_pgwas; campbell_2025_gs_diams; suhre_2025_proteograph",
+    "",
+    "",
+    "",
+    "lopez_2026_csf_nulisa_pre; patel_2026_somascan7k_pre; nakamura_2026_olinkht_pre"
+  ),
+  preprints_replaced_details = c(
+    "sun_2022_preprint -> sun_2023_37794186",
+    "",
+    "",
+    "",
+    ""
+  ),
   stringsAsFactors = FALSE
 )
 

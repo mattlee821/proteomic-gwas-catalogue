@@ -85,6 +85,7 @@ jobs:
             --max-extract "${MAX_EXTRACT:-5}" \
             --cache-dir "${RUNNER_TEMP}/pgwas-extract-cache" \
             --out-dir staging
+          Rscript src/apply_preprint_upgrades.R --staging-dir staging --check-live
 
       - name: Validate catalogue & verify Quarto website renders cleanly
         run: |

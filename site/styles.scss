@@ -60,16 +60,33 @@ $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
   line-height: 1.45;
 }
 
-/* Toolbar directly above full-width table */
-.table-toolbar {
+/* Toolbar & Pagination Bars */
+.table-toolbar,
+.pagination-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin-bottom: 0.55rem;
   font-size: 0.82rem;
   color: #475569;
+}
+
+.pagination-bar {
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.page-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-pill:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 /* KPI Boxes (used on Lookup & Log pages) */

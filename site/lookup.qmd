@@ -20,12 +20,16 @@ curationBadgeClass = c =>
   c === "Human-curated" ? "cur-human-curated" :
   c === "Human-reviewed" ? "cur-human-reviewed" : "cur-ai-extracted"
 
+accessBadgeClass = a =>
+  a === "open" ? "data-gw" :
+  a === "request" ? "data-cis" : "data-unavail"
+
 matchNumericFilter = (val, rawExpr) => {
   const expr = (rawExpr || "").trim().replace(/,/g, "");
   if (!expr) return true;
   const m = expr.match(/^(>=|<=|>|<|=)?\s*([0-9]+(?:\.[0-9]+)?)$/);
   if (m) {
-    const op = m[1] || ">=";
+    const op = m[1] || "=";
     const num = Number(m[2]);
     if (op === ">=") return val >= num;
     if (op === "<=") return val <= num;
@@ -42,57 +46,49 @@ mutable selectedUniprot = "P05231"
 ```
 
 ```{ojs}
-// Top Banner + Protein Search Bar (persisted input so typing never loses focus)
+// Banner box with ONLY "Protein Lookup" title and the search input inside it (no extra text or chip lists)
 {
-  const chipContainer = htl.html`<div style="margin-top:0.55rem;"></div>`;
-
-  const updateChips = (queryStr) => {
-    const q = (queryStr || "").trim().toLowerCase();
-    const matches = protSummary.filter(p =>
-      !q || `${p.gene_symbol} ${p.uniprot} ${p.protein_name}`.toLowerCase().includes(q)
+  const resolveProteinQuery = (raw) => {
+    const q = (raw || "").trim().toLowerCase();
+    if (!q) return;
+    const exact = protSummary.find(p =>
+      p.gene_symbol.toLowerCase() === q ||
+      p.uniprot.toLowerCase() === q ||
+      `${p.gene_symbol} (${p.uniprot}) — ${p.protein_name}`.toLowerCase() === q
     );
-
-    if (q && matches.length > 0 && !matches.some(m => m.uniprot === selectedUniprot)) {
-      mutable selectedUniprot = matches[0].uniprot;
+    if (exact) {
+      mutable selectedUniprot = exact.uniprot;
+      return;
     }
-
-    chipContainer.replaceChildren(
-      ...matches.map(p => htl.html`<button
-        class="quick-chip ${p.uniprot === selectedUniprot ? "active" : ""}"
-        onclick=${() => {
-          mutable selectedUniprot = p.uniprot;
-          updateChips(searchInput.value);
-        }}>
-        <strong>${p.gene_symbol}</strong> <span class="mono" style="opacity:0.8;">${p.uniprot}</span>
-        <span style="opacity:0.75;font-size:0.72rem;"> · ${p.protein_name}</span>
-      </button>`)
+    const partial = protSummary.find(p =>
+      `${p.gene_symbol} ${p.uniprot} ${p.protein_name}`.toLowerCase().includes(q)
     );
+    if (partial) {
+      mutable selectedUniprot = partial.uniprot;
+    }
   };
 
   const searchInput = htl.html`<input
     class="col-filter-input"
-    style="font-size:0.9rem;padding:0.5rem 0.75rem;"
-    type="text"
-    placeholder="Search protein by gene symbol (e.g. IL6, PCSK9, APOE), UniProt ID (e.g. P05231), or protein name..."
-    oninput=${e => updateChips(e.target.value)}
+    list="protein-lookup-options"
+    style="width:420px;max-width:100%;font-size:0.88rem;padding:0.45rem 0.7rem;"
+    type="search"
+    placeholder="Search UniProt, gene symbol, or protein name (e.g. IL6, P05231)..."
+    oninput=${e => resolveProteinQuery(e.target.value)}
+    onchange=${e => resolveProteinQuery(e.target.value)}
   >`;
 
-  updateChips("");
+  const datalist = htl.html`<datalist id="protein-lookup-options">
+    ${protSummary.map(p => htl.html`<option value="${p.gene_symbol} (${p.uniprot}) — ${p.protein_name}"></option>`)}
+  </datalist>`;
 
   return htl.html`<div class="pg-shell" style="padding-bottom:0;">
     <div class="hero-banner">
+      <h1 style="margin:0;">Protein Lookup</h1>
       <div>
-        <h1>Protein Lookup</h1>
-        <p>Search by UniProt accession, gene symbol, or protein name to inspect every study and assay in which that protein was measured.</p>
+        ${searchInput}
+        ${datalist}
       </div>
-    </div>
-
-    <div class="panel-card">
-      <div style="font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:#475569;margin-bottom:0.35rem;">
-        Select or Search Target Protein
-      </div>
-      ${searchInput}
-      ${chipContainer}
     </div>
   </div>`;
 }
@@ -111,47 +107,50 @@ activeProtRows = protIndex
 htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
   <div class="kpi-grid">
     <div class="kpi-card">
-      <div class="kpi-label">Selected Protein</div>
-      <div class="kpi-value">${activeProtMeta.gene_symbol} <span class="mono" style="font-size:0.9rem;font-weight:500;color:#64748b;">(${activeProtMeta.uniprot})</span></div>
+      <div class="kpi-label">PROTEIN</div>
+      <div class="kpi-value">${activeProtMeta.gene_symbol} <span class="mono" style="font-size:0.88rem;font-weight:500;color:#64748b;">(${activeProtMeta.uniprot})</span></div>
       <div class="kpi-sub">${activeProtMeta.protein_name}</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-label">Studies Measured In</div>
-      <div class="kpi-value">${activeProtMeta.n_studies} <span style="font-size:0.9rem;font-weight:500;color:#64748b;">studies (${activeProtMeta.n_strata} strata)</span></div>
+      <div class="kpi-label">STUDIES</div>
+      <div class="kpi-value">${activeProtMeta.n_studies} <span style="font-size:0.88rem;font-weight:500;color:#64748b;">(${activeProtMeta.n_strata} strata)</span></div>
       <div class="kpi-sub">${activeProtMeta.n_assays_total} total assay records</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-label">Max Sample Size (N)</div>
+      <div class="kpi-label">MAX N</div>
       <div class="kpi-value">${activeProtMeta.max_n.toLocaleString()}</div>
-      <div class="kpi-sub">Matrices: ${activeProtMeta.matrices}</div>
+      <div class="kpi-sub">Populations: ${activeProtMeta.ancestries}</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-label">Genome-Wide Datasets</div>
+      <div class="kpi-label">GENOME-WIDE DATA</div>
       <div class="kpi-value">${activeProtMeta.n_genome_wide}</div>
-      <div class="kpi-sub">Strata with full genome-wide sumstats</div>
+      <div class="kpi-sub">Strata with genome-wide sumstats</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-label">Platforms</div>
+      <div class="kpi-label">PLATFORMS</div>
       <div class="kpi-value" style="font-size:1.05rem;">${activeProtMeta.platforms}</div>
-      <div class="kpi-sub">${activeProtMeta.any_pav_flag ? "⚠ Coding-variant (PAV) epitope note" : "Cis-pQTL reported: " + (activeProtMeta.any_cis_pqtl ? "Yes" : "No")}</div>
+      <div class="kpi-sub">Matrices: ${activeProtMeta.matrices}</div>
     </div>
   </div>
 </div>`
 ```
 
 ```{ojs}
-// Reusable Catalogue-style Full-Width Study Table for the Selected Protein (with inline column filters & expandable rows)
+// Reusable Catalogue-style Full-Width Paginated Table for the Selected Protein
 {
   const rowsSource = activeProtRows;
   const state = {
     sortCol: "n",
     sortAsc: false,
+    pageSize: 10,
+    page: 1,
     expanded: new Set(),
     filters: {
-      study: "",
+      author: "",
+      year: "",
       cohort: "",
       overlap: "",
-      pop: "",
+      population: "",
       sex: "",
       n: "",
       sample: "",
@@ -162,23 +161,50 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
   };
 
   const countSpan = htl.html`<span></span>`;
+  const pageInfoSpan = htl.html`<span></span>`;
+
   const clearBtn = htl.html`<button class="btn-pill" style="display:none;padding:0.2rem 0.55rem;font-size:0.74rem;" onclick=${() => {
     for (const k of Object.keys(state.filters)) state.filters[k] = "";
     for (const el of filterInputs) el.value = "";
+    state.page = 1;
     renderRows();
-  }}>✕ Clear column filters</button>`;
+  }}>✕ Clear filters</button>`;
+
+  const pageSizeSelect = htl.html`<select class="col-filter-select" style="width:auto;min-width:68px;" onchange=${e => {
+    state.pageSize = e.target.value === "all" ? Infinity : Number(e.target.value);
+    state.page = 1;
+    renderRows();
+  }}>
+    <option value="10" selected>10</option>
+    <option value="20">20</option>
+    <option value="50">50</option>
+    <option value="all">All</option>
+  </select>`;
+
+  const prevBtn = htl.html`<button class="btn-pill" onclick=${() => {
+    if (state.page > 1) {
+      state.page -= 1;
+      renderRows();
+    }
+  }}>← Previous</button>`;
+
+  const nextBtn = htl.html`<button class="btn-pill" onclick=${() => {
+    state.page += 1;
+    renderRows();
+  }}>Next →</button>`;
 
   const cols = [
-    { key: "study",    label: "STUDY",    align: "left"  },
-    { key: "cohort",   label: "COHORT",   align: "left"  },
-    { key: "overlap",  label: "OVERLAP",  align: "left"  },
-    { key: "pop",      label: "POP",      align: "left"  },
-    { key: "sex",      label: "SEX",      align: "left"  },
-    { key: "n",        label: "N",        align: "right" },
-    { key: "sample",   label: "SAMPLE",   align: "left"  },
-    { key: "platform", label: "PLATFORM", align: "left"  },
-    { key: "assay",    label: "ASSAY ID", align: "right" },
-    { key: "data",     label: "DATA",     align: "left"  }
+    { key: "author",     label: "AUTHOR",     align: "left"  },
+    { key: "year",       label: "YEAR",       align: "left"  },
+    { key: "cohort",     label: "COHORT",     align: "left"  },
+    { key: "overlap",    label: "OVERLAP",    align: "left"  },
+    { key: "population", label: "POPULATION", align: "left"  },
+    { key: "sex",        label: "SEX",        align: "left"  },
+    { key: "n",          label: "N",          align: "right" },
+    { key: "sample",     label: "SAMPLE",     align: "left"  },
+    { key: "platform",   label: "PLATFORM",   align: "left"  },
+    { key: "assay",      label: "ASSAY",      align: "right" },
+    { key: "data",       label: "DATA",       align: "left"  }
   ];
 
   const sortIndicators = {};
@@ -189,8 +215,9 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
       if (state.sortCol === col.key) state.sortAsc = !state.sortAsc;
       else {
         state.sortCol = col.key;
-        state.sortAsc = col.key === "n" || col.key === "study" || col.key === "overlap" ? false : true;
+        state.sortAsc = ["year", "n", "overlap"].includes(col.key) ? false : true;
       }
+      state.page = 1;
       renderRows();
     }}>${col.label}${ind}</th>`;
   });
@@ -199,6 +226,7 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
   const makeTextFilter = (key, placeholder) => {
     const inp = htl.html`<input class="col-filter-input" type="text" placeholder=${placeholder} oninput=${e => {
       state.filters[key] = e.target.value;
+      state.page = 1;
       renderRows();
     }}>`;
     filterInputs.push(inp);
@@ -207,6 +235,7 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
   const makeSelectFilter = (key, options) => {
     const sel = htl.html`<select class="col-filter-select" onchange=${e => {
       state.filters[key] = e.target.value;
+      state.page = 1;
       renderRows();
     }}>
       <option value="">All</option>
@@ -217,15 +246,16 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
   };
 
   const filterRow = htl.html`<tr class="filter-row">
-    <th>${makeTextFilter("study", "Author, year, PMID...")}</th>
+    <th>${makeTextFilter("author", "Author / PMID...")}</th>
+    <th>${makeTextFilter("year", "e.g. 2023")}</th>
     <th>${makeTextFilter("cohort", "UKB, INTERVAL...")}</th>
-    <th>${makeTextFilter("overlap", "None, >0, study...")}</th>
-    <th>${makeTextFilter("pop", "Ancestry...")}</th>
+    <th>${makeTextFilter("overlap", "None, >0, ID...")}</th>
+    <th>${makeSelectFilter("population", ["EUR", "AFR", "EAS", "CSA", "AMR", "MID", "MULTI"])}</th>
     <th>${makeSelectFilter("sex", ["Combined", "Female", "Male"])}</th>
     <th>${makeTextFilter("n", ">=1000")}</th>
-    <th>${makeTextFilter("sample", "Plasma, serum, CSF...")}</th>
+    <th>${makeTextFilter("sample", "Plasma, serum...")}</th>
     <th>${makeTextFilter("platform", "SomaScan, Olink...")}</th>
-    <th>${makeTextFilter("assay", "OID..., SeqId...")}</th>
+    <th>${makeTextFilter("assay", "OID / SeqId...")}</th>
     <th>${makeSelectFilter("data", ["Genome-wide", "Gene-region", "Top-hits", "Unavailable"])}</th>
   </tr>`;
 
@@ -234,15 +264,16 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
   function getFiltered() {
     const f = state.filters;
     const rows = rowsSource.filter(d => {
-      if (f.study && !`${d.first_author} ${d.year} ${d.pmid || ""} ${d.doi || ""}`.toLowerCase().includes(f.study.toLowerCase())) return false;
+      if (f.author && !`${d.first_author} ${d.pmid || ""} ${d.doi || ""} ${d.study_id}`.toLowerCase().includes(f.author.toLowerCase())) return false;
+      if (f.year && !matchNumericFilter(d.year, f.year)) return false;
       if (f.cohort && !d.cohorts_display.toLowerCase().includes(f.cohort.toLowerCase())) return false;
       if (f.overlap) {
         const q = f.overlap.trim().toLowerCase();
         if (q === ">0" || q === "yes") {
           if (d.overlap_count === 0) return false;
-        } else if (!`${d.overlap_compact} ${d.overlap_details}`.toLowerCase().includes(q)) return false;
+        } else if (!`${d.overlap_compact} ${d.overlap_ids}`.toLowerCase().includes(q)) return false;
       }
-      if (f.pop && !`${d.ancestry_detail} ${d.ancestry_group}`.toLowerCase().includes(f.pop.toLowerCase())) return false;
+      if (f.population && d.pop_super !== f.population) return false;
       if (f.sex && d.sex !== f.sex) return false;
       if (f.n && !matchNumericFilter(d.n_samples, f.n)) return false;
       if (f.sample && !d.sample_matrix.toLowerCase().includes(f.sample.toLowerCase())) return false;
@@ -255,38 +286,22 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
     const dir = state.sortAsc ? 1 : -1;
     rows.sort((a, b) => {
       switch (state.sortCol) {
-        case "study":    return dir * ((a.year - b.year) || a.first_author.localeCompare(b.first_author));
-        case "cohort":   return dir * a.cohorts_display.localeCompare(b.cohorts_display);
-        case "overlap":  return dir * (a.overlap_count - b.overlap_count);
-        case "pop":      return dir * a.ancestry_detail.localeCompare(b.ancestry_detail);
-        case "sex":      return dir * a.sex.localeCompare(b.sex);
-        case "n":        return dir * (a.n_samples - b.n_samples);
-        case "sample":   return dir * a.sample_matrix.localeCompare(b.sample_matrix);
-        case "platform": return dir * a.platform_version.localeCompare(b.platform_version);
-        case "assay":    return dir * a.assay_id.localeCompare(b.assay_id);
-        case "data":     return dir * a.data_label.localeCompare(b.data_label);
-        default:         return dir * (a.n_samples - b.n_samples);
+        case "author":     return dir * (a.first_author.localeCompare(b.first_author) || (b.year - a.year));
+        case "year":       return dir * ((a.year - b.year) || (a.n_samples - b.n_samples));
+        case "cohort":     return dir * a.cohorts_display.localeCompare(b.cohorts_display);
+        case "overlap":    return dir * (a.overlap_count - b.overlap_count);
+        case "population": return dir * a.pop_super.localeCompare(b.pop_super);
+        case "sex":        return dir * a.sex.localeCompare(b.sex);
+        case "n":          return dir * (a.n_samples - b.n_samples);
+        case "sample":     return dir * a.sample_matrix.localeCompare(b.sample_matrix);
+        case "platform":   return dir * a.platform_version.localeCompare(b.platform_version);
+        case "assay":      return dir * a.assay_id.localeCompare(b.assay_id);
+        case "data":       return dir * a.data_label.localeCompare(b.data_label);
+        default:           return dir * (a.n_samples - b.n_samples);
       }
     });
     return rows;
   }
-
-  const downloadProteinTSV = () => {
-    const rows = getFiltered();
-    if (!rows.length) return;
-    const header = ["gene_symbol", "uniprot", "assay_id", "stratum_id", "first_author", "year", "pmid", "doi", "cohorts_display", "overlap_compact", "ancestry_detail", "sex", "n_samples", "sample_matrix", "platform_version", "n_assays", "data_label", "genome_build", "strand", "accession_or_url"];
-    const lines = [
-      header.join("\t"),
-      ...rows.map(r => header.map(c => r[c] == null ? "" : String(r[c]).replace(/\t|\n/g, " ")).join("\t"))
-    ];
-    const blob = new Blob([lines.join("\n")], { type: "text/tab-separated-values;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `${activeProtMeta.gene_symbol}_${activeProtMeta.uniprot}_studies.tsv`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
 
   function renderRows() {
     for (const c of cols) {
@@ -301,11 +316,24 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
     }
     clearBtn.style.display = Object.values(state.filters).some(v => v && v.trim() !== "") ? "inline-flex" : "none";
 
-    const rows = getFiltered();
-    countSpan.textContent = `Studies measuring ${activeProtMeta.gene_symbol} (${activeProtMeta.uniprot}): ${rows.length} assay-stratum rows · Click any row to expand details`;
+    const allRows = getFiltered();
+    const total = allRows.length;
+    const totalPages = state.pageSize === Infinity ? 1 : Math.max(1, Math.ceil(total / state.pageSize));
+    if (state.page > totalPages) state.page = totalPages;
+
+    const startIdx = state.pageSize === Infinity ? 0 : (state.page - 1) * state.pageSize;
+    const endIdx   = state.pageSize === Infinity ? total : Math.min(total, startIdx + state.pageSize);
+    const pageRows = allRows.slice(startIdx, endIdx);
+
+    countSpan.textContent = total === 0
+      ? `0 matching records for ${activeProtMeta.gene_symbol}`
+      : `Showing ${startIdx + 1}–${endIdx} of ${total} records for ${activeProtMeta.gene_symbol} · Click any row to expand`;
+    pageInfoSpan.textContent = `Page ${state.page} of ${totalPages}`;
+    prevBtn.disabled = state.page <= 1;
+    nextBtn.disabled = state.page >= totalPages;
 
     const trs = [];
-    for (const d of rows) {
+    for (const d of pageRows) {
       const rowKey = `${d.stratum_id}__${d.assay_id}`;
       const isOpen = state.expanded.has(rowKey);
       const toggle = () => {
@@ -318,41 +346,39 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
         <td>
           <div style="font-weight:600;color:#0f172a;">
             <span style="display:inline-block;width:12px;color:#64748b;font-size:0.7rem;">${isOpen ? "▾" : "▸"}</span>
-            ${d.first_author} (${d.year})
+            ${d.first_author}
           </div>
           <div class="mono" style="color:#64748b;padding-left:12px;">
-            ${d.pmid ? `PMID: ${d.pmid}` : "Preprint"}
+            ${d.pmid ? d.pmid : "Preprint"}
           </div>
         </td>
+        <td class="mono">${d.year}</td>
         <td>${d.cohorts_display}</td>
         <td>
           ${d.overlap_count > 0
             ? htl.html`<span class="pg-badge overlap-yes">${d.overlap_compact}</span>`
             : htl.html`<span class="overlap-none">None</span>`}
         </td>
-        <td>${d.ancestry_detail}</td>
+        <td class="mono"><strong>${d.pop_super}</strong></td>
         <td>${d.sex}</td>
         <td class="num-col"><strong>${d.n_samples.toLocaleString()}</strong></td>
         <td>${d.sample_matrix}</td>
         <td>
           <span class="pg-badge ${platBadgeClass(d.platform_category)}">${d.platform_category}</span>
-          <div style="font-size:0.72rem;color:#64748b;margin-top:1px;">${d.platform_version}</div>
+          <div style="font-size:0.71rem;color:#64748b;margin-top:1px;">${d.platform_version}</div>
         </td>
-        <td class="num-col">
-          <div style="font-weight:600;color:#0f4c81;">${d.assay_id}</div>
-          <div style="font-size:0.7rem;color:#64748b;">(${d.n_assays.toLocaleString()} total)</div>
-        </td>
+        <td class="num-col"><span class="mono" style="font-weight:600;color:#0f4c81;">${d.assay_id}</span></td>
         <td><span class="pg-badge ${dataBadgeClass(d.data_label)}">${d.data_label}</span></td>
       </tr>`);
 
       if (isOpen) {
         trs.push(htl.html`<tr class="detail-row">
-          <td colspan="10">
+          <td colspan="11">
             <div class="detail-topbar">
               <div>
                 <p class="detail-title">${d.title}</p>
                 <div style="font-size:0.78rem;color:#475569;margin-top:2px;">
-                  <em>${d.journal}</em> (${d.year}) · Standardised protein ID: <span class="mono" style="color:#0f4c81;font-weight:600;">${d.uniprot}_${d.assay_id}</span>
+                  <span class="mono">${d.study_id}</span> · Standardised ID: <span class="mono" style="color:#0f4c81;font-weight:600;">${d.uniprot}_${d.assay_id}</span>
                 </div>
               </div>
               <div class="detail-links">
@@ -363,28 +389,26 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
 
             <div class="detail-3col">
               <div class="detail-col-box">
-                <h4>Phenotype Information</h4>
-                <div class="detail-kv"><strong>Target assay ID:</strong> <span class="mono">${d.assay_id}</span> (${d.platform_version})</div>
-                <div class="detail-kv"><strong>Study assay count:</strong> ${d.n_assays.toLocaleString()} assays</div>
-                <div class="detail-kv"><strong>Sample matrix:</strong> ${d.sample_matrix}</div>
+                <h4>PHENOTYPE</h4>
+                <div class="detail-kv"><strong>Assay ID:</strong> <span class="mono">${d.assay_id}</span> (${d.platform_version})</div>
+                <div class="detail-kv"><strong>Total study assays:</strong> ${d.n_assays.toLocaleString()}</div>
+                <div class="detail-kv"><strong>Matrix:</strong> ${d.sample_matrix}</div>
                 <div class="detail-kv"><strong>Transformation:</strong> ${d.transformation} (<span class="mono">${d.effect_scale}</span>)</div>
               </div>
 
               <div class="detail-col-box">
-                <h4>Genetic Information</h4>
-                <div class="detail-kv"><strong>Genome build:</strong> <span class="mono" style="font-weight:700;">${d.genome_build}</span></div>
+                <h4>GENETIC</h4>
+                <div class="detail-kv"><strong>Population detail:</strong> ${d.ancestry_detail} (<span class="mono">${d.pop_super}</span>)</div>
+                <div class="detail-kv"><strong>Build:</strong> <span class="mono" style="font-weight:700;">${d.genome_build}</span></div>
                 <div class="detail-kv"><strong>Strand:</strong> <span class="mono" style="font-weight:700;">${d.strand || "Not reported"}</span></div>
-                <div class="detail-kv"><strong>Model / software:</strong> ${d.gwas_software}</div>
-                <div class="detail-kv"><strong>Covariates:</strong> ${d.covariates}</div>
-                <div class="detail-kv"><strong>Cis-pQTL reported:</strong> ${d.cis_pqtl_reported ? "Yes" : "Not reported"}${d.pav_epitope_flag ? " · ⚠ PAV/epitope sensitive" : ""}</div>
+                <div class="detail-kv"><strong>Model &amp; covariates:</strong> ${d.gwas_software} — ${d.covariates}</div>
               </div>
 
               <div class="detail-col-box">
-                <h4>Other Information</h4>
-                <div class="detail-kv"><strong>Curation provenance:</strong> <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span></div>
-                <div class="detail-kv"><strong>Overlapping catalogue studies:</strong> ${d.overlap_details}</div>
-                <div class="detail-kv"><strong>Data access &amp; format:</strong> ${d.access_level} · ${d.file_format}</div>
-                <div class="detail-kv"><strong>Notes:</strong> ${d.harmonisation_notes}</div>
+                <h4>OTHER</h4>
+                <div class="detail-kv"><strong>CURATION:</strong> <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span></div>
+                <div class="detail-kv"><strong>OVERLAP:</strong> <span class="mono">${d.overlap_ids}</span></div>
+                <div class="detail-kv"><strong>ACCESS:</strong> <span class="pg-badge ${accessBadgeClass(d.access_short)}">${d.access_short}</span></div>
               </div>
             </div>
           </td>
@@ -393,7 +417,7 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
     }
 
     if (trs.length === 0) {
-      trs.push(htl.html`<tr><td colspan="10" style="text-align:center;padding:1.5rem;color:#64748b;">No studies match the current column filters for ${activeProtMeta.gene_symbol}.</td></tr>`);
+      trs.push(htl.html`<tr><td colspan="11" style="text-align:center;padding:1.5rem;color:#64748b;">No studies match the current column filters.</td></tr>`);
     }
     tbody.replaceChildren(...trs);
   }
@@ -406,8 +430,12 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
         ${countSpan}
         ${clearBtn}
       </div>
-      <div>
-        <button class="btn-pill btn-pill-primary" onclick=${downloadProteinTSV}>⬇ Download ${activeProtMeta.gene_symbol} Table (.tsv)</button>
+      <div class="page-controls">
+        <span>Rows:</span>
+        ${pageSizeSelect}
+        ${prevBtn}
+        ${pageInfoSpan}
+        ${nextBtn}
       </div>
     </div>
 
@@ -425,22 +453,21 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
 ```
 
 ```{ojs}
-// Scatter / Bubble Figure Underneath the Protein Study Table
+// Scatter Plot Underneath the Table (minimal 4-line tooltip overlay)
 htl.html`<div class="pg-shell" style="padding-top:0;">
   <div class="panel-card">
     <div class="panel-title">
-      <span>Studies Measuring ${activeProtMeta.gene_symbol} (${activeProtMeta.uniprot}) Over Time</span>
-      <span style="font-size:0.78rem;font-weight:400;color:#64748b;">Bubble size = study assay count · Dashed outline = Preprint · Log10 sample size</span>
+      <span>Studies Measuring ${activeProtMeta.gene_symbol} (${activeProtMeta.uniprot})</span>
     </div>
     ${Plot.plot({
       width: 1150,
-      height: 280,
+      height: 270,
       marginLeft: 65,
       marginRight: 30,
       marginBottom: 38,
       style: { background: "transparent", fontSize: "12px", width: "100%" },
       x: {
-        label: "Publication / Preprint Year",
+        label: "Year",
         tickFormat: d => String(d),
         domain: [
           activeProtRows.length ? Math.min(2016.5, Math.min(...activeProtRows.map(d => d.year)) - 0.5) : 2016.5,
@@ -449,7 +476,7 @@ htl.html`<div class="pg-shell" style="padding-top:0;">
       },
       y: {
         type: "log",
-        label: "Sample Size N (log scale)",
+        label: "Sample Size N",
         grid: true
       },
       r: { range: [5, 18] },
@@ -460,7 +487,7 @@ htl.html`<div class="pg-shell" style="padding-top:0;">
       },
       marks: [
         Plot.dot(activeProtRows, {
-          x: d => d.year + (d.ancestry_group === "EUR" ? -0.07 : d.ancestry_group === "Multi-ancestry" ? 0 : 0.1),
+          x: d => d.year + (d.pop_super === "EUR" ? -0.07 : d.pop_super === "MULTI" ? 0 : 0.1),
           y: "n_samples",
           r: "n_assays",
           fill: "platform_category",
@@ -469,7 +496,7 @@ htl.html`<div class="pg-shell" style="padding-top:0;">
           strokeWidth: d => d.status === "Preprint" ? 2 : 1,
           strokeDasharray: d => d.status === "Preprint" ? "3,2" : null,
           tip: true,
-          title: d => `${d.first_author} (${d.year}) [${d.status}]\nAssay: ${d.assay_id} (${d.platform_version})\nCohort: ${d.cohorts_display} | Pop: ${d.ancestry_detail}\nN = ${d.n_samples.toLocaleString()} | Sample: ${d.sample_matrix}\nData: ${d.data_label}`
+          title: d => `${d.first_author} (${d.year})\n${d.study_id}\n${d.n_samples.toLocaleString()} | ${d.pop_super}\n${d.data_label}`
         })
       ]
     })}
