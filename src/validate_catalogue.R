@@ -38,13 +38,13 @@ check_cols <- function(df, name, req) {
 check_cols(studies, "studies.tsv", c(
   "study_id", "first_author", "year", "status", "superseded_by",
   "pmid", "doi", "journal", "title", "repository", "accession_or_url",
-  "access_level", "added_release", "verified_full_text"
+  "access_level", "added_release", "verified_full_text", "curation_tier"
 ))
 
 check_cols(strata, "strata.tsv", c(
   "stratum_id", "study_id", "cohorts_display", "ancestry_group", "ancestry_detail",
   "sex", "n_samples", "sample_matrix", "platform_category", "platform_version",
-  "n_assays", "n_unique_proteins", "genome_build", "imputation_panel", "coverage",
+  "n_assays", "n_unique_proteins", "genome_build", "strand", "imputation_panel", "coverage",
   "cis_window_kb", "transformation", "effect_scale", "covariates", "gwas_software",
   "file_format", "has_beta_se", "has_eaf", "indel_encoding", "gwasprocessing_yaml",
   "harmonisation_notes"
@@ -119,6 +119,7 @@ if (!is.null(studies) && !is.null(strata)) {
 
   check_vocab(studies$status, c("Published", "Preprint", "Superseded Preprint"), "studies$status")
   check_vocab(studies$access_level, c("Open download", "Portal registration", "Controlled access", "Upon request", "Not available"), "studies$access_level")
+  check_vocab(studies$curation_tier, c("AI-extracted", "Human-reviewed", "Human-curated"), "studies$curation_tier")
   check_vocab(strata$ancestry_group, c("EUR", "AFR", "EAS", "CSA", "AMR", "MID", "Multi-ancestry"), "strata$ancestry_group")
   check_vocab(strata$sex, c("Combined", "Female", "Male"), "strata$sex")
   check_vocab(strata$sample_matrix, c(
@@ -130,6 +131,7 @@ if (!is.null(studies) && !is.null(strata)) {
     "SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex", "Other Immunoassay"
   ), "strata$platform_category")
   check_vocab(strata$genome_build, c("GRCh36", "GRCh37", "GRCh38", "T2T-CHM13", "Unknown"), "strata$genome_build")
+  check_vocab(strata$strand, c("Forward (+)", "Reverse (-)", "Not reported"), "strata$strand")
   check_vocab(strata$coverage, c("genome_wide", "cis_only", "top_hits_only", "none"), "strata$coverage")
   check_vocab(strata$effect_scale, c(
     "SD_IRNT", "SD_Z", "NPX_log2", "log10_RFU", "log2_intensity", "raw_units", "Z_score_only"

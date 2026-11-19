@@ -26,12 +26,48 @@ runs     <- read_cat("search_runs.tsv")
 queue    <- read_cat("candidate_queue.tsv")
 releases <- read_cat("releases.tsv")
 
-# Copy raw TSVs into site/data/ so static GitHub Pages visitors can download them directly
+# Copy raw TSVs into site/data/ for static downloads
 for (f in c("studies.tsv", "strata.tsv", "cohort_membership.tsv", "proteins_index.tsv", "search_runs.tsv", "releases.tsv")) {
   file.copy(file.path(cat_dir, f), file.path(site_data_dir, f), overwrite = TRUE)
 }
 
-# Enrich strata with study-level fields so the main explorer has one flat fast array
+# Compute pairwise study overlap from cohort_membership.tsv (excluding superseded preprints)
+active_study_ids <- studies$study_id[studies$status != "Superseded Preprint"]
+active_cohorts   <- cohorts[cohorts$study_id %in% active_study_ids, , drop = FALSE]
+
+overlap_info <- lapply(studies$study_id, function(sid) {
+  my_cohorts <- unique(cohorts$cohort[cohorts$study_id == sid])
+  if (length(my_cohorts) == 0L) {
+    return(list(count = 0L, compact = "None", details = "None", ids = ""))
+  }
+  shared <- active_cohorts[active_cohorts$cohort %in% my_cohorts & active_cohorts$study_id != sid, , drop = FALSE]
+  if (nrow(shared) == 0L) {
+    return(list(count = 0L, compact = "None", details = "None", ids = ""))
+  }
+  by_other <- split(shared$cohort, shared$study_id)
+  other_ids <- names(by_other)
+  n_ov <- length(other_ids)
+  details_vec <- vapply(other_ids, function(oid) {
+    st_row <- studies[studies$study_id == oid, , drop = FALSE]
+    lbl <- if (nrow(st_row) > 0L) sprintf("%s (%s)", st_row$first_author[1], st_row$year[1]) else oid
+    sprintf("%s [%s: %s]", oid, lbl, paste(unique(by_other[[oid]]), collapse = ", "))
+  }, character(1L))
+  compact_lbl <- if (n_ov == 1L) "1 study" else sprintf("%d studies", n_ov)
+  list(
+    count = n_ov,
+    compact = compact_lbl,
+    details = paste(details_vec, collapse = "; "),
+    ids = paste(other_ids, collapse = ", ")
+  )
+})
+names(overlap_info) <- studies$study_id
+
+studies$overlap_count   <- vapply(overlap_info, `[[`, integer(1L), "count")
+studies$overlap_compact <- vapply(overlap_info, `[[`, character(1L), "compact")
+studies$overlap_details <- vapply(overlap_info, `[[`, character(1L), "details")
+studies$overlap_ids     <- vapply(overlap_info, `[[`, character(1L), "ids")
+
+# Enrich strata with study-level fields
 strata_enriched <- merge(
   strata,
   studies,
@@ -39,68 +75,48 @@ strata_enriched <- merge(
   all.x = TRUE,
   sort = FALSE
 )
-# Preserve original strata order (chronological / study order)
 strata_enriched <- strata_enriched[match(strata$stratum_id, strata_enriched$stratum_id), ]
 
-# Compute MR & Coloc readiness tier per stratum
-# - Full Ready: genome_wide or cis_only + has_beta_se + has_eaf + Open/Portal access
-# - Cis Ready: cis_only with beta/se + eaf
-# - Caution (Missing EAF / Indel codes): missing EAF or D/I indels
-# - Limited: top_hits_only or Controlled/Upon request
-has_eaf_clean  <- !is.na(strata_enriched$has_eaf) & as.logical(strata_enriched$has_eaf)
-has_beta_clean <- !is.na(strata_enriched$has_beta_se) & as.logical(strata_enriched$has_beta_se)
-
-strata_enriched$mr_coloc_readiness <- ifelse(
-  strata_enriched$coverage %in% c("top_hits_only", "none") |
-    strata_enriched$access_level %in% c("Controlled access", "Upon request", "Not available"),
-  "Limited (Access / Top-hits)",
+# 4-tier DATA availability label: Genome-wide | Gene-region | Top-hits | Unavailable
+strata_enriched$data_label <- ifelse(
+  strata_enriched$coverage == "none" | strata_enriched$access_level == "Not available",
+  "Unavailable",
   ifelse(
-    !has_beta_clean | !has_eaf_clean,
-    "Caution (No signed EAF / SE)",
+    strata_enriched$coverage == "genome_wide",
+    "Genome-wide",
     ifelse(
-      strata_enriched$coverage == "genome_wide",
-      "Full (Cis + Trans Ready)",
-      "Cis-Only Ready"
+      strata_enriched$coverage == "cis_only",
+      "Gene-region",
+      "Top-hits"
     )
   )
 )
 
-# Attach cohort list per study onto studies
-cohort_map <- split(cohorts, cohorts$study_id)
-studies$cohorts_list <- lapply(studies$study_id, function(sid) {
-  sub <- cohort_map[[sid]]
-  if (is.null(sub)) list() else sub[, c("cohort", "n_cohort")]
-})
+# Write full flattened catalogue export TSV for the one-click "Download Full Table" button
+export_cols <- c(
+  "stratum_id", "study_id", "first_author", "year", "pmid", "doi", "status",
+  "cohorts_display", "overlap_compact", "overlap_ids", "ancestry_detail", "ancestry_group",
+  "sex", "n_samples", "sample_matrix", "platform_category", "platform_version",
+  "n_assays", "n_unique_proteins", "data_label", "coverage", "cis_window_kb",
+  "genome_build", "strand", "imputation_panel", "transformation", "effect_scale",
+  "gwas_software", "covariates", "repository", "accession_or_url", "access_level",
+  "curation_tier", "gwasprocessing_yaml", "harmonisation_notes"
+)
+utils::write.table(
+  strata_enriched[, export_cols, drop = FALSE],
+  file = file.path(site_data_dir, "proteomic_gwas_catalogue_full.tsv"),
+  sep = "\t", row.names = FALSE, quote = FALSE, na = ""
+)
 
-# Attach max sample size, platforms, ancestries, and matrices summary to each study
-strata_by_study <- split(strata, strata$study_id)
-studies$max_n <- vapply(studies$study_id, function(sid) max(strata_by_study[[sid]]$n_samples), integer(1))
-studies$n_strata <- vapply(studies$study_id, function(sid) nrow(strata_by_study[[sid]]), integer(1))
-studies$platforms_summary <- vapply(studies$study_id, function(sid) {
-  paste(unique(strata_by_study[[sid]]$platform_category), collapse = ", ")
-}, character(1))
-studies$ancestries_summary <- vapply(studies$study_id, function(sid) {
-  paste(unique(strata_by_study[[sid]]$ancestry_group), collapse = ", ")
-}, character(1))
-studies$matrices_summary <- vapply(studies$study_id, function(sid) {
-  paste(unique(strata_by_study[[sid]]$sample_matrix), collapse = ", ")
-}, character(1))
-
-# Enrich protein index with compact stratum/study context for fast client-side rendering
+# Enrich protein index with full stratum/study context so Lookup reuses the exact Catalogue table + expandable row
 proteins_enriched <- merge(
   proteins,
-  strata_enriched[, c(
-    "stratum_id", "first_author", "year", "status", "superseded_by",
-    "ancestry_group", "sex", "n_samples", "sample_matrix",
-    "platform_category", "platform_version", "genome_build", "coverage",
-    "access_level", "accession_or_url", "mr_coloc_readiness", "gwasprocessing_yaml"
-  )],
+  strata_enriched[, setdiff(names(strata_enriched), "study_id"), drop = FALSE],
   by = "stratum_id",
   all.x = TRUE,
   sort = FALSE
 )
 
-# Protein directory summary (1 row per unique protein)
 prot_split <- split(proteins_enriched, proteins_enriched$uniprot)
 protein_summary <- do.call(rbind, lapply(prot_split, function(df) {
   active_df <- df[df$status != "Superseded Preprint", , drop = FALSE]
@@ -111,6 +127,7 @@ protein_summary <- do.call(rbind, lapply(prot_split, function(df) {
     n_studies = length(unique(active_df$study_id)),
     n_strata = length(unique(active_df$stratum_id)),
     n_assays_total = nrow(active_df),
+    n_genome_wide = sum(active_df$data_label == "Genome-wide"),
     max_n = if (nrow(active_df) > 0) max(active_df$n_samples) else 0L,
     platforms = paste(unique(active_df$platform_category), collapse = ", "),
     matrices = paste(unique(active_df$sample_matrix), collapse = ", "),
@@ -123,9 +140,15 @@ protein_summary <- do.call(rbind, lapply(prot_split, function(df) {
 protein_summary <- protein_summary[order(protein_summary$gene_symbol), ]
 rownames(protein_summary) <- NULL
 
+# Enrich search_runs with explicit excluded & manual-review counts for the Log tab (newest at top)
+runs$excluded_records <- pmax(0L, as.integer(runs$deduplicated_new) - as.integer(runs$studies_added))
+runs$manual_review_required <- as.integer(runs$candidates_for_review)
+runs_sorted <- runs[order(runs$run_date, runs$run_id, decreasing = TRUE), , drop = FALSE]
+rownames(runs_sorted) <- NULL
+
 cur_ver  <- if (nrow(releases) > 0 && nzchar(releases$version[1])) releases$version[1] else "unreleased (dev)"
 last_upd <- if (nrow(releases) > 0 && nzchar(releases$release_date[1])) releases$release_date[1] else format(Sys.Date(), "%Y-%m-%d")
-last_src <- if (nrow(runs) > 0) runs$run_date[nrow(runs)] else format(Sys.Date(), "%Y-%m-%d")
+last_src <- if (nrow(runs_sorted) > 0) runs_sorted$run_date[1] else format(Sys.Date(), "%Y-%m-%d")
 
 payload <- list(
   metadata = list(
@@ -140,7 +163,7 @@ payload <- list(
   cohort_membership = cohorts,
   protein_summary = protein_summary,
   proteins_index = proteins_enriched,
-  search_runs = runs,
+  search_runs = runs_sorted,
   candidate_queue = queue,
   releases = releases
 )

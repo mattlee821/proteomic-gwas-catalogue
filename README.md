@@ -16,11 +16,11 @@ Protein GWAS are spread across dozens of papers, preprints, cohorts, proteomic p
 ## Repository Structure
 
 - `catalogue/`: Canonical Git-tracked TSV tables (`studies.tsv`, `strata.tsv`, `cohort_membership.tsv`, `proteins_index.tsv`, `search_runs.tsv`, `candidate_queue.tsv`, `releases.tsv`). Currently populated with simulated benchmark + search data (`v0.2.0-sim`).
-- `site/`: Quarto + Observable JS (`ojs`) static web application with four interactive views:
-  1. **Catalogue Explorer (`site/index.qmd`):** Faceted filtering across strata/studies, timeline bubble plot, row-level harmonisation inspector, and filtered TSV export.
-  2. **Protein Lookup (`site/proteins.qmd`):** Instant cross-study search by gene symbol, UniProt accession, SomaScan `SeqId`, or `OlinkID`, with epitope/PAV sensitivity warnings.
-  3. **Cohort Overlap & Lineage (`site/overlap.qmd`):** Interactive biobank/cohort overlap matrix for meta-analysis and two-sample MR checks, plus preprint-to-published lineage.
-  4. **Search Log & Releases (`site/updates.qmd`):** PRISMA screening metrics, automated search run logs, candidate PR triage preview, and versioned TSV/JSON downloads.
+- `site/`: Quarto + Observable JS (`ojs`) static web application with four tabs:
+  1. **Catalogue (`site/index.qmd`):** Full-width 10-column reference table (`STUDY`, `COHORT`, `OVERLAP`, `POP`, `SEX`, `N`, `SAMPLE`, `PLATFORM`, `ASSAY`, `DATA`) with inline per-column filter/search inputs, click-to-expand inline 3-column detail rows (`Phenotype`, `Genetic` incl. build & strand, and `Other` incl. `AI-extracted` / `Human-reviewed` / `Human-curated` provenance and overlapping study IDs), and full-table `.tsv` download.
+  2. **Lookup (`site/lookup.qmd`):** Protein-centric lookup by UniProt accession, gene symbol, or protein name, populating summary KPI boxes, a reusable column-filterable study table, and a `Year × Sample Size` bubble figure underneath.
+  3. **Log (`site/log.qmd`):** Date-stamped search update log (newest at top) recording records found, included, excluded, and flagged for manual review.
+  4. **About (`site/about.qmd`):** Detailed documentation of the search strategy, inclusion/exclusion criteria, AI/automated extraction pipelines, and human review tiers.
 - `src/`: R and shell scripts:
   - `src/setup_quarto.sh`: Installs Quarto CLI into `~/.local/share/quarto` and `~/.local/bin/quarto` (outside OneDrive).
   - `src/simulate_catalogue.R`: Generates the simulated prototype dataset (`unreleased (dev)`).

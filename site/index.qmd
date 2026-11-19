@@ -1,411 +1,343 @@
 ---
-title: "Proteomic GWAS Catalogue"
+pagetitle: "Proteomic GWAS Catalogue"
 ---
 
 ```{ojs}
 catData = FileAttachment("data/catalogue.json").json()
 strataAll = catData.strata
-studiesAll = catData.studies
-meta = catData.metadata
 ```
 
 ```{ojs}
-htl.html`<div class="sim-banner">
-  <div>
-    <strong>Prototype Preview (${meta.current_version})</strong> — Populated with simulated benchmark &amp; automated literature-search records (no sample-size cutoff; preprints included) to validate catalogue architecture, UI, and GitHub release workflows.
-  </div>
-  <div>
-    <a class="btn-pill" href="updates.html">View Search Log &amp; PR Queue →</a>
-  </div>
-</div>
+// Helper formatters & numeric filter evaluator
+platBadgeClass = p => p === "Mass Spectrometry" ? "plat-MS" : p === "Other Immunoassay" ? "plat-Other" : `plat-${p}`
 
-<div class="hero-header">
-  <h1>Proteomic GWAS Catalogue</h1>
-  <p>All-encompassing, continuously updated reference of published and preprint genome-wide association studies of proteins across SomaScan, Olink, mass spectrometry, NULISA, and multiplex immunoassays — engineered for meta-analysis, Mendelian randomisation, and colocalisation.</p>
-</div>`
-```
+dataBadgeClass = d =>
+  d === "Genome-wide" ? "data-gw" :
+  d === "Gene-region" ? "data-cis" :
+  d === "Top-hits" ? "data-top" : "data-unavail"
 
-```{ojs}
-// Live KPI summary cards reacting to the filtered strata
-{
-  const uniqueStudies = new Set(filteredStrata.map(d => d.study_id));
-  const activePreprints = new Set(filteredStrata.filter(d => d.status === "Preprint").map(d => d.study_id));
-  const fullGwOpen = filteredStrata.filter(
-    d => d.coverage === "genome_wide" && (d.access_level === "Open download" || d.access_level === "Portal registration")
-  );
-  const maxN = filteredStrata.length ? Math.max(...filteredStrata.map(d => d.n_samples)) : 0;
-  const minN = filteredStrata.length ? Math.min(...filteredStrata.map(d => d.n_samples)) : 0;
-  const gwasProcLinked = filteredStrata.filter(d => d.gwasprocessing_yaml && d.gwasprocessing_yaml.length > 0).length;
+curationBadgeClass = c =>
+  c === "Human-curated" ? "cur-human-curated" :
+  c === "Human-reviewed" ? "cur-human-reviewed" : "cur-ai-extracted"
 
-  return htl.html`<div class="kpi-grid">
-    <div class="kpi-card">
-      <div class="kpi-label">Matching Studies / Strata</div>
-      <div class="kpi-value">${uniqueStudies.size} <span style="font-size:0.95rem;font-weight:500;color:#64748b;">studies (${filteredStrata.length} strata)</span></div>
-      <div class="kpi-sub">of ${studiesAll.length} total studies in ${meta.current_version}</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Sample Size Span (No Cutoff)</div>
-      <div class="kpi-value">${minN.toLocaleString()} – ${maxN.toLocaleString()}</div>
-      <div class="kpi-sub">Includes small tissue/CSF &amp; biobank GWAS</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Genome-Wide Sumstats</div>
-      <div class="kpi-value">${fullGwOpen.length}</div>
-      <div class="kpi-sub">Strata with open / portal full sumstats</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Active Preprints</div>
-      <div class="kpi-value">${activePreprints.size}</div>
-      <div class="kpi-sub">Tracked from bioRxiv &amp; medRxiv</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">GWASprocessing Ready</div>
-      <div class="kpi-value">${gwasProcLinked}</div>
-      <div class="kpi-sub">Strata linked to pipeline YAML manifests</div>
-    </div>
-  </div>`;
+matchNumericFilter = (val, rawExpr) => {
+  const expr = (rawExpr || "").trim().replace(/,/g, "");
+  if (!expr) return true;
+  const m = expr.match(/^(>=|<=|>|<|=)?\s*([0-9]+(?:\.[0-9]+)?)$/);
+  if (m) {
+    const op = m[1] || ">=";
+    const num = Number(m[2]);
+    if (op === ">=") return val >= num;
+    if (op === "<=") return val <= num;
+    if (op === ">")  return val > num;
+    if (op === "<")  return val < num;
+    return val === num;
+  }
+  return String(val).includes(expr);
 }
 ```
 
-::: {.panel-card}
-<div class="panel-title">
-  <span>Filter &amp; Facet Studies and Strata</span>
-  <span style="font-size:0.78rem;font-weight:400;color:#64748b;">All filters update the timeline chart, table, and export simultaneously</span>
-</div>
-
-::: {.filter-grid}
 ```{ojs}
-viewof searchText = Inputs.text({
-  label: "Search author, cohort, title, DOI, PMID, notes",
-  placeholder: "e.g. Ferkingstad, UK Biobank, CSF, NULISA, AFR..."
-})
-
-viewof platformSel = Inputs.select(
-  ["All platforms", "SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex", "Other Immunoassay"],
-  { label: "Proteomic Technology", value: "All platforms" }
-)
-
-viewof matrixSel = Inputs.select(
-  [
-    "All matrices", "EDTA plasma", "Citrate plasma", "Heparin plasma", "Plasma (unspecified)",
-    "Serum", "Whole blood / DBS", "CSF", "Brain tissue", "Urine", "Saliva", "Cell line / LCL", "Other tissue"
-  ],
-  { label: "Biological Matrix", value: "All matrices" }
-)
-
-viewof ancestrySel = Inputs.select(
-  ["All ancestries", "EUR", "AFR", "EAS", "CSA", "AMR", "MID", "Multi-ancestry"],
-  { label: "Ancestry Group", value: "All ancestries" }
-)
-
-viewof coverageSel = Inputs.select(
-  ["All scopes", "genome_wide", "cis_only", "top_hits_only", "none"],
-  {
-    label: "Genomic Coverage",
-    value: "All scopes",
-    format: x => ({
-      "All scopes": "All scopes",
-      "genome_wide": "Genome-wide (Cis + Trans)",
-      "cis_only": "Cis-windows only",
-      "top_hits_only": "Top hits / supplement only",
-      "none": "No public sumstats"
-    }[x] || x)
-  }
-)
-
-viewof accessSel = Inputs.select(
-  ["All access levels", "Open download", "Portal registration", "Controlled access", "Upon request", "Not available"],
-  { label: "Summary Stats Access", value: "All access levels" }
-)
-
-viewof buildSel = Inputs.select(
-  ["All builds", "GRCh38", "GRCh37", "GRCh36", "T2T-CHM13", "Unknown"],
-  { label: "Genome Build", value: "All builds" }
-)
-
-viewof minN = Inputs.range([0, 35000], {
-  step: 50,
-  value: 0,
-  label: "Optional Min N filter (0 = all)"
-})
-```
-:::
-
-```{ojs}
-viewof pubFlags = Inputs.checkbox(
-  ["Include active preprints", "Hide superseded preprints"],
-  { value: ["Include active preprints", "Hide superseded preprints"], label: "Publication Status" }
-)
-```
-:::
-
-```{ojs}
-filteredStrata = {
-  const q = searchText.trim().toLowerCase();
-  const incPre = pubFlags.includes("Include active preprints");
-  const hideSup = pubFlags.includes("Hide superseded preprints");
-
-  return strataAll.filter(d => {
-    if (!incPre && d.status === "Preprint") return false;
-    if (hideSup && d.status === "Superseded Preprint") return false;
-    if (platformSel !== "All platforms" && d.platform_category !== platformSel) return false;
-    if (matrixSel !== "All matrices" && d.sample_matrix !== matrixSel) return false;
-    if (ancestrySel !== "All ancestries" && d.ancestry_group !== ancestrySel) return false;
-    if (coverageSel !== "All scopes" && d.coverage !== coverageSel) return false;
-    if (accessSel !== "All access levels" && d.access_level !== accessSel) return false;
-    if (buildSel !== "All builds" && d.genome_build !== buildSel) return false;
-    if (d.n_samples < minN) return false;
-
-    if (q) {
-      const hay = [
-        d.study_id, d.stratum_id, d.first_author, d.year, d.title,
-        d.cohorts_display, d.ancestry_detail, d.platform_version,
-        d.pmid, d.doi, d.repository, d.harmonisation_notes, d.gwasprocessing_yaml
-      ].join(" ").toLowerCase();
-      if (!hay.includes(q)) return false;
+// Self-contained full-width Catalogue view (banner + persistent column-filterable expandable table)
+{
+  const state = {
+    hideSuperseded: true,
+    sortCol: "year",
+    sortAsc: false,
+    expanded: new Set(),
+    filters: {
+      study: "",
+      cohort: "",
+      overlap: "",
+      pop: "",
+      sex: "",
+      n: "",
+      sample: "",
+      platform: "",
+      assay: "",
+      data: ""
     }
-    return true;
-  });
-}
-```
+  };
 
-::: {.panel-card}
-<div class="panel-title">
-  <span>Landscape of Proteomic GWAS Scale &amp; Assay Breadth (2017–2026)</span>
-  <span style="font-size:0.78rem;font-weight:400;color:#64748b;">Bubble area = number of protein assays · Dashed ring = Preprint · Log10 sample size (no floor)</span>
-</div>
+  const countSpan = htl.html`<span></span>`;
+  const clearBtn = htl.html`<button class="btn-pill" style="display:none;padding:0.2rem 0.55rem;font-size:0.74rem;" onclick=${() => {
+    for (const k of Object.keys(state.filters)) state.filters[k] = "";
+    for (const el of filterInputs) el.value = "";
+    renderRows();
+  }}>✕ Clear column filters</button>`;
 
-```{ojs}
-Plot.plot({
-  height: 270,
-  marginLeft: 65,
-  marginRight: 30,
-  marginBottom: 38,
-  style: { background: "transparent", fontSize: "12px" },
-  x: {
-    label: "Publication / Preprint Year",
-    tickFormat: d => String(d),
-    domain: [
-      filteredStrata.length ? Math.min(2016.5, Math.min(...filteredStrata.map(d => d.year)) - 0.5) : 2016.5,
-      filteredStrata.length ? Math.max(2026.5, Math.max(...filteredStrata.map(d => d.year)) + 0.5) : 2026.5
-    ]
-  },
-  y: {
-    type: "log",
-    label: "Sample Size N (log scale)",
-    grid: true
-  },
-  r: {
-    range: [4, 20]
-  },
-  color: {
-    legend: true,
-    domain: ["SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex"],
-    range: ["#4338ca", "#0d9488", "#d97706", "#db2777", "#64748b"]
-  },
-  marks: [
-    Plot.dot(filteredStrata, {
-      x: d => d.year + (d.ancestry_group === "EUR" ? -0.08 : d.ancestry_group === "Multi-ancestry" ? 0 : 0.12),
-      y: "n_samples",
-      r: "n_assays",
-      fill: "platform_category",
-      fillOpacity: d => d.status === "Preprint" ? 0.45 : 0.78,
-      stroke: "platform_category",
-      strokeWidth: d => d.status === "Preprint" ? 2 : 1,
-      strokeDasharray: d => d.status === "Preprint" ? "3,2" : null,
-      tip: true,
-      title: d => `${d.first_author} (${d.year}) [${d.status}]\nStratum: ${d.stratum_id}\nCohort: ${d.cohorts_display}\nAncestry: ${d.ancestry_group} (${d.sex})\nN = ${d.n_samples.toLocaleString()} | Matrix: ${d.sample_matrix}\nPlatform: ${d.platform_version} (${d.n_assays.toLocaleString()} assays)\nCoverage: ${d.coverage}`
-    })
-  ]
-})
-```
-:::
+  const hideSupCheckbox = htl.html`<input type="checkbox" checked onchange=${e => {
+    state.hideSuperseded = e.target.checked;
+    renderRows();
+  }}>`;
 
-```{ojs}
-mutable selectedStratumId = "ferkingstad_2021_EUR"
-```
-
-```{ojs}
-viewof sortBy = Inputs.select(
-  ["year_desc", "n_desc", "n_asc", "assays_desc", "author_asc"],
-  {
-    label: "Sort rows by",
-    value: "year_desc",
-    format: k => ({
-      year_desc: "Newest first (Year ↓, N ↓)",
-      n_desc: "Sample size (Largest N ↓)",
-      n_asc: "Sample size (Smallest N ↑)",
-      assays_desc: "Proteins / Assays (Most ↓)",
-      author_asc: "First author (A → Z)"
-    }[k])
-  }
-)
-```
-
-```{ojs}
-sortedStrata = {
-  const arr = [...filteredStrata];
-  arr.sort((a, b) => {
-    if (sortBy === "year_desc") return (b.year - a.year) || (b.n_samples - a.n_samples);
-    if (sortBy === "n_desc") return b.n_samples - a.n_samples;
-    if (sortBy === "n_asc") return a.n_samples - b.n_samples;
-    if (sortBy === "assays_desc") return b.n_assays - a.n_assays;
-    return a.first_author.localeCompare(b.first_author) || (b.year - a.year);
-  });
-  return arr;
-}
-```
-
-```{ojs}
-// Helper badge formatters and client-side TSV exporter
-platClass = p => p === "Mass Spectrometry" ? "plat-MS" : p === "Other Immunoassay" ? "plat-Other" : `plat-${p}`
-statusClass = s => s === "Superseded Preprint" ? "status-Superseded" : `status-${s}`
-readyClass = r => r.startsWith("Full") ? "ready-Full" : r.startsWith("Cis") ? "ready-Cis" : r.startsWith("Caution") ? "ready-Caution" : "ready-Limited"
-
-downloadFilteredTSV = () => {
-  if (!sortedStrata.length) return;
   const cols = [
-    "stratum_id", "study_id", "first_author", "year", "status", "pmid", "doi",
-    "cohorts_display", "ancestry_group", "sex", "n_samples", "sample_matrix",
-    "platform_category", "platform_version", "n_assays", "n_unique_proteins",
-    "genome_build", "coverage", "cis_window_kb", "effect_scale", "transformation",
-    "has_beta_se", "has_eaf", "indel_encoding", "access_level", "repository",
-    "accession_or_url", "gwasprocessing_yaml"
+    { key: "study",    label: "STUDY",    align: "left"  },
+    { key: "cohort",   label: "COHORT",   align: "left"  },
+    { key: "overlap",  label: "OVERLAP",  align: "left"  },
+    { key: "pop",      label: "POP",      align: "left"  },
+    { key: "sex",      label: "SEX",      align: "left"  },
+    { key: "n",        label: "N",        align: "right" },
+    { key: "sample",   label: "SAMPLE",   align: "left"  },
+    { key: "platform", label: "PLATFORM", align: "left"  },
+    { key: "assay",    label: "ASSAY",    align: "right" },
+    { key: "data",     label: "DATA",     align: "left"  }
   ];
-  const lines = [
-    cols.join("\t"),
-    ...sortedStrata.map(row => cols.map(c => row[c] === null || row[c] === undefined ? "" : String(row[c]).replace(/\t|\n/g, " ")).join("\t"))
-  ];
-  const blob = new Blob([lines.join("\n")], { type: "text/tab-separated-values;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `proteomic_gwas_filtered_${sortedStrata.length}_strata.tsv`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-```
 
-```{ojs}
-// Interactive Study / Stratum Table + Selected Row Harmonisation Inspector
-{
-  const activeRow = sortedStrata.find(d => d.stratum_id === selectedStratumId) || sortedStrata[0] || null;
+  const sortIndicators = {};
+  const sortHeaders = cols.map(col => {
+    const ind = htl.html`<span style="opacity:0.55;margin-left:3px;font-size:0.68rem;">↕</span>`;
+    sortIndicators[col.key] = ind;
+    return htl.html`<th style="text-align:${col.align};" onclick=${() => {
+      if (state.sortCol === col.key) {
+        state.sortAsc = !state.sortAsc;
+      } else {
+        state.sortCol = col.key;
+        state.sortAsc = col.key === "n" || col.key === "assay" || col.key === "study" || col.key === "overlap" ? false : true;
+      }
+      renderRows();
+    }}>${col.label}${ind}</th>`;
+  });
 
-  return htl.html`<div class="panel-card">
-    <div class="panel-title">
-      <span>Catalogue Strata (${sortedStrata.length} shown) — <span style="font-weight:400;color:#64748b;font-size:0.84rem;">Click any row to inspect full model, covariates &amp; harmonisation notes below</span></span>
-      <div style="display:flex;gap:0.45rem;flex-wrap:wrap;">
-        <button class="btn-pill" onclick=${downloadFilteredTSV}>⬇ Export Filtered TSV (${sortedStrata.length})</button>
-        <a class="btn-pill" href="data/strata.tsv" download>Full strata.tsv</a>
-        <a class="btn-pill" href="data/studies.tsv" download>Full studies.tsv</a>
+  const filterInputs = [];
+  const makeTextFilter = (key, placeholder) => {
+    const inp = htl.html`<input class="col-filter-input" type="text" placeholder=${placeholder} oninput=${e => {
+      state.filters[key] = e.target.value;
+      renderRows();
+    }}>`;
+    filterInputs.push(inp);
+    return inp;
+  };
+  const makeSelectFilter = (key, options) => {
+    const sel = htl.html`<select class="col-filter-select" onchange=${e => {
+      state.filters[key] = e.target.value;
+      renderRows();
+    }}>
+      <option value="">All</option>
+      ${options.map(o => htl.html`<option value=${o}>${o}</option>`)}
+    </select>`;
+    filterInputs.push(sel);
+    return sel;
+  };
+
+  const filterRow = htl.html`<tr class="filter-row">
+    <th>${makeTextFilter("study", "Author, year, PMID...")}</th>
+    <th>${makeTextFilter("cohort", "UKB, INTERVAL...")}</th>
+    <th>${makeTextFilter("overlap", "None, >0, study...")}</th>
+    <th>${makeTextFilter("pop", "Ancestry...")}</th>
+    <th>${makeSelectFilter("sex", ["Combined", "Female", "Male"])}</th>
+    <th>${makeTextFilter("n", ">=1000")}</th>
+    <th>${makeTextFilter("sample", "Plasma, serum, CSF...")}</th>
+    <th>${makeTextFilter("platform", "SomaScan, Olink...")}</th>
+    <th>${makeTextFilter("assay", ">=500")}</th>
+    <th>${makeSelectFilter("data", ["Genome-wide", "Gene-region", "Top-hits", "Unavailable"])}</th>
+  </tr>`;
+
+  const tbody = htl.html`<tbody></tbody>`;
+
+  function getFilteredAndSorted() {
+    const f = state.filters;
+    const rows = strataAll.filter(d => {
+      if (state.hideSuperseded && d.status === "Superseded Preprint") return false;
+      if (f.study) {
+        const q = f.study.toLowerCase();
+        const hay = `${d.first_author} ${d.year} ${d.pmid || ""} ${d.doi || ""} ${d.study_id} ${d.title}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      if (f.cohort && !d.cohorts_display.toLowerCase().includes(f.cohort.toLowerCase())) return false;
+      if (f.overlap) {
+        const q = f.overlap.trim().toLowerCase();
+        if (q === ">0" || q === "yes") {
+          if (d.overlap_count === 0) return false;
+        } else {
+          const hay = `${d.overlap_compact} ${d.overlap_details}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+      }
+      if (f.pop && !`${d.ancestry_detail} ${d.ancestry_group}`.toLowerCase().includes(f.pop.toLowerCase())) return false;
+      if (f.sex && d.sex !== f.sex) return false;
+      if (f.n && !matchNumericFilter(d.n_samples, f.n)) return false;
+      if (f.sample && !d.sample_matrix.toLowerCase().includes(f.sample.toLowerCase())) return false;
+      if (f.platform && !`${d.platform_category} ${d.platform_version}`.toLowerCase().includes(f.platform.toLowerCase())) return false;
+      if (f.assay && !matchNumericFilter(d.n_assays, f.assay)) return false;
+      if (f.data && d.data_label !== f.data) return false;
+      return true;
+    });
+
+    const dir = state.sortAsc ? 1 : -1;
+    rows.sort((a, b) => {
+      switch (state.sortCol) {
+        case "study":
+          return dir * ((a.year - b.year) || a.first_author.localeCompare(b.first_author));
+        case "cohort":
+          return dir * a.cohorts_display.localeCompare(b.cohorts_display);
+        case "overlap":
+          return dir * (a.overlap_count - b.overlap_count);
+        case "pop":
+          return dir * a.ancestry_detail.localeCompare(b.ancestry_detail);
+        case "sex":
+          return dir * a.sex.localeCompare(b.sex);
+        case "n":
+          return dir * (a.n_samples - b.n_samples);
+        case "sample":
+          return dir * a.sample_matrix.localeCompare(b.sample_matrix);
+        case "platform":
+          return dir * a.platform_version.localeCompare(b.platform_version);
+        case "assay":
+          return dir * (a.n_assays - b.n_assays);
+        case "data":
+          return dir * a.data_label.localeCompare(b.data_label);
+        default:
+          return dir * ((a.year - b.year) || (a.n_samples - b.n_samples));
+      }
+    });
+    return rows;
+  }
+
+  function renderRows() {
+    for (const c of cols) {
+      const ind = sortIndicators[c.key];
+      if (state.sortCol === c.key || (state.sortCol === "year" && c.key === "study")) {
+        ind.textContent = state.sortAsc ? " ↑" : " ↓";
+        ind.style.opacity = "1";
+      } else {
+        ind.textContent = " ↕";
+        ind.style.opacity = "0.45";
+      }
+    }
+
+    const anyFilter = Object.values(state.filters).some(v => v && v.trim() !== "");
+    clearBtn.style.display = anyFilter ? "inline-flex" : "none";
+
+    const rows = getFilteredAndSorted();
+    const nStudies = new Set(rows.map(r => r.study_id)).size;
+    countSpan.textContent = `Showing ${rows.length} strata across ${nStudies} studies · Click any row to expand details`;
+
+    const trs = [];
+    for (const d of rows) {
+      const isOpen = state.expanded.has(d.stratum_id);
+      const toggle = () => {
+        if (state.expanded.has(d.stratum_id)) state.expanded.delete(d.stratum_id);
+        else state.expanded.add(d.stratum_id);
+        renderRows();
+      };
+
+      trs.push(htl.html`<tr class="data-row ${isOpen ? "is-open" : ""}" onclick=${toggle}>
+        <td>
+          <div style="font-weight:600;color:#0f172a;">
+            <span style="display:inline-block;width:12px;color:#64748b;font-size:0.7rem;">${isOpen ? "▾" : "▸"}</span>
+            ${d.first_author} (${d.year})
+          </div>
+          <div class="mono" style="color:#64748b;padding-left:12px;">
+            ${d.pmid ? `PMID: ${d.pmid}` : d.status === "Preprint" ? "Preprint" : "No PMID"}
+          </div>
+        </td>
+        <td>${d.cohorts_display}</td>
+        <td>
+          ${d.overlap_count > 0
+            ? htl.html`<span class="pg-badge overlap-yes">${d.overlap_compact}</span>`
+            : htl.html`<span class="overlap-none">None</span>`}
+        </td>
+        <td>${d.ancestry_detail}</td>
+        <td>${d.sex}</td>
+        <td class="num-col"><strong>${d.n_samples.toLocaleString()}</strong></td>
+        <td>${d.sample_matrix}</td>
+        <td>
+          <span class="pg-badge ${platBadgeClass(d.platform_category)}">${d.platform_category}</span>
+          <div style="font-size:0.72rem;color:#64748b;margin-top:1px;">${d.platform_version}</div>
+        </td>
+        <td class="num-col">${d.n_assays.toLocaleString()}</td>
+        <td><span class="pg-badge ${dataBadgeClass(d.data_label)}">${d.data_label}</span></td>
+      </tr>`);
+
+      if (isOpen) {
+        trs.push(htl.html`<tr class="detail-row">
+          <td colspan="10">
+            <div class="detail-topbar">
+              <div>
+                <p class="detail-title">${d.title}</p>
+                <div style="font-size:0.78rem;color:#475569;margin-top:2px;">
+                  <em>${d.journal}</em> (${d.year}) · <span class="mono">${d.stratum_id}</span>
+                </div>
+              </div>
+              <div class="detail-links">
+                ${d.doi ? htl.html`<a class="btn-pill" href="https://doi.org/${d.doi}" target="_blank" rel="noopener">DOI: ${d.doi} ↗</a>` : ""}
+                ${d.pmid ? htl.html`<a class="btn-pill" href="https://pubmed.ncbi.nlm.nih.gov/${d.pmid}/" target="_blank" rel="noopener">PMID: ${d.pmid} ↗</a>` : ""}
+                <a class="btn-pill btn-pill-primary" href=${d.accession_or_url} target="_blank" rel="noopener">Data Download (${d.repository}) ↗</a>
+              </div>
+            </div>
+
+            <div class="detail-3col">
+              <div class="detail-col-box">
+                <h4>Phenotype Information</h4>
+                <div class="detail-kv"><strong>Platform &amp; version:</strong> ${d.platform_version}</div>
+                <div class="detail-kv"><strong>Assays measured:</strong> ${d.n_assays.toLocaleString()} assays (${d.n_unique_proteins.toLocaleString()} unique protein targets)</div>
+                <div class="detail-kv"><strong>Sample matrix:</strong> ${d.sample_matrix}</div>
+                <div class="detail-kv"><strong>Transformation:</strong> ${d.transformation}</div>
+                <div class="detail-kv"><strong>Effect scale:</strong> <span class="mono">${d.effect_scale}</span></div>
+              </div>
+
+              <div class="detail-col-box">
+                <h4>Genetic Information</h4>
+                <div class="detail-kv"><strong>Genome build:</strong> <span class="mono" style="font-weight:700;">${d.genome_build}</span></div>
+                <div class="detail-kv"><strong>Strand:</strong> <span class="mono" style="font-weight:700;">${d.strand || "Not reported"}</span></div>
+                <div class="detail-kv"><strong>Model / software:</strong> ${d.gwas_software}</div>
+                <div class="detail-kv"><strong>Covariates:</strong> ${d.covariates}</div>
+                <div class="detail-kv"><strong>Imputation &amp; scope:</strong> ${d.imputation_panel} · ${d.coverage === "cis_only" ? `Gene-region (±${d.cis_window_kb} kb)` : d.data_label} · Signed EAF: ${d.has_eaf ? "Yes" : "No"} · Indels: <span class="mono">${d.indel_encoding}</span></div>
+              </div>
+
+              <div class="detail-col-box">
+                <h4>Other Information</h4>
+                <div class="detail-kv"><strong>Curation provenance:</strong> <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span></div>
+                <div class="detail-kv"><strong>Overlapping catalogue studies:</strong> ${d.overlap_details}</div>
+                <div class="detail-kv"><strong>Data access &amp; format:</strong> ${d.access_level} · ${d.file_format}</div>
+                <div class="detail-kv"><strong>Publication status:</strong> ${d.status}${d.superseded_by ? ` (Superseded by ${d.superseded_by})` : ""}</div>
+                <div class="detail-kv"><strong>Notes:</strong> ${d.harmonisation_notes}${d.gwasprocessing_yaml ? ` [GWASprocessing: ${d.gwasprocessing_yaml}]` : ""}</div>
+              </div>
+            </div>
+          </td>
+        </tr>`);
+      }
+    }
+
+    if (trs.length === 0) {
+      trs.push(htl.html`<tr><td colspan="10" style="text-align:center;padding:1.5rem;color:#64748b;">No studies match the current column filters.</td></tr>`);
+    }
+    tbody.replaceChildren(...trs);
+  }
+
+  renderRows();
+
+  return htl.html`<div class="pg-shell">
+    <div class="hero-banner">
+      <div>
+        <h1>Proteomic GWAS Catalogue</h1>
+        <p>A searchable reference table of published and preprint genome-wide association studies (GWAS) of proteins across cohorts, platforms, and biological matrices.</p>
       </div>
+      <div>
+        <a class="btn-pill btn-pill-primary" href="data/proteomic_gwas_catalogue_full.tsv" download>⬇ Download Full Table (.tsv)</a>
+      </div>
+    </div>
+
+    <div class="table-toolbar">
+      <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+        ${countSpan}
+        ${clearBtn}
+      </div>
+      <label style="display:inline-flex;align-items:center;gap:0.35rem;cursor:pointer;margin:0;">
+        ${hideSupCheckbox} Hide superseded preprints
+      </label>
     </div>
 
     <div class="cat-table-wrap">
       <table class="cat-table">
         <thead>
-          <tr>
-            <th>Study</th>
-            <th>Status</th>
-            <th>Cohort(s)</th>
-            <th>Ancestry / Sex</th>
-            <th style="text-align:right;">Sample N</th>
-            <th>Matrix</th>
-            <th>Platform &amp; Version</th>
-            <th style="text-align:right;">Assays</th>
-            <th>Build &amp; Scope</th>
-            <th>MR / Coloc Readiness</th>
-            <th>Access &amp; Data</th>
-          </tr>
+          <tr class="sort-row">${sortHeaders}</tr>
+          ${filterRow}
         </thead>
-        <tbody>
-          ${sortedStrata.map(d => {
-            const isSel = activeRow && d.stratum_id === activeRow.stratum_id;
-            const paperUrl = d.doi ? `https://doi.org/${d.doi}` : `https://pubmed.ncbi.nlm.nih.gov/${d.pmid}/`;
-            return htl.html`<tr class=${isSel ? "selected-row" : ""} style="cursor:pointer;" onclick=${() => { mutable selectedStratumId = d.stratum_id; }}>
-              <td>
-                <div style="font-weight:600;color:#0f172a;">${d.first_author} (${d.year})</div>
-                <div class="mono" style="color:#64748b;font-size:0.73rem;">${d.stratum_id}</div>
-              </td>
-              <td><span class="pg-badge ${statusClass(d.status)}">${d.status}</span></td>
-              <td style="max-width:190px;">${d.cohorts_display}</td>
-              <td>
-                <strong>${d.ancestry_group}</strong>
-                ${d.sex !== "Combined" ? htl.html`<span class="pg-badge" style="background:#f1f5f9;margin-left:3px;">${d.sex}</span>` : ""}
-                <div style="font-size:0.74rem;color:#64748b;">${d.ancestry_detail}</div>
-              </td>
-              <td class="num-col"><strong>${d.n_samples.toLocaleString()}</strong></td>
-              <td>${d.sample_matrix}</td>
-              <td>
-                <span class="pg-badge ${platClass(d.platform_category)}">${d.platform_category}</span>
-                <div style="font-size:0.75rem;color:#475569;margin-top:2px;">${d.platform_version}</div>
-              </td>
-              <td class="num-col">${d.n_assays.toLocaleString()}<div style="font-size:0.71rem;color:#64748b;">(${d.n_unique_proteins.toLocaleString()} prot)</div></td>
-              <td>
-                <span class="mono" style="font-weight:600;">${d.genome_build}</span>
-                <div><span class="pg-badge cov-${d.coverage}">${d.coverage === "genome_wide" ? "Genome-wide" : d.coverage === "cis_only" ? `Cis (±${d.cis_window_kb}kb)` : d.coverage === "none" ? "No sumstats" : "Top hits"}</span></div>
-              </td>
-              <td>
-                <span class="pg-badge ${readyClass(d.mr_coloc_readiness)}">${d.mr_coloc_readiness}</span>
-                ${d.gwasprocessing_yaml ? htl.html`<div class="mono" style="font-size:0.7rem;color:#0f4c81;margin-top:2px;">✓ GWASprocessing</div>` : ""}
-              </td>
-              <td onclick=${e => e.stopPropagation()}>
-                <div style="font-size:0.75rem;font-weight:600;color:#334155;margin-bottom:3px;">${d.access_level}</div>
-                <div style="display:flex;gap:4px;">
-                  <a class="btn-pill" style="padding:0.15rem 0.45rem;font-size:0.72rem;" href=${paperUrl} target="_blank" rel="noopener">Paper ↗</a>
-                  <a class="btn-pill btn-pill-primary" style="padding:0.15rem 0.45rem;font-size:0.72rem;" href=${d.accession_or_url} target="_blank" rel="noopener">Data ↗</a>
-                </div>
-              </td>
-            </tr>`;
-          })}
-        </tbody>
+        ${tbody}
       </table>
     </div>
-
-    ${activeRow ? htl.html`<div class="inspector-box">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
-        <div>
-          <span class="mono" style="font-size:0.76rem;color:#0f4c81;font-weight:700;">SELECTED STRATUM INSPECTOR · ${activeRow.stratum_id}</span>
-          <h3 style="margin:0.2rem 0;font-size:1.05rem;font-weight:700;color:#0f172a;">${activeRow.title}</h3>
-          <div style="font-size:0.83rem;color:#475569;">
-            <strong>${activeRow.first_author} et al. (${activeRow.year})</strong> · <em>${activeRow.journal}</em>
-            ${activeRow.pmid ? htl.html` · PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/${activeRow.pmid}/" target="_blank">${activeRow.pmid}</a>` : ""}
-            · DOI: <a href="https://doi.org/${activeRow.doi}" target="_blank">${activeRow.doi}</a>
-            ${activeRow.superseded_by ? htl.html` · <strong style="color:#b45309;">Superseded by ${activeRow.superseded_by}</strong>` : ""}
-          </div>
-        </div>
-        <div style="display:flex;gap:0.45rem;">
-          <a class="btn-pill btn-pill-primary" href=${activeRow.accession_or_url} target="_blank" rel="noopener">Open ${activeRow.repository} ↗</a>
-        </div>
-      </div>
-
-      <div class="inspector-grid">
-        <div class="inspector-field">
-          <strong>Phenotype Transformation &amp; Scale</strong>
-          ${activeRow.transformation} (<span class="mono">${activeRow.effect_scale}</span>)
-        </div>
-        <div class="inspector-field">
-          <strong>GWAS Model &amp; Covariates</strong>
-          ${activeRow.gwas_software} — ${activeRow.covariates}
-        </div>
-        <div class="inspector-field">
-          <strong>Genotyping / Imputation &amp; Build</strong>
-          ${activeRow.genome_build} · ${activeRow.imputation_panel}
-        </div>
-        <div class="inspector-field">
-          <strong>File Format &amp; Allele / Indel Details</strong>
-          ${activeRow.file_format} · BETA/SE: <span class="mono">${activeRow.has_beta_se ? "Yes" : "No"}</span> · Signed EAF: <span class="mono">${activeRow.has_eaf ? "Yes" : "No"}</span> · Indels: <span class="mono">${activeRow.indel_encoding}</span>
-        </div>
-        <div class="inspector-field">
-          <strong>GWASprocessing Manifest Link</strong>
-          ${activeRow.gwasprocessing_yaml ? htl.html`<span class="mono" style="color:#166534;font-weight:600;">manifests/${activeRow.gwasprocessing_yaml}</span>` : htl.html`<span style="color:#64748b;">Not yet templated in GWASprocessing</span>`}
-        </div>
-        <div class="inspector-field">
-          <strong>Harmonisation &amp; Curation Notes</strong>
-          ${activeRow.harmonisation_notes}
-        </div>
-      </div>
-    </div>` : htl.html`<p style="padding:1rem;color:#64748b;">No strata match the current filter criteria.</p>`}
   </div>`;
 }
 ```

@@ -16,16 +16,14 @@ website:
     foreground: "#f8fafc"
     pinned: true
     left:
-      - text: "Catalogue Explorer"
+      - text: "Catalogue"
         href: index.qmd
-      - text: "Protein Lookup"
-        href: proteins.qmd
-      - text: "Cohort Overlap"
-        href: overlap.qmd
-      - text: "Search Log & Releases"
-        href: updates.qmd
-      - text: "Schema & Pipeline"
-        href: schema.qmd
+      - text: "Lookup"
+        href: lookup.qmd
+      - text: "Log"
+        href: log.qmd
+      - text: "About"
+        href: about.qmd
     right:
       - text: "+ Submit Study"
         href: https://github.com/mattlee821/proteomic-gwas-catalogue/issues/new?template=submit_study.yml
@@ -35,14 +33,14 @@ website:
   page-footer:
     background: "#f8fafc"
     left: "Proteomic GWAS Catalogue · Living open-source reference of published & preprint protein GWAS"
-    right: "Built with R, Quarto & Observable JS · Versioned via GitHub Releases"
+    right: "Built with R, Quarto & Observable JS"
 
 format:
   html:
     theme:
       - cosmo
       - styles.scss
-    page-layout: full
+    page-layout: custom
     toc: false
     smooth-scroll: true
     code-copy: true

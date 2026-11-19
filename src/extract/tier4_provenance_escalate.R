@@ -152,6 +152,9 @@ run_tier4_provenance_and_escalate <- function(t1, t2, t3_supp, t3_repo, out_dir,
         t2$ft_source,
         ifelse(isTRUE(t2$verified_full_text), paste0("Verified legal full text via ", t2$ft_source), t2$ft_gate_note),
         t2$ft_gate_note)
+  add_p(sid, "studies.tsv", sid, "curation_tier", "OPTIONAL",
+        "AI-extracted", "API_EXTRACTED", "Tier 1", "Pipeline provenance default",
+        "Automated 4-tier extraction; upgrades to Human-reviewed / Human-curated on sign-off")
 
   # --- 3. Reconcile study-wide stratum attributes across Tier 1, Tier 2, and Tier 3 ---
   cohorts_vec <- t2$cohorts
@@ -377,6 +380,10 @@ run_tier4_provenance_and_escalate <- function(t1, t2, t3_supp, t3_repo, out_dir,
     add_p(sid, "strata.tsv", stid, "n_assays", "REQUIRED", n_assays_val, n_assays_status, n_assays_tier, n_assays_loc, n_assays_snip, n_assays_note)
     add_p(sid, "strata.tsv", stid, "n_unique_proteins", "REQUIRED", n_uprot_val, n_uprot_status, n_uprot_tier, n_uprot_loc, n_uprot_snip, n_uprot_note)
     add_p(sid, "strata.tsv", stid, "genome_build", "REQUIRED", gb_val, gb_status, gb_tier, gb_loc, gb_snip, gb_note)
+    strand_val <- if (grepl("GWAS-SSF", t3_repo$detected_file_format, ignore.case = TRUE)) "Forward (+)" else "Not reported"
+    add_p(sid, "strata.tsv", stid, "strand", "OPTIONAL",
+          strand_val, "EXTRACTED", "Tier 3", "Strand convention",
+          "Default 'Not reported' unless GWAS-SSF forward strand is specified")
     add_p(sid, "strata.tsv", stid, "imputation_panel", "OPTIONAL",
           t2$methods$imputation_panel,
           ifelse(nzchar(t2$methods$imputation_panel), "EXTRACTED", "MISSING"),
@@ -481,12 +488,12 @@ run_tier4_provenance_and_escalate <- function(t1, t2, t3_supp, t3_repo, out_dir,
   studies_cols <- c(
     "study_id", "first_author", "year", "status", "superseded_by",
     "pmid", "doi", "journal", "title", "repository", "accession_or_url",
-    "access_level", "added_release", "verified_full_text"
+    "access_level", "added_release", "verified_full_text", "curation_tier"
   )
   strata_cols <- c(
     "stratum_id", "study_id", "cohorts_display", "ancestry_group", "ancestry_detail",
     "sex", "n_samples", "sample_matrix", "platform_category", "platform_version",
-    "n_assays", "n_unique_proteins", "genome_build", "imputation_panel", "coverage",
+    "n_assays", "n_unique_proteins", "genome_build", "strand", "imputation_panel", "coverage",
     "cis_window_kb", "transformation", "effect_scale", "covariates", "gwas_software",
     "file_format", "has_beta_se", "has_eaf", "indel_encoding", "gwasprocessing_yaml",
     "harmonisation_notes"

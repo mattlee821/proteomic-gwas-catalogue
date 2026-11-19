@@ -1,0 +1,95 @@
+---
+pagetitle: "Search Update Log · Proteomic GWAS Catalogue"
+---
+
+```{ojs}
+catData = FileAttachment("data/catalogue.json").json()
+runs = catData.search_runs
+```
+
+```{ojs}
+{
+  const totFound    = runs.reduce((acc, r) => acc + Number(r.deduplicated_new || 0), 0);
+  const totRaw      = runs.reduce((acc, r) => acc + Number(r.raw_records || 0), 0);
+  const totIncluded = runs.reduce((acc, r) => acc + Number(r.studies_added || 0), 0);
+  const totExcluded = runs.reduce((acc, r) => acc + Number(r.excluded_records || 0), 0);
+  const totManual   = runs.reduce((acc, r) => acc + Number(r.manual_review_required || 0), 0);
+
+  return htl.html`<div class="pg-shell">
+    <div class="hero-banner">
+      <div>
+        <h1>Log</h1>
+        <p>Date-stamped log of literature search updates (newest at top), recording records retrieved, included, excluded, and flagged for manual review.</p>
+      </div>
+      <div>
+        <a class="btn-pill btn-pill-primary" href="data/search_runs.tsv" download>⬇ Download Search Log (.tsv)</a>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Search Updates Run</div>
+        <div class="kpi-value">${runs.length}</div>
+        <div class="kpi-sub">Latest run: ${runs.length ? runs[0].run_date : "—"}</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Unseen Records Found</div>
+        <div class="kpi-value">${totFound.toLocaleString()}</div>
+        <div class="kpi-sub">${totRaw.toLocaleString()} raw API hits across sources</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Included Studies</div>
+        <div class="kpi-value">${totIncluded.toLocaleString()}</div>
+        <div class="kpi-sub">Verified primary protein GWAS</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Excluded Records</div>
+        <div class="kpi-value">${totExcluded.toLocaleString()}</div>
+        <div class="kpi-sub">Secondary 2SMR, PWAS, EWAS &amp; non-GWAS</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Manual Review Flagged</div>
+        <div class="kpi-value">${totManual.toLocaleString()}</div>
+        <div class="kpi-sub">Candidates routed to human review</div>
+      </div>
+    </div>
+
+    <div class="cat-table-wrap">
+      <table class="cat-table">
+        <thead>
+          <tr class="sort-row" style="cursor:default;">
+            <th>DATE</th>
+            <th>RUN ID &amp; TRIGGER</th>
+            <th>DATABASES QUERIED</th>
+            <th style="text-align:right;">RECORDS FOUND</th>
+            <th style="text-align:right;">INCLUDED</th>
+            <th style="text-align:right;">EXCLUDED</th>
+            <th style="text-align:right;">MANUAL REVIEW</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${runs.map(r => htl.html`<tr class="data-row" style="cursor:default;">
+            <td class="mono" style="font-weight:700;white-space:nowrap;">${r.run_date}</td>
+            <td>
+              <div class="mono" style="font-weight:600;color:#0f172a;">${r.run_id}</div>
+              <div style="font-size:0.74rem;color:#64748b;">${r.trigger}</div>
+            </td>
+            <td style="max-width:300px;font-size:0.78rem;color:#334155;">${r.sources_queried}</td>
+            <td class="num-col">
+              <strong>${Number(r.deduplicated_new).toLocaleString()}</strong>
+              <div style="font-size:0.7rem;color:#64748b;">(${Number(r.raw_records).toLocaleString()} raw)</div>
+            </td>
+            <td class="num-col"><span class="pg-badge data-gw">+${Number(r.studies_added).toLocaleString()}</span></td>
+            <td class="num-col">${Number(r.excluded_records).toLocaleString()}</td>
+            <td class="num-col"><span class="pg-badge overlap-yes">${Number(r.manual_review_required).toLocaleString()}</span></td>
+            <td>
+              <span class="pg-badge ${Number(r.studies_added) > 0 ? "cur-human-reviewed" : "data-unavail"}">${r.status}</span>
+            </td>
+          </tr>`)}
+        </tbody>
+      </table>
+    </div>
+  </div>`;
+}
+```

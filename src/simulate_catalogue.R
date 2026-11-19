@@ -194,6 +194,13 @@ studies <- data.frame(
     TRUE, TRUE, TRUE, TRUE, FALSE,
     FALSE, FALSE
   ),
+  curation_tier = c(
+    "Human-reviewed", "Human-reviewed", "Human-curated", "Human-reviewed", "Human-reviewed",
+    "Human-curated", "Human-curated", "Human-reviewed", "Human-reviewed", "Human-curated",
+    "AI-extracted", "Human-curated", "Human-reviewed", "Human-reviewed", "Human-reviewed",
+    "Human-reviewed", "AI-extracted", "AI-extracted", "AI-extracted", "AI-extracted",
+    "AI-extracted", "AI-extracted"
+  ),
   stringsAsFactors = FALSE
 )
 
@@ -266,37 +273,37 @@ strata <- data.frame(
     "nakamura_2026_olinkht_pre"
   ),
   cohorts_display = c(
-    "KORA F4",
+    "KORA",
     "IMPROVE",
     "INTERVAL",
-    "Framingham Heart Study",
-    "SCALLOP Consortium (15 cohorts incl. INTERVAL, KORA, IMPROVE)",
-    "deCODE Genetics",
+    "FHS",
+    "SCALLOP (15 cohorts)",
+    "deCODE",
     "Fenland",
-    "Knight ADRC; DIAN",
+    "Knight ADRC, DIAN",
     "Knight ADRC",
     "AGES-Reykjavik",
     "ARIC",
     "ARIC",
-    "UK Biobank",
-    "UK Biobank",
-    "UK Biobank",
-    "UK Biobank",
-    "UK Biobank",
-    "UK Biobank",
-    "deCODE Genetics",
-    "ROSMAP (DLPFC subset)",
-    "GCKD (Urine subset)",
-    "China Kadoorie Biobank",
-    "China Kadoorie Biobank",
-    "UK Biobank; Fenland",
-    "UK Biobank; Fenland",
+    "UKB",
+    "UKB",
+    "UKB",
+    "UKB",
+    "UKB",
+    "UKB",
+    "deCODE",
+    "ROSMAP",
+    "GCKD",
+    "CKB",
+    "CKB",
+    "UKB, Fenland",
+    "UKB, Fenland",
     "Generation Scotland",
     "QMDiab",
-    "CHOP Pediatric Neuro Cohort",
-    "INTERVAL; CHRIS",
-    "BioBank Japan; Nagahama",
-    "BioBank Japan (Pilot)"
+    "CHOP",
+    "INTERVAL, CHRIS",
+    "BBJ, Nagahama",
+    "BBJ"
   ),
   ancestry_group = c(
     "EUR", "EUR", "EUR", "EUR", "EUR",
@@ -436,6 +443,15 @@ strata <- data.frame(
     "GRCh38", "GRCh38", "GRCh38", "GRCh38", "GRCh38",
     "GRCh38"
   ),
+  strand = c(
+    "Not reported", "Not reported", "Forward (+)", "Not reported", "Not reported",
+    "Forward (+)", "Not reported", "Not reported", "Not reported", "Not reported",
+    "Forward (+)", "Forward (+)", "Forward (+)", "Forward (+)", "Forward (+)",
+    "Forward (+)", "Forward (+)", "Forward (+)", "Forward (+)", "Not reported",
+    "Forward (+)", "Not reported", "Not reported", "Forward (+)", "Forward (+)",
+    "Forward (+)", "Forward (+)", "Not reported", "Forward (+)", "Not reported",
+    "Not reported"
+  ),
   imputation_panel = c(
     "1000G Phase 1", "1000G Phase 3", "1000G Phase 3 + UK10K", "HRC r1.1", "1000G Phase 3 / HRC",
     "deCODE WGS", "HRC r1.1 + UK10K", "TOPMed r2", "TOPMed r2", "1000G Phase 3",
@@ -446,7 +462,7 @@ strata <- data.frame(
     "BBJ WGS + 1000G"
   ),
   coverage = c(
-    "genome_wide", "genome_wide", "genome_wide", "top_hits_only", "genome_wide",
+    "genome_wide", "genome_wide", "genome_wide", "none", "genome_wide",
     "genome_wide", "genome_wide", "genome_wide", "cis_only", "top_hits_only",
     "cis_only", "cis_only", "genome_wide", "genome_wide", "genome_wide",
     "genome_wide", "genome_wide", "genome_wide", "genome_wide", "cis_only",
