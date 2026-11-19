@@ -46,7 +46,7 @@ mutable selectedUniprot = "P05231"
 ```
 
 ```{ojs}
-// Banner box with ONLY "Protein Lookup" title and the search input inside it (no extra text or chip lists)
+// Banner box with "Protein Lookup" header on line 1 and centered search bar on line 2
 {
   const resolveProteinQuery = (raw) => {
     const q = (raw || "").trim().toLowerCase();
@@ -71,7 +71,7 @@ mutable selectedUniprot = "P05231"
   const searchInput = htl.html`<input
     class="col-filter-input"
     list="protein-lookup-options"
-    style="width:420px;max-width:100%;font-size:0.88rem;padding:0.45rem 0.7rem;"
+    style="width:520px;max-width:100%;font-size:0.88rem;padding:0.48rem 0.75rem;"
     type="search"
     placeholder="Search UniProt, gene symbol, or protein name (e.g. IL6, P05231)..."
     oninput=${e => resolveProteinQuery(e.target.value)}
@@ -83,9 +83,9 @@ mutable selectedUniprot = "P05231"
   </datalist>`;
 
   return htl.html`<div class="pg-shell" style="padding-bottom:0;">
-    <div class="hero-banner">
+    <div class="hero-banner" style="flex-direction:column;align-items:stretch;gap:0.6rem;">
       <h1 style="margin:0;">Protein Lookup</h1>
-      <div>
+      <div style="display:flex;justify-content:center;width:100%;">
         ${searchInput}
         ${datalist}
       </div>
@@ -194,24 +194,24 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
   }}>Next →</button>`;
 
   const cols = [
-    { key: "author",     label: "AUTHOR",     align: "left"  },
-    { key: "year",       label: "YEAR",       align: "left"  },
-    { key: "cohort",     label: "COHORT",     align: "left"  },
-    { key: "overlap",    label: "OVERLAP",    align: "left"  },
-    { key: "population", label: "POPULATION", align: "left"  },
-    { key: "sex",        label: "SEX",        align: "left"  },
-    { key: "n",          label: "N",          align: "right" },
-    { key: "sample",     label: "SAMPLE",     align: "left"  },
-    { key: "platform",   label: "PLATFORM",   align: "left"  },
-    { key: "assay",      label: "ASSAY",      align: "right" },
-    { key: "data",       label: "DATA",       align: "left"  }
+    { key: "author",     label: "AUTHOR"     },
+    { key: "year",       label: "YEAR"       },
+    { key: "cohort",     label: "COHORT"     },
+    { key: "overlap",    label: "OVERLAP"    },
+    { key: "population", label: "POPULATION" },
+    { key: "sex",        label: "SEX"        },
+    { key: "n",          label: "N"          },
+    { key: "sample",     label: "SAMPLE"     },
+    { key: "platform",   label: "PLATFORM"   },
+    { key: "assay",      label: "ASSAY"      },
+    { key: "data",       label: "DATA"       }
   ];
 
   const sortIndicators = {};
   const sortHeaders = cols.map(col => {
     const ind = htl.html`<span style="opacity:0.55;margin-left:3px;font-size:0.68rem;">↕</span>`;
     sortIndicators[col.key] = ind;
-    return htl.html`<th style="text-align:${col.align};" onclick=${() => {
+    return htl.html`<th onclick=${() => {
       if (state.sortCol === col.key) state.sortAsc = !state.sortAsc;
       else {
         state.sortCol = col.key;
@@ -352,23 +352,23 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
             ${d.pmid ? d.pmid : "Preprint"}
           </div>
         </td>
-        <td class="mono">${d.year}</td>
+        <td class="num-col">${d.year}</td>
         <td>${d.cohorts_display}</td>
-        <td>
+        <td class="center-col">
           ${d.overlap_count > 0
             ? htl.html`<span class="pg-badge overlap-yes">${d.overlap_compact}</span>`
             : htl.html`<span class="overlap-none">None</span>`}
         </td>
-        <td class="mono"><strong>${d.pop_super}</strong></td>
-        <td>${d.sex}</td>
+        <td class="mono center-col"><strong>${d.pop_super}</strong></td>
+        <td class="center-col">${d.sex}</td>
         <td class="num-col"><strong>${d.n_samples.toLocaleString()}</strong></td>
         <td>${d.sample_matrix}</td>
-        <td>
+        <td class="center-col">
           <span class="pg-badge ${platBadgeClass(d.platform_category)}">${d.platform_category}</span>
           <div style="font-size:0.71rem;color:#64748b;margin-top:1px;">${d.platform_version}</div>
         </td>
         <td class="num-col"><span class="mono" style="font-weight:600;color:#0f4c81;">${d.assay_id}</span></td>
-        <td><span class="pg-badge ${dataBadgeClass(d.data_label)}">${d.data_label}</span></td>
+        <td class="center-col"><span class="pg-badge ${dataBadgeClass(d.data_label)}">${d.data_label}</span></td>
       </tr>`);
 
       if (isOpen) {

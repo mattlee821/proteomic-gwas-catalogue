@@ -41,7 +41,7 @@ matchNumericFilter = (val, rawExpr) => {
 ```
 
 ```{ojs}
-// Full-width Catalogue view: Banner + 11-column filterable, paginated, inline-expandable table
+// Full-width Catalogue view: Banner + 11-column filterable, paginated, inline-expandable table + 2 summary figures + bottom download
 {
   const state = {
     hideSuperseded: true,
@@ -67,6 +67,8 @@ matchNumericFilter = (val, rawExpr) => {
 
   const countSpan = htl.html`<span></span>`;
   const pageInfoSpan = htl.html`<span></span>`;
+  const fig1Container = htl.html`<div></div>`;
+  const fig2Container = htl.html`<div></div>`;
 
   const clearBtn = htl.html`<button class="btn-pill" style="display:none;padding:0.2rem 0.55rem;font-size:0.74rem;" onclick=${() => {
     for (const k of Object.keys(state.filters)) state.filters[k] = "";
@@ -99,24 +101,24 @@ matchNumericFilter = (val, rawExpr) => {
   }}>Next →</button>`;
 
   const cols = [
-    { key: "author",     label: "AUTHOR",     align: "left"  },
-    { key: "year",       label: "YEAR",       align: "left"  },
-    { key: "cohort",     label: "COHORT",     align: "left"  },
-    { key: "overlap",    label: "OVERLAP",    align: "left"  },
-    { key: "population", label: "POPULATION", align: "left"  },
-    { key: "sex",        label: "SEX",        align: "left"  },
-    { key: "n",          label: "N",          align: "right" },
-    { key: "sample",     label: "SAMPLE",     align: "left"  },
-    { key: "platform",   label: "PLATFORM",   align: "left"  },
-    { key: "assay",      label: "ASSAY",      align: "right" },
-    { key: "data",       label: "DATA",       align: "left"  }
+    { key: "author",     label: "AUTHOR"     },
+    { key: "year",       label: "YEAR"       },
+    { key: "cohort",     label: "COHORT"     },
+    { key: "overlap",    label: "OVERLAP"    },
+    { key: "population", label: "POPULATION" },
+    { key: "sex",        label: "SEX"        },
+    { key: "n",          label: "N"          },
+    { key: "sample",     label: "SAMPLE"     },
+    { key: "platform",   label: "PLATFORM"   },
+    { key: "assay",      label: "ASSAY"      },
+    { key: "data",       label: "DATA"       }
   ];
 
   const sortIndicators = {};
   const sortHeaders = cols.map(col => {
     const ind = htl.html`<span style="opacity:0.55;margin-left:3px;font-size:0.68rem;">↕</span>`;
     sortIndicators[col.key] = ind;
-    return htl.html`<th style="text-align:${col.align};" onclick=${() => {
+    return htl.html`<th onclick=${() => {
       if (state.sortCol === col.key) {
         state.sortAsc = !state.sortAsc;
       } else {
@@ -213,6 +215,113 @@ matchNumericFilter = (val, rawExpr) => {
     return rows;
   }
 
+  function renderFigures(rows) {
+    if (rows.length === 0) {
+      fig1Container.replaceChildren(htl.html`<div style="color:#64748b;font-size:0.84rem;padding:1rem 0;">No matching studies to plot.</div>`);
+      fig2Container.replaceChildren(htl.html`<div style="color:#64748b;font-size:0.84rem;padding:1rem 0;">No matching studies to plot.</div>`);
+      return;
+    }
+
+    // Aggregate unique study counts per year for top-of-plot badges
+    const yearMap = new Map();
+    for (const r of rows) {
+      if (!yearMap.has(r.year)) yearMap.set(r.year, new Set());
+      yearMap.get(r.year).add(r.study_id);
+    }
+    const maxN = Math.max(...rows.map(d => d.n_samples), 1000);
+    const yearCounts = Array.from(yearMap.entries()).map(([yr, sset]) => ({
+      year: yr,
+      n_studies: sset.size,
+      y_pos: maxN * 1.95
+    }));
+
+    const minYr = Math.min(2016.5, Math.min(...rows.map(d => d.year)) - 0.6);
+    const maxYr = Math.max(2026.5, Math.max(...rows.map(d => d.year)) + 0.6);
+
+    const p1 = Plot.plot({
+      width: 620,
+      height: 285,
+      marginLeft: 58,
+      marginRight: 20,
+      marginTop: 22,
+      marginBottom: 38,
+      style: { background: "transparent", fontSize: "11.5px", width: "100%" },
+      x: { label: "Publication Year", tickFormat: d => String(d), domain: [minYr, maxYr] },
+      y: { type: "log", label: "Sample Size N (bubble size = ASSAY)", grid: true, domain: [Math.max(20, Math.min(...rows.map(d => d.n_samples)) * 0.65), maxN * 2.7] },
+      r: { range: [4, 17] },
+      color: {
+        legend: true,
+        domain: ["SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex", "Other Immunoassay"],
+        range: ["#4338ca", "#0d9488", "#d97706", "#db2777", "#64748b", "#475569"]
+      },
+      marks: [
+        Plot.text(yearCounts, {
+          x: "year",
+          y: "y_pos",
+          text: d => `${d.n_studies} ${d.n_studies === 1 ? "study" : "studies"}`,
+          fontSize: 10,
+          fill: "#475569",
+          fontWeight: "600"
+        }),
+        Plot.dot(rows, {
+          x: d => d.year + (d.pop_super === "EUR" ? -0.08 : d.pop_super === "MULTI" ? 0 : 0.1),
+          y: "n_samples",
+          r: "n_assays",
+          fill: "platform_category",
+          fillOpacity: d => d.status === "Preprint" ? 0.45 : 0.78,
+          stroke: "platform_category",
+          strokeWidth: d => d.status === "Preprint" ? 2 : 1,
+          strokeDasharray: d => d.status === "Preprint" ? "3,2" : null,
+          tip: true,
+          title: d => `${d.first_author} (${d.year})\n${d.study_id}\nN = ${d.n_samples.toLocaleString()} | ASSAY = ${d.n_assays.toLocaleString()}\n${d.platform_category} | ${d.pop_super} | ${d.data_label}`
+        })
+      ]
+    });
+    fig1Container.replaceChildren(p1);
+
+    // Figure 2: Strata by Population & Summary-Data Availability
+    const popCounts = new Map();
+    for (const r of rows) {
+      popCounts.set(r.pop_super, (popCounts.get(r.pop_super) || 0) + 1);
+    }
+    const popOrder = Array.from(popCounts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(e => e[0]);
+
+    const p2 = Plot.plot({
+      width: 620,
+      height: 285,
+      marginLeft: 62,
+      marginRight: 28,
+      marginTop: 14,
+      marginBottom: 38,
+      style: { background: "transparent", fontSize: "11.5px", width: "100%" },
+      x: { label: "Number of Study Strata", grid: true, ticks: 6 },
+      y: { label: "Population", domain: popOrder },
+      color: {
+        legend: true,
+        domain: ["Genome-wide", "Gene-region", "Top-hits", "Unavailable"],
+        range: ["#16a34a", "#2563eb", "#ca8a04", "#94a3b8"]
+      },
+      marks: [
+        Plot.barX(
+          rows,
+          Plot.groupY(
+            { x: "count" },
+            {
+              y: "pop_super",
+              fill: "data_label",
+              tip: true,
+              title: d => `${d[0].pop_super} · ${d[0].data_label}\n${d.length} strata`
+            }
+          )
+        ),
+        Plot.ruleX([0])
+      ]
+    });
+    fig2Container.replaceChildren(p2);
+  }
+
   function renderRows() {
     for (const c of cols) {
       const ind = sortIndicators[c.key];
@@ -263,23 +372,23 @@ matchNumericFilter = (val, rawExpr) => {
             ${d.pmid ? d.pmid : "Preprint"}
           </div>
         </td>
-        <td class="mono">${d.year}</td>
+        <td class="num-col">${d.year}</td>
         <td>${d.cohorts_display}</td>
-        <td>
+        <td class="center-col">
           ${d.overlap_count > 0
             ? htl.html`<span class="pg-badge overlap-yes">${d.overlap_compact}</span>`
             : htl.html`<span class="overlap-none">None</span>`}
         </td>
-        <td class="mono"><strong>${d.pop_super}</strong></td>
-        <td>${d.sex}</td>
+        <td class="mono center-col"><strong>${d.pop_super}</strong></td>
+        <td class="center-col">${d.sex}</td>
         <td class="num-col"><strong>${d.n_samples.toLocaleString()}</strong></td>
         <td>${d.sample_matrix}</td>
-        <td>
+        <td class="center-col">
           <span class="pg-badge ${platBadgeClass(d.platform_category)}">${d.platform_category}</span>
           <div style="font-size:0.71rem;color:#64748b;margin-top:1px;">${d.platform_version}</div>
         </td>
         <td class="num-col">${d.n_assays.toLocaleString()}</td>
-        <td><span class="pg-badge ${dataBadgeClass(d.data_label)}">${d.data_label}</span></td>
+        <td class="center-col"><span class="pg-badge ${dataBadgeClass(d.data_label)}">${d.data_label}</span></td>
       </tr>`);
 
       if (isOpen) {
@@ -332,6 +441,7 @@ matchNumericFilter = (val, rawExpr) => {
       trs.push(htl.html`<tr><td colspan="11" style="text-align:center;padding:1.5rem;color:#64748b;">No studies match the current column filters.</td></tr>`);
     }
     tbody.replaceChildren(...trs);
+    renderFigures(allRows);
   }
 
   renderRows();
@@ -341,9 +451,6 @@ matchNumericFilter = (val, rawExpr) => {
       <div>
         <h1>Proteomic GWAS Catalogue</h1>
         <p>A searchable reference table of published and preprint genome-wide association studies (GWAS) of proteins across cohorts, platforms, and biological matrices.</p>
-      </div>
-      <div>
-        <a class="btn-pill btn-pill-primary" href="data/proteomic_gwas_catalogue_full.tsv" download>⬇ Download Full Table (.tsv)</a>
       </div>
     </div>
 
@@ -369,6 +476,26 @@ matchNumericFilter = (val, rawExpr) => {
         </thead>
         ${tbody}
       </table>
+    </div>
+
+    <div class="fig-grid-2col">
+      <div class="panel-card" style="margin-bottom:0;">
+        <div class="panel-title">
+          <span>Studies, Sample Size (N) &amp; ASSAY Scale per Year</span>
+        </div>
+        ${fig1Container}
+      </div>
+
+      <div class="panel-card" style="margin-bottom:0;">
+        <div class="panel-title">
+          <span>Population &amp; Summary-Data Availability Across Strata</span>
+        </div>
+        ${fig2Container}
+      </div>
+    </div>
+
+    <div class="bottom-download-bar">
+      <a class="btn-pill btn-pill-primary" href="data/proteomic_gwas_catalogue_full.tsv" download>⬇ Download Full Table (.tsv)</a>
     </div>
   </div>`;
 }

@@ -10,10 +10,41 @@ replacedPreprints = Array.isArray(catData.preprints_replaced) ? catData.preprint
 ```
 
 ```{ojs}
-// Log page: 4 exact banner boxes (UPDATED, DATE, SCREENED, INCLUDED) + expandable date-stamped log table + preprint replacement ledger
+// Log page: 4 banner KPI boxes + inline-expandable log table (with preprint replacements inside each update's dropdown, no log download button)
 {
   const expanded = new Set();
   const tbody = htl.html`<tbody></tbody>`;
+
+  const replacedByPreprintId = new Map(replacedPreprints.map(p => [p.preprint_study_id, p]));
+
+  function renderReplacedItems(rawDetails) {
+    const txt = (rawDetails || "").trim();
+    if (!txt) return htl.html`<span class="overlap-none">None in this update</span>`;
+    const entries = txt.split(";").map(s => s.trim()).filter(Boolean);
+    return htl.html`<div style="display:flex;flex-direction:column;gap:0.4rem;margin-top:0.25rem;">
+      ${entries.map(item => {
+        const m = item.match(/^(\S+)\s*->\s*(\S+)$/);
+        if (m) {
+          const preId = m[1];
+          const pubId = m[2];
+          const rich = replacedByPreprintId.get(preId);
+          if (rich) {
+            return htl.html`<div style="padding:0.4rem 0.55rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:5px;font-size:0.78rem;">
+              <div>
+                <span class="mono" style="font-weight:600;">${rich.preprint_study_id}</span>
+                (${rich.preprint_citation} · <a class="mono" href="https://doi.org/${rich.preprint_doi}" target="_blank" rel="noopener">${rich.preprint_doi}</a>)
+              </div>
+              <div style="margin-top:2px;color:#166534;">
+                ↳ Replaced by <span class="mono" style="font-weight:700;">${rich.published_study_id}</span>
+                (${rich.published_citation}${rich.published_pmid ? htl.html` · <a class="mono" href="https://pubmed.ncbi.nlm.nih.gov/${rich.published_pmid}/" target="_blank" rel="noopener">PMID: ${rich.published_pmid}</a>` : ""}${rich.published_doi ? htl.html` · <a class="mono" href="https://doi.org/${rich.published_doi}" target="_blank" rel="noopener">${rich.published_doi}</a>` : ""})
+              </div>
+            </div>`;
+          }
+        }
+        return htl.html`<div class="mono" style="font-size:0.78rem;">${item}</div>`;
+      })}
+    </div>`;
+  }
 
   function renderLogRows() {
     const trs = [];
@@ -26,14 +57,13 @@ replacedPreprints = Array.isArray(catData.preprints_replaced) ? catData.preprint
       };
 
       const addedIds = (r.studies_added_ids || "").trim();
-      const replacedTxt = (r.preprints_replaced_details || "").trim();
 
       trs.push(htl.html`<tr class="data-row ${isOpen ? "is-open" : ""}" onclick=${toggle}>
-        <td class="mono" style="font-weight:700;white-space:nowrap;">
+        <td class="mono center-col" style="font-weight:700;white-space:nowrap;">
           <span style="display:inline-block;width:12px;color:#64748b;font-size:0.7rem;">${isOpen ? "▾" : "▸"}</span>
           ${r.run_date}
         </td>
-        <td class="mono">${r.date_from || r.run_date} → ${r.date_to || r.run_date}</td>
+        <td class="mono center-col">${r.date_from || r.run_date} → ${r.date_to || r.run_date}</td>
         <td class="num-col"><strong>${Number(r.deduplicated_new).toLocaleString()}</strong></td>
         <td class="num-col"><span class="pg-badge data-gw">+${Number(r.studies_added).toLocaleString()}</span></td>
         <td class="num-col">${Number(r.excluded_records).toLocaleString()}</td>
@@ -43,7 +73,7 @@ replacedPreprints = Array.isArray(catData.preprints_replaced) ? catData.preprint
             ? htl.html`<span class="pg-badge cur-ai-extracted">${Number(r.preprints_upgraded)} replaced</span>`
             : htl.html`<span class="overlap-none">0</span>`}
         </td>
-        <td><span class="pg-badge ${Number(r.studies_added) > 0 ? "cur-human-reviewed" : "data-unavail"}">${r.status}</span></td>
+        <td class="center-col"><span class="pg-badge ${Number(r.studies_added) > 0 ? "cur-human-reviewed" : "data-unavail"}">${r.status}</span></td>
       </tr>`);
 
       if (isOpen) {
@@ -80,7 +110,10 @@ replacedPreprints = Array.isArray(catData.preprints_replaced) ? catData.preprint
               <div class="detail-col-box">
                 <h4>CATALOGUE UPDATES</h4>
                 <div class="detail-kv"><strong>Studies included (${Number(r.studies_added)}):</strong> <span class="mono">${addedIds || "None"}</span></div>
-                <div class="detail-kv"><strong>Preprints replaced by published record (${Number(r.preprints_upgraded || 0)}):</strong> <span class="mono">${replacedTxt || "None"}</span></div>
+                <div class="detail-kv">
+                  <strong>Preprints replaced by published studies (${Number(r.preprints_upgraded || 0)}):</strong>
+                  ${renderReplacedItems(r.preprints_replaced_details)}
+                </div>
               </div>
             </div>
           </td>
@@ -96,10 +129,7 @@ replacedPreprints = Array.isArray(catData.preprints_replaced) ? catData.preprint
     <div class="hero-banner">
       <div>
         <h1>Log</h1>
-        <p>Date-stamped search update history (newest at top) and tracker of preprints replaced by peer-reviewed publications.</p>
-      </div>
-      <div>
-        <a class="btn-pill btn-pill-primary" href="data/search_runs.tsv" download>⬇ Download Log (.tsv)</a>
+        <p>Date-stamped search update history (newest at top), including records screened, included/excluded counts, manual review queue, and preprints replaced by published studies.</p>
       </div>
     </div>
 
@@ -127,60 +157,25 @@ replacedPreprints = Array.isArray(catData.preprints_replaced) ? catData.preprint
     </div>
 
     <div class="table-toolbar">
-      <span>Showing ${runs.length} search updates (newest at top) · Click any row to expand run details</span>
+      <span>Showing ${runs.length} search updates (newest at top) · Click any row to expand update details &amp; replaced preprints</span>
     </div>
 
-    <div class="cat-table-wrap" style="margin-bottom:1.1rem;">
+    <div class="cat-table-wrap">
       <table class="cat-table">
         <thead>
           <tr class="sort-row" style="cursor:default;">
             <th>DATE</th>
             <th>SEARCH WINDOW</th>
-            <th style="text-align:right;">RECORDS FOUND</th>
-            <th style="text-align:right;">INCLUDED</th>
-            <th style="text-align:right;">EXCLUDED</th>
-            <th style="text-align:right;">MANUAL REVIEW</th>
-            <th style="text-align:right;">PREPRINTS REPLACED</th>
+            <th>RECORDS FOUND</th>
+            <th>INCLUDED</th>
+            <th>EXCLUDED</th>
+            <th>MANUAL REVIEW</th>
+            <th>PREPRINTS REPLACED</th>
             <th>STATUS</th>
           </tr>
         </thead>
         ${tbody}
       </table>
-    </div>
-
-    <div class="panel-card">
-      <div class="panel-title">
-        <span>Preprints Replaced by Published Studies (${replacedPreprints.length})</span>
-        <span style="font-size:0.76rem;font-weight:400;color:#64748b;">Tracked automatically via <code>src/apply_preprint_upgrades.R</code></span>
-      </div>
-      ${replacedPreprints.length > 0
-        ? htl.html`<div class="cat-table-wrap">
-            <table class="cat-table">
-              <thead>
-                <tr class="sort-row" style="cursor:default;">
-                  <th>PREVIOUS PREPRINT ID</th>
-                  <th>PREPRINT CITATION &amp; DOI</th>
-                  <th>REPLACED BY PUBLISHED ID</th>
-                  <th>PUBLISHED CITATION &amp; LINKS</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${replacedPreprints.map(p => htl.html`<tr>
-                  <td class="mono">${p.preprint_study_id}</td>
-                  <td>
-                    ${p.preprint_citation} · <a class="mono" href="https://doi.org/${p.preprint_doi}" target="_blank" rel="noopener">${p.preprint_doi}</a>
-                  </td>
-                  <td class="mono" style="font-weight:700;color:#166534;">${p.published_study_id}</td>
-                  <td>
-                    ${p.published_citation}
-                    ${p.published_pmid ? htl.html` · <a class="mono" href="https://pubmed.ncbi.nlm.nih.gov/${p.published_pmid}/" target="_blank" rel="noopener">PMID: ${p.published_pmid}</a>` : ""}
-                    ${p.published_doi ? htl.html` · <a class="mono" href="https://doi.org/${p.published_doi}" target="_blank" rel="noopener">${p.published_doi}</a>` : ""}
-                  </td>
-                </tr>`)}
-              </tbody>
-            </table>
-          </div>`
-        : htl.html`<div style="font-size:0.84rem;color:#64748b;">No preprints have been replaced by published records yet.</div>`}
     </div>
   </div>`;
 }

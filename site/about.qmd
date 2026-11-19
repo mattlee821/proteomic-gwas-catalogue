@@ -4,78 +4,80 @@ pagetitle: "About · Proteomic GWAS Catalogue"
 
 ::: {.pg-shell-readable}
 
-<div class="hero-banner">
-  <div>
-    <h1>About</h1>
-    <p>Overview of the Proteomic GWAS Catalogue, systematic multi-database search strategy, study eligibility criteria, and our hybrid AI + human curation workflow.</p>
-  </div>
-</div>
+::: {.hero-banner}
+::: {}
+# About
 
-::: {.about-section}
-## 1. Overview & Purpose
-
-Genome-wide association studies (GWAS) of protein abundance — protein quantitative trait locus (pQTL) studies — are scattered across dozens of journals, preprint servers, cohorts, proteomic platforms, biological matrices, and data repositories. Identifying appropriate summary statistics for **Mendelian randomisation (MR)**, **colocalisation**, **meta-analysis**, or **cross-platform epitope validation** typically requires manually checking methods sections, supplementary spreadsheets, and data portals for every study.
-
-The **Proteomic GWAS Catalogue** consolidates all primary human protein GWAS into a version-controlled, continuously updated reference table recording study design, ancestry, sample size, biological matrix, assay count, genomic build and strand, summary-statistics availability, cohort overlap across the catalogue, and transparent curation provenance.
+Systematic multi-database search strategy, study eligibility criteria, and hybrid AI + human curation workflow for the Proteomic GWAS Catalogue.
+:::
 :::
 
 ::: {.about-section}
-## 2. Systematic Search Strategy
+## 1. Search Strategy
 
-New and historical studies are identified using a scripted, reproducible **four-source search pipeline** (`src/run_literature_search.R` and `src/search/lexicons.R`) executed on a recurring schedule via GitHub Actions:
+New and historical studies are identified using a scripted, reproducible **four-source search and dual-axis triage pipeline** (`src/run_literature_search.R` and `src/search/lexicons.R`) executed via GitHub Actions:
 
 1. **PubMed (NCBI E-utilities `esearch` + `efetch` XML):**
-   Modular Boolean queries combining Medical Subject Headings (`Proteomics`, `Proteome`, `Genome-Wide Association Study`, `Quantitative Trait Loci`) and free-text title/abstract terms covering commercial and untargeted platforms (`SomaScan`, `SomaLogic`, `SOMAmer`, `aptamers`, `Olink`, `proximity extension`, `SCALLOP`, `NULISA`, `NULISAseq`, `DIA-MS`, `SWATH`, `TMT`, `Proteograph`, `LC-MS/MS`, `MRM/PRM`, `Luminex`, `Bio-Plex`, `Milliplex`, `Rules-Based Medicine`) paired with germline genetic association terms (`GWAS`, `pGWAS`, `pQTL`, `cis-pQTL`, `trans-pQTL`, `exome-wide`, `whole-genome sequencing`, `genetic architecture`). Queries deliberately avoid requiring `"Humans"[mh]` so recently indexed articles and NIH preprints lacking MeSH annotations are retained.
-2. **Europe PMC (`MED` + `PMC` + Preprints `PPR`):**
-   Queries peer-reviewed articles alongside preprints across **bioRxiv**, **medRxiv**, and **Research Square** without restricting to open-access subsets (preserving subscription articles), supplemented by a full-text `METHODS:` search prong that rescues multi-omics studies mentioning proteomic assays and GWAS software (`REGENIE`, `BOLT-LMM`, `fastGWA`, `MatrixEQTL`, `tensorQTL`) only in their Methods section.
+   Modular Boolean queries combining Medical Subject Headings (`Proteomics`, `Proteome`, `Genome-Wide Association Study`, `Quantitative Trait Loci`) and free-text title/abstract terms covering affinity and untargeted platforms (`SomaScan`, `SomaLogic`, `SOMAmer`, `aptamer-based`, `Olink`, `Explore 3072`, `Explore HT`, `proximity extension`, `SCALLOP`, `NULISA`, `NULISAseq`, `Simoa`, `DIA-MS`, `SWATH`, `Orbitrap Astral`, `timsTOF`, `TMT`, `Proteograph`, `LC-MS/MS`, `MRM/PRM`, `Luminex`, `Bio-Plex`, `Milliplex`, `Rules-Based Medicine`) paired with germline genetic association terms (`GWAS`, `pGWAS`, `pQTL`, `cis-pQTL`, `trans-pQTL`, `vQTL`, `exome-wide`, `whole-genome sequencing`, `genetic architecture`). Queries deliberately omit `"Humans"[mh]` so recently indexed articles and NIH preprints lacking MeSH annotations are retained.
+2. **Europe PMC (`MED` + `PMC` + Preprints `PPR` + `METHODS`):**
+   Two sharded `TITLE_ABS:` queries (`Platforms + Anchors` and `Proteome + Analytes`) retrieve peer-reviewed articles and preprints across **bioRxiv**, **medRxiv**, **openRxiv (`10.64898/`)**, **Research Square**, and **Preprints.org** without restricting to open-access subsets, paired with a full-text `METHODS:` search prong rescuing multi-omics studies that name proteomic platforms and GWAS software (`REGENIE`, `BOLT-LMM`, `fastGWA`, `SAIGE`, `MatrixEQTL`, `tensorQTL`, `QTLtools`) only in their Methods section.
 3. **NHGRI-EBI GWAS Catalog (REST API v2):**
-   Queries `EFO_0004747` (*protein measurement* and child ontology terms), aggregating study accessions (`GCST*`) per publication (`>= 5` distinct protein traits or proteomic title/trait match) to capture consortium studies that omit platform brand names from abstracts while filtering out single-biomarker clinical chemistry GWAS.
+   Queries date-sorted `/v2/publications` alongside `EFO_0004747` (*protein measurement*), verifying protein measurement traits directly across `disease_trait` labels (`>= 5` distinct non-lipid/CRP/albumin protein traits) so large summary-statistics deposits lacking abstract platform keywords or formal EFO curation are captured.
 4. **Citation Network Snowballing & Preprint Lineage Tracking:**
-   Performs backward reference and forward citation searches (`CITES:`) from a fixed seed set of landmark pGWAS studies, and monitors active preprints across `api.biorxiv.org/pubs/`, Europe PMC `commentCorrectionList`, and Crossref `is-preprint-of` relations to link preprints automatically when peer-reviewed versions appear.
+   Performs forward citation (`CITES:`) and date-bounded reference snowballing from a 10-paper landmark pGWAS seed set across platforms and tissues, and monitors active preprints across `api.biorxiv.org/pubs/`, Europe PMC `commentCorrectionList`, and Crossref `is-preprint-of` relations (`src/apply_preprint_upgrades.R`) to replace superseded preprints with peer-reviewed publications automatically.
 5. **Blinded Positive-Control Validation:**
    Search recall and triage survival are benchmarked against an air-gapped positive-control study set (`src/evaluate_positive_controls.R --mode blinded-summary`) that is never read by the search scripts.
+
+<details class="methods-dropdown">
+<summary>Search Strategy — Iterative Design &amp; Blinded Multi-Agent Validation Log</summary>
+
+::: {.methods-dropdown-body}
+{{< include _methods_dropdown.md >}}
+:::
+
+</details>
 :::
 
 ::: {.about-section}
-## 3. Inclusion & Exclusion Criteria
+## 2. Inclusion & Exclusion Criteria
 
 ### Inclusion Criteria
-* **Primary germline protein GWAS / pQTL mapping:** Studies generating new individual-level genotype-to-protein association results (array GWAS, WES, WGS, *cis*-only mapping, or sex-/ancestry-stratified analyses) or primary multi-cohort consortium pGWAS meta-analyses.
-* **All proteomic technologies:** Affinity aptamer (`SomaScan`), proximity extension / nucleic-acid immunoassay (`Olink`, `NULISAseq`), mass spectrometry (`DIA/SWATH`, `DDA`, `TMT/iTRAQ`, nanoparticle-enriched `Proteograph`, targeted `MRM/PRM` panels), and multiplex bead/planar immunoassays (`Luminex`, `RBM`, `MSD`) measuring multiplexed protein targets (`>= 5` proteins or explicit proteomic/pQTL framing).
-* **All human biological matrices:** EDTA/citrate/heparin plasma, serum, whole blood / dried blood spots, cerebrospinal fluid (CSF), brain and solid tissues, urine, saliva, and human cell lines.
-* **Preprints included:** Active preprints (`bioRxiv`, `medRxiv`, `Research Square`) are included and linked via `superseded_by` once published in a peer-reviewed journal.
+* **Primary germline protein GWAS / pQTL / vQTL mapping:** Studies generating new individual-level genotype-to-protein association results (array GWAS, WES, WGS, *cis*-only mapping, variance-QTL mapping, or sex-/ancestry-stratified analyses) or primary multi-cohort consortium pGWAS meta-analyses.
+* **All proteomic technologies:** Affinity aptamer (`SomaScan`), proximity extension / nucleic-acid immunoassay (`Olink`, `NULISAseq`), ultrasensitive digital/bead/planar immunoassays (`Simoa`, `Luminex`, `RBM`, `MSD`), and mass spectrometry (`DIA/SWATH`, `DDA`, `Orbitrap Astral`, `timsTOF`, `TMT/iTRAQ`, nanoparticle-enriched `Proteograph`, targeted `MRM/PRM` panels) measuring multiplexed protein targets (`>= 5` proteins or explicit proteomic/pQTL framing).
+* **All human biological matrices:** EDTA/citrate/heparin plasma, serum, whole blood / dried blood spots, cerebrospinal fluid (CSF), brain and solid tissues, urine, saliva, and primary human cell types / iPSCs.
+* **Preprints included:** Active preprints are included and automatically linked (`superseded_by`) once published in a peer-reviewed journal.
 * **No sample-size threshold:** Studies of any sample size (`N >= 1`) are eligible so tissue-specific, pediatric, rare-disease, and underrepresented-ancestry pGWAS are captured alongside biobank-scale cohorts.
-* **All data-sharing tiers:** Studies are catalogued regardless of summary-statistics availability (`Genome-wide`, `Gene-region`, `Top-hits`, or `Unavailable`), so researchers can immediately see both what exists and whether summary data can be obtained.
+* **All data-sharing tiers:** Studies are catalogued regardless of summary-statistics availability (`Genome-wide`, `Gene-region`, `Top-hits`, or `Unavailable`).
 
 ### Exclusion Criteria
-* **Secondary summary-statistics consumers:** Two-sample Mendelian randomisation (`2SMR`), `SMR`, colocalisation-only, or proteome-wide association studies (`PWAS`) that exclusively reuse previously published pGWAS summary statistics or pre-trained weights without generating new primary genotype-to-protein associations.
-* **Non-germline or non-proteomic studies:** Pure DNA-methylation epigenome-wide association studies (`EWAS`), somatic-only tumour proteomics without germline pQTL mapping, transcript-only `eQTL` studies, or single-analyte clinical assay GWAS.
+* **Secondary summary-statistics consumers:** Two-sample Mendelian randomisation (`2SMR`), `SMR/HEIDI`, colocalisation-only, or proteome-wide association studies (`PWAS`) that exclusively reuse previously published pGWAS summary statistics or pre-trained weights without generating new primary genotype-to-protein associations.
+* **Non-germline or non-proteomic studies:** Pure DNA-methylation epigenome-wide association studies (`EWAS`), somatic-only tumour proteomics without germline pQTL mapping, transcript-only `eQTL` studies, non-genotyped twin heritability models, or single-analyte (`< 5` proteins) clinical biomarker GWAS.
 * **Non-human studies & non-original articles:** Model-organism-only studies without a human primary pGWAS cohort, narrative reviews, editorials, and commentaries.
 :::
 
 ::: {.about-section}
-## 4. Use of Automated Pipelines & AI in Search and Extraction
+## 3. Use of Automated Pipelines & AI in Search and Extraction
 
 Because ~85–90% of recent literature matching `"proteomics" AND "GWAS"` consists of secondary two-sample MR papers reusing public summary statistics, candidate screening and initial metadata extraction use a transparent two-stage automated pipeline:
 
 1. **Automated Dual-Axis Triage (`src/run_literature_search.R`):**
-   Every deduplicated record is scored on two orthogonal axes — primary data-generation signals (`P_score`: direct cohort assaying, pQTL discovery counts, genotyping/imputation/software methods) versus secondary reuse signals (`S_score`: downloading public summary statistics, `IVW`/`MR-Egger` boilerplate) — ensuring primary pGWAS that *also* perform downstream MR or drug-target prioritisation are retained while pure secondary consumers are deprioritised.
+   Every deduplicated record is scored on two orthogonal axes — primary data-generation signals (`P_score`: direct cohort assaying, pQTL discovery counts, genotyping/imputation/software methods) versus secondary reuse signals (`S_score`: downloading public summary statistics, `IVW`/`MR-Egger` boilerplate) — paired with a germline proteogenomic anchor ensuring primary pGWAS that *also* perform downstream MR are retained while pure secondary consumers and non-genetic biomarker cohorts are deprioritised.
 2. **Four-Tier Cascading Extraction (`src/extract_candidate_study.R`):**
    For actionable candidates, an automated extractor retrieves and records atomic per-field provenance across:
    * **Tier 1:** Structured metadata APIs (Europe PMC, PubMed XML, Crossref, Unpaywall, GWAS Catalog v2).
    * **Tier 2:** Legal open-access full-text JATS XML and NCBI PMC BioC sections (`Methods`, `Results`, `Data Availability`), without bypassing paywalls or access controls.
-   * **Tier 3:** Open supplementary spreadsheets/documents (`.xlsx`, `.docx`, BioC PDFs via EBI BioStudies and NCBI `supplmat`), 1-hop data-portal preflight checks (e.g. Synapse, Zenodo, deCODE), and sentinel `rsID` coordinate checks to verify `genome_build` when build names are omitted from text.
+   * **Tier 3:** Open supplementary spreadsheets/documents (`.xlsx`, `.docx`, BioC PDFs via EBI BioStudies and NCBI `supplmat`), 1-hop data-portal preflight checks (Synapse, Zenodo, deCODE), and sentinel `rsID` coordinate checks to verify `genome_build` when build names are omitted from text.
    * **Tier 4:** Conflict and completeness checks that emit draft catalogue rows alongside explicit `NEEDS_MANUAL_REVIEW` checklists whenever mandatory fields are missing, ambiguous, or behind closed-access Methods.
 :::
 
 ::: {.about-section}
-## 5. Role of Human Review & Curation Provenance Badges
+## 4. Role of Human Review & Curation Provenance Badges
 
-Automated searches never publish directly to the live catalogue; every update opens a **GitHub Pull Request** gated by schema validation and human review. Each row in the catalogue displays one of three explicit provenance badges inside its expanded **Other Information** panel:
+Automated searches never publish directly to the live catalogue; every update opens a **GitHub Pull Request** gated by schema validation and human review. Each row in the catalogue displays one of three explicit provenance badges inside its expanded **OTHER** panel (`CURATION`):
 
-* **`AI-extracted`** — Metadata was populated automatically by the 4-tier extraction pipeline from open-access text, supplements, and repository APIs, and has passed automated schema checks but awaits full human sign-off.
+* **`AI-extracted`** — Metadata was populated automatically by the 4-tier extraction pipeline from open-access text, supplements, and repository APIs, and has passed automated schema checks pending full human sign-off.
 * **`Human-reviewed`** — Automated extraction flagged one or more missing, closed-access, or ambiguous fields (`NEEDS_MANUAL_REVIEW`), and a human reviewer checked the paper/supplements to verify and complete the record.
-* **`Human-curated`** — Every phenotype, genetic, build/strand, cohort-overlap, and file-format field was curated and verified end-to-end by a human researcher against the full publication, supplementary tables, and downloaded summary statistics.
+* **`Human-curated`** — Every phenotype, genetic, build/strand, cohort-overlap, and access field was curated and verified end-to-end by a human researcher against the full publication, supplementary tables, and downloaded summary statistics.
 :::
 
 :::
