@@ -1,8 +1,9 @@
 #!/usr/bin/env Rscript
 # Multi-resource literature discovery, connected-components + preprint-lineage
 # deduplication, 4-tier preprint-to-published upgrade detector, strict canonical
-# first-publication-date windowing, and Unified Two-Stage Dual-Axis Triage
-# engine (v3.0) for proteomic-gwas-catalogue.
+# first-publication-date windowing, selective Stage B.5 PMC full-text multi-omic
+# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.0)
+# for proteomic-gwas-catalogue.
 #
 # Usage:
 #   Rscript src/run_literature_search.R [--since YYYY-MM-DD] [--until YYYY-MM-DD]
@@ -105,7 +106,7 @@ format_ymd_safe <- function(yr, mo = "", dy = "") {
   sprintf("%s-%s-%s", y, m, d)
 }
 
-UA_STRING <- "proteomic-gwas-catalogue/3.0 (https://github.com/matthewlee/proteomic-gwas-catalogue)"
+UA_STRING <- "proteomic-gwas-catalogue/4.0 (https://github.com/matthewlee/proteomic-gwas-catalogue)"
 
 # Polite HTTP engine with jittered exponential backoff, Retry-After support, and
 # `expect_json` validation against transient EBI/proxy HTTP 200 text/html error pages.
@@ -152,24 +153,24 @@ perform_polite_http <- function(req, sleep_s = 0.55, max_tries = 5L, label = "HT
 }
 
 # Compile queries from single source of truth (src/search/lexicons.R)
-pm_date_field <- if (identical(mode, "retrospective")) "dp" else "edat"
+pm_date_field <- if (identical(mode, "retrospective")) "dp_or_edat" else "edat"
 q_pubmed      <- build_pubmed_query(since_date, until_date, date_field = pm_date_field,
                                     verify_pmids = if (is_verify) verify_pmids else NULL)
 q_epmc_2a_p1  <- build_epmc_prong2a_platforms_query(since_date, until_date,
-                                                    include_idate = identical(mode, "incremental"),
+                                                    include_idate = TRUE,
                                                     verify_pmids = if (is_verify) verify_pmids else NULL)
 q_epmc_2a_p2  <- build_epmc_prong2a_proteome_query(since_date, until_date,
-                                                   include_idate = identical(mode, "incremental"),
+                                                   include_idate = TRUE,
                                                    verify_pmids = if (is_verify) verify_pmids else NULL)
 q_epmc_2b     <- build_epmc_prong2b_query(since_date, until_date,
-                                          include_idate = identical(mode, "incremental"),
+                                          include_idate = TRUE,
                                           verify_pmids = if (is_verify) verify_pmids else NULL)
 q_epmc_snow   <- build_epmc_snowball_query(LANDMARK_PGWAS_SEEDS$pmid, since_date, until_date,
-                                           include_idate = identical(mode, "incremental"),
+                                           include_idate = TRUE,
                                            verify_pmids = if (is_verify) verify_pmids else NULL)
 
 message(sprintf(
-  "Proteomic GWAS Search v3.0 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
+  "Proteomic GWAS Search v4.0 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
   mode, since_date, until_date,
   if (is_verify) paste(verify_pmids, collapse = ",") else "none",
   dry_run, write_catalogue
@@ -177,8 +178,8 @@ message(sprintf(
 
 if (dry_run) {
   cat("\n--- [Source 1: PubMed E-utilities POST Query] ---\n", q_pubmed, "\n", sep = "")
-  cat("\n--- [Source 2A-1: Europe PMC Platforms + Anchors Shard] ---\n", q_epmc_2a_p1, "\n", sep = "")
-  cat("\n--- [Source 2A-2: Europe PMC Proteome + Analytes Shard] ---\n", q_epmc_2a_p2, "\n", sep = "")
+  cat("\n--- [Source 2A-1: Europe PMC Platforms + pQTL Anchors Shard] ---\n", q_epmc_2a_p1, "\n", sep = "")
+  cat("\n--- [Source 2A-2: Europe PMC Proteome + Multi-Omic Anchors Shard] ---\n", q_epmc_2a_p2, "\n", sep = "")
   cat("\n--- [Source 2B: Europe PMC Full-Text METHODS Rescue Query] ---\n", q_epmc_2b, "\n", sep = "")
   cat("\n--- [Source 4: Europe PMC 10-Seed Server-Side Snowball Query] ---\n", q_epmc_snow, "\n", sep = "")
   cat("\n--- [Source 3: NHGRI-EBI GWAS Catalog REST API v2] ---\n",
@@ -236,6 +237,163 @@ make_raw_rec <- function(source_tag,
 # ---------------------------------------------------------------------------
 # Source 1: PubMed via NCBI E-utilities (esearch POST + efetch XML POST)
 # ---------------------------------------------------------------------------
+parse_pubmed_xml_doc <- function(doc, source_tag = "PubMed") {
+  out <- list()
+  if (is.null(doc)) return(out)
+  # Hydrate both <PubmedArticle> and <PubmedBookArticle> so zero PubMed hits are dropped.
+  # Safeguard 2: Strictly scope ALL XPath queries to ./MedlineCitation, ./PubmedData,
+  # ./BookDocument, or ./PubmedBookData so cited <ReferenceList><Reference><ArticleIdList>
+  # PMCIDs/DOIs/PMIDs NEVER leak into article metadata!
+  arts <- xml2::xml_find_all(doc, ".//PubmedArticle | .//PubmedBookArticle")
+  for (art in arts) {
+    is_book <- identical(xml2::xml_name(art), "PubmedBookArticle")
+    pmid_v <- xml2::xml_text(xml2::xml_find_first(
+      art,
+      if (is_book) "./BookDocument/PMID" else "./MedlineCitation/PMID"
+    ))
+    ttl_v  <- xml2::xml_text(xml2::xml_find_first(
+      art,
+      if (is_book) "./BookDocument/ArticleTitle | ./BookDocument/Book/BookTitle" else "./MedlineCitation/Article/ArticleTitle"
+    ))
+    jrn_v  <- xml2::xml_text(xml2::xml_find_first(
+      art,
+      if (is_book) "./BookDocument/Book/BookTitle" else "./MedlineCitation/Article/Journal/Title"
+    ))
+
+    # Parse electronic ArticleDate (epub), PubmedData History dates, and JournalIssue/Book PubDate (ppub)
+    ad_node <- xml2::xml_find_first(
+      art,
+      if (is_book) "./BookDocument/ArticleDate" else "./MedlineCitation/Article/ArticleDate[@DateType='Electronic'] | ./MedlineCitation/Article/ArticleDate"
+    )
+    art_dt  <- if (!inherits(ad_node, "xml_missing")) {
+      format_ymd_safe(
+        xml2::xml_text(xml2::xml_find_first(ad_node, "./Year")),
+        xml2::xml_text(xml2::xml_find_first(ad_node, "./Month")),
+        xml2::xml_text(xml2::xml_find_first(ad_node, "./Day"))
+      )
+    } else {
+      ""
+    }
+
+    pd_y <- xml2::xml_text(xml2::xml_find_first(art, if (is_book) "./BookDocument/Book/PubDate/Year" else "./MedlineCitation/Article/Journal/JournalIssue/PubDate/Year"))
+    pd_m <- xml2::xml_text(xml2::xml_find_first(art, if (is_book) "./BookDocument/Book/PubDate/Month" else "./MedlineCitation/Article/Journal/JournalIssue/PubDate/Month"))
+    pd_d <- xml2::xml_text(xml2::xml_find_first(art, if (is_book) "./BookDocument/Book/PubDate/Day" else "./MedlineCitation/Article/Journal/JournalIssue/PubDate/Day"))
+    if (is.na(pd_y) || !nzchar(pd_y)) {
+      md <- xml2::xml_text(xml2::xml_find_first(art, if (is_book) "./BookDocument/Book/PubDate/MedlineDate" else "./MedlineCitation/Article/Journal/JournalIssue/PubDate/MedlineDate")) %||% ""
+      pd_y <- regmatches(md, regexpr("[0-9]{4}", md))
+    }
+    pub_dt <- format_ymd_safe(pd_y, pd_m, pd_d)
+
+    id_nodes <- xml2::xml_find_all(
+      art,
+      if (is_book) "./PubmedBookData/ArticleIdList/ArticleId" else "./PubmedData/ArticleIdList/ArticleId"
+    )
+    doi_v <- ""; pmc_v <- ""
+    for (idn in id_nodes) {
+      idt <- xml2::xml_attr(idn, "IdType") %||% ""
+      idv <- xml2::xml_text(idn)
+      if (identical(idt, "doi") && !nzchar(doi_v)) doi_v <- idv
+      if (identical(idt, "pmc") && !nzchar(pmc_v)) pmc_v <- idv
+    }
+
+    doi_norm  <- normalize_doi_one(doi_v)
+    prep_dt   <- extract_preprint_doi_date(doi_norm)
+    is_prep_d <- any(is_preprint_doi(doi_norm))
+
+    # Safeguard 1: When publishers (e.g. OUP) omit <ArticleDate> upon issue assignment,
+    # collect online History dates (aheadofprint, epublish, pubmed, entrez) into pm_hist_dt
+    # and apply strictly monotonic min(pub_dt, pm_hist_dt) so older print dates are NEVER
+    # shifted forward by retroactive PMC/NLM history entries!
+    pm_hist_dt <- ""
+    if (!nzchar(art_dt) && !is_prep_d) {
+      h_xpath <- if (is_book) {
+        "./PubmedBookData/History/PubMedPubDate[@PubStatus='aheadofprint' or @PubStatus='epublish' or @PubStatus='pubmed' or @PubStatus='entrez']"
+      } else {
+        "./PubmedData/History/PubMedPubDate[@PubStatus='aheadofprint' or @PubStatus='epublish' or @PubStatus='pubmed' or @PubStatus='entrez']"
+      }
+      h_nodes <- xml2::xml_find_all(art, h_xpath)
+      if (length(h_nodes) > 0L) {
+        h_dts <- vapply(h_nodes, function(hn) {
+          format_ymd_safe(
+            xml2::xml_text(xml2::xml_find_first(hn, "./Year")),
+            xml2::xml_text(xml2::xml_find_first(hn, "./Month")),
+            xml2::xml_text(xml2::xml_find_first(hn, "./Day"))
+          )
+        }, character(1))
+        h_dts <- h_dts[nzchar(h_dts)]
+        if (length(h_dts) > 0L) pm_hist_dt <- min(h_dts)
+      }
+    }
+
+    # Canonical raw-record first_pub_date precedence:
+    # preprint_doi_date > epub ArticleDate > min(PubDate, pm_hist_dt)
+    first_dt <- if (is_prep_d && nzchar(prep_dt)) {
+      prep_dt
+    } else if (nzchar(art_dt)) {
+      art_dt
+    } else if (nzchar(pub_dt) && nzchar(pm_hist_dt)) {
+      min(pub_dt, pm_hist_dt)
+    } else if (nzchar(pub_dt)) {
+      pub_dt
+    } else {
+      pm_hist_dt
+    }
+    yr_v <- if (nzchar(first_dt)) substr(first_dt, 1L, 4L) else (pd_y %||% "")
+
+    abs_nodes <- xml2::xml_find_all(
+      art,
+      if (is_book) "./BookDocument/Abstract/AbstractText" else "./MedlineCitation/Article/Abstract/AbstractText"
+    )
+    abs_parts <- vapply(abs_nodes, function(n) {
+      lbl <- xml2::xml_attr(n, "Label")
+      tx  <- xml2::xml_text(n)
+      if (!is.na(lbl) && nzchar(lbl)) paste0(lbl, ": ", tx) else tx
+    }, character(1))
+    abs_v <- paste(abs_parts, collapse = " ")
+
+    au_surnames <- xml2::xml_text(xml2::xml_find_all(
+      art,
+      if (is_book) "./BookDocument/AuthorList/Author/LastName" else "./MedlineCitation/Article/AuthorList/Author/LastName"
+    ))
+    au_collect  <- xml2::xml_text(xml2::xml_find_all(
+      art,
+      if (is_book) "./BookDocument/AuthorList/Author/CollectiveName" else "./MedlineCitation/Article/AuthorList/Author/CollectiveName"
+    ))
+    first_au <- if (length(au_surnames) > 0L) au_surnames[1L] else if (length(au_collect) > 0L) au_collect[1L] else ""
+    last_au  <- if (length(au_surnames) > 0L) au_surnames[length(au_surnames)] else first_au
+
+    pts_v <- xml2::xml_text(xml2::xml_find_all(
+      art,
+      if (is_book) "./BookDocument/PublicationType" else "./MedlineCitation/Article/PublicationTypeList/PublicationType"
+    ))
+    if (is_book) pts_v <- unique(c(pts_v, "Book Chapter"))
+    mesh_v <- xml2::xml_text(xml2::xml_find_all(art, "./MedlineCitation/MeshHeadingList/MeshHeading/DescriptorName"))
+
+    cc_nodes <- xml2::xml_find_all(art, "./MedlineCitation/CommentsCorrectionsList/CommentsCorrections")
+    pre_links <- character(0); err_links <- character(0)
+    for (cc in cc_nodes) {
+      rt <- xml2::xml_attr(cc, "RefType") %||% ""
+      rs <- xml2::xml_text(xml2::xml_find_first(cc, "./RefSource")) %||% ""
+      rp <- xml2::xml_text(xml2::xml_find_first(cc, "./PMID")) %||% ""
+      if (rt %in% c("UpdateOf", "UpdateIn", "PreprintIn", "PreprintOf")) {
+        pre_links <- c(pre_links, extract_dois_from_cell(rs), if (!is.na(rp) && nzchar(rp)) paste0("PMID:", rp) else "")
+      }
+      if (rt %in% c("ErratumFor", "CorrectionFor")) {
+        err_links <- c(err_links, extract_dois_from_cell(rs), if (!is.na(rp) && nzchar(rp)) rp else "")
+      }
+    }
+
+    out[[length(out) + 1L]] <- make_raw_rec(
+      source_tag = source_tag, pmid = pmid_v, doi = doi_norm, pmcid = pmc_v,
+      journal = jrn_v, pub_year = yr_v, first_pub_date = first_dt,
+      first_author = first_au, last_author = last_au,
+      title = ttl_v, abstract = abs_v, pub_types = pts_v, mesh_headings = mesh_v,
+      preprint_links = pre_links, erratum_targets = err_links
+    )
+  }
+  out
+}
+
 fetch_pubmed_efetch_xml <- function(pmids, source_tag = "PubMed") {
   pmids <- unique(pmids[nzchar(pmids)])
   if (length(pmids) == 0L) return(list())
@@ -264,102 +422,7 @@ fetch_pubmed_efetch_xml <- function(pmids, source_tag = "PubMed") {
     if (is.null(resp) || httr2::resp_status(resp) != 200L) next
     doc <- tryCatch(xml2::read_xml(httr2::resp_body_string(resp)), error = function(e) NULL)
     if (is.null(doc)) next
-
-    # Hydrate both <PubmedArticle> and <PubmedBookArticle> so zero PubMed hits are dropped
-    arts <- xml2::xml_find_all(doc, ".//PubmedArticle | .//PubmedBookArticle")
-    for (art in arts) {
-      is_book <- identical(xml2::xml_name(art), "PubmedBookArticle")
-      pmid_v <- xml2::xml_text(xml2::xml_find_first(art, ".//PMID"))
-      ttl_v  <- xml2::xml_text(xml2::xml_find_first(
-        art,
-        if (is_book) ".//BookDocument/ArticleTitle | .//BookDocument/Book/BookTitle" else ".//Article/ArticleTitle"
-      ))
-      jrn_v  <- xml2::xml_text(xml2::xml_find_first(
-        art,
-        if (is_book) ".//BookDocument/Book/BookTitle" else ".//Article/Journal/Title"
-      ))
-
-      # Parse electronic ArticleDate (epub) and JournalIssue/Book PubDate (ppub)
-      ad_node <- xml2::xml_find_first(art, ".//Article/ArticleDate[@DateType='Electronic'] | .//Article/ArticleDate")
-      art_dt  <- if (!inherits(ad_node, "xml_missing")) {
-        format_ymd_safe(
-          xml2::xml_text(xml2::xml_find_first(ad_node, "./Year")),
-          xml2::xml_text(xml2::xml_find_first(ad_node, "./Month")),
-          xml2::xml_text(xml2::xml_find_first(ad_node, "./Day"))
-        )
-      } else {
-        ""
-      }
-
-      pd_y <- xml2::xml_text(xml2::xml_find_first(art, if (is_book) ".//BookDocument/Book/PubDate/Year" else ".//Article/Journal/JournalIssue/PubDate/Year"))
-      pd_m <- xml2::xml_text(xml2::xml_find_first(art, if (is_book) ".//BookDocument/Book/PubDate/Month" else ".//Article/Journal/JournalIssue/PubDate/Month"))
-      pd_d <- xml2::xml_text(xml2::xml_find_first(art, if (is_book) ".//BookDocument/Book/PubDate/Day" else ".//Article/Journal/JournalIssue/PubDate/Day"))
-      if (is.na(pd_y) || !nzchar(pd_y)) {
-        md <- xml2::xml_text(xml2::xml_find_first(art, ".//Article/Journal/JournalIssue/PubDate/MedlineDate")) %||% ""
-        pd_y <- regmatches(md, regexpr("[0-9]{4}", md))
-      }
-      pub_dt <- format_ymd_safe(pd_y, pd_m, pd_d)
-
-      id_nodes <- xml2::xml_find_all(art, ".//ArticleIdList/ArticleId")
-      doi_v <- ""; pmc_v <- ""
-      for (idn in id_nodes) {
-        idt <- xml2::xml_attr(idn, "IdType") %||% ""
-        idv <- xml2::xml_text(idn)
-        if (identical(idt, "doi") && !nzchar(doi_v)) doi_v <- idv
-        if (identical(idt, "pmc") && !nzchar(pmc_v)) pmc_v <- idv
-      }
-
-      doi_norm <- normalize_doi_one(doi_v)
-      prep_dt  <- extract_preprint_doi_date(doi_norm)
-      # Canonical raw-record first_pub_date precedence: preprint_doi_date > epub ArticleDate > PubDate
-      first_dt <- if (any(is_preprint_doi(doi_norm)) && nzchar(prep_dt)) {
-        prep_dt
-      } else if (nzchar(art_dt)) {
-        art_dt
-      } else {
-        pub_dt
-      }
-      yr_v <- if (nzchar(first_dt)) substr(first_dt, 1L, 4L) else (pd_y %||% "")
-
-      abs_nodes <- xml2::xml_find_all(art, ".//Abstract/AbstractText")
-      abs_parts <- vapply(abs_nodes, function(n) {
-        lbl <- xml2::xml_attr(n, "Label")
-        tx  <- xml2::xml_text(n)
-        if (!is.na(lbl) && nzchar(lbl)) paste0(lbl, ": ", tx) else tx
-      }, character(1))
-      abs_v <- paste(abs_parts, collapse = " ")
-
-      au_surnames <- xml2::xml_text(xml2::xml_find_all(art, ".//AuthorList/Author/LastName"))
-      au_collect  <- xml2::xml_text(xml2::xml_find_all(art, ".//AuthorList/Author/CollectiveName"))
-      first_au <- if (length(au_surnames) > 0L) au_surnames[1L] else if (length(au_collect) > 0L) au_collect[1L] else ""
-      last_au  <- if (length(au_surnames) > 0L) au_surnames[length(au_surnames)] else first_au
-
-      pts_v <- xml2::xml_text(xml2::xml_find_all(art, ".//PublicationTypeList/PublicationType"))
-      if (is_book) pts_v <- unique(c(pts_v, "Book Chapter"))
-      mesh_v <- xml2::xml_text(xml2::xml_find_all(art, ".//MeshHeadingList/MeshHeading/DescriptorName"))
-
-      cc_nodes <- xml2::xml_find_all(art, ".//CommentsCorrectionsList/CommentsCorrections")
-      pre_links <- character(0); err_links <- character(0)
-      for (cc in cc_nodes) {
-        rt <- xml2::xml_attr(cc, "RefType") %||% ""
-        rs <- xml2::xml_text(xml2::xml_find_first(cc, "./RefSource")) %||% ""
-        rp <- xml2::xml_text(xml2::xml_find_first(cc, "./PMID")) %||% ""
-        if (rt %in% c("UpdateOf", "UpdateIn", "PreprintIn", "PreprintOf")) {
-          pre_links <- c(pre_links, extract_dois_from_cell(rs), if (!is.na(rp) && nzchar(rp)) paste0("PMID:", rp) else "")
-        }
-        if (rt %in% c("ErratumFor", "CorrectionFor")) {
-          err_links <- c(err_links, extract_dois_from_cell(rs), if (!is.na(rp) && nzchar(rp)) rp else "")
-        }
-      }
-
-      out[[length(out) + 1L]] <- make_raw_rec(
-        source_tag = source_tag, pmid = pmid_v, doi = doi_norm, pmcid = pmc_v,
-        journal = jrn_v, pub_year = yr_v, first_pub_date = first_dt,
-        first_author = first_au, last_author = last_au,
-        title = ttl_v, abstract = abs_v, pub_types = pts_v, mesh_headings = mesh_v,
-        preprint_links = pre_links, erratum_targets = err_links
-      )
-    }
+    out <- c(out, parse_pubmed_xml_doc(doc, source_tag = source_tag))
   }
   out
 }
@@ -464,16 +527,24 @@ parse_epmc_result_item <- function(r, default_tag = "EuropePMC") {
     jrn <- if (identical(src_db, "PPR")) clean_cell(r$bookOrReportDetails$publisher %||% "Preprint") else src_db
   }
 
-  doi_norm <- normalize_doi_one(r$doi %||% "")
-  fpd      <- clean_cell(r$firstPublicationDate %||% "")
-  epd      <- clean_cell(r$electronicPublicationDate %||% "")
-  prep_dt  <- extract_preprint_doi_date(doi_norm)
-  first_dt <- if (any(is_preprint_doi(doi_norm)) && nzchar(prep_dt)) {
+  doi_norm  <- normalize_doi_one(r$doi %||% "")
+  fpd       <- clean_cell(r$firstPublicationDate %||% "")
+  epd       <- clean_cell(r$electronicPublicationDate %||% "")
+  fid       <- clean_cell(r$firstIndexDate %||% "")
+  prep_dt   <- extract_preprint_doi_date(doi_norm)
+  is_prep_d <- any(is_preprint_doi(doi_norm)) || identical(src_db, "PPR")
+  valid_pub_dts <- c(
+    if (grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", fpd)) fpd else character(0),
+    if (grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", epd)) epd else character(0)
+  )
+  first_dt <- if (is_prep_d && nzchar(prep_dt)) {
     prep_dt
-  } else if (nzchar(fpd) && grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", fpd)) {
-    fpd
-  } else if (nzchar(epd) && grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", epd)) {
-    epd
+  } else if (!is_prep_d && length(valid_pub_dts) > 0L && !nzchar(epd) &&
+             grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", fid) && fid < min(valid_pub_dts)) {
+    # Advance-Online publication indexed before print issue without electronicPublicationDate
+    fid
+  } else if (length(valid_pub_dts) > 0L) {
+    min(valid_pub_dts)
   } else {
     ""
   }
@@ -546,7 +617,9 @@ run_epmc_windowed <- function(builder_fn, source_tag, since_d, until_d, is_retro
     for (yr in seq(y_start, y_end)) {
       w_from <- if (yr == y_start) since_d else sprintf("%04d-01-01", yr)
       w_to   <- if (yr == y_end)   until_d else sprintf("%04d-12-31", yr)
-      q_yr   <- builder_fn(w_from, w_to, include_idate = FALSE, verify_pmids = NULL)
+      # Safeguard 1: Include FIRST_IDATE OR-union so Advance-Online Epubs whose print issue moved
+      # to the next calendar year are captured; post-merge canonical first_pub_date drops prior-year leaks.
+      q_yr   <- builder_fn(w_from, w_to, include_idate = TRUE, verify_pmids = NULL)
       yr_res <- fetch_epmc_post(q_yr, source_tag = source_tag, page_size = 1000L, max_pages = 15L)
       all_out <- c(all_out, yr_res)
     }
@@ -1057,8 +1130,28 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
     is_prep_vec <- vapply(sub, is_preprint_record, logical(1))
     pub_sub  <- sub[!is_prep_vec]
     prep_sub <- sub[is_prep_vec]
-    # Merge Safeguard 2: Prefer peer-reviewed journal records (`pub_sub`) when present!
-    pref_sub <- if (length(pub_sub) > 0L) pub_sub else sub
+    # Safeguards 2 & 5: Prefer peer-reviewed journal records (`pub_sub`) when present;
+    # when consolidating cross-server preprints (`pub_sub` empty), prioritize permanent
+    # openRxiv/bioRxiv/medRxiv DOIs (`10.1101/`, `10.64898/`) and earliest posting date!
+    pref_sub <- if (length(pub_sub) > 0L) {
+      pub_sub
+    } else if (length(sub) > 1L) {
+      s_dois <- vapply(sub, `[[`, "", "doi")
+      s_dts  <- vapply(sub, `[[`, "", "first_pub_date")
+      s_pmid <- vapply(sub, `[[`, "", "pmid")
+      ord_p  <- order(
+        !nzchar(s_dois),
+        !grepl("^10\\.(1101|64898)/", s_dois),
+        ifelse(nzchar(s_dts), s_dts, "9999-99-99"),
+        !nzchar(s_pmid)
+      )
+      sub[ord_p]
+    } else {
+      sub
+    }
+
+    chosen_pmid <- pick_nonempty(vapply(pref_sub, `[[`, "", "pmid"))
+    chosen_doi  <- pick_nonempty(vapply(pref_sub, `[[`, "", "doi"))
 
     merged_prep_links <- unique(unlist(lapply(sub, `[[`, "preprint_links")))
     if (length(pub_sub) > 0L && length(prep_sub) > 0L) {
@@ -1072,10 +1165,22 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
         ifelse(nzchar(p_pmid), paste0("PMID:", p_pmid), "")
       ))
     } else if (length(prep_sub) > 1L) {
-      chosen_doi <- pick_nonempty(vapply(pref_sub, `[[`, "", "doi"))
-      other_dois <- setdiff(unique(vapply(prep_sub, `[[`, "", "doi")), chosen_doi)
-      merged_prep_links <- unique(c(merged_prep_links, other_dois[nzchar(other_dois)]))
+      other_dois  <- setdiff(unique(vapply(prep_sub, `[[`, "", "doi")), chosen_doi)
+      other_pmids <- setdiff(unique(vapply(prep_sub, `[[`, "", "pmid")), chosen_pmid)
+      merged_prep_links <- unique(c(
+        merged_prep_links,
+        other_dois[nzchar(other_dois)],
+        ifelse(nzchar(other_pmids), paste0("PMID:", other_pmids), "")
+      ))
     }
+    # Safeguard 5: Strip self-referential own-DOI/own-PMID tokens from `merged_prep_links`
+    self_refs <- c(
+      chosen_doi,
+      doi_dedup_key(chosen_doi),
+      if (nzchar(chosen_pmid)) paste0("PMID:", chosen_pmid) else ""
+    )
+    self_refs <- self_refs[nzchar(self_refs)]
+    merged_prep_links <- setdiff(merged_prep_links, self_refs)
 
     # Canonical `first_pub_date` from `pref_sub`: peer-reviewed journal date (`epub` > `ppub`)
     # takes precedence over superseded preprint dates, while standalone preprints use `extract_preprint_doi_date()`!
@@ -1101,8 +1206,8 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
 
     list(
       matched_sources  = paste(unique(vapply(sub, `[[`, "", "source_tag")), collapse = ";"),
-      pmid             = pick_nonempty(vapply(pref_sub, `[[`, "", "pmid")),
-      doi              = pick_nonempty(vapply(pref_sub, `[[`, "", "doi")),
+      pmid             = chosen_pmid,
+      doi              = chosen_doi,
       pmcid            = pick_nonempty(c(vapply(pref_sub, `[[`, "", "pmcid"), vapply(sub, `[[`, "", "pmcid"))),
       epmc_id          = pick_nonempty(c(vapply(pref_sub, `[[`, "", "epmc_id"), vapply(sub, `[[`, "", "epmc_id"))),
       journal          = best_jrn,
@@ -1319,6 +1424,185 @@ known_ids <- tolower(unique(trimws(c(
 known_ids <- known_ids[nzchar(known_ids)]
 
 # ---------------------------------------------------------------------------
+# Stage B.5: Hardened Selective PMC Full-Text Modality Verifier (Safeguard 3)
+#   Resolves umbrella-abstract xQTL / molQTL / TR-xQTL / qQTL / SV-QTL studies
+#   that omit explicit protein terms from title+abstract while mapping primary
+#   human pQTLs in full-text Methods/Results. Strips <ref-list>, <back>, and
+#   Introduction/Background/Discussion/Perspectives/Limitations sections,
+#   enforces same-paragraph primary co-occurrence, skips records in `known_ids`,
+#   and caps checks at `max_ft_checks_per_run = 60L`.
+# ---------------------------------------------------------------------------
+prune_non_evidence_secs <- function(parent_node) {
+  child_secs <- xml2::xml_find_all(parent_node, "./sec")
+  for (sc_node in child_secs) {
+    st_attr  <- tolower(trimws(xml2::xml_attr(sc_node, "sec-type") %||% ""))
+    st_title <- tolower(trimws(ascii_fold(xml2::xml_text(xml2::xml_find_first(sc_node, "./title")) %||% "")))
+    is_bad_type <- nzchar(st_attr) &&
+      grepl("\\b(intro|introduction|background|discussion|future|perspectives?|limitations?)\\b", st_attr, perl = TRUE)
+    is_bad_title <- nzchar(st_title) &&
+      grepl("^(?:[0-9.ivx]+\\s+)?(introduction|background(?:\\s+and\\s+[a-z ]+)?|discussion(?:\\s+and\\s+[a-z ]+)?|future\\s+[a-z ]+|perspectives?(?:\\s+and\\s+[a-z ]+)?|(?:study\\s+)?limitations?(?:\\s+and\\s+[a-z ]+)?)\\s*$",
+            st_title, perl = TRUE)
+    if (is_bad_type || is_bad_title) {
+      xml2::xml_remove(sc_node)
+    } else {
+      prune_non_evidence_secs(sc_node)
+    }
+  }
+}
+
+verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
+  xml_str <- ""
+  if (!is.null(xml_override) && length(xml_override) > 0L && nzchar(xml_override[1L])) {
+    xml_str <- as.character(xml_override[1L])
+  } else {
+    if (!nzchar(pmcid %||% "")) return(list(verified = FALSE, platform = ""))
+    ncbi_key <- Sys.getenv("NCBI_API_KEY", unset = "")
+    u_pmc <- sprintf(
+      "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=%s&retmode=xml%s",
+      pmcid, if (nzchar(ncbi_key)) paste0("&api_key=", ncbi_key) else ""
+    )
+    r1 <- perform_polite_http(
+      httr2::request(u_pmc) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(35),
+      sleep_s   = 0.55,
+      max_tries = 3L,
+      label     = paste0("NCBI PMC efetch (", pmcid, ")")
+    )
+    if (!is.null(r1) && httr2::resp_status(r1) == 200L) {
+      cand_xml <- httr2::resp_body_string(r1)
+      if (grepl("<article", cand_xml, fixed = TRUE)) xml_str <- cand_xml
+    }
+    if (!nzchar(xml_str)) {
+      u_epmc <- sprintf("https://www.ebi.ac.uk/europepmc/webservices/rest/%s/fullTextXML", pmcid)
+      r2 <- perform_polite_http(
+        httr2::request(u_epmc) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(35),
+        sleep_s   = 0.55,
+        max_tries = 2L,
+        label     = paste0("EuropePMC fullTextXML (", pmcid, ")")
+      )
+      if (!is.null(r2) && httr2::resp_status(r2) == 200L) {
+        cand_xml <- httr2::resp_body_string(r2)
+        if (grepl("<article", cand_xml, fixed = TRUE)) xml_str <- cand_xml
+      }
+    }
+  }
+  if (!nzchar(xml_str)) return(list(verified = FALSE, platform = ""))
+
+  xdoc <- tryCatch(xml2::read_xml(xml_str), error = function(e) NULL)
+  if (is.null(xdoc)) return(list(verified = FALSE, platform = ""))
+
+  # Safeguard 3: Strip bibliography, back-matter, AND Intro/Background/Discussion/Limitations sections
+  xml2::xml_remove(xml2::xml_find_all(xdoc, ".//ref-list | .//back"))
+  body_node <- xml2::xml_find_first(xdoc, ".//body")
+  if (inherits(body_node, "xml_missing")) return(list(verified = FALSE, platform = ""))
+
+  has_body_secs <- length(xml2::xml_find_all(body_node, "./sec")) > 0L
+  if (has_body_secs) {
+    # Strip untitled Nature-style leading Introduction <p> nodes directly under <body>
+    xml2::xml_remove(xml2::xml_find_all(body_node, "./p"))
+    prune_non_evidence_secs(body_node)
+  }
+
+  cand_nodes  <- xml2::xml_find_all(body_node, ".//p | .//caption | .//table-wrap-foot")
+  floats_caps <- xml2::xml_find_all(xdoc, ".//floats-group//caption | .//floats-group//p")
+  para_txts   <- tolower(ascii_fold(gsub("\\s+", " ", trimws(c(xml2::xml_text(cand_nodes), xml2::xml_text(floats_caps))))))
+  para_txts   <- para_txts[nzchar(para_txts)]
+  if (length(para_txts) == 0L) {
+    fb_txt <- tolower(ascii_fold(gsub("\\s+", " ", trimws(xml2::xml_text(body_node)))))
+    if (nzchar(fb_txt)) para_txts <- fb_txt
+  }
+  if (length(para_txts) == 0L) return(list(verified = FALSE, platform = ""))
+
+  pqtl_pat <- "\\b(tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|trans-?pqtls?|sd-?pqtls?|pqtls?|protein[- ]qtls?|protein quantitative trait loc[a-z]*)\\b"
+  prot_assay_pat <- "\\b(proteom[a-z]*|protein (?:abundance|expression|levels|quantification|profiles?)|olink|somascan|somalogic|somamers?|nulisa[a-z]*|mass spectrometry|openswath[0-9]*|dia-ms|dia-pasef|swath(?:-ms)?|tandem mass tags?|lc-ms/ms|proteograph|orbitrap)\\b"
+  primary_evid_pat <- paste0(
+    "\\b(we (?:aimed to |next |then |also |systematically |comprehensively )?(?:quantif(?:y|ied)|performed|applied|mapped|computed|tested|defined|analyzed|conducted|generated|profiled|identified|discovered)|",
+    "to test for (?:tr-?|sv-?|cis-?|trans-?)?pqtls?|",
+    "n\\s*=\\s*[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteom[a-z]*|",
+    "[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteomics? samples|",
+    "(?:tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|pqtls?|protein qtls?) (?:were|was) (?:performed|mapped|identified|computed|tested|generated)|",
+    "tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|fastllm|susie)\\b"
+  )
+  ext_only_pat <- "\\b(protein qtls? from the [a-z0-9 -]{0,35}generated by|curated (?:tumor )?database integrating|(?:previous|prior|published|existing) (?:eqtl and )?pqtl (?:stud(?:y|ies)|analys(?:is|es)))\\b"
+
+  para_ok <- grepl(pqtl_pat, para_txts, perl = TRUE) &
+    grepl(prot_assay_pat, para_txts, perl = TRUE) &
+    grepl(primary_evid_pat, para_txts, perl = TRUE) &
+    !grepl(ext_only_pat, para_txts, perl = TRUE)
+
+  if (any(para_ok)) {
+    kept_body_txt <- paste(para_txts, collapse = " ")
+    return(list(verified = TRUE, platform = detect_platform_v2(kept_body_txt)))
+  }
+  list(verified = FALSE, platform = "")
+}
+
+needs_ft_pqtl_check <- function(m) {
+  if (!nzchar(m$pmcid %||% "")) return(FALSE)
+  pts_lc <- tolower(trimws(m$pub_types %||% character(0)))
+  if (any(pts_lc %in% c("review", "systematic review", "published erratum", "erratum", "editorial", "comment"))) {
+    return(FALSE)
+  }
+  ttl_lc  <- tolower(ascii_fold(strip_html_tags(m$title %||% "")))
+  comb_lc <- tolower(ascii_fold(strip_html_tags(paste(m$title %||% "", m$abstract %||% ""))))
+  if (grepl(NONHUMAN_ORGANISM_REGEX, ttl_lc, perl = TRUE) &&
+      !grepl("\\b(human|humans|patients?|participants?|donors?|biobank|cohort)\\b", ttl_lc, perl = TRUE)) {
+    return(FALSE)
+  }
+  if (grepl(BROAD_PROTEIN_REGEX, comb_lc, perl = TRUE)) return(FALSE)
+  has_multiomic_qtl_anchor <- grepl("\\b(molqtls?|xqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|(?:molecular|multi-?omic|quantile) (?:quantitative trait loc[a-z]*|qtls?))\\b",
+                                    comb_lc, perl = TRUE)
+  has_primary_qtl_mapping  <- grepl("\\b(we (?:comprehensively |systematically )?(?:mapped|identified|discovered|quantified|performed|generated|profiled) [^.;]{0,140}\\b(?:qtls?|xqtls?|molqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|quantitative trait loc[a-z]*)|(?:identified|discovered|mapped) [>~]?[0-9,.]+(?:\\s*million)? (?:[a-z-]+ ){0,3}(?:xqtls?|molqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|quantitative trait loc[a-z]*))\\b",
+                                    comb_lc, perl = TRUE)
+  has_multiomic_qtl_anchor && has_primary_qtl_mapping &&
+    grepl("\\b(donors?|participants?|individuals?|subjects?|patients?|multi-?omics? samples)\\b", comb_lc, perl = TRUE)
+}
+
+max_ft_checks_per_run <- 60L
+n_ft_candidates       <- 0L
+n_ft_checked          <- 0L
+n_ft_skipped_known    <- 0L
+n_ft_verified         <- 0L
+for (idx_m in seq_along(merged_recs)) {
+  merged_recs[[idx_m]]$ft_verified_pqtl <- FALSE
+  merged_recs[[idx_m]]$ft_platform      <- ""
+  m_cur <- merged_recs[[idx_m]]
+  if (!needs_ft_pqtl_check(m_cur)) next
+
+  m_idp <- if (nzchar(m_cur$doi)) m_cur$doi else if (nzchar(m_cur$pmid)) paste0("PMID:", m_cur$pmid) else if (nzchar(m_cur$pmcid)) m_cur$pmcid else m_cur$epmc_id
+  m_keys <- tolower(c(
+    m_idp, m_cur$doi, doi_dedup_key(m_cur$doi), m_cur$pmid,
+    if (nzchar(m_cur$pmid)) paste0("pmid:", m_cur$pmid) else ""
+  ))
+  m_keys <- m_keys[nzchar(m_keys)]
+  if (!is_verify && any(m_keys %in% known_ids)) {
+    n_ft_skipped_known <- n_ft_skipped_known + 1L
+    next
+  }
+
+  n_ft_candidates <- n_ft_candidates + 1L
+  if (n_ft_checked >= max_ft_checks_per_run) next
+  n_ft_checked <- n_ft_checked + 1L
+  ft_res <- verify_pmc_fulltext_pqtl(m_cur$pmcid)
+  if (isTRUE(ft_res$verified)) {
+    merged_recs[[idx_m]]$ft_verified_pqtl <- TRUE
+    merged_recs[[idx_m]]$ft_platform      <- ft_res$platform
+    n_ft_verified <- n_ft_verified + 1L
+  }
+}
+if (n_ft_candidates > max_ft_checks_per_run) {
+  warning(sprintf(
+    "[Stage B.5: Multi-Omic PMC Full-Text Verifier] %d candidate(s) matched needs_ft_pqtl_check(), exceeding max_ft_checks_per_run=%d; %d excess candidate(s) skipped.",
+    n_ft_candidates, max_ft_checks_per_run, n_ft_candidates - max_ft_checks_per_run
+  ))
+}
+if (n_ft_checked > 0L || n_ft_skipped_known > 0L) {
+  message(sprintf(
+    "[Stage B.5: Multi-Omic PMC Full-Text Verifier] checked %d umbrella xQTL/molQTL record(s) (skipped %d already in known_ids); verified %d with primary pQTL mapping.",
+    n_ft_checked, n_ft_skipped_known, n_ft_verified
+  ))
+}
+
+# ---------------------------------------------------------------------------
 # Stage C: Triage Scoring, Preprint Lineage Attachment & Queue Formatting
 # ---------------------------------------------------------------------------
 run_stamp <- format(Sys.time(), "%Y%m%d_%H%M", tz = "UTC")
@@ -1345,7 +1629,8 @@ for (m in merged_recs) {
     pub_types                  = m$pub_types,
     mesh_headings              = m$mesh_headings,
     gwas_catalog_study_count   = m$gwas_study_count,
-    erratum_targets_catalogued = err_on_cat
+    erratum_targets_catalogued = err_on_cat,
+    ft_verified_pqtl           = isTRUE(m$ft_verified_pqtl)
   )
 
   # Selective PPR* -> DOI resolution: only invoke HTTP lookup when record is actionable or
@@ -1408,6 +1693,10 @@ for (m in merged_recs) {
   }
 
   plat_det <- detect_platform_v2(paste(m$title, m$abstract))
+  if (identical(plat_det, "Unspecified Proteomics") && nzchar(m$ft_platform %||% "") &&
+      !identical(m$ft_platform, "Unspecified Proteomics")) {
+    plat_det <- m$ft_platform
+  }
   if (identical(plat_det, "Unspecified Proteomics") && m$gwas_study_count >= 5L) {
     plat_det <- sprintf("GWAS Catalog (%d protein traits)", m$gwas_study_count)
   }
