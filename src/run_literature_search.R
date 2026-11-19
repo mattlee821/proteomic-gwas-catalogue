@@ -709,10 +709,19 @@ count_verified_gwas_protein_traits <- function(pid, sleep_s = 0.50) {
   if (is.null(resp_s) || httr2::resp_status(resp_s) != 200L) return(0L)
   js_s <- tryCatch(httr2::resp_body_json(resp_s, simplifyVector = FALSE), error = function(e) NULL)
   stds <- js_s$`_embedded`$studies %||% js_s$studies %||% list()
+  if (length(stds) == 0L) return(0L)
+
+  trs <- vapply(stds, function(s) clean_cell(s$disease_trait %||% ""), character(1))
+  # Pre-2017 GWAS Catalog curation bundled entire multi-protein pGWAS studies into a single
+  # pooled GCST study with plural umbrella traits ("Protein quantitative trait loci",
+  # "Cerebrospinal fluid levels of Alzheimer's disease-related proteins", "Blood protein levels").
+  trs_low <- tolower(ascii_fold(trs))
+  if (any(grepl("^protein quantitative trait loci$|\\blevels of [a-z0-9' -]+ proteins\\b|^blood protein levels$|^plasma protein levels$|^serum protein levels$|^cerebrospinal fluid protein levels$", trs_low, perl = TRUE))) {
+    return(max(5L, length(stds)))
+  }
   if (length(stds) < 5L) return(0L)
 
   # Prong 3A: EFO-independent `disease_trait` protein verification (rescues uncurated deposits)
-  trs <- vapply(stds, function(s) clean_cell(s$disease_trait %||% ""), character(1))
   keep_prot <- is_gwas_catalog_protein_trait(trs)
   n_dist_prot <- length(unique(tolower(trs[keep_prot])))
   tot_el <- as.integer(js_s$page$totalElements %||% length(stds))
@@ -773,10 +782,11 @@ query_gwas_catalog_v2 <- function(since_d, until_d, is_retro = FALSE,
     }
   } else {
     max_pub_pages <- if (isTRUE(is_retro)) 40L else 10L
+    sort_dir      <- if (suppressWarnings(as.integer(substr(until_d, 1L, 4L))) <= 2018L) "asc" else "desc"
     for (pg in seq(0L, max_pub_pages - 1L)) {
       u_pubs <- sprintf(
-        "https://www.ebi.ac.uk/gwas/rest/api/v2/publications?page=%d&size=500&sort=publication_date&direction=desc",
-        pg
+        "https://www.ebi.ac.uk/gwas/rest/api/v2/publications?page=%d&size=500&sort=publication_date&direction=%s",
+        pg, sort_dir
       )
       resp_p <- perform_polite_http(
         httr2::request(u_pubs) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(45),
@@ -803,7 +813,8 @@ query_gwas_catalog_v2 <- function(since_d, until_d, is_retro = FALSE,
 
       tot_pg <- as.integer(js_p$page$totalPages %||% 1L)
       if (pg + 1L >= tot_pg) break
-      if (length(page_dts) > 0L && max(page_dts) < since_d) break
+      if (identical(sort_dir, "desc") && length(page_dts) > 0L && max(page_dts) < since_d) break
+      if (identical(sort_dir, "asc")  && length(page_dts) > 0L && min(page_dts) > until_d) break
     }
 
     cand_pat <- paste0(

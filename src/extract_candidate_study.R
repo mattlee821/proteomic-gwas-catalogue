@@ -135,25 +135,29 @@ if (nzchar(queue_file)) {
 session <- new_http_session(cache_dir = cache_dir, refresh_cache = refresh_cache, strict_oa_only = TRUE)
 
 for (cand in candidates) {
-  t0 <- proc.time()[["elapsed"]]
-  t1 <- run_tier1_apis(cand, session, existing_studies = existing_studies)
-  t2 <- run_tier2_fulltext(t1, session, local_pdf = local_pdf, local_xml = local_xml)
-  t3_supp <- run_tier3_supplements(t1, t2, session, repo_root = repo_root)
-  t3_repo <- run_tier3_repositories(t1, t2, session)
-  t4 <- run_tier4_provenance_and_escalate(
-    t1, t2, t3_supp, t3_repo,
-    out_dir = out_dir,
-    existing_studies = existing_studies,
-    manifests_dir = manifests_dir
-  )
-  http_log_path <- file.path(out_dir, paste0(t4$study_id, "_http_log.tsv"))
-  export_http_log(session, http_log_path)
-  elapsed <- proc.time()[["elapsed"]] - t0
+  tryCatch({
+    t0 <- proc.time()[["elapsed"]]
+    t1 <- run_tier1_apis(cand, session, existing_studies = existing_studies)
+    t2 <- run_tier2_fulltext(t1, session, local_pdf = local_pdf, local_xml = local_xml)
+    t3_supp <- run_tier3_supplements(t1, t2, session, repo_root = repo_root)
+    t3_repo <- run_tier3_repositories(t1, t2, session)
+    t4 <- run_tier4_provenance_and_escalate(
+      t1, t2, t3_supp, t3_repo,
+      out_dir = out_dir,
+      existing_studies = existing_studies,
+      manifests_dir = manifests_dir
+    )
+    http_log_path <- file.path(out_dir, paste0(t4$study_id, "_http_log.tsv"))
+    export_http_log(session, http_log_path)
+    elapsed <- proc.time()[["elapsed"]] - t0
 
-  message(sprintf(
-    "[%s] decision=%s | queue_status=\"%s\" | strata=%d | prov_rows=%d | unresolved_req=%d | elapsed=%.2fs\n  -> %s",
-    t4$study_id, t4$decision, t4$recommended_curation_status,
-    t4$n_strata, t4$n_provenance_rows, t4$n_blocking_fields, elapsed,
-    t4$files$checklist
-  ))
+    message(sprintf(
+      "[%s] decision=%s | queue_status=\"%s\" | strata=%d | prov_rows=%d | unresolved_req=%d | elapsed=%.2fs\n  -> %s",
+      t4$study_id, t4$decision, t4$recommended_curation_status,
+      t4$n_strata, t4$n_provenance_rows, t4$n_blocking_fields, elapsed,
+      t4$files$checklist
+    ))
+  }, error = function(e) {
+    message(sprintf("[ERROR extracting %s] %s", cand$identifier %||% cand$pmid %||% "unknown", conditionMessage(e)))
+  })
 }

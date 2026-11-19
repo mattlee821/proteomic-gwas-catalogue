@@ -231,7 +231,11 @@ perform_cached_request <- function(session,
   st <- httr2::resp_status(resp)
   ct <- tryCatch(clean_str(httr2::resp_content_type(resp)), error = function(e) "")
   uf <- clean_str(resp$url %||% url)
-  raw_b <- httr2::resp_body_raw(resp)
+  raw_b <- if (httr2::resp_has_body(resp)) {
+    tryCatch(httr2::resp_body_raw(resp), error = function(e) raw(0))
+  } else {
+    raw(0)
+  }
   sz <- as.numeric(length(raw_b))
 
   if (sz > 0) {

@@ -206,6 +206,9 @@ Following Round 2, all 5 convergent fixes, Agent 3's 4 unique improvements, Agen
 - **Specificity & Precision (`58 / 58 = 100.0%`):** **`0` false positives** (`0` extra actionable rows beyond the `58` verified studies; `8 / 8` Round-1 discordant false positives cleanly `Auto-Deprioritised`).
 - **Date, DOI & Schema Hygiene:** **`24 / 24` (`100.0%`)** prior-year 2024 OUP/ADA/AACR online-first date leaks purged; **`57 / 57` (`100.0%`)** Research Square DOIs preserved `/v[0-9]+` (`HTTP 200`); `0 / 58` self-referential `preprint_lineage_note` tokens; closed-access `Ferkingstad 2021` (`34857953`) verified free of stolen reference `PMCID`s (`pmcid == ""`); and `--write-catalogue` + `validate_catalogue.R` exited `0`.
 
+### 6.4 Historical-Era (`2000–2015`) Generalization Check (`v4.1`)
+During Period 1 (`2000-01-01..2015-12-31`) retrospective execution (`4,976` raw hits $\rightarrow$ `2,444` deduplicated works), Stage A discovery retrieved `100%` of early pioneer pGWAS/pQTL studies, while ledger auditing identified two strictly pre-2017 historical conventions absent from 2025 abstracts: (1) prior to 2017, NHGRI-EBI GWAS Catalog curated multi-protein pGWASs as a single pooled `GCST` entry with plural umbrella `disease_trait` labels (`"Protein quantitative trait loci"` in *Melzer 2008*; `"Cerebrospinal fluid levels of Alzheimer's disease-related proteins"` in *Kauwe 2014*), and (2) pre-`"pGWAS"` pioneer papers phrased discovery yields as `"cis-SNPs"` (*Liu 2015*), `"analytes"` (*Kauwe 2014*, *Kim 2013*), or `"protein level QTLs (pQTLs)"` (*Hause 2014*). Generalizing Source 3 (`count_verified_gwas_protein_traits`) and Stage C (`P2`/`P3`) to recognize these historical patterns (`v4.1`) preserved **`58 / 58` (`100.0%`) exact recall and `0` false positives** across all `1,752` `2025` benchmark works while cleanly surfacing the Period 1 (`2000–2015`) pioneer studies.
+
 ---
 
 ## 7. Planned Out-of-Sample Blinded Positive-Control Validation

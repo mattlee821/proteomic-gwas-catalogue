@@ -1,4 +1,15 @@
 identifier	reason	screened_date
-PMID:41488603	Secondary two-sample MR study (stroke)	2026-11-15
-PMID:41398839	Secondary two-sample MR study (insomnia)	2026-11-15
-PMID:41782372	DNA methylation EWAS, not genetic GWAS	2026-11-15
+PMID:26582562	Targeted candidate-SNP association study (169 SNPs across 30 immunity genes, not genome-wide GWAS)	2026-11-19
+PMID:25501286	Targeted candidate-gene polymorphism study (IL28B/IFNL3 SNPs in chronic hepatitis C, <5 proteins)	2026-11-19
+PMID:25193981	Targeted candidate-gene polymorphism study (PPBP/CXCL7 in aspergillosis, not genome-wide pGWAS)	2026-11-19
+PMID:23135173	Targeted single-locus polymorphism study (IL28B alleles and plasma cytokines in HIV/HCV)	2026-11-19
+PMID:22144535	Targeted candidate-gene polymorphism study (cytokine gene SNPs in invasive candidiasis)	2026-11-19
+PMID:21463712	Targeted candidate-gene polymorphism study (cytokine SNPs in pulmonary tuberculosis)	2026-11-19
+PMID:20884746	Observational clinical cytokine study with candidate polymorphisms (community-acquired pneumonia, not GWAS)	2026-11-19
+PMID:26701850	Disease susceptibility case-control study (ERBB4 variants in chronic HBV), not primary pGWAS	2026-11-19
+PMID:26633000	Targeted candidate-gene study (TLR1 variant in malaria), not genome-wide pGWAS	2026-11-19
+PMID:24852947	Targeted single-protein candidate-gene study (EDN1 SNPs and CSF endothelin-1, <5 unique proteins)	2026-11-19
+PMID:23133543	Single-protein clinical biomarker study (transthyretin/TTR in Lewy body disorders, <5 unique proteins)	2026-11-19
+PMID:21949775	Fewer than 5 unique proteins assayed (3 ELISA signaling proteins: AKT1, p70S6K, 4E-BP1 in LCLs)	2026-11-19
+PMID:21651918	Targeted candidate-SNP panel (DNA repair gene SNPs in bacterial meningitis, not genome-wide GWAS)	2026-11-19
+PMID:21257964	Single-gene candidate polymorphism study (MAP3K14/NIK SNP in septic shock)	2026-11-19
