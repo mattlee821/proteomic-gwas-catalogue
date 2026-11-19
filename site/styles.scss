@@ -532,3 +532,24 @@ details.methods-dropdown[open] > summary::after {
   color: #334155;
   line-height: 1.6;
 }
+
+.about-section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.81rem;
+  margin: 0.85rem 0 1.1rem 0;
+}
+
+.about-section th,
+.about-section td {
+  border: 1px solid #cbd5e1;
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.about-section th {
+  background: #f1f5f9;
+  font-weight: 700;
+  color: #0f172a;
+}

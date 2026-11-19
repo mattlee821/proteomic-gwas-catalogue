@@ -41,7 +41,7 @@ matchNumericFilter = (val, rawExpr) => {
 ```
 
 ```{ojs}
-// Full-width Catalogue view: Banner + 11-column filterable, paginated, inline-expandable table + 2 summary figures + bottom download
+// Full-width Catalogue view: Banner + 11-column filterable, paginated, inline-expandable table + 3 comparison figure rows + bottom download
 {
   const state = {
     hideSuperseded: true,
@@ -67,8 +67,14 @@ matchNumericFilter = (val, rawExpr) => {
 
   const countSpan = htl.html`<span></span>`;
   const pageInfoSpan = htl.html`<span></span>`;
-  const fig1Container = htl.html`<div></div>`;
-  const fig2Container = htl.html`<div></div>`;
+
+  // 3 side-by-side comparison rows: Left is always the Year/N/ASSAY figure; Right is Option A, B, C
+  const row1Left  = htl.html`<div></div>`;
+  const row1Right = htl.html`<div></div>`;
+  const row2Left  = htl.html`<div></div>`;
+  const row2Right = htl.html`<div></div>`;
+  const row3Left  = htl.html`<div></div>`;
+  const row3Right = htl.html`<div></div>`;
 
   const clearBtn = htl.html`<button class="btn-pill" style="display:none;padding:0.2rem 0.55rem;font-size:0.74rem;" onclick=${() => {
     for (const k of Object.keys(state.filters)) state.filters[k] = "";
@@ -215,30 +221,23 @@ matchNumericFilter = (val, rawExpr) => {
     return rows;
   }
 
-  function renderFigures(rows) {
-    if (rows.length === 0) {
-      fig1Container.replaceChildren(htl.html`<div style="color:#64748b;font-size:0.84rem;padding:1rem 0;">No matching studies to plot.</div>`);
-      fig2Container.replaceChildren(htl.html`<div style="color:#64748b;font-size:0.84rem;padding:1rem 0;">No matching studies to plot.</div>`);
-      return;
-    }
-
-    // Aggregate unique study counts per year for top-of-plot badges
+  function makeYearScalePlot(rows) {
     const yearMap = new Map();
     for (const r of rows) {
       if (!yearMap.has(r.year)) yearMap.set(r.year, new Set());
       yearMap.get(r.year).add(r.study_id);
     }
     const maxN = Math.max(...rows.map(d => d.n_samples), 1000);
+    const minN = Math.max(20, Math.min(...rows.map(d => d.n_samples)) * 0.65);
     const yearCounts = Array.from(yearMap.entries()).map(([yr, sset]) => ({
       year: yr,
       n_studies: sset.size,
       y_pos: maxN * 1.95
     }));
-
     const minYr = Math.min(2016.5, Math.min(...rows.map(d => d.year)) - 0.6);
     const maxYr = Math.max(2026.5, Math.max(...rows.map(d => d.year)) + 0.6);
 
-    const p1 = Plot.plot({
+    return Plot.plot({
       width: 620,
       height: 285,
       marginLeft: 58,
@@ -247,7 +246,7 @@ matchNumericFilter = (val, rawExpr) => {
       marginBottom: 38,
       style: { background: "transparent", fontSize: "11.5px", width: "100%" },
       x: { label: "Publication Year", tickFormat: d => String(d), domain: [minYr, maxYr] },
-      y: { type: "log", label: "Sample Size N (bubble size = ASSAY)", grid: true, domain: [Math.max(20, Math.min(...rows.map(d => d.n_samples)) * 0.65), maxN * 2.7] },
+      y: { type: "log", label: "Sample Size N (bubble size = ASSAY)", grid: true, domain: [minN, maxN * 2.8] },
       r: { range: [4, 17] },
       color: {
         legend: true,
@@ -277,18 +276,34 @@ matchNumericFilter = (val, rawExpr) => {
         })
       ]
     });
-    fig1Container.replaceChildren(p1);
+  }
 
-    // Figure 2: Strata by Population & Summary-Data Availability
-    const popCounts = new Map();
+  function makeOptionAPlot(rows) {
+    const popDataMap = new Map();
+    const popTotals = new Map();
+    const dataRank = { "Genome-wide": 1, "Gene-region": 2, "Top-hits": 3, "Unavailable": 4 };
+
     for (const r of rows) {
-      popCounts.set(r.pop_super, (popCounts.get(r.pop_super) || 0) + 1);
+      const p = r.pop_super || "Unknown";
+      const dl = r.data_label || "Unavailable";
+      popTotals.set(p, (popTotals.get(p) || 0) + 1);
+      const k = `${p}__${dl}`;
+      if (!popDataMap.has(k)) {
+        popDataMap.set(k, { pop_super: p, data_label: dl, n_strata: 0, max_n: 0 });
+      }
+      const item = popDataMap.get(k);
+      item.n_strata += 1;
+      if (r.n_samples > item.max_n) item.max_n = r.n_samples;
     }
-    const popOrder = Array.from(popCounts.entries())
+
+    const popAgg = Array.from(popDataMap.values()).sort(
+      (a, b) => (dataRank[a.data_label] || 9) - (dataRank[b.data_label] || 9)
+    );
+    const popOrder = Array.from(popTotals.entries())
       .sort((a, b) => b[1] - a[1])
       .map(e => e[0]);
 
-    const p2 = Plot.plot({
+    return Plot.plot({
       width: 620,
       height: 285,
       marginLeft: 62,
@@ -304,22 +319,126 @@ matchNumericFilter = (val, rawExpr) => {
         range: ["#16a34a", "#2563eb", "#ca8a04", "#94a3b8"]
       },
       marks: [
-        Plot.barX(
-          rows,
-          Plot.groupY(
-            { x: "count" },
-            {
-              y: "pop_super",
-              fill: "data_label",
-              tip: true,
-              title: d => `${d[0].pop_super} · ${d[0].data_label}\n${d.length} strata`
-            }
-          )
-        ),
+        Plot.barX(popAgg, {
+          x: "n_strata",
+          y: "pop_super",
+          fill: "data_label",
+          tip: true,
+          title: d => `${d.pop_super} · ${d.data_label}\n${d.n_strata} strata (max N = ${d.max_n.toLocaleString()})`
+        }),
         Plot.ruleX([0])
       ]
     });
-    fig2Container.replaceChildren(p2);
+  }
+
+  function makeOptionBPlot(rows) {
+    const matPlatMap = new Map();
+    const matTotals = new Map();
+    const platRank = {
+      "SomaScan": 1,
+      "Olink": 2,
+      "Mass Spectrometry": 3,
+      "NULISA": 4,
+      "Luminex": 5,
+      "Other Immunoassay": 6
+    };
+
+    for (const r of rows) {
+      const m = r.sample_matrix || "Other";
+      const pl = r.platform_category || "Other Immunoassay";
+      matTotals.set(m, (matTotals.get(m) || 0) + 1);
+      const k = `${m}__${pl}`;
+      if (!matPlatMap.has(k)) {
+        matPlatMap.set(k, { sample_matrix: m, platform_category: pl, n_strata: 0, max_n: 0 });
+      }
+      const item = matPlatMap.get(k);
+      item.n_strata += 1;
+      if (r.n_samples > item.max_n) item.max_n = r.n_samples;
+    }
+
+    const matAgg = Array.from(matPlatMap.values()).sort(
+      (a, b) => (platRank[a.platform_category] || 9) - (platRank[b.platform_category] || 9)
+    );
+    const matOrder = Array.from(matTotals.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(e => e[0]);
+
+    return Plot.plot({
+      width: 620,
+      height: 285,
+      marginLeft: 95,
+      marginRight: 24,
+      marginTop: 14,
+      marginBottom: 38,
+      style: { background: "transparent", fontSize: "11.5px", width: "100%" },
+      x: { label: "Number of Study Strata", grid: true, ticks: 6 },
+      y: { label: "Sample Matrix", domain: matOrder },
+      color: {
+        legend: true,
+        domain: ["SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex", "Other Immunoassay"],
+        range: ["#4338ca", "#0d9488", "#d97706", "#db2777", "#64748b", "#475569"]
+      },
+      marks: [
+        Plot.barX(matAgg, {
+          x: "n_strata",
+          y: "sample_matrix",
+          fill: "platform_category",
+          tip: true,
+          title: d => `${d.sample_matrix} · ${d.platform_category}\n${d.n_strata} strata (max N = ${d.max_n.toLocaleString()})`
+        }),
+        Plot.ruleX([0])
+      ]
+    });
+  }
+
+  function makeOptionCPlot(rows) {
+    return Plot.plot({
+      width: 620,
+      height: 285,
+      marginLeft: 62,
+      marginRight: 24,
+      marginTop: 14,
+      marginBottom: 38,
+      style: { background: "transparent", fontSize: "11.5px", width: "100%" },
+      x: { type: "log", label: "Sample Size N (log scale)", grid: true },
+      y: { label: "Number of Protein Assays (ASSAY)", grid: true },
+      color: {
+        legend: true,
+        domain: ["Genome-wide", "Gene-region", "Top-hits", "Unavailable"],
+        range: ["#16a34a", "#2563eb", "#ca8a04", "#94a3b8"]
+      },
+      marks: [
+        Plot.dot(rows, {
+          x: "n_samples",
+          y: "n_assays",
+          r: 6.5,
+          fill: "data_label",
+          fillOpacity: d => d.status === "Preprint" ? 0.48 : 0.8,
+          stroke: "data_label",
+          strokeWidth: d => d.status === "Preprint" ? 2 : 1,
+          strokeDasharray: d => d.status === "Preprint" ? "3,2" : null,
+          tip: true,
+          title: d => `${d.first_author} (${d.year})\n${d.study_id}\nN = ${d.n_samples.toLocaleString()} | ASSAY = ${d.n_assays.toLocaleString()}\n${d.sample_matrix} | ${d.platform_category} | ${d.data_label}`
+        })
+      ]
+    });
+  }
+
+  function renderFigures(rows) {
+    if (rows.length === 0) {
+      for (const el of [row1Left, row1Right, row2Left, row2Right, row3Left, row3Right]) {
+        el.replaceChildren(htl.html`<div style="color:#64748b;font-size:0.84rem;padding:1rem 0;">No matching studies to plot.</div>`);
+      }
+      return;
+    }
+    row1Left.replaceChildren(makeYearScalePlot(rows));
+    row1Right.replaceChildren(makeOptionAPlot(rows));
+
+    row2Left.replaceChildren(makeYearScalePlot(rows));
+    row2Right.replaceChildren(makeOptionBPlot(rows));
+
+    row3Left.replaceChildren(makeYearScalePlot(rows));
+    row3Right.replaceChildren(makeOptionCPlot(rows));
   }
 
   function renderRows() {
@@ -478,19 +597,54 @@ matchNumericFilter = (val, rawExpr) => {
       </table>
     </div>
 
+    <!-- Row 1: Left + Option A -->
     <div class="fig-grid-2col">
       <div class="panel-card" style="margin-bottom:0;">
         <div class="panel-title">
           <span>Studies, Sample Size (N) &amp; ASSAY Scale per Year</span>
         </div>
-        ${fig1Container}
+        ${row1Left}
       </div>
 
       <div class="panel-card" style="margin-bottom:0;">
         <div class="panel-title">
-          <span>Population &amp; Summary-Data Availability Across Strata</span>
+          <span>Option A · Population &amp; Summary-Data Availability Across Strata</span>
         </div>
-        ${fig2Container}
+        ${row1Right}
+      </div>
+    </div>
+
+    <!-- Row 2: Left + Option B -->
+    <div class="fig-grid-2col">
+      <div class="panel-card" style="margin-bottom:0;">
+        <div class="panel-title">
+          <span>Studies, Sample Size (N) &amp; ASSAY Scale per Year</span>
+        </div>
+        ${row2Left}
+      </div>
+
+      <div class="panel-card" style="margin-bottom:0;">
+        <div class="panel-title">
+          <span>Option B · Biological Sample Matrix × Platform Breakdown</span>
+        </div>
+        ${row2Right}
+      </div>
+    </div>
+
+    <!-- Row 3: Left + Option C -->
+    <div class="fig-grid-2col">
+      <div class="panel-card" style="margin-bottom:0;">
+        <div class="panel-title">
+          <span>Studies, Sample Size (N) &amp; ASSAY Scale per Year</span>
+        </div>
+        ${row3Left}
+      </div>
+
+      <div class="panel-card" style="margin-bottom:0;">
+        <div class="panel-title">
+          <span>Option C · Sample Size (N) vs ASSAY Count Frontier</span>
+        </div>
+        ${row3Right}
       </div>
     </div>
 

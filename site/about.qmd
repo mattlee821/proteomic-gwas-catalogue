@@ -28,14 +28,7 @@ New and historical studies are identified using a scripted, reproducible **four-
 5. **Blinded Positive-Control Validation:**
    Search recall and triage survival are benchmarked against an air-gapped positive-control study set (`src/evaluate_positive_controls.R --mode blinded-summary`) that is never read by the search scripts.
 
-<details class="methods-dropdown">
-<summary>Search Strategy — Iterative Design &amp; Blinded Multi-Agent Validation Log</summary>
-
-::: {.methods-dropdown-body}
-{{< include _methods_dropdown.md >}}
-:::
-
-</details>
+For full methodological details — including the `v1` through `v3+` iterations, blinded multi-agent benchmark replications, and capture-recapture sensitivity estimates — see the dedicated [**Search Strategy**](search-strategy.qmd) page.
 :::
 
 ::: {.about-section}

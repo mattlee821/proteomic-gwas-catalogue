@@ -22,7 +22,11 @@ website:
       - text: "Log"
         href: log.qmd
       - text: "About"
-        href: about.qmd
+        menu:
+          - text: "About"
+            href: about.qmd
+          - text: "Search Strategy"
+            href: search-strategy.qmd
     right:
       - text: "+ Submit Study"
         href: https://github.com/mattlee821/proteomic-gwas-catalogue/issues/new?template=submit_study.yml

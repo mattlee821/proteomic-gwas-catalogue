@@ -5,14 +5,14 @@
 
 ---
 
-### 1. Purpose, Eligibility Scope, and Methodological Principles
+## 1. Purpose, Eligibility Scope, and Methodological Principles
 
-#### 1.1 Scientific Objective
+### 1.1 Scientific Objective
 Published genome-wide association studies (GWAS) of protein levels — protein quantitative trait locus (`pQTL`) studies — span multiple assay technologies, cohorts, biofluids, journals, preprint servers, and summary-statistics portals. Meanwhile, since 2022, biomedical literature databases have experienced an exponential surge in **secondary two-sample Mendelian randomisation (`2SMR`), summary-data-based MR (`SMR`), and proteome-wide association (`PWAS`) papers** that reuse public summary statistics (such as UKB-PPP, deCODE, Fenland, INTERVAL, ARIC, and SCALLOP) without generating new primary genetic associations. In naive keyword searches, secondary summary-statistics consumers now outnumber primary pGWAS papers by approximately **10:1 to 30:1**.
 
 The goal of our search and extraction methodology is to achieve **near-100% recall of primary human protein GWAS** (including preprints and small-sample tissue/biofluid studies) while compressing curator screening noise by **~85–90%** and preserving strict auditability.
 
-#### 1.2 Study Eligibility Criteria
+### 1.2 Study Eligibility Criteria
 A publication or preprint is eligible for inclusion if it satisfies all four criteria:
 1. **Human population (`N >= 1`, no sample-size threshold):** Any human cohort, biobank, clinical series, twin sample, post-mortem tissue bank, or donor-derived primary/iPSC cell panel across any ancestry or sex. Small-sample studies (e.g. `N = 50–150` brain homogenate, CSF, urine, saliva, or iPSC studies) are explicitly retained.
 2. **Multiplexed / proteomic measurement (`>= 5` protein targets or explicit proteomic framing):** Covers aptamer affinity (`SomaScan` / `SomaLogic` 1.1k–11k), proximity extension and nucleic-acid immunoassays (`Olink Target`, `SCALLOP`, `Olink Explore 1536/3072/HT`, `Alamar NULISAseq`), untargeted and nanoparticle-enriched mass spectrometry (`DIA-MS`, `SWATH-MS`, `DDA`, `TMT`, `iTRAQ`, `Orbitrap Astral`, `timsTOF`, `Seer Proteograph`, `MRM/PRM`), and multiplex bead/planar immunoassays (`Luminex xMAP`, `Bio-Plex`, `Milliplex`, `Rules-Based Medicine`, `Meso Scale Discovery`, `Simoa`). Single-analyte clinical chemistry GWAS (`< 5` proteins, e.g. standalone clinical CRP or Lp(a) GWAS) are excluded.
@@ -21,16 +21,16 @@ A publication or preprint is eligible for inclusion if it satisfies all four cri
 
 **Exclusions:** Secondary `2SMR`/`SMR`/`PWAS`/colocalisation-only studies that exclusively reuse existing summary statistics or pre-trained weights; pure DNA-methylation `EWAS` without germline pQTLs; pedigree-only twin heritability without genotyping; targeted candidate-SNP (`< 100` SNPs) lookups; non-human-only studies; and narrative reviews/editorials.
 
-#### 1.3 Core Validation Principles
+### 1.3 Core Validation Principles
 1. **Strict Blinding to External Positive Controls:** An external benchmark list (Karsten Suhre's curated proteomics GWAS table on *metabolomix.com*) is held back as an air-gapped positive control (`data/positive_controls.tsv`, git-ignored and programmatically blocked from being read by search scripts via `src/validate_catalogue.R`). Neither human prompts nor subagents are permitted to inspect *metabolomix.com* during strategy design.
 2. **Adversarial Multi-Agent Design & Peer Review:** Specialist subagents independently design search and extraction modules, while separate methodological reviewer subagents audit code, edge cases, memory footprints, and live API behavior.
 3. **Blinded Dual-Agent Replication & Capture-Recapture Estimation:** Independent search-scientist subagents operating in isolated empty-catalogue sandboxes audit and improve the search strategy over fixed calendar windows (`2025-01-01` to `2025-12-31`), adjudicated by an independent biostatistical referee subagent using ground-truth full-text checks, Cohen's $\kappa$, and Chapman capture-recapture sensitivity estimation.
 
 ---
 
-### 2. Prototype Baseline (`v0`) — Initial Single-Source Keyword Search
+## 2. Prototype Baseline (`v0`) — Initial Single-Source Keyword Search
 
-#### 2.1 Architecture of `v0`
+### 2.1 Architecture of `v0`
 During initial repository scaffolding, a minimal prototype script (`src/run_literature_search.R`, `v0`) queried the Europe PMC REST API `GET /search` endpoint using a single unstructured Boolean string:
 ```text
 ("SomaScan" OR "SomaLogic" OR "Olink" OR "NULISA" OR "NULISAseq" OR "SCALLOP consortium"
@@ -39,7 +39,7 @@ AND ("genome-wide association" OR "GWAS" OR "pQTL" OR "protein quantitative trai
 ```
 Triage relied on simple title-keyword subtraction: any article with `"Mendelian randomization"`, `"proteome-wide association study"`, or `"drug target"` in its title was auto-deprioritised unless its abstract matched five literal phrases (`"we measured"`, `"genotyped and measured"`, etc.).
 
-#### 2.2 Identified Deficiencies in `v0`
+### 2.2 Identified Deficiencies in `v0`
 1. **Unqualified Full-Text & Reference-List Noise in Europe PMC:** Unqualified keywords in Europe PMC search full text *and* bibliography titles across >9M open-access PMC articles, inflating false positives ~10-fold (as seen in the earlier `analysis/somalogic-search/` pilot where >85% of 64 candidates were secondary MR/PWAS papers, EWASs, or unrelated MS papers).
 2. **False Demotion of Translational Primary pGWAS:** Title-keyword subtraction falsely demoted landmark primary pGWAS whose titles mention translational applications, such as **Folkersen et al. 2020** (*"...drug target evaluation of 90 cardiovascular proteins in 30,931 individuals"*) and **Zhang et al. 2022 ARIC** (*"...identify cis-pQTLs and models for proteome-wide association studies"*).
 3. **Stealth 2SMR Leakage:** ~40% of recent 2SMR papers omit `"Mendelian randomization"` from their title (*"Proteogenomic integration identifies causal plasma proteins for..."*), bypassing title-only subtraction.
@@ -47,9 +47,9 @@ Triage relied on simple title-keyword subtraction: any article with `"Mendelian 
 
 ---
 
-### 3. Version 1 (`v1.0`) — Specialist Subagent Architecture & 2-Paper Live Benchmark
+## 3. Version 1 (`v1.0`) — Specialist Subagent Architecture & 2-Paper Live Benchmark
 
-#### 3.1 Subagent Design Setup
+### 3.1 Subagent Design Setup
 Two specialist subagents were defined and executed in parallel without broad literature sweeps, restricted strictly to targeted empirical verification against two flagship benchmark studies:
 - **Benchmark Study A:** **Sun et al. 2023 (UKB-PPP Olink)** — *Nature* (`PMID: 37794186`, `DOI: 10.1038/s41586-023-06592-6`, `PMC10567551`).
 - **Benchmark Study B:** **Ferkingstad et al. 2021 (deCODE SomaScan)** — *Nature Genetics* (`PMID: 34857953`, `DOI: 10.1038/s41588-021-00978-w`).
@@ -58,7 +58,7 @@ Subagents:
 1. **`search-strategy-designer`:** Designed the v1 4-source search strategy, connected-components deduplication, 4-tier preprint-to-published upgrade detector, Two-Stage Dual-Axis (`P_score` vs `S_score`) triage rubric, and blinded positive-control evaluator (`design_search_v1.md`).
 2. **`paper-extraction-designer`:** Designed and live-tested the 4-tier cascading retrieval and extraction pipeline (`Structured APIs -> Legal OA Full-Text XML/BioC -> Supplementary Spreadsheets/Docs & Portal Preflight -> Provenance & NEEDS_MANUAL_REVIEW Escalation`, `design_extraction_v1.md`).
 
-#### 3.2 Critical Live Empirical Discoveries from the 2-Paper Benchmark
+### 3.2 Critical Live Empirical Discoveries from the 2-Paper Benchmark
 Testing live API responses on `PMID: 37794186` and `PMID: 34857953` uncovered **seven critical real-world behaviors** that refuted standard assumptions:
 
 | # | Empirical Discovery | Evidence on `Sun 2023 (37794186)` | Evidence on `Ferkingstad 2021 (34857953)` | Architectural Consequence |
@@ -73,9 +73,9 @@ Testing live API responses on `PMID: 37794186` and `PMID: 34857953` uncovered **
 
 ---
 
-### 4. Adversarial Subagent Peer Review & Version 2 (`v2.0`) Implementation
+## 4. Adversarial Subagent Peer Review & Version 2 (`v2.0`) Implementation
 
-#### 4.1 Independent Peer-Review Audit (`peer_review_round1.md`)
+### 4.1 Independent Peer-Review Audit (`peer_review_round1.md`)
 Before writing production code, a third subagent (`peer-reviewer`) performed a cross-audit of `design_search_v1.md`, `design_extraction_v1.md`, and existing repository validation rules, identifying **`6 CRITICAL`**, **`8 MAJOR`**, and **`4 MINOR`** issues:
 
 1. **`[C-1]` Search-to-Extraction Queue Handoff:** Expanded `catalogue/candidate_queue.tsv` from 9 to **17 columns** (appending `pmid`, `doi`, `pmcid`, `epmc_id`, `matched_sources`, `p_score`, `s_score`, `preprint_lineage_note` while keeping columns 1–9 unchanged for UI compatibility).
@@ -92,16 +92,16 @@ Both specialist subagents implemented these fixes into modular R production scri
 
 ---
 
-### 5. Round-1 Blinded Dual-Agent 2025 Replication & Referee Adjudication (`v2.0 -> v3.0`)
+## 5. Round-1 Blinded Dual-Agent 2025 Replication & Referee Adjudication (`v2.0 -> v3.0`)
 
-#### 5.1 Experimental Design (Option A — Pure Independent Replication)
+### 5.1 Experimental Design (Option A — Pure Independent Replication)
 To stress-test `v2.0` on real, noisy literature without touching pre-2025 studies (preserving historical positive-control blinding), two fresh, independent subagents (`Independent Search Scientist 1` and `Independent Search Scientist 2`) were given **word-for-word identical instructions** in isolated sandboxes (`agent_1/` and `agent_2/`) initialized with **empty** `catalogue/*.tsv` files over the fixed calendar window **`--since 2025-01-01 --until 2025-12-31`**:
 1. Run unmodified `v2.0` baseline on `2025-01-01..2025-12-31`.
 2. Audit false positives, date leaks, and false negatives across all triage buckets.
 3. Independently re-engineer `lexicons.R` and `run_literature_search.R`, re-run `2025-01-01..2025-12-31`, and document paper-by-paper diffs.
 4. A third independent subagent (`Independent Search Referee & Adjudicator`) compared code diffs, linked entities across dumps, computed inter-rater reliability and capture-recapture sensitivity, and adjudicated every discordant study against full abstracts and PMC BioC `Methods` (`analysis/search-benchmark-2025/adjudication_report_2025.md`).
 
-#### 5.2 Quantitative Convergence & Concordance Results
+### 5.2 Quantitative Convergence & Concordance Results
 
 | Metric (`2025-01-01` to `2025-12-31`) | `v2.0` Baseline | Agent 1 (`v3_A1`) | Agent 2 (`v3_A2`) | Inter-Agent Concordance |
 | :--- | ---: | ---: | ---: | :--- |
@@ -112,7 +112,7 @@ To stress-test `v2.0` on real, noisy literature without touching pre-2025 studie
 | **Total Actionable (`LP + NHC`)** | **400** | **49** *(91.8% true)* | **50** *(92.0% true)* | **`40` shared (`98.78%` agreement, $\kappa = 0.827$)** |
 | **Concordant Intersection Precision (`A_1 ∩ A_2`)** | — | — | — | **`40 / 40 = 100.0%` (`0` false positives)** |
 
-#### 5.3 Convergent vs. Complementary Discoveries Across Agent 1 and Agent 2
+### 5.3 Convergent vs. Complementary Discoveries Across Agent 1 and Agent 2
 - **15 Convergent Fixes (found independently by both agents):**
   1. HTTP exponential backoff + `Retry-After` handling on transient EBI `HTTP 500/503` responses.
   2. Date-bounding `Snowball_Backward` (`/references`), eliminating all `86` `2001–2023` citation leaks.
@@ -140,7 +140,7 @@ To stress-test `v2.0` on real, noisy literature without touching pre-2025 studie
   - **Date-sorted GWAS Catalog `/v2/publications` + EFO-independent `disease_trait` verification:** Uncurated summary-statistics submissions lack `EFO_0004747` mappings; inspecting `disease_trait` strings uniquely rescued **`Loya et al. 2025`** (*Nat Genet*, `PMID: 39789286`, `2,929` UKB Olink pGWAS with **zero** `"protein"` mention in title/abstract!) and **`Yan et al. 2025`** (*AJOG*, `9` maternal serum proteins, `27` GCSTs).
   - **Canonical `first_pub_date` precedence** (blocking `~85` Epub-2024/print-2025 and revised 2023/2024 preprint leaks), `.v1`-preserving `10.20944/` DOIs, `MR_BOILERPLATE_STOPWORDS` fuzzy-merge protection, and expanded phrasing rescuing **`Farinas 2025`** (*Nat Med* CSF-to-plasma protein ratio GWAS), **`Dimas 2025`** (diet-responsive `cis-pQTLs`), and **`Hall 2025`** (`N = 69` donor iPSC-RPE MS `cis-pQTLs`).
 
-#### 5.4 Ground-Truth Adjudication & Capture-Recapture Sensitivity (`2025`)
+### 5.4 Ground-Truth Adjudication & Capture-Recapture Sensitivity (`2025`)
 Across all `59` union actionable studies (`40` concordant + `19` discordant):
 - **`45` `TRUE_PRIMARY_2025`** (`38` in `A_1 ∩ A_2`, `2` in `A_1 \ A_2`, `5` in `A_2 \ A_1`).
 - **`6` `TRUE_BORDERLINE_HUMAN_CHECK`** (`2` in `A_1 ∩ A_2`, `3` in `A_1 \ A_2`, `1` in `A_2 \ A_1`).
@@ -154,9 +154,9 @@ $$\hat{N}_{\text{Chapman}} = \frac{(40 + 1)(43 + 1)}{38 + 1} - 1 = 45.26 \quad (
 
 ---
 
-### 6. Unified Version 3 (`v3.0`) Consensus Merge & Round-2 Blinded Replication (`v3.0 -> v4.0`)
+## 6. Unified Version 3 (`v3.0`) Consensus Merge & Round-2 Blinded Replication (`v3.0 -> v4.0`)
 
-#### 6.1 Unified `v3.0` Consensus Architecture & Regression Verification
+### 6.1 Unified `v3.0` Consensus Architecture & Regression Verification
 All 15 convergent fixes, Agent 1's 8 unique improvements, Agent 2's 7 unique improvements, and **8 Referee conflict-resolution safeguards** (tag-first HTML stripping before entity decoding; post-merge journal `epub > ppub` precedence over superseded preprints; internal-only `.v1` stripping on `10.20944/`; boilerplate-stripped fuzzy merger; biological-sample reuse exemption paired with `S1` external-source requirement without `!p2_hit`; preserving MEDLINE `Letter` articles while gating disease-only no-abstract letters; spelled-out `protein quantitative trait loci` in `P5` + `iPSCs` in `P6`; and candidate-SNP `< 100` / twin-ACE / composite aging-clock guards) were merged into `src/search/lexicons.R` and `src/run_literature_search.R` (`v3.0`, commit `a68d4d2`).
 
 Prior to launching Round 2, `v3.0` was verified against a 22-assertion unit suite and the full Round-1 59-study union + 1,698-work cached 2025 corpus:
@@ -165,11 +165,11 @@ Prior to launching Round 2, `v3.0` was verified against a 22-assertion unit suit
 - **Full-Corpus Specificity Check (`N = 1,698` cached 2025 works):** `0` newly introduced false-positive actionable studies.
 - **Live Positive Benchmark Wiring (`--verify-pmids 37794186,34857953`):** `Sun 2023` (`P = 28, S = 0`, `Olink`, `N = 54,219`, preprint lineage `PPR508031|10.1101/2022.06.17.496443|sun_2022_preprint`) and `Ferkingstad 2021` (`P = 20, S = 0`, `SomaScan`, `N = 35,559`) both passed end-to-end across all four discovery sources.
 
-#### 6.2 Round-2 Blinded Dual-Agent Replication (`Agent 3`, `Agent 4`, and `Reviewer 2`) — *In Progress*
+### 6.2 Round-2 Blinded Dual-Agent Replication (`Agent 3`, `Agent 4`, and `Reviewer 2`) — *In Progress*
 To verify whether `v3.0` has reached asymptotic convergence or whether independent eyes uncover subtle second-order recall/precision improvements, a second blinded dual-agent replication (`Agent 3` and `Agent 4` starting from `v3.0` in clean empty-catalogue sandboxes on `--since 2025-01-01 --until 2025-12-31`, adjudicated by a fresh `Reviewer 2`) is currently executing. Results, concordance metrics, and any `v3.0 -> v4.0` refinements will be appended here upon completion.
 
 ---
 
-### 7. Planned Out-of-Sample Blinded Positive-Control Validation
+## 7. Planned Out-of-Sample Blinded Positive-Control Validation
 
 Once the search and triage strategy reaches multi-agent convergence on `2025`, out-of-sample historical recall and triage survival will be evaluated against the user-curated, air-gapped positive-control benchmark (`data/positive_controls.tsv`, derived independently from Karsten Suhre's proteomics GWAS compilation) via `src/evaluate_positive_controls.R --mode blinded-summary`, recording final sensitivity prior to executing the full historical baseline search (`2005–present`).

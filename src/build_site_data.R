@@ -35,16 +35,14 @@ for (f in c("studies.tsv", "strata.tsv", "cohort_membership.tsv", "proteins_inde
   copy_if_changed(file.path(cat_dir, f), file.path(site_data_dir, f))
 }
 
-# Sync docs/methods.md -> site/_methods_dropdown.md (if local docs/methods.md exists) so About dropdown stays up-to-date
+# Sync docs/methods.md -> site/_methods_content.md (if local docs/methods.md exists) for site/search-strategy.qmd
 methods_src <- file.path("docs", "methods.md")
-methods_dst <- file.path("site", "_methods_dropdown.md")
+methods_dst <- file.path("site", "_methods_content.md")
 if (file.exists(methods_src)) {
   m_lines <- readLines(methods_src, warn = FALSE, encoding = "UTF-8")
   if (length(m_lines) > 0L && grepl("^#\\s+", m_lines[1L])) {
     m_lines <- m_lines[-1L]
   }
-  # Shift markdown headings down one level (## -> ###, ### -> ####) so they nest cleanly inside About
-  m_lines <- sub("^(#{2,5})(\\s+)", "#\\1\\2", m_lines)
   tmp_m <- tempfile(fileext = ".md")
   writeLines(m_lines, tmp_m, useBytes = TRUE)
   copy_if_changed(tmp_m, methods_dst)

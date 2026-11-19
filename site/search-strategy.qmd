@@ -1,0 +1,19 @@
+---
+pagetitle: "Search Strategy · Proteomic GWAS Catalogue"
+---
+
+::: {.pg-shell-readable}
+
+::: {.hero-banner}
+::: {}
+# Search Strategy
+
+Iterative design, blinded multi-agent benchmarking, and validation log for the Proteomic GWAS Catalogue search and triage pipeline.
+:::
+:::
+
+::: {.about-section}
+{{< include _methods_content.md >}}
+:::
+
+:::
