@@ -87,7 +87,7 @@ if (!is.null(studies) && !is.null(strata)) {
     fail("strata.tsv references unknown study_id: ", paste(bad_fk, collapse = ", "))
   }
 
-  sup <- studies$superseded_by[nzchar(studies$superseded_by)]
+  sup <- studies$superseded_by[!is.na(studies$superseded_by) & nzchar(studies$superseded_by)]
   bad_sup <- setdiff(sup, studies$study_id)
   if (length(bad_sup) > 0) {
     fail("studies.tsv superseded_by references unknown study_id: ", paste(bad_sup, collapse = ", "))
@@ -130,7 +130,7 @@ if (!is.null(studies) && !is.null(strata)) {
   check_vocab(strata$platform_category, c(
     "SomaScan", "Olink", "Mass Spectrometry", "NULISA", "Luminex", "Other Immunoassay"
   ), "strata$platform_category")
-  check_vocab(strata$genome_build, c("GRCh36", "GRCh37", "GRCh38", "T2T-CHM13", "Unknown"), "strata$genome_build")
+  check_vocab(strata$genome_build, c("NCBI35", "GRCh36", "GRCh37", "GRCh38", "T2T-CHM13", "Unknown"), "strata$genome_build")
   check_vocab(strata$strand, c("Forward (+)", "Reverse (-)", "Not reported"), "strata$strand")
   check_vocab(strata$coverage, c("genome_wide", "cis_only", "top_hits_only", "none"), "strata$coverage")
   check_vocab(strata$effect_scale, c(

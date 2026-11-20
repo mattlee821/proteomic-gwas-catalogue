@@ -148,28 +148,38 @@ proteins_enriched <- merge(
   sort = FALSE
 )
 
-prot_split <- split(proteins_enriched, proteins_enriched$uniprot)
-protein_summary <- do.call(rbind, lapply(prot_split, function(df) {
-  active_df <- df[df$status != "Superseded Preprint", , drop = FALSE]
-  data.frame(
-    uniprot = df$uniprot[1],
-    gene_symbol = df$gene_symbol[1],
-    protein_name = df$protein_name[1],
-    n_studies = length(unique(active_df$study_id)),
-    n_strata = length(unique(active_df$stratum_id)),
-    n_assays_total = nrow(active_df),
-    n_genome_wide = sum(active_df$data_label == "Genome-wide"),
-    max_n = if (nrow(active_df) > 0) max(active_df$n_samples) else 0L,
-    platforms = paste(unique(active_df$platform_category), collapse = ", "),
-    matrices = paste(unique(active_df$sample_matrix), collapse = ", "),
-    ancestries = paste(unique(active_df$pop_super), collapse = ", "),
-    any_cis_pqtl = any(active_df$cis_pqtl_reported),
-    any_pav_flag = any(active_df$pav_epitope_flag),
-    stringsAsFactors = FALSE
+if (nrow(proteins_enriched) > 0L) {
+  prot_split <- split(proteins_enriched, proteins_enriched$uniprot)
+  protein_summary <- do.call(rbind, lapply(prot_split, function(df) {
+    active_df <- df[df$status != "Superseded Preprint", , drop = FALSE]
+    data.frame(
+      uniprot = df$uniprot[1],
+      gene_symbol = df$gene_symbol[1],
+      protein_name = df$protein_name[1],
+      n_studies = length(unique(active_df$study_id)),
+      n_strata = length(unique(active_df$stratum_id)),
+      n_assays_total = nrow(active_df),
+      n_genome_wide = sum(active_df$data_label == "Genome-wide"),
+      max_n = if (nrow(active_df) > 0) max(active_df$n_samples) else 0L,
+      platforms = paste(unique(active_df$platform_category), collapse = ", "),
+      matrices = paste(unique(active_df$sample_matrix), collapse = ", "),
+      ancestries = paste(unique(active_df$pop_super), collapse = ", "),
+      any_cis_pqtl = any(active_df$cis_pqtl_reported),
+      any_pav_flag = any(active_df$pav_epitope_flag),
+      stringsAsFactors = FALSE
+    )
+  }))
+  protein_summary <- protein_summary[order(protein_summary$gene_symbol), ]
+  rownames(protein_summary) <- NULL
+} else {
+  protein_summary <- data.frame(
+    uniprot = character(0), gene_symbol = character(0), protein_name = character(0),
+    n_studies = integer(0), n_strata = integer(0), n_assays_total = integer(0),
+    n_genome_wide = integer(0), max_n = integer(0), platforms = character(0),
+    matrices = character(0), ancestries = character(0), any_cis_pqtl = logical(0),
+    any_pav_flag = logical(0), stringsAsFactors = FALSE
   )
-}))
-protein_summary <- protein_summary[order(protein_summary$gene_symbol), ]
-rownames(protein_summary) <- NULL
+}
 
 # Ensure optional search_runs detail columns exist even on minimal 13-col automated search logs
 if (!("date_from" %in% names(runs))) runs$date_from <- runs$run_date
@@ -183,7 +193,7 @@ runs_sorted <- runs[order(runs$run_date, runs$run_id, decreasing = TRUE), , drop
 rownames(runs_sorted) <- NULL
 
 # Explicit catalogue-wide Preprint -> Published replacement records
-sup_rows <- studies[studies$status == "Superseded Preprint" & nzchar(studies$superseded_by), , drop = FALSE]
+sup_rows <- studies[studies$status == "Superseded Preprint" & !is.na(studies$superseded_by) & nzchar(studies$superseded_by), , drop = FALSE]
 preprints_replaced_list <- if (nrow(sup_rows) > 0L) {
   do.call(rbind, lapply(seq_len(nrow(sup_rows)), function(i) {
     pr <- sup_rows[i, ]
@@ -203,21 +213,21 @@ preprints_replaced_list <- if (nrow(sup_rows) > 0L) {
   data.frame()
 }
 
-latest_run_tag <- if (nrow(runs_sorted) > 0 && "release_tag" %in% names(runs_sorted) && any(nzchar(runs_sorted$release_tag))) {
-  runs_sorted$release_tag[nzchar(runs_sorted$release_tag)][1]
+latest_run_tag <- if (nrow(runs_sorted) > 0 && "release_tag" %in% names(runs_sorted) && any(!is.na(runs_sorted$release_tag) & nzchar(runs_sorted$release_tag))) {
+  runs_sorted$release_tag[!is.na(runs_sorted$release_tag) & nzchar(runs_sorted$release_tag)][1]
 } else {
-  "v0.2.0-dev"
+  "v0.1.0-pre"
 }
-cur_ver  <- if (nrow(releases) > 0 && nzchar(releases$version[1])) releases$version[1] else latest_run_tag
-last_upd <- if (nrow(releases) > 0 && nzchar(releases$release_date[1])) releases$release_date[1] else if (nrow(runs_sorted) > 0) runs_sorted$run_date[1] else format(Sys.Date(), "%Y-%m-%d")
-min_from <- if (nrow(runs) > 0 && any(nzchar(runs$date_from))) min(runs$date_from[nzchar(runs$date_from)]) else "—"
-max_to   <- if (nrow(runs) > 0 && any(nzchar(runs$date_to)))   max(runs$date_to[nzchar(runs$date_to)])     else "—"
+cur_ver  <- if (nrow(releases) > 0 && !is.na(releases$version[1]) && nzchar(releases$version[1])) releases$version[1] else latest_run_tag
+last_upd <- if (nrow(releases) > 0 && !is.na(releases$release_date[1]) && nzchar(releases$release_date[1])) releases$release_date[1] else if (nrow(runs_sorted) > 0) runs_sorted$run_date[1] else format(Sys.Date(), "%Y-%m-%d")
+min_from <- if (nrow(runs) > 0 && any(!is.na(runs$date_from) & nzchar(runs$date_from))) min(runs$date_from[!is.na(runs$date_from) & nzchar(runs$date_from)]) else "—"
+max_to   <- if (nrow(runs) > 0 && any(!is.na(runs$date_to) & nzchar(runs$date_to)))   max(runs$date_to[!is.na(runs$date_to) & nzchar(runs$date_to)])     else "—"
 tot_screened <- sum(as.integer(runs$deduplicated_new), na.rm = TRUE)
 tot_included <- sum(studies$status != "Superseded Preprint")
 
 payload <- list(
   metadata = list(
-    data_mode = "simulated_prototype",
+    data_mode = "production",
     current_version = cur_ver,
     last_updated = last_upd,
     date_from = min_from,

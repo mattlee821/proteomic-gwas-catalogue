@@ -23,7 +23,7 @@ $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
 
 .pg-shell-readable {
   width: 100%;
-  max-width: 1280px;
+  max-width: max(1360px, 82vw);
   margin: 0 auto;
   padding: 1rem 1.5rem 2.5rem 1.5rem;
   box-sizing: border-box;
@@ -608,4 +608,55 @@ details.methods-dropdown[open] > summary::after {
   background: #f1f5f9;
   font-weight: 700;
   color: #0f172a;
+}
+
+/* Full-width centered Mermaid flowchart on About page (>= 75-85% of viewport width) */
+.about-section .cell,
+.about-section .cell-output-display,
+.about-section .cell-output-display > div,
+.about-section .quarto-figure-center,
+.about-section figure.figure,
+.about-section figure.figure > div,
+.about-section pre.mermaid-js {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.about-section svg.mermaid-js,
+.about-section .cell-output-display svg {
+  display: block !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0.75rem auto !important;
+}
+
+.about-section .cluster-label foreignObject {
+  overflow: visible !important;
+}
+
+.about-section .cluster-label div,
+.about-section .cluster-label span,
+.about-section .cluster-label p {
+  max-width: none !important;
+  white-space: nowrap !important;
+  font-weight: 700 !important;
+  color: #075985 !important;
+}
+
+.about-section .cluster rect {
+  fill: #f0f9ff !important;
+  stroke: #38bdf8 !important;
+  stroke-width: 2px !important;
+  stroke-dasharray: 6 4 !important;
+  rx: 8px;
+  ry: 8px;
+}
+
+.about-section .cluster text {
+  fill: #075985 !important;
 }

@@ -48,6 +48,8 @@ queue_path    <- get_opt("--queue", file.path("catalogue", "candidate_queue.tsv"
 eval_mode     <- tolower(get_opt("--mode", "blinded-summary"))
 unblind_ok    <- "--unblind-audit" %in% args
 out_dir       <- get_opt("--out-dir", "output")
+year_from_arg <- suppressWarnings(as.integer(get_opt("--year-from", NA_character_)))
+year_to_arg   <- suppressWarnings(as.integer(get_opt("--year-to", NA_character_)))
 
 if (!(eval_mode %in% c("blinded-summary", "unblinded-audit"))) {
   stop("--mode must be 'blinded-summary' or 'unblinded-audit'.", call. = FALSE)
@@ -122,7 +124,22 @@ ctrl$expected_scope <- ifelse(nzchar(ctrl$expected_scope), ctrl$expected_scope, 
 is_in_scope <- !(tolower(ctrl$expected_scope) %in% c("out_of_scope", "excluded", "false", "0", "non_pgwas"))
 n_out_of_scope <- sum(!is_in_scope)
 ctrl <- ctrl[is_in_scope, , drop = FALSE]
-if (nrow(ctrl) == 0L) stop("0 in-scope benchmark controls after filtering expected_scope.", call. = FALSE)
+
+# Optional publication-year window filter (--year-from / --year-to) for chronological branch-by-branch checks
+n_outside_year_window <- 0L
+if (!is.na(year_from_arg) || !is.na(year_to_arg)) {
+  ctrl_yr_num <- suppressWarnings(as.integer(gsub("[^0-9]", "", ctrl$year)))
+  if (all(is.na(ctrl_yr_num))) {
+    stop("--year-from / --year-to specified, but no numeric years found in the 'year' column of ", controls_path, call. = FALSE)
+  }
+  keep_yr <- !is.na(ctrl_yr_num) &
+    (is.na(year_from_arg) | ctrl_yr_num >= year_from_arg) &
+    (is.na(year_to_arg)   | ctrl_yr_num <= year_to_arg)
+  n_outside_year_window <- sum(!keep_yr)
+  ctrl <- ctrl[keep_yr, , drop = FALSE]
+}
+
+if (nrow(ctrl) == 0L) stop("0 in-scope benchmark controls in requested window after filtering.", call. = FALSE)
 
 is_consortium_author <- function(a) {
   a_low <- tolower(ascii_fold(a %||% ""))
@@ -471,8 +488,11 @@ md_lines <- c(
   sprintf("- **Timestamp (UTC):** `%s`", format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")),
   sprintf("- **Blinding Mode:** `%s` %s", eval_mode,
           if (identical(eval_mode, "blinded-summary")) "(STRICT: study identifiers, authors & titles suppressed)" else "(UNBLINDED POST-FREEZE AUDIT)"),
-  sprintf("- **In-Scope Controls Evaluated:** `%d` *(Out-of-scope excluded: `%d`; Multi-ID rows: `%d`)*",
-          n_total, n_out_of_scope, sum(res_df$n_identifiers > 1L)),
+  sprintf("- **In-Scope Controls Evaluated:** `%d` *(Year filter: `%s..%s`, outside-window skipped: `%d`; Out-of-scope excluded: `%d`; Multi-ID rows: `%d`)*",
+          n_total,
+          if (!is.na(year_from_arg)) as.character(year_from_arg) else "min",
+          if (!is.na(year_to_arg)) as.character(year_to_arg) else "max",
+          n_outside_year_window, n_out_of_scope, sum(res_df$n_identifiers > 1L)),
   sprintf("- **Search Dump Evaluated:** `%s` (`%d` total deduplicated candidates)",
           if (nzchar(dump_path)) basename(dump_path) else "studies.tsv + candidate_queue.tsv only", n_dump_total),
   "",

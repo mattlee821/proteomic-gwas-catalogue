@@ -179,11 +179,17 @@ mutable selectedUniprot = "P05231"
 ```
 
 ```{ojs}
-activeProtMeta = protSummary.find(p => p.uniprot === selectedUniprot) || protSummary[0]
+activeProtMeta = protSummary.find(p => p.uniprot === selectedUniprot) || protSummary[0] || {
+  uniprot: "—", gene_symbol: "None", protein_name: "No protein assay index loaded yet",
+  n_studies: 0, n_strata: 0, n_assays_total: 0, n_genome_wide: 0, max_n: 0,
+  platforms: "—", matrices: "—", ancestries: "—"
+}
 
-activeProtRows = protIndex
-  .filter(r => r.uniprot === activeProtMeta.uniprot && r.status !== "Superseded Preprint")
-  .sort((a, b) => (b.year - a.year) || (b.n_samples - a.n_samples))
+activeProtRows = activeProtMeta.uniprot === "—"
+  ? []
+  : protIndex
+      .filter(r => r.uniprot === activeProtMeta.uniprot && r.status !== "Superseded Preprint")
+      .sort((a, b) => (b.year - a.year) || (b.n_samples - a.n_samples))
 ```
 
 ```{ojs}
