@@ -2,7 +2,7 @@
 
 An all-encompassing, continuously updated catalogue and interactive web application of published and preprint genome-wide association studies (GWAS) of proteins — built so researchers can quickly locate, evaluate, and harmonise summary statistics for meta-analysis, Mendelian randomisation (MR), and colocalisation.
 
-Status: unified `v4.1` search and 4-tier extraction pipeline validated; chronological historical backfill (`2000–2025`) in progress.
+**Current release:** `v0.1.0` (`2000–2015` curated; chronological annual updates `2016–2025` next) · **Website:** https://mattlee821.github.io/proteomic-gwas-catalogue/
 
 ## Purpose & Scope
 
@@ -70,7 +70,6 @@ Publish numbered catalogue release & data archive`"]:::manual
   4. **About (`site/about.qmd`) & Search Strategy (`site/search-strategy.qmd`):** Pipeline overview, flowchart, eligibility criteria, curation tiers, and full methodological history synced from `docs/methods.md`.
 - `src/`: R and shell scripts:
   - `src/setup_quarto.sh`: Installs Quarto CLI into `~/.local/share/quarto` and `~/.local/bin/quarto` (outside OneDrive).
-  - `src/simulate_catalogue.R`: Generates the simulated prototype dataset (`unreleased (dev)`).
   - `src/validate_catalogue.R`: Validates primary/foreign keys, controlled vocabularies, and positive-control blinding guardrails (enforced in CI).
   - `src/build_site_data.R`: Validates `catalogue/*.tsv` and compiles `site/data/catalogue.json`.
   - `src/run_literature_search.R` & `src/search/lexicons.R`: Multi-resource discovery engine (PubMed POST, Europe PMC journal + preprint `searchPOST` + `METHODS:` rescue, EBI GWAS Catalog REST v2, and blinded 6-seed citation snowballing), graph deduplication, 4-tier preprint-to-published upgrade detector, and Two-Stage Dual-Axis (`P_score` vs `S_score`) triage scorer.
@@ -95,3 +94,9 @@ Rscript src/extract_candidate_study.R --queue-file output/verify/candidate_queue
 # 3. Evaluate search recall & triage survival against a blinded positive-control table
 Rscript src/evaluate_positive_controls.R --controls data/positive_controls.tsv --dump data/search_dump_<run_id>.tsv --mode blinded-summary
 ```
+
+## License & Citation
+
+- **Curated Data (`catalogue/`):** [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE)
+- **Source Code & Website (`src/`, `site/`, `.github/`):** [MIT License](LICENSE)
+- **Citation:** Metadata is provided in [`CITATION.cff`](CITATION.cff); please also cite the underlying primary protein GWAS studies when using their summary statistics.

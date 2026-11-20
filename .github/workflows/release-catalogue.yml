@@ -62,6 +62,8 @@ jobs:
           cp catalogue/cohort_membership.tsv "dist/proteomic_gwas_cohort_membership_${TAG}.tsv"
           cp catalogue/proteins_index.tsv "dist/proteomic_gwas_proteins_index_${TAG}.tsv"
           cp catalogue/search_runs.tsv "dist/proteomic_gwas_search_runs_${TAG}.tsv"
+          cp catalogue/excluded_records.tsv "dist/proteomic_gwas_excluded_records_${TAG}.tsv"
+          cp site/data/proteomic_gwas_catalogue_full.tsv "dist/proteomic_gwas_catalogue_full_${TAG}.tsv"
           cp site/data/catalogue.json "dist/proteomic_gwas_catalogue_${TAG}.json"
           (cd dist && sha256sum * > "SHA256SUMS_${TAG}.txt")
 

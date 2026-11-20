@@ -1,7 +1,7 @@
 
 **Project:** `proteomic-gwas-catalogue`  
 **Document Type:** Living Methodological Log (updated at every search/extraction version milestone)  
-**Last Updated:** 2026-11-19 (`v0` -> `v1` -> `v2` -> `v3.0` documented; Round-2 `v3` replication in progress)
+**Last Updated:** 2026-11-20 (`v0` -> `v1` -> `v2` -> `v3.0` -> `v4.0` -> `v4.1` finalised and validated)
 
 ---
 
