@@ -2211,3 +2211,413 @@ Q7Z7L9	ZSCAN2	Zinc finger and SCAN domain-containing protein 2	ZSCAN2	hause_2014
 Q9Y5A6	ZSCAN21	Zinc finger and SCAN domain-containing protein 21	ZSCAN21.60kDa; ZSCAN21.10kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
 Q3MJ62	ZSCAN23	Zinc finger and SCAN domain-containing protein 23	ZSCAN23	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
 Q6NSZ9	ZSCAN25	Zinc finger and SCAN domain-containing protein 25	ZNF498	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P50591	TNFSF10	Tumor necrosis factor ligand superfamily member 10	TRAIL (GCST004424)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P01374	LTA	Lymphotoxin-alpha	TNFb (GCST004425)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P01375	TNF	Tumor necrosis factor	TNFa (GCST004426)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P48061	CXCL12	Stromal cell-derived factor 1	SDF1a (GCST004427)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+Q9Y240	CLEC11A	C-type lectin domain family 11 member A	SCGFb (GCST004428)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P21583	KITLG	Kit ligand	SCF (GCST004429)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+Q14005	IL16	Pro-interleukin-16	IL-16 (GCST004430)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P13501	CCL5	C-C motif chemokine 5	RANTES (GCST004431)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P01127	PDGFB	Platelet-derived growth factor subunit B	PDGF-bb (GCST004432)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P13236	CCL4	C-C motif chemokine 4	MIP-1b (GCST004433)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P10147	CCL3	C-C motif chemokine 3	MIP-1a (GCST004434)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+Q07325	CXCL9	C-X-C motif chemokine 9	MIG (GCST004435)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P09603	CSF1	Macrophage colony-stimulating factor 1	M-CSF (GCST004436)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P80098	CCL7	C-C motif chemokine 7	MCP-3 (GCST004437)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	MCP-1 (GCST004438)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P29459	IL12A	Interleukin-12 subunit alpha	IL-12p70 (GCST004439)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P29460	IL12B	Interleukin-12 subunit beta	IL-12p70 (GCST004439)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P02778	CXCL10	C-X-C motif chemokine 10	IP-10 (GCST004440)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P14174	MIF	Macrophage migration inhibitory factor	MIF (GCST004423)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+Q14116	IL18	Interleukin-18	IL-18 (GCST004441)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+Q16552	IL17A	Interleukin-17A	IL-17 (GCST004442)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P35225	IL13	Interleukin-13	IL-13 (GCST004443)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P22301	IL10	Interleukin-10	IL-10 (GCST004444)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	IL-8 (GCST004445)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P05231	IL6	Interleukin-6	IL-6 (GCST004446)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P18510	IL1RN	Interleukin-1 receptor antagonist protein	IL-1ra (GCST004447)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P01584	IL1B	Interleukin-1 beta	IL-1b (GCST004448)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P14210	HGF	Hepatocyte growth factor	HGF (GCST004449)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P15248	IL9	Interleukin-9	IL-9 (GCST004450)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P13232	IL7	Interleukin-7	IL-7 (GCST004451)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P05113	IL5	Interleukin-5	IL-5 (GCST004452)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P05112	IL4	Interleukin-4	IL-4 (GCST004453)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL-2ra (GCST004454)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P60568	IL2	Interleukin-2	IL-2 (GCST004455)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P01579	IFNG	Interferon gamma	IFNg (GCST004456)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P09341	CXCL1	Growth-regulated alpha protein	GROa (GCST004457)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P09919	CSF3	Granulocyte colony-stimulating factor	G-CSF (GCST004458)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P09038	FGF2	Fibroblast growth factor 2	bFGF (GCST004459)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P51671	CCL11	Eotaxin	Eotaxin (GCST004460)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P15692	VEGFA	Vascular endothelial growth factor A, long form	VEGF (GCST004422)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+Q9Y4X3	CCL27	C-C motif chemokine 27	CTACK (GCST004420)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P01138	NGF	Beta-nerve growth factor	bNGF (GCST004421)	ahola_olli_2017_EUR	ahola_olli_2017_27989323	FALSE	FALSE
+P01023	A2M	Alpha-2-macroglobulin	A2M	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+Q15848	ADIPOQ	Adiponectin	ADIPOQ	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+Q15109	AGER	Advanced glycation end product-specific receptor	AGER	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+Q15389	ANGPT1	Angiopoietin-1	ANGPT1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P02743	APCS	Serum amyloid P-component	APCS	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P06727	APOA4	Apolipoprotein A-IV	APOA4	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P30530	AXL	Tyrosine-protein kinase receptor UFO	AXL	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P61769	B2M	Beta-2-microglobulin	B2M	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P23560	BDNF	Neurotrophic factor BDNF precursor form	BDNF	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P01024	C3	Complement C3	C3	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P51671	CCL11	Eotaxin	CCL11	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+Q99616	CCL13	C-C motif chemokine 13	CCL13	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+O15467	CCL16	C-C motif chemokine 16	CCL16	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P55774	CCL18	C-C motif chemokine 18	CCL18	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	CCL2	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P78556	CCL20	C-C motif chemokine 20	CCL20	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+O00626	CCL22	C-C motif chemokine 22	CCL22	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P55773	CCL23	C-C motif chemokine 23	CCL23	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+O00175	CCL24	C-C motif chemokine 24	CCL24	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+P10147	CCL3	C-C motif chemokine 3	CCL3	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P13236	CCL4	C-C motif chemokine 4	CCL4	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P13501	CCL5	C-C motif chemokine 5	CCL5	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P80075	CCL8	C-C motif chemokine 8	CCL8	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P12830	CDH1	Cadherin-1	CDH1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P55290	CDH13	Cadherin-13	CDH13	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P13688	CEACAM1	Cell adhesion molecule CEACAM1	CEACAM1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P10645	CHGA	Chromogranin-A	CHGA	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P06732	CKM	Creatine kinase M-type	CKM_CKB	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P12277	CKB	Creatine kinase B-type	CKM_CKB	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P02741	CRP	C-reactive protein	CRP	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P04080	CSTB	Cystatin-B	CSTB	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+P02778	CXCL10	C-X-C motif chemokine 10	CXCL10	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P42830	CXCL5	C-X-C motif chemokine 5	CXCL5	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+Q07325	CXCL9	C-X-C motif chemokine 9	CXCL9	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P07585	DCN	Decorin	DCN	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P08709	F7	Coagulation factor VII	F7	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+P25445	FAS	Tumor necrosis factor receptor superfamily member 6	FAS	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P02671	FGA	Fibrinogen alpha chain	FGA_FGB_FGG	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P02675	FGB	Fibrinogen beta chain	FGA_FGB_FGG	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P02679	FGG	Fibrinogen gamma chain	FGA_FGB_FGG	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P02792	FTL	Ferritin light chain	FTL_FTH1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P02794	FTH1	Ferritin heavy chain	FTL_FTH1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P02774	GC	Vitamin D-binding protein	GC	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+P14210	HGF	Hepatocyte growth factor	HGF	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P00738	HP	Haptoglobin	HP	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P01876	IGHA1	Immunoglobulin heavy constant alpha 1	IGA	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P01854	IGHE	Immunoglobulin heavy constant epsilon	IGE	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P29460	IL12B	Interleukin-12 subunit beta	IL12B	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P40933	IL15	Interleukin-15	IL15	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+Q14005	IL16	Pro-interleukin-16	IL16	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+Q14116	IL18	Interleukin-18	IL18	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+O95998	IL18BP	Interleukin-18-binding protein	IL18BP	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P18510	IL1RN	Interleukin-1 receptor antagonist protein	IL1RN	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+Q9NPF7	IL23A	Interleukin-23 subunit alpha	IL23A	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL2RA	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	IL6R	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+P10145	CXCL8	Interleukin-8	IL8	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P10721	KIT	Mast/stem cell growth factor receptor Kit	KIT	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P21583	KITLG	Kit ligand	KITLG	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	LPA	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P02788	LTF	Lactotransferrin	LTF	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+P02144	MB	Myoglobin	MB	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P04114	APOB	Apolipoprotein B-100	MDA_LDL	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+Q29983	MICA	MHC class I polypeptide-related sequence A	MICA	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+P08254	MMP3	Stromelysin-1	MMP3	sun_2016_EUR	sun_2016_27532455	TRUE	TRUE
+P14780	MMP9	Matrix metalloproteinase-9	MMP9	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P16860	NPPB	Natriuretic peptides B	NPPB_PH	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+Q92823	NRCAM	Neuronal cell adhesion molecule	NRCAM	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P16284	PECAM1	Platelet endothelial cell adhesion molecule	PECAM1	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P16581	SELE	E-selectin	SELE	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	SERPINA1	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P01011	SERPINA3	Alpha-1-antichymotrypsin	SERPINA3	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P05543	SERPINA7	Thyroxine-binding globulin	SERPINA7	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P05121	SERPINE1	Plasminogen activator inhibitor 1	SERPINE1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P35247	SFTPD	Pulmonary surfactant-associated protein D	SFTPD	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P04278	SHBG	Sex hormone-binding globulin	SHBG	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P03973	SLPI	Antileukoproteinase	SLPI	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P00441	SOD1	Superoxide dismutase [Cu-Zn]	SOD1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+Q99523	SORT1	Sortilin	SORT1	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P00995	SPINK1	Serine protease inhibitor Kazal-type 1	SPINK1	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P01137	TGFB1	Transforming growth factor beta-1 proprotein	TGFB1_LAP	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P07204	THBD	Thrombomodulin	THBD	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	TIMP1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P16035	TIMP2	Metalloproteinase inhibitor 2	TIMP2	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNFRSF10C	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+O00300	TNFRSF11B	Tumor necrosis factor receptor superfamily member 11B	TNFRSF11B	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P19438	TNFRSF1A	Tumor necrosis factor receptor superfamily member 1A	TNFRSF1A	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P20333	TNFRSF1B	Tumor necrosis factor receptor superfamily member 1B	TNFRSF1B	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM1	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P15692	VEGFA	Vascular endothelial growth factor A, long form	VEGFA	sun_2016_EUR	sun_2016_27532455	TRUE	FALSE
+P04275	VWF	von Willebrand factor	VWF	sun_2016_EUR	sun_2016_27532455	FALSE	FALSE
+P08697	SERPINF2	Alpha-2-antiplasmin	a2-AP	solomon_2016_EUR	solomon_2016_27329291	TRUE	FALSE
+P12821	ACE	Angiotensin-converting enzyme	ACE	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+Q15848	ADIPOQ	Adiponectin	ADIPOQ	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+Q15109	AGER	Advanced glycation end product-specific receptor	AGER	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P01019	AGT	Angiotensinogen	AGT	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P03950	ANG	Angiogenin	ANG	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P02647	APOA1	Apolipoprotein A-I	APOA1	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P04114	APOB	Apolipoprotein B-100	APOB	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P02656	APOC3	Apolipoprotein C-III	APOC3	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P02818	BGLAP	Osteocalcin	BGLAP	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P35613	BSG	Basigin	BSG	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P01024	C3	Complement C3	C3	solomon_2016_EUR	solomon_2016_27329291	TRUE	FALSE
+P01024	C3	Complement C3	C3b	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P13501	CCL5	C-C motif chemokine 5	CCL5	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P08571	CD14	Monocyte differentiation antigen CD14	CD14	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+Q86VB7	CD163	Scavenger receptor cysteine-rich type 1 protein M130	CD163	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P29965	CD40LG	CD40 ligand	CD40-L	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+Q13231	CHIT1	Chitotriosidase-1	CHIT1	solomon_2016_EUR	solomon_2016_27329291	TRUE	FALSE
+P02741	CRP	C-reactive protein	CRP	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P01034	CST3	Cystatin-C	CST3	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P08311	CTSG	Cathepsin G	CTSG	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P02778	CXCL10	C-X-C motif chemokine 10	CXCL10	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P07585	DCN	Decorin	DCN	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P27487	DPP4	Dipeptidyl peptidase 4	DPP4	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P00748	F12	Coagulation factor XII	F12	solomon_2016_EUR	solomon_2016_27329291	TRUE	FALSE
+P02765	AHSG	Alpha-2-HS-glycoprotein	Fetuin A	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P02794	FTH1	Ferritin heavy chain	FTH1	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P00738	HP	Haptoglobin	HP	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P0DMV9	HSPA1B	Heat shock 70 kDa protein 1B	HSPA1B	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM1	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P03952	KLKB1	Plasma kallikrein	KLKB1	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P01042	KNG1	Kininogen-1	KNG1	solomon_2016_EUR	solomon_2016_27329291	TRUE	FALSE
+P18428	LBP	Lipopolysaccharide-binding protein	LBP	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P08519	LPA	Apolipoprotein(a)	LP(a)	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P08254	MMP3	Stromelysin-1	MMP3	solomon_2016_EUR	solomon_2016_27329291	TRUE	FALSE
+P22894	MMP8	Neutrophil collagenase	MMP8	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P14780	MMP9	Matrix metalloproteinase-9	MMP9	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P05164	MPO	Myeloperoxidase	MPO	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P16860	NPPB	Natriuretic peptides B	NTproBNP	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P05121	SERPINE1	Plasminogen activator inhibitor 1	PAI-1	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P00797	REN	Renin	REN	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P04278	SHBG	Sex hormone-binding globulin	SHBG	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+Q96IY4	CPB2	Carboxypeptidase B2	TAFI	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+P07996	THBS1	Thrombospondin-1	THBS1	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P35443	THBS4	Thrombospondin-4	THBS4	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	TIMP1	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+Q99727	TIMP4	Metalloproteinase inhibitor 4	TIMP4	solomon_2016_EUR	solomon_2016_27329291	TRUE	TRUE
+O00300	TNFRSF11B	Tumor necrosis factor receptor superfamily member 11B	TNFRSF11B	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P20333	TNFRSF1B	Tumor necrosis factor receptor superfamily member 1B	TNFRSF1B	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	uPAR	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM1	solomon_2016_EUR	solomon_2016_27329291	FALSE	FALSE
+P14151	SELL	L-selectin	L-selectin	larson_2016_ALL	larson_2016_26883866	TRUE	FALSE
+P16109	SELP	P-selectin	P-selectin	larson_2016_ALL	larson_2016_26883866	TRUE	TRUE
+P12830	CDH1	Cadherin-1	E-cadherin	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM-1	larson_2016_ALL	larson_2016_26883866	TRUE	TRUE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM-1	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+P03956	MMP1	Interstitial collagenase	MMP-1	larson_2016_ALL	larson_2016_26883866	TRUE	FALSE
+P08253	MMP2	72 kDa type IV collagenase	MMP-2	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+P03973	SLPI	Antileukoproteinase	SLPI	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+P16035	TIMP2	Metalloproteinase inhibitor 2	TIMP-2	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+O00585	CCL21	C-C motif chemokine 21	6Ckine/CCL21	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL-2sRa	larson_2016_ALL	larson_2016_26883866	TRUE	FALSE
+P13501	CCL5	C-C motif chemokine 5	RANTES	larson_2016_ALL	larson_2016_26883866	TRUE	FALSE
+P48061	CXCL12	Stromal cell-derived factor 1	SDF-1a	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+P14210	HGF	Hepatocyte growth factor	HGF	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+P01137	TGFB1	Transforming growth factor beta-1 proprotein	TGFb-1	larson_2016_ALL	larson_2016_26883866	FALSE	FALSE
+P14151	SELL	L-selectin	L-selectin	larson_2016_EUR	larson_2016_26883866	TRUE	FALSE
+P16109	SELP	P-selectin	P-selectin	larson_2016_EUR	larson_2016_26883866	TRUE	TRUE
+P12830	CDH1	Cadherin-1	E-cadherin	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM-1	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM-1	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P03956	MMP1	Interstitial collagenase	MMP-1	larson_2016_EUR	larson_2016_26883866	TRUE	FALSE
+P08253	MMP2	72 kDa type IV collagenase	MMP-2	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P03973	SLPI	Antileukoproteinase	SLPI	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P16035	TIMP2	Metalloproteinase inhibitor 2	TIMP-2	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+O00585	CCL21	C-C motif chemokine 21	6Ckine/CCL21	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL-2sRa	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P13501	CCL5	C-C motif chemokine 5	RANTES	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P48061	CXCL12	Stromal cell-derived factor 1	SDF-1a	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P14210	HGF	Hepatocyte growth factor	HGF	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P01137	TGFB1	Transforming growth factor beta-1 proprotein	TGFb-1	larson_2016_EUR	larson_2016_26883866	FALSE	FALSE
+P14151	SELL	L-selectin	L-selectin	larson_2016_EAS	larson_2016_26883866	TRUE	FALSE
+P16109	SELP	P-selectin	P-selectin	larson_2016_EAS	larson_2016_26883866	TRUE	FALSE
+P12830	CDH1	Cadherin-1	E-cadherin	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM-1	larson_2016_EAS	larson_2016_26883866	TRUE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM-1	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P03956	MMP1	Interstitial collagenase	MMP-1	larson_2016_EAS	larson_2016_26883866	TRUE	FALSE
+P08253	MMP2	72 kDa type IV collagenase	MMP-2	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P03973	SLPI	Antileukoproteinase	SLPI	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P16035	TIMP2	Metalloproteinase inhibitor 2	TIMP-2	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+O00585	CCL21	C-C motif chemokine 21	6Ckine/CCL21	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL-2sRa	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P13501	CCL5	C-C motif chemokine 5	RANTES	larson_2016_EAS	larson_2016_26883866	TRUE	FALSE
+P48061	CXCL12	Stromal cell-derived factor 1	SDF-1a	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P14210	HGF	Hepatocyte growth factor	HGF	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P01137	TGFB1	Transforming growth factor beta-1 proprotein	TGFb-1	larson_2016_EAS	larson_2016_26883866	FALSE	FALSE
+P14151	SELL	L-selectin	L-selectin	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P16109	SELP	P-selectin	P-selectin	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P12830	CDH1	Cadherin-1	E-cadherin	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM-1	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM-1	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P03956	MMP1	Interstitial collagenase	MMP-1	larson_2016_AMR	larson_2016_26883866	TRUE	FALSE
+P08253	MMP2	72 kDa type IV collagenase	MMP-2	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P03973	SLPI	Antileukoproteinase	SLPI	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P16035	TIMP2	Metalloproteinase inhibitor 2	TIMP-2	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+O00585	CCL21	C-C motif chemokine 21	6Ckine/CCL21	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL-2sRa	larson_2016_AMR	larson_2016_26883866	TRUE	FALSE
+P13501	CCL5	C-C motif chemokine 5	RANTES	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P48061	CXCL12	Stromal cell-derived factor 1	SDF-1a	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P14210	HGF	Hepatocyte growth factor	HGF	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P01137	TGFB1	Transforming growth factor beta-1 proprotein	TGFb-1	larson_2016_AMR	larson_2016_26883866	FALSE	FALSE
+P14151	SELL	L-selectin	L-selectin	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P16109	SELP	P-selectin	P-selectin	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P12830	CDH1	Cadherin-1	E-cadherin	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM-1	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM-1	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P03956	MMP1	Interstitial collagenase	MMP-1	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P08253	MMP2	72 kDa type IV collagenase	MMP-2	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P03973	SLPI	Antileukoproteinase	SLPI	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P16035	TIMP2	Metalloproteinase inhibitor 2	TIMP-2	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+O00585	CCL21	C-C motif chemokine 21	6Ckine/CCL21	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL-2sRa	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P13501	CCL5	C-C motif chemokine 5	RANTES	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P48061	CXCL12	Stromal cell-derived factor 1	SDF-1a	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P14210	HGF	Hepatocyte growth factor	HGF	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P01137	TGFB1	Transforming growth factor beta-1 proprotein	TGFb-1	larson_2016_AFR	larson_2016_26883866	FALSE	FALSE
+P02760	AMBP	Protein AMBP	A1Micro	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01023	A2M	Alpha-2-macroglobulin	A2Macro	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01011	SERPINA3	Alpha-1-antichymotrypsin	AACT	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	AAT	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P12821	ACE	Angiotensin-converting enzyme	ACE	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+Q15848	ADIPOQ	Adiponectin	Adiponectin	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02771	AFP	Alpha-fetoprotein	AFP	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+O00253	AGRP	Agouti-related protein	AgRP	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01019	AGT	Angiotensinogen	AGT	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+O15123	ANGPT2	Angiopoietin-2	ANG2	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02647	APOA1	Apolipoprotein A-I	ApoA1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02652	APOA2	Apolipoprotein A-II	ApoA2	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P06727	APOA4	Apolipoprotein A-IV	ApoA4	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P04114	APOB	Apolipoprotein B-100	ApoB	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02654	APOC1	Apolipoprotein C-I	ApoC1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02656	APOC3	Apolipoprotein C-III	ApoC3	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P05090	APOD	Apolipoprotein D	ApoD	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	ApoE	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P02749	APOH	Beta-2-glycoprotein 1	ApoH	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P30530	AXL	Tyrosine-protein kinase receptor UFO	AXL	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P61769	B2M	Beta-2-microglobulin	B2M	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P23560	BDNF	Neurotrophic factor BDNF precursor form	BDNF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+O43927	CXCL13	C-X-C motif chemokine 13	BLC	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P22004	BMP6	Bone morphogenetic protein 6	BMP6	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P35070	BTC	Probetacellulin	BTC	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01308	INS	Insulin	C-peptide	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01024	C3	Complement C3	C3	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01258	CALCA	Calcitonin	Calcitonin	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P25942	CD40	Tumor necrosis factor receptor superfamily member 5	CD40	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P29965	CD40LG	CD40 ligand	CD40L	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+O43866	CD5L	CD5 antigen-like	CD5L	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P06731	CEACAM5	Cell adhesion molecule CEACAM5	CEA	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q03591	CFHR1	Complement factor H-related protein 1	CFHR1	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P10645	CHGA	Chromogranin-A	CgA	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P06732	CKM	Creatine kinase M-type	CKMB	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P12277	CKB	Creatine kinase B-type	CKMB	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P10909	CLU	Clusterin	CLU	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P26441	CNTF	Ciliary neurotrophic factor	CNTF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02741	CRP	C-reactive protein	CRP	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01034	CST3	Cystatin-C	CystC	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P01133	EGF	Pro-epidermal growth factor	EGF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P00533	EGFR	Epidermal growth factor receptor	EGFR	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P42830	CXCL5	C-X-C motif chemokine 5	ENA78	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P51671	CCL11	Eotaxin	Eotaxin-1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q9Y258	CCL26	C-C motif chemokine 26	Eotaxin-3	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P08709	F7	Coagulation factor VII	F7	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P05413	FABP3	Fatty acid-binding protein, heart	FABP	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P25445	FAS	Tumor necrosis factor receptor superfamily member 6	FAS	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P48023	FASLG	Tumor necrosis factor ligand superfamily member 6	FASL	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02794	FTH1	Ferritin heavy chain	Ferritin	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02792	FTL	Ferritin light chain	Ferritin	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02765	AHSG	Alpha-2-HS-glycoprotein	FetuinA	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P08620	FGF4	Fibroblast growth factor 4	FGF4	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02671	FGA	Fibrinogen alpha chain	Fibrinogen	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02675	FGB	Fibrinogen beta chain	Fibrinogen	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02679	FGG	Fibrinogen gamma chain	Fibrinogen	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01215	CGA	Glycoprotein hormones alpha chain	FSH	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01225	FSHB	Follitropin subunit beta	FSH	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01241	GH1	Somatotropin	GH	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P09341	CXCL1	Growth-regulated alpha protein	GROa	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P08263	GSTA1	Glutathione S-transferase A1	GSTa	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+Q99075	HBEGF	Proheparin-binding EGF-like growth factor	HBEGF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+O15467	CCL16	C-C motif chemokine 16	HCC4	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P14210	HGF	Hepatocyte growth factor	HGF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P00738	HP	Haptoglobin	HP	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P22362	CCL1	C-C motif chemokine 1	I309	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01876	IGHA1	Immunoglobulin heavy constant alpha 1	IgA	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01854	IGHE	Immunoglobulin heavy constant epsilon	IgE	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P18065	IGFBP2	Insulin-like growth factor-binding protein 2	IGFBP2	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01871	IGHM	Immunoglobulin heavy constant mu	IgM	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P35225	IL13	Interleukin-13	IL13	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q14005	IL16	Pro-interleukin-16	IL16	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+Q14116	IL18	Interleukin-18	IL18	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P08700	IL3	Interleukin-3	IL3	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	IL6r	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P10145	CXCL8	Interleukin-8	IL8	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01308	INS	Insulin	Insulin	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02778	CXCL10	C-X-C motif chemokine 10	IP10	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1	KIM1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P41159	LEP	Leptin	Leptin	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01215	CGA	Glycoprotein hormones alpha chain	LH	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01229	LHB	Lutropin subunit beta	LH	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P08519	LPA	Apolipoprotein(a)	LPa	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P02144	MB	Myoglobin	MB	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	MCP1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P80075	CCL8	C-C motif chemokine 8	MCP2	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P80098	CCL7	C-C motif chemokine 7	MCP3	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q99616	CCL13	C-C motif chemokine 13	MCP4	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P09603	CSF1	Macrophage colony-stimulating factor 1	MCSF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+O00626	CCL22	C-C motif chemokine 22	MDC	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P14174	MIF	Macrophage migration inhibitory factor	MIF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q07325	CXCL9	C-X-C motif chemokine 9	MIG	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P10147	CCL3	C-C motif chemokine 3	MIP1a	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P13236	CCL4	C-C motif chemokine 4	MIP1b	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P78556	CCL20	C-C motif chemokine 20	MIP3a	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P03956	MMP1	Interstitial collagenase	MMP1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P09238	MMP10	Stromelysin-2	MMP10	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P08253	MMP2	72 kDa type IV collagenase	MMP2	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P09237	MMP7	Matrilysin	MMP7	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P14780	MMP9	Matrix metalloproteinase-9	MMP9	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P14780	MMP9	Matrix metalloproteinase-9	MMP9tot	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P55773	CCL23	C-C motif chemokine 23	MPIF1	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P05164	MPO	Myeloperoxidase	MPO	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P80188	LCN2	Neutrophil gelatinase-associated lipocalin	NGAL	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q92823	NRCAM	Neuronal cell adhesion molecule	NrCAM	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P16860	NPPB	Natriuretic peptides B	NTproBNP	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P10451	SPP1	Osteopontin	Osteopontin	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P05121	SERPINE1	Plasminogen activator inhibitor 1	PAI1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P15309	ACP3	Prostatic acid phosphatase	PAP	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q13219	PAPPA	Pappalysin-1	PAPPA	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P55774	CCL18	C-C motif chemokine 18	PARC	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01127	PDGFB	Platelet-derived growth factor subunit B	PDGFBB	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P49763	PGF	Placenta growth factor	PLGF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01298	PPY	Pancreatic polypeptide prohormone	PPP	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01236	PRL	Prolactin	PRL	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01308	INS	Insulin	Proins	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01308	INS	Insulin	Proinst	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P07225	PROS1	Vitamin K-dependent protein S	ProteinS	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P10082	PYY	Peptide YY	PYY	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q15109	AGER	Advanced glycation end product-specific receptor	RAGE	deming_2016_EUR	deming_2016_36647296	TRUE	TRUE
+P13501	CCL5	C-C motif chemokine 5	RANTES	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q9HD89	RETN	Resistin	Resist	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02743	APCS	Serum amyloid P-component	SAP	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P21583	KITLG	Kit ligand	SCF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P16581	SELE	E-selectin	SELE	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P17174	GOT1	Aspartate aminotransferase, cytoplasmic	SGOT	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P04278	SHBG	Sex hormone-binding globulin	SHBG	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P00441	SOD1	Superoxide dismutase [Cu-Zn]	SOD1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+Q99523	SORT1	Sortilin	Sortilin	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P05543	SERPINA7	Thyroxine-binding globulin	TBG	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+O15444	CCL25	C-C motif chemokine 25	TECK	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02787	TF	Serotransferrin	TF	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+Q07654	TFF3	Trefoil factor 3	TFF3	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P07911	UMOD	Uromodulin	THP	deming_2016_EUR	deming_2016_36647296	TRUE	FALSE
+P40225	THPO	Thrombopoietin	THPO	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	TIMP1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P07204	THBD	Thrombomodulin	TM	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P24821	TNC	Tenascin	TNC	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01375	TNF	Tumor necrosis factor	TNFa	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P20333	TNFRSF1B	Tumor necrosis factor receptor superfamily member 1B	TNFR2	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P07996	THBS1	Thrombospondin-1	TP1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TRAILR3	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01215	CGA	Glycoprotein hormones alpha chain	TSH	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P01222	TSHB	Thyrotropin subunit beta	TSH	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P02766	TTR	Transthyretin	TTR	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM1	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P15692	VEGFA	Vascular endothelial growth factor A, long form	VEGF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P04004	VTN	Vitronectin	Vitron	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
+P04275	VWF	von Willebrand factor	vWF	deming_2016_EUR	deming_2016_36647296	FALSE	FALSE
