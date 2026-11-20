@@ -609,3 +609,37 @@ details.methods-dropdown[open] > summary::after {
   font-weight: 700;
   color: #0f172a;
 }
+
+/* Full-width centered Mermaid flowchart on About page */
+.about-section .cell,
+.about-section .cell-output-display,
+.about-section figure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0.6rem auto;
+}
+
+.about-section .cell-output-display svg {
+  display: block;
+  margin: 0 auto;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.about-section .cluster rect {
+  fill: #fffbeb !important;
+  stroke: #d97706 !important;
+  stroke-width: 2px !important;
+  stroke-dasharray: 6 4 !important;
+  rx: 8px;
+  ry: 8px;
+}
+
+.about-section .cluster span,
+.about-section .cluster text {
+  color: #92400e !important;
+  fill: #92400e !important;
+  font-weight: 700 !important;
+}

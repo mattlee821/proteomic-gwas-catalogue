@@ -17,35 +17,36 @@ Protein GWAS are spread across dozens of papers, preprints, cohorts, proteomic p
 
 Automated scripts handle multi-database retrieval, deduplication, secondary-MR filtering, and open-access extraction, while **highlighted manual checkpoints** govern closed-access PDF/supplement downloads, item-by-item ambiguity resolution, blinded positive-control verification, and versioned releases:
 
+<div align="center">
+
 ```mermaid
+%%{init: {'flowchart': {'wrappingWidth': 360, 'nodeSpacing': 24, 'rankSpacing': 30, 'padding': 12, 'curve': 'basis'}}}%%
 flowchart TD
-    S1["1. Multi-Source Literature Search (PubMed, Europe PMC + Preprints, GWAS Catalog v2, Citation Snowballing)"]:::auto
-    S2["2. Graph Deduplication & Preprint-to-Published Lineage Check (apply_preprint_upgrades.R)"]:::auto
-    S3["3. Two-Stage Dual-Axis Triage: P_score vs S_score (Auto-excludes 2SMR / non-human / reviews)"]:::auto
-    S4["4. 4-Tier Open-Access Extraction & Stage 1 Search Report (APIs, OA XML/BioC, Supplements, Build Check)"]:::auto
+    S1["1. Multi-Source Search & Deduplication (PubMed, Europe PMC, GWAS Cat, Snowball)"]:::auto
+    S2["2. Dual-Axis Triage (P vs S) & 4-Tier Open-Access Extraction -> Stage 1 Report"]:::auto
 
-    M1["MANUAL STEP 1: Screen Borderline Candidates & Download Closed-Access PDFs / Missing Supplements"]:::manual
+    subgraph MANUAL["Human-in-the-Loop Manual Download, Curation Review & Benchmark Verification"]
+        M1["MANUAL 1: Candidate Check — Screen borderline inclusions & exclusions"]:::manual
+        M2["MANUAL 2: File Download — Fetch closed PDFs & supplements (Stage 2 parse)"]:::manual
+        M3["MANUAL 3: Study Review — Adjudicate 1-row-per-item review tables"]:::manual
+        M4["MANUAL 4: Benchmark Check — Run blinded positive-control audit"]:::manual
+    end
 
-    S5["5. Stage 2 Re-Extraction of Downloaded Files & Standardised 1-Row-Per-Item Review Tables"]:::auto
+    S3["3. Schema Validation, PR Merge to main & Quarto + OJS Website Build"]:::store
+    M5["MANUAL GATE 5: Version Update — Cut tagged release & SHA256SUMS"]:::manual
 
-    M2["MANUAL STEP 2: Adjudicate Per-Study Review Items & Run Blinded Positive-Control Cross-Check"]:::manual
-
-    S6["6. Schema Validation, PR Merge to main & Quarto Site Build (validate_catalogue.R + build_site_data.R)"]:::store
-
-    M3["MANUAL GATE 3: Trigger Version Update & Tagged Release Snapshot (releases.tsv + SHA256SUMS)"]:::manual
-
-    S1 --> S2 --> S3 --> S4
-    S4 -->|"Closed full text or missing/corrupted supplements"| M1
-    M1 -->|"Files placed in manual_downloads/"| S5
-    S4 -->|"All full texts & supplements open"| M2
-    S5 --> M2
-    M2 -->|"Approved catalogue/*.tsv (Human-reviewed)"| S6
-    S6 -->|"Periodic milestone"| M3
+    S1 --> S2
+    S2 --> M1 & M2 & M3 & M4
+    M1 & M2 & M3 & M4 --> S3
+    S3 --> M5
 
     classDef auto fill:#eff6ff,stroke:#1d4ed8,stroke-width:1.5px,color:#0f172a
     classDef manual fill:#fef3c7,stroke:#d97706,stroke-width:2.5px,color:#78350f,font-weight:bold
     classDef store fill:#ecfdf5,stroke:#059669,stroke-width:1.8px,color:#064e3b
+    style MANUAL fill:#fffbeb,stroke:#d97706,stroke-width:2px,stroke-dasharray: 6 4,color:#78350f
 ```
+
+</div>
 
 - **Blue (`Automated`):** Scripted R + GitHub Actions steps (`src/run_literature_search.R`, `src/extract_candidate_study.R`, `src/validate_catalogue.R`, `src/build_site_data.R`).
 - **Amber (`Manual Download / Review / Release Gate`):** Human curator checkpoints documented in each period's standardised `search_report.md` (`Stage 1` manual file downloads → `Stage 2` 1-row-per-item study review + blinded `evaluate_positive_controls.R` check → manual versioned release sign-off).
