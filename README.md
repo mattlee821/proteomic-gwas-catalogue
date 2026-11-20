@@ -20,12 +20,12 @@ Automated scripts handle multi-database retrieval, deduplication, secondary-MR f
 <div align="center">
 
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '15px'}, 'flowchart': {'wrappingWidth': 380, 'nodeSpacing': 26, 'rankSpacing': 34, 'padding': 14, 'curve': 'basis'}}}%%
+%%{init: {'themeVariables': {'fontSize': '15px'}, 'flowchart': {'wrappingWidth': 380, 'nodeSpacing': 28, 'rankSpacing': 46, 'subGraphTitleMargin': {'top': 10, 'bottom': 28}, 'padding': 14, 'curve': 'basis'}}}%%
 flowchart TD
     S1["1. Multi-Source Search & Deduplication (PubMed, Europe PMC, GWAS Cat, Snowball)"]:::auto
     S2["2. Dual-Axis Triage (P vs S) & 4-Tier Open-Access Extraction -> Stage 1 Report"]:::auto
 
-    subgraph MANUAL["Human-in-the-Loop Manual Download, Curation Review & Benchmark Verification"]
+    subgraph MANUAL["Human-in-the-Loop Curation & Verification"]
         M1["MANUAL 1: Candidate Check — Screen borderline inclusions & exclusions"]:::manual
         M2["MANUAL 2: File Download — Fetch closed PDFs & supplements (Stage 2 parse)"]:::manual
         M3["MANUAL 3: Study Review — Adjudicate 1-row-per-item review tables"]:::manual
