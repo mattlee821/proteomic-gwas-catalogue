@@ -15,29 +15,30 @@ Systematic multi-database search strategy, study eligibility criteria, and hybri
 ::: {.about-section}
 ## Pipeline Overview: Search to Version Update
 
-Every historical search period and scheduled update follows a standardised two-stage **automated + human-in-the-loop** workflow from multi-database discovery through manual PDF/supplement retrieval, item-level curation review, and versioned release snapshots:
+Each catalogue update combines automated literature search and open-access text/table parsing with **highlighted manual review steps** for paywalled papers, missing supplementary files, study metadata verification, and versioned releases:
 
 ```{mermaid}
 %%| fig-align: center
-%%{init: {'themeVariables': {'fontSize': '15px'}, 'flowchart': {'wrappingWidth': 380, 'nodeSpacing': 28, 'rankSpacing': 46, 'subGraphTitleMargin': {'top': 10, 'bottom': 28}, 'padding': 14, 'curve': 'basis'}}}%%
+%%{init: {'themeVariables': {'fontSize': '15px'}, 'flowchart': {'wrappingWidth': 390, 'nodeSpacing': 28, 'rankSpacing': 44, 'subGraphTitleMargin': {'top': 10, 'bottom': 28}, 'padding': 14, 'curve': 'basis'}}}%%
 flowchart TD
-    S1["1. Multi-Source Search & Deduplication (PubMed, Europe PMC, GWAS Cat, Snowball)"]:::auto
-    S2["2. Dual-Axis Triage (P vs S) & 4-Tier Open-Access Extraction -> Stage 1 Report"]:::auto
+    S1["1. Literature & Preprint Search — Query PubMed, Europe PMC, GWAS Catalog & citations"]:::auto
+    S2["2. Deduplicate & Screen — Match preprints to papers; filter out secondary MR studies"]:::auto
+    S3["3. Automated Extraction — Parse open-access text, supplements & summary-stat links"]:::auto
 
-    subgraph MANUAL["Human-in-the-Loop Curation & Verification"]
-        M1["MANUAL 1: Candidate Check — Screen borderline inclusions & exclusions"]:::manual
-        M2["MANUAL 2: File Download — Fetch closed PDFs & supplements (Stage 2 parse)"]:::manual
-        M3["MANUAL 3: Study Review — Adjudicate 1-row-per-item review tables"]:::manual
-        M4["MANUAL 4: Benchmark Check — Run blinded positive-control audit"]:::manual
+    subgraph MANUAL["Manual Review & Verification"]
+        M1["Manual Check 1: Eligibility — Confirm borderline study inclusions & exclusions"]:::manual
+        M2["Manual Check 2: Missing Files — Download paywalled PDFs & supplementary tables"]:::manual
+        M3["Manual Check 3: Metadata Review — Verify extracted study, cohort & assay details"]:::manual
+        M4["Manual Check 4: Recall Check — Test completeness against positive-control studies"]:::manual
     end
 
-    S3["3. Schema Validation, PR Merge to main & Quarto + OJS Website Build"]:::store
-    M5["MANUAL GATE 5: Version Update — Cut tagged release & SHA256SUMS"]:::manual
+    S4["4. Validate & Update Website — Check data schema, merge update & rebuild web tables"]:::store
+    M5["Manual Gate 5: Version Release — Publish numbered catalogue release & data archive"]:::manual
 
-    S1 --> S2
-    S2 --> M1 & M2 & M3 & M4
-    M1 & M2 & M3 & M4 --> S3
-    S3 --> M5
+    S1 --> S2 --> S3
+    S3 --> M1 & M2 & M3 & M4
+    M1 & M2 & M3 & M4 --> S4
+    S4 --> M5
 
     classDef auto fill:#eff6ff,stroke:#1d4ed8,stroke-width:1.5px,color:#0f172a
     classDef manual fill:#fef3c7,stroke:#d97706,stroke-width:2.5px,color:#78350f,font-weight:bold
@@ -45,12 +46,9 @@ flowchart TD
     style MANUAL fill:#fffbeb,stroke:#d97706,stroke-width:2px,stroke-dasharray: 6 4,color:#78350f
 ```
 
-* **Automated Pipeline Steps (Blue):** Scripted multi-source retrieval, deduplication, preprint-to-published lineage linking, dual-axis `P_score`/`S_score` triage, and 4-tier open-access metadata/supplement extraction.
-* **Human Manual Checkpoints (Amber — Highlighted):**
-  1. **Manual Download (`Stage 1 → Stage 2`):** Downloading paywalled full-text PDFs and missing or upstream-corrupted supplementary tables flagged in the standardised search report.
-  2. **Manual Review & Positive-Control Check (`Stage 2 → Merge`):** Resolving per-study 1-row-per-item review tables (`AI-extracted` → `Human-reviewed`) and verifying recall against the air-gapped positive-control benchmark.
-  3. **Manual Version Release Gate:** Approving tagged version updates (`releases.tsv`) and immutable release archives.
-* **Validated Catalogue & Live Site (Green):** Schema-validated `catalogue/*.tsv` tables compiled into `site/data/catalogue.json` and rendered via Quarto + Observable JS.
+* **Automated Steps (Blue):** Searches literature and preprint databases, links preprints to subsequent journal publications, filters out secondary Mendelian randomisation studies that only reuse existing data, and extracts study metadata from open-access full texts and supplements.
+* **Manual Review & Release Checkpoints (Amber — Highlighted):** A human reviewer checks borderline candidate studies, downloads any closed-access PDFs or missing supplementary files so their metadata can be extracted, resolves any remaining study-level questions, checks recall against known positive-control studies, and approves numbered version releases.
+* **Catalogue & Website Update (Green):** Validates all tables against controlled vocabularies and deploys the updated searchable catalogue, protein lookup, and search log.
 :::
 
 ::: {.about-section}
