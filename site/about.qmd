@@ -13,6 +13,49 @@ Systematic multi-database search strategy, study eligibility criteria, and hybri
 :::
 
 ::: {.about-section}
+## Pipeline Overview: Search to Version Update
+
+Every historical search period and scheduled update follows a standardised two-stage **automated + human-in-the-loop** workflow from multi-database discovery through manual PDF/supplement retrieval, item-level curation review, and versioned release snapshots:
+
+```{mermaid}
+flowchart TD
+    S1["1. Multi-Source Literature Search (PubMed, Europe PMC + Preprints, GWAS Catalog v2, Citation Snowballing)"]:::auto
+    S2["2. Graph Deduplication & Preprint-to-Published Lineage Check (apply_preprint_upgrades.R)"]:::auto
+    S3["3. Two-Stage Dual-Axis Triage: P_score vs S_score (Auto-excludes 2SMR / non-human / reviews)"]:::auto
+    S4["4. 4-Tier Open-Access Extraction & Stage 1 Search Report (APIs, OA XML/BioC, Supplements, Build Check)"]:::auto
+
+    M1["MANUAL STEP 1: Screen Borderline Candidates & Download Closed-Access PDFs / Missing Supplements"]:::manual
+
+    S5["5. Stage 2 Re-Extraction of Downloaded Files & Standardised 1-Row-Per-Item Review Tables"]:::auto
+
+    M2["MANUAL STEP 2: Adjudicate Per-Study Review Items & Run Blinded Positive-Control Cross-Check"]:::manual
+
+    S6["6. Schema Validation, PR Merge to main & Quarto Site Build (validate_catalogue.R + build_site_data.R)"]:::store
+
+    M3["MANUAL GATE 3: Trigger Version Update & Tagged Release Snapshot (releases.tsv + SHA256SUMS)"]:::manual
+
+    S1 --> S2 --> S3 --> S4
+    S4 -->|"Closed full text or missing/corrupted supplements"| M1
+    M1 -->|"Files placed in manual_downloads/"| S5
+    S4 -->|"All full texts & supplements open"| M2
+    S5 --> M2
+    M2 -->|"Approved catalogue/*.tsv (Human-reviewed)"| S6
+    S6 -->|"Periodic milestone"| M3
+
+    classDef auto fill:#eff6ff,stroke:#1d4ed8,stroke-width:1.5px,color:#0f172a
+    classDef manual fill:#fef3c7,stroke:#d97706,stroke-width:2.5px,color:#78350f,font-weight:bold
+    classDef store fill:#ecfdf5,stroke:#059669,stroke-width:1.8px,color:#064e3b
+```
+
+* **Automated Pipeline Steps (Blue):** Scripted multi-source retrieval, deduplication, preprint-to-published lineage linking, dual-axis `P_score`/`S_score` triage, and 4-tier open-access metadata/supplement extraction.
+* **Human Manual Checkpoints (Amber — Highlighted):**
+  1. **Manual Download (`Stage 1 → Stage 2`):** Downloading paywalled full-text PDFs and missing or upstream-corrupted supplementary tables flagged in the standardised search report.
+  2. **Manual Review & Positive-Control Check (`Stage 2 → Merge`):** Resolving per-study 1-row-per-item review tables (`AI-extracted` → `Human-reviewed`) and verifying recall against the air-gapped positive-control benchmark.
+  3. **Manual Version Release Gate:** Approving tagged version updates (`releases.tsv`) and immutable release archives.
+* **Validated Catalogue & Live Site (Green):** Schema-validated `catalogue/*.tsv` tables compiled into `site/data/catalogue.json` and rendered via Quarto + Observable JS.
+:::
+
+::: {.about-section}
 ## 1. Search Strategy
 
 New and historical studies are identified using a scripted, reproducible **four-source search and dual-axis triage pipeline** (`src/run_literature_search.R` and `src/search/lexicons.R`) executed via GitHub Actions:

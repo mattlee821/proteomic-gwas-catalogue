@@ -49,9 +49,9 @@ O95433	AHSA1	Activator of 90 kDa heat shock protein ATPase homolog 1	gi|6912280	
 P14550	AKR1A1	Aldo-keto reductase family 1 member A1	gi|24497577	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P02768	ALB	Albumin	gi|4502027	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P09972	ALDOC	Fructose-bisphosphate aldolase C	gi|4885063	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-P50995	ANXA11	Annexin A11	gi|4557317	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+P50995	ANXA11	Annexin A11	gi|4557317	garge_2010_EUR	garge_2010_20179311	TRUE	FALSE
 P09525	ANXA4	Annexin A4	gi|4502105	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-P08758	ANXA5	Annexin A5	gi|4502107	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+P08758	ANXA5	Annexin A5	gi|4502107	garge_2010_EUR	garge_2010_20179311	TRUE	FALSE
 P13798	APEH	Acylamino-acid-releasing enzyme	gi|23510451	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 Q9UKG1	APPL1	DCC-interacting protein 13-alpha	gi|6912242	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P07741	APRT	Adenine phosphoribosyltransferase	gi|71773201	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
@@ -74,7 +74,7 @@ P50990	CCT8	T-complex protein 1 subunit theta	gi|48762932	garge_2010_EUR	garge_2
 O00299	CLIC1	Chloride intracellular channel protein 1	gi|14251209	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 Q96KP4	CNDP2	Cytosolic non-specific dipeptidase	gi|8922699	garge_2010_EUR	garge_2010_20179311	TRUE	TRUE
 P31146	CORO1A	Coronin-1A	gi|5902134	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-Q99829	CPNE1	Copine-1	gi|23397698	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+Q99829	CPNE1	Copine-1	gi|23397698	garge_2010_EUR	garge_2010_20179311	TRUE	FALSE
 O75131	CPNE3	Copine-3	gi|4503015	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 O43169	CYB5B	Cytochrome b5 type B	gi|83921614	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 Q16531	DDB1	DNA damage-binding protein 1	gi|148529014	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
@@ -103,7 +103,7 @@ Q96RU3	FNBP1	Formin-binding protein 1	gi|38524622	garge_2010_EUR	garge_2010_2017
 Q16658	FSCN1	Fascin	gi|4507115	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 Q14376	GALE	UDP-glucose 4-epimerase	gi|56118217	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 Q14697	GANAB	Neutral alpha-glucosidase AB	gi|38202257	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-P41250	GARS1	Glycine--tRNA ligase	gi|116805340	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+P41250	GARS1	Glycine--tRNA ligase	gi|116805340	garge_2010_EUR	garge_2010_20179311	TRUE	FALSE
 P50440	GATM	Glycine amidinotransferase, mitochondrial	gi|4503933	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P31150	GDI1	Rab GDP dissociation inhibitor alpha	gi|4503971	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P50395	GDI2	Rab GDP dissociation inhibitor beta	gi|6598323	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
@@ -118,7 +118,7 @@ P15170	GSPT1	Eukaryotic peptide chain release factor GTP-binding subunit ERF3A	g
 P48637	GSS	Glutathione synthetase	gi|4504169	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P78417	GSTO1	Glutathione S-transferase omega-1	gi|4758484	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P09211	GSTP1	Glutathione S-transferase P	gi|4504183	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-P14317	HCLS1	Hematopoietic lineage cell-specific protein	gi|4885405	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+P14317	HCLS1	Hematopoietic lineage cell-specific protein	gi|4885405	garge_2010_EUR	garge_2010_20179311	TRUE	FALSE
 Q9Y5Z4	HEBP2	Heme-binding protein 2	gi|7657603	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P01903	HLA-DRA	HLA class II histocompatibility antigen, DR alpha chain	gi|52426774	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P09429	HMGB1	High mobility group protein B1	gi|4504425	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
@@ -142,7 +142,7 @@ Q9Y4L1	HYOU1	Hypoxia up-regulated protein 1	gi|5453832	garge_2010_EUR	garge_2010
 Q16891	IMMT	MICOS complex subunit MIC60	gi|154354966	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P12268	IMPDH2	Inosine-5'-monophosphate dehydrogenase 2	gi|66933016	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P28838	LAP3	Cytosol aminopeptidase	gi|41393561	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-P13796	LCP1	Plastin-2	gi|4504965	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+P13796	LCP1	Plastin-2	gi|4504965	garge_2010_EUR	garge_2010_20179311	TRUE	TRUE
 P07195	LDHB	L-lactate dehydrogenase B chain	gi|4557032	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P48059	LIMS1	LIM and senescent cell antigen-like-containing domain protein 1	gi|13518026	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P02545	LMNA	Prelamin-A/C	gi|5031875	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
@@ -157,7 +157,7 @@ P20591	MX1	Interferon-induced GTP-binding protein Mx1	gi|4505291	garge_2010_EUR	
 Q8WU39	MZB1	Marginal zone B- and B1-cell-specific protein	gi|117938314	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 Q13765	NACA	Nascent polypeptide-associated complex subunit alpha	gi|5031931	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P55209	NAP1L1	Nucleosome assembly protein 1-like 1	gi|4758756	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-P54920	NAPA	Alpha-soluble NSF attachment protein	gi|47933379	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+P54920	NAPA	Alpha-soluble NSF attachment protein	gi|47933379	garge_2010_EUR	garge_2010_20179311	TRUE	FALSE
 Q8NCW5	NAXE	NAD(P)H-hydrate epimerase	gi|91984773	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P28331	NDUFS1	NADH-ubiquinone oxidoreductase 75 kDa subunit, mitochondrial	gi|33519475	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 O75489	NDUFS3	NADH dehydrogenase [ubiquinone] iron-sulfur protein 3, mitochondrial	gi|4758788	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
@@ -192,7 +192,7 @@ Q9GZP4	PITHD1	PITH domain-containing protein 1	gi|21361837	garge_2010_EUR	garge_
 O60664	PLIN3	Perilipin-3	gi|20127486	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 O75439	PMPCB	Mitochondrial-processing peptidase subunit beta	gi|94538354	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P00491	PNP	Purine nucleoside phosphorylase	gi|157168362	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-Q9H2U2	PPA2	Inorganic pyrophosphatase 2, mitochondrial	gi|77812678;gi|29171702	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+Q9H2U2	PPA2	Inorganic pyrophosphatase 2, mitochondrial	gi|77812678;gi|29171702	garge_2010_EUR	garge_2010_20179311	TRUE	TRUE
 P62140	PPP1CB	Serine/threonine-protein phosphatase PP1-beta catalytic subunit	gi|4506005	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P36873	PPP1CC	Serine/threonine-protein phosphatase PP1-gamma catalytic subunit	gi|4506007	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 Q15435	PPP1R7	Protein phosphatase 1 regulatory subunit 7	gi|4506013	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
@@ -208,7 +208,7 @@ P25787	PSMA2	Proteasome subunit alpha type-2	gi|4506181	garge_2010_EUR	garge_201
 P28066	PSMA5	Proteasome subunit alpha type-5	gi|23110942	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P60900	PSMA6	Proteasome subunit alpha type-6	gi|23110944	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P49721	PSMB2	Proteasome subunit beta type-2	gi|4506195	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
-P28070	PSMB4	Proteasome subunit beta type-4	gi|22538467	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
+P28070	PSMB4	Proteasome subunit beta type-4	gi|22538467	garge_2010_EUR	garge_2010_20179311	TRUE	TRUE
 P35998	PSMC2	26S proteasome regulatory subunit 7	gi|4506209	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 P17980	PSMC3	26S proteasome regulatory subunit 6A	gi|21361144	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
 O00487	PSMD14	Ubiquitin C-terminal hydrolase PSMD14	gi|5031981	garge_2010_EUR	garge_2010_20179311	FALSE	FALSE
@@ -326,7 +326,7 @@ P51665	PSMD7	26S proteasome non-ATPase regulatory subunit 7	P51665	lourdusamy_20
 P12272	PTHLH	Parathyroid hormone-related protein	P12272	lourdusamy_2012_EUR	lourdusamy_2012_22595970	TRUE	FALSE
 Q01973	ROR1	Inactive tyrosine-protein kinase transmembrane receptor ROR1	Q01973	lourdusamy_2012_EUR	lourdusamy_2012_22595970	TRUE	FALSE
 P0DJI8	SAA1	Serum amyloid A-1 protein	P02735	lourdusamy_2012_EUR	lourdusamy_2012_22595970	TRUE	FALSE
-Q9Y336	SIGLEC9	Sialic acid-binding Ig-like lectin 9	Q9Y336	lourdusamy_2012_EUR	lourdusamy_2012_22595970	TRUE	FALSE
+Q9Y336	SIGLEC9	Sialic acid-binding Ig-like lectin 9	Q9Y336	lourdusamy_2012_EUR	lourdusamy_2012_22595970	TRUE	TRUE
 P09758	TACSTD2	Tumor-associated calcium signal transducer 2	P09758	lourdusamy_2012_EUR	lourdusamy_2012_22595970	TRUE	FALSE
 P35625	TIMP3	Metalloproteinase inhibitor 3	P35625	lourdusamy_2012_EUR	lourdusamy_2012_22595970	TRUE	FALSE
 P24821	TNC	Tenascin	P24821	lourdusamy_2012_EUR	lourdusamy_2012_22595970	TRUE	TRUE
@@ -768,684 +768,6 @@ P07911	UMOD	Uromodulin	THP	kim_2013_EUR	kim_2013_23894628	TRUE	FALSE
 P19320	VCAM1	Vascular cell adhesion protein 1	VCAM-1	kim_2013_EUR	kim_2013_23894628	FALSE	FALSE
 P15692	VEGFA	Vascular endothelial growth factor A, long form	VEGF	kim_2013_EUR	kim_2013_23894628	FALSE	FALSE
 P04275	VWF	von Willebrand factor	vWF	kim_2013_EUR	kim_2013_23894628	FALSE	FALSE
-Q9NY61	AATF	Protein AATF	AATF	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O15440	ABCC5	ATP-binding cassette sub-family C member 5	MRP5 (ABCC5)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P60709	ACTB	Actin, cytoplasmic 1	Actin (Beta)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P51825	AFF1	AF4/FMR2 family member 1	AFF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P51816	AFF2	AF4/FMR2 family member 2	AFF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P51826	AFF3	AF4/FMR2 family member 3	AFF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43918	AIRE	Autoimmune regulator	AIRE	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q02040	AKAP17A	A-kinase anchor protein 17A	SFRS17A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H161	ALX4	Homeobox protein aristaless-like 4	ALX4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q7Z2E3	APTX	Aprataxin	APTX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N6H7	ARFGAP2	ADP-ribosylation factor GTPase-activating protein 2	ZNF289	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8IVW6	ARID3B	AT-rich interactive domain-containing protein 3B	ARID3B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y4P1	ATG4B	Cysteine protease ATG4B	ATG4B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q99700	ATXN2	Ataxin-2	ATXN2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NY43	BARHL2	BarH-like 2 homeobox protein	BARHL2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NRL2	BAZ1A	Bromodomain adjacent to zinc finger domain protein 1A	BAZ1A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P10415	BCL2	Apoptosis regulator Bcl-2	Bcl-2 antibody	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H2G9	BLZF1	Golgin-45	BLZF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q6ZN30	BNC2	Zinc finger protein basonuclin-2	BNC2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y2F9	BTBD3	BTB/POZ domain-containing protein 3	BTBD3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P20290	BTF3	Transcription factor BTF3	BTF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UNZ5	C19orf53	Leydig cell tumor 10 kDa protein homolog	MDS032	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O75081	CBFA2T3	Transcriptional corepressor CBFA2T3	CBFA2T3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N7E2	CBLL2	E3 ubiquitin-protein ligase CBLL2	ZNF645	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P50991	CCT4	T-complex protein 1 subunit delta	CCT4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P47902	CDX1	Homeobox protein CDX-1	CDX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q99626	CDX2	Homeobox protein CDX-2	CDX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9HA82	CERS4	Ceramide synthase 4	LASS4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y6A4	CFAP20	Cilia- and flagella-associated protein 20	C16orf80	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q86WJ1	CHD1L	ATP-dependent chromatin remodeler CHD1L	CHD1L	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O76071	CIAO1	Probable cytosolic iron-sulfur protein assembly protein CIAO1	CIAO1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BT09	CNPY3	Protein canopy homolog 3	TNRC5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P05997	COL5A2	Collagen alpha-2(V) chain	Collagen Type V (COL5A2)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P61201	COPS2	COP9 signalosome complex subunit 2	COPS2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q92905	COPS5	COP9 signalosome complex subunit 5	COPS5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P31146	CORO1A	Coronin-1A	CORO1A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q02930	CREB5	Cyclic AMP-responsive element-binding protein 5	CREB5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P46109	CRKL	Crk-like protein	Crkl	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P35222	CTNNB1	Catenin beta-1	CTNNB1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BTC0	DIDO1	Death-inducer obliterator 1	DIDO1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y222	DMTF1	Cyclin-D-binding Myb-like transcription factor 1	DMTF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q01658	DR1	Protein Dr1	DR1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8WVS4	DYNC2I1	Cytoplasmic dynein 2 intermediate chain 1	WDR60	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q66K89	E4F1	Transcription factor E4F1	E4F1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UH73	EBF1	Transcription factor COE1	EBF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9HAK2	EBF2	Transcription factor COE2	EBF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O00418	EEF2K	Eukaryotic elongation factor 2 kinase	p-EF2k(S366)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q06889	EGR3	Early growth response protein 3	EGR3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q05215	EGR4	Early growth response protein 4	EGR4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q13541	EIF4EBP1	Eukaryotic translation initiation factor 4E-binding protein 1	p-4E-BP1 (S65);p-4E-BP1 (T37/46)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P32519	ELF1	ETS-related transcription factor Elf-1	ELF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15723	ELF2	ETS-related transcription factor Elf-2	ELF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q99607	ELF4	ETS-related transcription factor Elf-4	ELF4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O00472	ELL2	RNA polymerase II elongation factor ELL2	ELL2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q04743	EMX2	Homeobox protein EMX2	EMX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P06733	ENO1	Alpha-enolase	ENO1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O95936	EOMES	Eomesodermin homolog	EOMES	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q09472	EP300	Histone acetyltransferase p300	EP300	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P04626	ERBB2	Receptor tyrosine-protein kinase erbB-2	ErbB2/Her2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P21860	ERBB3	Receptor tyrosine-protein kinase erbB-3	ErbB3;ErbB3 (1B2)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P19447	ERCC3	General transcription and DNA repair factor IIH helicase/translocase subunit XPB	ERCC3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P11308	ERG	Transcriptional regulator ERG	ERG	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P03372	ESR1	Estrogen receptor	ESR1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q92731	ESR2	Estrogen receptor beta	ESR2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P62508	ESRRG	Estrogen-related receptor gamma	ESRRG	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P15036	ETS2	Protein C-ets-2	ETS2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P50549	ETV1	ETS translocation variant 1	ETV1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P41162	ETV3	ETS translocation variant 3	ETV3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P43268	ETV4	ETS translocation variant 4	ETV4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q01844	EWSR1	RNA-binding protein EWS	EWSR1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q99502	EYA1	Protein phosphatase EYA1	EYA1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P35555	FBN1	Fibrillin-1	FBN1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O60548	FOXD2	Forkhead box protein D2	FOXD2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q12947	FOXF2	Forkhead box protein F2	FOXF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q12951	FOXI1	Forkhead box protein I1	FOXI1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q92949	FOXJ1	Forkhead box protein J1	FOXJ1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9P0K8	FOXJ2	Forkhead box protein J2	FOXJ2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P32314	FOXN2	Forkhead box protein N2	FOXN2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q12778	FOXO1	Forkhead box protein O1	p-FoxO1 (S319)/FoxO4 (S262)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43524	FOXO3	Forkhead box protein O3	FOXO3A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P98177	FOXO4	Forkhead box protein O4	FOXO4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q13480	GAB1	GRB2-associated-binding protein 1	GAB1;GAB1 (phospho Y627) [E128];GAB1 (phospho Y659);+1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P43694	GATA4	Transcription factor GATA-4	GATA4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8WXI9	GATAD2B	Transcriptional repressor p66-beta	GATAD2B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NP62	GCM1	Chorion-specific transcription factor GCMa	GCM1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q5VTD9	GFI1B	Zinc finger protein Gfi-1b	GFI1B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O15499	GSC2	Homeobox protein goosecoid-2	GSCL	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P49840	GSK3A	Glycogen synthase kinase-3 alpha	p-GSK3alpha (S21)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P52655	GTF2A1	Transcription initiation factor IIA subunit 1	GTF2A1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P52657	GTF2A2	Transcription initiation factor IIA subunit 2	GTF2A2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P13984	GTF2F2	General transcription factor IIF subunit 2	GTF2F2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H116	GZF1	GDNF-inducible zinc finger protein 1	GZF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P51610	HCFC1	Host cell factor 1	HCFC1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q14526	HIC1	Hypermethylated in cancer 1 protein	HIC1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NWT6	HIF1AN	Hypoxia-inducible factor 1-alpha inhibitor	HIF1AN	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H2X6	HIPK2	Homeodomain-interacting protein kinase 2	HIPK2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P15822	HIVEP1	Zinc finger protein 40	HIVEP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q14774	HLX	H2.0-like homeobox protein	HLX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q6NT76	HMBOX1	Homeobox-containing protein 1	HMBOX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O15347	HMGB3	High mobility group protein B3	HMGB3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NP08	HMX1	Homeobox protein HMX1	HMX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43364	HOXA2	Homeobox protein Hox-A2	HOXA2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P09629	HOXB7	Homeobox protein Hox-B7	HOXB7	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P09630	HOXC6	Homeobox protein Hox-C6	HOXC6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9GZZ0	HOXD1	Homeobox protein Hox-D1	HOXD1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P28358	HOXD10	Homeobox protein Hox-D10	HOXD10	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P28356	HOXD9	Homeobox protein Hox-D9	HOXD9	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43593	HR	Lysine-specific demethylase hairless	HR	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96LI6	HSFY1	Heat shock transcription factor, Y-linked	HSFY1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P42858	HTT	Huntingtin	HTT	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P38935	IGHMBP2	DNA-binding protein SMUBP-2	IGHMBP2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UKT9	IKZF3	Zinc finger protein Aiolos	IKZF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H2S9	IKZF4	Zinc finger protein Eos	IKZF4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H5V7	IKZF5	Zinc finger protein Pegasus	IKZF5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q01101	INSM1	Insulinoma-associated protein 1	INSM1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15306	IRF4	Interferon regulatory factor 4	IRF4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q13568	IRF5	Interferon regulatory factor 5	IRF5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P78414	IRX1	Iroquois-class homeodomain protein IRX-1	IRX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96A47	ISL2	Insulin gene enhancer protein ISL-2	ISL2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8WYB5	KAT6B	Histone acetyltransferase KAT6B	MYST4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y2K7	KDM2A	Lysine-specific demethylase 2A	FBXL11	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8NHM5	KDM2B	Lysine-specific demethylase 2B	FBXL10	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O15550	KDM6A	Lysine-specific demethylase 6A	UTX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q14145	KEAP1	Kelch-like ECH-associated protein 1	KEAP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8TD94	KLF14	Krueppel-like factor 14	KLF14	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P57682	KLF3	Krueppel-like factor 3	KLF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q53G59	KLHL12	Kelch-like protein 12	KLHL12	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9P2G3	KLHL14	Kelch-like protein 14	KLHL14	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UHB6	LIMA1	LIM domain and actin-binding protein 1	LIMA1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8TE12	LMX1A	LIM homeobox transcription factor 1-alpha	LMX1A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15048	LRRC14	Leucine-rich repeat-containing protein 14	LRRC14	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q86X29	LSR	Lipolysis-stimulated lipoprotein receptor	LSR	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P43362	MAGEA9	Melanoma-associated antigen 9	MAGEA9	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H8J5	MANSC1	MANSC domain-containing protein 1	MANSC1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P56270	MAZ	Myc-associated zinc finger protein	MAZ	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UIS9	MBD1	Methyl-CpG-binding domain protein 1	MBD1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q93074	MED12	Mediator of RNA polymerase II transcription subunit 12	MED12	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y2X0	MED16	Mediator of RNA polymerase II transcription subunit 16	MED16	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NVC6	MED17	Mediator of RNA polymerase II transcription subunit 17	CRSP6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P08581	MET	Hepatocyte growth factor receptor	Met (C-28);Met (c-Met) (phospho Y1234)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q7Z3K6	MIER3	Mesoderm induction early response protein 3	MIER3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8IYA7	MKX	Homeobox protein Mohawk	MKX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NP71	MLXIPL	Carbohydrate-responsive element-binding protein	MLXIPL	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P50219	MNX1	Motor neuron and pancreas homeobox protein 1	HLXB9	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N594	MPND	MPN domain-containing protein	MPND	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P82914	MRPS15	Small ribosomal subunit protein uS15m	MRPS15	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N5Y2	MSL3	MSL complex subunit 3	MSL3L1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P03891	MT-ND2	NADH-ubiquinone oxidoreductase chain 2	URF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O94776	MTA2	Metastasis-associated protein MTA2	MTA2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y483	MTF2	Metal-response element-binding transcription factor 2	MTF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P10242	MYB	Transcriptional activator Myb	MYB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q92802	N4BP2L2	NEDD4-binding protein 2-like 2	NY-REN-34	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96BF6	NACC2	Nucleus accumbens-associated protein 2	BTBD14A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P55160	NCKAP1L	Nck-associated protein 1-like	NCKAP1L	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y4A8	NFE2L3	Nuclear factor erythroid 2-related factor 3	NFE2L3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P08651	NFIC	Nuclear factor 1 C-type	NFIC	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q14938	NFIX	Nuclear factor 1 X-type	NFIX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P19838	NFKB1	Nuclear factor NF-kappa-B p105 subunit	NFKB1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P78367	NKX3-2	Homeobox protein Nkx-3.2	NKX3-2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O60393	NOBOX	Homeobox protein NOBOX	NOBOX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q99742	NPAS1	Neuronal PAS domain-containing protein 1	NPAS1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P13056	NR2C1	Nuclear receptor subfamily 2 group C member 1	NR2C1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P24468	NR2F2	COUP transcription factor 2	NR2F2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P10588	NR2F6	Nuclear receptor subfamily 2 group F member 6	NR2F6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O96028	NSD2	Histone-lysine N-methyltransferase NSD2	WHSC1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P52948	NUP98	Nuclear pore complex protein Nup98-Nup96	NUP98	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O95948	ONECUT2	One cut domain family member 2	ONECUT2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8TAX0	OSR1	Protein odd-skipped-related 1	OSR1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O14753	OVOL1	Putative transcription factor Ovo-like 1	OVOL1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96IZ0	PAWR	PRKC apoptosis WT1 regulator protein	PAWR	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P26367	PAX6	Paired box protein Pax-6	PAX6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q06710	PAX8	Paired box protein Pax-8	PAX8	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P40425	PBX2	Pre-B-cell leukemia transcription factor 2	PBX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q3KNV8	PCGF3	Polycomb group RING finger protein 3	PCGF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P27986	PIK3R1	Phosphatidylinositol 3-kinase regulatory subunit alpha	PI3K(p85)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P19174	PLCG1	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-1	PLCgamma1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P16885	PLCG2	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-2	PLCgamma2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43660	PLRG1	Pleiotropic regulator 1	PLRG1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q16633	POU2AF1	POU domain class 2-associating factor 1	POU2AF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9GZV8	PRDM14	PR domain zinc finger protein 14	PRDM14	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q13029	PRDM2	PR domain zinc finger protein 2	PRDM2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9HCU5	PREB	Guanine nucleotide-exchange factor SEC12	PREB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P17252	PRKCA	Protein kinase C alpha type	p-PKC(pan)betaII(S660);p-PKCpan (gammaT514)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q05513	PRKCZ	Protein kinase C zeta type	PKCzeta (C24E6)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O60678	PRMT3	Protein arginine N-methyltransferase 3	PRMT3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O75475	PSIP1	PC4 and SFRS1-interacting protein	PSIP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P60484	PTEN	Phosphatidylinositol 3,4,5-trisphosphate 3-phosphatase and dual-specificity protein phosphatase PTEN	p-PTEN (S380)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q05397	PTK2	Focal adhesion kinase 1	FAK	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q00577	PURA	Transcriptional activator protein Pur-alpha	PURA	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P63000	RAC1	Ras-related C3 botulinum toxin substrate 1	Rac1/2/3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P04049	RAF1	RAF proto-oncogene serine/threonine-protein kinase	Raf (c-)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96IS3	RAX2	Retina and anterior neural fold homeobox protein 2	RAXL1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P06400	RB1	Retinoblastoma-associated protein	p-Rb (S807,811);RB1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NYW8	RBAK	RB-associated KRAB zinc finger protein	RBAK	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UKL0	RCOR1	REST corepressor 1	RCOR1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q04864	REL	Proto-oncogene c-Rel	REL	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P08134	RHOC	Rho-related GTP-binding protein RhoC	RhoC	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8TB24	RIN3	Ras and Rab interactor 3	RIN3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H6W3	RIOX1	Ribosomal oxygenase 1	C14orf169	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P62753	RPS6	Small ribosomal subunit protein eS6	p-S6RibProt (S235/236)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P23443	RPS6KB1	Ribosomal protein S6 kinase beta-1	p-P70 S6 Kinase (T421/S424)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NYV6	RRN3	RNA polymerase I-specific transcription initiation factor RRN3	RRN3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y224	RTRAF	tRNA-splicing ligase complex subunit RTRAF	C14orf166	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q7L099	RUFY3	Protein RUFY3	RUFY3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q01196	RUNX1	Runt-related transcription factor 1	RUNX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q13950	RUNX2	Runt-related transcription factor 2	RUNX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UHR5	SAP30BP	SAP30-binding protein	SAP30BP	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UN30	SCML1	Sex comb on midleg-like protein 1	SCML1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BWW7	SCRT1	Transcriptional repressor scratch 1	SCRT1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H3S1	SEMA4A	Semaphorin-4A	SEMA4A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P36952	SERPINB5	Serpin B5	c-Myc;Maspin (L250)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BYW2	SETD2	Histone-lysine N-methyltransferase SETD2	SETD2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NVD3	SETD4	SET domain-containing protein 4	SETD4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O00141	SGK1	Serine/threonine-protein kinase Sgk1	p-SGK (S422);p-SGK (T256);SGK pan	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q14190	SIM2	Single-minded homolog 2	SIM2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q14683	SMC1A	Structural maintenance of chromosomes protein 1A	SMC1;SMC1A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q92966	SNAPC3	snRNA-activating protein complex subunit 3	SNAPC3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P35716	SOX11	Transcription factor SOX-11	SOX11	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UN79	SOX13	Transcription factor SOX-13	SOX13	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q06945	SOX4	Transcription factor SOX-4	SOX4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P08047	SP1	Transcription factor Sp1	SP1 - ChIP Grade	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P23497	SP100	Nuclear autoantigen Sp-100	SP100	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NRA0	SPHK2	Sphingosine kinase 2	SPHK2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P12931	SRC	Proto-oncogene tyrosine-protein kinase Src	p-Src (Y527);Src;Src non-phospho (Y416);+1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P40763	STAT3	Signal transducer and activator of transcription 3	Stat3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P42229	STAT5A	Signal transducer and activator of transcription 5A	Stat5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8WXH0	SYNE2	Nesprin-2	SYNE2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O75478	TADA2A	Transcriptional adapter 2-alpha	TADA2L	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q92804	TAF15	TATA-binding protein-associated factor 2N	TAF15	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96BW9	TAMM41	Phosphatidate cytidylyltransferase, mitochondrial	C3orf31	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q92844	TANK	TRAF family member-associated NF-kappa-B activator	TANK	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q13148	TARDBP	TAR DNA-binding protein 43	TARDBP	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P62380	TBPL1	TATA box-binding protein-like 1	TBPL1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O75333	TBX10	T-box transcription factor TBX10	TBX10	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O60806	TBX19	T-box transcription factor TBX19	TBX19	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UL17	TBX21	T-box transcription factor TBX21	TBX21	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q99593	TBX5	T-box transcription factor TBX5	TBX5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43680	TCF21	Transcription factor 21	TCF21	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P05549	TFAP2A	Transcription factor AP-2-alpha	TFAP2A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q92481	TFAP2B	Transcription factor AP-2-beta	TFAP2B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8WVM0	TFB1M	Dimethyladenosine transferase 1, mitochondrial	TFB1M	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NZI6	TFCP2L1	Transcription factor CP2-like protein 1	TFCP2L1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q01085	TIAL1	Nucleolysin TIAR	TIAL1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43763	TLX2	T-cell leukemia homeobox protein 2	TLX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BXQ6	TMEM121B	Transmembrane protein 121B	CECR6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q4ZIN3	TMEM259	Membralin	C19orf6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P04637	TP53	Cellular tumor antigen p53	p53	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O60858	TRIM13	E3 ubiquitin-protein ligase TRIM13	TRIM13	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q12899	TRIM26	Tripartite motif-containing protein 26	TRIM26	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O75382	TRIM3	Tripartite motif-containing protein 3	TRIM3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BYJ4	TRIM34	E3 ubiquitin-protein ligase TRIM34	TRIM34	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BRZ2	TRIM56	E3 ubiquitin-protein ligase TRIM56	TRIM56	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P50607	TUB	Tubby protein homolog	TUB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O00294	TULP1	Tubby-related protein 1	TULP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15672	TWIST1	Twist-related protein 1	TWIST1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96PU4	UHRF2	E3 ubiquitin-protein ligase UHRF2	UHRF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P22415	USF1	Upstream stimulatory factor 1	USF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15906	VPS72	Vacuolar protein sorting-associated protein 72 homolog	VPS72	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H6R7	WDCP	WD repeat and coiled-coil-containing protein	LOC91664	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P16989	YBX3	Y-box-binding protein 3	CSDA	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43829	ZBTB14	Zinc finger and BTB domain-containing protein 14	ZFP161	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q99592	ZBTB18	Zinc finger and BTB domain-containing protein 18	ZNF238	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O15209	ZBTB22	Zinc finger and BTB domain-containing protein 22	ZBTB22	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q86T24	ZBTB33	Transcriptional regulator Kaiso	ZBTB33	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NUA8	ZBTB40	Zinc finger and BTB domain-containing protein 40	ZBTB40	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q6ZSB9	ZBTB49	Zinc finger and BTB domain-containing protein 49	ZNF509	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15916	ZBTB6	Zinc finger and BTB domain-containing protein 6	ZBTB6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96C00	ZBTB9	Zinc finger and BTB domain-containing protein 9	ZBTB9	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H8U3	ZFAND3	AN1-type zinc finger protein 3	ZFAND3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q6P2D0	ZFP1	Zinc finger protein 1 homolog	ZFP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8NHY6	ZFP28	Zinc finger protein 28 homolog	ZFP28	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q07352	ZFP36L1	mRNA decay activator protein ZFP36L1	ZFP36L1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BRR0	ZKSCAN3	Zinc finger protein with KRAB and SCAN domains 3	ZNF306	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O95789	ZMYM6	Zinc finger MYM-type protein 6	ZMYM6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15326	ZMYND11	Zinc finger MYND domain-containing protein 11	ZMYND11	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9ULU4	ZMYND8	MYND-type zinc finger-containing chromatin reader ZMYND8	PRKCBP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P17014	ZNF12	Zinc finger protein 12	ZNF12	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P52740	ZNF132	Zinc finger protein 132	ZNF132	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q13106	ZNF154	Zinc finger protein 154	ZNF154	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P17020	ZNF16	Zinc finger protein 16	ZNF16	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P17021	ZNF17	Zinc finger protein 17	ZNF17	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15697	ZNF174	Zinc finger protein 174	ZNF174	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P17025	ZNF182	Zinc finger protein 182	ZNF182	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BSG1	ZNF2	Zinc finger protein 2	ZNF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P98182	ZNF200	Zinc finger protein 200	ZNF200	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O43670	ZNF207	BUB3-interacting and GLEBS motif-containing protein ZNF207	ZNF207	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9P2Y4	ZNF219	Zinc finger protein 219	ZNF219	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q16600	ZNF239	Zinc finger protein 239	ZNF239	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O75346	ZNF253	Zinc finger protein 253	ZNF253	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q14584	ZNF266	Zinc finger protein 266	ZNF266	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q14586	ZNF267	Zinc finger protein 267	ZNF267	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N554	ZNF276	Zinc finger protein 276	ZNF276	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9HBT8	ZNF286A	Zinc finger protein 286A	ZNF286	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q5VUA4	ZNF318	Zinc finger protein 318	ZNF318	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9P2F9	ZNF319	Zinc finger protein 319	ZNF319	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q5BKZ1	ZNF326	DBIRD complex subunit ZNF326	ZNF326	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96PM9	ZNF385A	Zinc finger protein 385A	ZNF385A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96IQ9	ZNF414	Zinc finger protein 414	ZNF414	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q09FC8	ZNF415	Zinc finger protein 415	ZNF415	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96HQ0	ZNF419	Zinc finger protein 419	ZNF419	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BUY5	ZNF426	Zinc finger protein 426	ZNF426	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N7K0	ZNF433	Zinc finger protein 433	ZNF433	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N8Z8	ZNF441	Zinc finger protein 441	ZNF441	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9BX82	ZNF471	Zinc finger protein 471	ZNF471	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N8L2	ZNF491	Zinc finger protein 491	ZNF491	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q6ZNH5	ZNF497	Zinc finger protein 497	ZNF497	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8NB42	ZNF527	Zinc finger protein 527	ZNF527	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q6P280	ZNF529	Zinc finger protein 529	ZNF529	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q7Z340	ZNF551	Zinc finger protein 551	ZNF551	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96NG5	ZNF558	Zinc finger protein 558	ZNF558	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q5MCW4	ZNF569	Zinc finger protein 569	ZNF569	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q68EA5	ZNF57	Zinc finger protein 57	ZNF57	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q86YE8	ZNF573	Zinc finger protein 573	ZNF573	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q86XF7	ZNF575	Zinc finger protein 575	ZNF575	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8NAF0	ZNF579	Zinc finger protein 579	ZNF579	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9UK33	ZNF580	Zinc finger protein 580	ZNF580	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q6PF04	ZNF613	Zinc finger protein 613	ZNF613	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8N2I2	ZNF619	Zinc finger protein 619	ZNF619	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q2M218	ZNF630	Zinc finger protein 630	ZNF630	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-O95780	ZNF682	Zinc finger protein 682	ZNF682	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q8IZ20	ZNF683	Tissue-resident T-cell transcription regulator protein ZNF683	ZNF683	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P0C7X2	ZNF688	Zinc finger protein 688	ZNF688	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q5VV52	ZNF691	Zinc finger protein 691	ZNF691	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P17097	ZNF7	Zinc finger protein 7	ZNF7	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NV72	ZNF701	Zinc finger protein 701	ZNF701	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H7S9	ZNF703	Zinc finger protein 703	ZNF703	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-P51815	ZNF75D	Zinc finger protein 75D	ZNF75	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H5H4	ZNF768	Zinc finger protein 768	ZNF768	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15935	ZNF77	Zinc finger protein 77	ZNF77	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96BV0	ZNF775	Zinc finger protein 775	ZNF775	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96MU6	ZNF778	Zinc finger protein 778	ZNF778	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-A8K8V0	ZNF785	Zinc finger protein 785	ZNF785	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q15937	ZNF79	Zinc finger protein 79	ZNF79	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96NB3	ZNF830	Zinc finger protein 830	CCDC16	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9H4T2	ZSCAN16	Zinc finger and SCAN domain-containing protein 16	ZNF435	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q7Z7L9	ZSCAN2	Zinc finger and SCAN domain-containing protein 2	ZSCAN2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9Y5A6	ZSCAN21	Zinc finger and SCAN domain-containing protein 21	ZSCAN21	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q6NSZ9	ZSCAN25	Zinc finger and SCAN domain-containing protein 25	ZNF498	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q96AP4	ZUP1	Zinc finger-containing ubiquitin peptidase 1	C6orf113	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
-Q9NY61	AATF	Protein AATF	AATF	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O15440	ABCC5	ATP-binding cassette sub-family C member 5	MRP5 (ABCC5)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P60709	ACTB	Actin, cytoplasmic 1	Actin (Beta)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P51825	AFF1	AF4/FMR2 family member 1	AFF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P51816	AFF2	AF4/FMR2 family member 2	AFF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P51826	AFF3	AF4/FMR2 family member 3	AFF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43918	AIRE	Autoimmune regulator	AIRE	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q02040	AKAP17A	A-kinase anchor protein 17A	SFRS17A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H161	ALX4	Homeobox protein aristaless-like 4	ALX4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q7Z2E3	APTX	Aprataxin	APTX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N6H7	ARFGAP2	ADP-ribosylation factor GTPase-activating protein 2	ZNF289	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8IVW6	ARID3B	AT-rich interactive domain-containing protein 3B	ARID3B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y4P1	ATG4B	Cysteine protease ATG4B	ATG4B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q99700	ATXN2	Ataxin-2	ATXN2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NY43	BARHL2	BarH-like 2 homeobox protein	BARHL2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NRL2	BAZ1A	Bromodomain adjacent to zinc finger domain protein 1A	BAZ1A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P10415	BCL2	Apoptosis regulator Bcl-2	Bcl-2 antibody	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H2G9	BLZF1	Golgin-45	BLZF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q6ZN30	BNC2	Zinc finger protein basonuclin-2	BNC2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y2F9	BTBD3	BTB/POZ domain-containing protein 3	BTBD3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P20290	BTF3	Transcription factor BTF3	BTF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UNZ5	C19orf53	Leydig cell tumor 10 kDa protein homolog	MDS032	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O75081	CBFA2T3	Transcriptional corepressor CBFA2T3	CBFA2T3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N7E2	CBLL2	E3 ubiquitin-protein ligase CBLL2	ZNF645	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P50991	CCT4	T-complex protein 1 subunit delta	CCT4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P47902	CDX1	Homeobox protein CDX-1	CDX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q99626	CDX2	Homeobox protein CDX-2	CDX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9HA82	CERS4	Ceramide synthase 4	LASS4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y6A4	CFAP20	Cilia- and flagella-associated protein 20	C16orf80	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q86WJ1	CHD1L	ATP-dependent chromatin remodeler CHD1L	CHD1L	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O76071	CIAO1	Probable cytosolic iron-sulfur protein assembly protein CIAO1	CIAO1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BT09	CNPY3	Protein canopy homolog 3	TNRC5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P05997	COL5A2	Collagen alpha-2(V) chain	Collagen Type V (COL5A2)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P61201	COPS2	COP9 signalosome complex subunit 2	COPS2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q92905	COPS5	COP9 signalosome complex subunit 5	COPS5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P31146	CORO1A	Coronin-1A	CORO1A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q02930	CREB5	Cyclic AMP-responsive element-binding protein 5	CREB5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P46109	CRKL	Crk-like protein	Crkl	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P35222	CTNNB1	Catenin beta-1	CTNNB1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BTC0	DIDO1	Death-inducer obliterator 1	DIDO1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y222	DMTF1	Cyclin-D-binding Myb-like transcription factor 1	DMTF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q01658	DR1	Protein Dr1	DR1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8WVS4	DYNC2I1	Cytoplasmic dynein 2 intermediate chain 1	WDR60	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q66K89	E4F1	Transcription factor E4F1	E4F1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UH73	EBF1	Transcription factor COE1	EBF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9HAK2	EBF2	Transcription factor COE2	EBF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O00418	EEF2K	Eukaryotic elongation factor 2 kinase	p-EF2k(S366)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q06889	EGR3	Early growth response protein 3	EGR3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q05215	EGR4	Early growth response protein 4	EGR4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q13541	EIF4EBP1	Eukaryotic translation initiation factor 4E-binding protein 1	p-4E-BP1 (S65);p-4E-BP1 (T37/46)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P32519	ELF1	ETS-related transcription factor Elf-1	ELF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15723	ELF2	ETS-related transcription factor Elf-2	ELF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q99607	ELF4	ETS-related transcription factor Elf-4	ELF4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O00472	ELL2	RNA polymerase II elongation factor ELL2	ELL2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q04743	EMX2	Homeobox protein EMX2	EMX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P06733	ENO1	Alpha-enolase	ENO1	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
-O95936	EOMES	Eomesodermin homolog	EOMES	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q09472	EP300	Histone acetyltransferase p300	EP300	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P04626	ERBB2	Receptor tyrosine-protein kinase erbB-2	ErbB2/Her2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P21860	ERBB3	Receptor tyrosine-protein kinase erbB-3	ErbB3;ErbB3 (1B2)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P19447	ERCC3	General transcription and DNA repair factor IIH helicase/translocase subunit XPB	ERCC3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P11308	ERG	Transcriptional regulator ERG	ERG	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P03372	ESR1	Estrogen receptor	ESR1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q92731	ESR2	Estrogen receptor beta	ESR2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P62508	ESRRG	Estrogen-related receptor gamma	ESRRG	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P15036	ETS2	Protein C-ets-2	ETS2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P50549	ETV1	ETS translocation variant 1	ETV1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P41162	ETV3	ETS translocation variant 3	ETV3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P43268	ETV4	ETS translocation variant 4	ETV4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q01844	EWSR1	RNA-binding protein EWS	EWSR1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q99502	EYA1	Protein phosphatase EYA1	EYA1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P35555	FBN1	Fibrillin-1	FBN1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O60548	FOXD2	Forkhead box protein D2	FOXD2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q12947	FOXF2	Forkhead box protein F2	FOXF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q12951	FOXI1	Forkhead box protein I1	FOXI1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q92949	FOXJ1	Forkhead box protein J1	FOXJ1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9P0K8	FOXJ2	Forkhead box protein J2	FOXJ2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P32314	FOXN2	Forkhead box protein N2	FOXN2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q12778	FOXO1	Forkhead box protein O1	p-FoxO1 (S319)/FoxO4 (S262)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43524	FOXO3	Forkhead box protein O3	FOXO3A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P98177	FOXO4	Forkhead box protein O4	FOXO4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q13480	GAB1	GRB2-associated-binding protein 1	GAB1;GAB1 (phospho Y627) [E128];GAB1 (phospho Y659);+1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P43694	GATA4	Transcription factor GATA-4	GATA4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8WXI9	GATAD2B	Transcriptional repressor p66-beta	GATAD2B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NP62	GCM1	Chorion-specific transcription factor GCMa	GCM1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q5VTD9	GFI1B	Zinc finger protein Gfi-1b	GFI1B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O15499	GSC2	Homeobox protein goosecoid-2	GSCL	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P49840	GSK3A	Glycogen synthase kinase-3 alpha	p-GSK3alpha (S21)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P52655	GTF2A1	Transcription initiation factor IIA subunit 1	GTF2A1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P52657	GTF2A2	Transcription initiation factor IIA subunit 2	GTF2A2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P13984	GTF2F2	General transcription factor IIF subunit 2	GTF2F2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H116	GZF1	GDNF-inducible zinc finger protein 1	GZF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P51610	HCFC1	Host cell factor 1	HCFC1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q14526	HIC1	Hypermethylated in cancer 1 protein	HIC1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NWT6	HIF1AN	Hypoxia-inducible factor 1-alpha inhibitor	HIF1AN	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H2X6	HIPK2	Homeodomain-interacting protein kinase 2	HIPK2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P15822	HIVEP1	Zinc finger protein 40	HIVEP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q14774	HLX	H2.0-like homeobox protein	HLX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q6NT76	HMBOX1	Homeobox-containing protein 1	HMBOX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O15347	HMGB3	High mobility group protein B3	HMGB3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NP08	HMX1	Homeobox protein HMX1	HMX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43364	HOXA2	Homeobox protein Hox-A2	HOXA2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P09629	HOXB7	Homeobox protein Hox-B7	HOXB7	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P09630	HOXC6	Homeobox protein Hox-C6	HOXC6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9GZZ0	HOXD1	Homeobox protein Hox-D1	HOXD1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P28358	HOXD10	Homeobox protein Hox-D10	HOXD10	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P28356	HOXD9	Homeobox protein Hox-D9	HOXD9	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43593	HR	Lysine-specific demethylase hairless	HR	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96LI6	HSFY1	Heat shock transcription factor, Y-linked	HSFY1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P42858	HTT	Huntingtin	HTT	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P38935	IGHMBP2	DNA-binding protein SMUBP-2	IGHMBP2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UKT9	IKZF3	Zinc finger protein Aiolos	IKZF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H2S9	IKZF4	Zinc finger protein Eos	IKZF4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H5V7	IKZF5	Zinc finger protein Pegasus	IKZF5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q01101	INSM1	Insulinoma-associated protein 1	INSM1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15306	IRF4	Interferon regulatory factor 4	IRF4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q13568	IRF5	Interferon regulatory factor 5	IRF5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P78414	IRX1	Iroquois-class homeodomain protein IRX-1	IRX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96A47	ISL2	Insulin gene enhancer protein ISL-2	ISL2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8WYB5	KAT6B	Histone acetyltransferase KAT6B	MYST4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y2K7	KDM2A	Lysine-specific demethylase 2A	FBXL11	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8NHM5	KDM2B	Lysine-specific demethylase 2B	FBXL10	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O15550	KDM6A	Lysine-specific demethylase 6A	UTX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q14145	KEAP1	Kelch-like ECH-associated protein 1	KEAP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8TD94	KLF14	Krueppel-like factor 14	KLF14	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P57682	KLF3	Krueppel-like factor 3	KLF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q53G59	KLHL12	Kelch-like protein 12	KLHL12	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9P2G3	KLHL14	Kelch-like protein 14	KLHL14	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UHB6	LIMA1	LIM domain and actin-binding protein 1	LIMA1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8TE12	LMX1A	LIM homeobox transcription factor 1-alpha	LMX1A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15048	LRRC14	Leucine-rich repeat-containing protein 14	LRRC14	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q86X29	LSR	Lipolysis-stimulated lipoprotein receptor	LSR	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P43362	MAGEA9	Melanoma-associated antigen 9	MAGEA9	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H8J5	MANSC1	MANSC domain-containing protein 1	MANSC1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P56270	MAZ	Myc-associated zinc finger protein	MAZ	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UIS9	MBD1	Methyl-CpG-binding domain protein 1	MBD1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q93074	MED12	Mediator of RNA polymerase II transcription subunit 12	MED12	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y2X0	MED16	Mediator of RNA polymerase II transcription subunit 16	MED16	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
-Q9NVC6	MED17	Mediator of RNA polymerase II transcription subunit 17	CRSP6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P08581	MET	Hepatocyte growth factor receptor	Met (C-28);Met (c-Met) (phospho Y1234)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q7Z3K6	MIER3	Mesoderm induction early response protein 3	MIER3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8IYA7	MKX	Homeobox protein Mohawk	MKX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NP71	MLXIPL	Carbohydrate-responsive element-binding protein	MLXIPL	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P50219	MNX1	Motor neuron and pancreas homeobox protein 1	HLXB9	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N594	MPND	MPN domain-containing protein	MPND	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P82914	MRPS15	Small ribosomal subunit protein uS15m	MRPS15	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N5Y2	MSL3	MSL complex subunit 3	MSL3L1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P03891	MT-ND2	NADH-ubiquinone oxidoreductase chain 2	URF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O94776	MTA2	Metastasis-associated protein MTA2	MTA2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y483	MTF2	Metal-response element-binding transcription factor 2	MTF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P10242	MYB	Transcriptional activator Myb	MYB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q92802	N4BP2L2	NEDD4-binding protein 2-like 2	NY-REN-34	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96BF6	NACC2	Nucleus accumbens-associated protein 2	BTBD14A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P55160	NCKAP1L	Nck-associated protein 1-like	NCKAP1L	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y4A8	NFE2L3	Nuclear factor erythroid 2-related factor 3	NFE2L3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P08651	NFIC	Nuclear factor 1 C-type	NFIC	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q14938	NFIX	Nuclear factor 1 X-type	NFIX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P19838	NFKB1	Nuclear factor NF-kappa-B p105 subunit	NFKB1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P78367	NKX3-2	Homeobox protein Nkx-3.2	NKX3-2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O60393	NOBOX	Homeobox protein NOBOX	NOBOX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q99742	NPAS1	Neuronal PAS domain-containing protein 1	NPAS1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P13056	NR2C1	Nuclear receptor subfamily 2 group C member 1	NR2C1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P24468	NR2F2	COUP transcription factor 2	NR2F2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P10588	NR2F6	Nuclear receptor subfamily 2 group F member 6	NR2F6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O96028	NSD2	Histone-lysine N-methyltransferase NSD2	WHSC1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P52948	NUP98	Nuclear pore complex protein Nup98-Nup96	NUP98	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O95948	ONECUT2	One cut domain family member 2	ONECUT2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8TAX0	OSR1	Protein odd-skipped-related 1	OSR1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O14753	OVOL1	Putative transcription factor Ovo-like 1	OVOL1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96IZ0	PAWR	PRKC apoptosis WT1 regulator protein	PAWR	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P26367	PAX6	Paired box protein Pax-6	PAX6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q06710	PAX8	Paired box protein Pax-8	PAX8	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P40425	PBX2	Pre-B-cell leukemia transcription factor 2	PBX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q3KNV8	PCGF3	Polycomb group RING finger protein 3	PCGF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P27986	PIK3R1	Phosphatidylinositol 3-kinase regulatory subunit alpha	PI3K(p85)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P19174	PLCG1	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-1	PLCgamma1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P16885	PLCG2	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-2	PLCgamma2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43660	PLRG1	Pleiotropic regulator 1	PLRG1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q16633	POU2AF1	POU domain class 2-associating factor 1	POU2AF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9GZV8	PRDM14	PR domain zinc finger protein 14	PRDM14	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q13029	PRDM2	PR domain zinc finger protein 2	PRDM2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9HCU5	PREB	Guanine nucleotide-exchange factor SEC12	PREB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P17252	PRKCA	Protein kinase C alpha type	p-PKC(pan)betaII(S660);p-PKCpan (gammaT514)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q05513	PRKCZ	Protein kinase C zeta type	PKCzeta (C24E6)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O60678	PRMT3	Protein arginine N-methyltransferase 3	PRMT3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O75475	PSIP1	PC4 and SFRS1-interacting protein	PSIP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P60484	PTEN	Phosphatidylinositol 3,4,5-trisphosphate 3-phosphatase and dual-specificity protein phosphatase PTEN	p-PTEN (S380)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q05397	PTK2	Focal adhesion kinase 1	FAK	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q00577	PURA	Transcriptional activator protein Pur-alpha	PURA	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P63000	RAC1	Ras-related C3 botulinum toxin substrate 1	Rac1/2/3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P04049	RAF1	RAF proto-oncogene serine/threonine-protein kinase	Raf (c-)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96IS3	RAX2	Retina and anterior neural fold homeobox protein 2	RAXL1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P06400	RB1	Retinoblastoma-associated protein	p-Rb (S807,811);RB1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NYW8	RBAK	RB-associated KRAB zinc finger protein	RBAK	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UKL0	RCOR1	REST corepressor 1	RCOR1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q04864	REL	Proto-oncogene c-Rel	REL	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P08134	RHOC	Rho-related GTP-binding protein RhoC	RhoC	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8TB24	RIN3	Ras and Rab interactor 3	RIN3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H6W3	RIOX1	Ribosomal oxygenase 1	C14orf169	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P62753	RPS6	Small ribosomal subunit protein eS6	p-S6RibProt (S235/236)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P23443	RPS6KB1	Ribosomal protein S6 kinase beta-1	p-P70 S6 Kinase (T421/S424)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NYV6	RRN3	RNA polymerase I-specific transcription initiation factor RRN3	RRN3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y224	RTRAF	tRNA-splicing ligase complex subunit RTRAF	C14orf166	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q7L099	RUFY3	Protein RUFY3	RUFY3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q01196	RUNX1	Runt-related transcription factor 1	RUNX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q13950	RUNX2	Runt-related transcription factor 2	RUNX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UHR5	SAP30BP	SAP30-binding protein	SAP30BP	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UN30	SCML1	Sex comb on midleg-like protein 1	SCML1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BWW7	SCRT1	Transcriptional repressor scratch 1	SCRT1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H3S1	SEMA4A	Semaphorin-4A	SEMA4A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P36952	SERPINB5	Serpin B5	c-Myc;Maspin (L250)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BYW2	SETD2	Histone-lysine N-methyltransferase SETD2	SETD2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NVD3	SETD4	SET domain-containing protein 4	SETD4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O00141	SGK1	Serine/threonine-protein kinase Sgk1	p-SGK (S422);p-SGK (T256);SGK pan	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q14190	SIM2	Single-minded homolog 2	SIM2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q14683	SMC1A	Structural maintenance of chromosomes protein 1A	SMC1;SMC1A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q92966	SNAPC3	snRNA-activating protein complex subunit 3	SNAPC3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P35716	SOX11	Transcription factor SOX-11	SOX11	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UN79	SOX13	Transcription factor SOX-13	SOX13	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q06945	SOX4	Transcription factor SOX-4	SOX4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P08047	SP1	Transcription factor Sp1	SP1 - ChIP Grade	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P23497	SP100	Nuclear autoantigen Sp-100	SP100	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NRA0	SPHK2	Sphingosine kinase 2	SPHK2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P12931	SRC	Proto-oncogene tyrosine-protein kinase Src	p-Src (Y527);Src;Src non-phospho (Y416);+1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P40763	STAT3	Signal transducer and activator of transcription 3	Stat3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P42229	STAT5A	Signal transducer and activator of transcription 5A	Stat5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8WXH0	SYNE2	Nesprin-2	SYNE2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O75478	TADA2A	Transcriptional adapter 2-alpha	TADA2L	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q92804	TAF15	TATA-binding protein-associated factor 2N	TAF15	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96BW9	TAMM41	Phosphatidate cytidylyltransferase, mitochondrial	C3orf31	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q92844	TANK	TRAF family member-associated NF-kappa-B activator	TANK	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q13148	TARDBP	TAR DNA-binding protein 43	TARDBP	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P62380	TBPL1	TATA box-binding protein-like 1	TBPL1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O75333	TBX10	T-box transcription factor TBX10	TBX10	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O60806	TBX19	T-box transcription factor TBX19	TBX19	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
-Q9UL17	TBX21	T-box transcription factor TBX21	TBX21	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q99593	TBX5	T-box transcription factor TBX5	TBX5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43680	TCF21	Transcription factor 21	TCF21	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P05549	TFAP2A	Transcription factor AP-2-alpha	TFAP2A	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
-Q92481	TFAP2B	Transcription factor AP-2-beta	TFAP2B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8WVM0	TFB1M	Dimethyladenosine transferase 1, mitochondrial	TFB1M	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NZI6	TFCP2L1	Transcription factor CP2-like protein 1	TFCP2L1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q01085	TIAL1	Nucleolysin TIAR	TIAL1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43763	TLX2	T-cell leukemia homeobox protein 2	TLX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BXQ6	TMEM121B	Transmembrane protein 121B	CECR6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q4ZIN3	TMEM259	Membralin	C19orf6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P04637	TP53	Cellular tumor antigen p53	p53	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O60858	TRIM13	E3 ubiquitin-protein ligase TRIM13	TRIM13	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q12899	TRIM26	Tripartite motif-containing protein 26	TRIM26	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O75382	TRIM3	Tripartite motif-containing protein 3	TRIM3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BYJ4	TRIM34	E3 ubiquitin-protein ligase TRIM34	TRIM34	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BRZ2	TRIM56	E3 ubiquitin-protein ligase TRIM56	TRIM56	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P50607	TUB	Tubby protein homolog	TUB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O00294	TULP1	Tubby-related protein 1	TULP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15672	TWIST1	Twist-related protein 1	TWIST1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96PU4	UHRF2	E3 ubiquitin-protein ligase UHRF2	UHRF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P22415	USF1	Upstream stimulatory factor 1	USF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15906	VPS72	Vacuolar protein sorting-associated protein 72 homolog	VPS72	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H6R7	WDCP	WD repeat and coiled-coil-containing protein	LOC91664	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P16989	YBX3	Y-box-binding protein 3	CSDA	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43829	ZBTB14	Zinc finger and BTB domain-containing protein 14	ZFP161	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q99592	ZBTB18	Zinc finger and BTB domain-containing protein 18	ZNF238	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O15209	ZBTB22	Zinc finger and BTB domain-containing protein 22	ZBTB22	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q86T24	ZBTB33	Transcriptional regulator Kaiso	ZBTB33	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NUA8	ZBTB40	Zinc finger and BTB domain-containing protein 40	ZBTB40	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q6ZSB9	ZBTB49	Zinc finger and BTB domain-containing protein 49	ZNF509	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15916	ZBTB6	Zinc finger and BTB domain-containing protein 6	ZBTB6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96C00	ZBTB9	Zinc finger and BTB domain-containing protein 9	ZBTB9	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H8U3	ZFAND3	AN1-type zinc finger protein 3	ZFAND3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q6P2D0	ZFP1	Zinc finger protein 1 homolog	ZFP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8NHY6	ZFP28	Zinc finger protein 28 homolog	ZFP28	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q07352	ZFP36L1	mRNA decay activator protein ZFP36L1	ZFP36L1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BRR0	ZKSCAN3	Zinc finger protein with KRAB and SCAN domains 3	ZNF306	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O95789	ZMYM6	Zinc finger MYM-type protein 6	ZMYM6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15326	ZMYND11	Zinc finger MYND domain-containing protein 11	ZMYND11	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9ULU4	ZMYND8	MYND-type zinc finger-containing chromatin reader ZMYND8	PRKCBP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P17014	ZNF12	Zinc finger protein 12	ZNF12	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P52740	ZNF132	Zinc finger protein 132	ZNF132	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q13106	ZNF154	Zinc finger protein 154	ZNF154	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P17020	ZNF16	Zinc finger protein 16	ZNF16	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P17021	ZNF17	Zinc finger protein 17	ZNF17	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15697	ZNF174	Zinc finger protein 174	ZNF174	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P17025	ZNF182	Zinc finger protein 182	ZNF182	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BSG1	ZNF2	Zinc finger protein 2	ZNF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P98182	ZNF200	Zinc finger protein 200	ZNF200	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O43670	ZNF207	BUB3-interacting and GLEBS motif-containing protein ZNF207	ZNF207	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9P2Y4	ZNF219	Zinc finger protein 219	ZNF219	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q16600	ZNF239	Zinc finger protein 239	ZNF239	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O75346	ZNF253	Zinc finger protein 253	ZNF253	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q14584	ZNF266	Zinc finger protein 266	ZNF266	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
-Q14586	ZNF267	Zinc finger protein 267	ZNF267	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N554	ZNF276	Zinc finger protein 276	ZNF276	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9HBT8	ZNF286A	Zinc finger protein 286A	ZNF286	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q5VUA4	ZNF318	Zinc finger protein 318	ZNF318	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9P2F9	ZNF319	Zinc finger protein 319	ZNF319	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q5BKZ1	ZNF326	DBIRD complex subunit ZNF326	ZNF326	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96PM9	ZNF385A	Zinc finger protein 385A	ZNF385A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96IQ9	ZNF414	Zinc finger protein 414	ZNF414	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q09FC8	ZNF415	Zinc finger protein 415	ZNF415	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96HQ0	ZNF419	Zinc finger protein 419	ZNF419	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BUY5	ZNF426	Zinc finger protein 426	ZNF426	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N7K0	ZNF433	Zinc finger protein 433	ZNF433	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N8Z8	ZNF441	Zinc finger protein 441	ZNF441	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9BX82	ZNF471	Zinc finger protein 471	ZNF471	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N8L2	ZNF491	Zinc finger protein 491	ZNF491	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q6ZNH5	ZNF497	Zinc finger protein 497	ZNF497	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8NB42	ZNF527	Zinc finger protein 527	ZNF527	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q6P280	ZNF529	Zinc finger protein 529	ZNF529	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q7Z340	ZNF551	Zinc finger protein 551	ZNF551	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96NG5	ZNF558	Zinc finger protein 558	ZNF558	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q5MCW4	ZNF569	Zinc finger protein 569	ZNF569	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q68EA5	ZNF57	Zinc finger protein 57	ZNF57	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q86YE8	ZNF573	Zinc finger protein 573	ZNF573	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q86XF7	ZNF575	Zinc finger protein 575	ZNF575	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8NAF0	ZNF579	Zinc finger protein 579	ZNF579	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9UK33	ZNF580	Zinc finger protein 580	ZNF580	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q6PF04	ZNF613	Zinc finger protein 613	ZNF613	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8N2I2	ZNF619	Zinc finger protein 619	ZNF619	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q2M218	ZNF630	Zinc finger protein 630	ZNF630	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-O95780	ZNF682	Zinc finger protein 682	ZNF682	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q8IZ20	ZNF683	Tissue-resident T-cell transcription regulator protein ZNF683	ZNF683	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P0C7X2	ZNF688	Zinc finger protein 688	ZNF688	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q5VV52	ZNF691	Zinc finger protein 691	ZNF691	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P17097	ZNF7	Zinc finger protein 7	ZNF7	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9NV72	ZNF701	Zinc finger protein 701	ZNF701	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H7S9	ZNF703	Zinc finger protein 703	ZNF703	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-P51815	ZNF75D	Zinc finger protein 75D	ZNF75	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H5H4	ZNF768	Zinc finger protein 768	ZNF768	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15935	ZNF77	Zinc finger protein 77	ZNF77	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96BV0	ZNF775	Zinc finger protein 775	ZNF775	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96MU6	ZNF778	Zinc finger protein 778	ZNF778	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-A8K8V0	ZNF785	Zinc finger protein 785	ZNF785	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q15937	ZNF79	Zinc finger protein 79	ZNF79	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96NB3	ZNF830	Zinc finger protein 830	CCDC16	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9H4T2	ZSCAN16	Zinc finger and SCAN domain-containing protein 16	ZNF435	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q7Z7L9	ZSCAN2	Zinc finger and SCAN domain-containing protein 2	ZSCAN2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q9Y5A6	ZSCAN21	Zinc finger and SCAN domain-containing protein 21	ZSCAN21	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q6NSZ9	ZSCAN25	Zinc finger and SCAN domain-containing protein 25	ZNF498	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
-Q96AP4	ZUP1	Zinc finger-containing ubiquitin peptidase 1	C6orf113	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
 P13686	ACP5	Tartrate-resistant acid phosphatase type 5	TR-AP	enroth_2014_EUR	enroth_2014_25147954	FALSE	FALSE
 P35318	ADM	Pro-adrenomedullin	ADM	enroth_2014_EUR	enroth_2014_25147954	FALSE	FALSE
 P15514	AREG	Amphiregulin	AR	enroth_2014_EUR	enroth_2014_25147954	FALSE	FALSE
@@ -2205,3 +1527,687 @@ P04004	VTN	Vitronectin	P04004	liu_2015_EUR	liu_2015_25652787	FALSE	FALSE
 P04275	VWF	von Willebrand factor	P04275	liu_2015_EUR	liu_2015_25652787	FALSE	FALSE
 O14980	XPO1	Exportin-1	O14980	liu_2015_EUR	liu_2015_25652787	FALSE	FALSE
 P63104	YWHAZ	14-3-3 protein zeta/delta	P63104	liu_2015_EUR	liu_2015_25652787	FALSE	FALSE
+Q9NY61	AATF	Protein AATF	AATF	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O15440	ABCC5	ATP-binding cassette sub-family C member 5	MRP5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P60709	ACTB	Actin, cytoplasmic 1	BACT; ACTB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P51825	AFF1	AF4/FMR2 family member 1	AFF1.150kDa; AFF1.50kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P51816	AFF2	AF4/FMR2 family member 2	AFF2.50kDa; AFF2.150kDa; AFF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P51826	AFF3	AF4/FMR2 family member 3	AFF3.50kDa; AFF3.150kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43918	AIRE	Autoimmune regulator	AIRE	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q02040	AKAP17A	A-kinase anchor protein 17A	SFRS17A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P31749	AKT1	RAC-alpha serine/threonine-protein kinase	Akt1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P31751	AKT2	RAC-beta serine/threonine-protein kinase	Akt2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H161	ALX4	Homeobox protein aristaless-like 4	ALX4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q7Z2E3	APTX	Aprataxin	APTX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N6H7	ARFGAP2	ADP-ribosylation factor GTPase-activating protein 2	ZNF289	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8IVW6	ARID3B	AT-rich interactive domain-containing protein 3B	ARID3B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P18846	ATF1	Cyclic AMP-dependent transcription factor ATF-1	ATF5.25-50; ATF5.50-75	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P15336	ATF2	Cyclic AMP-dependent transcription factor ATF-2	ATF-2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y4P1	ATG4B	Cysteine protease ATG4B	ATG4B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q99700	ATXN2	Ataxin-2	ATXN2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NY43	BARHL2	BarH-like 2 homeobox protein	BARHL2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NRL2	BAZ1A	Bromodomain adjacent to zinc finger domain protein 1A	BAZ1A.40kDa; BAZ1A.170kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H2G9	BLZF1	Golgin-45	BLZF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q6ZN30	BNC2	Zinc finger protein basonuclin-2	BNC2.70kDa; BNC2.100-200kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y2F9	BTBD3	BTB/POZ domain-containing protein 3	BTBD3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P20290	BTF3	Transcription factor BTF3	BTF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O75081	CBFA2T3	Transcriptional corepressor CBFA2T3	CBFA2T3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N7E2	CBLL2	E3 ubiquitin-protein ligase CBLL2	ZNF645	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P24385	CCND1	G1/S-specific cyclin-D1	Cyclin.D1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P30281	CCND3	G1/S-specific cyclin-D3	Cyclin.D3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P50991	CCT4	T-complex protein 1 subunit delta	CCT4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P24941	CDK2	Cyclin-dependent kinase 2	CDK2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P42772	CDKN2B	Cyclin-dependent kinase 4 inhibitor B	P15.INK4B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P47902	CDX1	Homeobox protein CDX-1	CDX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q99626	CDX2	Homeobox protein CDX-2	CDX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y6A4	CFAP20	Cilia- and flagella-associated protein 20	C16orf80	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q86WJ1	CHD1L	ATP-dependent chromatin remodeler CHD1L	CHD1L	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O76071	CIAO1	Probable cytosolic iron-sulfur protein assembly protein CIAO1	CIAO1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BT09	CNPY3	Protein canopy homolog 3	TNRC5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P05997	COL5A2	Collagen alpha-2(V) chain	Collagen.Type.V.(COL5A2).220kDa; Collagen.Type.V.(COL5A2).140kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P61201	COPS2	COP9 signalosome complex subunit 2	COPS2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q92905	COPS5	COP9 signalosome complex subunit 5	COPS5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P31146	CORO1A	Coronin-1A	CORO1A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P16220	CREB1	Cyclic AMP-responsive element-binding protein 1	CREB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q02930	CREB5	Cyclic AMP-responsive element-binding protein 5	CREB5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P46109	CRKL	Crk-like protein	CRKL	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P35222	CTNNB1	Catenin beta-1	CTNNB1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BTC0	DIDO1	Death-inducer obliterator 1	DIDO1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y222	DMTF1	Cyclin-D-binding Myb-like transcription factor 1	DMTF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8WVS4	DYNC2I1	Cytoplasmic dynein 2 intermediate chain 1	WDR60	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q66K89	E4F1	Transcription factor E4F1	E4F1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UH73	EBF1	Transcription factor COE1	EBF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9HAK2	EBF2	Transcription factor COE2	EBF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O00418	EEF2K	Eukaryotic elongation factor 2 kinase	p-EF2k(S366)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P98172	EFNB1	Ephrin-B1	p-EphrinB.(Y324/329)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q06889	EGR3	Early growth response protein 3	EGR3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q05215	EGR4	Early growth response protein 4	EGR4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q13541	EIF4EBP1	Eukaryotic translation initiation factor 4E-binding protein 1	4E-BP1; p-4E-BP1.(T37/46).10kDa; p-4E-BP1.(T37/46).50kDa; p-4E-BP1.(S65)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P32519	ELF1	ETS-related transcription factor Elf-1	ELF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15723	ELF2	ETS-related transcription factor Elf-2	ELF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q99607	ELF4	ETS-related transcription factor Elf-4	ELF4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O00472	ELL2	RNA polymerase II elongation factor ELL2	ELL2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q04743	EMX2	Homeobox protein EMX2	EMX2.25kDa; EMX2.60kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P06733	ENO1	Alpha-enolase	ENO1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O95936	EOMES	Eomesodermin homolog	EOMES	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q09472	EP300	Histone acetyltransferase p300	EP300	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P04626	ERBB2	Receptor tyrosine-protein kinase erbB-2	ERBB2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P21860	ERBB3	Receptor tyrosine-protein kinase erbB-3	ErbB3(1B2)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P19447	ERCC3	General transcription and DNA repair factor IIH helicase/translocase subunit XPB	ERCC3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P11308	ERG	Transcriptional regulator ERG	ERG	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P03372	ESR1	Estrogen receptor	ESR1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q92731	ESR2	Estrogen receptor beta	ESR2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P62508	ESRRG	Estrogen-related receptor gamma	ESRRG	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P15036	ETS2	Protein C-ets-2	ETS2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P50549	ETV1	ETS translocation variant 1	ETV1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P41162	ETV3	ETS translocation variant 3	ETV3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P43268	ETV4	ETS translocation variant 4	ETV4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q99502	EYA1	Protein phosphatase EYA1	EYA1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P35555	FBN1	Fibrillin-1	FBN1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O60548	FOXD2	Forkhead box protein D2	FOXD2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q12947	FOXF2	Forkhead box protein F2	FOXF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q12951	FOXI1	Forkhead box protein I1	FOXI1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q92949	FOXJ1	Forkhead box protein J1	FOXJ1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9P0K8	FOXJ2	Forkhead box protein J2	FOXJ2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P32314	FOXN2	Forkhead box protein N2	FOXN2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q12778	FOXO1	Forkhead box protein O1	p-FoxO1.(S319)/FoxO4.(S262)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43524	FOXO3	Forkhead box protein O3	FOXO3A.50-75; FOXO3A.25-50; FOXO3A.<25; FOXO3A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P98177	FOXO4	Forkhead box protein O4	FOXO4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q13480	GAB1	GRB2-associated-binding protein 1	GAB1[Y423].115kDa; p-GAB1.Y627.Ab-6.115kDa; GAB1[Y423].76kDa; p-GAB1.Y659.Ab-13.115kDa; p-GAB1.Y659.Ab-13.77kDa; p-GAB1.Y627.Ab-6.77kDa; GAB1.Ab-12.115kDa; GAB1.Ab-12.77kDa; GAB1.Ab-9.77kDa; GAB1.Ab-9.115kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P04406	GAPDH	Glyceraldehyde-3-phosphate dehydrogenase	GAPDH	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P43694	GATA4	Transcription factor GATA-4	GATA4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8WXI9	GATAD2B	Transcriptional repressor p66-beta	GATAD2B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q5VTD9	GFI1B	Zinc finger protein Gfi-1b	GFI1B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O15499	GSC2	Homeobox protein goosecoid-2	GSCL	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P49840	GSK3A	Glycogen synthase kinase-3 alpha	GSK3alpha; p-GSK3alpha.(S21)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P49841	GSK3B	Glycogen synthase kinase-3 beta	GSK3beta	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P52655	GTF2A1	Transcription initiation factor IIA subunit 1	GTF2A1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P52657	GTF2A2	Transcription initiation factor IIA subunit 2	GTF2A2.75kDa; GTF2A2.50kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P13984	GTF2F2	General transcription factor IIF subunit 2	GTF2F2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H116	GZF1	GDNF-inducible zinc finger protein 1	GZF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P51610	HCFC1	Host cell factor 1	HCFC1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q14526	HIC1	Hypermethylated in cancer 1 protein	HIC1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H2X6	HIPK2	Homeodomain-interacting protein kinase 2	HIPK2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P15822	HIVEP1	Zinc finger protein 40	HIVEP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q14774	HLX	H2.0-like homeobox protein	HLX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O15347	HMGB3	High mobility group protein B3	HMGB3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NP08	HMX1	Homeobox protein HMX1	HMX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43364	HOXA2	Homeobox protein Hox-A2	HOXA2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P09629	HOXB7	Homeobox protein Hox-B7	HOXB7	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P09630	HOXC6	Homeobox protein Hox-C6	HOXC6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9GZZ0	HOXD1	Homeobox protein Hox-D1	HOXD1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P28358	HOXD10	Homeobox protein Hox-D10	HOXD10.25kDa; HOXD10.75kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P28356	HOXD9	Homeobox protein Hox-D9	HOXD9	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43593	HR	Lysine-specific demethylase hairless	HR	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P42858	HTT	Huntingtin	HTT	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P38935	IGHMBP2	DNA-binding protein SMUBP-2	IGHMBP2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UKT9	IKZF3	Zinc finger protein Aiolos	IKZF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H2S9	IKZF4	Zinc finger protein Eos	IKZF4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H5V7	IKZF5	Zinc finger protein Pegasus	IKZF5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q01101	INSM1	Insulinoma-associated protein 1	INSM1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15306	IRF4	Interferon regulatory factor 4	IRF4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q13568	IRF5	Interferon regulatory factor 5	IRF5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P35568	IRS1	Insulin receptor substrate 1	p-IRS-1.(S612)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P78414	IRX1	Iroquois-class homeodomain protein IRX-1	IRX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96A47	ISL2	Insulin gene enhancer protein ISL-2	ISL2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P17275	JUNB	Transcription factor JunB	JunB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8WYB5	KAT6B	Histone acetyltransferase KAT6B	MYST4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y2K7	KDM2A	Lysine-specific demethylase 2A	FBXL11	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8NHM5	KDM2B	Lysine-specific demethylase 2B	FBXL10	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q14145	KEAP1	Kelch-like ECH-associated protein 1	KEAP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8TD94	KLF14	Krueppel-like factor 14	KLF14	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P57682	KLF3	Krueppel-like factor 3	KLF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q53G59	KLHL12	Kelch-like protein 12	KLHL12	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9P2G3	KLHL14	Kelch-like protein 14	KLHL14	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UHB6	LIMA1	LIM domain and actin-binding protein 1	LIMA1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8TE12	LMX1A	LIM homeobox transcription factor 1-alpha	LMX1A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15048	LRRC14	Leucine-rich repeat-containing protein 14	LRRC14	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q86X29	LSR	Lipolysis-stimulated lipoprotein receptor	LSR	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P43362	MAGEA9	Melanoma-associated antigen 9	MAGEA9	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H8J5	MANSC1	MANSC domain-containing protein 1	MANSC1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q02750	MAP2K1	Dual specificity mitogen-activated protein kinase kinase 1	p-Mek(1/2).(S217/221)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P28482	MAPK1	Mitogen-activated protein kinase 1	Erk(1/2)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P56270	MAZ	Myc-associated zinc finger protein	MAZ	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UIS9	MBD1	Methyl-CpG-binding domain protein 1	MBD1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q03112	MECOM	Histone-lysine N-methyltransferase MECOM	EVI1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q93074	MED12	Mediator of RNA polymerase II transcription subunit 12	MED12.70kDa; MED12.50kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y2X0	MED16	Mediator of RNA polymerase II transcription subunit 16	MED16	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NVC6	MED17	Mediator of RNA polymerase II transcription subunit 17	CRSP6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P08581	MET	Hepatocyte growth factor receptor	Met; Met.(c-Met).135kDa; Met.(c-Met).156kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q7Z3K6	MIER3	Mesoderm induction early response protein 3	MIER3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8IYA7	MKX	Homeobox protein Mohawk	MKX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NP71	MLXIPL	Carbohydrate-responsive element-binding protein	MLXIPL	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P50219	MNX1	Motor neuron and pancreas homeobox protein 1	HLXB9.60kDa; HLXB9.50kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N594	MPND	MPN domain-containing protein	MPND	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P82914	MRPS15	Small ribosomal subunit protein uS15m	MRPS15	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N5Y2	MSL3	MSL complex subunit 3	MSL3L1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O94776	MTA2	Metastasis-associated protein MTA2	MTA2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y483	MTF2	Metal-response element-binding transcription factor 2	MTF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P42345	MTOR	Serine/threonine-protein kinase mTOR	mTOR	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P10242	MYB	Transcriptional activator Myb	MYB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P01106	MYC	Myc proto-oncogene protein	c-Myc	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96BF6	NACC2	Nucleus accumbens-associated protein 2	BTBD14A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P55160	NCKAP1L	Nck-associated protein 1-like	NCKAP1L.150kDa; NCKAP1L.75kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y4A8	NFE2L3	Nuclear factor erythroid 2-related factor 3	NFE2L3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P08651	NFIC	Nuclear factor 1 C-type	NFIC	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q14938	NFIX	Nuclear factor 1 X-type	NFIX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P19838	NFKB1	Nuclear factor NF-kappa-B p105 subunit	NFKB1.150kDa; NFKB1.75kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P25963	NFKBIA	NF-kappa-B inhibitor alpha	IkBalpha	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P78367	NKX3-2	Homeobox protein Nkx-3.2	NKX3-2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O60393	NOBOX	Homeobox protein NOBOX	NOBOX	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q99742	NPAS1	Neuronal PAS domain-containing protein 1	NPAS1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P13056	NR2C1	Nuclear receptor subfamily 2 group C member 1	NR2C1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P24468	NR2F2	COUP transcription factor 2	NR2F2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P10588	NR2F6	Nuclear receptor subfamily 2 group F member 6	NR2F6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O96028	NSD2	Histone-lysine N-methyltransferase NSD2	WHSC1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O95948	ONECUT2	One cut domain family member 2	ONECUT2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8TAX0	OSR1	Protein odd-skipped-related 1	OSR1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O14753	OVOL1	Putative transcription factor Ovo-like 1	OVOL1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96IZ0	PAWR	PRKC apoptosis WT1 regulator protein	PAWR	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P26367	PAX6	Paired box protein Pax-6	PAX6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q06710	PAX8	Paired box protein Pax-8	PAX8	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P40425	PBX2	Pre-B-cell leukemia transcription factor 2	PBX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q3KNV8	PCGF3	Polycomb group RING finger protein 3	PCGF3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15118	PDK1	[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 1, mitochondrial	PDK1; p-PDK1.(S241)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UIL8	PHF11	PHD finger protein 11	NY-REN-34	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P27986	PIK3R1	Phosphatidylinositol 3-kinase regulatory subunit alpha	PI3K(p85)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P19174	PLCG1	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-1	PLCgamma1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P16885	PLCG2	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-2	PLCgamma2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43660	PLRG1	Pleiotropic regulator 1	PLRG1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q16633	POU2AF1	POU domain class 2-associating factor 1	POU2AF1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9GZV8	PRDM14	PR domain zinc finger protein 14	PRDM14	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q13029	PRDM2	PR domain zinc finger protein 2	PRDM2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9HCU5	PREB	Guanine nucleotide-exchange factor SEC12	PREB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P05771	PRKCB	Protein kinase C beta type	p-PKC(pan)betaII(S660).100kDa; p-PKC(pan)betaII(S660).80kDa; p-PKC(pan)betaII(S660).60kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P05129	PRKCG	Protein kinase C gamma type	p-PKCpan.(gammaT514)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q05513	PRKCZ	Protein kinase C zeta type	PKCzeta(C24); p-PKCzeta/lambda.(Y410/403)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O60678	PRMT3	Protein arginine N-methyltransferase 3	PRMT3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O75475	PSIP1	PC4 and SFRS1-interacting protein	PSIP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P60484	PTEN	Phosphatidylinositol 3,4,5-trisphosphate 3-phosphatase and dual-specificity protein phosphatase PTEN	p-PTEN.(S380)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q05397	PTK2	Focal adhesion kinase 1	FAK	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q00577	PURA	Transcriptional activator protein Pur-alpha	PURA	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P63000	RAC1	Ras-related C3 botulinum toxin substrate 1	RAC1/2/3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P15153	RAC2	Ras-related C3 botulinum toxin substrate 2	RAC1/2/3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P60763	RAC3	Ras-related C3 botulinum toxin substrate 3	RAC1/2/3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P04049	RAF1	RAF proto-oncogene serine/threonine-protein kinase	p-Raf.(S338); Raf(c-); p-Raf.(S259)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96IS3	RAX2	Retina and anterior neural fold homeobox protein 2	RAXL1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P06400	RB1	Retinoblastoma-associated protein	RB1; p-Rb.(S807,811)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NYW8	RBAK	RB-associated KRAB zinc finger protein	RBAK	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UKL0	RCOR1	REST corepressor 1	RCOR1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q04864	REL	Proto-oncogene c-Rel	REL	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q04206	RELA	Transcription factor p65	p65	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P61586	RHOA	Transforming protein RhoA	RhoA	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P08134	RHOC	Rho-related GTP-binding protein RhoC	RhoC	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H6W3	RIOX1	Ribosomal oxygenase 1	C14orf169	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P62753	RPS6	Small ribosomal subunit protein eS6	p-S6.ribosomal.protein.(S240/244); p-S6RibProt.(S235/236)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P23443	RPS6KB1	Ribosomal protein S6 kinase beta-1	P70.S6.Kinase; p-P70.S6.Kinase.(T421/S424)	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NYV6	RRN3	RNA polymerase I-specific transcription initiation factor RRN3	RRN3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y224	RTRAF	tRNA-splicing ligase complex subunit RTRAF	C14orf166	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q7L099	RUFY3	Protein RUFY3	RUFY3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q01196	RUNX1	Runt-related transcription factor 1	RUNX1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q13950	RUNX2	Runt-related transcription factor 2	RUNX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UHR5	SAP30BP	SAP30-binding protein	SAP30BP	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UN30	SCML1	Sex comb on midleg-like protein 1	SCML1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BWW7	SCRT1	Transcriptional repressor scratch 1	SCRT1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H3S1	SEMA4A	Semaphorin-4A	SEMA4A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BYW2	SETD2	Histone-lysine N-methyltransferase SETD2	SETD2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NVD3	SETD4	SET domain-containing protein 4	SETD4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O00141	SGK1	Serine/threonine-protein kinase Sgk1	p-SGK.(T256); p-SGK.(S422); SGK	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q14190	SIM2	Single-minded homolog 2	SIM2.70kDa; SIM2.55kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P48066	SLC6A11	Sodium- and chloride-dependent GABA transporter 3	GATA4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q14683	SMC1A	Structural maintenance of chromosomes protein 1A	SMC1A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P35716	SOX11	Transcription factor SOX-11	SOX11	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UN79	SOX13	Transcription factor SOX-13	SOX13	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q06945	SOX4	Transcription factor SOX-4	SOX4	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P08047	SP1	Transcription factor Sp1	SP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P23497	SP100	Nuclear autoantigen Sp-100	SP100.90kDa; SP100.50kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NRA0	SPHK2	Sphingosine kinase 2	SPHK2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P12931	SRC	Proto-oncogene tyrosine-protein kinase Src	Src.A070; p-Src.(Y527); Src.A069; Src.A072; Src.A071	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P42224	STAT1	Signal transducer and activator of transcription 1-alpha/beta	STAT1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P40763	STAT3	Signal transducer and activator of transcription 3	STAT3B; STAT3A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P42229	STAT5A	Signal transducer and activator of transcription 5A	STAT5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P51692	STAT5B	Signal transducer and activator of transcription 5B	STAT5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8WXH0	SYNE2	Nesprin-2	SYNE2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O75478	TADA2A	Transcriptional adapter 2-alpha	TADA2L	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q92804	TAF15	TATA-binding protein-associated factor 2N	TAF15	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96BW9	TAMM41	Phosphatidate cytidylyltransferase, mitochondrial	C3orf31	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q92844	TANK	TRAF family member-associated NF-kappa-B activator	TANK	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q13148	TARDBP	TAR DNA-binding protein 43	TARDBP	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O75333	TBX10	T-box transcription factor TBX10	TBX10	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O60806	TBX19	T-box transcription factor TBX19	TBX19	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UL17	TBX21	T-box transcription factor TBX21	TBX21	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q99593	TBX5	T-box transcription factor TBX5	TBX5	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43680	TCF21	Transcription factor 21	TCF21	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P05549	TFAP2A	Transcription factor AP-2-alpha	TFAP2; TFAP2A	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q92481	TFAP2B	Transcription factor AP-2-beta	TFAP2B	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8WVM0	TFB1M	Dimethyladenosine transferase 1, mitochondrial	TFB1M	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NZI6	TFCP2L1	Transcription factor CP2-like protein 1	TFCP2L1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q01085	TIAL1	Nucleolysin TIAR	TIAL1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43763	TLX2	T-cell leukemia homeobox protein 2	TLX2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BXQ6	TMEM121B	Transmembrane protein 121B	CECR6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q4ZIN3	TMEM259	Membralin	C19orf6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P04637	TP53	Cellular tumor antigen p53	p53	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O60858	TRIM13	E3 ubiquitin-protein ligase TRIM13	TRIM13.50kDa; TRIM13.25kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q12899	TRIM26	Tripartite motif-containing protein 26	TRIM26	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BYJ4	TRIM34	E3 ubiquitin-protein ligase TRIM34	TRIM34	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BRZ2	TRIM56	E3 ubiquitin-protein ligase TRIM56	TRIM56	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P50607	TUB	Tubby protein homolog	TUB	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O00294	TULP1	Tubby-related protein 1	TULP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15672	TWIST1	Twist-related protein 1	TWIST1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96PU4	UHRF2	E3 ubiquitin-protein ligase UHRF2	URF2; UHRF2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NZ43	USE1	Vesicle transport protein USE1	MDS032	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15906	VPS72	Vacuolar protein sorting-associated protein 72 homolog	VPS72	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P43403	ZAP70	Tyrosine-protein kinase ZAP-70	ZAP70	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43829	ZBTB14	Zinc finger and BTB domain-containing protein 14	ZFP161	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q99592	ZBTB18	Zinc finger and BTB domain-containing protein 18	ZNF238	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O15209	ZBTB22	Zinc finger and BTB domain-containing protein 22	ZBTB22	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q86T24	ZBTB33	Transcriptional regulator Kaiso	ZBTB33	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15916	ZBTB6	Zinc finger and BTB domain-containing protein 6	ZBTB6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H8U3	ZFAND3	AN1-type zinc finger protein 3	ZFAND3	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q6P2D0	ZFP1	Zinc finger protein 1 homolog	ZFP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8NHY6	ZFP28	Zinc finger protein 28 homolog	ZFP28	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q07352	ZFP36L1	mRNA decay activator protein ZFP36L1	ZFP36L1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BRR0	ZKSCAN3	Zinc finger protein with KRAB and SCAN domains 3	ZNF306	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O95789	ZMYM6	Zinc finger MYM-type protein 6	ZMYM6	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15326	ZMYND11	Zinc finger MYND domain-containing protein 11	ZMYND11	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9ULU4	ZMYND8	MYND-type zinc finger-containing chromatin reader ZMYND8	PRKCBP1	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P17014	ZNF12	Zinc finger protein 12	ZNF12	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P52740	ZNF132	Zinc finger protein 132	ZNF132	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q13106	ZNF154	Zinc finger protein 154	ZNF154	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P17020	ZNF16	Zinc finger protein 16	ZNF16	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P17021	ZNF17	Zinc finger protein 17	ZNF17	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15697	ZNF174	Zinc finger protein 174	ZNF174	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P17025	ZNF182	Zinc finger protein 182	ZNF182	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P98182	ZNF200	Zinc finger protein 200	ZNF200	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O43670	ZNF207	BUB3-interacting and GLEBS motif-containing protein ZNF207	ZNF207	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9P2Y4	ZNF219	Zinc finger protein 219	ZNF219	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q16600	ZNF239	Zinc finger protein 239	ZNF239	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O75346	ZNF253	Zinc finger protein 253	ZNF253	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q14584	ZNF266	Zinc finger protein 266	ZNF266.50-75; ZNF266.75-100	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q14586	ZNF267	Zinc finger protein 267	ZNF267	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N554	ZNF276	Zinc finger protein 276	ZNF276	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9HBT8	ZNF286A	Zinc finger protein 286A	ZNF286	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q5VUA4	ZNF318	Zinc finger protein 318	ZNF318	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9P2F9	ZNF319	Zinc finger protein 319	ZNF319	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96IQ9	ZNF414	Zinc finger protein 414	ZNF414	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q09FC8	ZNF415	Zinc finger protein 415	ZNF415	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96HQ0	ZNF419	Zinc finger protein 419	ZNF419	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9BUY5	ZNF426	Zinc finger protein 426	ZNF426	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N7K0	ZNF433	Zinc finger protein 433	ZNF433	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N8Z8	ZNF441	Zinc finger protein 441	ZNF441	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N8L2	ZNF491	Zinc finger protein 491	ZNF491	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q6ZNH5	ZNF497	Zinc finger protein 497	ZNF497	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8NB42	ZNF527	Zinc finger protein 527	ZNF527	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q6P280	ZNF529	Zinc finger protein 529	ZNF529	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q7Z340	ZNF551	Zinc finger protein 551	ZNF551	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96NG5	ZNF558	Zinc finger protein 558	ZNF558	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q5MCW4	ZNF569	Zinc finger protein 569	ZNF569	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q68EA5	ZNF57	Zinc finger protein 57	ZNF57	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q86YE8	ZNF573	Zinc finger protein 573	ZNF573	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q86XF7	ZNF575	Zinc finger protein 575	ZNF575	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8NAF0	ZNF579	Zinc finger protein 579	ZNF579	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9UK33	ZNF580	Zinc finger protein 580	ZNF580	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q6PF04	ZNF613	Zinc finger protein 613	ZNF613	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8N2I2	ZNF619	Zinc finger protein 619	ZNF619	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q2M218	ZNF630	Zinc finger protein 630	ZNF630	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+O95780	ZNF682	Zinc finger protein 682	ZNF682	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q8IZ20	ZNF683	Tissue-resident T-cell transcription regulator protein ZNF683	ZNF683	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P0C7X2	ZNF688	Zinc finger protein 688	ZNF688	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q5VV52	ZNF691	Zinc finger protein 691	ZNF691	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+P17097	ZNF7	Zinc finger protein 7	ZNF7	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NV72	ZNF701	Zinc finger protein 701	ZNF701	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H7S9	ZNF703	Zinc finger protein 703	ZNF703	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H5H4	ZNF768	Zinc finger protein 768	ZNF768	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15935	ZNF77	Zinc finger protein 77	ZNF77	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96BV0	ZNF775	Zinc finger protein 775	ZNF775	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96MU6	ZNF778	Zinc finger protein 778	ZNF778	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+A8K8V0	ZNF785	Zinc finger protein 785	ZNF785.75kDa; ZNF785.50kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q15937	ZNF79	Zinc finger protein 79	ZNF79	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q96IR2	ZNF845	Zinc finger protein 845	LOC91664.100kDa; LOC91664.60kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9H4T2	ZSCAN16	Zinc finger and SCAN domain-containing protein 16	ZSCAN16	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q7Z7L9	ZSCAN2	Zinc finger and SCAN domain-containing protein 2	ZSCAN2	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9Y5A6	ZSCAN21	Zinc finger and SCAN domain-containing protein 21	ZSCAN21.60kDa; ZSCAN21.10kDa	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q3MJ62	ZSCAN23	Zinc finger and SCAN domain-containing protein 23	ZSCAN23	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q6NSZ9	ZSCAN25	Zinc finger and SCAN domain-containing protein 25	ZNF498	stark_2014_AFR	stark_2014_24699359	FALSE	FALSE
+Q9NY61	AATF	Protein AATF	AATF	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O15440	ABCC5	ATP-binding cassette sub-family C member 5	MRP5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P60709	ACTB	Actin, cytoplasmic 1	BACT; ACTB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P51825	AFF1	AF4/FMR2 family member 1	AFF1.150kDa; AFF1.50kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P51816	AFF2	AF4/FMR2 family member 2	AFF2.50kDa; AFF2.150kDa; AFF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P51826	AFF3	AF4/FMR2 family member 3	AFF3.50kDa; AFF3.150kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43918	AIRE	Autoimmune regulator	AIRE	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q02040	AKAP17A	A-kinase anchor protein 17A	SFRS17A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P31749	AKT1	RAC-alpha serine/threonine-protein kinase	Akt1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P31751	AKT2	RAC-beta serine/threonine-protein kinase	Akt2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H161	ALX4	Homeobox protein aristaless-like 4	ALX4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q7Z2E3	APTX	Aprataxin	APTX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8N6H7	ARFGAP2	ADP-ribosylation factor GTPase-activating protein 2	ZNF289	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8IVW6	ARID3B	AT-rich interactive domain-containing protein 3B	ARID3B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P18846	ATF1	Cyclic AMP-dependent transcription factor ATF-1	ATF5.25-50; ATF5.50-75	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P15336	ATF2	Cyclic AMP-dependent transcription factor ATF-2	ATF-2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y4P1	ATG4B	Cysteine protease ATG4B	ATG4B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q99700	ATXN2	Ataxin-2	ATXN2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NY43	BARHL2	BarH-like 2 homeobox protein	BARHL2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NRL2	BAZ1A	Bromodomain adjacent to zinc finger domain protein 1A	BAZ1A.40kDa; BAZ1A.170kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H2G9	BLZF1	Golgin-45	BLZF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q6ZN30	BNC2	Zinc finger protein basonuclin-2	BNC2.70kDa; BNC2.100-200kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y2F9	BTBD3	BTB/POZ domain-containing protein 3	BTBD3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P20290	BTF3	Transcription factor BTF3	BTF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O75081	CBFA2T3	Transcriptional corepressor CBFA2T3	CBFA2T3	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+Q8N7E2	CBLL2	E3 ubiquitin-protein ligase CBLL2	ZNF645	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P24385	CCND1	G1/S-specific cyclin-D1	Cyclin.D1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P30281	CCND3	G1/S-specific cyclin-D3	Cyclin.D3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P50991	CCT4	T-complex protein 1 subunit delta	CCT4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P24941	CDK2	Cyclin-dependent kinase 2	CDK2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P42772	CDKN2B	Cyclin-dependent kinase 4 inhibitor B	P15.INK4B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P47902	CDX1	Homeobox protein CDX-1	CDX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q99626	CDX2	Homeobox protein CDX-2	CDX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y6A4	CFAP20	Cilia- and flagella-associated protein 20	C16orf80	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q86WJ1	CHD1L	ATP-dependent chromatin remodeler CHD1L	CHD1L	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O76071	CIAO1	Probable cytosolic iron-sulfur protein assembly protein CIAO1	CIAO1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BT09	CNPY3	Protein canopy homolog 3	TNRC5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P05997	COL5A2	Collagen alpha-2(V) chain	Collagen.Type.V.(COL5A2).220kDa; Collagen.Type.V.(COL5A2).140kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P61201	COPS2	COP9 signalosome complex subunit 2	COPS2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q92905	COPS5	COP9 signalosome complex subunit 5	COPS5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P31146	CORO1A	Coronin-1A	CORO1A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P16220	CREB1	Cyclic AMP-responsive element-binding protein 1	CREB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q02930	CREB5	Cyclic AMP-responsive element-binding protein 5	CREB5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P46109	CRKL	Crk-like protein	CRKL	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P35222	CTNNB1	Catenin beta-1	CTNNB1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BTC0	DIDO1	Death-inducer obliterator 1	DIDO1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y222	DMTF1	Cyclin-D-binding Myb-like transcription factor 1	DMTF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8WVS4	DYNC2I1	Cytoplasmic dynein 2 intermediate chain 1	WDR60	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q66K89	E4F1	Transcription factor E4F1	E4F1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UH73	EBF1	Transcription factor COE1	EBF1	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+Q9HAK2	EBF2	Transcription factor COE2	EBF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O00418	EEF2K	Eukaryotic elongation factor 2 kinase	p-EF2k(S366)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P98172	EFNB1	Ephrin-B1	p-EphrinB.(Y324/329)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q06889	EGR3	Early growth response protein 3	EGR3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q05215	EGR4	Early growth response protein 4	EGR4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q13541	EIF4EBP1	Eukaryotic translation initiation factor 4E-binding protein 1	4E-BP1; p-4E-BP1.(T37/46).10kDa; p-4E-BP1.(T37/46).50kDa; p-4E-BP1.(S65)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P32519	ELF1	ETS-related transcription factor Elf-1	ELF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15723	ELF2	ETS-related transcription factor Elf-2	ELF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q99607	ELF4	ETS-related transcription factor Elf-4	ELF4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O00472	ELL2	RNA polymerase II elongation factor ELL2	ELL2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q04743	EMX2	Homeobox protein EMX2	EMX2.25kDa; EMX2.60kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P06733	ENO1	Alpha-enolase	ENO1	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+O95936	EOMES	Eomesodermin homolog	EOMES	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q09472	EP300	Histone acetyltransferase p300	EP300	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P04626	ERBB2	Receptor tyrosine-protein kinase erbB-2	ERBB2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P21860	ERBB3	Receptor tyrosine-protein kinase erbB-3	ErbB3(1B2)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P19447	ERCC3	General transcription and DNA repair factor IIH helicase/translocase subunit XPB	ERCC3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P11308	ERG	Transcriptional regulator ERG	ERG	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P03372	ESR1	Estrogen receptor	ESR1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q92731	ESR2	Estrogen receptor beta	ESR2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P62508	ESRRG	Estrogen-related receptor gamma	ESRRG	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P15036	ETS2	Protein C-ets-2	ETS2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P50549	ETV1	ETS translocation variant 1	ETV1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P41162	ETV3	ETS translocation variant 3	ETV3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P43268	ETV4	ETS translocation variant 4	ETV4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q99502	EYA1	Protein phosphatase EYA1	EYA1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P35555	FBN1	Fibrillin-1	FBN1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O60548	FOXD2	Forkhead box protein D2	FOXD2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q12947	FOXF2	Forkhead box protein F2	FOXF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q12951	FOXI1	Forkhead box protein I1	FOXI1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q92949	FOXJ1	Forkhead box protein J1	FOXJ1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9P0K8	FOXJ2	Forkhead box protein J2	FOXJ2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P32314	FOXN2	Forkhead box protein N2	FOXN2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q12778	FOXO1	Forkhead box protein O1	p-FoxO1.(S319)/FoxO4.(S262)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43524	FOXO3	Forkhead box protein O3	FOXO3A.50-75; FOXO3A.25-50; FOXO3A.<25; FOXO3A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P98177	FOXO4	Forkhead box protein O4	FOXO4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q13480	GAB1	GRB2-associated-binding protein 1	GAB1[Y423].115kDa; p-GAB1.Y627.Ab-6.115kDa; GAB1[Y423].76kDa; p-GAB1.Y659.Ab-13.115kDa; p-GAB1.Y659.Ab-13.77kDa; p-GAB1.Y627.Ab-6.77kDa; GAB1.Ab-12.115kDa; GAB1.Ab-12.77kDa; GAB1.Ab-9.77kDa; GAB1.Ab-9.115kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P04406	GAPDH	Glyceraldehyde-3-phosphate dehydrogenase	GAPDH	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P43694	GATA4	Transcription factor GATA-4	GATA4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8WXI9	GATAD2B	Transcriptional repressor p66-beta	GATAD2B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q5VTD9	GFI1B	Zinc finger protein Gfi-1b	GFI1B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O15499	GSC2	Homeobox protein goosecoid-2	GSCL	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P49840	GSK3A	Glycogen synthase kinase-3 alpha	GSK3alpha; p-GSK3alpha.(S21)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P49841	GSK3B	Glycogen synthase kinase-3 beta	GSK3beta	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P52655	GTF2A1	Transcription initiation factor IIA subunit 1	GTF2A1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P52657	GTF2A2	Transcription initiation factor IIA subunit 2	GTF2A2.75kDa; GTF2A2.50kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P13984	GTF2F2	General transcription factor IIF subunit 2	GTF2F2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H116	GZF1	GDNF-inducible zinc finger protein 1	GZF1	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+P51610	HCFC1	Host cell factor 1	HCFC1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q14526	HIC1	Hypermethylated in cancer 1 protein	HIC1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H2X6	HIPK2	Homeodomain-interacting protein kinase 2	HIPK2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P15822	HIVEP1	Zinc finger protein 40	HIVEP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q14774	HLX	H2.0-like homeobox protein	HLX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O15347	HMGB3	High mobility group protein B3	HMGB3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NP08	HMX1	Homeobox protein HMX1	HMX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43364	HOXA2	Homeobox protein Hox-A2	HOXA2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P09629	HOXB7	Homeobox protein Hox-B7	HOXB7	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P09630	HOXC6	Homeobox protein Hox-C6	HOXC6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9GZZ0	HOXD1	Homeobox protein Hox-D1	HOXD1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P28358	HOXD10	Homeobox protein Hox-D10	HOXD10.25kDa; HOXD10.75kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P28356	HOXD9	Homeobox protein Hox-D9	HOXD9	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43593	HR	Lysine-specific demethylase hairless	HR	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P42858	HTT	Huntingtin	HTT	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P38935	IGHMBP2	DNA-binding protein SMUBP-2	IGHMBP2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UKT9	IKZF3	Zinc finger protein Aiolos	IKZF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H2S9	IKZF4	Zinc finger protein Eos	IKZF4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H5V7	IKZF5	Zinc finger protein Pegasus	IKZF5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q01101	INSM1	Insulinoma-associated protein 1	INSM1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15306	IRF4	Interferon regulatory factor 4	IRF4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q13568	IRF5	Interferon regulatory factor 5	IRF5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P35568	IRS1	Insulin receptor substrate 1	p-IRS-1.(S612)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P78414	IRX1	Iroquois-class homeodomain protein IRX-1	IRX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96A47	ISL2	Insulin gene enhancer protein ISL-2	ISL2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P17275	JUNB	Transcription factor JunB	JunB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8WYB5	KAT6B	Histone acetyltransferase KAT6B	MYST4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y2K7	KDM2A	Lysine-specific demethylase 2A	FBXL11	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8NHM5	KDM2B	Lysine-specific demethylase 2B	FBXL10	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q14145	KEAP1	Kelch-like ECH-associated protein 1	KEAP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8TD94	KLF14	Krueppel-like factor 14	KLF14	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P57682	KLF3	Krueppel-like factor 3	KLF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q53G59	KLHL12	Kelch-like protein 12	KLHL12	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9P2G3	KLHL14	Kelch-like protein 14	KLHL14	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UHB6	LIMA1	LIM domain and actin-binding protein 1	LIMA1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8TE12	LMX1A	LIM homeobox transcription factor 1-alpha	LMX1A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15048	LRRC14	Leucine-rich repeat-containing protein 14	LRRC14	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q86X29	LSR	Lipolysis-stimulated lipoprotein receptor	LSR	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P43362	MAGEA9	Melanoma-associated antigen 9	MAGEA9	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H8J5	MANSC1	MANSC domain-containing protein 1	MANSC1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q02750	MAP2K1	Dual specificity mitogen-activated protein kinase kinase 1	p-Mek(1/2).(S217/221)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P28482	MAPK1	Mitogen-activated protein kinase 1	Erk(1/2)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P56270	MAZ	Myc-associated zinc finger protein	MAZ	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UIS9	MBD1	Methyl-CpG-binding domain protein 1	MBD1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q03112	MECOM	Histone-lysine N-methyltransferase MECOM	EVI1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q93074	MED12	Mediator of RNA polymerase II transcription subunit 12	MED12.70kDa; MED12.50kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y2X0	MED16	Mediator of RNA polymerase II transcription subunit 16	MED16	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+Q9NVC6	MED17	Mediator of RNA polymerase II transcription subunit 17	CRSP6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P08581	MET	Hepatocyte growth factor receptor	Met; Met.(c-Met).135kDa; Met.(c-Met).156kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q7Z3K6	MIER3	Mesoderm induction early response protein 3	MIER3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8IYA7	MKX	Homeobox protein Mohawk	MKX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NP71	MLXIPL	Carbohydrate-responsive element-binding protein	MLXIPL	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P50219	MNX1	Motor neuron and pancreas homeobox protein 1	HLXB9.60kDa; HLXB9.50kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8N594	MPND	MPN domain-containing protein	MPND	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+P82914	MRPS15	Small ribosomal subunit protein uS15m	MRPS15	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8N5Y2	MSL3	MSL complex subunit 3	MSL3L1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O94776	MTA2	Metastasis-associated protein MTA2	MTA2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y483	MTF2	Metal-response element-binding transcription factor 2	MTF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P42345	MTOR	Serine/threonine-protein kinase mTOR	mTOR	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P10242	MYB	Transcriptional activator Myb	MYB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P01106	MYC	Myc proto-oncogene protein	c-Myc	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96BF6	NACC2	Nucleus accumbens-associated protein 2	BTBD14A	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+P55160	NCKAP1L	Nck-associated protein 1-like	NCKAP1L.150kDa; NCKAP1L.75kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y4A8	NFE2L3	Nuclear factor erythroid 2-related factor 3	NFE2L3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P08651	NFIC	Nuclear factor 1 C-type	NFIC	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q14938	NFIX	Nuclear factor 1 X-type	NFIX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P19838	NFKB1	Nuclear factor NF-kappa-B p105 subunit	NFKB1.150kDa; NFKB1.75kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P25963	NFKBIA	NF-kappa-B inhibitor alpha	IkBalpha	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P78367	NKX3-2	Homeobox protein Nkx-3.2	NKX3-2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O60393	NOBOX	Homeobox protein NOBOX	NOBOX	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q99742	NPAS1	Neuronal PAS domain-containing protein 1	NPAS1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P13056	NR2C1	Nuclear receptor subfamily 2 group C member 1	NR2C1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P24468	NR2F2	COUP transcription factor 2	NR2F2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P10588	NR2F6	Nuclear receptor subfamily 2 group F member 6	NR2F6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O96028	NSD2	Histone-lysine N-methyltransferase NSD2	WHSC1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O95948	ONECUT2	One cut domain family member 2	ONECUT2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8TAX0	OSR1	Protein odd-skipped-related 1	OSR1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O14753	OVOL1	Putative transcription factor Ovo-like 1	OVOL1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96IZ0	PAWR	PRKC apoptosis WT1 regulator protein	PAWR	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P26367	PAX6	Paired box protein Pax-6	PAX6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q06710	PAX8	Paired box protein Pax-8	PAX8	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P40425	PBX2	Pre-B-cell leukemia transcription factor 2	PBX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q3KNV8	PCGF3	Polycomb group RING finger protein 3	PCGF3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15118	PDK1	[Pyruvate dehydrogenase (acetyl-transferring)] kinase isozyme 1, mitochondrial	PDK1; p-PDK1.(S241)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UIL8	PHF11	PHD finger protein 11	NY-REN-34	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P27986	PIK3R1	Phosphatidylinositol 3-kinase regulatory subunit alpha	PI3K(p85)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P19174	PLCG1	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-1	PLCgamma1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P16885	PLCG2	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-2	PLCgamma2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43660	PLRG1	Pleiotropic regulator 1	PLRG1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q16633	POU2AF1	POU domain class 2-associating factor 1	POU2AF1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9GZV8	PRDM14	PR domain zinc finger protein 14	PRDM14	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q13029	PRDM2	PR domain zinc finger protein 2	PRDM2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9HCU5	PREB	Guanine nucleotide-exchange factor SEC12	PREB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P05771	PRKCB	Protein kinase C beta type	p-PKC(pan)betaII(S660).100kDa; p-PKC(pan)betaII(S660).80kDa; p-PKC(pan)betaII(S660).60kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P05129	PRKCG	Protein kinase C gamma type	p-PKCpan.(gammaT514)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q05513	PRKCZ	Protein kinase C zeta type	PKCzeta(C24); p-PKCzeta/lambda.(Y410/403)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O60678	PRMT3	Protein arginine N-methyltransferase 3	PRMT3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O75475	PSIP1	PC4 and SFRS1-interacting protein	PSIP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P60484	PTEN	Phosphatidylinositol 3,4,5-trisphosphate 3-phosphatase and dual-specificity protein phosphatase PTEN	p-PTEN.(S380)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q05397	PTK2	Focal adhesion kinase 1	FAK	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q00577	PURA	Transcriptional activator protein Pur-alpha	PURA	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P63000	RAC1	Ras-related C3 botulinum toxin substrate 1	RAC1/2/3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P15153	RAC2	Ras-related C3 botulinum toxin substrate 2	RAC1/2/3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P60763	RAC3	Ras-related C3 botulinum toxin substrate 3	RAC1/2/3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P04049	RAF1	RAF proto-oncogene serine/threonine-protein kinase	p-Raf.(S338); Raf(c-); p-Raf.(S259)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96IS3	RAX2	Retina and anterior neural fold homeobox protein 2	RAXL1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P06400	RB1	Retinoblastoma-associated protein	RB1; p-Rb.(S807,811)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NYW8	RBAK	RB-associated KRAB zinc finger protein	RBAK	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UKL0	RCOR1	REST corepressor 1	RCOR1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q04864	REL	Proto-oncogene c-Rel	REL	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q04206	RELA	Transcription factor p65	p65	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P61586	RHOA	Transforming protein RhoA	RhoA	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P08134	RHOC	Rho-related GTP-binding protein RhoC	RhoC	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H6W3	RIOX1	Ribosomal oxygenase 1	C14orf169	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P62753	RPS6	Small ribosomal subunit protein eS6	p-S6.ribosomal.protein.(S240/244); p-S6RibProt.(S235/236)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P23443	RPS6KB1	Ribosomal protein S6 kinase beta-1	P70.S6.Kinase; p-P70.S6.Kinase.(T421/S424)	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NYV6	RRN3	RNA polymerase I-specific transcription initiation factor RRN3	RRN3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y224	RTRAF	tRNA-splicing ligase complex subunit RTRAF	C14orf166	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q7L099	RUFY3	Protein RUFY3	RUFY3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q01196	RUNX1	Runt-related transcription factor 1	RUNX1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q13950	RUNX2	Runt-related transcription factor 2	RUNX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UHR5	SAP30BP	SAP30-binding protein	SAP30BP	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UN30	SCML1	Sex comb on midleg-like protein 1	SCML1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BWW7	SCRT1	Transcriptional repressor scratch 1	SCRT1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H3S1	SEMA4A	Semaphorin-4A	SEMA4A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BYW2	SETD2	Histone-lysine N-methyltransferase SETD2	SETD2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NVD3	SETD4	SET domain-containing protein 4	SETD4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O00141	SGK1	Serine/threonine-protein kinase Sgk1	p-SGK.(T256); p-SGK.(S422); SGK	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q14190	SIM2	Single-minded homolog 2	SIM2.70kDa; SIM2.55kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P48066	SLC6A11	Sodium- and chloride-dependent GABA transporter 3	GATA4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q14683	SMC1A	Structural maintenance of chromosomes protein 1A	SMC1A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P35716	SOX11	Transcription factor SOX-11	SOX11	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UN79	SOX13	Transcription factor SOX-13	SOX13	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q06945	SOX4	Transcription factor SOX-4	SOX4	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P08047	SP1	Transcription factor Sp1	SP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P23497	SP100	Nuclear autoantigen Sp-100	SP100.90kDa; SP100.50kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NRA0	SPHK2	Sphingosine kinase 2	SPHK2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P12931	SRC	Proto-oncogene tyrosine-protein kinase Src	Src.A070; p-Src.(Y527); Src.A069; Src.A072; Src.A071	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P42224	STAT1	Signal transducer and activator of transcription 1-alpha/beta	STAT1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P40763	STAT3	Signal transducer and activator of transcription 3	STAT3B; STAT3A	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P42229	STAT5A	Signal transducer and activator of transcription 5A	STAT5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P51692	STAT5B	Signal transducer and activator of transcription 5B	STAT5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8WXH0	SYNE2	Nesprin-2	SYNE2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O75478	TADA2A	Transcriptional adapter 2-alpha	TADA2L	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q92804	TAF15	TATA-binding protein-associated factor 2N	TAF15	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96BW9	TAMM41	Phosphatidate cytidylyltransferase, mitochondrial	C3orf31	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q92844	TANK	TRAF family member-associated NF-kappa-B activator	TANK	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q13148	TARDBP	TAR DNA-binding protein 43	TARDBP	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O75333	TBX10	T-box transcription factor TBX10	TBX10	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O60806	TBX19	T-box transcription factor TBX19	TBX19	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+Q9UL17	TBX21	T-box transcription factor TBX21	TBX21	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q99593	TBX5	T-box transcription factor TBX5	TBX5	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43680	TCF21	Transcription factor 21	TCF21	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P05549	TFAP2A	Transcription factor AP-2-alpha	TFAP2; TFAP2A	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+Q92481	TFAP2B	Transcription factor AP-2-beta	TFAP2B	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8WVM0	TFB1M	Dimethyladenosine transferase 1, mitochondrial	TFB1M	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NZI6	TFCP2L1	Transcription factor CP2-like protein 1	TFCP2L1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q01085	TIAL1	Nucleolysin TIAR	TIAL1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43763	TLX2	T-cell leukemia homeobox protein 2	TLX2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BXQ6	TMEM121B	Transmembrane protein 121B	CECR6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q4ZIN3	TMEM259	Membralin	C19orf6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P04637	TP53	Cellular tumor antigen p53	p53	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O60858	TRIM13	E3 ubiquitin-protein ligase TRIM13	TRIM13.50kDa; TRIM13.25kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q12899	TRIM26	Tripartite motif-containing protein 26	TRIM26	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BYJ4	TRIM34	E3 ubiquitin-protein ligase TRIM34	TRIM34	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BRZ2	TRIM56	E3 ubiquitin-protein ligase TRIM56	TRIM56	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P50607	TUB	Tubby protein homolog	TUB	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O00294	TULP1	Tubby-related protein 1	TULP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15672	TWIST1	Twist-related protein 1	TWIST1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96PU4	UHRF2	E3 ubiquitin-protein ligase UHRF2	URF2; UHRF2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NZ43	USE1	Vesicle transport protein USE1	MDS032	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15906	VPS72	Vacuolar protein sorting-associated protein 72 homolog	VPS72	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P43403	ZAP70	Tyrosine-protein kinase ZAP-70	ZAP70	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43829	ZBTB14	Zinc finger and BTB domain-containing protein 14	ZFP161	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q99592	ZBTB18	Zinc finger and BTB domain-containing protein 18	ZNF238	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O15209	ZBTB22	Zinc finger and BTB domain-containing protein 22	ZBTB22	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q86T24	ZBTB33	Transcriptional regulator Kaiso	ZBTB33	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15916	ZBTB6	Zinc finger and BTB domain-containing protein 6	ZBTB6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H8U3	ZFAND3	AN1-type zinc finger protein 3	ZFAND3	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q6P2D0	ZFP1	Zinc finger protein 1 homolog	ZFP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8NHY6	ZFP28	Zinc finger protein 28 homolog	ZFP28	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q07352	ZFP36L1	mRNA decay activator protein ZFP36L1	ZFP36L1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BRR0	ZKSCAN3	Zinc finger protein with KRAB and SCAN domains 3	ZNF306	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O95789	ZMYM6	Zinc finger MYM-type protein 6	ZMYM6	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15326	ZMYND11	Zinc finger MYND domain-containing protein 11	ZMYND11	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9ULU4	ZMYND8	MYND-type zinc finger-containing chromatin reader ZMYND8	PRKCBP1	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P17014	ZNF12	Zinc finger protein 12	ZNF12	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P52740	ZNF132	Zinc finger protein 132	ZNF132	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q13106	ZNF154	Zinc finger protein 154	ZNF154	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P17020	ZNF16	Zinc finger protein 16	ZNF16	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P17021	ZNF17	Zinc finger protein 17	ZNF17	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15697	ZNF174	Zinc finger protein 174	ZNF174	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P17025	ZNF182	Zinc finger protein 182	ZNF182	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P98182	ZNF200	Zinc finger protein 200	ZNF200	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O43670	ZNF207	BUB3-interacting and GLEBS motif-containing protein ZNF207	ZNF207	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+Q9P2Y4	ZNF219	Zinc finger protein 219	ZNF219	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q16600	ZNF239	Zinc finger protein 239	ZNF239	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O75346	ZNF253	Zinc finger protein 253	ZNF253	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q14584	ZNF266	Zinc finger protein 266	ZNF266.50-75; ZNF266.75-100	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+Q14586	ZNF267	Zinc finger protein 267	ZNF267	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8N554	ZNF276	Zinc finger protein 276	ZNF276	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9HBT8	ZNF286A	Zinc finger protein 286A	ZNF286	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q5VUA4	ZNF318	Zinc finger protein 318	ZNF318	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9P2F9	ZNF319	Zinc finger protein 319	ZNF319	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96IQ9	ZNF414	Zinc finger protein 414	ZNF414	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q09FC8	ZNF415	Zinc finger protein 415	ZNF415	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96HQ0	ZNF419	Zinc finger protein 419	ZNF419	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9BUY5	ZNF426	Zinc finger protein 426	ZNF426	hause_2014_AFR	hause_2014_25087611	TRUE	FALSE
+Q8N7K0	ZNF433	Zinc finger protein 433	ZNF433	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8N8Z8	ZNF441	Zinc finger protein 441	ZNF441	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8N8L2	ZNF491	Zinc finger protein 491	ZNF491	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q6ZNH5	ZNF497	Zinc finger protein 497	ZNF497	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8NB42	ZNF527	Zinc finger protein 527	ZNF527	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q6P280	ZNF529	Zinc finger protein 529	ZNF529	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q7Z340	ZNF551	Zinc finger protein 551	ZNF551	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96NG5	ZNF558	Zinc finger protein 558	ZNF558	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q5MCW4	ZNF569	Zinc finger protein 569	ZNF569	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q68EA5	ZNF57	Zinc finger protein 57	ZNF57	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q86YE8	ZNF573	Zinc finger protein 573	ZNF573	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q86XF7	ZNF575	Zinc finger protein 575	ZNF575	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8NAF0	ZNF579	Zinc finger protein 579	ZNF579	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9UK33	ZNF580	Zinc finger protein 580	ZNF580	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q6PF04	ZNF613	Zinc finger protein 613	ZNF613	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8N2I2	ZNF619	Zinc finger protein 619	ZNF619	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q2M218	ZNF630	Zinc finger protein 630	ZNF630	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+O95780	ZNF682	Zinc finger protein 682	ZNF682	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q8IZ20	ZNF683	Tissue-resident T-cell transcription regulator protein ZNF683	ZNF683	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P0C7X2	ZNF688	Zinc finger protein 688	ZNF688	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q5VV52	ZNF691	Zinc finger protein 691	ZNF691	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+P17097	ZNF7	Zinc finger protein 7	ZNF7	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9NV72	ZNF701	Zinc finger protein 701	ZNF701	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H7S9	ZNF703	Zinc finger protein 703	ZNF703	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H5H4	ZNF768	Zinc finger protein 768	ZNF768	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15935	ZNF77	Zinc finger protein 77	ZNF77	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96BV0	ZNF775	Zinc finger protein 775	ZNF775	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96MU6	ZNF778	Zinc finger protein 778	ZNF778	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+A8K8V0	ZNF785	Zinc finger protein 785	ZNF785.75kDa; ZNF785.50kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q15937	ZNF79	Zinc finger protein 79	ZNF79	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q96IR2	ZNF845	Zinc finger protein 845	LOC91664.100kDa; LOC91664.60kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9H4T2	ZSCAN16	Zinc finger and SCAN domain-containing protein 16	ZSCAN16	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q7Z7L9	ZSCAN2	Zinc finger and SCAN domain-containing protein 2	ZSCAN2	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q9Y5A6	ZSCAN21	Zinc finger and SCAN domain-containing protein 21	ZSCAN21.60kDa; ZSCAN21.10kDa	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q3MJ62	ZSCAN23	Zinc finger and SCAN domain-containing protein 23	ZSCAN23	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE
+Q6NSZ9	ZSCAN25	Zinc finger and SCAN domain-containing protein 25	ZNF498	hause_2014_AFR	hause_2014_25087611	FALSE	FALSE

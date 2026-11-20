@@ -2,7 +2,7 @@
 
 An all-encompassing, continuously updated catalogue and interactive web application of published and preprint genome-wide association studies (GWAS) of proteins — built so researchers can quickly locate, evaluate, and harmonise summary statistics for meta-analysis, Mendelian randomisation (MR), and colocalisation.
 
-Status: prototype web application, schema, and GitHub Actions automation built on a simulated dataset (`v0.2.0-sim`); full systematic curation next.
+Status: unified `v4.1` search and 4-tier extraction pipeline validated; chronological historical backfill (`2000–2025`) in progress.
 
 ## Purpose & Scope
 
@@ -13,14 +13,52 @@ Protein GWAS are spread across dozens of papers, preprints, cohorts, proteomic p
 - **No sample-size floor:** Captures everything from small-N tissue, pediatric, urine, and CSF pQTL studies (`N < 100`) up to biobank-scale plasma studies (`N > 50,000`).
 - **Operational readiness for downstream genetics:** Records multi-ancestry and sex-specific strata, genome build, *cis*-only vs genome-wide coverage, phenotype transformation and effect scale, signed EAF and indel encoding, cohort membership for overlap checking, and links to `GWASprocessing` YAML manifests.
 
+## Pipeline: Search to Version Update
+
+Automated scripts handle multi-database retrieval, deduplication, secondary-MR filtering, and open-access extraction, while **highlighted manual checkpoints** govern closed-access PDF/supplement downloads, item-by-item ambiguity resolution, blinded positive-control verification, and versioned releases:
+
+```mermaid
+flowchart TD
+    S1["1. Multi-Source Literature Search (PubMed, Europe PMC + Preprints, GWAS Catalog v2, Citation Snowballing)"]:::auto
+    S2["2. Graph Deduplication & Preprint-to-Published Lineage Check (apply_preprint_upgrades.R)"]:::auto
+    S3["3. Two-Stage Dual-Axis Triage: P_score vs S_score (Auto-excludes 2SMR / non-human / reviews)"]:::auto
+    S4["4. 4-Tier Open-Access Extraction & Stage 1 Search Report (APIs, OA XML/BioC, Supplements, Build Check)"]:::auto
+
+    M1["MANUAL STEP 1: Screen Borderline Candidates & Download Closed-Access PDFs / Missing Supplements"]:::manual
+
+    S5["5. Stage 2 Re-Extraction of Downloaded Files & Standardised 1-Row-Per-Item Review Tables"]:::auto
+
+    M2["MANUAL STEP 2: Adjudicate Per-Study Review Items & Run Blinded Positive-Control Cross-Check"]:::manual
+
+    S6["6. Schema Validation, PR Merge to main & Quarto Site Build (validate_catalogue.R + build_site_data.R)"]:::store
+
+    M3["MANUAL GATE 3: Trigger Version Update & Tagged Release Snapshot (releases.tsv + SHA256SUMS)"]:::manual
+
+    S1 --> S2 --> S3 --> S4
+    S4 -->|"Closed full text or missing/corrupted supplements"| M1
+    M1 -->|"Files placed in manual_downloads/"| S5
+    S4 -->|"All full texts & supplements open"| M2
+    S5 --> M2
+    M2 -->|"Approved catalogue/*.tsv (Human-reviewed)"| S6
+    S6 -->|"Periodic milestone"| M3
+
+    classDef auto fill:#eff6ff,stroke:#1d4ed8,stroke-width:1.5px,color:#0f172a
+    classDef manual fill:#fef3c7,stroke:#d97706,stroke-width:2.5px,color:#78350f,font-weight:bold
+    classDef store fill:#ecfdf5,stroke:#059669,stroke-width:1.8px,color:#064e3b
+```
+
+- **Blue (`Automated`):** Scripted R + GitHub Actions steps (`src/run_literature_search.R`, `src/extract_candidate_study.R`, `src/validate_catalogue.R`, `src/build_site_data.R`).
+- **Amber (`Manual Download / Review / Release Gate`):** Human curator checkpoints documented in each period's standardised `search_report.md` (`Stage 1` manual file downloads → `Stage 2` 1-row-per-item study review + blinded `evaluate_positive_controls.R` check → manual versioned release sign-off).
+- **Green (`Validated Catalogue & Website`):** Canonical `catalogue/*.tsv` tables compiled into `site/data/catalogue.json` and deployed to GitHub Pages.
+
 ## Repository Structure
 
-- `catalogue/`: Canonical Git-tracked TSV tables (`studies.tsv`, `strata.tsv`, `cohort_membership.tsv`, `proteins_index.tsv`, `search_runs.tsv`, `candidate_queue.tsv`, `releases.tsv`). Currently populated with simulated benchmark + search data (`v0.2.0-sim`).
-- `site/`: Quarto + Observable JS (`ojs`) static web application with four tabs:
-  1. **Catalogue (`site/index.qmd`):** Full-width 10-column reference table (`STUDY`, `COHORT`, `OVERLAP`, `POP`, `SEX`, `N`, `SAMPLE`, `PLATFORM`, `ASSAY`, `DATA`) with inline per-column filter/search inputs, click-to-expand inline 3-column detail rows (`Phenotype`, `Genetic` incl. build & strand, and `Other` incl. `AI-extracted` / `Human-reviewed` / `Human-curated` provenance and overlapping study IDs), and full-table `.tsv` download.
-  2. **Lookup (`site/lookup.qmd`):** Protein-centric lookup by UniProt accession, gene symbol, or protein name, populating summary KPI boxes, a reusable column-filterable study table, and a `Year × Sample Size` bubble figure underneath.
-  3. **Log (`site/log.qmd`):** Date-stamped search update log (newest at top) recording records found, included, excluded, and flagged for manual review.
-  4. **About (`site/about.qmd`):** Detailed documentation of the search strategy, inclusion/exclusion criteria, AI/automated extraction pipelines, and human review tiers.
+- `catalogue/`: Canonical Git-tracked TSV tables (`studies.tsv`, `strata.tsv`, `cohort_membership.tsv`, `proteins_index.tsv`, `search_runs.tsv`, `candidate_queue.tsv`, `excluded_records.tsv`, `releases.tsv`).
+- `site/`: Quarto + Observable JS (`ojs`) static web application with five pages:
+  1. **Catalogue (`site/index.qmd`):** Full-width 11-column reference table (`AUTHOR`, `YEAR`, `COHORT`, `OVERLAP`, `POPULATION`, `SEX`, `N`, `SAMPLE`, `PLATFORM`, `ASSAY`, `DATA`) with inline per-column filter/search inputs, pagination, click-to-expand inline 3-column detail rows (`PHENOTYPE`, `GENETIC`, `OTHER`), and full-table `.tsv` download.
+  2. **Lookup (`site/lookup.qmd`):** Protein-centric typeahead lookup by UniProt accession, gene symbol, or protein name, populating summary KPI boxes, a paginated study table, and an interactive `Year × Sample Size` scatter plot.
+  3. **Log (`site/log.qmd`):** Date-stamped search update log (newest at top) with inline-expandable run details and `preprint -> published` replacement tracking.
+  4. **About (`site/about.qmd`) & Search Strategy (`site/search-strategy.qmd`):** Pipeline overview, flowchart, eligibility criteria, curation tiers, and full methodological history synced from `docs/methods.md`.
 - `src/`: R and shell scripts:
   - `src/setup_quarto.sh`: Installs Quarto CLI into `~/.local/share/quarto` and `~/.local/bin/quarto` (outside OneDrive).
   - `src/simulate_catalogue.R`: Generates the simulated prototype dataset (`unreleased (dev)`).
