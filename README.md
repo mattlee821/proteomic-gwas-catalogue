@@ -15,43 +15,50 @@ Protein GWAS are spread across dozens of papers, preprints, cohorts, proteomic p
 
 ## Pipeline: Search to Version Update
 
-Each catalogue update combines automated multi-database search and open-access text/supplement extraction with **highlighted manual review checkpoints** for paywalled papers, missing supplementary files, study metadata verification, and versioned releases:
+Each catalogue update combines automated multi-database search and open-access text/supplement extraction with **human review checkpoints** for paywalled papers, missing supplementary files, study metadata verification, and versioned releases (coloured to match the `AI-extracted` and `Human-reviewed` `CURATION` badges in the Catalogue):
 
 <div align="center">
 
 ```mermaid
-%%{init: {'themeVariables': {'fontSize': '15px'}, 'flowchart': {'wrappingWidth': 390, 'nodeSpacing': 28, 'rankSpacing': 44, 'subGraphTitleMargin': {'top': 10, 'bottom': 28}, 'padding': 14, 'curve': 'basis'}}}%%
+%%{init: {'themeVariables': {'fontSize': '15px'}, 'flowchart': {'wrappingWidth': 390, 'nodeSpacing': 28, 'rankSpacing': 44, 'subGraphTitleMargin': {'top': 12, 'bottom': 30}, 'padding': 14, 'curve': 'basis'}}}%%
 flowchart TD
-    S1["1. Literature & Preprint Search — Query PubMed, Europe PMC, GWAS Catalog & citations"]:::auto
-    S2["2. Deduplicate & Screen — Match preprints to papers; filter out secondary MR studies"]:::auto
-    S3["3. Automated Extraction — Parse open-access text, supplements & summary-stat links"]:::auto
+    S1["`**1. Literature & Preprint Search**
+Query PubMed, Europe PMC, GWAS Catalog & citations`"]:::auto
+    S2["`**2. Deduplicate & Screen**
+Match preprints to papers; filter out secondary MR studies`"]:::auto
+    S3["`**3. Automated Extraction**
+Parse open-access text, supplements & summary-stat links`"]:::auto
 
-    subgraph MANUAL["Manual Review & Verification"]
-        M1["Manual Check 1: Eligibility — Confirm borderline study inclusions & exclusions"]:::manual
-        M2["Manual Check 2: Missing Files — Download paywalled PDFs & supplementary tables"]:::manual
-        M3["Manual Check 3: Metadata Review — Verify extracted study, cohort & assay details"]:::manual
-        M4["Manual Check 4: Recall Check — Test completeness against positive-control studies"]:::manual
+    subgraph MANUAL["Human Review & Verification"]
+        M1["`**4.1 Eligibility**
+Confirm borderline study inclusions & exclusions`"]:::manual
+        M2["`**4.2 Missing Files**
+Download paywalled PDFs & supplementary tables`"]:::manual
+        M3["`**4.3 Metadata Review**
+Verify extracted study, cohort & assay details`"]:::manual
+        M4["`**4.4 Recall Check**
+Test completeness against positive-control studies`"]:::manual
     end
 
-    S4["4. Validate & Update Website — Check data schema, merge update & rebuild web tables"]:::store
-    M5["Manual Gate 5: Version Release — Publish numbered catalogue release & data archive"]:::manual
+    S4["`**5. Validate & Update Website**
+Check data schema, merge update & rebuild web tables`"]:::auto
+    M5["`**6. Version Release**
+Publish numbered catalogue release & data archive`"]:::manual
 
     S1 --> S2 --> S3
     S3 --> M1 & M2 & M3 & M4
     M1 & M2 & M3 & M4 --> S4
     S4 --> M5
 
-    classDef auto fill:#eff6ff,stroke:#1d4ed8,stroke-width:1.5px,color:#0f172a
-    classDef manual fill:#fef3c7,stroke:#d97706,stroke-width:2.5px,color:#78350f,font-weight:bold
-    classDef store fill:#ecfdf5,stroke:#059669,stroke-width:1.8px,color:#064e3b
-    style MANUAL fill:#fffbeb,stroke:#d97706,stroke-width:2px,stroke-dasharray: 6 4,color:#78350f
+    classDef auto fill:#f3e8ff,stroke:#c084fc,stroke-width:1.6px,color:#6b21a8
+    classDef manual fill:#e0f2fe,stroke:#38bdf8,stroke-width:2px,color:#075985
+    style MANUAL fill:#f0f9ff,stroke:#38bdf8,stroke-width:2px,stroke-dasharray: 6 4,color:#075985
 ```
 
 </div>
 
-- **Blue (`Automated`):** Queries literature and preprint databases, links preprints to published journal articles, filters out secondary Mendelian randomisation studies that only reuse existing data, and extracts metadata from open-access full texts and supplements.
-- **Amber (`Manual Review & Release`):** Human reviewer confirms borderline candidates, downloads paywalled PDFs or missing supplementary files so they can be parsed, verifies extracted study metadata, tests recall against positive-control studies, and approves numbered releases.
-- **Green (`Catalogue & Website`):** Validates `catalogue/*.tsv` tables against controlled vocabularies and rebuilds the searchable website.
+- **Purple (`Automated / AI-extracted` — Steps 1–3 & 5):** Queries literature and preprint databases, links preprints to published journal articles, filters out secondary Mendelian randomisation studies, extracts open-access metadata, validates `catalogue/*.tsv` schemas, and rebuilds the website.
+- **Blue (`Human-reviewed` — Steps 4.1–4.4 & 6):** Human reviewer confirms borderline candidates, downloads paywalled PDFs or missing supplementary files so they can be parsed, verifies extracted study metadata, tests recall against positive-control studies, and publishes numbered releases.
 
 ## Repository Structure
 

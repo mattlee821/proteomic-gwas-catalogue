@@ -635,17 +635,28 @@ details.methods-dropdown[open] > summary::after {
   margin: 0.75rem auto !important;
 }
 
+.about-section .cluster-label foreignObject {
+  overflow: visible !important;
+}
+
+.about-section .cluster-label div,
+.about-section .cluster-label span,
+.about-section .cluster-label p {
+  max-width: none !important;
+  white-space: nowrap !important;
+  font-weight: 700 !important;
+  color: #075985 !important;
+}
+
 .about-section .cluster rect {
-  fill: #fffbeb !important;
-  stroke: #d97706 !important;
+  fill: #f0f9ff !important;
+  stroke: #38bdf8 !important;
   stroke-width: 2px !important;
   stroke-dasharray: 6 4 !important;
   rx: 8px;
   ry: 8px;
 }
 
-.about-section .cluster span,
 .about-section .cluster text {
-  color: #92400e !important;
-  fill: #92400e !important;
+  fill: #075985 !important;
 }
