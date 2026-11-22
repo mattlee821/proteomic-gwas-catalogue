@@ -24,3 +24,19 @@ PMID:27832767	Single-protein candidate-locus study (CHI3L1 locus and CSF YKL-40 
 PMID:27357396	Single-protein GWAS (blood plasma and CSF CCL16 levels only, <5 unique proteins)	2026-11-20
 PMID:27793387	Single-protein targeted polymorphism study (PAPP-A SNPs in follicular fluid, <5 unique proteins)	2026-11-20
 PMID:26742530	Targeted single-gene polymorphism study (CR1 variants and CSF AD biomarkers, not genome-wide pGWAS)	2026-11-20
+PMID:28083766	Targeted single-gene polymorphism study (IL13 variants and serum IL-13/IgE in asthma, <5 unique proteins)	2026-11-22
+PMID:28819071	Single-protein hepatic abundance study (FMO3 in human liver microsomes, <5 unique proteins)	2026-11-22
+PMID:28607029	Targeted candidate-gene polymorphism study (ADH/ALDH variants and liver enzyme abundance, not genome-wide GWAS)	2026-11-22
+PMID:28350535	Targeted candidate-SNP study of a single protein (CRP, LEP, LEPR SNPs vs hs-CRP levels in children, <5 unique proteins)	2026-11-22
+PMID:28326452	Single-protein copy-number variation study (SULT1A1 CNV in human liver, <5 unique proteins)	2026-11-22
+PMID:29212175	Targeted genetic risk score / 26-SNP lookup on a single circulating protein (pediatric leptin, <5 unique proteins)	2026-11-22
+PMID:28972399	Single-protein rare-variant lookup (ANGPTL3 serum levels in Finns, <5 unique proteins)	2026-11-22
+PMID:28686695	Targeted candidate-SNP lookup (45 coronary artery disease risk SNPs tested against inflammatory biomarkers, <100 SNPs)	2026-11-22
+PMID:29069501	Multi-omics reference database resource article (jMorp portal description, not a primary pGWAS)	2026-11-22
+PMID:28854368	Somatic cancer cell line proteogenomics (50 colorectal cancer cell lines; published Cell Reports version of DOI:10.1101/092767)	2026-11-22
+PMID:28705542	Targeted candidate-SNP lookup (CAD risk SNPs vs serum cytokines in premature CAD, not genome-wide GWAS)	2026-11-22
+PMID:28691493	Methodological allele-specific peptide MS pilot in N=2 postmortem human brains, not a population pGWAS	2026-11-22
+PMID:28189700	Targeted 4-gene candidate risk-SNP lookup against CSF ADNI proteins (GRN, TMEM106B, ABCC9, KCNMB2), not genome-wide pGWAS	2026-11-22
+PMID:28424047	Non-human organism study (liver pQTL mapping in overfed mule ducks; gated automatically in v4.3)	2026-11-22
+PMID:28053049	Single-protein GWAS meta-analysis (plasma coagulation Factor XI / F11 levels only, <5 unique proteins)	2026-11-22
+PMID:28734077	Single-protein GWAS discovery/lookup (plasma MMP-12 levels in stroke/atherosclerosis, <5 unique proteins)	2026-11-22
