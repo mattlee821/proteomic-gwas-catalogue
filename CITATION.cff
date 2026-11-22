@@ -5,8 +5,8 @@ type: dataset
 authors:
   - family-names: Lee
     given-names: Matthew
-version: 0.1.0
-date-released: "2026-11-20"
+version: 0.1.1
+date-released: "2026-11-22"
 url: "https://mattlee821.github.io/proteomic-gwas-catalogue"
 repository-code: "https://github.com/mattlee821/proteomic-gwas-catalogue"
 license:

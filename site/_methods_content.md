@@ -1,7 +1,7 @@
 
 **Project:** `proteomic-gwas-catalogue`  
 **Document Type:** Living Methodological Log (updated at every search/extraction version milestone)  
-**Last Updated:** 2026-11-20 (`v0` -> `v1` -> `v2` -> `v3.0` -> `v4.0` -> `v4.1` finalised and validated)
+**Last Updated:** 2026-11-20 (`v0` -> `v1` -> `v2` -> `v3.0` -> `v4.0` -> `v4.1` -> `v4.2` finalised and validated)
 
 ---
 
@@ -79,7 +79,7 @@ Testing live API responses on `PMID: 37794186` and `PMID: 34857953` uncovered **
 Before writing production code, a third subagent (`peer-reviewer`) performed a cross-audit of `design_search_v1.md`, `design_extraction_v1.md`, and existing repository validation rules, identifying **`6 CRITICAL`**, **`8 MAJOR`**, and **`4 MINOR`** issues:
 
 1. **`[C-1]` Search-to-Extraction Queue Handoff:** Expanded `catalogue/candidate_queue.tsv` from 9 to **17 columns** (appending `pmid`, `doi`, `pmcid`, `epmc_id`, `matched_sources`, `p_score`, `s_score`, `preprint_lineage_note` while keeping columns 1–9 unchanged for UI compatibility).
-2. **`[C-2]` Vocabulary Unification & Null-Safety:** Unified `sample_matrix` to 12 controlled values (`EDTA plasma`, `Citrate plasma`, `Heparin plasma`, `Plasma (unspecified)`, `Serum`, `Whole blood / DBS`, `CSF`, `Brain tissue`, `Urine`, `Saliva`, `Cell line / LCL`, `Other tissue`), enforced non-`NA` booleans on `has_eaf`/`has_beta_se`, and fixed a simulated typo (`zhang_2022` `Olink` -> `SomaScan`).
+2. **`[C-2]` Vocabulary Unification & Null-Safety:** Unified `sample_matrix` to 13 controlled values (`EDTA plasma`, `Citrate plasma`, `Heparin plasma`, `Plasma (unspecified)`, `Plasma + serum (mixed)`, `Serum`, `Whole blood / DBS`, `CSF`, `Brain tissue`, `Urine`, `Saliva`, `Cell line / LCL`, `Other tissue`), enforced non-`NA` booleans on `has_eaf`/`has_beta_se`, and fixed a simulated typo (`zhang_2022` `Olink` -> `SomaScan`).
 3. **`[C-3]` Early Panel/Peptide Lexicon & Snowball Guard:** Added pre-2017 multiplex cytokine/immunoassay (`Bio-Plex`, `Milliplex`, `serum/plasma cytokines`) and targeted MS (`LC-MS/MS`, `MRM/PRM/SRM`, `plasma peptides`) terms, lowered `P4` protein count floor from `10` to `5`, and enforced `BROAD_PROTEIN AND BROAD_GENETICS` on citation snowballing + Stage 1 `G0` to block pure metabolomics/eQTL citations.
 4. **`[C-4]` Low-RSS Zero-DOM `.xlsx` Supplement Streaming (`1.75 GB -> 273 MB`):**
    - Profiling `readxl::read_excel()` on Ferkingstad's `44.4 MB` (`302.9 MB` uncompressed XML; `sheet12.xml = 118.9 MB`) `MOESM4_ESM.xlsx` revealed a **`1.75 GB` C++ `rapidxml` heap spike** and a **`26.7 s`** runtime across Sun's 31 sheets.
@@ -208,6 +208,9 @@ Following Round 2, all 5 convergent fixes, Agent 3's 4 unique improvements, Agen
 
 ### 6.4 Historical-Era (`2000–2015`) Generalization Check (`v4.1`)
 During Period 1 (`2000-01-01..2015-12-31`) retrospective execution (`4,976` raw hits $\rightarrow$ `2,444` deduplicated works), Stage A discovery retrieved `100%` of early pioneer pGWAS/pQTL studies, while ledger auditing identified two strictly pre-2017 historical conventions absent from 2025 abstracts: (1) prior to 2017, NHGRI-EBI GWAS Catalog curated multi-protein pGWASs as a single pooled `GCST` entry with plural umbrella `disease_trait` labels (`"Protein quantitative trait loci"` in *Melzer 2008*; `"Cerebrospinal fluid levels of Alzheimer's disease-related proteins"` in *Kauwe 2014*), and (2) pre-`"pGWAS"` pioneer papers phrased discovery yields as `"cis-SNPs"` (*Liu 2015*), `"analytes"` (*Kauwe 2014*, *Kim 2013*), or `"protein level QTLs (pQTLs)"` (*Hause 2014*). Generalizing Source 3 (`count_verified_gwas_protein_traits`) and Stage C (`P2`/`P3`) to recognize these historical patterns (`v4.1`) preserved **`58 / 58` (`100.0%`) exact recall and `0` false positives** across all `1,752` `2025` benchmark works while cleanly surfacing the Period 1 (`2000–2015`) pioneer studies.
+
+### 6.5 Period 2 (`2016`) Preprint & Animal-Cohort Triage Refinements (`v4.2`)
+During Period 2 (`2016-01-01..2016-12-31`) execution (`697` raw hits $\rightarrow$ `350` deduplicated works), systematic screening uncovered three residual triage edge cases: (1) *Suhre et al. 2016* (`bioRxiv` `10.1101/086793`) described `"a GWAS performed with a highly multiplexed aptamer-based affinity proteomics platform"` and `"associations between protein level changes and gene variants"` without using the acronym `"pQTL"`, leaving it in `Auto-Deprioritised` (`P = 10, S = 0`) despite high primary assay/genomic evidence; (2) *Chick et al. 2016* (*Nature*, `PMID: 27309819`) mapped `2,866` liver pQTLs in `192` Diversity Outbred mice (`MeSH: Animals; Mice`), bypassing Stage 1 `G2` because its last sentence wrote `"an independent cohort of collaborative cross mice"`, matching bare `"cohort"` in `has_human`; and (3) *Ahola-Olli et al. 2016* (*AJHG*, `PMID: 27989323`) wrote `"up to 8,293 Finns"` and `"27 loci influencing concentrations of circulating cytokines"`, landing in `Needs Human Check` (`P = 5`) rather than `Likely Primary pGWAS`. Scoping `cohort` in `G2` `has_human` to human qualifiers (`human/patient/clinical/birth/population/prospective/twin cohort`) and adding the `Suhre 2016` and `Ahola-Olli 2016` phrasing + `"Finns"` count noun (`v4.2`) auto-deprioritised `Chick 2016` as `Non-Human Study`, promoted both `Suhre 2016` and `Ahola-Olli 2016` to `Likely Primary pGWAS`, and preserved **`58 / 58` (`100.0%`) exact recall and `0` false positives** on the `2025` benchmark.
 
 ---
 

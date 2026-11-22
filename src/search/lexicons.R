@@ -16,6 +16,7 @@ CANONICAL_SAMPLE_MATRICES <- c(
   "Citrate plasma",
   "Heparin plasma",
   "Plasma (unspecified)",
+  "Plasma + serum (mixed)",
   "Serum",
   "Whole blood / DBS",
   "CSF",
@@ -809,7 +810,7 @@ is_public_reuse_sentence <- function(sent_lower) {
 # grant, award, accession, table, or figure identifiers.
 SI_BIOMED_COUNT_NOUN_REGEX <- paste0(
   "(?:participants?|individuals?|subjects?|persons?|people|donors?|volunteers?|",
-  "icelanders?|europeans?|british|scottish|finnish|swedish|danish|greenlandic|inuit|japanese|chinese|koreans?|indians?|africans?|hispanics?|arabs?|",
+  "icelanders?|europeans?|british|scottish|finnish|finns|swedish|danish|greenlandic|inuit|japanese|chinese|koreans?|indians?|africans?|hispanics?|arabs?|",
   "adults?|females?|males?|women|men|children|adolescents?|infants?|newborns?|babies|neonates?|twins?|centenarians?|patients?|cases?|controls?|",
   "samples?|specimens?|brains?|proteomes?|cohorts?|",
   "proteins?|aptamers?|somamers?|peptides?|cytokines?|chemokines?|biomarkers?|assays?|targets?|genes?|",
@@ -854,7 +855,7 @@ extract_sample_size_v2 <- function(text) {
   m2 <- regmatches(clean_txt, gregexpr(paste0(
     "(?:[>~]|\\b(?:over|more\\s+than|nearly|almost|approximately|up\\s+to)\\s+)?",
     "\\b([1-9][0-9,]{1,6})\\s+(?:[a-z()/+-]+\\s+){0,3}",
-    "(?:participants|individuals|subjects|persons|people|icelanders|europeans|british|scottish|finnish|danish|greenlandic|japanese|chinese|",
+    "(?:participants|individuals|subjects|persons|people|icelanders|europeans|british|scottish|finnish|finns|danish|greenlandic|japanese|chinese|",
     "adults|females|males|women|men|children|adolescents|newborns|babies|infants|neonates|twins|patients|donors|volunteers|centenarians|",
     "brains|brain\\s+proteomes|gtex\\s+samples|gtm\\s+samples|plasma\\s+samples|serum\\s+samples|csf\\s+samples|kidney\\s+samples|rpe\\s+lines|samples)\\b"
   ), clean_txt, perl = TRUE))[[1L]]
@@ -977,11 +978,14 @@ score_triage_v2 <- function(title,
   }
 
   has_nonhuman <- grepl(NONHUMAN_ORGANISM_REGEX, txt, perl = TRUE)
+  # Note (v4.2): Scope `cohort` to human qualifiers (`human cohort`, `patient cohort`, `clinical cohort`, etc.)
+  # so animal-only cohorts ("an independent cohort of collaborative cross mice", Chick 2016 PMID:27309819)
+  # do not bypass G2 when no human subject terms or MeSH="Humans" are present.
   has_human <- grepl(paste0(
     "\\b(human|humans|participant|participants|patient|patients|individuals|subjects|donors|volunteers|persons|",
-    "cases|controls|icelanders|europeans|british|scottish|finnish|swedish|danish|chinese|japanese|korean|indian|african|hispanic|inuit|greenlandic|arab|",
+    "cases|controls|icelanders|europeans|british|scottish|finnish|finns|swedish|danish|chinese|japanese|korean|indian|african|hispanic|inuit|greenlandic|arab|",
     "men|women|males|females|adults|children|adolescents|pediatric|neonates|infants|newborns|babies|mothers|offspring|centenarians|families|twins|",
-    "biobank|cohort|ancestry|lymphoblastoid|lcl|lcls|ipscs?|hipscs?|induced pluripotent|organoids?|post-?mortem|autops(y|ies)|biops(y|ies)|",
+    "biobank|(?:human|patient|clinical|birth|population(?:-based)?|prospective|twin|mother-child)\\s+cohorts?|ancestry|lymphoblastoid|lcl|lcls|ipscs?|hipscs?|induced pluripotent|organoids?|post-?mortem|autops(y|ies)|biops(y|ies)|",
     "hapmap|1000 genomes|kora|framingham|aric|ages|interval|fenland|ukb|ukb-ppp|decode|rosmap|ros/map|adni|biofinder|starnet|gtex|teddy|daisy|nagahama|genes\\s*&\\s*health)\\b"
   ), txt, perl = TRUE) ||
     ("humans" %in% msh && !grepl("\\b(inbred lines|recombinant inbred|strains|cultivars?|breeds?|isolates)\\b", txt, perl = TRUE))
@@ -1130,6 +1134,9 @@ score_triage_v2 <- function(title,
       "(human\\s+)?(blood\\s+|plasma\\s+|serum\\s+|csf\\s+|cerebrospinal fluid\\s+|urine\\s+|urinary\\s+|brain\\s+|salivary\\s+|circulating\\s+|tissue\\s+)?proteom[a-z]*|mass spectrometry proteomics|protein quantitative trait loc[a-z]*|pqtls?)\\b|",
       "\\bgenome-wide association stud(y|ies) (of|for|on) (([a-z]+\\s+){0,2}levels\\s+of\\s+)?([>~]?([5-9]|[1-9][0-9,]+)\\s+([a-z-]+\\s+){0,3}(proteins?|protein levels|proteomic profiles?|cytokines?|peptides?|aptamers?|analytes?)|(the\\s+)?(human\\s+)?(blood\\s+|plasma\\s+|serum\\s+|csf\\s+|urine\\s+|urinary\\s+|brain\\s+|circulating\\s+)?(proteom[a-z]*|mass spectrometry proteomics))\\b|",
       "\\b(a\\s+)?genome-wide association (stud(y|ies)|scan|approach) (identifies|identified|to identify) ([a-z-]+\\s+){0,3}(protein quantitative trait loc[a-z]*|pqtls?)\\b|",
+      "\\bgenome-wide association stud(y|ies) identif(ies|ied) [1-9][0-9,]* ([a-z-]+\\s+){0,3}loci (influencing|associated with|for) (concentrations?|levels?|abundances?) of (circulating |plasma |serum |csf |blood )?(cytokines?|chemokines?|proteins?|growth factors?)\\b|",
+      "\\bgwas (?:performed |conducted )?with a (?:highly )?multiplexed [a-z -]{0,45}proteomics platform\\b|",
+      "\\bquantified associations between protein level(?: changes)? and gene(?:tic)? variants\\b|",
       "\\bquantitative trait loci (underlying|associated with) (proteome|protein expression) variation\\b|",
       "\\bmapped genetic variants that are associated with [^.;]{0,65}\\bprotein abundance \\(pqtls?\\)|",
       "\\banalyzed for corresponding (plasma |serum |csf )?protein levels using genome-wide association study \\(gwas\\) genotype data and proteomic panel data\\b|",
@@ -1162,6 +1169,7 @@ score_triage_v2 <- function(title,
     "\\bidentified\\s+[1-9][0-9,]*\\s+cis-?(?:snps?|qtls?|variants?)\\s+(?:significantly\\s+)?(?:influencing|affecting|associated\\s+with)\\s+(?:the\\s+)?(?:level|levels|abundance|concentrations?)\\s+of\\s+(?:specific\\s+)?(?:plasma\\s+|serum\\s+|csf\\s+|human\\s+)?proteins\\b|",
     "\\bdetected\\s+robust\\s+cis-?associations\\s+for\\s+[1-9][0-9,]*\\s+proteins\\b|",
     "\\bdetected\\s+[1-9][0-9,]*\\s+significant[^.;]{0,45}associations\\s+between\\s+[1-9][0-9,]*\\s+analytes\\s+and\\s+[1-9][0-9,]*\\s+snps\\b|",
+    "\\bidentified\\s+[1-9][0-9,]*\\s+(?:genome-wide(?:ly)?\\s+significant\\s+)?loci\\s+(?:\\([^)]+\\)\\s+)?for\\s+one\\s+or\\s+more\\s+(?:circulating\\s+|plasma\\s+|serum\\s+)?(?:cytokines?|proteins?|chemokines?)\\b|",
     "\\bidentified\\s+[1-9][0-9,]*\\s+eqtls?\\s+([a-z0-9 -]+\\s+){0,5}and\\s+[1-9][0-9,]*\\s+(cis-?|trans-?)?(pqtls?|vqtls?)\\b|",
     "\\bidentified\\s+[1-9][0-9,]*\\s+([a-z-]+\\s+){0,4}associations\\s+with\\s+(circulating\\s+|plasma\\s+|serum\\s+|csf\\s+|urinary\\s+|brain\\s+)?protein\\s+levels\\b|",
     "\\bspanning\\s+millions\\s+of\\s+snps\\s+and\\s+thousands\\s+of\\s+proteins\\b|",
@@ -1198,7 +1206,7 @@ score_triage_v2 <- function(title,
   cohort_n_pat <- paste0(
     "(\\b(in|across|of|among|from|involving|encompassing|stud(y|ied)|enrolled|recruited|analy[sz](ed|ing)|profiled)\\s+",
     "(?:[>~]|(?:over|more\\s+than|nearly|almost|approximately|up\\s+to)\\s+)?[1-9][0-9,]{1,6}\\s+([a-z()/+-]+\\s+){0,3}",
-    "(participants|individuals|subjects|persons|people|donors|volunteers|icelanders|europeans|british|scottish|finnish|danish|greenlandic|japanese|chinese|",
+    "(participants|individuals|subjects|persons|people|donors|volunteers|icelanders|europeans|british|scottish|finnish|finns|danish|greenlandic|japanese|chinese|",
     "adults|children|adolescents|pediatric|neonates|infants|newborns?|babies|twins|centenarians|brains|brain\\s+proteomes|kidney\\s+samples|gtm\\s+samples|patients|samples|men|women|males|females|lcls?|cell\\s+lines)\\b|",
     "\\(\\s*n\\s*=\\s*[>~]?[1-9][0-9,]{1,6}\\s*\\)|\\b[1-9][0-9,]{1,6}\\s+participants\\s+were\\s+analy[sz]ed\\b)"
   )
@@ -1254,7 +1262,7 @@ score_triage_v2 <- function(title,
   # P8 (+2): Genuine proteomics resource / atlas / summary-statistics deposition statement
   if (grepl(paste0(
     "\\b(open-access (proteomics |proteome-phenome )?resource|valuable resource|publicly available database|",
-    "convenient web application|interactive webserver|",
+    "convenient web application|interactive web[- ]?(?:server|tool|application)|",
     "summary statistics (are|have been) ([a-z]+ )?(available|deposited|publicly)|",
     "(comprehensive |large-scale )?genomic atlas of ([a-z -]+)?proteome|",
     "atlas of protein quantitative trait loci)\\b"

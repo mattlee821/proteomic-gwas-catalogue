@@ -13,3 +13,14 @@ PMID:23133543	Single-protein clinical biomarker study (transthyretin/TTR in Lewy
 PMID:21949775	Fewer than 5 unique proteins assayed (3 ELISA signaling proteins: AKT1, p70S6K, 4E-BP1 in LCLs)	2026-11-19
 PMID:21651918	Targeted candidate-SNP panel (DNA repair gene SNPs in bacterial meningitis, not genome-wide GWAS)	2026-11-19
 PMID:21257964	Single-gene candidate polymorphism study (MAP3K14/NIK SNP in septic shock)	2026-11-19
+PMID:27309819	Non-human organism study (2,866 liver pQTLs in 192 Diversity Outbred mice, no human cohort; gated automatically in v4.2)	2026-11-20
+PMID:27647805	Targeted SRM mass spectrometry assay development stratifying CFH/CFHR1-5 by 2 coding variants (Y402H, I62V), not genome-wide GWAS	2026-11-20
+DOI:10.1101/092767	Somatic cancer cell line proteogenomics (50 colorectal cancer cell lines profiling somatic CNA/mutations), not germline human pGWAS	2026-11-20
+PMID:27142060	Functional interactome / co-IP mass spectrometry and ChIP-seq study of single protein BRD1, not pGWAS	2026-11-20
+PMID:27504496	Targeted candidate-SNP lookup (24 Parkinson disease risk SNPs tested against 6 monocyte proteins, <100 SNPs)	2026-11-20
+PMID:26913498	Non-human organism genome study (fungus Botrytis cinerea)	2026-11-20
+PMID:27329260	Fewer than 5 unique proteins assayed (genome-wide meta-analysis of 2 circulating proteins: IGF-I and IGFBP-3)	2026-11-20
+PMID:27832767	Single-protein candidate-locus study (CHI3L1 locus and CSF YKL-40 levels, <5 unique proteins)	2026-11-20
+PMID:27357396	Single-protein GWAS (blood plasma and CSF CCL16 levels only, <5 unique proteins)	2026-11-20
+PMID:27793387	Single-protein targeted polymorphism study (PAPP-A SNPs in follicular fluid, <5 unique proteins)	2026-11-20
+PMID:26742530	Targeted single-gene polymorphism study (CR1 variants and CSF AD biomarkers, not genome-wide pGWAS)	2026-11-20

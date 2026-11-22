@@ -124,7 +124,7 @@ if (!is.null(studies) && !is.null(strata)) {
   check_vocab(strata$sex, c("Combined", "Female", "Male"), "strata$sex")
   check_vocab(strata$sample_matrix, c(
     "EDTA plasma", "Citrate plasma", "Heparin plasma", "Plasma (unspecified)",
-    "Serum", "Whole blood / DBS", "CSF", "Brain tissue", "Urine",
+    "Plasma + serum (mixed)", "Serum", "Whole blood / DBS", "CSF", "Brain tissue", "Urine",
     "Saliva", "Cell line / LCL", "Other tissue"
   ), "strata$sample_matrix")
   check_vocab(strata$platform_category, c(
