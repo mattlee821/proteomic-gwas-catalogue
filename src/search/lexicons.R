@@ -16,6 +16,7 @@ CANONICAL_SAMPLE_MATRICES <- c(
   "Citrate plasma",
   "Heparin plasma",
   "Plasma (unspecified)",
+  "Plasma + serum (mixed)",
   "Serum",
   "Whole blood / DBS",
   "CSF",

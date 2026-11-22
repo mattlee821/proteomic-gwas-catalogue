@@ -3,7 +3,7 @@
 
 ALLOWED_SAMPLE_MATRICES <- c(
   "EDTA plasma", "Citrate plasma", "Heparin plasma", "Plasma (unspecified)",
-  "Serum", "Whole blood / DBS", "CSF", "Brain tissue",
+  "Plasma + serum (mixed)", "Serum", "Whole blood / DBS", "CSF", "Brain tissue",
   "Urine", "Saliva", "Cell line / LCL", "Other tissue"
 )
 
@@ -149,6 +149,7 @@ detect_sample_matrix_12 <- function(txt, loc_label) {
   }
 
   rules <- list(
+    list(val = "Plasma + serum (mixed)", amb = TRUE, pat = "\\b(plasma\\s+in\\s+[A-Za-z0-9_-]+.*\\band\\s+(from\\s+)?serum\\s+in\\b|both\\s+(EDTA\\s+|heparin\\s+|citrate\\s+)?plasma\\s+and\\s+serum\\b|serum\\s+and\\s+(EDTA\\s+|heparin\\s+|citrate\\s+)?plasma\\s+(samples|cohorts))"),
     list(val = "EDTA plasma", amb = FALSE, pat = "\\bEDTA[\\s-]+(blood\\s+|tubes?\\s+)?plasma\\b|\\bblood\\s+in\\s+EDTA\\s+tubes\\b|\\bK2?-?EDTA\\b"),
     list(val = "Citrate plasma", amb = FALSE, pat = "\\bcitrate[d]?[\\s-]+plasma\\b|\\bsodium\\s+citrate\\s+tubes\\b"),
     list(val = "Heparin plasma", amb = FALSE, pat = "\\b(lithium\\s+)?heparin[\\s-]+plasma\\b"),
