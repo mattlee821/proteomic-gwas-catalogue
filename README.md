@@ -2,7 +2,7 @@
 
 An all-encompassing, continuously updated catalogue and interactive web application of published and preprint genome-wide association studies (GWAS) of proteins — built so researchers can quickly locate, evaluate, and harmonise summary statistics for meta-analysis, Mendelian randomisation (MR), and colocalisation.
 
-**Current release:** `v0.1.0` (`2000–2015` curated; chronological annual updates `2016–2025` next) · **Website:** https://mattlee821.github.io/proteomic-gwas-catalogue/
+**Current release:** `v0.1.1` (`2000–2016` curated; chronological annual updates `2017–2025` next) · **Website:** https://mattlee821.github.io/proteomic-gwas-catalogue/
 
 ## Purpose & Scope
 
