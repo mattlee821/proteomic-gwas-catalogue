@@ -1,7 +1,7 @@
 
 **Project:** `proteomic-gwas-catalogue`  
 **Document Type:** Living Methodological Log (updated at every search/extraction version milestone)  
-**Last Updated:** 2026-11-20 (`v0` -> `v1` -> `v2` -> `v3.0` -> `v4.0` -> `v4.1` -> `v4.2` finalised and validated)
+**Last Updated:** 2026-11-22 (`v0` -> `v1` -> `v2` -> `v3.0` -> `v4.0` -> `v4.1` -> `v4.2` -> `v4.3` finalised and validated)
 
 ---
 
@@ -211,6 +211,9 @@ During Period 1 (`2000-01-01..2015-12-31`) retrospective execution (`4,976` raw 
 
 ### 6.5 Period 2 (`2016`) Preprint & Animal-Cohort Triage Refinements (`v4.2`)
 During Period 2 (`2016-01-01..2016-12-31`) execution (`697` raw hits $\rightarrow$ `350` deduplicated works), systematic screening uncovered three residual triage edge cases: (1) *Suhre et al. 2016* (`bioRxiv` `10.1101/086793`) described `"a GWAS performed with a highly multiplexed aptamer-based affinity proteomics platform"` and `"associations between protein level changes and gene variants"` without using the acronym `"pQTL"`, leaving it in `Auto-Deprioritised` (`P = 10, S = 0`) despite high primary assay/genomic evidence; (2) *Chick et al. 2016* (*Nature*, `PMID: 27309819`) mapped `2,866` liver pQTLs in `192` Diversity Outbred mice (`MeSH: Animals; Mice`), bypassing Stage 1 `G2` because its last sentence wrote `"an independent cohort of collaborative cross mice"`, matching bare `"cohort"` in `has_human`; and (3) *Ahola-Olli et al. 2016* (*AJHG*, `PMID: 27989323`) wrote `"up to 8,293 Finns"` and `"27 loci influencing concentrations of circulating cytokines"`, landing in `Needs Human Check` (`P = 5`) rather than `Likely Primary pGWAS`. Scoping `cohort` in `G2` `has_human` to human qualifiers (`human/patient/clinical/birth/population/prospective/twin cohort`) and adding the `Suhre 2016` and `Ahola-Olli 2016` phrasing + `"Finns"` count noun (`v4.2`) auto-deprioritised `Chick 2016` as `Non-Human Study`, promoted both `Suhre 2016` and `Ahola-Olli 2016` to `Likely Primary pGWAS`, and preserved **`58 / 58` (`100.0%`) exact recall and `0` false positives** on the `2025` benchmark.
+
+### 6.6 Period 3 (`2017`) Joint EWAS/GWAS, WGS Peptide & Europe PMC Gateway Refinements (`v4.3`)
+During Period 3 (`2017-01-01..2017-12-31`) execution (`836` raw hits $\rightarrow$ `413` deduplicated works), two infrastructure/triage refinements were introduced: (1) reducing Europe PMC `searchPOST` `resultType="core"` pagination from `pageSize = 1000` to `100` (`src/run_literature_search.R`), eliminating transient EBI `HTTP 503` gateway timeouts on multi-hundred-hit `2A_Proteome` shards; and (2) generalizing `src/search/lexicons.R` (`v4.3`) to recognize avian livestock taxa (`duck`/`mule duck`/`goose`) in `G2`, joint `EWAS` + `GWAS` multi-omic biomarker studies in `G3`/`P2` (*Ahsan et al. 2017*), serum/plasma oligopeptide WGS/WES association framing (`"serum/plasma peptide levels"`, *de Vries et al. 2017*), passive multi-protein array SNP-expression regression (*Chan et al. 2017*), and `"Genetic Architecture of the Cardiovascular Risk Proteome"` title/yield phrasing (*Benson et al. 2018*, *Sun et al. 2017* preprint). On Period 3 (`2017`), `v4.3` surfaced all **`11 / 11` (`100.0%` precision, `0` false positives)** primary human pGWAS candidates (`10` `Likely Primary pGWAS` + `1` `Preprint -> Published Match`) and achieved **`100.0%` discovery recall and `100.0%` triage survival** on blinded positive-control evaluation.
 
 ---
 

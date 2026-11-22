@@ -620,13 +620,13 @@ run_epmc_windowed <- function(builder_fn, source_tag, since_d, until_d, is_retro
       # Safeguard 1: Include FIRST_IDATE OR-union so Advance-Online Epubs whose print issue moved
       # to the next calendar year are captured; post-merge canonical first_pub_date drops prior-year leaks.
       q_yr   <- builder_fn(w_from, w_to, include_idate = TRUE, verify_pmids = NULL)
-      yr_res <- fetch_epmc_post(q_yr, source_tag = source_tag, page_size = 1000L, max_pages = 15L)
+      yr_res <- fetch_epmc_post(q_yr, source_tag = source_tag, page_size = 100L, max_pages = 35L)
       all_out <- c(all_out, yr_res)
     }
     return(all_out)
   }
   q_inc <- builder_fn(since_d, until_d, include_idate = TRUE, verify_pmids = NULL)
-  fetch_epmc_post(q_inc, source_tag = source_tag, page_size = 500L, max_pages = 10L)
+  fetch_epmc_post(q_inc, source_tag = source_tag, page_size = 100L, max_pages = 30L)
 }
 
 # Source 2b: Narrow 14/21-day bioRxiv/medRxiv category catch-up scan (ONLY when window <= 21 days)
