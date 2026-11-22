@@ -75,8 +75,21 @@ if (!nzchar(dump_path) && dir.exists("data")) {
 read_table_flex <- function(path) {
   if (!nzchar(path) || identical(tolower(path), "none") || !file.exists(path)) return(NULL)
   sep_char <- if (grepl("\\.csv$", tolower(path))) "," else "\t"
-  utils::read.delim(path, sep = sep_char, stringsAsFactors = FALSE, check.names = FALSE,
-                    quote = "\"", colClasses = "character", comment.char = "")
+  df <- utils::read.delim(path, sep = sep_char, stringsAsFactors = FALSE, check.names = FALSE,
+                          quote = "\"", colClasses = "character", comment.char = "")
+  if (ncol(df) > 0L) {
+    nm <- names(df)
+    bad_nm <- !validUTF8(nm)
+    if (any(bad_nm)) nm[bad_nm] <- iconv(nm[bad_nm], from = "latin1", to = "UTF-8", sub = "")
+    names(df) <- enc2utf8(nm)
+    for (j in seq_along(df)) {
+      v <- df[[j]]
+      bad <- !is.na(v) & !validUTF8(v)
+      if (any(bad)) v[bad] <- iconv(v[bad], from = "latin1", to = "UTF-8", sub = "")
+      df[[j]] <- enc2utf8(v)
+    }
+  }
+  df
 }
 
 ctrl_raw   <- read_table_flex(controls_path)
