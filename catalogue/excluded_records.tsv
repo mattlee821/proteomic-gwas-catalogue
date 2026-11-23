@@ -58,3 +58,20 @@ PMID:30239796	Methodological bioinformatics framework paper (ProGeM) for priorit
 PMID:30275891	GAW20 statistical mixed-model methodology paper analyzing triglycerides and HDL cholesterol (referred to as inflammatory biomarkers) in GOLDN, no proteins assayed	2026-11-22
 PMID:30228274	Author Correction to Yao et al. 2018 (PMID:30111768) adding Qatar Foundation funding acknowledgement only; no scientific or data changes	2026-11-22
 DOI:10.1101/468538	Non-human organism study (linkage disequilibrium and behavioral isolation in two parapatric cricket species; gated automatically in v4.4)	2026-11-22
+DOI:10.1101/2019.12.14.876474	Polygenic risk score (PRS) association study testing 5 cardiometabolic disease PRSs against 3,438 SomaScan plasma proteins in INTERVAL (N=3,087) with secondary 2SMR mediation reusing published Sun et al. 2018 pQTL summary statistics	2026-11-23
+DOI:10.1101/854216	Secondary integrative colocalization, TWAS, and Mendelian randomization of platelet traits reusing previously generated Framingham Heart Study SABRe CVD 71-plex pQTL summary statistics (Yao et al. 2018)	2026-11-23
+DOI:10.21203/rs.2.15375/v1	Secondary LD Score Regression (LDSC) and two-sample Mendelian randomization between lean body mass and plasma proteins reusing public Sun et al. 2018 INTERVAL SomaScan summary statistics	2026-11-23
+PMID:31882771	Targeted candidate-SNP lookup testing only 53 published coronary artery disease GWAS risk SNPs against 265 Olink plasma biomarkers in STABILITY (N=8,200; <100 variants, not genome-wide/exome-wide/cis-wide pGWAS)	2026-11-23
+PMID:31385390	Single-locus APOE (e2/e3/e4) genotype comparison against 4,785 SomaScan serum proteins in New England Centenarian Study (N=222), not a genome-wide or cis-wide pGWAS	2026-11-23
+PMID:30841775	Observational prospective Cox regression of 1,373 SomaScan plasma proteins with new-onset atrial fibrillation in Framingham Heart Study (N=1,885); no genetic association scan performed	2026-11-23
+PMID:31511532	Genome-wide meta-analysis of urinary albumin-to-creatinine ratio (albuminuria, N=564,257; single clinical renal trait, <5 unique proteins)	2026-11-23
+PMID:30946743	Disease case-control genome-wide association study of ankylosing spondylitis in Turkish and Iranian cohorts (MEFV locus); serum cytokines measured in small follow-up subset without pGWAS	2026-11-23
+PMID:31437157	Single-protein candidate-gene study of PCSK9 variants and CSF/brain PCSK9 levels in Alzheimer's disease (<5 unique proteins)	2026-11-23
+PMID:30602460	Host HLA/genetic association with predicted HIV-1 viral sequence epitopes (peptidome-wide association of viral peptides, not human quantitative proteomics)	2026-11-23
+PMID:31520489	Methodological copy-number variation (CNV) calling pipeline evaluated on 6,898 VCF files; no protein abundance measurements	2026-11-23
+PMID:31432426	Springer Methods in Molecular Biology book chapter (DOI 10.1007/978-1-4939-9662-9_20) describing a computational protocol for CSF pQTL mapping; gated automatically in v4.5	2026-11-23
+PMID:30688043	Observational plasma LC-MS/MS proteomics in 26 BMI-discordant monozygotic twin pairs without germline genetic association testing	2026-11-23
+DOI:10.1101/19009522	Somatic tumor mutation profiling and functional proteomics in 46 anal squamous cell carcinoma biopsies; no germline pQTL mapping	2026-11-23
+PMID:30896667	Candidate-gene case-control study of 4 RUNX3 SNPs in severe preeclampsia (N=417); no multiplexed pGWAS	2026-11-23
+PMID:31552100	Secondary computational cis-regulatory integration reusing previously published HapMap lymphoblastoid cell line ChIP-seq, eQTL, and pQTL datasets (Wu et al. 2013)	2026-11-23
+PMID:31644575	Epidemiological and genetic imputation analysis of NMR glycoprotein acetyls (GlycA) and alpha-1-antitrypsin (SERPINA1; <5 unique proteins)	2026-11-23

@@ -1062,7 +1062,7 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
       dois <- unique(vapply(sub, `[[`, "", "doi"))
       dois <- dois[grepl("^10\\.(1101|64898)/", dois)]
       if (length(dois) == 0L) next
-      sc_tmp <- score_triage_v2(sub[[1L]]$title, sub[[1L]]$abstract, sub[[1L]]$pub_types, sub[[1L]]$mesh_headings, 0L)
+      sc_tmp <- score_triage_v2(sub[[1L]]$title, sub[[1L]]$abstract, sub[[1L]]$pub_types, sub[[1L]]$mesh_headings, 0L, doi = dois[1L])
       if (!grepl("^Auto-Deprioritised", sc_tmp$classification)) {
         pub_d <- resolve_biorxiv_published_doi(dois[1L])
         if (nzchar(pub_d)) {
@@ -1255,7 +1255,72 @@ message(sprintf("[Source 2A: Europe PMC MED+PMC+PPR (Platforms=%d + Proteome=%d)
 recs_s2b <- run_epmc_windowed(build_epmc_prong2b_query, "EuropePMC_MethodsRescue", since_date, until_date,
                               is_retro = identical(mode, "retrospective"),
                               verify_ids = if (is_verify) verify_pmids else NULL)
-message(sprintf("[Source 2B: Europe PMC METHODS Rescue] matched %d record(s).", length(recs_s2b)))
+
+# Fast NCBI PMC full-text rescue backup (resilient to transient Europe PMC full-text search timeouts)
+query_pmc_methods_rescue_v2 <- function(since_d, until_d, verify_ids = NULL) {
+  if (!is.null(verify_ids) && length(verify_ids) > 0L) return(list())
+  if (is.null(since_d) || is.null(until_d) || !nzchar(since_d) || !nzchar(until_d)) return(list())
+  d_from <- gsub("-", "/", since_d)
+  d_to   <- gsub("-", "/", until_d)
+  q_pmc <- paste0(
+    '("', d_from, '"[PubDate] : "', d_to, '"[PubDate]) AND ',
+    '("SomaScan"[Body - All Words] OR "SOMAscan"[Body - All Words] OR "SomaLogic"[Body - All Words] OR "SOMAmer"[Body - All Words] OR ',
+    '"aptamer-based proteomics"[Body - All Words] OR "Olink"[Body - All Words] OR "proximity extension assay"[Body - All Words] OR ',
+    '"NULISA"[Body - All Words] OR "Proteograph"[Body - All Words] OR "SWATH-MS"[Body - All Words] OR "DIA-MS"[Body - All Words] OR "OpenSWATH"[Body - All Words]) AND ',
+    '("pQTL"[Body - All Words] OR "pQTLs"[Body - All Words] OR "cis-pQTL"[Body - All Words] OR "cis-pQTLs"[Body - All Words] OR ',
+    '"protein QTL"[Body - All Words] OR "protein QTLs"[Body - All Words] OR "protein quantitative trait loci"[Body - All Words]) ',
+    'NOT ("Review"[pt] OR "Editorial"[pt] OR "Comment"[pt])'
+  )
+  ncbi_key <- Sys.getenv("NCBI_API_KEY", unset = "")
+  req_es <- httr2::request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi") |>
+    httr2::req_user_agent(UA_STRING) |>
+    httr2::req_timeout(30) |>
+    httr2::req_body_form(
+      db      = "pmc",
+      term    = q_pmc,
+      retmax  = "500",
+      retmode = "json",
+      api_key = if (nzchar(ncbi_key)) ncbi_key else NULL
+    )
+  r_es <- perform_polite_http(req_es, sleep_s = 0.45, max_tries = 3L, label = "NCBI PMC MethodsRescue esearch", expect_json = TRUE)
+  if (is.null(r_es) || httr2::resp_status(r_es) != 200L) return(list())
+  js_es <- tryCatch(httr2::resp_body_json(r_es, simplifyVector = FALSE), error = function(e) NULL)
+  pmc_ids <- as.character(unlist(js_es$esearchresult$idlist %||% list()))
+  if (length(pmc_ids) == 0L) return(list())
+
+  pmids_out <- character(0)
+  for (chunk in split(pmc_ids, ceiling(seq_along(pmc_ids) / 150L))) {
+    req_sm <- httr2::request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi") |>
+      httr2::req_user_agent(UA_STRING) |>
+      httr2::req_timeout(30) |>
+      httr2::req_body_form(
+        db      = "pmc",
+        id      = paste(chunk, collapse = ","),
+        retmode = "json",
+        api_key = if (nzchar(ncbi_key)) ncbi_key else NULL
+      )
+    r_sm <- perform_polite_http(req_sm, sleep_s = 0.45, max_tries = 3L, label = "NCBI PMC MethodsRescue esummary", expect_json = TRUE)
+    if (is.null(r_sm) || httr2::resp_status(r_sm) != 200L) next
+    js_sm <- tryCatch(httr2::resp_body_json(r_sm, simplifyVector = FALSE)$result, error = function(e) NULL)
+    if (is.null(js_sm)) next
+    for (cid in chunk) {
+      it <- js_sm[[cid]]
+      if (is.null(it)) next
+      for (aid in it$articleids %||% list()) {
+        if (identical(aid$idtype, "pmid") && nzchar(aid$value %||% "")) {
+          pmids_out <- c(pmids_out, as.character(aid$value))
+        }
+      }
+    }
+  }
+  pmids_out <- unique(pmids_out[nzchar(pmids_out)])
+  if (length(pmids_out) == 0L) return(list())
+  fetch_pubmed_efetch_xml(pmids_out, source_tag = "EuropePMC_MethodsRescue")
+}
+
+recs_s2b_pmc <- query_pmc_methods_rescue_v2(since_date, until_date, verify_ids = if (is_verify) verify_pmids else NULL)
+recs_s2b     <- c(recs_s2b, recs_s2b_pmc)
+message(sprintf("[Source 2B: Europe PMC + NCBI PMC METHODS Rescue] matched %d record(s).", length(recs_s2b)))
 
 recs_s2_bio <- if (!is_verify && identical(mode, "incremental")) {
   query_biorxiv_narrow_v2(since_date, until_date)
@@ -1317,6 +1382,32 @@ resolve_ppr_to_doi <- function(ppr_id) {
   res <- js$resultList$result
   if (is.null(res) || length(res) == 0L) return("")
   normalize_doi_one(res[[1L]]$doi %||% "")
+}
+
+resolve_pmid_to_doi <- function(pmid_tok) {
+  pid <- sub("^PMID:", "", trimws(pmid_tok), ignore.case = TRUE)
+  if (!grepl("^[0-9]+$", pid)) return("")
+  ncbi_key <- Sys.getenv("NCBI_API_KEY", unset = "")
+  u <- sprintf(
+    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=%s&retmode=json%s",
+    pid, if (nzchar(ncbi_key)) paste0("&api_key=", ncbi_key) else ""
+  )
+  resp <- perform_polite_http(
+    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(20),
+    sleep_s     = 0.40,
+    max_tries   = 3L,
+    label       = "NCBI esummary resolve PMID->DOI",
+    expect_json = TRUE
+  )
+  if (is.null(resp) || httr2::resp_status(resp) != 200L) return("")
+  js <- tryCatch(httr2::resp_body_json(resp, simplifyVector = FALSE), error = function(e) NULL)
+  aids <- js$result[[pid]]$articleids %||% list()
+  for (aid in aids) {
+    if (identical(tolower(aid$idtype %||% ""), "doi") && nzchar(aid$value %||% "")) {
+      return(normalize_doi_one(aid$value))
+    }
+  }
+  ""
 }
 
 check_active_preprints_direct <- function(studies_df) {
@@ -1524,21 +1615,26 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
   if (length(para_txts) == 0L) return(list(verified = FALSE, platform = ""))
 
   pqtl_pat <- "\\b(tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|trans-?pqtls?|sd-?pqtls?|pqtls?|protein[- ]qtls?|protein quantitative trait loc[a-z]*)\\b"
-  prot_assay_pat <- "\\b(proteom[a-z]*|protein (?:abundance|expression|levels|quantification|profiles?)|olink|somascan|somalogic|somamers?|nulisa[a-z]*|mass spectrometry|openswath[0-9]*|dia-ms|dia-pasef|swath(?:-ms)?|tandem mass tags?|lc-ms/ms|proteograph|orbitrap)\\b"
+  prot_assay_pat <- "\\b(proteom[a-z]*|protein (?:abundance|expression|levels|quantification|profiles?)|olink|somascan|somalogic|somamers?|aptamer[- ]based|nulisa[a-z]*|mass spectrometry|openswath[0-9]*|dia-ms|dia-pasef|swath(?:-ms)?|tandem mass tags?|lc-ms/ms|proteograph|orbitrap)\\b"
   primary_evid_pat <- paste0(
     "\\b(we (?:aimed to |next |then |also |systematically |comprehensively )?(?:quantif(?:y|ied)|performed|applied|mapped|computed|tested|defined|analyzed|conducted|generated|profiled|identified|discovered)|",
     "to test for (?:tr-?|sv-?|cis-?|trans-?)?pqtls?|",
+    "conducted genome-wide association studies \\(gwas\\) of these proteins|",
+    "of the [1-9][0-9,]* pqtls? in cis|",
     "n\\s*=\\s*[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteom[a-z]*|",
     "[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteomics? samples|",
     "(?:tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|pqtls?|protein qtls?) (?:were|was) (?:performed|mapped|identified|computed|tested|generated)|",
     "tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|fastllm|susie)\\b"
   )
-  ext_only_pat <- "\\b(protein qtls? from the [a-z0-9 -]{0,35}generated by|curated (?:tumor )?database integrating|(?:previous|prior|published|existing) (?:eqtl and )?pqtl (?:stud(?:y|ies)|analys(?:is|es)))\\b"
+  ext_only_pat <- "\\b(protein qtls? from the [a-z0-9 -]{0,35}generated by|curated (?:tumor )?database integrating|(?:previous|prior|published|existing|publicly available|publically available) (?:eqtl and )?pqtl (?:stud(?:y|ies)|analys(?:is|es)|datasets?)|also influenced by pqtls? in the|protein quantitative trait locus analysis for (?:two|three|four|[1-9]) (?:previously reported )?snps|[a-z0-9-]+ protein qtl analysis was performed on log10 transformed [a-z0-9-]+ protein levels)\\b"
 
-  para_ok <- grepl(pqtl_pat, para_txts, perl = TRUE) &
+  para_ok <- (grepl(pqtl_pat, para_txts, perl = TRUE) &
     grepl(prot_assay_pat, para_txts, perl = TRUE) &
     grepl(primary_evid_pat, para_txts, perl = TRUE) &
-    !grepl(ext_only_pat, para_txts, perl = TRUE)
+    !grepl(ext_only_pat, para_txts, perl = TRUE)) |
+    (any(grepl("\\bwe conducted genome-wide association studies \\(gwas\\) of these proteins in [1-9][0-9,]+", para_txts, perl = TRUE)) &
+       grepl(pqtl_pat, para_txts, perl = TRUE) &
+       !grepl(ext_only_pat, para_txts, perl = TRUE))
 
   if (any(para_ok)) {
     kept_body_txt <- paste(para_txts, collapse = " ")
@@ -1559,7 +1655,16 @@ needs_ft_pqtl_check <- function(m) {
       !grepl("\\b(human|humans|patients?|participants?|donors?|biobank|cohort)\\b", ttl_lc, perl = TRUE)) {
     return(FALSE)
   }
-  if (grepl(BROAD_PROTEIN_REGEX, comb_lc, perl = TRUE)) return(FALSE)
+  if (grepl(BROAD_PROTEIN_REGEX, comb_lc, perl = TRUE)) {
+    # Source 2B rescue case: title+abstract mentions proteomics/platform in a human cohort
+    # WITHOUT explicit GWAS/pQTL terms in the abstract, while full-text Methods/Results matched pQTLs!
+    is_methods_rescue_only <- grepl("EuropePMC_MethodsRescue", m$matched_sources %||% "", fixed = TRUE) &&
+      !grepl("\\b(pqtls?|cis-?pqtls?|trans-?pqtls?|vqtls?|pgwas|protein[- ]qtls?|protein quantitative trait|gwas|gwass|genome-wide association|mendelian randomi[sz]ation|two-sample|proteome-wide association)\\b",
+             comb_lc, perl = TRUE) &&
+      grepl("\\b(cohort|population-based|participants?|individuals?|subjects?|patients?|donors?|adults?|twins?)\\b",
+            comb_lc, perl = TRUE)
+    return(is_methods_rescue_only)
+  }
   has_multiomic_qtl_anchor <- grepl("\\b(molqtls?|xqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|(?:molecular|multi-?omic|quantile) (?:quantitative trait loc[a-z]*|qtls?))\\b",
                                     comb_lc, perl = TRUE)
   has_primary_qtl_mapping  <- grepl("\\b(we (?:comprehensively |systematically )?(?:mapped|identified|discovered|quantified|performed|generated|profiled) [^.;]{0,140}\\b(?:qtls?|xqtls?|molqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|quantitative trait loc[a-z]*)|(?:identified|discovered|mapped) [>~]?[0-9,.]+(?:\\s*million)? (?:[a-z-]+ ){0,3}(?:xqtls?|molqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|quantitative trait loc[a-z]*))\\b",
@@ -1641,11 +1746,11 @@ for (m in merged_recs) {
     mesh_headings              = m$mesh_headings,
     gwas_catalog_study_count   = m$gwas_study_count,
     erratum_targets_catalogued = err_on_cat,
-    ft_verified_pqtl           = isTRUE(m$ft_verified_pqtl)
+    ft_verified_pqtl           = isTRUE(m$ft_verified_pqtl),
+    doi                        = doi
   )
 
-  # Selective PPR* -> DOI resolution: only invoke HTTP lookup when record is actionable or
-  # carries primary signal (P_score >= 5) and lacks a preprint DOI in lineage_parts!
+  # Selective PPR* -> DOI and PMID* -> DOI resolution on actionable / primary-signal records
   lineage_parts <- m$preprint_links
   has_pre_doi_already <- any(is_preprint_doi(lineage_parts))
   if (!has_pre_doi_already && (!grepl("^Auto-Deprioritised", sc$classification) || sc$P_score >= 5L)) {
@@ -1653,6 +1758,15 @@ for (m in merged_recs) {
     for (ptok in ppr_tokens) {
       resolved_d <- resolve_ppr_to_doi(ptok)
       if (nzchar(resolved_d)) lineage_parts <- unique(c(lineage_parts, resolved_d))
+    }
+  }
+  lin_dois_now <- extract_dois_from_cell(paste(lineage_parts, collapse = "|"))
+  has_pub_doi_already <- any(!is_preprint_doi(lin_dois_now))
+  if (is_preprint_doi(doi) && !has_pub_doi_already && (!grepl("^Auto-Deprioritised", sc$classification) || sc$P_score >= 5L)) {
+    pmid_tokens <- grep("^PMID:[0-9]+$", lineage_parts, value = TRUE, ignore.case = TRUE)
+    for (pmtok in pmid_tokens) {
+      resolved_pub_d <- resolve_pmid_to_doi(pmtok)
+      if (nzchar(resolved_pub_d)) lineage_parts <- unique(c(lineage_parts, resolved_pub_d))
     }
   }
 
