@@ -27821,6 +27821,7 @@ P19438	TNFRSF1A	Tumor necrosis factor receptor superfamily member 1A	OID00649	ol
 P18065	IGFBP2	Insulin-like growth factor-binding protein 2	OID00650	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
 P04275	VWF	von Willebrand factor	OID00651	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
 P16284	PECAM1	Platelet endothelial cell adhesion molecule	OID00652	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
+P16860	NPPB	Natriuretic peptides B	OID00653	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
 O15467	CCL16	C-C motif chemokine 16	OID00654	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
 P40222	TXLNA	Alpha-taxilin	OID00655	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
 P15692	VEGFA	Vascular endothelial growth factor A, long form	OID00656	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
@@ -28190,6 +28191,7 @@ Q16820	MEP1B	Meprin A subunit beta	OID01208	olin_2019_EUR	olin_2019_31424497	TRU
 Q01973	ROR1	Inactive tyrosine-protein kinase transmembrane receptor ROR1	OID01209	olin_2019_EUR	olin_2019_31424497	TRUE	FALSE
 P12724	RNASE3	Eosinophil cationic protein	OID01211	olin_2019_EUR	olin_2019_31424497	TRUE	FALSE
 Q8NFT8	DNER	Delta and Notch-like epidermal growth factor-related receptor	OID01213	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
+P16860	NPPB	Natriuretic peptides B	OID01214	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
 O00533	CHL1	Neural cell adhesion molecule L1-like protein	OID01216	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
 O14786	NRP1	Neuropilin-1	OID01217	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
 O15031	PLXNB2	Plexin-B2	OID01218	olin_2019_EUR	olin_2019_31424497	FALSE	FALSE
@@ -29661,116 +29663,264 @@ P29622	SERPINA4	Kallistatin	KAIN	ruffieux_2019_MS_EUR	ruffieux_2019_ppr67785	FAL
 P03952	KLKB1	Plasma kallikrein	KLKB1	ruffieux_2019_MS_EUR	ruffieux_2019_ppr67785	FALSE	FALSE
 P01042	KNG1	Kininogen-1	KNG1	ruffieux_2019_MS_EUR	ruffieux_2019_ppr67785	FALSE	FALSE
 P61626	LYZ	Lysozyme C	LYSC	ruffieux_2019_MS_EUR	ruffieux_2019_ppr67785	FALSE	FALSE
-Q9NPH0	ACP6	Lysophosphatidic acid phosphatase type 6	ACP6	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-O00253	AGRP	Agouti-related protein	AGRP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P02760	AMBP	Protein AMBP	AMBP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q13740	ALCAM	CD166 antigen	ALCAM	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 P15144	ANPEP	Aminopeptidase N	APN	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P30530	AXL	Tyrosine-protein kinase receptor UFO	AXL	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P20160	AZU1	Azurocidin	AZU1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q13867	BLMH	Bleomycin hydrolase	BLMHYDROLASE	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P35218	CA5A	Carbonic anhydrase 5A, mitochondrial	CA5A	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P42574	CASP3	Caspase-3	CASP3	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q16663	CCL15	C-C motif chemokine 15	CCL15	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 O15467	CCL16	C-C motif chemokine 16	CCL16	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
 O00175	CCL24	C-C motif chemokine 24	CCL24	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q04900	CD164	Sialomucin core protein 24	CD164	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9Y5K6	CD2AP	CD2-associated protein	CD2AP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9HBB8	CDHR5	Cadherin-related family member 5	CDHR5	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q86VB7	CD163	Scavenger receptor cysteine-rich type 1 protein M130	CD163	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9NPY3	CD93	Complement component C1q receptor	CD93	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P33151	CDH5	Cadherin-5	CDH5	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 P36222	CHI3L1	Chitinase-3-like protein 1	CHI3L1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 Q13231	CHIT1	Chitotriosidase-1	CHIT1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q12860	CNTN1	Contactin-1	CNTN1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P02452	COL1A1	Collagen alpha-1(I) chain	COL1A1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P15085	CPA1	Carboxypeptidase A1	CPA1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P15086	CPB1	Carboxypeptidase B	CPB1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P04080	CSTB	Cystatin-B	CSTB	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P07339	CTSD	Cathepsin D	CTSD	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q9UBR2	CTSZ	Cathepsin Z	CTSZ	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9H2A7	CXCL16	C-X-C motif chemokine 16	CXCL16	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P80370	DLK1	Protein delta homolog 1	DLK1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P00533	EGFR	Epidermal growth factor receptor	EGFR	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P16422	EPCAM	Epithelial cell adhesion molecule	EPCAM	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P54760	EPHB4	Ephrin type-B receptor 4	EPHB4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P15090	FABP4	Fatty acid-binding protein, adipocyte	FABP4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P25445	FAS	Tumor necrosis factor receptor superfamily member 6	FAS	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P17931	LGALS3	Galectin-3	GAL3	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P56470	LGALS4	Galectin-4	GAL4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P28799	GRN	Progranulin	GRN	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+P13598	ICAM2	Intercellular adhesion molecule 2	ICAM2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P08833	IGFBP1	Insulin-like growth factor-binding protein 1	IGFBP1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P18065	IGFBP2	Insulin-like growth factor-binding protein 2	IGFBP2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q16270	IGFBP7	Insulin-like growth factor-binding protein 7	IGFBP7	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q96F46	IL17RA	Interleukin-17 receptor A	IL17RA	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+O95998	IL18BP	Interleukin-18-binding protein	IL18BP	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P14778	IL1R1	Interleukin-1 receptor type 1	IL1RT1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P27930	IL1R2	Interleukin-1 receptor type 2	IL1RT2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL2RA	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	IL6RA	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P05107	ITGB2	Integrin beta-2	ITGB2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9Y624	F11R	Junctional adhesion molecule A	JAMA	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q92876	KLK6	Kallikrein-6	KLK6	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P01130	LDLR	Low-density lipoprotein receptor	LDLRECEPTOR	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P36941	LTBR	Tumor necrosis factor receptor superfamily member 3	LTBR	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P02144	MB	Myoglobin	MB	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	MCP1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9NQ76	MEPE	Matrix extracellular phosphoglycoprotein	MEPE	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P08253	MMP2	72 kDa type IV collagenase	MMP2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P08254	MMP3	Stromelysin-1	MMP3	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P14780	MMP9	Matrix metalloproteinase-9	MMP9	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P05164	MPO	Myeloperoxidase	MPO	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9UM47	NOTCH3	Neurogenic locus notch homolog protein 3	NOTCH3	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O00300	TNFRSF11B	Tumor necrosis factor receptor superfamily member 11B	OPG	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P10451	SPP1	Osteopontin	OPN	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P05121	SERPINE1	Plasminogen activator inhibitor 1	PAI	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	PCSK9	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P04085	PDGFA	Platelet-derived growth factor subunit A	PDGFSUBUNITA	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P16284	PECAM1	Platelet endothelial cell adhesion molecule	PECAM1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O75594	PGLYRP1	Peptidoglycan recognition protein 1	PGLYRP1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P19957	PI3	Elafin	PI3	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P98160	HSPG2	Basement membrane-specific heparan sulfate proteoglycan core protein	PLC	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q15166	PON3	Serum paraoxonase/lactonase 3	PON3	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+P24158	PRTN3	Myeloblastin	PRTN3	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P35247	SFTPD	Pulmonary surfactant-associated protein D	PSPD	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q99969	RARRES2	Retinoic acid receptor responder protein 2	RARRES2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9HD89	RETN	Resistin	RETN	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q96PL1	SCGB3A2	Secretoglobin family 3A member 2	SCGB3A2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P16581	SELE	E-selectin	SELE	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P16109	SELP	P-selectin	SELP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P78324	SIRPA	Tyrosine-protein phosphatase non-receptor type substrate 1	SHPS1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9HCB6	SPON1	Spondin-1	SPON1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q01638	IL1RL1	Interleukin-1 receptor-like 1	ST2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+P10646	TFPI	Tissue factor pathway inhibitor	TFPI	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q99727	TIMP4	Metalloproteinase inhibitor 4	TIMP4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q5T2D2	TREML2	Trem-like transcript 2 protein	TLT2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P19438	TNFRSF1A	Tumor necrosis factor receptor superfamily member 1A	TNFR1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P20333	TNFRSF1B	Tumor necrosis factor receptor superfamily member 1B	TNFR2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNFRSF10C	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q92956	TNFRSF14	Tumor necrosis factor receptor superfamily member 14	TNFRSF14	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9Y275	TNFSF13B	Tumor necrosis factor ligand superfamily member 13B	TNFSF13B	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P00750	PLAT	Tissue-type plasminogen activator	TPA	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P13686	ACP5	Tartrate-resistant acid phosphatase type 5	TRAP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P02786	TFRC	Transferrin receptor protein 1	TR	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+P00749	PLAU	Urokinase-type plasminogen activator	UPA	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	UPAR	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P04275	VWF	von Willebrand factor	VWF	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9NPH0	ACP6	Lysophosphatidic acid phosphatase type 6	ACP6	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q9UHX3	ADGRE2	Adhesion G protein-coupled receptor E2	ADGRE2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q8IZP9	ADGRG2	Adhesion G protein-coupled receptor G2	ADGRG2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P00352	ALDH1A1	Aldehyde dehydrogenase 1A1	ALDH1A1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O15123	ANGPT2	Angiopoietin-2	ANGPT2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O95841	ANGPTL1	Angiopoietin-related protein 1	ANGPTL1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O43827	ANGPTL7	Angiopoietin-related protein 7	ANGPTL7	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P27695	APEX1	DNA repair nuclease/redox regulator APEX1	APEX1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P51693	APLP1	Amyloid beta precursor like protein 1 (Amyloid beta	APLP1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P05089	ARG1	Arginase-1	ARG1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P46379	BAG6	Large proline-rich protein BAG6	BAG6	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q8N1Q1	CA13	Carbonic anhydrase 13	CA13	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q8WVQ1	CANT1	Soluble calcium-activated nucleotidase 1	CANT1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q76M96	CCDC80	Coiled-coil domain-containing protein 80	CCDC80	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q04900	CD164	Sialomucin core protein 24	CD164	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P29017	CD1C	T-cell surface glycoprotein CD1c	CD1C	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9Y5K6	CD2AP	CD2-associated protein	CD2AP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P40259	CD79B	B-cell antigen receptor complex-associated protein beta chain	CD79B	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P19022	CDH2	Cadherin-2	CDH2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9HBB8	CDHR5	Cadherin-related family member 5	CDHR5	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q6WN34	CHRDL2	Chordin-like protein 2	CHRDL2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9NY25	CLEC5A	C-type lectin domain family 5 member A	CLEC5A	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q9H6B4	CLMP	CXADR-like membrane protein	CLMP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9H4D0	CLSTN2	Calsyntenin-2	CLSTN2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q15846	CLUL1	Clusterin-like protein 1	CLUL1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 P21964	COMT	Catechol O-methyltransferase	COMT	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-P07339	CTSD	Cathepsin D	CTSD	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+P46109	CRKL	Crk-like protein	CRKL	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 P09668	CTSH	Pro-cathepsin H	CTSH	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-P20711	DDC	Aromatic-L-amino-acid decarboxylase	DDC	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P80370	DLK1	Protein delta homolog 1	DLK1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9UHL4	DPP7	Dipeptidyl peptidase 2	DPP7	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P43234	CTSO	Cathepsin O	CTSO	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q9NR28	DIABLO	Diablo IAP-binding mitochondrial protein	DIABLO	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9UHL4	DPP7	Dipeptidyl peptidase 2	DPP7	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+P09104	ENO2	Gamma-enolase	ENO2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q6UWV6	ENPP7	Ectonucleotide pyrophosphatase/phosphodiesterase family member 7	ENPP7	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 O75356	ENTPD5	Nucleoside diphosphate phosphatase ENTPD5	ENTPD5	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q92520	FAM3C	Protein FAM3C	FAM3C	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P09467	FBP1	Fructose-1,6-bisphosphatase 1	FBP1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q96LA6	FCRL1	Fc receptor-like protein 1	FCRL1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P17931	LGALS3	Galectin-3	GAL3	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q02790	FKBP4	Peptidyl-prolyl cis-trans isomerase FKBP4	FKBP4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P22466	GAL	Galanin peptides	GAL	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P35754	GLRX	Glutaredoxin-1	GLRX	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O75791	GRAP2	GRB2-related adapter protein 2	GRAP2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q8WX77	IGFBPL1	Insulin-like growth factor-binding protein-like 1	IGFBPL1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P26010	ITGB7	Integrin beta-7	ITGB7	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O43240	KLK10	Kallikrein-10	KLK10	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q16773	KYAT1	Kynurenine--oxoglutarate transaminase 1	KYAT1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+A6NI73	LILRA5	Leukocyte immunoglobulin-like receptor subfamily A member 5	LILRA5	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q96JA1	LRIG1	Leucine-rich repeats and immunoglobulin-like domains protein 1	LRIG1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q86VZ4	LRP11	Low-density lipoprotein receptor-related protein 11	LRP11	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q8NI22	MCFD2	Multiple coagulation factor deficiency protein 2	MCFD2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q16820	MEP1B	Meprin A subunit beta	MEP1B	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q641Q3	METRNL	Meteorin-like protein	METRNL	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O95544	NADK	NAD kinase	NADK	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q92692	NECTIN2	Nectin-2	NECTIN2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q15155	NOMO1	BOS complex subunit NOMO1	NOMO1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9NQX5	NPDC1	Neural proliferation differentiation and control protein 1	NPDC1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O95502	NPTXR	Neuronal pentraxin receptor	NPTXR	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9NWQ8	PAG1	Phosphoprotein associated with glycosphingolipid-enriched microdomains 1	PAG1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9UKJ0	PILRB	Paired immunoglobulin-like type 2 receptor beta	PILRB	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P41236	PPP1R2	Protein phosphatase inhibitor 2	PPP1R2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P09417	QDPR	Dihydropteridine reductase	QDPR	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9BYZ8	REG4	Regenerating islet-derived protein 4	REG4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P12724	RNASE3	Eosinophil cationic protein	RNASE3	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q01973	ROR1	Inactive tyrosine-protein kinase transmembrane receptor ROR1	ROR1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9BZR6	RTN4R	Reticulon-4 receptor	RTN4R	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P25815	S100P	Protein S100-P	S100P	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P31431	SDC4	Syndecan-4	SDC4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q13275	SEMA3F	Semaphorin-3F	SEMA3F	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P35237	SERPINB6	Serpin B6	SERPINB6	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P50452	SERPINB8	Serpin B8	SERPINB8	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q9Y286	SIGLEC7	Sialic acid-binding Ig-like lectin 7	SIGLEC7	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O00161	SNAP23	Synaptosomal-associated protein 23	SNAP23	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9BQB4	SOST	Sclerostin	SOST	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q8WTU2	SSC4D	Scavenger receptor cysteine-rich domain-containing group B protein	SSC4D	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q8NBJ7	SUMF2	Inactive C-alpha-formylglycine-generating enzyme 2	SUMF2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q03403	TFF2	Trefoil factor 2	TFF2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P52888	THOP1	Thimet oligopeptidase	THOP1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P01222	TSHB	Thyrotropin subunit beta	TSHB	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q8NBS9	TXNDC5	Thioredoxin domain-containing protein 5	TXNDC5	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P19971	TYMP	Thymidine phosphorylase	TYMP	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q06418	TYRO3	Tyrosine-protein kinase receptor TYRO3	TYRO3	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P40818	USP8	Ubiquitin carboxyl-terminal hydrolase 8	USP8	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P13611	VCAN	Versican core protein	VCAN	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9BYF1	ACE2	Angiotensin-converting enzyme 2	ACE2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q76LX8	ADAMTS13	A disintegrin and metalloproteinase with thrombospondin motifs 13	ADAMTS13	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O00253	AGRP	Agouti-related protein	AGRP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P02760	AMBP	Protein AMBP	AMBP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+Q15389	ANGPT1	Angiopoietin-1	ANG1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P22004	BMP6	Bone morphogenetic protein 6	BMP6	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9BWV1	BOC	Brother of CDO	BOC	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P35218	CA5A	Carbonic anhydrase 5A, mitochondrial	CA5A	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q92583	CCL17	C-C motif chemokine 17	CCL17	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P10147	CCL3	C-C motif chemokine 3	CCL3	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P29965	CD40LG	CD40 ligand	CD40L	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P01730	CD4	T-cell surface glycoprotein CD4	CD4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9UIB8	CD84	SLAM family member 5	CD84	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P31997	CEACAM8	Cell adhesion molecule CEACAM8	CEACAM8	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q99895	CTRC	Chymotrypsin-C	CTRC	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P07711	CTSL	Procathepsin L	CTSL1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P09341	CXCL1	Growth-regulated alpha protein	CXCL1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P07585	DCN	Decorin	DCN	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q16698	DECR1	2,4-dienoyl-CoA reductase [(3E)-enoyl-CoA-producing], mitochondrial	DECR1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O94907	DKK1	Dickkopf-related protein 1	DKK1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P12104	FABP2	Fatty acid-binding protein, intestinal	FABP2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9NSA1	FGF21	Fibroblast growth factor 21	FGF21	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9GZV9	FGF23	Fibroblast growth factor 23	FGF23	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P19883	FST	Follistatin	FS	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 O00182	LGALS9	Galectin-9	GAL9	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9UK05	GDF2	Growth/differentiation factor 2	GDF2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P01241	GH1	Somatotropin	GH	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P27352	CBLIF	Cobalamin binding intrinsic factor	GIF	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q04760	GLO1	Lactoylglutathione lyase	GLO1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+P51161	FABP6	Gastrotropin	GT	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9UJM8	HAO1	2-Hydroxyacid oxidase 1	HAOX1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q99075	HBEGF	Proheparin-binding EGF-like growth factor	HBEGF	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P09601	HMOX1	Heme oxygenase 1	HO1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q8IYS5	OSCAR	Osteoclast-associated immunoglobulin-like receptor	HOSCAR	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
 P04792	HSPB1	Heat shock protein beta-1	HSP27	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q8WX77	IGFBPL1	Insulin-like growth factor-binding protein-like 1	IGFBPL1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P35475	IDUA	Alpha-L-iduronidase	IDUA	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 P31994	FCGR2B	Low affinity immunoglobulin gamma Fc region receptor II-b	IGGFCRECEPTORIIB	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 Q14005	IL16	Pro-interleukin-16	IL16	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 Q8TAD2	IL17D	Interleukin-17D	IL17D	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q96F46	IL17RA	Interleukin-17 receptor A	IL17RA	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q14116	IL18	Interleukin-18	IL18	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P18510	IL1RN	Interleukin-1 receptor antagonist protein	IL1RA	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q9HB29	IL1RL2	Interleukin-1 receptor-like 2	IL1RL2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P27930	IL1R2	Interleukin-1 receptor type 2	IL1RT2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 Q8NEV9	IL27	Interleukin-27 subunit alpha	IL27	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 Q14213	EBI3	Interleukin-27 subunit beta	IL27	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL2RA	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P08887	IL6R	Interleukin-6 receptor subunit alpha	IL6RA	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P24394	IL4R	Interleukin-4 receptor subunit alpha	IL4RA	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P05231	IL6	Interleukin-6	IL6	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1	KIM1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-O43240	KLK10	Kallikrein-10	KLK10	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q96JA1	LRIG1	Leucine-rich repeats and immunoglobulin-like domains protein 1	LRIG1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-Q86VZ4	LRP11	Low-density lipoprotein receptor-related protein 11	LRP11	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9UEW3	MARCO	Macrophage receptor MARCO	MARCO	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q16820	MEP1B	Meprin A subunit beta	MEP1B	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P39900	MMP12	Macrophage metalloelastase	MMP12	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P08254	MMP3	Stromelysin-1	MMP3	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q15155	NOMO1	BOS complex subunit NOMO1	NOMO1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-O95502	NPTXR	Neuronal pentraxin receptor	NPTXR	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P10451	SPP1	Osteopontin	OPN	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	PCSK9	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P04085	PDGFA	Platelet-derived growth factor subunit A	PDGFSUBUNITA	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9BQ51	PDCD1LG2	Programmed cell death 1 ligand 2	PDL2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9UKJ0	PILRB	Paired immunoglobulin-like type 2 receptor beta	PILRB	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q15166	PON3	Serum paraoxonase/lactonase 3	PON3	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-Q14242	SELPLG	P-selectin glycoprotein ligand 1	PSGL1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-P35247	SFTPD	Pulmonary surfactant-associated protein D	PSPD	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-P09417	QDPR	Dihydropteridine reductase	QDPR	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q99969	RARRES2	Retinoic acid receptor responder protein 2	RARRES2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9BZR6	RTN4R	Reticulon-4 receptor	RTN4R	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P16109	SELP	P-selectin	SELP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q8IW75	SERPINA12	Serpin A12	SERPINA12	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P50452	SERPINB8	Serpin B8	SERPINB8	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-P78324	SIRPA	Tyrosine-protein phosphatase non-receptor type substrate 1	SHPS1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9NQ25	SLAMF7	SLAM family member 7	SLAMF7	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9HCB6	SPON1	Spondin-1	SPON1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q8WTU2	SSC4D	Scavenger receptor cysteine-rich domain-containing group B protein	SSC4D	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q01638	IL1RL1	Interleukin-1 receptor-like 1	ST2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q8NBJ7	SUMF2	Inactive C-alpha-formylglycine-generating enzyme 2	SUMF2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-P10646	TFPI	Tissue factor pathway inhibitor	TFPI	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q5T2D2	TREML2	Trem-like transcript 2 protein	TLT2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-O00220	TNFRSF10A	Tumor necrosis factor receptor superfamily member 10A	TNFRSF10A	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNFRSF10C	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-Q9Y6Q6	TNFRSF11A	Tumor necrosis factor receptor superfamily member 11A	TNFRSF11A	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q9Y275	TNFSF13B	Tumor necrosis factor ligand superfamily member 13B	TNFSF13B	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P02786	TFRC	Transferrin receptor protein 1	TR	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
-P13686	ACP5	Tartrate-resistant acid phosphatase type 5	TRAP	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q06418	TYRO3	Tyrosine-protein kinase receptor TYRO3	TYRO3	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-P47992	XCL1	Lymphotactin	XCL1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
-Q76LX8	ADAMTS13	A disintegrin and metalloproteinase with thrombospondin motifs 13	ADAMTS13	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P22004	BMP6	Bone morphogenetic protein 6	BMP6	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-Q76M96	CCDC80	Coiled-coil domain-containing protein 80	CCDC80	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-Q92583	CCL17	C-C motif chemokine 17	CCL17	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-Q86VB7	CD163	Scavenger receptor cysteine-rich type 1 protein M130	CD163	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P33151	CDH5	Cadherin-5	CDH5	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-Q6WN34	CHRDL2	Chordin-like protein 2	CHRDL2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-Q99895	CTRC	Chymotrypsin-C	CTRC	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P09341	CXCL1	Growth-regulated alpha protein	CXCL1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-Q9H2A7	CXCL16	C-X-C motif chemokine 16	CXCL16	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P16422	EPCAM	Epithelial cell adhesion molecule	EPCAM	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P56470	LGALS4	Galectin-4	GAL4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P28799	GRN	Progranulin	GRN	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P09601	HMOX1	Heme oxygenase 1	HO1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P13598	ICAM2	Intercellular adhesion molecule 2	ICAM2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-Q14116	IL18	Interleukin-18	IL18	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P01130	LDLR	Low-density lipoprotein receptor	LDLRECEPTOR	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P41159	LEP	Leptin	LEP	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 P06858	LPL	Lipoprotein lipase	LPL	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P13500	CCL2	C-C motif chemokine 2	MCP1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-Q9NQ76	MEPE	Matrix extracellular phosphoglycoprotein	MEPE	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9UEW3	MARCO	Macrophage receptor MARCO	MARCO	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 Q12866	MERTK	Tyrosine-protein kinase Mer	MERTK	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P39900	MMP12	Macrophage metalloelastase	MMP12	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P09237	MMP7	Matrilysin	MMP7	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9Y6K9	IKBKG	NF-kappa-B essential modulator	NEMO	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q13219	PAPPA	Pappalysin-1	PAPPA	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P25116	F2R	Proteinase-activated receptor 1	PAR1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P09874	PARP1	Poly [ADP-ribose] polymerase 1	PARP1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P01127	PDGFB	Platelet-derived growth factor subunit B	PDGFSUBUNITB	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9BQ51	PDCD1LG2	Programmed cell death 1 ligand 2	PDL2	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P49763	PGF	Placenta growth factor	PGF	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P01833	PIGR	Polymeric immunoglobulin receptor	PIGR	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P51888	PRELP	Prolargin	PRELP	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 Q9BQR3	PRSS27	Serine protease 27	PRSS27	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q16651	PRSS8	Prostasin	PRSS8	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q14242	SELPLG	P-selectin glycoprotein ligand 1	PSGL1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	TRUE
+P26022	PTX3	Pentraxin-related protein PTX3	PTX3	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q15109	AGER	Advanced glycation end product-specific receptor	RAGE	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P00797	REN	Renin	REN	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
 P21583	KITLG	Kit ligand	SCF	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P16581	SELE	E-selectin	SELE	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q8IW75	SERPINA12	Serpin A12	SERPINA12	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9NQ25	SLAMF7	SLAM family member 7	SLAMF7	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+P04179	SOD2	Superoxide dismutase [Mn], mitochondrial	SOD2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q99523	SORT1	Sortilin	SORT1	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q9BUD6	SPON2	Spondin-2	SPON2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q13043	STK4	Serine/threonine-protein kinase 4	STK4	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P13726	F3	Tissue factor	TF	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P21980	TGM2	Protein-glutamine gamma-glutamyltransferase 2	TGM2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P35442	THBS2	Thrombospondin-2	THBS2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P40225	THPO	Thrombopoietin	THPO	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q02763	TEK	Angiopoietin-1 receptor	TIE2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P07204	THBD	Thrombomodulin	TM	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O00220	TNFRSF10A	Tumor necrosis factor receptor superfamily member 10A	TNFRSF10A	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
+Q9Y6Q6	TNFRSF11A	Tumor necrosis factor receptor superfamily member 11A	TNFRSF11A	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 O14836	TNFRSF13B	Tumor necrosis factor receptor superfamily member 13B	TNFRSF13B	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P19971	TYMP	Thymidine phosphorylase	TYMP	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P00749	PLAU	Urokinase-type plasminogen activator	UPA	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
-P04275	VWF	von Willebrand factor	VWF	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O14763	TNFRSF10B	Tumor necrosis factor receptor superfamily member 10B	TRAILR2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+O43915	VEGFD	Vascular endothelial growth factor D	VEGFD	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+Q96IQ7	VSIG2	V-set and immunoglobulin domain-containing protein 2	VSIG2	gilly_2019_EUR	gilly_2019_ppr103716	FALSE	FALSE
+P47992	XCL1	Lymphotactin	XCL1	gilly_2019_EUR	gilly_2019_ppr103716	TRUE	FALSE
 P05112	IL4	Interleukin-4	IL-4	ruotsalainen_2019_EUR	ruotsalainen_2019_ppr104615	FALSE	FALSE
 P05231	IL6	Interleukin-6	IL-6	ruotsalainen_2019_EUR	ruotsalainen_2019_ppr104615	FALSE	FALSE
 P22301	IL10	Interleukin-10	IL-10	ruotsalainen_2019_EUR	ruotsalainen_2019_ppr104615	FALSE	FALSE
