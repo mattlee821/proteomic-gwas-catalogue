@@ -40,3 +40,21 @@ PMID:28189700	Targeted 4-gene candidate risk-SNP lookup against CSF ADNI protein
 PMID:28424047	Non-human organism study (liver pQTL mapping in overfed mule ducks; gated automatically in v4.3)	2026-11-22
 PMID:28053049	Single-protein GWAS meta-analysis (plasma coagulation Factor XI / F11 levels only, <5 unique proteins)	2026-11-22
 PMID:28734077	Single-protein GWAS discovery/lookup (plasma MMP-12 levels in stroke/atherosclerosis, <5 unique proteins)	2026-11-22
+PMID:30571344	Secondary virtual-proteome PWAS/PheWAS in eMERGE (N=41,288) constructing genetic predictors from pre-computed FHS Offspring Exam 5 (N=759) and KORA F4 (N=997) SomaScan GWAS summary statistics	2026-11-22
+PMID:30354202	Observational association study of 57 Olink CVD proteins with lipid fractions in EpiHealth/PIVUS/ULSAM plus secondary two-sample MR using cis-SNP instruments obtained from an unpublished 4-cohort Olink GWAS meta-analysis	2026-11-22
+PMID:30306195	Secondary polygenic risk score analysis of bone mineral density in N=2,286 Caucasians reusing published SomaScan pQTL weights from Suhre et al. 2017	2026-11-22
+PMID:30288888	Targeted candidate-gene polymorphism study (43 tagging SNVs in F11, F12, KLKB1, KNG1 across 4 contact-system proteins in RATIO; <5 unique proteins and <100 variants)	2026-11-22
+PMID:29905076	Targeted single-locus SNP lookup (4 9p21 CAD SNPs tested against 54 MRM-MS plasma proteins in N=1,611 young adults; <100 variants)	2026-11-22
+PMID:29506909	Dietary fat intervention twin study of serum VEGF and adipose SLC2A1 mRNA in NUGAT (N=92; <5 unique proteins)	2026-11-22
+PMID:30093573	Single-protein vitamin D binding protein (GC) genetic axis study in lymphangioleiomyomatosis (<5 unique proteins)	2026-11-22
+PMID:29737521	Pediatric/adult hepatic UGT ontogeny study testing targeted candidate-gene UGT polymorphisms across 6 UGT isoforms in N=171 human liver microsomes (not genome-wide/exome-wide pGWAS)	2026-11-22
+PMID:30108239	Methodological SILAC phosphoproteomics pilot across N=3 HapMap lymphoblastoid cell lines assessing PTM variation rather than population pGWAS	2026-11-22
+PMID:30204156	Multi-omics cohort data descriptor for Mount Sinai Brain Bank (N=364 postmortem brains); MatrixEQTL cis-pQTLs used solely for MODMatcher sample-swap QC alignment with no pQTL results reported	2026-11-22
+PMID:30084846	Multi-omics cohort data descriptor for ROSMAP human frontal cortex; proteomic profiling noted as ongoing with no pQTL analysis reported	2026-11-22
+PMID:30340504	Transcriptomic whole-blood eQTL interaction study with interferon status and anti-IL-6 drug exposure in a lupus clinical trial (not pQTL)	2026-11-22
+PMID:30618606	Single-gene APOE (E2/E3/E4) genotype comparison against postmortem AD cortical brain proteome (N=34 discovery; single locus, not genome-wide pGWAS)	2026-11-22
+PMID:29404672	Single-analyte meta-GWAS of serum C-peptide levels in type 1 diabetes (N=3,479; <5 unique proteins)	2026-11-22
+PMID:30239796	Methodological bioinformatics framework paper (ProGeM) for prioritizing candidate causal genes at molecular QTL loci, not a primary pGWAS	2026-11-22
+PMID:30275891	GAW20 statistical mixed-model methodology paper analyzing triglycerides and HDL cholesterol (referred to as inflammatory biomarkers) in GOLDN, no proteins assayed	2026-11-22
+PMID:30228274	Author Correction to Yao et al. 2018 (PMID:30111768) adding Qatar Foundation funding acknowledgement only; no scientific or data changes	2026-11-22
+DOI:10.1101/468538	Non-human organism study (linkage disequilibrium and behavioral isolation in two parapatric cricket species; gated automatically in v4.4)	2026-11-22

@@ -1,7 +1,7 @@
 
 **Project:** `proteomic-gwas-catalogue`  
 **Document Type:** Living Methodological Log (updated at every search/extraction version milestone)  
-**Last Updated:** 2026-11-22 (`v0` -> `v1` -> `v2` -> `v3.0` -> `v4.0` -> `v4.1` -> `v4.2` -> `v4.3` finalised and validated)
+**Last Updated:** 2026-11-23 (`v0` -> `v1` -> `v2` -> `v3.0` -> `v4.0` -> `v4.1` -> `v4.2` -> `v4.3` -> `v4.4` finalised and validated)
 
 ---
 
@@ -214,6 +214,9 @@ During Period 2 (`2016-01-01..2016-12-31`) execution (`697` raw hits $\rightarro
 
 ### 6.6 Period 3 (`2017`) Joint EWAS/GWAS, WGS Peptide & Europe PMC Gateway Refinements (`v4.3`)
 During Period 3 (`2017-01-01..2017-12-31`) execution (`836` raw hits $\rightarrow$ `413` deduplicated works), two infrastructure/triage refinements were introduced: (1) reducing Europe PMC `searchPOST` `resultType="core"` pagination from `pageSize = 1000` to `100` (`src/run_literature_search.R`), eliminating transient EBI `HTTP 503` gateway timeouts on multi-hundred-hit `2A_Proteome` shards; and (2) generalizing `src/search/lexicons.R` (`v4.3`) to recognize avian livestock taxa (`duck`/`mule duck`/`goose`) in `G2`, joint `EWAS` + `GWAS` multi-omic biomarker studies in `G3`/`P2` (*Ahsan et al. 2017*), serum/plasma oligopeptide WGS/WES association framing (`"serum/plasma peptide levels"`, *de Vries et al. 2017*), passive multi-protein array SNP-expression regression (*Chan et al. 2017*), and `"Genetic Architecture of the Cardiovascular Risk Proteome"` title/yield phrasing (*Benson et al. 2018*, *Sun et al. 2017* preprint). On Period 3 (`2017`), `v4.3` surfaced all **`11 / 11` (`100.0%` precision, `0` false positives)** primary human pGWAS candidates (`10` `Likely Primary pGWAS` + `1` `Preprint -> Published Match`) and achieved **`100.0%` discovery recall and `100.0%` triage survival** on blinded positive-control evaluation.
+
+### 6.7 Period 4 (`2018`) Multi-Omic Microbiome/WES/MS & Non-Human Taxa Refinements (`v4.4`)
+During Period 4 (`2018-01-01..2018-12-31`) execution (`877` raw hits $\rightarrow$ `405` deduplicated works), `src/search/lexicons.R` (`v4.4`) was generalized to: (1) add entomological, helminth, and non-model mammalian taxa (`crickets?`, `mosquito(es)?`, `dolphins?`, `camels?`, `schistosoma`) to `NONHUMAN_ORGANISM_REGEX` (`G2`); and (2) recognize coordinated multi-omic GWAS phrasing (`"genome-wide and metagenome-wide association"`, *Zhernakova et al. 2018*), bidirectional WES + MS association framing (*Solomon et al. 2018*), and parenthetical `(Cohort, N=...)` sample-size notation (*Sliz et al. 2018* preprint) in `P1`–`P4`. On Period 4 (`2018`), `v4.4` compressed `98.3%` (`398 / 405`) of non-target records, achieved **`7 / 7` (`100.0%` precision, `0` false positives)** on the actionable queue (`5` Published + `2` active bioRxiv Preprints, including `2` automatic `2017 -> 2018` preprint-to-published upgrades), and achieved **`100.00%` discovery recall and `100.00%` triage survival** across both Period 4 (`3 / 3`) and cumulative `2000–2018` (`22 / 22`) blinded positive controls while preserving **`58 / 58` (`100.0%`)** recall and `0` false positives on the `2025` benchmark.
 
 ---
 
