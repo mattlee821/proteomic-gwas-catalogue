@@ -2,7 +2,7 @@
 # Multi-resource literature discovery, connected-components + preprint-lineage
 # deduplication, 4-tier preprint-to-published upgrade detector, strict canonical
 # first-publication-date windowing, selective Stage B.5 PMC full-text multi-omic
-# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.0)
+# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.6)
 # for proteomic-gwas-catalogue.
 #
 # Usage:
@@ -1065,6 +1065,23 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
       sc_tmp <- score_triage_v2(sub[[1L]]$title, sub[[1L]]$abstract, sub[[1L]]$pub_types, sub[[1L]]$mesh_headings, 0L, doi = dois[1L])
       if (!grepl("^Auto-Deprioritised", sc_tmp$classification)) {
         pub_d <- resolve_biorxiv_published_doi(dois[1L])
+        if (!nzchar(pub_d)) {
+          u_cr <- paste0("https://api.crossref.org/works/", utils::URLencode(dois[1L], reserved = TRUE))
+          r_cr <- perform_polite_http(
+            httr2::request(u_cr) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(20),
+            sleep_s     = 0.45,
+            max_tries   = 3L,
+            label       = "Crossref batch preprint->pub",
+            expect_json = TRUE
+          )
+          if (!is.null(r_cr) && httr2::resp_status(r_cr) == 200L) {
+            js_cr <- tryCatch(httr2::resp_body_json(r_cr, simplifyVector = FALSE), error = function(e) NULL)
+            rel_cr <- js_cr$message$relation[["is-preprint-of"]]
+            if (!is.null(rel_cr) && length(rel_cr) > 0L) {
+              pub_d <- normalize_doi_one(rel_cr[[1L]]$id %||% "")
+            }
+          }
+        }
         if (nzchar(pub_d)) {
           recs[[idxs[1L]]]$preprint_links <- unique(c(recs[[idxs[1L]]]$preprint_links, pub_d, dois[1L]))
           k_pub <- paste0("doi:", doi_dedup_key(pub_d))
@@ -1087,12 +1104,15 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
       sub <- recs[idxs]
       is_p <- all(vapply(sub, is_preprint_record, logical(1)))
       t_best <- sub[[which.max(nchar(vapply(sub, `[[`, "", "title")))]]$title
+      a_best <- tolower(ascii_fold(sub[[which.max(nchar(vapply(sub, `[[`, "", "abstract")))]]$abstract %||% ""))
+      p_phr  <- regmatches(a_best, regexpr("\\b[1-9][0-9,]+\\s+[a-z-]+\\s+proteins\\b", a_best, perl = TRUE))
       au1 <- unique(vapply(sub, function(x) normalize_author_surname(x$first_author), character(1)))
       au2 <- unique(vapply(sub, function(x) normalize_author_surname(x$last_author), character(1)))
       list(
         idx = idxs[1L],
         is_prep = is_p,
         title = t_best,
+        panel = if (length(p_phr) == 1L) p_phr else "",
         au1 = au1[nzchar(au1)],
         au2 = au2[nzchar(au2)],
         toks = title_content_tokens(t_best, strip_mr_boilerplate = TRUE)
@@ -1114,9 +1134,11 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
         same_first <- length(intersect(m1$au1, m2$au1)) > 0L
         same_last  <- length(intersect(m1$au2, m2$au2)) > 0L
         any_au     <- length(intersect(c(m1$au1, m1$au2), c(m2$au1, m2$au2))) > 0L
+        same_panel <- (m1$is_prep != m2$is_prep) && nzchar(m1$panel) && identical(m1$panel, m2$panel)
         if (((m1$is_prep && m2$is_prep && jac >= 0.85) ||
              (any_au && jac >= 0.65) ||
-             (same_first && same_last && jac >= 0.40)) &&
+             (same_first && same_last && jac >= 0.40) ||
+             (same_first && same_panel && jac >= 0.28)) &&
             has_compatible_phenotype(m1$title, m2$title)) {
           union_nodes(m1$idx, m2$idx)
         }
@@ -1615,18 +1637,38 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
   if (length(para_txts) == 0L) return(list(verified = FALSE, platform = ""))
 
   pqtl_pat <- "\\b(tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|trans-?pqtls?|sd-?pqtls?|pqtls?|protein[- ]qtls?|protein quantitative trait loc[a-z]*)\\b"
-  prot_assay_pat <- "\\b(proteom[a-z]*|protein (?:abundance|expression|levels|quantification|profiles?)|olink|somascan|somalogic|somamers?|aptamer[- ]based|nulisa[a-z]*|mass spectrometry|openswath[0-9]*|dia-ms|dia-pasef|swath(?:-ms)?|tandem mass tags?|lc-ms/ms|proteograph|orbitrap)\\b"
+  prot_assay_pat <- "\\b(proteom[a-z]*|protein (?:abundance|expression|levels|quantification|profiles?)|olink|somascan|somalogic|somamers?|aptamer[- ]based|nulisa[a-z]*|mass spectrometry|openswath[0-9]*|dia-ms|dia-pasef|swath(?:-ms)?|tandem mass tags?|lc-ms/ms|proteograph|orbitrap|myriad[- ]rbm|luminex)\\b"
   primary_evid_pat <- paste0(
-    "\\b(we (?:aimed to |next |then |also |systematically |comprehensively )?(?:quantif(?:y|ied)|performed|applied|mapped|computed|tested|defined|analyzed|conducted|generated|profiled|identified|discovered)|",
+    "\\b(we (?:aimed to |next |then |also |systematically |comprehensively )?(?:performed|applied|mapped|computed|tested|conducted|generated|identified|discovered) [^.;]{0,110}\\b(?:tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|trans-?pqtls?|sd-?pqtls?|pqtls?|protein[- ]qtls?|protein quantitative trait loc[a-z]*)|",
     "to test for (?:tr-?|sv-?|cis-?|trans-?)?pqtls?|",
+    "was also used for cis[- ]?pqtl analysis|",
     "conducted genome-wide association studies \\(gwas\\) of these proteins|",
-    "of the [1-9][0-9,]* pqtls? in cis|",
-    "n\\s*=\\s*[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteom[a-z]*|",
-    "[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteomics? samples|",
-    "(?:tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|pqtls?|protein qtls?) (?:were|was) (?:performed|mapped|identified|computed|tested|generated)|",
-    "tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|fastllm|susie)\\b"
+    "(?:of the [1-9][0-9,]* pqtls? in cis|n\\s*=\\s*[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteom[a-z]*|[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteomics? samples)(?=[\\s\\S]{0,220}\\b(?:tr-?pqtls?|sv-?pqtls?|tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|susie))|",
+    "(?:tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|pqtls?|protein[- ]qtls?) (?:were|was) (?:performed|mapped|computed|tested|generated)|",
+    "tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|fastlmm|susie)\\b"
   )
-  ext_only_pat <- "\\b(protein qtls? from the [a-z0-9 -]{0,35}generated by|curated (?:tumor )?database integrating|(?:previous|prior|published|existing|publicly available|publically available) (?:eqtl and )?pqtl (?:stud(?:y|ies)|analys(?:is|es)|datasets?)|also influenced by pqtls? in the|protein quantitative trait locus analysis for (?:two|three|four|[1-9]) (?:previously reported )?snps|[a-z0-9-]+ protein qtl analysis was performed on log10 transformed [a-z0-9-]+ protein levels)\\b"
+  ext_only_pat <- paste0(
+    "\\b(protein qtls? from the [a-z0-9 -]{0,35}generated by|curated (?:tumor )?database integrating|",
+    "(?:previous|prior|published|existing|publicly available|publically available) (?:eqtl and )?pqtl (?:stud(?:y|ies)|analys(?:is|es)|datasets?)|",
+    "previously identified (?:genetic loci \\([^)]*p/?m?qtls?|p/?m?qtls?)|had a p/?m?qtls? previously identified|",
+    "selected from (?:a )?pqtls? analys(?:is|es) conducted in|",
+    "identified by relating genetic variants to protein levels in [a-z0-9-]+ as previously described|",
+    "pqtls? come from interval|extracted the significant snps? reported in interval|",
+    "also influenced by pqtls? in the|",
+    "protein quantitative trait locus analysis for (?:two|three|four|[1-9]) (?:previously reported )?snps|",
+    "determine the genetic drivers of the [a-z0-9-]+ and [a-z0-9-]+ protein levels|",
+    "[a-z0-9-]+ protein qtl analysis was performed on log10 transformed [a-z0-9-]+ protein levels)\\b"
+  )
+
+  if (any(grepl("\\bthe gwas was conducted to determine the genetic drivers of the [a-z0-9-]+ and [a-z0-9-]+ protein levels\\b", para_txts, perl = TRUE))) {
+    return(list(verified = FALSE, platform = ""))
+  }
+
+  has_cis_window_protein_regression <- any(
+    grepl("\\b(?:snps?|single nucleotide polymorphisms?(?:\\s*\\(snps?\\))?|variants?)\\s+within\\s+a\\s+cis\\s+window\\s+of\\s+[0-9]+\\s*(?:kb|mb)[^.;]{0,120}were\\s+tested\\s+for\\s+(?:an\\s+)?association\\s+with\\s+protein\\s+levels\\b",
+          para_txts, perl = TRUE) &
+      !grepl(ext_only_pat, para_txts, perl = TRUE)
+  ) && any(grepl(prot_assay_pat, para_txts, perl = TRUE))
 
   para_ok <- (grepl(pqtl_pat, para_txts, perl = TRUE) &
     grepl(prot_assay_pat, para_txts, perl = TRUE) &
@@ -1634,7 +1676,8 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
     !grepl(ext_only_pat, para_txts, perl = TRUE)) |
     (any(grepl("\\bwe conducted genome-wide association studies \\(gwas\\) of these proteins in [1-9][0-9,]+", para_txts, perl = TRUE)) &
        grepl(pqtl_pat, para_txts, perl = TRUE) &
-       !grepl(ext_only_pat, para_txts, perl = TRUE))
+       !grepl(ext_only_pat, para_txts, perl = TRUE)) |
+    has_cis_window_protein_regression
 
   if (any(para_ok)) {
     kept_body_txt <- paste(para_txts, collapse = " ")
@@ -1656,14 +1699,27 @@ needs_ft_pqtl_check <- function(m) {
     return(FALSE)
   }
   if (grepl(BROAD_PROTEIN_REGEX, comb_lc, perl = TRUE)) {
-    # Source 2B rescue case: title+abstract mentions proteomics/platform in a human cohort
-    # WITHOUT explicit GWAS/pQTL terms in the abstract, while full-text Methods/Results matched pQTLs!
-    is_methods_rescue_only <- grepl("EuropePMC_MethodsRescue", m$matched_sources %||% "", fixed = TRUE) &&
-      !grepl("\\b(pqtls?|cis-?pqtls?|trans-?pqtls?|vqtls?|pgwas|protein[- ]qtls?|protein quantitative trait|gwas|gwass|genome-wide association|mendelian randomi[sz]ation|two-sample|proteome-wide association)\\b",
-             comb_lc, perl = TRUE) &&
-      grepl("\\b(cohort|population-based|participants?|individuals?|subjects?|patients?|donors?|adults?|twins?)\\b",
-            comb_lc, perl = TRUE)
-    return(is_methods_rescue_only)
+    sc_pre <- score_triage_v2(
+      title                    = m$title,
+      abstract_text            = m$abstract,
+      pub_types                = m$pub_types,
+      mesh_headings            = m$mesh_headings,
+      gwas_catalog_study_count = m$gwas_study_count,
+      doi                      = m$doi
+    )
+    if (!grepl("^Auto-Deprioritised", sc_pre$classification)) return(FALSE)
+    has_human_cohort_kw <- grepl("\\b(cohort|population-based|participants?|individuals?|subjects?|patients?|donors?|adults?|icelanders|twins?)\\b",
+                                 comb_lc, perl = TRUE)
+    # Case 2B-1: Source 2B full-text Methods/Results rescue on low-signal human cohort proteomic papers (S == 0)
+    is_methods_rescue_low_s <- grepl("EuropePMC_MethodsRescue", m$matched_sources %||% "", fixed = TRUE) &&
+      sc_pre$S_score == 0L && has_human_cohort_kw &&
+      !grepl("\\b(mendelian randomi[sz]ation|two-sample|proteome-wide association)\\b", comb_lc, perl = TRUE)
+    # Case 2B-2: Primary cohort proteomics (P1 + P4, no external sumstats download S1) paired with bidirectional MR
+    is_cohort_bidir_mr <- all(c("P1_DirectAssay(+5)", "P4_AssayScaleAndN(+4)") %in% sc_pre$p_rules) &&
+      !("S1_PublicSumStatsReuse(+7)" %in% sc_pre$s_rules) &&
+      sc_pre$S_score <= 6L && has_human_cohort_kw &&
+      grepl("\\bbidirectional\\s+(?:two-sample\\s+)?mendelian\\s+randomi[sz]ation\\b", comb_lc, perl = TRUE)
+    return(is_methods_rescue_low_s || is_cohort_bidir_mr)
   }
   has_multiomic_qtl_anchor <- grepl("\\b(molqtls?|xqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|(?:molecular|multi-?omic|quantile) (?:quantitative trait loc[a-z]*|qtls?))\\b",
                                     comb_lc, perl = TRUE)

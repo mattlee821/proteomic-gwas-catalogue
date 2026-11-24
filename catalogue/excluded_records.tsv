@@ -75,3 +75,25 @@ DOI:10.1101/19009522	Somatic tumor mutation profiling and functional proteomics 
 PMID:30896667	Candidate-gene case-control study of 4 RUNX3 SNPs in severe preeclampsia (N=417); no multiplexed pGWAS	2026-11-23
 PMID:31552100	Secondary computational cis-regulatory integration reusing previously published HapMap lymphoblastoid cell line ChIP-seq, eQTL, and pQTL datasets (Wu et al. 2013)	2026-11-23
 PMID:31644575	Epidemiological and genetic imputation analysis of NMR glycoprotein acetyls (GlycA) and alpha-1-antitrypsin (SERPINA1; <5 unique proteins)	2026-11-23
+PMID:32984892	Single-protein Olink GWAS of soluble ACE2 (sACE2) in ARISTOTLE (N=3,999) and RE-LY (N=1,088) atrial fibrillation cohorts (<5 unique proteins)	2026-11-24
+PMID:33010842	Single-protein Olink case-cohort study and GWAS determinant analysis of plasma ACE2 in PURE (N=10,753; <5 unique proteins)	2026-11-24
+PMID:33263724	Observational and adiposity-MR study of 92 Olink CVD-II plasma proteins in China Kadoorie Biobank (N=628 subset; BMI genetic score used as exposure, no primary pGWAS)	2026-11-24
+PMID:33210602	Observational aging biomarker signature across plasma proteins in ORCADES/Vis with secondary 2SMR reusing Bretherick et al. 2020 pQTL summary statistics	2026-11-24
+PMID:32567559	Observational association of Olink plasma proteins with new-onset diabetes in STANISLAS (N=1,506) plus secondary 2SMR reusing published pQTL instruments	2026-11-24
+PMID:32427856	Targeted single-locus APOE epsilon4 carrier stratification against Olink Neurology plasma proteins in Alzheimer's disease (N=441; not genome-wide pGWAS)	2026-11-24
+PMID:32438708	Observational cross-sectional association of healthy dietary patterns with SomaScan plasma proteins and metabolites in Framingham Heart Study (no pGWAS)	2026-11-24
+PMID:32369590	Observational association study of SomaScan plasma proteins with sleep apnea in Stanford Technology Analytics and Genomics in Sleep (N=713; no pGWAS)	2026-11-24
+PMID:32307133	Polygenic risk score (AD genetic liability) association with CSF proteomic profiles in N=250 subjects; no variant-level pGWAS	2026-11-24
+PMID:32781905	Secondary integrative TWAS/colocalization and 2SMR of platelet traits reusing Framingham SABRe CVD pQTL summary statistics (published version of DOI:10.1101/854216)	2026-11-24
+PMID:33004804	Methodological cis-MR statistical paper (MR-link) applied to eQTLs and blood lipids; no primary pGWAS	2026-11-24
+PMID:33179747	Database resource update article for Japanese Multi Omics Reference Panel (jMorp 2020 update), not a primary pGWAS	2026-11-24
+PMID:32860016	Review article in Nature Reviews Genetics ('Genetics meets proteomics: perspectives for large population-based studies')	2026-11-24
+PMID:32909077	Targeted candidate-SNP survival study of immune checkpoint serum proteins and tag SNPs in localized prostate cancer (N=1,762; not genome-wide pGWAS)	2026-11-24
+PMID:32769481	Candidate inflammatory genotype moderation of anxiety and systemic CRP/cytokines in N=398 adults; not genome-wide pGWAS	2026-11-24
+PMID:32649877	Somatic tumor proteogenomic characterization of human lung adenocarcinoma (Cell 2020), not germline population pGWAS	2026-11-24
+PMID:33242424	Somatic tumor proteogenomic characterization across pediatric brain cancer histological types (CPTAC), not germline population pGWAS	2026-11-24
+DOI:10.1101/2020.11.23.380337	Somatic tumor MS peptidome ancestry-informative marker analysis in uterine neoplasms, not germline population pGWAS	2026-11-24
+DOI:10.1101/2020.09.05.284265	Kidney function polygenic risk score (PRS) association with SomaScan plasma proteome in ARIC plus secondary 2SMR reusing public pQTLs	2026-11-24
+DOI:10.1101/2020.12.01.404681	DNA methylation EpiScores trained on Olink/SomaScan proteins in Generation Scotland/LBC, not a primary germline pGWAS	2026-11-24
+DOI:10.1101/2020.09.02.279844	Multi-ancestry UK Biobank GWAS of 30 routine clinical chemistry blood/urine biomarkers (lipids, enzymes, hormones; not multiplex proteomics)	2026-11-24
+DOI:10.1101/2020.05.31.125633	GWAS of 3 core clinical CSF Alzheimer's biomarkers (Abeta42, t-tau, p-tau in N=672; <5 unique proteins)	2026-11-24

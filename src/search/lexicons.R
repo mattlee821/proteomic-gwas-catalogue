@@ -1,5 +1,5 @@
 # Canonical lexicons, controlled vocabularies, query compilers, ID normalizers,
-# and Unified Two-Stage Dual-Axis Triage Scorer (v4.0) for proteomic-gwas-catalogue.
+# and Unified Two-Stage Dual-Axis Triage Scorer (v4.6) for proteomic-gwas-catalogue.
 #
 # Single source of truth shared across discovery sources so PubMed E-utilities,
 # Europe PMC REST API, NHGRI-EBI GWAS Catalog v2, Citation Snowballing, and
@@ -178,7 +178,7 @@ LEX_BLOCK_A2_PROTEOME_ANALYTES <- c(
   "complement proteins", "complement system proteins",
   "adipokines", "adipocytokines",
   "inflammatory proteins", "inflammatory biomarkers",
-  "cardiovascular proteins", "cardiovascular biomarkers",
+  "cardiovascular proteins", "cardiovascular biomarkers", "cardiometabolic biomarkers",
   "neurological proteins", "neurological biomarkers",
   "tumor biomarkers", "tumour biomarkers",
   "protein biomarker", "protein biomarkers",
@@ -776,7 +776,7 @@ detect_platform_v2 <- function(text) {
   if (grepl("luminex|\\bx-?map\\b|bio-plex|milliplex|procartaplex", txt, perl = TRUE)) {
     plats <- c(plats, "Luminex")
   }
-  if (grepl("rules[- ]based medicine|myriad rbm|meso scale|electrochemiluminescence|multiplex(ed)? immunoassay|protein microarray|micro-western|reverse[- ]phase protein array|\\brppa\\b|\\bsimoa\\b|quanterix|antibody-based (assay|microarray|technology|proteom)", txt, perl = TRUE)) {
+  if (grepl("rules[- ]based medicine|myriad rbm|meso scale|electrochemiluminescence|multiplex(ed)? immunoassay|multiplex(ed)? antibody assays?|suspension bead array|protein microarray|micro-western|reverse[- ]phase protein array|\\brppa\\b|\\bsimoa\\b|quanterix|antibody-based (assay|microarray|technology|proteom)", txt, perl = TRUE)) {
     plats <- c(plats, "Other Immunoassay")
   }
   if (length(plats) == 0L) "Unspecified Proteomics" else paste(unique(plats), collapse = " / ")
@@ -1075,11 +1075,15 @@ score_triage_v2 <- function(title,
     "(?:[>~]\\s*|\\b(?:over|more\\s+than|nearly|almost|approximately|up\\s+to|covering|comprising|of|across|with)\\s+|\\bn\\s*=\\s*)?",
     "\\b(([5-9]|[1-9][0-9]{1,4}(?:,[0-9]{3})*)|five|six|seven|eight|nine|ten|hundreds of|thousands of)\\s+([a-z-]+\\s+){0,4}",
     "(proteins?|protein\\s+levels|protein\\s+groups?|protein\\s+targets?|protein\\s+forms?|protein\\s+isoforms?|aptamers?|somamers?|olink\\s+assays?|peptides?|cytokines?|chemokines?|",
-    "complement\\s+(?:system\\s+)?proteins?|inflammatory\\s+(?:proteins?|markers?|biomarkers?)|cardiovascular\\s+(?:proteins?|markers?|biomarkers?)|neurological\\s+(?:proteins?|biomarkers?)|(?:tumor|tumour)\\s+biomarkers?|protein\\s+biomarkers?|circulating\\s+biomarkers?|systemic\\s+biomarker\\s+concentrations?|analytes?)\\b"
+    "complement\\s+(?:system\\s+)?proteins?|inflammatory\\s+(?:proteins?|markers?|biomarkers?)|cardiovascular\\s+(?:proteins?|markers?|biomarkers?)|cardiometabolic\\s+(?:proteins?|markers?|biomarkers?)|neurological\\s+(?:proteins?|biomarkers?)|(?:tumor|tumour)\\s+biomarkers?|protein\\s+biomarkers?|circulating\\s+biomarkers?|systemic\\s+biomarker\\s+concentrations?|analytes?)\\b"
   )
+  has_named_five_plus_proteins <- nzchar(primary_ctx_txt) &&
+    grepl("\\b(?:gwas|genome-wide\\s+association[a-z ]*)\\s+(?:of|for|on)\\s+(?:measured\\s+|assayed\\s+|quantified\\s+)?(?:serum|plasma|csf|circulating|blood)\\s+(?:protein\\s+)?levels\\s+of\\s+(?:[^.;,]+,\\s*){3,}[^.;,]+(?:,\\s*and|\\s+and)\\s+[^.;]+", primary_ctx_txt, perl = TRUE)
+
   has_multi_protein_count <- length(primary_ctx_sents) > 0L && (
     any(grepl(prot_count_pat, primary_ctx_sents, perl = TRUE)) ||
-      (grepl("\\b(?:tumor|tumour|protein|circulating|inflammatory|neurological|cardiovascular)\\s+biomarkers\\b", ttl, perl = TRUE) &&
+      has_named_five_plus_proteins ||
+      (grepl("\\b(?:tumor|tumour|protein|circulating|inflammatory|neurological|cardiovascular|cardiometabolic)\\s+biomarkers\\b", ttl, perl = TRUE) &&
          any(grepl("\\b(?:the\\s+)?(?:five|six|seven|eight|nine|ten|[5-9]|[1-9][0-9,]+)\\s+biomarkers\\b", primary_ctx_sents, perl = TRUE)))
   )
 
@@ -1092,6 +1096,7 @@ score_triage_v2 <- function(title,
       "etonogestrel|abiraterone|voriconazole|tramadol|apol1\\b|klotho|alpha-klotho|sex hormone-binding globulin|shbg|",
       "trem2|plasma trem2|gdf15|igfbp7|25-hydroxyvitamin|folate|c-reactive protein|lipoprotein\\(a\\))\\b"
     ), txt, perl = TRUE) ||
+      grepl("\\b(?:gwa[a-z ]*|genome-wide\\s+association[a-z ]*)\\s+(?:for|of|on|using|to\\s+determine\\s+the\\s+genetic\\s+drivers\\s+of)\\s+(?:all\\s+(?:two|three|four)\\s+biomarkers|(?:the\\s+)?[a-z0-9-]+\\s+and\\s+[a-z0-9-]+\\s+protein\\s+levels|(?:proinflammatory\\s+cytokines\\s*)?[\\[(]\\s*(?:il-?6|crp|c-reactive\\s+protein|tnf-?alpha)\\s+and\\s+(?:il-?6|crp|c-reactive\\s+protein|tnf-?alpha)(?:\\s*\\([^)]+\\))?\\s*[\\])])", txt, perl = TRUE) ||
       grepl("^platform-dependent effects of genetic variants on plasma apol1", ttl, perl = TRUE)
   )
 
@@ -1128,6 +1133,9 @@ score_triage_v2 <- function(title,
         "\\b(profile[ds]?|assay(ed)?|quantif(y|ied|ication of)|measure[ds]?)\\s+(all\\s+)?([a-z-]+\\s+){0,3}([>~]?([5-9]|[1-9][0-9,]+))\\s+([a-z-]+\\s+){0,3}",
         "(proteins?|protein\\s+groups?|protein\\s+targets?|proteomes?|aptamers?|somamers?|peptides?|cytokines?|chemokines?)\\b|",
         "\\bsystematic quantification of [1-9][0-9,]+ unique proteins\\b|",
+        "\\bmeasuring (?:serum|plasma|csf|circulating|blood) levels of [1-9][0-9,]* proteins in [1-9][0-9,]*\\b|",
+        "\\bby profiling (?:hundreds|thousands|[>~]?[1-9][0-9,]+) of proteins\\b|",
+        "\\bcombined whole-genome sequencing,\\s*multiplex [a-z -]*protein profiling\\b|",
         "\\brecalled for (plasma|serum|blood) sampling for proteomic profiling\\b|",
         "\\bprofiling (urinary|plasma|serum|csf|brain|tissue|salivary) proteomes from [>~]?[1-9][0-9,]+\\b"
       ), primary_ctx_sents, perl = TRUE)
@@ -1149,6 +1157,13 @@ score_triage_v2 <- function(title,
       "\\bcharacteri[sz](e|ed) the genetic architecture of (the )?(human )?(plasma |serum |csf |brain |circulating )?(proteome|proteins)\\b|",
       "\\b(pqtl|cis-?pqtl|vqtl|cis-?vqtl|protein quantitative trait loc[a-z]*)\\s+(mapping|analys[ei]s|stud(y|ies)|scans?)\\b[^.;]{0,95}\\b(was|were)\\s+(performed|conducted|carried out|undertaken|applied)\\b|",
       "\\b(pqtls?|cis-?pqtls?|vqtls?|cis-?vqtls?)\\s+were\\s+(derived|mapped|identified|calculated)\\s+(by\\s+coupling|in\\s+[0-9,]+|across)\\b|",
+      "(?:\\bin\\s+step\\s+(?:one|1),?\\s+)?\\b[1-9][0-9,]*\\s+(?:protein\\s+quantitative\\s+trait\\s+loci(?:\\s*\\(pqtls?\\))?|pqtls?|cis-?pqtls?)\\s+were\\s+(?:identified|discovered|mapped)\\s+and\\s+(?:independently\\s+)?replicated\\b|",
+      "\\b(?:generated|constructed|present|provide)\\s+a\\s+(?:detailed\\s+|comprehensive\\s+)?(?:landscape|map|atlas)\\s+of\\s+the\\s+(?:genomic|genetic)\\s+architecture\\s+of\\s+(?:[a-z-]+\\s+){0,2}protein\\s+levels\\b|",
+      "\\b(?:gwas|genome-wide\\s+association\\s+stud(?:y|ies))(?:\\s*\\(gwas\\))?[^.;]{0,95}\\brevealed\\s+[1-9][0-9,]*\\s+(?:independent\\s+)?variants?\\s+(?:across|for|associated\\s+with)\\s+[1-9][0-9,]*\\s+proteins\\b|",
+      "\\b[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,3}exome[- ]array\\s+variants\\s+were\\s+(?:compared|tested|associated)\\s+with\\s+[1-9][0-9,]*\\s+protein\\s+(?:measurements|levels|targets)\\b|",
+      "\\bused\\s+admixture[- ]mapping\\s+to\\s+(?:explore|investigate|assess|map|identify)[^.;]{0,75}\\b(?:[1-9][0-9,]*\\s+[a-z -]*biomarkers?|proteome|proteins?)\\b|",
+      "\\bintegrated\\s+genomics,\\s*transcriptomics,\\s*and\\s+proteomics\\s+of\\s+human\\s+[a-z ]+tissue[^.;]{0,120}\\b(?:cis[- ]?pqtls?|protein\\s*\\(\\s*cis[- ]?pqtls?\\s*\\))|",
+      "\\b(?:performed|conducted|carried\\s+out)\\s+(?:a\\s+)?(?:gwas|genome-wide\\s+association\\s+stud(?:y|ies))\\s+of\\s+(?:measured\\s+|assayed\\s+|quantified\\s+)?(?:serum|plasma|csf|circulating|blood)\\s+(?:protein\\s+)?levels\\s+of\\s+(?:[^.;,]+,\\s*){3,}[^.;,]+(?:,\\s*and|\\s+and)\\s+[^.;]+|",
       "\\bthrough\\s+([a-z-]+\\s+){0,3}(pqtl|cis-?qtl|qtl)\\s+mapping(,|\\s+discovery|\\s+analysis)[^.;]{0,145}\\b(pqtls?|protein)\\b|",
       "\\b(?:protein|proteomic) (?:measures?|levels?|abundances?|concentrations?|profiles?|targets?) (?:[a-z0-9,()-]+ ){0,5}were (?:significantly )?(?:associated with|mapped to|linked to) (?:(?:genetic|sequence|germline|common|rare|coding) )?variants? \\((?:cis-?|trans-?|sd-?|sv-?|tr-?)?pqtls?\\)|",
       "\\bnumber of genetic associations \\(\\s*cis-?pqtls? at p\\s*<\\s*5e-0?8\\)\\s+were\\b|",
@@ -1195,8 +1210,13 @@ score_triage_v2 <- function(title,
   # P3 (+6): Quantitative genetic pQTL / vQTL / SV-QTL / molQTL / variant-protein discovery yield (in non-MR-instrument sentences)
   p3_explicit <- !is_single_analyte && !is_somatic_or_case_only && length(non_mr_yield_sents) > 0L && any(grepl(paste0(
     "\\b(identif(y|ies|ied|ying)|find|finds|found|detect(ed|s|ing)?|discover(ed|s|ing)?|map(ped|s|ping)?|reveal(ed|s)?|uncover(ed|s)?|report(ed|s)?|confirm(ed|s)?|with only|only)\\s+",
-    "(?:[>~]|(?:over|more\\s+than|nearly|almost|approximately|a\\s+total\\s+of)\\s+)?[1-9][0-9,]*\\s+([a-z-]+\\s+){0,3}",
+    "(?:[>~]|(?:over|more\\s+than|nearly|almost|approximately|a\\s+total\\s+of)\\s+)?(?:[1-9][0-9,]*(?:\\s*,\\s*[1-9][0-9,]*)+\\s*,?\\s+and\\s+[1-9][0-9,]*|[1-9][0-9,]*)\\s+([a-z-]+\\s+){0,3}",
     "(pqtls?|cis-?pqtls?|trans-?pqtls?|sv-?pqtls?|tr-?pqtls?|protein[- ]qtls?|protein[- ]level\\s+qtls?|vqtls?|cis-?vqtls?|sd-?pqtls?|sex-differential\\s+protein\\s+quantitative\\s+(?:trait\\s+)?loci|sentinel\\s+pqtls?|pqtl\\s+associations?|variant-protein\\s+associations?|locus-protein\\s+associations?|primary\\s+genetic\\s+associations?|(?:cis-?|trans-?)?(?:protein|variance)\\s+quantitative\\s+(?:trait\\s+)?loci)\\b|",
+    "\\brevealed\\s+[1-9][0-9,]*\\s+(?:independent\\s+)?variants?\\s+(?:across|for)\\s+[1-9][0-9,]*\\s+proteins\\b|",
+    "\\b[1-9][0-9,]*\\s+(?:independent\\s+)?(?:exome[- ]array\\s+|coding\\s+|regulatory\\s+|genetic\\s+|sequence\\s+)?variants?\\s+(?:affecting|influencing)\\s+(?:the\\s+)?levels\\s+of\\s+[1-9][0-9,]*\\s+(?:[a-z-]+\\s+)?proteins?\\s+were\\s+identified\\b|",
+    "\\bidentified\\s+[1-9][0-9,]*\\s+regional\\s+associations\\s+across\\s+[1-9][0-9,]*\\s+(?:different\\s+)?(?:protein\\s+|cardiometabolic\\s+|inflammatory\\s+|cardiovascular\\s+)?biomarkers?\\b|",
+    "\\b(?:five|six|seven|eight|nine|ten|[5-9]|[1-9][0-9,]+)\\s+of\\s+these\\s+proteins\\s+(?:are|were)\\s+associated\\s+with\\s+cis-?(?:germline\\s+variation|variants?|snps?|pqtls?)\\b|",
+    "\\bidentified\\s+(?:two|three|four|five|six|seven|eight|nine|ten|[1-9][0-9,]*)\\s+(?:cis-?|trans-?)?eqtls?\\s+and\\s+(?:four|five|six|seven|eight|nine|ten|[1-9][0-9,]*)\\s+(?:cis-?|trans-?)?(?:pqtls?|vqtls?)\\b|",
     "\\bidentified\\s+[1-9][0-9,]*\\s+(?:distinct\\s+)?proteomic\\s+traits?\\s+influenced\\s+by\\s+(?:cis[- ]?|trans[- ]?)?pqtls?\\b|",
     "\\bidentified\\s+[1-9][0-9,]*\\s+cis\\s+and\\s+[1-9][0-9,]*\\s+trans\\s+protein[- ]level\\s+qtls?\\s*\\(pqtls?\\)|",
     "\\bidentified\\s+[1-9][0-9,]*\\s+cis-?(?:snps?|qtls?|variants?)\\s+(?:significantly\\s+)?(?:influencing|affecting|associated\\s+with)\\s+(?:the\\s+)?(?:level|levels|abundance|concentrations?)\\s+of\\s+(?:specific\\s+)?(?:plasma\\s+|serum\\s+|csf\\s+|human\\s+)?proteins\\b|",
@@ -1244,7 +1264,7 @@ score_triage_v2 <- function(title,
   cohort_n_pat <- paste0(
     "(\\b(in|across|of|among|from|involving|encompassing|stud(y|ied)|enrolled|recruited|analy[sz](ed|ing)|profiled)\\s+",
     "(?:[>~]|(?:over|more\\s+than|nearly|almost|approximately|up\\s+to)\\s+)?[1-9][0-9,]{1,6}\\s+([a-z()/+-]+\\s+){0,3}",
-    "(participants|individuals|subjects|persons|people|donors|volunteers|icelanders|europeans|british|scottish|finnish|finns|danish|greenlandic|japanese|chinese|",
+    "(participants|individuals|subjects|persons|people|donors|volunteers|icelanders|europeans|british|scottish|finnish|finns|danish|greenlandic|japanese|chinese|latin\\s+americans?|",
     "adults|children|adolescents|pediatric|neonates|infants|newborns?|babies|twins|centenarians|brains|brain\\s+proteomes|kidney\\s+samples|gtm\\s+samples|patients|samples|men|women|males|females|lcls?|cell\\s+lines)\\b|",
     "(?:\\(|,\\s*)n_?(?:cases|controls)?\\s*=\\s*[>~]?[1-9][0-9,]{1,6}(?:\\s+[a-z -]{0,30})?\\s*\\)|\\b[1-9][0-9,]{1,6}\\s+participants\\s+were\\s+analy[sz]ed\\b)"
   )
@@ -1257,7 +1277,7 @@ score_triage_v2 <- function(title,
   # P5 (+3): Germline Genotyping / Sequencing / Imputation / Variant QC / QTL Architecture
   # Merge Safeguard 7: Include spelled-out `protein quantitative (trait )?loc[a-z]*` alongside pQTL/vQTL/molQTL!
   if (!is_somatic_or_case_only && grepl(paste0(
-    "(\\bgenotyped\\b|\\bgenotyping array\\b|\\bsnp array\\b|\\bsnps?\\b|\\bsingle[- ]nucleotide polymorphisms?\\b|\\bgenome-wide scan\\b|",
+    "(\\bgenotyped\\b|\\bgenotyping array\\b|\\bsnp array\\b|\\bexome[- ]array\\b|\\bsnps?\\b|\\bsingle[- ]nucleotide polymorphisms?\\b|\\bgenome-wide scan\\b|",
     "\\bwhole[ -]genome sequenc[a-z]*\\b|\\bwgs\\b|\\bwhole[ -]exome sequenc[a-z]*\\b|\\bwes\\b|\\bexome sequenc[a-z]*\\b|\\blong-read genome sequenc[a-z]*\\b|",
     "\\badmixture[- ]mapping\\b|\\bhuman knockouts?\\b|\\bloss-of-function variants?\\b|\\bbiallelic\\b|",
     "\\bimput(ed|ation)\\b|\\btopmed\\b|\\bhaplotype reference consortium\\b|\\b1000 genomes\\b|",
@@ -1276,12 +1296,12 @@ score_triage_v2 <- function(title,
     "(\\bcerebrospinal fluid\\b|\\bcsf\\b|\\bdorsolateral prefrontal\\b|\\bprefrontal cortex\\b|\\bbraingvex\\b|\\bgyrus\\b|",
     "\\bbrain tissue\\b|\\bbrain proteomes?\\b|\\bpost-?mortem\\b|\\bdorsal root ganglia\\b|",
     "\\burinary\\b|\\burine\\b|\\bsalivary\\b|\\bsaliva\\b|\\bdried blood spots?\\b|\\bmaternal serum\\b|",
-    "\\bkidney samples?\\b|\\bhuman kidney\\b|\\bliver\\b|\\barterial wall\\b|\\baortic\\b|\\bskeletal muscle\\b|",
+    "\\bkidney samples?\\b|\\bhuman kidney\\b|\\bliver\\b|\\batrial tissue\\b|\\bcardiac tissue\\b|\\barterial wall\\b|\\baortic\\b|\\bskeletal muscle\\b|",
     "\\bgtex\\b|\\bstarnet\\b|\\bgenes & health\\b|\\blymphoblastoid\\b|\\blcls?\\b|\\bipscs?\\b|\\binduced pluripotent\\b|",
     "\\bnanoparticle\\b|\\bproteograph\\b|\\borbitrap astral\\b|\\bnulisa[a-z]*\\b|\\bdia-ms\\b|\\bdia-pasef\\b|\\bswath\\b|",
     "\\btandem mass tags?\\b|\\btmt-(based|ms|[0-9]{1,2})\\b|\\blc-ms/ms\\b|\\bsomascan 11k\\b|\\bolink (explore )?ht\\b|",
     "\\bnon-european\\b|\\bafrican ancestry\\b|\\bafrican american\\b|\\beast asian\\b|\\bchinese\\b|\\bjapanese\\b|",
-    "\\bsouth asian\\b|\\bbangladeshi\\b|\\bpakistani\\b|\\bgreenlandic\\b|\\binuit\\b|\\bhispanic\\b|\\barab\\b|",
+    "\\bsouth asian\\b|\\bbangladeshi\\b|\\bpakistani\\b|\\bgreenlandic\\b|\\binuit\\b|\\bhispanic\\b|\\blatin americans?\\b|\\barab\\b|",
     "\\badmixed\\b|\\bmultiancestry\\b|\\bmulti-ancestry\\b|\\bmulti-ethnic\\b|\\bcross-ancestry\\b|",
     "\\bpediatric\\b|\\bchildren\\b|\\badolescents\\b|\\bneonates\\b|\\bnewborns?\\b|\\binfants\\b|\\btwins\\b|\\bcentenarians\\b)"
   ), txt, perl = TRUE)) {
@@ -1345,7 +1365,7 @@ score_triage_v2 <- function(title,
     "two-step (network )?mendelian|2-step mendelian|2-step mr|multi-omics mr|mediation mendelian|",
     "summary-data-based mendelian|summary data-based mendelian|summary-data-based mr|summary-based mendelian|summary-based mr|",
     "inverse-variance weighted|inverse variance weight[a-z]*|\\bivw\\b|mr-egger|weighted median|mr-presso|wald ratios?|",
-    "cochran'?s q|egger intercept|leave-one-out|smr and heidi|\\bheidi\\b|steiger filtering|twosample\\s*mr|coloc\\.abf|coloc\\s+package|pp\\.?h4(\\.abf)?\\s*[>=])\\b"
+    "cochran'?s q|egger intercept|leave-one-out(?!\\s+cross-?validation)|smr and heidi|\\bheidi\\b|steiger filtering|twosample\\s*mr|coloc\\.abf|coloc\\s+package|pp\\.?h4(\\.abf)?\\s*[>=])\\b"
   ), txt, perl = TRUE)) {
     S <- S + 6L; s_rules <- c(s_rules, "S2_2SMREstimatorBoilerplate(+6)")
   }
@@ -1383,7 +1403,7 @@ score_triage_v2 <- function(title,
       grepl(paste0(
         "\\bwe (conducted|performed|carried out|report) ([a-z, -]{0,30})?",
         "(gwas|genome-wide association|exome-wide association|cross-phenotype gwas|multivariate gwas|genomic sem)([a-z, -]{0,25})?",
-        "(of|for|on) (?!((?:wgs|wes|genotype|imputed) data (?:for|on|of) )?([0-9,]+ )?(human |plasma |serum |csf |cerebrospinal |urinary |urine |brain |circulating |blood |inflammatory |cardiovascular |neurological |complement |tumor |tumour |protein )?(proteins?|proteom|cytokin|chemokin|peptid|aptamer|somamer|(?:inflammatory |cardiovascular |neurological |protein |tumor |tumour )?biomarkers?))"
+        "(of|for|on) (?!((?:wgs|wes|genotype|imputed) data (?:for|on|of) )?(?:measured |assayed |quantified )?([0-9,]+ )?(human |plasma |serum |csf |cerebrospinal |urinary |urine |brain |circulating |blood |inflammatory |cardiovascular |cardiometabolic |neurological |complement |tumor |tumour |protein )?(proteins?|proteom|cytokin|chemokin|peptid|aptamer|somamer|(?:inflammatory |cardiovascular |cardiometabolic |neurological |protein |tumor |tumour )?biomarkers?))"
       ), txt, perl = TRUE) ||
         grepl("\\b(quantified [0-9,]+ serum metabolites and performed gwas|genome-wide association study of n-glycosylation|oral microbiomes of [0-9,]+ people|polygenic risk scores? with the plasma proteome)\\b", txt, perl = TRUE)
     )
@@ -1439,7 +1459,9 @@ score_triage_v2 <- function(title,
     has_direct_pqtl_mapping ||
       (!mr_only_pqtl_guard && (
         is_custom_or_pathway_pqtl ||
-        (isTRUE(ft_verified_pqtl) && S == 0L) ||
+        (isTRUE(ft_verified_pqtl) && !s1_hit && S <= 6L) ||
+        (p1_hit && p4_hit && S == 0L && !s1_hit &&
+           grepl("\\bprotein profiles of which some could be explained by associations to genetic variants\\b", primary_ctx_txt, perl = TRUE)) ||
         (grepl("\\bfine-maps? cis-?molqtls?\\b", primary_ctx_txt, perl = TRUE) &&
            grepl("\\bprotein levels\\b", primary_ctx_txt, perl = TRUE)) ||
         (has_multi_protein_scale && grepl(paste0(
