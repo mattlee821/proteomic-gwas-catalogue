@@ -41115,98 +41115,6 @@ Q07325	CXCL9	C-X-C motif chemokine 9	C1_dA_GM_CXCL9_of_Monocytes	lundtoft_2020_E
 Q07325	CXCL9	C-X-C motif chemokine 9	C1_dG_GM_CXCL9_of_Monocytes	lundtoft_2020_EUR	lundtoft_2020_33104735	FALSE	FALSE
 P02778	CXCL10	C-X-C motif chemokine 10	C2_dA_GM_CXCL10_of_CD4p	lundtoft_2020_EUR	lundtoft_2020_33104735	FALSE	FALSE
 P02778	CXCL10	C-X-C motif chemokine 10	C2_dA_GM_CXCL10_of_CD8p	lundtoft_2020_EUR	lundtoft_2020_33104735	FALSE	FALSE
-P13686	ACP5	Tartrate-resistant acid phosphatase type 5	ACP5	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P00813	ADA	Adenosine deaminase	ADA	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q76LX8	ADAMTS13	A disintegrin and metalloproteinase with thrombospondin motifs 13	ADAMTS13	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q13867	BLMH	Bleomycin hydrolase	BLMH	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P22004	BMP6	Bone morphogenetic protein 6	BMP6	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q16663	CCL15	C-C motif chemokine 15	CCL15	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q92583	CCL17	C-C motif chemokine 17	CCL17	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P55773	CCL23	C-C motif chemokine 23	CCL23	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-O00175	CCL24	C-C motif chemokine 24	CCL24	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-O15444	CCL25	C-C motif chemokine 25	CCL25	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P10147	CCL3	C-C motif chemokine 3	CCL3	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P13236	CCL4	C-C motif chemokine 4	CCL4	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P80075	CCL8	C-C motif chemokine 8	CCL8	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P25942	CD40	Tumor necrosis factor receptor superfamily member 5	CD40	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q9UIB8	CD84	SLAM family member 5	CD84	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q9H5V8	CDCP1	CUB domain-containing protein 1	CDCP1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P33151	CDH5	Cadherin-5	CDH5	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P36222	CHI3L1	Chitinase-3-like protein 1	CHI3L1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q13231	CHIT1	Chitotriosidase-1	CHIT1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P15085	CPA1	Carboxypeptidase A1	CPA1	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P28325	CST5	Cystatin-D	CST5	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P04080	CSTB	Cystatin-B	CSTB	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q99895	CTRC	Chymotrypsin-C	CTRC	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P09341	CXCL1	Growth-regulated alpha protein	CXCL1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P02778	CXCL10	C-X-C motif chemokine 10	CXCL10	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-O14625	CXCL11	C-X-C motif chemokine 11	CXCL11	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P42830	CXCL5	C-X-C motif chemokine 5	CXCL5	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P80162	CXCL6	C-X-C motif chemokine 6	CXCL6	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P80370	DLK1	Protein delta homolog 1	DLK1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q14213	EBI3	Interleukin-27 subunit beta	EBI3	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q13541	EIF4EBP1	Eukaryotic translation initiation factor 4E-binding protein 1	EIF4EBP1	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P12104	FABP2	Fatty acid-binding protein, intestinal	FABP2	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P51161	FABP6	Gastrotropin	FABP6	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P31994	FCGR2B	Low affinity immunoglobulin gamma Fc region receptor II-b	FCGR2B	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P12034	FGF5	Fibroblast growth factor 5	FGF5	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q9UK05	GDF2	Growth/differentiation factor 2	GDF2	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P27352	CBLIF	Cobalamin binding intrinsic factor	GIF	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P28799	GRN	Progranulin	GRN	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1	HAVCR1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P13598	ICAM2	Intercellular adhesion molecule 2	ICAM2	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P35475	IDUA	Alpha-L-iduronidase	IDUA	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q08334	IL10RB	Interleukin-10 receptor subunit beta	IL10RB	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P29460	IL12B	Interleukin-12 subunit beta	IL12B	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q13261	IL15RA	Interleukin-15 receptor subunit alpha	IL15RA	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q14005	IL16	Pro-interleukin-16	IL16	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q8TAD2	IL17D	Interleukin-17D	IL17D	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q96F46	IL17RA	Interleukin-17 receptor A	IL17RA	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q14116	IL18	Interleukin-18	IL18	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q13478	IL18R1	Interleukin-18 receptor 1	IL18R1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P27930	IL1R2	Interleukin-1 receptor type 2	IL1R2	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q01638	IL1RL1	Interleukin-1 receptor-like 1	IL1RL1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q9HB29	IL1RL2	Interleukin-1 receptor-like 2	IL1RL2	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P18510	IL1RN	Interleukin-1 receptor antagonist protein	IL1RN	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q8NEV9	IL27	Interleukin-27 subunit alpha	IL27	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL2RA	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P24394	IL4R	Interleukin-4 receptor subunit alpha	IL4R	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P05231	IL6	Interleukin-6	IL6	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P08887	IL6R	Interleukin-6 receptor subunit alpha	IL6R	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P13232	IL7	Interleukin-7	IL7	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P17931	LGALS3	Galectin-3	LGALS3	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P56470	LGALS4	Galectin-4	LGALS4	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-O00182	LGALS9	Galectin-9	LGALS9	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P06858	LPL	Lipoprotein lipase	LPL	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P01374	LTA	Lymphotoxin-alpha	LTA	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q12866	MERTK	Tyrosine-protein kinase Mer	MERTK	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P08254	MMP3	Stromelysin-1	MMP3	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q8IYS5	OSCAR	Osteoclast-associated immunoglobulin-like receptor	OSCAR	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q13219	PAPPA	Pappalysin-1	PAPPA	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q9BQ51	PDCD1LG2	Programmed cell death 1 ligand 2	PDCD1LG2	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-O75594	PGLYRP1	Peptidoglycan recognition protein 1	PGLYRP1	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P00750	PLAT	Tissue-type plasminogen activator	PLAT	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q15166	PON3	Serum paraoxonase/lactonase 3	PON3	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q9BQR3	PRSS27	Serine protease 27	PRSS27	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P26022	PTX3	Pentraxin-related protein PTX3	PTX3	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P16581	SELE	E-selectin	SELE	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q14242	SELPLG	P-selectin glycoprotein ligand 1	SELPLG	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q8IW75	SERPINA12	Serpin A12	SERPINA12	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P35247	SFTPD	Pulmonary surfactant-associated protein D	SFTPD	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P78324	SIRPA	Tyrosine-protein phosphatase non-receptor type substrate 1	SIRPA	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q9NQ25	SLAMF7	SLAM family member 7	SLAMF7	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-Q02763	TEK	Angiopoietin-1 receptor	TEK	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P10646	TFPI	Tissue factor pathway inhibitor	TFPI	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P02786	TFRC	Transferrin receptor protein 1	TFRC	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P35442	THBS2	Thrombospondin-2	THBS2	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-O00220	TNFRSF10A	Tumor necrosis factor receptor superfamily member 10A	TNFRSF10A	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-O14763	TNFRSF10B	Tumor necrosis factor receptor superfamily member 10B	TNFRSF10B	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNFRSF10C	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q9Y6Q6	TNFRSF11A	Tumor necrosis factor receptor superfamily member 11A	TNFRSF11A	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-O43557	TNFSF14	Tumor necrosis factor ligand superfamily member 14	TNFSF14	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
-P15692	VEGFA	Vascular endothelial growth factor A, long form	VEGFA	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-Q96IQ7	VSIG2	V-set and immunoglobulin domain-containing protein 2	VSIG2	bretherick_2020_EUR	bretherick_2020_32628676	FALSE	FALSE
-P47992	XCL1	Lymphotactin	XCL1	bretherick_2020_EUR	bretherick_2020_32628676	TRUE	FALSE
 Q9UKR0	KLK12	Kallikrein-12	KLK12	zhong_2020_ALL	zhong_2020_32576278	TRUE	FALSE
 P01242	GH2	Growth hormone variant	GH2	zhong_2020_ALL	zhong_2020_32576278	FALSE	FALSE
 O43186	CRX	Cone-rod homeobox protein	CRX	zhong_2020_ALL	zhong_2020_32576278	FALSE	FALSE
@@ -43744,271 +43652,6 @@ P17936	IGFBP3	Insulin-like growth factor-binding protein 3	Intact_IGFBP-3	bartel
 P17936	IGFBP3	Insulin-like growth factor-binding protein 3	Intact_to_Total_IGFBP-3_ratio	bartell_2020_ALL	bartell_2020_32484228	TRUE	FALSE
 P24593	IGFBP5	Insulin-like growth factor-binding protein 5	Total_IGFBP-5	bartell_2020_ALL	bartell_2020_32484228	TRUE	TRUE
 Q9BXP8	PAPPA2	Pappalysin-2	PAPP-A2	bartell_2020_ALL	bartell_2020_32484228	TRUE	TRUE
-O00585	CCL21	C-C motif chemokine 21	6Ckine	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q15848	ADIPOQ	Adiponectin	Adiponectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P35318	ADM	Pro-adrenomedullin	Adrenomedullin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O00253	AGRP	Agouti-related protein	Agouti-Related Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P15121	AKR1B1	Aldo-keto reductase family 1 member B1	Aldose Reductase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02763	ORM1	Alpha-1-acid glycoprotein 1	Alpha-1-acid glycoprotein 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01011	SERPINA3	Alpha-1-antichymotrypsin	Alpha-1-Antichymotrypsin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01009	SERPINA1	Alpha-1-antitrypsin	Alpha-1-Antitrypsin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02760	AMBP	Protein AMBP	Alpha-1-Microglobulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01023	A2M	Alpha-2-macroglobulin	Alpha-2-Macroglobulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P03950	ANG	Angiogenin	Angiogenin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O15123	ANGPT2	Angiopoietin-2	Angiopoietin-2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q9Y5C1	ANGPTL3	Angiopoietin-related protein 3	Angiopoietin-related protein 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P12821	ACE	Angiotensin-converting enzyme	Angiotensin-Converting Enzyme	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P01019	AGT	Angiotensinogen	Angiotensinogen	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01008	SERPINC1	Antithrombin-III	Antithrombin-III	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02647	APOA1	Apolipoprotein A-I	Apolipoprotein A-I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02652	APOA2	Apolipoprotein A-II	Apolipoprotein A-II	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P06727	APOA4	Apolipoprotein A-IV	Apolipoprotein A-IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P04114	APOB	Apolipoprotein B-100	Apolipoprotein B	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02654	APOC1	Apolipoprotein C-I	Apolipoprotein C-I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02656	APOC3	Apolipoprotein C-III	Apolipoprotein C-III	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P05090	APOD	Apolipoprotein D	Apolipoprotein D	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02649	APOE	Apolipoprotein E	Apolipoprotein E	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02749	APOH	Beta-2-glycoprotein 1	Apolipoprotein H	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P08519	LPA	Apolipoprotein	Apolipoprotein(a)	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P30530	AXL	Tyrosine-protein kinase receptor UFO	AXL Receptor Tyrosine Kinase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q9Y275	TNFSF13B	Tumor necrosis factor ligand superfamily member 13B	B cell-activating factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O43927	CXCL13	C-X-C motif chemokine 13	B Lymphocyte Chemoattractant	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P05067	APP	Amyloid-beta precursor protein	Beta Amyloid 1-40	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P61769	B2M	Beta-2-microglobulin	Beta-2-Microglobulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P23560	BDNF	Neurotrophic factor BDNF precursor form	Brain-Derived Neurotrophic Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01308	INS	Insulin	C-Peptide	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02741	CRP	C-reactive protein	C-Reactive Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P07339	CTSD	Cathepsin D	Cathepsin D	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P25942	CD40	Tumor necrosis factor receptor superfamily member 5	CD 40 antigen	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q86VB7	CD163	Scavenger receptor cysteine-rich type 1 protein M130	CD163	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P29965	CD40LG	CD40 ligand	CD40 Ligand	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O43866	CD5L	CD5 antigen-like	CD5 Antigen-like	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02751	FN1	Fibronectin	Cellular Fibronectin	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-Q99969	RARRES2	Retinoic acid receptor responder protein 2	Chemerin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P51679	CCR4	C-C chemokine receptor type 4	Chemokine CC-4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P10645	CHGA	Chromogranin-A	Chromogranin-A	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P10909	CLU	Clusterin	Clusterin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02462	COL4A1	Collagen alpha-1	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P08572	COL4A2	Collagen alpha-2	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q01955	COL4A3	Collagen alpha-3	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P53420	COL4A4	Collagen alpha-4	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P29400	COL4A5	Collagen alpha-5	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q14031	COL4A6	Collagen alpha-6	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01024	C3	Complement C3	Complement C3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q03591	CFHR1	Complement factor H-related protein 1	Complement Factor H Related Protein 1	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P06732	CKM	Creatine kinase M-type	Creatine Kinase-MB	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P12277	CKB	Creatine kinase B-type	Creatine Kinase-MB	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01034	CST3	Cystatin-C	Cystatin-C	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P16581	SELE	E-selectin	E-Selectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P80511	S100A12	Protein S100-A12	EN-RAGE	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P17813	ENG	Endoglin	Endoglin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P39060	COL18A1	Collagen alpha-1	Endostatin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P51671	CCL11	Eotaxin	Eotaxin-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O00175	CCL24	C-C motif chemokine 24	Eotaxin-2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q9Y258	CCL26	C-C motif chemokine 26	Eotaxin-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P42830	CXCL5	C-X-C motif chemokine 5	Epithelial-Derived Neutrophil-Activating Protein 78	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01588	EPO	Erythropoietin	Erythropoietin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P15311	EZR	Ezrin	Ezrin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P08709	F7	Coagulation factor VII	Factor VII	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P48023	FASLG	Tumor necrosis factor ligand superfamily member 6	Fas Ligand	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O95407	TNFRSF6B	Tumor necrosis factor receptor superfamily member 6B	FASLG Receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P15090	FABP4	Fatty acid-binding protein, adipocyte	Fatty Acid-Binding Protein adipocyte	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P07148	FABP1	Fatty acid-binding protein, liver	Fatty Acid-Binding Protein liver	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02792	FTL	Ferritin light chain	Ferritin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02794	FTH1	Ferritin heavy chain	Ferritin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02765	AHSG	Alpha-2-HS-glycoprotein	Fetuin-A	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-Q9NSA1	FGF21	Fibroblast growth factor 21	Fibroblast Growth Factor 21	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q9GZV9	FGF23	Fibroblast growth factor 23	Fibroblast growth factor 23	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P23142	FBLN1	Fibulin-1	Fibulin-1C	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O75636	FCN3	Ficolin-3	Ficolin-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01225	FSHB	Follitropin subunit beta	Follicle-Stimulating Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P01215	CGA	Glycoprotein hormones alpha chain	Follicle-Stimulating Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P17931	LGALS3	Galectin-3	Galectin-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P09681	GIP	Gastric inhibitory polypeptide	Gastric inhibitory polypeptide	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P06396	GSN	Gelsolin	Gelsolin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01275	GCG	Pro-glucagon	Glucagon-like Peptide 1 total	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P06744	GPI	Glucose-6-phosphate isomerase	Glucose-6-phosphate Isomerase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P08263	GSTA1	Glutathione S-transferase A1	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P09210	GSTA2	Glutathione S-transferase A2	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-Q16772	GSTA3	Glutathione S-transferase A3	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-O15217	GSTA4	Glutathione S-transferase A4	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-Q7RTV2	GSTA5	Glutathione S-transferase A5	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P11216	PYGB	Glycogen phosphorylase, brain form	Glycogen phosphorylase isoenzyme BB	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P09919	CSF3	Granulocyte colony-stimulating factor	Granulocyte Colony-Stimulating Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q99988	GDF15	Growth/differentiation factor 15	Growth differentiation factor 15	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01241	GH1	Somatotropin	Growth Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01242	GH2	Growth hormone variant	Growth Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P09341	CXCL1	Growth-regulated alpha protein	Growth-Regulated alpha protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P00738	HP	Haptoglobin	Haptoglobin	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P0DMV8	HSPA1A	Heat shock 70 kDa protein 1A	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P0DMV9	HSPA1B	Heat shock 70 kDa protein 1B	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P34931	HSPA1L	Heat shock 70 kDa protein 1-like	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P54652	HSPA2	Heat shock-related 70 kDa protein 2	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P34932	HSPA4	Heat shock 70 kDa protein 4	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O95757	HSPA4L	Heat shock 70 kDa protein 4L	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P11021	HSPA5	Endoplasmic reticulum chaperone BiP	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P17066	HSPA6	Heat shock 70 kDa protein 6	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P11142	HSPA8	Heat shock cognate 71 kDa protein	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P38646	HSPA9	Stress-70 protein, mitochondrial	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O43301	HSPA12A	Heat shock 70 kDa protein 12A	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q96MM6	HSPA12B	Heat shock 70 kDa protein 12B	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P48723	HSPA13	Heat shock 70 kDa protein 13	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q0VDF9	HSPA14	Heat shock 70 kDa protein 14	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02790	HPX	Hemopexin	Hemopexin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P14210	HGF	Hepatocyte growth factor	Hepatocyte Growth Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P08581	MET	Hepatocyte growth factor receptor	Hepatocyte Growth Factor receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P05981	HPN	Serine protease hepsin	Hepsin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P04626	ERBB2	Receptor tyrosine-protein kinase erbB-2	Human Epidermal Growth Factor Receptor 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01876	IGHA1	Immunoglobulin heavy constant alpha 1	Immunoglobulin A	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P01854	IGHE	Immunoglobulin heavy constant epsilon	Immunoglobulin E	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01871	IGHM	Immunoglobulin heavy constant mu	Immunoglobulin M	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01308	INS	Insulin	Insulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P22692	IGFBP4	Insulin-like growth factor-binding protein 4	Insulin-like Growth Factor Binding Protein 4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P24593	IGFBP5	Insulin-like growth factor-binding protein 5	Insulin-like Growth Factor Binding Protein 5	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P24592	IGFBP6	Insulin-like growth factor-binding protein 6	Insulin-like Growth Factor Binding Protein 6	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P05019	IGF1	Insulin-like growth factor 1	Insulin-like Growth Factor I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P08833	IGFBP1	Insulin-like growth factor-binding protein 1	Insulin-like Growth Factor-Binding Protein 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P18065	IGFBP2	Insulin-like growth factor-binding protein 2	Insulin-like Growth Factor-Binding Protein 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P17936	IGFBP3	Insulin-like growth factor-binding protein 3	Insulin-like Growth Factor-Binding Protein 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P05362	ICAM1	Intercellular adhesion molecule 1	Intercellular Adhesion Molecule 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01579	IFNG	Interferon gamma	Interferon gamma	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02778	CXCL10	C-X-C motif chemokine 10	Interferon gamma Induced Protein 10	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O14625	CXCL11	C-X-C motif chemokine 11	Interferon-inducible T-cell alpha chemoattractant	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01584	IL1B	Interleukin-1 beta	Interleukin-1 beta	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P18510	IL1RN	Interleukin-1 receptor antagonist protein	Interleukin-1 receptor antagonist	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P22301	IL10	Interleukin-10	Interleukin-10	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P29460	IL12B	Interleukin-12 subunit beta	Interleukin-12 Subunit p40	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q14005	IL16	Pro-interleukin-16	Interleukin-16	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q16552	IL17A	Interleukin-17A	Interleukin-17	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q14116	IL18	Interleukin-18	Interleukin-18	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P60568	IL2	Interleukin-2	Interleukin-2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01589	IL2RA	Interleukin-2 receptor subunit alpha	Interleukin-2 receptor alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q9NPF7	IL23A	Interleukin-23 subunit alpha	Interleukin-23	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P29460	IL12B	Interleukin-12 subunit beta	Interleukin-23	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P05231	IL6	Interleukin-6	Interleukin-6	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P08887	IL6R	Interleukin-6 receptor subunit alpha	Interleukin-6 receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P40189	IL6ST	Interleukin-6 receptor subunit beta	Interleukin-6 receptor subunit beta	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P13232	IL7	Interleukin-7	Interleukin-7	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P10145	CXCL8	Interleukin-8	Interleukin-8	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q9Y337	KLK5	Kallikrein-5	Kallikrein 5	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1	Kidney Injury Molecule-1	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P02788	LTF	Lactotransferrin	Lactoferrin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q04760	GLO1	Lactoylglutathione lyase	Lactoylglutathione lyase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q14766	LTBP1	Latent-transforming growth factor beta-binding protein 1	Latency-Associated Peptide of Transforming Growth Factor beta 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P78380	OLR1	Oxidized low-density lipoprotein receptor 1	Lectin-Like Oxidized LDL Receptor 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P41159	LEP	Leptin	Leptin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P48357	LEPR	Leptin receptor	Leptin Receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02750	LRG1	Leucine-rich alpha-2-glycoprotein	Leucine-rich alpha-2-glycoprotein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01229	LHB	Lutropin subunit beta	Luteinizing Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01215	CGA	Glycoprotein hormones alpha chain	Luteinizing Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P09603	CSF1	Macrophage colony-stimulating factor 1	Macrophage Colony-Stimulating Factor 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q99731	CCL19	C-C motif chemokine 19	Macrophage inflammatory protein 3 beta	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P10147	CCL3	C-C motif chemokine 3	Macrophage Inflammatory Protein-1 alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P13236	CCL4	C-C motif chemokine 4	Macrophage Inflammatory Protein-1 beta	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P78556	CCL20	C-C motif chemokine 20	Macrophage Inflammatory Protein-3 alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P14174	MIF	Macrophage migration inhibitory factor	Macrophage Migration Inhibitory Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O00626	CCL22	C-C motif chemokine 22	Macrophage-Derived Chemokine	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P26927	MST1	Hepatocyte growth factor-like protein	Macrophage-Stimulating Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P03956	MMP1	Interstitial collagenase	Matrix Metalloproteinase-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P09238	MMP10	Stromelysin-2	Matrix Metalloproteinase-10	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P08254	MMP3	Stromelysin-1	Matrix Metalloproteinase-3	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P09237	MMP7	Matrilysin	Matrix Metalloproteinase-7	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P14780	MMP9	Matrix metalloproteinase-9	Matrix Metalloproteinase-9	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P14780	MMP9	Matrix metalloproteinase-9	Matrix Metalloproteinase-9 total	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q13421	MSLN	Mesothelin	Mesothelin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q29983	MICA	MHC class I polypeptide-related sequence A	MHC class I chain-related protein A	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P13500	CCL2	C-C motif chemokine 2	Monocyte Chemotactic Protein 1	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P80075	CCL8	C-C motif chemokine 8	Monocyte Chemotactic Protein 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P80098	CCL7	C-C motif chemokine 7	Monocyte Chemotactic Protein 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q99616	CCL13	C-C motif chemokine 13	Monocyte Chemotactic Protein 4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q07325	CXCL9	C-X-C motif chemokine 9	Monokine Induced by Gamma Interferon	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P55773	CCL23	C-C motif chemokine 23	Myeloid Progenitor Inhibitory Factor 1	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P05164	MPO	Myeloperoxidase	Myeloperoxidase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02144	MB	Myoglobin	Myoglobin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P16860	NPPB	Natriuretic peptides B	N-terminal prohormone of brain natriuretic peptide	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q92823	NRCAM	Neuronal cell adhesion molecule	Neuronal Cell Adhesion Molecule	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O14786	NRP1	Neuropilin-1	Neuropilin-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02775	PPBP	Platelet basic protein	Neutrophil Activating Peptide 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P80188	LCN2	Neutrophil gelatinase-associated lipocalin	Neutrophil Gelatinase-Associated Lipocalin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q8WWA0	ITLN1	Intelectin-1	Omentin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02818	BGLAP	Osteocalcin	Osteocalcin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P10451	SPP1	Osteopontin	Osteopontin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O00300	TNFRSF11B	Tumor necrosis factor receptor superfamily member 11B	Osteoprotegerin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P16109	SELP	P-selectin	P-Selectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01298	PPY	Pancreatic polypeptide prohormone	Pancreatic Polypeptide	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P27169	PON1	Serum paraoxonase/arylesterase 1	Paraoxanase-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P26022	PTX3	Pentraxin-related protein PTX3	Pentraxin-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P0DJD8	PGA3	Pepsin A-3	Pepsinogen I	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P10082	PYY	Peptide YY	Peptide YY	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q15063	POSTN	Periostin	Periostin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q13162	PRDX4	Peroxiredoxin-4	Peroxiredoxin-4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q9Y617	PSAT1	Phosphoserine aminotransferase	Phosphoserine Aminotransferase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P36955	SERPINF1	Pigment epithelium-derived factor	Pigment Epithelium Derived Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P05121	SERPINE1	Plasminogen activator inhibitor 1	Plasminogen Activator Inhibitor 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01127	PDGFB	Platelet-derived growth factor subunit B	Platelet-Derived Growth Factor BB	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P28799	GRN	Progranulin	Progranulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01308	INS	Insulin	Proinsulin Intact	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01308	INS	Insulin	Proinsulin Total	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01236	PRL	Prolactin	Prolactin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q16651	PRSS8	Prostasin	Prostasin	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P15309	ACP3	Prostatic acid phosphatase	Prostatic Acid Phosphatase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P26447	S100A4	Protein S100-A4	Protein S100-A4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P06703	S100A6	Protein S100-A6	Protein S100-A6	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P55774	CCL18	C-C motif chemokine 18	Pulmonary and Activation-Regulated Chemokine	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-Q15109	AGER	Advanced glycation end product-specific receptor	Receptor for advanced glycosylation end products	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P21860	ERBB3	Receptor tyrosine-protein kinase erbB-3	Receptor tyrosine-protein kinase erbB-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q9HD89	RETN	Resistin	Resistin	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P02753	RBP4	Retinol-binding protein 4	Retinol-binding protein 4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q6FHJ7	SFRP4	Secreted frizzled-related protein 4	Secreted frizzled-related protein 4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P49908	SELENOP	Selenoprotein P	Selenoprotein P	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02787	TF	Serotransferrin	Serotransferrin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P0DJI8	SAA1	Serum amyloid A-1 protein	Serum Amyloid A Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P0DJI9	SAA2	Serum amyloid A-2 protein	Serum Amyloid A Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P35542	SAA4	Serum amyloid A-4 protein	Serum Amyloid A Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02743	APCS	Serum amyloid P-component	Serum Amyloid P-Component	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P17174	GOT1	Aspartate aminotransferase, cytoplasmic	Serum Glutamic Oxaloacetic Transaminase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P00505	GOT2	Aspartate aminotransferase, mitochondrial	Serum Glutamic Oxaloacetic Transaminase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P04278	SHBG	Sex hormone-binding globulin	Sex Hormone-Binding Globulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q99523	SORT1	Sortilin	Sortilin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q01638	IL1RL1	Interleukin-1 receptor-like 1	ST2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P21583	KITLG	Kit ligand	Stem Cell Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P48061	CXCL12	Stromal cell-derived factor 1	Stromal cell-derived factor-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P00441	SOD1	Superoxide dismutase [Cu-Zn]	Superoxide Dismutase 1 soluble	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P22362	CCL1	C-C motif chemokine 1	T Lymphocyte-Secreted Protein I-309	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P13501	CCL5	C-C motif chemokine 5	T-Cell-Specific Protein RANTES	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P07911	UMOD	Uromodulin	Tamm-Horsfall Urinary Glycoprotein (Uromodoulin)	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P24821	TNC	Tenascin	Tenascin-C	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
-P05452	CLEC3B	Tetranectin	Tetranectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q96IY4	CPB2	Carboxypeptidase B2	Thrombin-activable fibrinolysis inhibitor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P07204	THBD	Thrombomodulin	Thrombomodulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P07996	THBS1	Thrombospondin-1	Thrombospondin-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01222	TSHB	Thyrotropin subunit beta	Thyroid-Stimulating Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01215	CGA	Glycoprotein hormones alpha chain	Thyroid-Stimulating Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P05543	SERPINA7	Thyroxine-binding globulin	Thyroxine-Binding Globulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01033	TIMP1	Metalloproteinase inhibitor 1	Tissue Inhibitor of Metalloproteinases 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P00750	PLAT	Tissue-type plasminogen activator	Tissue type Plasminogen activator	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNF-Related Apoptosis-Inducing Ligand Receptor 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02766	TTR	Transthyretin	Transthyretin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q07654	TFF3	Trefoil factor 3	Trefoil Factor 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P01375	TNF	Tumor necrosis factor	Tumor Necrosis Factor alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P20333	TNFRSF1B	Tumor necrosis factor receptor superfamily member 1B	Tumor necrosis factor receptor 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P19438	TNFRSF1A	Tumor necrosis factor receptor superfamily member 1A	Tumor Necrosis Factor Receptor I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P35590	TIE1	Tyrosine-protein kinase receptor Tie-1	Tyrosine kinase with Ig and EGF homology domains 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P00749	PLAU	Urokinase-type plasminogen activator	Urokinase-type Plasminogen Activator	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q03405	PLAUR	Urokinase plasminogen activator surface receptor	Urokinase-type plasminogen activator receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P19320	VCAM1	Vascular cell adhesion protein 1	Vascular Cell Adhesion Molecule-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P15692	VEGFA	Vascular endothelial growth factor A, long form	Vascular Endothelial Growth Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P49767	VEGFC	Vascular endothelial growth factor C	Vascular Endothelial Growth Factor C	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-O43915	VEGFD	Vascular endothelial growth factor D	Vascular endothelial growth factor D	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P17948	FLT1	Vascular endothelial growth factor receptor 1	Vascular Endothelial Growth Factor Receptor 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P35916	FLT4	Vascular endothelial growth factor receptor 3	Vascular endothelial growth factor receptor 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-Q8IW75	SERPINA12	Serpin A12	Visceral adipose tissue derived serpin A12	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P43490	NAMPT	Nicotinamide phosphoribosyltransferase	Visfatin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P02774	GC	Vitamin D-binding protein	Vitamin D-Binding Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P07225	PROS1	Vitamin K-dependent protein S	Vitamin K-Dependent Protein S	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P04004	VTN	Vitronectin	Vitronectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P04275	VWF	von Willebrand factor	von Willebrand Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
-P36222	CHI3L1	Chitinase-3-like protein 1	YKL-40	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
 P05121	SERPINE1	Plasminogen activator inhibitor 1	activePAI1	karhunen_2020_EUR	karhunen_2020_ppr232912	TRUE	FALSE
 P01138	NGF	Beta-nerve growth factor	bNGF	karhunen_2020_EUR	karhunen_2020_ppr232912	FALSE	FALSE
 Q9Y4X3	CCL27	C-C motif chemokine 27	CTACK	karhunen_2020_EUR	karhunen_2020_ppr232912	TRUE	FALSE
@@ -51352,3 +50995,496 @@ P45379	TNNT2	Troponin T, cardiac muscle	TNNT2	assum_2020_EUR	assum_2020_ppr14121
 Q9NP98	MYOZ1	Myozenin-1	MYOZ1	assum_2020_EUR	assum_2020_ppr141214	TRUE	FALSE
 P36542	ATP5F1C	ATP synthase F	ATP5C1	assum_2020_EUR	assum_2020_ppr141214	TRUE	FALSE
 P02749	APOH	Beta-2-glycoprotein 1	APOH	assum_2020_EUR	assum_2020_ppr141214	TRUE	TRUE
+P13686	ACP5	Tartrate-resistant acid phosphatase type 5	ACP5	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P00813	ADA	Adenosine deaminase	ADA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q76LX8	ADAMTS13	A disintegrin and metalloproteinase with thrombospondin motifs 13	ADAMTS13	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q13867	BLMH	Bleomycin hydrolase	BLMH	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P22004	BMP6	Bone morphogenetic protein 6	BMP6	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q16663	CCL15	C-C motif chemokine 15	CCL15	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q92583	CCL17	C-C motif chemokine 17	CCL17	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P55773	CCL23	C-C motif chemokine 23	CCL23	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+O00175	CCL24	C-C motif chemokine 24	CCL24	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+O15444	CCL25	C-C motif chemokine 25	CCL25	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P10147	CCL3	C-C motif chemokine 3	CCL3	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P13236	CCL4	C-C motif chemokine 4	CCL4	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P80075	CCL8	C-C motif chemokine 8	CCL8	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P25942	CD40	Tumor necrosis factor receptor superfamily member 5	CD40	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9UIB8	CD84	SLAM family member 5	CD84	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q9H5V8	CDCP1	CUB domain-containing protein 1	CDCP1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P33151	CDH5	Cadherin-5	CDH5	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P36222	CHI3L1	Chitinase-3-like protein 1	CHI3L1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13231	CHIT1	Chitotriosidase-1	CHIT1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P15085	CPA1	Carboxypeptidase A1	CPA1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P28325	CST5	Cystatin-D	CST5	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P04080	CSTB	Cystatin-B	CSTB	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q99895	CTRC	Chymotrypsin-C	CTRC	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P09341	CXCL1	Growth-regulated alpha protein	CXCL1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P02778	CXCL10	C-X-C motif chemokine 10	CXCL10	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+O14625	CXCL11	C-X-C motif chemokine 11	CXCL11	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P42830	CXCL5	C-X-C motif chemokine 5	CXCL5	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P80162	CXCL6	C-X-C motif chemokine 6	CXCL6	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P80370	DLK1	Protein delta homolog 1	DLK1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q14213	EBI3	Interleukin-27 subunit beta	EBI3	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13541	EIF4EBP1	Eukaryotic translation initiation factor 4E-binding protein 1	EIF4EBP1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P12104	FABP2	Fatty acid-binding protein, intestinal	FABP2	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P51161	FABP6	Gastrotropin	FABP6	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P31994	FCGR2B	Low affinity immunoglobulin gamma Fc region receptor II-b	FCGR2B	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P12034	FGF5	Fibroblast growth factor 5	FGF5	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9UK05	GDF2	Growth/differentiation factor 2	GDF2	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P27352	CBLIF	Cobalamin binding intrinsic factor	GIF	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P28799	GRN	Progranulin	GRN	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1	HAVCR1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P13598	ICAM2	Intercellular adhesion molecule 2	ICAM2	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P35475	IDUA	Alpha-L-iduronidase	IDUA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q08334	IL10RB	Interleukin-10 receptor subunit beta	IL10RB	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P29460	IL12B	Interleukin-12 subunit beta	IL12B	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13261	IL15RA	Interleukin-15 receptor subunit alpha	IL15RA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q14005	IL16	Pro-interleukin-16	IL16	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q8TAD2	IL17D	Interleukin-17D	IL17D	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q96F46	IL17RA	Interleukin-17 receptor A	IL17RA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q14116	IL18	Interleukin-18	IL18	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13478	IL18R1	Interleukin-18 receptor 1	IL18R1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P27930	IL1R2	Interleukin-1 receptor type 2	IL1R2	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q01638	IL1RL1	Interleukin-1 receptor-like 1	IL1RL1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9HB29	IL1RL2	Interleukin-1 receptor-like 2	IL1RL2	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P18510	IL1RN	Interleukin-1 receptor antagonist protein	IL1RN	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q8NEV9	IL27	Interleukin-27 subunit alpha	IL27	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL2RA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P24394	IL4R	Interleukin-4 receptor subunit alpha	IL4R	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P05231	IL6	Interleukin-6	IL6	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	IL6R	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P13232	IL7	Interleukin-7	IL7	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P17931	LGALS3	Galectin-3	LGALS3	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P56470	LGALS4	Galectin-4	LGALS4	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+O00182	LGALS9	Galectin-9	LGALS9	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P06858	LPL	Lipoprotein lipase	LPL	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P01374	LTA	Lymphotoxin-alpha	LTA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q12866	MERTK	Tyrosine-protein kinase Mer	MERTK	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P08254	MMP3	Stromelysin-1	MMP3	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P30203	CD6	T-cell differentiation antigen CD6	NA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P39900	MMP12	Macrophage metalloelastase	NA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q8IYS5	OSCAR	Osteoclast-associated immunoglobulin-like receptor	OSCAR	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13219	PAPPA	Pappalysin-1	PAPPA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q9BQ51	PDCD1LG2	Programmed cell death 1 ligand 2	PDCD1LG2	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+O75594	PGLYRP1	Peptidoglycan recognition protein 1	PGLYRP1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P00750	PLAT	Tissue-type plasminogen activator	PLAT	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q15166	PON3	Serum paraoxonase/lactonase 3	PON3	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9BQR3	PRSS27	Serine protease 27	PRSS27	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P26022	PTX3	Pentraxin-related protein PTX3	PTX3	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P16581	SELE	E-selectin	SELE	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q14242	SELPLG	P-selectin glycoprotein ligand 1	SELPLG	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q8IW75	SERPINA12	Serpin A12	SERPINA12	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P35247	SFTPD	Pulmonary surfactant-associated protein D	SFTPD	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P78324	SIRPA	Tyrosine-protein phosphatase non-receptor type substrate 1	SIRPA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9NQ25	SLAMF7	SLAM family member 7	SLAMF7	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q02763	TEK	Angiopoietin-1 receptor	TEK	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P10646	TFPI	Tissue factor pathway inhibitor	TFPI	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P02786	TFRC	Transferrin receptor protein 1	TFRC	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P35442	THBS2	Thrombospondin-2	THBS2	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+O00220	TNFRSF10A	Tumor necrosis factor receptor superfamily member 10A	TNFRSF10A	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+O14763	TNFRSF10B	Tumor necrosis factor receptor superfamily member 10B	TNFRSF10B	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNFRSF10C	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q9Y6Q6	TNFRSF11A	Tumor necrosis factor receptor superfamily member 11A	TNFRSF11A	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+O43557	TNFSF14	Tumor necrosis factor ligand superfamily member 14	TNFSF14	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P15692	VEGFA	Vascular endothelial growth factor A, long form	VEGFA	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q96IQ7	VSIG2	V-set and immunoglobulin domain-containing protein 2	VSIG2	bretherick_2020_VIS_EUR	bretherick_2020_32628676	FALSE	FALSE
+P47992	XCL1	Lymphotactin	XCL1	bretherick_2020_VIS_EUR	bretherick_2020_32628676	TRUE	FALSE
+P13686	ACP5	Tartrate-resistant acid phosphatase type 5	ACP5	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P00813	ADA	Adenosine deaminase	ADA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q76LX8	ADAMTS13	A disintegrin and metalloproteinase with thrombospondin motifs 13	ADAMTS13	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q13867	BLMH	Bleomycin hydrolase	BLMH	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P22004	BMP6	Bone morphogenetic protein 6	BMP6	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q16663	CCL15	C-C motif chemokine 15	CCL15	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q92583	CCL17	C-C motif chemokine 17	CCL17	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P55773	CCL23	C-C motif chemokine 23	CCL23	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+O00175	CCL24	C-C motif chemokine 24	CCL24	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+O15444	CCL25	C-C motif chemokine 25	CCL25	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P10147	CCL3	C-C motif chemokine 3	CCL3	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P13236	CCL4	C-C motif chemokine 4	CCL4	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P80075	CCL8	C-C motif chemokine 8	CCL8	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P25942	CD40	Tumor necrosis factor receptor superfamily member 5	CD40	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9UIB8	CD84	SLAM family member 5	CD84	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q9H5V8	CDCP1	CUB domain-containing protein 1	CDCP1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P33151	CDH5	Cadherin-5	CDH5	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P36222	CHI3L1	Chitinase-3-like protein 1	CHI3L1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13231	CHIT1	Chitotriosidase-1	CHIT1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P15085	CPA1	Carboxypeptidase A1	CPA1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P28325	CST5	Cystatin-D	CST5	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P04080	CSTB	Cystatin-B	CSTB	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q99895	CTRC	Chymotrypsin-C	CTRC	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P09341	CXCL1	Growth-regulated alpha protein	CXCL1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P02778	CXCL10	C-X-C motif chemokine 10	CXCL10	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+O14625	CXCL11	C-X-C motif chemokine 11	CXCL11	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P42830	CXCL5	C-X-C motif chemokine 5	CXCL5	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P80162	CXCL6	C-X-C motif chemokine 6	CXCL6	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P80370	DLK1	Protein delta homolog 1	DLK1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q14213	EBI3	Interleukin-27 subunit beta	EBI3	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13541	EIF4EBP1	Eukaryotic translation initiation factor 4E-binding protein 1	EIF4EBP1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P12104	FABP2	Fatty acid-binding protein, intestinal	FABP2	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P51161	FABP6	Gastrotropin	FABP6	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P31994	FCGR2B	Low affinity immunoglobulin gamma Fc region receptor II-b	FCGR2B	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P12034	FGF5	Fibroblast growth factor 5	FGF5	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9UK05	GDF2	Growth/differentiation factor 2	GDF2	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P27352	CBLIF	Cobalamin binding intrinsic factor	GIF	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P28799	GRN	Progranulin	GRN	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1	HAVCR1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P13598	ICAM2	Intercellular adhesion molecule 2	ICAM2	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P35475	IDUA	Alpha-L-iduronidase	IDUA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q08334	IL10RB	Interleukin-10 receptor subunit beta	IL10RB	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P29460	IL12B	Interleukin-12 subunit beta	IL12B	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13261	IL15RA	Interleukin-15 receptor subunit alpha	IL15RA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q14005	IL16	Pro-interleukin-16	IL16	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q8TAD2	IL17D	Interleukin-17D	IL17D	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q96F46	IL17RA	Interleukin-17 receptor A	IL17RA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q14116	IL18	Interleukin-18	IL18	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13478	IL18R1	Interleukin-18 receptor 1	IL18R1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P27930	IL1R2	Interleukin-1 receptor type 2	IL1R2	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q01638	IL1RL1	Interleukin-1 receptor-like 1	IL1RL1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9HB29	IL1RL2	Interleukin-1 receptor-like 2	IL1RL2	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P18510	IL1RN	Interleukin-1 receptor antagonist protein	IL1RN	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q8NEV9	IL27	Interleukin-27 subunit alpha	IL27	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL2RA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P24394	IL4R	Interleukin-4 receptor subunit alpha	IL4R	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P05231	IL6	Interleukin-6	IL6	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	IL6R	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P13232	IL7	Interleukin-7	IL7	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P17931	LGALS3	Galectin-3	LGALS3	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P56470	LGALS4	Galectin-4	LGALS4	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+O00182	LGALS9	Galectin-9	LGALS9	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P06858	LPL	Lipoprotein lipase	LPL	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P01374	LTA	Lymphotoxin-alpha	LTA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q12866	MERTK	Tyrosine-protein kinase Mer	MERTK	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P08254	MMP3	Stromelysin-1	MMP3	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P30203	CD6	T-cell differentiation antigen CD6	NA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P39900	MMP12	Macrophage metalloelastase	NA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q8IYS5	OSCAR	Osteoclast-associated immunoglobulin-like receptor	OSCAR	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q13219	PAPPA	Pappalysin-1	PAPPA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q9BQ51	PDCD1LG2	Programmed cell death 1 ligand 2	PDCD1LG2	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+O75594	PGLYRP1	Peptidoglycan recognition protein 1	PGLYRP1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P00750	PLAT	Tissue-type plasminogen activator	PLAT	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q15166	PON3	Serum paraoxonase/lactonase 3	PON3	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9BQR3	PRSS27	Serine protease 27	PRSS27	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P26022	PTX3	Pentraxin-related protein PTX3	PTX3	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P16581	SELE	E-selectin	SELE	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q14242	SELPLG	P-selectin glycoprotein ligand 1	SELPLG	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q8IW75	SERPINA12	Serpin A12	SERPINA12	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P35247	SFTPD	Pulmonary surfactant-associated protein D	SFTPD	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P78324	SIRPA	Tyrosine-protein phosphatase non-receptor type substrate 1	SIRPA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q9NQ25	SLAMF7	SLAM family member 7	SLAMF7	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+Q02763	TEK	Angiopoietin-1 receptor	TEK	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P10646	TFPI	Tissue factor pathway inhibitor	TFPI	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P02786	TFRC	Transferrin receptor protein 1	TFRC	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P35442	THBS2	Thrombospondin-2	THBS2	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+O00220	TNFRSF10A	Tumor necrosis factor receptor superfamily member 10A	TNFRSF10A	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+O14763	TNFRSF10B	Tumor necrosis factor receptor superfamily member 10B	TNFRSF10B	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNFRSF10C	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q9Y6Q6	TNFRSF11A	Tumor necrosis factor receptor superfamily member 11A	TNFRSF11A	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+O43557	TNFSF14	Tumor necrosis factor ligand superfamily member 14	TNFSF14	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+P15692	VEGFA	Vascular endothelial growth factor A, long form	VEGFA	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+Q96IQ7	VSIG2	V-set and immunoglobulin domain-containing protein 2	VSIG2	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	FALSE	FALSE
+P47992	XCL1	Lymphotactin	XCL1	bretherick_2020_ORCADES_EUR	bretherick_2020_32628676	TRUE	FALSE
+O00585	CCL21	C-C motif chemokine 21	6Ckine	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q15848	ADIPOQ	Adiponectin	Adiponectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P35318	ADM	Pro-adrenomedullin	Adrenomedullin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O00253	AGRP	Agouti-related protein	Agouti-Related Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P15121	AKR1B1	Aldo-keto reductase family 1 member B1	Aldose Reductase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02763	ORM1	Alpha-1-acid glycoprotein 1	Alpha-1-acid glycoprotein 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01011	SERPINA3	Alpha-1-antichymotrypsin	Alpha-1-Antichymotrypsin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01009	SERPINA1	Alpha-1-antitrypsin	Alpha-1-Antitrypsin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02760	AMBP	Protein AMBP	Alpha-1-Microglobulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01023	A2M	Alpha-2-macroglobulin	Alpha-2-Macroglobulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P03950	ANG	Angiogenin	Angiogenin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O15123	ANGPT2	Angiopoietin-2	Angiopoietin-2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q9Y5C1	ANGPTL3	Angiopoietin-related protein 3	Angiopoietin-related protein 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P12821	ACE	Angiotensin-converting enzyme	Angiotensin-Converting Enzyme	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P01019	AGT	Angiotensinogen	Angiotensinogen	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01008	SERPINC1	Antithrombin-III	Antithrombin-III	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02647	APOA1	Apolipoprotein A-I	Apolipoprotein A-I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02652	APOA2	Apolipoprotein A-II	Apolipoprotein A-II	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P06727	APOA4	Apolipoprotein A-IV	Apolipoprotein A-IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P04114	APOB	Apolipoprotein B-100	Apolipoprotein B	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02654	APOC1	Apolipoprotein C-I	Apolipoprotein C-I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02656	APOC3	Apolipoprotein C-III	Apolipoprotein C-III	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P05090	APOD	Apolipoprotein D	Apolipoprotein D	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02649	APOE	Apolipoprotein E	Apolipoprotein E	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02749	APOH	Beta-2-glycoprotein 1	Apolipoprotein H	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P08519	LPA	Apolipoprotein	Apolipoprotein(a)	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P30530	AXL	Tyrosine-protein kinase receptor UFO	AXL Receptor Tyrosine Kinase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q9Y275	TNFSF13B	Tumor necrosis factor ligand superfamily member 13B	B cell-activating factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O43927	CXCL13	C-X-C motif chemokine 13	B Lymphocyte Chemoattractant	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P05067	APP	Amyloid-beta precursor protein	Beta Amyloid 1-40	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P61769	B2M	Beta-2-microglobulin	Beta-2-Microglobulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P23560	BDNF	Neurotrophic factor BDNF precursor form	Brain-Derived Neurotrophic Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01308	INS	Insulin	C-Peptide	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02741	CRP	C-reactive protein	C-Reactive Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P07339	CTSD	Cathepsin D	Cathepsin D	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P25942	CD40	Tumor necrosis factor receptor superfamily member 5	CD 40 antigen	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q86VB7	CD163	Scavenger receptor cysteine-rich type 1 protein M130	CD163	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P29965	CD40LG	CD40 ligand	CD40 Ligand	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O43866	CD5L	CD5 antigen-like	CD5 Antigen-like	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02751	FN1	Fibronectin	Cellular Fibronectin	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+Q99969	RARRES2	Retinoic acid receptor responder protein 2	Chemerin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P51679	CCR4	C-C chemokine receptor type 4	Chemokine CC-4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P10645	CHGA	Chromogranin-A	Chromogranin-A	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P10909	CLU	Clusterin	Clusterin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02462	COL4A1	Collagen alpha-1	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P08572	COL4A2	Collagen alpha-2	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q01955	COL4A3	Collagen alpha-3	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P53420	COL4A4	Collagen alpha-4	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P29400	COL4A5	Collagen alpha-5	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q14031	COL4A6	Collagen alpha-6	Collagen IV	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01024	C3	Complement C3	Complement C3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q03591	CFHR1	Complement factor H-related protein 1	Complement Factor H Related Protein 1	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P06732	CKM	Creatine kinase M-type	Creatine Kinase-MB	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P12277	CKB	Creatine kinase B-type	Creatine Kinase-MB	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01034	CST3	Cystatin-C	Cystatin-C	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P16581	SELE	E-selectin	E-Selectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P80511	S100A12	Protein S100-A12	EN-RAGE	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P17813	ENG	Endoglin	Endoglin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P39060	COL18A1	Collagen alpha-1	Endostatin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P51671	CCL11	Eotaxin	Eotaxin-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O00175	CCL24	C-C motif chemokine 24	Eotaxin-2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q9Y258	CCL26	C-C motif chemokine 26	Eotaxin-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P42830	CXCL5	C-X-C motif chemokine 5	Epithelial-Derived Neutrophil-Activating Protein 78	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01588	EPO	Erythropoietin	Erythropoietin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P15311	EZR	Ezrin	Ezrin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P08709	F7	Coagulation factor VII	Factor VII	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P48023	FASLG	Tumor necrosis factor ligand superfamily member 6	Fas Ligand	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O95407	TNFRSF6B	Tumor necrosis factor receptor superfamily member 6B	FASLG Receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P15090	FABP4	Fatty acid-binding protein, adipocyte	Fatty Acid-Binding Protein adipocyte	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P07148	FABP1	Fatty acid-binding protein, liver	Fatty Acid-Binding Protein liver	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02792	FTL	Ferritin light chain	Ferritin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02794	FTH1	Ferritin heavy chain	Ferritin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02765	AHSG	Alpha-2-HS-glycoprotein	Fetuin-A	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+Q9NSA1	FGF21	Fibroblast growth factor 21	Fibroblast Growth Factor 21	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q9GZV9	FGF23	Fibroblast growth factor 23	Fibroblast growth factor 23	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P23142	FBLN1	Fibulin-1	Fibulin-1C	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O75636	FCN3	Ficolin-3	Ficolin-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01225	FSHB	Follitropin subunit beta	Follicle-Stimulating Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01215	CGA	Glycoprotein hormones alpha chain	Follicle-Stimulating Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P17931	LGALS3	Galectin-3	Galectin-3	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P09681	GIP	Gastric inhibitory polypeptide	Gastric inhibitory polypeptide	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P06396	GSN	Gelsolin	Gelsolin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01275	GCG	Pro-glucagon	Glucagon-like Peptide 1 total	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P06744	GPI	Glucose-6-phosphate isomerase	Glucose-6-phosphate Isomerase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P08263	GSTA1	Glutathione S-transferase A1	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P09210	GSTA2	Glutathione S-transferase A2	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q16772	GSTA3	Glutathione S-transferase A3	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O15217	GSTA4	Glutathione S-transferase A4	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q7RTV2	GSTA5	Glutathione S-transferase A5	Glutathione S-Transferase alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P11216	PYGB	Glycogen phosphorylase, brain form	Glycogen phosphorylase isoenzyme BB	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P09919	CSF3	Granulocyte colony-stimulating factor	Granulocyte Colony-Stimulating Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	Growth differentiation factor 15	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01241	GH1	Somatotropin	Growth Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01242	GH2	Growth hormone variant	Growth Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P09341	CXCL1	Growth-regulated alpha protein	Growth-Regulated alpha protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P00738	HP	Haptoglobin	Haptoglobin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P0DMV8	HSPA1A	Heat shock 70 kDa protein 1A	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P0DMV9	HSPA1B	Heat shock 70 kDa protein 1B	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P34931	HSPA1L	Heat shock 70 kDa protein 1-like	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P54652	HSPA2	Heat shock-related 70 kDa protein 2	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P34932	HSPA4	Heat shock 70 kDa protein 4	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O95757	HSPA4L	Heat shock 70 kDa protein 4L	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P11021	HSPA5	Endoplasmic reticulum chaperone BiP	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P17066	HSPA6	Heat shock 70 kDa protein 6	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P11142	HSPA8	Heat shock cognate 71 kDa protein	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P38646	HSPA9	Stress-70 protein, mitochondrial	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O43301	HSPA12A	Heat shock 70 kDa protein 12A	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q96MM6	HSPA12B	Heat shock 70 kDa protein 12B	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P48723	HSPA13	Heat shock 70 kDa protein 13	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q0VDF9	HSPA14	Heat shock 70 kDa protein 14	Heat-Shock protein 70	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02790	HPX	Hemopexin	Hemopexin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P14210	HGF	Hepatocyte growth factor	Hepatocyte Growth Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P08581	MET	Hepatocyte growth factor receptor	Hepatocyte Growth Factor receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P05981	HPN	Serine protease hepsin	Hepsin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P04626	ERBB2	Receptor tyrosine-protein kinase erbB-2	Human Epidermal Growth Factor Receptor 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01876	IGHA1	Immunoglobulin heavy constant alpha 1	Immunoglobulin A	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01854	IGHE	Immunoglobulin heavy constant epsilon	Immunoglobulin E	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01871	IGHM	Immunoglobulin heavy constant mu	Immunoglobulin M	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01308	INS	Insulin	Insulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P22692	IGFBP4	Insulin-like growth factor-binding protein 4	Insulin-like Growth Factor Binding Protein 4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P24593	IGFBP5	Insulin-like growth factor-binding protein 5	Insulin-like Growth Factor Binding Protein 5	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P24592	IGFBP6	Insulin-like growth factor-binding protein 6	Insulin-like Growth Factor Binding Protein 6	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P05019	IGF1	Insulin-like growth factor 1	Insulin-like Growth Factor I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P08833	IGFBP1	Insulin-like growth factor-binding protein 1	Insulin-like Growth Factor-Binding Protein 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P18065	IGFBP2	Insulin-like growth factor-binding protein 2	Insulin-like Growth Factor-Binding Protein 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P17936	IGFBP3	Insulin-like growth factor-binding protein 3	Insulin-like Growth Factor-Binding Protein 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	Intercellular Adhesion Molecule 1	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P01579	IFNG	Interferon gamma	Interferon gamma	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02778	CXCL10	C-X-C motif chemokine 10	Interferon gamma Induced Protein 10	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O14625	CXCL11	C-X-C motif chemokine 11	Interferon-inducible T-cell alpha chemoattractant	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P01584	IL1B	Interleukin-1 beta	Interleukin-1 beta	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P18510	IL1RN	Interleukin-1 receptor antagonist protein	Interleukin-1 receptor antagonist	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P22301	IL10	Interleukin-10	Interleukin-10	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P29460	IL12B	Interleukin-12 subunit beta	Interleukin-12 Subunit p40	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q14005	IL16	Pro-interleukin-16	Interleukin-16	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+Q16552	IL17A	Interleukin-17A	Interleukin-17	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q14116	IL18	Interleukin-18	Interleukin-18	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P60568	IL2	Interleukin-2	Interleukin-2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	Interleukin-2 receptor alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q9NPF7	IL23A	Interleukin-23 subunit alpha	Interleukin-23	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P29460	IL12B	Interleukin-12 subunit beta	Interleukin-23	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P05231	IL6	Interleukin-6	Interleukin-6	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	Interleukin-6 receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P40189	IL6ST	Interleukin-6 receptor subunit beta	Interleukin-6 receptor subunit beta	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P13232	IL7	Interleukin-7	Interleukin-7	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P10145	CXCL8	Interleukin-8	Interleukin-8	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q9Y337	KLK5	Kallikrein-5	Kallikrein 5	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1	Kidney Injury Molecule-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02788	LTF	Lactotransferrin	Lactoferrin	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+Q04760	GLO1	Lactoylglutathione lyase	Lactoylglutathione lyase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q14766	LTBP1	Latent-transforming growth factor beta-binding protein 1	Latency-Associated Peptide of Transforming Growth Factor beta 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P78380	OLR1	Oxidized low-density lipoprotein receptor 1	Lectin-Like Oxidized LDL Receptor 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P41159	LEP	Leptin	Leptin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P48357	LEPR	Leptin receptor	Leptin Receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02750	LRG1	Leucine-rich alpha-2-glycoprotein	Leucine-rich alpha-2-glycoprotein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01229	LHB	Lutropin subunit beta	Luteinizing Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01215	CGA	Glycoprotein hormones alpha chain	Luteinizing Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P09603	CSF1	Macrophage colony-stimulating factor 1	Macrophage Colony-Stimulating Factor 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q99731	CCL19	C-C motif chemokine 19	Macrophage inflammatory protein 3 beta	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P10147	CCL3	C-C motif chemokine 3	Macrophage Inflammatory Protein-1 alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P13236	CCL4	C-C motif chemokine 4	Macrophage Inflammatory Protein-1 beta	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P78556	CCL20	C-C motif chemokine 20	Macrophage Inflammatory Protein-3 alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P14174	MIF	Macrophage migration inhibitory factor	Macrophage Migration Inhibitory Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O00626	CCL22	C-C motif chemokine 22	Macrophage-Derived Chemokine	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P26927	MST1	Hepatocyte growth factor-like protein	Macrophage-Stimulating Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P03956	MMP1	Interstitial collagenase	Matrix Metalloproteinase-1	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P09238	MMP10	Stromelysin-2	Matrix Metalloproteinase-10	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P08254	MMP3	Stromelysin-1	Matrix Metalloproteinase-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P09237	MMP7	Matrilysin	Matrix Metalloproteinase-7	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P14780	MMP9	Matrix metalloproteinase-9	Matrix Metalloproteinase-9	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P14780	MMP9	Matrix metalloproteinase-9	Matrix Metalloproteinase-9 total	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q13421	MSLN	Mesothelin	Mesothelin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q29983	MICA	MHC class I polypeptide-related sequence A	MHC class I chain-related protein A	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	Monocyte Chemotactic Protein 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P80075	CCL8	C-C motif chemokine 8	Monocyte Chemotactic Protein 2	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P80098	CCL7	C-C motif chemokine 7	Monocyte Chemotactic Protein 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q99616	CCL13	C-C motif chemokine 13	Monocyte Chemotactic Protein 4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q07325	CXCL9	C-X-C motif chemokine 9	Monokine Induced by Gamma Interferon	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P55773	CCL23	C-C motif chemokine 23	Myeloid Progenitor Inhibitory Factor 1	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P05164	MPO	Myeloperoxidase	Myeloperoxidase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02144	MB	Myoglobin	Myoglobin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P16860	NPPB	Natriuretic peptides B	N-terminal prohormone of brain natriuretic peptide	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q92823	NRCAM	Neuronal cell adhesion molecule	Neuronal Cell Adhesion Molecule	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O14786	NRP1	Neuropilin-1	Neuropilin-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02775	PPBP	Platelet basic protein	Neutrophil Activating Peptide 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P80188	LCN2	Neutrophil gelatinase-associated lipocalin	Neutrophil Gelatinase-Associated Lipocalin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q8WWA0	ITLN1	Intelectin-1	Omentin	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P02818	BGLAP	Osteocalcin	Osteocalcin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P10451	SPP1	Osteopontin	Osteopontin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O00300	TNFRSF11B	Tumor necrosis factor receptor superfamily member 11B	Osteoprotegerin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P16109	SELP	P-selectin	P-Selectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01298	PPY	Pancreatic polypeptide prohormone	Pancreatic Polypeptide	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P27169	PON1	Serum paraoxonase/arylesterase 1	Paraoxanase-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P26022	PTX3	Pentraxin-related protein PTX3	Pentraxin-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P0DJD8	PGA3	Pepsin A-3	Pepsinogen I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P10082	PYY	Peptide YY	Peptide YY	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q15063	POSTN	Periostin	Periostin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q13162	PRDX4	Peroxiredoxin-4	Peroxiredoxin-4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q9Y617	PSAT1	Phosphoserine aminotransferase	Phosphoserine Aminotransferase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P36955	SERPINF1	Pigment epithelium-derived factor	Pigment Epithelium Derived Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P05121	SERPINE1	Plasminogen activator inhibitor 1	Plasminogen Activator Inhibitor 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01127	PDGFB	Platelet-derived growth factor subunit B	Platelet-Derived Growth Factor BB	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P28799	GRN	Progranulin	Progranulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01308	INS	Insulin	Proinsulin Intact	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01308	INS	Insulin	Proinsulin Total	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01236	PRL	Prolactin	Prolactin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q16651	PRSS8	Prostasin	Prostasin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P15309	ACP3	Prostatic acid phosphatase	Prostatic Acid Phosphatase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P26447	S100A4	Protein S100-A4	Protein S100-A4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P06703	S100A6	Protein S100-A6	Protein S100-A6	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P55774	CCL18	C-C motif chemokine 18	Pulmonary and Activation-Regulated Chemokine	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q15109	AGER	Advanced glycation end product-specific receptor	Receptor for advanced glycosylation end products	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P21860	ERBB3	Receptor tyrosine-protein kinase erbB-3	Receptor tyrosine-protein kinase erbB-3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q9HD89	RETN	Resistin	Resistin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02753	RBP4	Retinol-binding protein 4	Retinol-binding protein 4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q6FHJ7	SFRP4	Secreted frizzled-related protein 4	Secreted frizzled-related protein 4	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P49908	SELENOP	Selenoprotein P	Selenoprotein P	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02787	TF	Serotransferrin	Serotransferrin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P0DJI8	SAA1	Serum amyloid A-1 protein	Serum Amyloid A Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P0DJI9	SAA2	Serum amyloid A-2 protein	Serum Amyloid A Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P35542	SAA4	Serum amyloid A-4 protein	Serum Amyloid A Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02743	APCS	Serum amyloid P-component	Serum Amyloid P-Component	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P17174	GOT1	Aspartate aminotransferase, cytoplasmic	Serum Glutamic Oxaloacetic Transaminase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P00505	GOT2	Aspartate aminotransferase, mitochondrial	Serum Glutamic Oxaloacetic Transaminase	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P04278	SHBG	Sex hormone-binding globulin	Sex Hormone-Binding Globulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q99523	SORT1	Sortilin	Sortilin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q01638	IL1RL1	Interleukin-1 receptor-like 1	ST2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P21583	KITLG	Kit ligand	Stem Cell Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P48061	CXCL12	Stromal cell-derived factor 1	Stromal cell-derived factor-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P00441	SOD1	Superoxide dismutase [Cu-Zn]	Superoxide Dismutase 1 soluble	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P22362	CCL1	C-C motif chemokine 1	T Lymphocyte-Secreted Protein I-309	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P13501	CCL5	C-C motif chemokine 5	T-Cell-Specific Protein RANTES	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P07911	UMOD	Uromodulin	Tamm-Horsfall Urinary Glycoprotein (Uromodoulin)	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P24821	TNC	Tenascin	Tenascin-C	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P05452	CLEC3B	Tetranectin	Tetranectin	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+Q96IY4	CPB2	Carboxypeptidase B2	Thrombin-activable fibrinolysis inhibitor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P07204	THBD	Thrombomodulin	Thrombomodulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P07996	THBS1	Thrombospondin-1	Thrombospondin-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01222	TSHB	Thyrotropin subunit beta	Thyroid-Stimulating Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01215	CGA	Glycoprotein hormones alpha chain	Thyroid-Stimulating Hormone	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P05543	SERPINA7	Thyroxine-binding globulin	Thyroxine-Binding Globulin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	Tissue Inhibitor of Metalloproteinases 1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P00750	PLAT	Tissue-type plasminogen activator	Tissue type Plasminogen activator	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNF-Related Apoptosis-Inducing Ligand Receptor 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02766	TTR	Transthyretin	Transthyretin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q07654	TFF3	Trefoil factor 3	Trefoil Factor 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P01375	TNF	Tumor necrosis factor	Tumor Necrosis Factor alpha	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P20333	TNFRSF1B	Tumor necrosis factor receptor superfamily member 1B	Tumor necrosis factor receptor 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P19438	TNFRSF1A	Tumor necrosis factor receptor superfamily member 1A	Tumor Necrosis Factor Receptor I	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P35590	TIE1	Tyrosine-protein kinase receptor Tie-1	Tyrosine kinase with Ig and EGF homology domains 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P00749	PLAU	Urokinase-type plasminogen activator	Urokinase-type Plasminogen Activator	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	Urokinase-type plasminogen activator receptor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	Vascular Cell Adhesion Molecule-1	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P15692	VEGFA	Vascular endothelial growth factor A, long form	Vascular Endothelial Growth Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P49767	VEGFC	Vascular endothelial growth factor C	Vascular Endothelial Growth Factor C	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+O43915	VEGFD	Vascular endothelial growth factor D	Vascular endothelial growth factor D	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P17948	FLT1	Vascular endothelial growth factor receptor 1	Vascular Endothelial Growth Factor Receptor 2	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P35916	FLT4	Vascular endothelial growth factor receptor 3	Vascular endothelial growth factor receptor 3	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+Q8IW75	SERPINA12	Serpin A12	Visceral adipose tissue derived serpin A12	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P43490	NAMPT	Nicotinamide phosphoribosyltransferase	Visfatin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P02774	GC	Vitamin D-binding protein	Vitamin D-Binding Protein	sjaarda_2020_AMR	sjaarda_2020_32059761	TRUE	FALSE
+P07225	PROS1	Vitamin K-dependent protein S	Vitamin K-Dependent Protein S	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P04004	VTN	Vitronectin	Vitronectin	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P04275	VWF	von Willebrand factor	von Willebrand Factor	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P36222	CHI3L1	Chitinase-3-like protein 1	YKL-40	sjaarda_2020_AMR	sjaarda_2020_32059761	FALSE	FALSE
+P12821	ACE	Angiotensin-converting enzyme	Angiotensin-Converting Enzyme	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P01008	SERPINC1	Antithrombin-III	Antithrombin-III	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P08519	LPA	Apolipoprotein	Apolipoprotein(a)	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P01308	INS	Insulin	C-Peptide	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P02751	FN1	Fibronectin	Cellular Fibronectin	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P51679	CCR4	C-C chemokine receptor type 4	Chemokine CC-4	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P10909	CLU	Clusterin	Clusterin	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+Q03591	CFHR1	Complement factor H-related protein 1	Complement Factor H Related Protein 1	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+O00175	CCL24	C-C motif chemokine 24	Eotaxin-2	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+Q9Y258	CCL26	C-C motif chemokine 26	Eotaxin-3	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P42830	CXCL5	C-X-C motif chemokine 5	Epithelial-Derived Neutrophil-Activating Protein 78	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P02765	AHSG	Alpha-2-HS-glycoprotein	Fetuin-A	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P17931	LGALS3	Galectin-3	Galectin-3	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P01241	GH1	Somatotropin	Growth Hormone	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P01242	GH2	Growth hormone variant	Growth Hormone	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P09341	CXCL1	Growth-regulated alpha protein	Growth-Regulated alpha protein	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P08833	IGFBP1	Insulin-like growth factor-binding protein 1	Insulin-like Growth Factor-Binding Protein 1	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	Intercellular Adhesion Molecule 1	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+O14625	CXCL11	C-X-C motif chemokine 11	Interferon-inducible T-cell alpha chemoattractant	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+Q14005	IL16	Pro-interleukin-16	Interleukin-16	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P60568	IL2	Interleukin-2	Interleukin-2	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	Interleukin-6 receptor	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P40189	IL6ST	Interleukin-6 receptor subunit beta	Interleukin-6 receptor subunit beta	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+Q9Y337	KLK5	Kallikrein-5	Kallikrein 5	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P02788	LTF	Lactotransferrin	Lactoferrin	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+Q04760	GLO1	Lactoylglutathione lyase	Lactoylglutathione lyase	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P03956	MMP1	Interstitial collagenase	Matrix Metalloproteinase-1	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+Q29983	MICA	MHC class I polypeptide-related sequence A	MHC class I chain-related protein A	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P13500	CCL2	C-C motif chemokine 2	Monocyte Chemotactic Protein 1	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P80075	CCL8	C-C motif chemokine 8	Monocyte Chemotactic Protein 2	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+Q99616	CCL13	C-C motif chemokine 13	Monocyte Chemotactic Protein 4	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P55773	CCL23	C-C motif chemokine 23	Myeloid Progenitor Inhibitory Factor 1	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+Q8WWA0	ITLN1	Intelectin-1	Omentin	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P36955	SERPINF1	Pigment epithelium-derived factor	Pigment Epithelium Derived Factor	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+Q99523	SORT1	Sortilin	Sortilin	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P13501	CCL5	C-C motif chemokine 5	T-Cell-Specific Protein RANTES	sjaarda_2020_EUR	sjaarda_2020_32059761	FALSE	FALSE
+P05452	CLEC3B	Tetranectin	Tetranectin	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P15692	VEGFA	Vascular endothelial growth factor A, long form	Vascular Endothelial Growth Factor	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+Q8IW75	SERPINA12	Serpin A12	Visceral adipose tissue derived serpin A12	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
+P02774	GC	Vitamin D-binding protein	Vitamin D-Binding Protein	sjaarda_2020_EUR	sjaarda_2020_32059761	TRUE	FALSE
