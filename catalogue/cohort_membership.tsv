@@ -135,6 +135,7 @@ meeks_2021_34620218	AADM	4432
 matzaraki_2021_34512620	500FG	326
 matzaraki_2021_34512620	LifeLines-DEEP	52
 bourgonje_2021_34491321	1000IBD	919
+grams_2021_34465608	ARIC	7213
 cipriani_2021_34260948	Cambridge AMD Study	252
 robbins_2021_34045743	Framingham Heart Study	759
 robbins_2021_34045743	MDCS	1421
@@ -147,12 +148,50 @@ wingo_2021_33846625	ROSMAP	376
 wingo_2021_33846625	Banner Sun Health Research Institute	152
 corlin_2021_33372532	Framingham Heart Study	1622
 zhang_2021_ppr297707	ARIC	9084
-zhang_2021_ppr297707	AASK	467
 gudjonsson_2021_ppr365202	AGES-Reykjavik	5368
-macdonalddunlop_2021_ppr379555	SCALLOP Consortium	26494
-klaric_2021_ppr308166	SCALLOP Consortium	26494
+macdonalddunlop_2021_ppr379555	INTERVAL	
+macdonalddunlop_2021_ppr379555	COSM-C	
+macdonalddunlop_2021_ppr379555	SMCC	
+macdonalddunlop_2021_ppr379555	ORCADES	
+macdonalddunlop_2021_ppr379555	EpiHealth	
+macdonalddunlop_2021_ppr379555	ARISTOTLE	
+macdonalddunlop_2021_ppr379555	BioFINDER	
+macdonalddunlop_2021_ppr379555	CROATIA-Vis	
+macdonalddunlop_2021_ppr379555	NSPHS	
+macdonalddunlop_2021_ppr379555	IMPROVE	
+macdonalddunlop_2021_ppr379555	ULSAM	
+macdonalddunlop_2021_ppr379555	Fenland	
+macdonalddunlop_2021_ppr379555	ASAP	
+macdonalddunlop_2021_ppr379555	Estonian Biobank	
+macdonalddunlop_2021_ppr379555	Framingham Heart Study	
+macdonalddunlop_2021_ppr379555	LifeLines-DEEP	
+macdonalddunlop_2021_ppr379555	MPP-RES	
+macdonalddunlop_2021_ppr379555	PIVUS	
+klaric_2021_ppr308166	INTERVAL	
+klaric_2021_ppr308166	COSM-C	
+klaric_2021_ppr308166	SMCC	
+klaric_2021_ppr308166	ORCADES	
+klaric_2021_ppr308166	EpiHealth	
+klaric_2021_ppr308166	ARISTOTLE	
+klaric_2021_ppr308166	STABILITY	
+klaric_2021_ppr308166	BioFINDER	
+klaric_2021_ppr308166	CROATIA-Vis	
+klaric_2021_ppr308166	NSPHS	
+klaric_2021_ppr308166	IMPROVE	
+klaric_2021_ppr308166	ULSAM	
+klaric_2021_ppr308166	Fenland	
+klaric_2021_ppr308166	RISC	
+klaric_2021_ppr308166	ASAP	
+klaric_2021_ppr308166	Estonian Biobank	
+klaric_2021_ppr308166	Framingham Heart Study	
+klaric_2021_ppr308166	LifeLines-DEEP	
+klaric_2021_ppr308166	MPP-RES	
+klaric_2021_ppr308166	KORA	
+klaric_2021_ppr308166	RECOMBINE	
+klaric_2021_ppr308166	STANLEY	
+klaric_2021_ppr308166	PIVUS	
 schubert_2021_ppr382023	MESA	971
 caron_2021_ppr304195	Milieu Intérieur	400
-vinuela_2021_ppr304196	IMI-DIRECT	3029
-kierczak_2021_ppr359577	NSPHS	957
-vialle_2021_ppr290152	ROSMAP	391
+vinuela_2021_ppr304196	IMI-DIRECT	3027
+kierczak_2021_ppr359577	NSPHS	872
+vialle_2021_ppr290152	ROSMAP	272

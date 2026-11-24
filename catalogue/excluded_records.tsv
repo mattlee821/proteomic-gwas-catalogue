@@ -118,3 +118,5 @@ PMID:33991015	Cerebrospinal fluid Alzheimer's disease biomarker GWAS restricted 
 PMID:33627659	Body mass index polygenic risk score and secondary two-sample MR study without new primary pGWAS	2026-11-24
 PMID:34548389	Kidney function polygenic risk score vs ARIC plasma proteome association study without variant-level pGWAS	2026-11-24
 PMID:34454697	Secondary psychiatric proteome-wide association study (PWAS) reusing Wingo et al. 2021 ROSMAP/Banner brain weights	2026-11-24
+10.1007/s11357-021-00376-4	Targeted candidate-SNP lookup testing only 56 longevity GWAS SNPs (2 APOE + 54 longevity SNPs across 4 loci; <100 variants threshold) against serum SomaScan aptamers in NECS (PMID:33948810)	2026-11-24
+10.1182/blood.2019004571	Targeted orthogonal validation testing only 91 preselected array/literature candidate SNPs across 5 proteins (Tables S9-S13; <100 variants threshold, unimputed gene-body + QTLbase lookup without multiple-testing correction; PMID:33529319)	2026-11-24
