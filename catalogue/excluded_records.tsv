@@ -97,3 +97,24 @@ DOI:10.1101/2020.09.05.284265	Kidney function polygenic risk score (PRS) associa
 DOI:10.1101/2020.12.01.404681	DNA methylation EpiScores trained on Olink/SomaScan proteins in Generation Scotland/LBC, not a primary germline pGWAS	2026-11-24
 DOI:10.1101/2020.09.02.279844	Multi-ancestry UK Biobank GWAS of 30 routine clinical chemistry blood/urine biomarkers (lipids, enzymes, hormones; not multiplex proteomics)	2026-11-24
 DOI:10.1101/2020.05.31.125633	GWAS of 3 core clinical CSF Alzheimer's biomarkers (Abeta42, t-tau, p-tau in N=672; <5 unique proteins)	2026-11-24
+10.1101/2021.03.18.435919	Same-year bioRxiv preprint superseded in 2021 by peer-reviewed Nature Communications article pietzner_2021_34819519 (PMID:34819519)	2026-11-24
+10.1101/2021.11.08.21265930	UK Biobank variance-QTL (vQTL) study of 20 routine cardiometabolic serum clinical chemistry biomarkers (lipids, HbA1c, liver enzymes), not multiplex proteomics	2026-11-24
+PMID:34276799	Secondary bioinformatic lookup of RNA-modification SNPs in published pQTL/GWAS summary statistics for spontaneous coronary artery dissection; no new primary pGWAS	2026-11-24
+PMID:34974068	Secondary Mendelian randomization reusing published single-protein sRAGE GWAS summary statistics (<5 unique proteins; no new multiplex pGWAS)	2026-11-24
+PMID:34339498	Single-protein complement factor C5 WES and pQTL study in the Tromsø Study (1 unique protein, <5 proteins threshold)	2026-11-24
+PMID:33480174	Brain RNA-seq intron-retention QTL (ieQTL) and differential proteome expression study in Alzheimer's disease; no germline pQTL mapping	2026-11-24
+PMID:34127963	Observational COVID-19 plasma SomaScan proteomics (N=19/100) paired with secondary two-sample Mendelian randomization of ADAMTS13 via MR-Base; no primary pGWAS	2026-11-24
+PMID:34349225	Bipolar disorder CSF Olink study conducting GWAS on only 4 case-control-associated CSF proteins (CLEC1B, DRAXIN, Testican-1, TNFRSF21 in MOESM2 STab 9; <5 proteins threshold)	2026-11-24
+PMID:33982893	Single-protein plasma CRTAC1 osteoarthritis association and GWAS study (<5 unique proteins)	2026-11-24
+PMID:34096334	Observational PIVUS/ULSAM cardiovascular Olink proteomics study looking up cis-pQTLs from Folkersen et al. 2020 SCALLOP summary statistics (PMC8477859)	2026-11-24
+PMID:34750571	Cardiometabolic polygenic risk score association with INTERVAL plasma proteome and secondary two-sample Mendelian randomization reusing Sun et al. 2018 pQTLs	2026-11-24
+10.1101/2021.09.03.21263066	Epigenome-wide DNA methylation association study (EWAS) of circulating proteins without new germline pGWAS	2026-11-24
+PMID:34306006	Targeted candidate-gene polymorphism study of complement variants in first-episode psychosis (not genome-wide pGWAS)	2026-11-24
+PMID:34353696	Targeted candidate-SNP lookup at IL6R for plasma IL-6 levels (single protein, targeted SNPs)	2026-11-24
+PMID:34815491	Targeted single-SNP study of APOB rs562338 on serum proteome in coronary artery disease (1 SNP, <100 variants)	2026-11-24
+PMID:34759311	Single-protein circulating follistatin GWAS (<5 unique proteins)	2026-11-24
+PMID:34079037	Single-protein soluble urokinase plasminogen activator receptor (suPAR) GWAS (<5 unique proteins)	2026-11-24
+PMID:33991015	Cerebrospinal fluid Alzheimer's disease biomarker GWAS restricted to 3 analytes (Abeta42, t-tau, p-tau; <5 unique proteins)	2026-11-24
+PMID:33627659	Body mass index polygenic risk score and secondary two-sample MR study without new primary pGWAS	2026-11-24
+PMID:34548389	Kidney function polygenic risk score vs ARIC plasma proteome association study without variant-level pGWAS	2026-11-24
+PMID:34454697	Secondary psychiatric proteome-wide association study (PWAS) reusing Wingo et al. 2021 ROSMAP/Banner brain weights	2026-11-24
