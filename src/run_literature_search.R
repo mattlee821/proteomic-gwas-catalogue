@@ -2,7 +2,7 @@
 # Multi-resource literature discovery, connected-components + preprint-lineage
 # deduplication, 4-tier preprint-to-published upgrade detector, strict canonical
 # first-publication-date windowing, selective Stage B.5 PMC full-text multi-omic
-# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.9)
+# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.10)
 # for proteomic-gwas-catalogue.
 #
 # Usage:
@@ -170,7 +170,7 @@ q_epmc_snow   <- build_epmc_snowball_query(LANDMARK_PGWAS_SEEDS$pmid, since_date
                                            verify_pmids = if (is_verify) verify_pmids else NULL)
 
 message(sprintf(
-  "Proteomic GWAS Search v4.9 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
+  "Proteomic GWAS Search v4.10 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
   mode, since_date, until_date,
   if (is_verify) paste(verify_pmids, collapse = ",") else "none",
   dry_run, write_catalogue
@@ -1476,9 +1476,9 @@ resolve_ppr_to_doi <- function(ppr_id) {
   if (!grepl("^PPR[0-9]+$", ppr_id)) return("")
   u <- sprintf("https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:%s%%20AND%%20SRC:PPR&resultType=lite&format=json", ppr_id)
   resp <- perform_polite_http(
-    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(12),
-    sleep_s     = 0.45,
-    max_tries   = 2L,
+    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(25),
+    sleep_s     = 0.50,
+    max_tries   = 3L,
     label       = "EuropePMC resolve PPR",
     expect_json = TRUE
   )
@@ -1854,6 +1854,8 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
     "also influenced by pqtls? in the|",
     "protein quantitative trait locus analysis for (?:two|three|four|[1-9]) (?:previously reported )?snps|",
     "determine the genetic drivers of the [a-z0-9-]+ and [a-z0-9-]+ protein levels|",
+    "using the data from sun and colleagues|",
+    "pan[- ]genomic pqtl analysis using [a-z0-9-]+ protein levels|",
     "[a-z0-9-]+ protein qtl analysis was performed on log10 transformed [a-z0-9-]+ protein levels)\\b"
   )
 
