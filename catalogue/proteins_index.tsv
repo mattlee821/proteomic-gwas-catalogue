@@ -280231,11 +280231,11 @@ P20908	COL5A1	Collagen alpha-1	COL5A1	aherrahrou_2023_MULTI	aherrahrou_2023_ppr7
 Q7Z7G0	ABI3BP	Target of Nesh-SH3	ABI3BP	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	TRUE	FALSE
 P08294	SOD3	Extracellular superoxide dismutase [Cu-Zn]	SOD3	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	TRUE	FALSE
 Q14766	LTBP1	Latent-transforming growth factor beta-binding protein 1	LTBP1	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	TRUE	FALSE
+P03956	MMP1	Interstitial collagenase	MMP1	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	FALSE	FALSE
+P98095	FBLN2	Fibulin-2	FBLN2	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	FALSE	FALSE
 Q08380	LGALS3BP	Galectin-3-binding protein	LGALS3BP	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	FALSE	FALSE
 P08123	COL1A2	Collagen alpha-2	COL1A2	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	FALSE	FALSE
-P03956	MMP1	Interstitial collagenase	MMP1	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	FALSE	FALSE
 O15230	LAMA5	Laminin subunit alpha-5	LAMA5	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	FALSE	FALSE
-P98095	FBLN2	Fibulin-2	FBLN2	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	FALSE	FALSE
 P02452	COL1A1	Collagen alpha-1	COL1A1	aherrahrou_2023_MULTI	aherrahrou_2023_ppr757979	FALSE	FALSE
 P04217	A1BG	Alpha-1B-glycoprotein	OID30771	liu_2023_EUR	liu_2023_ppr766252	FALSE	FALSE
 Q9H7C9	AAMDC	Mth938 domain-containing protein	OID30236	liu_2023_EUR	liu_2023_ppr766252	FALSE	FALSE
@@ -285872,6 +285872,1469 @@ P07947	YES1	Tyrosine-protein kinase Yes	YES1	suhre_2023_rqtl_EUR	suhre_2023_ppr6
 Q7Z739	YTHDF3	YTH domain-containing family protein 3	YTHDF3	suhre_2023_rqtl_EUR	suhre_2023_ppr694529	FALSE	FALSE
 Q05516	ZBTB16	Zinc finger and BTB domain-containing protein 16	ZBTB16	suhre_2023_rqtl_EUR	suhre_2023_ppr694529	TRUE	FALSE
 Q13105	ZBTB17	Zinc finger and BTB domain-containing protein 17	ZBTB17	suhre_2023_rqtl_EUR	suhre_2023_ppr694529	FALSE	FALSE
+Q9BTE6	AARSD1	Alanyl-tRNA editing protein Aarsd1	AARSD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96IU4	ABHD14B	Putative protein-lysine deacylase ABHD14B	ABHD14B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P00519	ABL1	Tyrosine-protein kinase ABL1	ABL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P09110	ACAA1	3-ketoacyl-CoA thiolase, peroxisomal	ACAA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16112	ACAN	Aggrecan core protein	ACAN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9BYF1	ACE2	Angiotensin-converting enzyme 2	ACE2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15067	ACOX1	Peroxisomal acyl-coenzyme A oxidase 1	ACOX1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13686	ACP5	Tartrate-resistant acid phosphatase type 5	ACP5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NPH0	ACP6	Lysophosphatidic acid phosphatase type 6	ACP6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P62736	ACTA2	Actin, aortic smooth muscle	ACTA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43707	ACTN4	Alpha-actinin-4	ACTN4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P37023	ACVRL1	Activin receptor type-1-like	ACVRL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q03154	ACY1	Aminoacylase-1	ACY1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P00813	ADA	Adenosine deaminase	ADA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NZK5	ADA2	Adenosine deaminase 2	ADA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13444	ADAM15	Disintegrin and metalloproteinase domain-containing protein 15	ADAM15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9P0K1	ADAM22	Disintegrin and metalloproteinase domain-containing protein 22	ADAM22	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75077	ADAM23	Disintegrin and metalloproteinase domain-containing protein 23	ADAM23	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P78325	ADAM8	Disintegrin and metalloproteinase domain-containing protein 8	ADAM8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q76LX8	ADAMTS13	A disintegrin and metalloproteinase with thrombospondin motifs 13	ADAMTS13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8TE58	ADAMTS15	A disintegrin and metalloproteinase with thrombospondin motifs 15	ADAMTS15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8TE57	ADAMTS16	A disintegrin and metalloproteinase with thrombospondin motifs 16	ADAMTS16	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UP79	ADAMTS8	A disintegrin and metalloproteinase with thrombospondin motifs 8	ADAMTS8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P41586	ADCYAP1R1	Pituitary adenylate cyclase-activating polypeptide type I receptor	ADCYAP1R1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O60242	ADGRB3	Adhesion G protein-coupled receptor B3	ADGRB3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UHX3	ADGRE2	Adhesion G protein-coupled receptor E2	ADGRE2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48960	ADGRE5	Adhesion G protein-coupled receptor E5	ADGRE5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y653	ADGRG1	Adhesion G protein-coupled receptor G1	ADGRG1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8IZP9	ADGRG2	Adhesion G protein-coupled receptor G2	ADGRG2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08319	ADH4	All-trans-retinol dehydrogenase [NAD	ADH4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P35318	ADM	Pro-adrenomedullin	ADM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P02771	AFP	Alpha-fetoprotein	AFP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15109	AGER	Advanced glycation end product-specific receptor	AGER	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95994	AGR2	Anterior gradient protein 2 homolog	AGR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8TD06	AGR3	Anterior gradient protein 3	AGR3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00468	AGRN	Agrin	AGRN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00253	AGRP	Agouti-related protein	AGRP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P21549	AGXT	Alanine--glyoxylate aminotransferase	AGXT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P23526	AHCY	Adenosylhomocysteinase	AHCY	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NZD4	AHSP	Alpha-hemoglobin-stabilizing protein	AHSP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55008	AIF1	Allograft inflammatory factor 1	AIF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95831	AIFM1	Apoptosis-inducing factor 1, mitochondrial	AIFM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P00568	AK1	Adenylate kinase isoenzyme 1	AK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15121	AKR1B1	Aldo-keto reductase family 1 member B1	AKR1B1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P17516	AKR1C4	Aldo-keto reductase family 1 member C4	AKR1C4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96B36	AKT1S1	Proline-rich AKT1 substrate 1	AKT1S1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y243	AKT3	RAC-gamma serine/threonine-protein kinase	AKT3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13740	ALCAM	CD166 antigen	ALCAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P00352	ALDH1A1	Aldehyde dehydrogenase 1A1	ALDH1A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30838	ALDH3A1	Aldehyde dehydrogenase 3A1	ALDH3A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05187	ALPP	Alkaline phosphatase, placental type	ALPP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NP70	AMBN	Ameloblastin	AMBN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P02760	AMBP	Protein AMBP	AMBP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UKV5	AMFR	E3 ubiquitin-protein ligase AMFR	AMFR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q86SJ2	AMIGO2	Amphoterin-induced protein 2	AMIGO2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9BXJ7	AMN	Protein amnionless	AMN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P04746	AMY2A	Pancreatic alpha-amylase	AMY2A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P19961	AMY2B	Alpha-amylase 2B	AMY2B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P03950	ANG	Angiogenin	ANG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15389	ANGPT1	Angiopoietin-1	ANGPT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15123	ANGPT2	Angiopoietin-2	ANGPT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95841	ANGPTL1	Angiopoietin-related protein 1	ANGPTL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UKU9	ANGPTL2	Angiopoietin-related protein 2	ANGPTL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y5C1	ANGPTL3	Angiopoietin-related protein 3	ANGPTL3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BY76	ANGPTL4	Angiopoietin-related protein 4	ANGPTL4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43827	ANGPTL7	Angiopoietin-related protein 7	ANGPTL7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6NXT1	ANKRD54	Ankyrin repeat domain-containing protein 54	ANKRD54	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15144	ANPEP	Aminopeptidase N	ANPEP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UJ72	ANXA10	Annexin A10	ANXA10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P50995	ANXA11	Annexin A11	ANXA11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12429	ANXA3	Annexin A3	ANXA3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09525	ANXA4	Annexin A4	ANXA4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08758	ANXA5	Annexin A5	ANXA5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P19801	AOC1	Diamine oxidase [copper-containing]	AOC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q16853	AOC3	Amine oxidase [copper-containing] 3	AOC3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q7Z5R6	APBB1IP	Amyloid beta A4 precursor protein-binding family B member 1-interacting protein	APBB1IP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P27695	APEX1	DNA repair nuclease/redox regulator APEX1	APEX1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P51693	APLP1	Amyloid beta precursor like protein 1	APLP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P02749	APOH	Beta-2-glycoprotein 1	APOH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95445	APOM	Apolipoprotein M	APOM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P05067	APP	Amyloid-beta precursor protein	APP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07741	APRT	Adenine phosphoribosyltransferase	APRT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15514	AREG	Amphiregulin	AREG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05089	ARG1	Arginase-1	ARG1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q07960	ARHGAP1	Rho GTPase-activating protein 1	ARHGAP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P42331	ARHGAP25	Rho GTPase-activating protein 25	ARHGAP25	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NZN5	ARHGEF12	Rho guanine nucleotide exchange factor 12	ARHGEF12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q4LE39	ARID4B	AT-rich interactive domain-containing protein 4B	ARID4B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P27540	ARNT	Aryl hydrocarbon receptor nuclear translocator	ARNT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15289	ARSA	Arylsulfatase A	ARSA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15848	ARSB	Arylsulfatase B	ARSB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13508	ART3	Ecto-ADP-ribosyltransferase 3	ART3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q5T4W7	ARTN	Artemin	ARTN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NR71	ASAH2	Neutral ceramidase	ASAH2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P07306	ASGR1	Asialoglycoprotein receptor 1	ASGR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15336	ATF2	Cyclic AMP-dependent transcription factor ATF-2	ATF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WYN0	ATG4A	Cysteine protease ATG4A	ATG4A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00244	ATOX1	Copper transport protein ATOX1	ATOX1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UII2	ATP5IF1	ATPase inhibitor, mitochondrial	ATP5IF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48047	ATP5PO	ATP synthase peripheral stalk subunit OSCP, mitochondrial	ATP5PO	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75787	ATP6AP2	Renin receptor	ATP6AP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y5K8	ATP6V1D	V-type proton ATPase subunit D	ATP6V1D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q16864	ATP6V1F	V-type proton ATPase subunit F	ATP6V1F	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UBB4	ATXN10	Ataxin-10	ATXN10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15169	AXIN1	Axin-1	AXIN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30530	AXL	Tyrosine-protein kinase receptor UFO	AXL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20160	AZU1	Azurocidin	AZU1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15291	B4GALT1	Beta-1,4-galactosyltransferase 1	B4GALT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43505	B4GAT1	Beta-1,4-glucuronyltransferase 1	B4GAT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14867	BACH1	Transcription regulator protein BACH1	BACH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95817	BAG3	BAG family molecular chaperone regulator 3	BAG3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P46379	BAG6	Large proline-rich protein BAG6	BAG6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UQB8	BAIAP2	BAR/IMD domain-containing adapter protein 2	BAIAP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13145	BAMBI	BMP and activin membrane-bound inhibitor homolog	BAMBI	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8NDB2	BANK1	B-cell scaffold protein with ankyrin repeats	BANK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q07812	BAX	Apoptosis regulator BAX	BAX	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P50895	BCAM	Basal cell adhesion molecule	BCAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96GW7	BCAN	Brevican core protein	BCAN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43521	BCL2L11	Bcl-2-like protein 11	BCL2L11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P11274	BCR	Breakpoint cluster region protein	BCR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P21810	BGN	Biglycan	BGN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55957	BID	BH3-interacting domain death agonist	BID	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UBW5	BIN2	Bridging integrator 2	BIN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13490	BIRC2	Baculoviral IAP repeat-containing protein 2	BIRC2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13867	BLMH	Bleomycin hydrolase	BLMH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30043	BLVRB	Flavin reductase	BLVRB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12644	BMP4	Bone morphogenetic protein 4	BMP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22004	BMP6	Bone morphogenetic protein 6	BMP6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BWV1	BOC	Brother of CDO	BOC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8TDL5	BPIFB1	BPI fold-containing family B member 1	BPIFB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8WUW1	BRK1	Protein BRICK1	BRK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35613	BSG	Basigin	BSG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q10588	BST1	ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 2	BST1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q10589	BST2	Bone marrow stromal antigen 2	BST2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P35070	BTC	Probetacellulin	BTC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7KYR7	BTN2A1	Butyrophilin subfamily 2 member A1	BTN2A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P78410	BTN3A2	Butyrophilin subfamily 3 member A2	BTN3A2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NSK7	C19orf12	Protein C19orf12	C19orf12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P02745	C1QA	Complement C1q subcomponent subunit A	C1QA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9BXJ1	C1QTNF1	Complement C1q tumor necrosis factor-related protein 1	C1QTNF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06681	C2	Complement C2	C2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14523	C2CD2L	Phospholipid transfer protein C2CD2L	C2CD2L	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P20851	C4BPB	C4b-binding protein beta chain	C4BPB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P00915	CA1	Carbonic anhydrase 1	CA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75493	CA11	Carbonic anhydrase-related protein 11	CA11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43570	CA12	Carbonic anhydrase 12	CA12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8N1Q1	CA13	Carbonic anhydrase 13	CA13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9ULX7	CA14	Carbonic anhydrase 14	CA14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P00918	CA2	Carbonic anhydrase 2	CA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07451	CA3	Carbonic anhydrase 3	CA3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P22748	CA4	Carbonic anhydrase 4	CA4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P35218	CA5A	Carbonic anhydrase 5A, mitochondrial	CA5A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P23280	CA6	Carbonic anhydrase 6	CA6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16790	CA9	Carbonic anhydrase 9	CA9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P05937	CALB1	Calbindin	CALB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22676	CALB2	Calretinin	CALB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01258	CALCA	Calcitonin	CALCA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9P1Z2	CALCOCO1	Calcium-binding and coiled-coil domain-containing protein 1	CALCOCO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8N5S9	CAMKK1	Calcium/calmodulin-dependent protein kinase kinase 1	CAMKK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8WVQ1	CANT1	Soluble calcium-activated nucleotidase 1	CANT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P40121	CAPG	Macrophage-capping protein	CAPG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y2V2	CARHSP1	Calcium-regulated heat-stable protein 1	CARHSP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P29466	CASP1	Caspase-1	CASP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92851	CASP10	Caspase-10	CASP10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P42575	CASP2	Caspase-2	CASP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P42574	CASP3	Caspase-3	CASP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14790	CASP8	Caspase-8	CASP8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P27352	CBLIF	Cobalamin binding intrinsic factor	CBLIF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NTU7	CBLN4	Cerebellin-4	CBLN4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6P1N0	CC2D1A	Coiled-coil and C2 domain-containing protein 1A	CC2D1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q76M96	CCDC80	Coiled-coil domain-containing protein 80	CCDC80	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P51671	CCL11	Eotaxin	CCL11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99616	CCL13	C-C motif chemokine 13	CCL13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16627	CCL14	C-C motif chemokine 14	CCL14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16663	CCL15	C-C motif chemokine 15	CCL15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15467	CCL16	C-C motif chemokine 16	CCL16	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92583	CCL17	C-C motif chemokine 17	CCL17	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P55774	CCL18	C-C motif chemokine 18	CCL18	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99731	CCL19	C-C motif chemokine 19	CCL19	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P13500	CCL2	C-C motif chemokine 2	CCL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P78556	CCL20	C-C motif chemokine 20	CCL20	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00585	CCL21	C-C motif chemokine 21	CCL21	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00626	CCL22	C-C motif chemokine 22	CCL22	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P55773	CCL23	C-C motif chemokine 23	CCL23	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00175	CCL24	C-C motif chemokine 24	CCL24	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O15444	CCL25	C-C motif chemokine 25	CCL25	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y258	CCL26	C-C motif chemokine 26	CCL26	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y4X3	CCL27	C-C motif chemokine 27	CCL27	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NRJ3	CCL28	C-C motif chemokine 28	CCL28	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P10147	CCL3	C-C motif chemokine 3	CCL3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13236	CCL4	C-C motif chemokine 4	CCL4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13501	CCL5	C-C motif chemokine 5	CCL5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P80098	CCL7	C-C motif chemokine 7	CCL7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P80075	CCL8	C-C motif chemokine 8	CCL8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00622	CCN1	CCN family member 1	CCN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P29279	CCN2	CCN family member 2	CCN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48745	CCN3	CCN family member 3	CCN3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95388	CCN4	CCN family member 4	CCN4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O76076	CCN5	CCN family member 5	CCN5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14618	CCS	Copper chaperone for superoxide dismutase	CCS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48643	CCT5	T-complex protein 1 subunit epsilon	CCT5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6YHK3	CD109	CD109 antigen	CD109	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08571	CD14	Monocyte differentiation antigen CD14	CD14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95971	CD160	CD160 antigen	CD160	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q86VB7	CD163	Scavenger receptor cysteine-rich type 1 protein M130	CD163	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q04900	CD164	Sialomucin core protein 24	CD164	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8N6Q3	CD177	CD177 antigen	CD177	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P29017	CD1C	T-cell surface glycoprotein CD1c	CD1C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P41217	CD200	OX-2 membrane glycoprotein	CD200	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8TD46	CD200R1	Cell surface glycoprotein CD200 receptor 1	CD200R1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UJ71	CD207	C-type lectin domain family 4 member K	CD207	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NNX6	CD209	CD209 antigen	CD209	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20273	CD22	B-cell receptor CD22	CD22	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BZW8	CD244	Natural killer cell receptor 2B4	CD244	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P26842	CD27	CD27 antigen	CD27	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NZQ7	CD274	Programmed cell death 1 ligand 1	CD274	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q5ZPR3	CD276	CD276 antigen	CD276	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P10747	CD28	T-cell-specific surface glycoprotein CD28	CD28	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y5K6	CD2AP	CD2-associated protein	CD2AP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q08708	CD300C	CMRF35-like molecule 6	CD300C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q496F6	CD300E	CMRF35-like molecule 2	CD300E	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8TDQ1	CD300LF	CMRF35-like molecule 1	CD300LF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UXG3	CD300LG	CMRF35-like molecule 9	CD300LG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8IX05	CD302	CD302 antigen	CD302	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20138	CD33	Myeloid cell surface antigen CD33	CD33	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P28906	CD34	Hematopoietic progenitor cell antigen CD34	CD34	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P28907	CD38	ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1	CD38	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01730	CD4	T-cell surface glycoprotein CD4	CD4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P25942	CD40	Tumor necrosis factor receptor superfamily member 5	CD40	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P29965	CD40LG	CD40 ligand	CD40LG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15529	CD46	Membrane cofactor protein	CD46	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09326	CD48	CD48 antigen	CD48	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06127	CD5	T-cell surface glycoprotein CD5	CD5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08174	CD55	Complement decay-accelerating factor	CD55	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P19256	CD58	Lymphocyte function-associated antigen 3	CD58	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13987	CD59	CD59 glycoprotein	CD59	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30203	CD6	T-cell differentiation antigen CD6	CD6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08962	CD63	CD63 antigen	CD63	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q07108	CD69	Early activation antigen CD69	CD69	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P32970	CD70	CD70 antigen	CD70	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P04233	CD74	HLA class II histocompatibility antigen gamma chain	CD74	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P40259	CD79B	B-cell antigen receptor complex-associated protein beta chain	CD79B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q01151	CD83	CD83 antigen	CD83	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UIB8	CD84	SLAM family member 5	CD84	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01732	CD8A	T-cell surface glycoprotein CD8 alpha chain	CD8A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NPY3	CD93	Complement component C1q receptor	CD93	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P14209	CD99	CD99 antigen	CD99	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8TCZ2	CD99L2	CD99 antigen-like protein 2	CD99L2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P30260	CDC27	Cell division cycle protein 27 homolog	CDC27	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16543	CDC37	Hsp90 co-chaperone Cdc37	CDC37	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H5V8	CDCP1	CUB domain-containing protein 1	CDCP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12830	CDH1	Cadherin-1	CDH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55291	CDH15	Cadherin-15	CDH15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q12864	CDH17	Cadherin-17	CDH17	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P19022	CDH2	Cadherin-2	CDH2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P22223	CDH3	Cadherin-3	CDH3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P33151	CDH5	Cadherin-5	CDH5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P55285	CDH6	Cadherin-6	CDH6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96JP9	CDHR1	Cadherin-related family member 1	CDHR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9BYE9	CDHR2	Cadherin-related family member 2	CDHR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HBB8	CDHR5	Cadherin-related family member 5	CDHR5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P38936	CDKN1A	Cyclin-dependent kinase inhibitor 1	CDKN1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P55273	CDKN2D	Cyclin-dependent kinase 4 inhibitor D	CDKN2D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q49AH0	CDNF	Cerebral dopamine neurotrophic factor	CDNF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q4KMG0	CDON	Cell adhesion molecule-related/down-regulated by oncogenes	CDON	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15517	CDSN	Corneodesmosin	CDSN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13688	CEACAM1	Cell adhesion molecule CEACAM1	CEACAM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q3KPI0	CEACAM21	Cell adhesion molecule CEACAM21	CEACAM21	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P40198	CEACAM3	Cell adhesion molecule CEACAM3	CEACAM3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P06731	CEACAM5	Cell adhesion molecule CEACAM5	CEACAM5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P31997	CEACAM8	Cell adhesion molecule CEACAM8	CEACAM8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P17676	CEBPB	CCAAT/enhancer-binding protein beta	CEBPB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09093	CELA3A	Chymotrypsin-like elastase family member 3A	CELA3A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UPV0	CEP164	Centrosomal protein of 164 kDa	CEP164	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96NB1	CEP20	Centrosomal protein 20	CEP20	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95684	CEP43	Centrosomal protein 43	CEP43	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6P2H3	CEP85	Centrosomal protein of 85 kDa	CEP85	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y5P4	CERT1	Ceramide transfer protein	CERT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P23141	CES1	Liver carboxylesterase 1	CES1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00748	CES2	Cocaine esterase	CES2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6UWW8	CES3	Carboxylesterase 3	CES3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P41208	CETN2	Centrin-2	CETN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P0CG37	CFC1	Cryptic protein	CFC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01215	CGA	Glycoprotein hormones alpha chain	CGA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q99674	CGREF1	Cell growth regulator with EF hand domain protein 1	CGREF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8WUX2	CHAC2	Glutathione-specific gamma-glutamylcyclotransferase 2	CHAC2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O96017	CHEK2	Serine/threonine-protein kinase Chk2	CHEK2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05060	CHGB	Secretogranin-1	CHGB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P36222	CHI3L1	Chitinase-3-like protein 1	CHI3L1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13231	CHIT1	Chitotriosidase-1	CHIT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00533	CHL1	Neural cell adhesion molecule L1-like protein	CHL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HD42	CHMP1A	Charged multivesicular body protein 1a	CHMP1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BU40	CHRDL1	Chordin-like protein 1	CHRDL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6WN34	CHRDL2	Chordin-like protein 2	CHRDL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6FI81	CIAPIN1	Anamorsin	CIAPIN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q07065	CKAP4	Cytoskeleton-associated protein 4	CKAP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12532	CKMT1A	Creatine kinase U-type, mitochondrial	CKMT1A_CKMT1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q05315	CLC	Galectin-10	CLC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8IUN9	CLEC10A	C-type lectin domain family 10 member A	CLEC10A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y240	CLEC11A	C-type lectin domain family 11 member A	CLEC11A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q86T13	CLEC14A	C-type lectin domain family 14 member A	CLEC14A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NC01	CLEC1A	C-type lectin domain family 1 member A	CLEC1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9P126	CLEC1B	C-type lectin domain family 1 member B	CLEC1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UMR7	CLEC4A	C-type lectin domain family 4 member A	CLEC4A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WTT0	CLEC4C	C-type lectin domain family 4 member C	CLEC4C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WXI8	CLEC4D	C-type lectin domain family 4 member D	CLEC4D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UXB4	CLEC4G	C-type lectin domain family 4 member G	CLEC4G	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NY25	CLEC5A	C-type lectin domain family 5 member A	CLEC5A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6EIG7	CLEC6A	C-type lectin domain family 6 member A	CLEC6A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BXN2	CLEC7A	C-type lectin domain family 7 member A	CLEC7A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UDT6	CLIP2	CAP-Gly domain-containing linker protein 2	CLIP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H6B4	CLMP	CXADR-like membrane protein	CLMP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16740	CLPP	ATP-dependent Clp protease proteolytic subunit, mitochondrial	CLPP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P04118	CLPS	Colipase	CLPS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HAW4	CLSPN	Claspin	CLSPN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O94985	CLSTN1	Calsyntenin-1	CLSTN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H4D0	CLSTN2	Calsyntenin-2	CLSTN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09496	CLTA	Clathrin light chain A	CLTA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15846	CLUL1	Clusterin-like protein 1	CLUL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96KN2	CNDP1	Beta-Ala-His dipeptidase	CNDP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y2B0	CNPY2	Protein canopy homolog 2	CNPY2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8N129	CNPY4	Protein canopy homolog 4	CNPY4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6PJW8	CNST	Consortin	CNST	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q12860	CNTN1	Contactin-1	CNTN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q02246	CNTN2	Contactin-2	CNTN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9P232	CNTN3	Contactin-3	CNTN3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8IWV2	CNTN4	Contactin-4	CNTN4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O94779	CNTN5	Contactin-5	CNTN5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UHC6	CNTNAP2	Contactin-associated protein-like 2	CNTNAP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P39060	COL18A1	Collagen alpha-1	COL18A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P02452	COL1A1	Collagen alpha-1	COL1A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P02462	COL4A1	Collagen alpha-1	COL4A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12111	COL6A3	Collagen alpha-3	COL6A3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20849	COL9A1	Collagen alpha-1	COL9A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q5KU26	COLEC12	Collectin-12	COLEC12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P49747	COMP	Cartilage oligomeric matrix protein	COMP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P21964	COMT	Catechol O-methyltransferase	COMT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14579	COPE	Coatomer subunit epsilon	COPE	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P31146	CORO1A	Coronin-1A	CORO1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P10606	COX5B	Cytochrome c oxidase subunit 5B, mitochondrial	COX5B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15085	CPA1	Carboxypeptidase A1	CPA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48052	CPA2	Carboxypeptidase A2	CPA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15086	CPB1	Carboxypeptidase B	CPB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16870	CPE	Carboxypeptidase E	CPE	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P14384	CPM	Carboxypeptidase M	CPM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BRF8	CPPED1	Serine/threonine-protein phosphatase CPPED1	CPPED1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H3G5	CPVL	Probable serine carboxypeptidase CPVL	CPVL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96SM3	CPXM1	Probable carboxypeptidase X1	CPXM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20023	CR2	Complement receptor type 2	CR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BSW2	CRACR2A	EF-hand calcium-binding domain-containing protein 4B	CRACR2A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P78560	CRADD	Death domain-containing protein CRADD	CRADD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75629	CREG1	Protein CREG1	CREG1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UXH1	CRELD2	Protein disulfide isomerase CRELD2	CRELD2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06850	CRH	Corticotropin-releasing hormone	CRH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P24387	CRHBP	Corticotropin-releasing hormone-binding protein	CRHBP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P34998	CRHR1	Corticotropin-releasing hormone receptor 1	CRHR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NZV1	CRIM1	Cysteine-rich motor neuron 1 protein	CRIM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P52943	CRIP2	Cysteine-rich protein 2	CRIP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16562	CRISP2	Cysteine-rich secretory protein 2	CRISP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P46109	CRKL	Crk-like protein	CRKL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75462	CRLF1	Cytokine receptor-like factor 1	CRLF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UBG3	CRNN	Cornulin	CRNN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NQ79	CRTAC1	Cartilage acidic protein 1	CRTAC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95727	CRTAM	Cytotoxic and regulatory T-cell molecule	CRTAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43186	CRX	Cone-rod homeobox protein	CRX	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P09603	CSF1	Macrophage colony-stimulating factor 1	CSF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15509	CSF2RA	Granulocyte-macrophage colony-stimulating factor receptor subunit alpha	CSF2RA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P09919	CSF3	Granulocyte colony-stimulating factor	CSF3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01034	CST3	Cystatin-C	CST3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P28325	CST5	Cystatin-D	CST5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15828	CST6	Cystatin-M	CST6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O76096	CST7	Cystatin-F	CST7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04080	CSTB	Cystatin-B	CSTB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q16619	CTF1	Cardiotrophin-1	CTF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P17538	CTRB1	Chymotrypsinogen B	CTRB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99895	CTRC	Chymotrypsin-C	CTRC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07858	CTSB	Cathepsin B	CTSB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P53634	CTSC	Dipeptidyl peptidase 1	CTSC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07339	CTSD	Cathepsin D	CTSD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UBX1	CTSF	Cathepsin F	CTSF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09668	CTSH	Pro-cathepsin H	CTSH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P07711	CTSL	Procathepsin L	CTSL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P43234	CTSO	Cathepsin O	CTSO	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P25774	CTSS	Cathepsin S	CTSS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O60911	CTSV	Cathepsin L2	CTSV	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UBR2	CTSZ	Cathepsin Z	CTSZ	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P78423	CX3CL1	Fractalkine	CX3CL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P78310	CXADR	Coxsackievirus and adenovirus receptor	CXADR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09341	CXCL1	Growth-regulated alpha protein	CXCL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P02778	CXCL10	C-X-C motif chemokine 10	CXCL10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14625	CXCL11	C-X-C motif chemokine 11	CXCL11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48061	CXCL12	Stromal cell-derived factor 1	CXCL12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43927	CXCL13	C-X-C motif chemokine 13	CXCL13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95715	CXCL14	C-X-C motif chemokine 14	CXCL14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H2A7	CXCL16	C-X-C motif chemokine 16	CXCL16	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UXB2	CXCL17	C-X-C motif chemokine 17	CXCL17	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P19876	CXCL3	C-X-C motif chemokine 3	CXCL3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P42830	CXCL5	C-X-C motif chemokine 5	CXCL5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P80162	CXCL6	C-X-C motif chemokine 6	CXCL6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P10145	CXCL8	Interleukin-8	CXCL8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q07325	CXCL9	C-X-C motif chemokine 9	CXCL9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P98082	DAB2	Disabled homolog 2	DAB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14118	DAG1	Dystroglycan 1	DAG1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UN19	DAPP1	Dual adapter for phosphotyrosine and 3-phosphotyrosine and 3-phosphoinositide	DAPP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P14868	DARS1	Aspartate--tRNA ligase, cytoplasmic	DARS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07108	DBI	Acyl-CoA-binding protein	DBI	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UJU6	DBNL	Drebrin-like protein	DBNL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96PD2	DCBLD2	Discoidin, CUB and LCCL domain-containing protein 2	DCBLD2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07585	DCN	Decorin	DCN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14203	DCTN1	Dynactin subunit 1	DCTN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13561	DCTN2	Dynactin subunit 2	DCTN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00399	DCTN6	Dynactin subunit 6	DCTN6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H773	DCTPP1	dCTP pyrophosphatase 1	DCTPP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7Z4W1	DCXR	L-xylulose reductase	DCXR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O94760	DDAH1	N	DDAH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P20711	DDC	Aromatic-L-amino-acid decarboxylase	DDC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q08345	DDR1	Epithelial discoidin domain-containing receptor 1	DDR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95786	RIGI	Antiviral innate immune response receptor RIG-I	DDX58	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16698	DECR1	2,4-dienoyl-CoA reductase [	DECR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P59665	DEFA1	Neutrophil defensin 1	DEFA1_DEFA1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15263	DEFB4A	Defensin beta 4A	DEFB4A_DEFB4B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00273	DFFA	DNA fragmentation factor subunit alpha	DFFA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13574	DGKZ	Diacylglycerol kinase zeta	DGKZ	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NR28	DIABLO	Diablo IAP-binding mitochondrial protein	DIABLO	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O94907	DKK1	Dickkopf-related protein 1	DKK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UBP4	DKK3	Dickkopf-related protein 3	DKK3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UBT3	DKK4	Dickkopf-related protein 4	DKK4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UK85	DKKL1	Dickkopf-like protein 1	DKKL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P80370	DLK1	Protein delta homolog 1	DLK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00548	DLL1	Delta-like protein 1	DLL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60884	DNAJA2	DnaJ homolog subfamily A member 2	DNAJA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P25685	DNAJB1	DnaJ homolog subfamily B member 1	DNAJB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NHS0	DNAJB8	DnaJ homolog subfamily B member 8	DNAJB8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8NFT8	DNER	Delta and Notch-like epidermal growth factor-related receptor	DNER	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6XZF7	DNMBP	Dynamin-binding protein	DNMBP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43598	DNPH1	5-hydroxymethyl-dUMP N-hydrolase	DNPH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60496	DOK2	Docking protein 2	DOK2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16444	DPEP1	Dipeptidase 1	DPEP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H4A9	DPEP2	Dipeptidase 2	DPEP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8N608	DPP10	Inactive dipeptidyl peptidase 10	DPP10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P27487	DPP4	Dipeptidyl peptidase 4	DPP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P42658	DPP6	A-type potassium channel modulatory protein DPP6	DPP6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UHL4	DPP7	Dipeptidyl peptidase 2	DPP7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q07507	DPT	Dermatopontin	DPT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9C005	DPY30	Protein dpy-30 homolog	DPY30	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NBI3	DRAXIN	Draxin	DRAXIN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P55039	DRG2	Developmentally-regulated GTP-binding protein 2	DRG2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q02487	DSC2	Desmocollin-2	DSC2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14126	DSG2	Desmoglein-2	DSG2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P32926	DSG3	Desmoglein-3	DSG3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q86SJ6	DSG4	Desmoglein-4	DSG4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8N9I9	DTX3	E3 ubiquitin-protein ligase DTX3	DTX3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NRD8	DUOX2	Dual oxidase 2	DUOX2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P51452	DUSP3	Dual specificity protein phosphatase 3	DUSP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00559	EBAG9	Receptor-binding cancer antigen expressed on SiSo cells	EBAG9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14213	EBI3	Interleukin-27 subunit beta	EBI3_IL27	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P42892	ECE1	Endothelin-converting enzyme 1	ECE1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HAV5	EDA2R	Tumor necrosis factor receptor superfamily member 27	EDA2R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UNE0	EDAR	Tumor necrosis factor receptor superfamily member EDAR	EDAR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43854	EDIL3	EGF-like repeat and discoidin I-like domain-containing protein 3	EDIL3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q12805	EFEMP1	EGF-containing fibulin-like extracellular matrix protein 1	EFEMP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20827	EFNA1	Ephrin-A1	EFNA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P52798	EFNA4	Ephrin-A4	EFNA4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01133	EGF	Pro-epidermal growth factor	EGF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UHF1	EGFL7	Epidermal growth factor-like protein 7	EGFL7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P00533	EGFR	Epidermal growth factor receptor	EGFR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9GZT9	EGLN1	Egl nine homolog 1	EGLN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P23588	EIF4B	Eukaryotic translation initiation factor 4B	EIF4B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13541	EIF4EBP1	Eukaryotic translation initiation factor 4E-binding protein 1	EIF4EBP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q04637	EIF4G1	Eukaryotic translation initiation factor 4 gamma 1	EIF4G1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P63241	EIF5A	Eukaryotic translation initiation factor 5A-1	EIF5A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14241	ELOA	Elongin-A	ELOA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8N8S7	ENAH	Protein enabled homolog	ENAH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P17813	ENG	Endoglin	ENG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06733	ENO1	Alpha-enolase	ENO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09104	ENO2	Gamma-enolase	ENO2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13822	ENPP2	Autotaxin	ENPP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UJA9	ENPP5	Ectonucleotide pyrophosphatase/phosphodiesterase family member 5	ENPP5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6UWV6	ENPP7	Ectonucleotide pyrophosphatase/phosphodiesterase family member 7	ENPP7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y5L3	ENTPD2	Ectonucleoside triphosphate diphosphohydrolase 2	ENTPD2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75356	ENTPD5	Nucleoside diphosphate phosphatase ENTPD5	ENTPD5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75354	ENTPD6	Ectonucleoside triphosphate diphosphohydrolase 6	ENTPD6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P16422	EPCAM	Epithelial cell adhesion molecule	EPCAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P21709	EPHA1	Ephrin type-A receptor 1	EPHA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q5JZY3	EPHA10	Ephrin type-A receptor 10	EPHA10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P29317	EPHA2	Ephrin type-A receptor 2	EPHA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P54760	EPHB4	Ephrin type-B receptor 4	EPHB4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15197	EPHB6	Ephrin type-B receptor 6	EPHB6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P34913	EPHX2	Bifunctional epoxide hydrolase 2 [Includes: Cytosolic epoxide hydrolase 2	EPHX2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01588	EPO	Erythropoietin	EPO	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H6S3	EPS8L2	Epidermal growth factor receptor kinase substrate 8-like protein 2	EPS8L2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04626	ERBB2	Receptor tyrosine-protein kinase erbB-2	ERBB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P21860	ERBB3	Receptor tyrosine-protein kinase erbB-3	ERBB3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15303	ERBB4	Receptor tyrosine-protein kinase erbB-4	ERBB4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96RT1	ERBIN	Erbin	ERBIN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O14944	EREG	Proepiregulin	EREG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BS26	ERP44	Endoplasmic reticulum resident protein 44	ERP44	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96AP7	ESAM	Endothelial cell-selective adhesion molecule	ESAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NQ30	ESM1	Endothelial cell-specific molecule 1	ESM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15311	EZR	Ezrin	EZR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y624	F11R	Junctional adhesion molecule A	F11R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P25116	F2R	Proteinase-activated receptor 1	F2R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13726	F3	Tissue factor	F3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08709	F7	Coagulation factor VII	F7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P00740	F9	Coagulation factor IX	F9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P07148	FABP1	Fatty acid-binding protein, liver	FABP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12104	FABP2	Fatty acid-binding protein, intestinal	FABP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15090	FABP4	Fatty acid-binding protein, adipocyte	FABP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q01469	FABP5	Fatty acid-binding protein 5	FABP5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P51161	FABP6	Gastrotropin	FABP6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q0Z7S8	FABP9	Fatty acid-binding protein 9	FABP9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13158	FADD	FAS-associated death domain protein	FADD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P58499	FAM3B	Protein FAM3B	FAM3B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92520	FAM3C	Protein FAM3C	FAM3C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q12884	FAP	Prolyl endopeptidase FAP	FAP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P25445	FAS	Tumor necrosis factor receptor superfamily member 6	FAS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P48023	FASLG	Tumor necrosis factor ligand superfamily member 6	FASLG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P09467	FBP1	Fructose-1,6-bisphosphatase 1	FBP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P24071	FCAR	Immunoglobulin alpha Fc receptor	FCAR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06734	FCER2	Low affinity immunoglobulin epsilon Fc receptor	FCER2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12318	FCGR2A	Low affinity immunoglobulin gamma Fc region receptor II-a	FCGR2A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P31994	FCGR2B	Low affinity immunoglobulin gamma Fc region receptor II-b	FCGR2B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75015	FCGR3B	Low affinity immunoglobulin gamma Fc region receptor III-B	FCGR3B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15485	FCN2	Ficolin-2	FCN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96LA6	FCRL1	Fc receptor-like protein 1	FCRL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96LA5	FCRL2	Fc receptor-like protein 2	FCRL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96P31	FCRL3	Fc receptor-like protein 3	FCRL3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96RD9	FCRL5	Fc receptor-like protein 5	FCRL5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6DN72	FCRL6	Fc receptor-like protein 6	FCRL6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6BAA4	FCRLB	Fc receptor-like B	FCRLB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P39748	FEN1	Flap endonuclease 1	FEN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P07332	FES	Tyrosine-protein kinase Fes/Fps	FES	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UGM5	FETUB	Fetuin-B	FETUB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95750	FGF19	Fibroblast growth factor 19	FGF19	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P09038	FGF2	Fibroblast growth factor 2	FGF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NSA1	FGF21	Fibroblast growth factor 21	FGF21	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9GZV9	FGF23	Fibroblast growth factor 23	FGF23	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P12034	FGF5	Fibroblast growth factor 5	FGF5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14512	FGFBP1	Fibroblast growth factor-binding protein 1	FGFBP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P21802	FGFR2	Fibroblast growth factor receptor 2	FGFR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09769	FGR	Tyrosine-protein kinase Fgr	FGR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P49789	FHIT	Bis	FHIT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y3D6	FIS1	Mitochondrial fission 1 protein	FIS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P68106	FKBP1B	Peptidyl-prolyl cis-trans isomerase FKBP1B	FKBP1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q02790	FKBP4	Peptidyl-prolyl cis-trans isomerase FKBP4	FKBP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13451	FKBP5	Peptidyl-prolyl cis-trans isomerase FKBP5	FKBP5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y680	FKBP7	Peptidyl-prolyl cis-trans isomerase FKBP7	FKBP7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q01543	FLI1	Friend leukemia integration 1 transcription factor	FLI1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43155	FLRT2	Leucine-rich repeat transmembrane protein FLRT2	FLRT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P17948	FLT1	Vascular endothelial growth factor receptor 1	FLT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P36888	FLT3	Receptor-type tyrosine-protein kinase FLT3	FLT3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P49771	FLT3LG	Fms-related tyrosine kinase 3 ligand	FLT3LG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35916	FLT4	Vascular endothelial growth factor receptor 3	FLT4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95466	FMNL1	Formin-like protein 1	FMNL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q06787	FMR1	Fragile X messenger ribonucleoprotein 1	FMR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15328	FOLR1	Folate receptor alpha	FOLR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P14207	FOLR2	Folate receptor beta	FOLR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P41439	FOLR3	Folate receptor gamma	FOLR3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P53539	FOSB	Protein FosB	FOSB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q12778	FOXO1	Forkhead box protein O1	FOXO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43524	FOXO3	Forkhead box protein O3	FOXO3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92765	FRZB	Secreted frizzled-related protein 3	FRZB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P19883	FST	Follistatin	FST	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95633	FSTL3	Follistatin-related protein 3	FSTL3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04066	FUCA1	Tissue alpha-L-fucosidase	FUCA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P09958	FURIN	Furin	FURIN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P35637	FUS	RNA-binding protein FUS	FUS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P21217	FUT3	3-galactosyl-N-acetylglucosaminide 4-alpha-L-fucosyltransferase FUT3	FUT3_FUT5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BYC5	FUT8	Alpha-	FUT8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16595	FXN	Frataxin, mitochondrial	FXN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96DB9	FXYD5	FXYD domain-containing ion transport regulator 5	FXYD5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15117	FYB1	FYN-binding protein 1	FYB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22466	GAL	Galanin peptides	GAL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q86SR1	GALNT10	Polypeptide N-acetylgalactosaminyltransferase 10	GALNT10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q10471	GALNT2	Polypeptide N-acetylgalactosaminyltransferase 2	GALNT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14435	GALNT3	Polypeptide N-acetylgalactosaminyltransferase 3	GALNT3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q86SF2	GALNT7	N-acetylgalactosaminyltransferase 7	GALNT7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14393	GAS6	Growth arrest-specific protein 6	GAS6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P32456	GBP2	Guanylate-binding protein 2	GBP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96PP9	GBP4	Guanylate-binding protein 4	GBP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01275	GCG	Pro-glucagon	GCG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q02742	GCNT1	Beta-1,3-galactosyl-O-glycosyl-glycoprotein beta-1,6-N-acetylglucosaminyltransferase	GCNT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q99988	GDF15	Growth/differentiation factor 15	GDF15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UK05	GDF2	Growth/differentiation factor 2	GDF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P39905	GDNF	Glial cell line-derived neurotrophic factor	GDNF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P14136	GFAP	Glial fibrillary acidic protein	GFAP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55789	GFER	FAD-linked sulfhydryl oxidase ALR	GFER	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q3B7J2	GFOD2	Glucose-fructose oxidoreductase domain-containing protein 2	GFOD2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P56159	GFRA1	GDNF family receptor alpha-1	GFRA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00451	GFRA2	GDNF family receptor alpha-2	GFRA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60609	GFRA3	GDNF family receptor alpha-3	GFRA3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UJY5	GGA1	ADP-ribosylation factor-binding protein GGA1	GGA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92820	GGH	Gamma-glutamyl hydrolase	GGH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P19440	GGT1	Glutathione hydrolase 1 proenzyme	GGT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P36269	GGT5	Glutathione hydrolase 5 proenzyme	GGT5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01241	GH1	Somatotropin	GH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01242	GH2	Growth hormone variant	GH2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q02643	GHRHR	Growth hormone-releasing hormone receptor	GHRHR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UBU3	GHRL	Appetite-regulating hormone	GHRL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NS71	GKN1	Gastrokine-1	GKN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P16278	GLB1	Beta-galactosidase	GLB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q04760	GLO1	Lactoylglutathione lyase	GLO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HC38	GLOD4	Glyoxalase domain-containing protein 4	GLOD4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35754	GLRX	Glutaredoxin-1	GLRX	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H1C3	GLT8D2	Glycosyltransferase 8 domain-containing protein 2	GLT8D2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P36959	GMPR	GMP reductase 1	GMPR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y223	GNE	Bifunctional UDP-N-acetylglucosamine 2-epimerase/N-acetylmannosamine kinase	GNE	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22749	GNLY	Granulysin	GNLY	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6P4E1	GOLM2	Protein GOLM2	GOLM2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HD26	GOPC	Golgi-associated PDZ and coiled-coil motif-containing protein	GOPC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P07359	GP1BA	Platelet glycoprotein Ib alpha chain	GP1BA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P55259	GP2	Pancreatic secretory granule membrane major glycoprotein GP2	GP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HCN6	GP6	Platelet glycoprotein VI	GP6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99795	GPA33	Cell surface A33 antigen	GPA33	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P35052	GPC1	Glypican-1	GPC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P78333	GPC5	Glypican-5	GPC5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92917	GPKOW	G-patch domain and KOW motifs-containing protein	GPKOW	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14956	GPNMB	Transmembrane glycoprotein NMB	GPNMB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O15354	GPR37	Prosaposin receptor GPR37	GPR37	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75791	GRAP2	GRB2-related adapter protein 2	GRAP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P34947	GRK5	G protein-coupled receptor kinase 5	GRK5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P28799	GRN	Progranulin	GRN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HAV7	GRPEL1	GrpE protein homolog 1, mitochondrial	GRPEL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+A4D1B5	GSAP	Gamma-secretase-activating protein	GSAP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08263	GSTA1	Glutathione S-transferase A1	GSTA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16772	GSTA3	Glutathione S-transferase A3	GSTA3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09211	GSTP1	Glutathione S-transferase P	GSTP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q02747	GUCA2A	Guanylin	GUCA2A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08236	GUSB	Beta-glucuronidase	GUSB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13807	GYS1	Glycogen [starch] synthase, muscle	GYS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P12544	GZMA	Granzyme A	GZMA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P10144	GZMB	Granzyme B	GZMB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20718	GZMH	Granzyme H	GZMH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16775	HAGH	Hydroxyacylglutathione hydrolase, mitochondrial	HAGH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UJM8	HAO1	2-Hydroxyacid oxidase 1	HAO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P12081	HARS1	Histidine--tRNA ligase, cytoplasmic	HARS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96D42	HAVCR1	Hepatitis A virus cellular receptor 1	HAVCR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8TDQ0	HAVCR2	Hepatitis A virus cellular receptor 2	HAVCR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99075	HBEGF	Proheparin-binding EGF-like growth factor	HBEGF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P09105	HBQ1	Hemoglobin subunit theta-1	HBQ1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P14317	HCLS1	Hematopoietic lineage cell-specific protein	HCLS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P51858	HDGF	Hepatoma-derived growth factor	HDGF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NRV9	HEBP1	Heme-binding protein 1	HEBP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O94992	HEXIM1	Protein HEXIM1	HEXIM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P14210	HGF	Hepatocyte growth factor	HGF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14964	HGS	Hepatocyte growth factor-regulated tyrosine kinase substrate	HGS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P52789	HK2	Hexokinase-2	HK2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01903	HLA-DRA	HLA class II histocompatibility antigen, DR alpha chain	HLA-DRA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P13747	HLA-E	HLA class I histocompatibility antigen, alpha chain E	HLA-E	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08397	HMBS	Porphobilinogen deaminase	HMBS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09601	HMOX1	Heme oxygenase 1	HMOX1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P30519	HMOX2	Heme oxygenase 2	HMOX2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P50135	HNMT	Histamine N-methyltransferase	HNMT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P61978	HNRNPK	Heterogeneous nuclear ribonucleoprotein K	HNRNPK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P37235	HPCAL1	Hippocalcin-like protein 1	HPCAL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60760	HPGDS	Hematopoietic prostaglandin D synthase	HPGDS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y662	HS3ST3B1	Heparan sulfate glucosamine 3-O-sulfotransferase 3B1	HS3ST3B1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O60243	HS6ST1	Heparan-sulfate 6-O-sulfotransferase 1	HS6ST1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P28845	HSD11B1	11-beta-hydroxysteroid dehydrogenase 1	HSD11B1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P14625	HSP90B1	Endoplasmin	HSP90B1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P0DMV8	HSPA1A	Heat shock 70 kDa protein 1A	HSPA1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04792	HSPB1	Heat shock protein beta-1	HSPB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14558	HSPB6	Heat shock protein beta-6	HSPB6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P98160	HSPG2	Basement membrane-specific heparan sulfate proteoglycan core protein	HSPG2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43464	HTRA2	Serine protease HTRA2, mitochondrial	HTRA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q12794	HYAL1	Hyaluronidase-1	HYAL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y4L1	HYOU1	Hypoxia up-regulated protein 1	HYOU1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q05084	ICA1	Islet cell autoantigen 1	ICA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05362	ICAM1	Intercellular adhesion molecule 1	ICAM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13598	ICAM2	Intercellular adhesion molecule 2	ICAM2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P32942	ICAM3	Intercellular adhesion molecule 3	ICAM3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14773	ICAM4	Intercellular adhesion molecule 4	ICAM4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UMF0	ICAM5	Intercellular adhesion molecule 5	ICAM5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75144	ICOSLG	ICOS ligand	ICOSLG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BXS1	IDI2	Isopentenyl-diphosphate delta-isomerase 2	IDI2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22304	IDS	Iduronate 2-sulfatase	IDS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35475	IDUA	Alpha-L-iduronidase	IDUA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01579	IFNG	Interferon gamma	IFNG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15260	IFNGR1	Interferon gamma receptor 1	IFNGR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P38484	IFNGR2	Interferon gamma receptor 2	IFNGR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8IU54	IFNL1	Interferon lambda-1	IFNL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8IU57	IFNLR1	Interferon lambda receptor 1	IFNLR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08069	IGF1R	Insulin-like growth factor 1 receptor	IGF1R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P11717	IGF2R	Cation-independent mannose-6-phosphate receptor	IGF2R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08833	IGFBP1	Insulin-like growth factor-binding protein 1	IGFBP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P18065	IGFBP2	Insulin-like growth factor-binding protein 2	IGFBP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P17936	IGFBP3	Insulin-like growth factor-binding protein 3	IGFBP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22692	IGFBP4	Insulin-like growth factor-binding protein 4	IGFBP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P24592	IGFBP6	Insulin-like growth factor-binding protein 6	IGFBP6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16270	IGFBP7	Insulin-like growth factor-binding protein 7	IGFBP7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8WX77	IGFBPL1	Insulin-like growth factor-binding protein-like 1	IGFBPL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75054	IGSF3	Immunoglobulin superfamily member 3	IGSF3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q969P0	IGSF8	Immunoglobulin superfamily member 8	IGSF8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y6K9	IKBKG	NF-kappa-B essential modulator	IKBKG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UKS7	IKZF2	Zinc finger protein Helios	IKZF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22301	IL10	Interleukin-10	IL10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13651	IL10RA	Interleukin-10 receptor subunit alpha	IL10RA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q08334	IL10RB	Interleukin-10 receptor subunit beta	IL10RB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20809	IL11	Interleukin-11	IL11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P29459	IL12A	Interleukin-12 subunit alpha	IL12A_IL12B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P29460	IL12B	Interleukin-12 subunit beta	IL12B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P42701	IL12RB1	Interleukin-12 receptor subunit beta-1	IL12RB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35225	IL13	Interleukin-13	IL13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P78552	IL13RA1	Interleukin-13 receptor subunit alpha-1	IL13RA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P40933	IL15	Interleukin-15	IL15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13261	IL15RA	Interleukin-15 receptor subunit alpha	IL15RA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14005	IL16	Pro-interleukin-16	IL16	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16552	IL17A	Interleukin-17A	IL17A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9P0M4	IL17C	Interleukin-17C	IL17C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8TAD2	IL17D	Interleukin-17D	IL17D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96PD4	IL17F	Interleukin-17F	IL17F	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96F46	IL17RA	Interleukin-17 receptor A	IL17RA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NRM6	IL17RB	Interleukin-17 receptor B	IL17RB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14116	IL18	Interleukin-18	IL18	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95998	IL18BP	Interleukin-18-binding protein	IL18BP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13478	IL18R1	Interleukin-18 receptor 1	IL18R1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95256	IL18RAP	Interleukin-18 receptor accessory protein	IL18RAP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UHD0	IL19	Interleukin-19	IL19	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01583	IL1A	Interleukin-1 alpha	IL1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01584	IL1B	Interleukin-1 beta	IL1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P14778	IL1R1	Interleukin-1 receptor type 1	IL1R1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P27930	IL1R2	Interleukin-1 receptor type 2	IL1R2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NPH3	IL1RAP	Interleukin-1 receptor accessory protein	IL1RAP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q01638	IL1RL1	Interleukin-1 receptor-like 1	IL1RL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HB29	IL1RL2	Interleukin-1 receptor-like 2	IL1RL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P18510	IL1RN	Interleukin-1 receptor antagonist protein	IL1RN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P60568	IL2	Interleukin-2	IL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NYY1	IL20	Interleukin-20	IL20	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UHF4	IL20RA	Interleukin-20 receptor subunit alpha	IL20RA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8N6P7	IL22RA1	Interleukin-22 receptor subunit alpha-1	IL22RA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13007	IL24	Interleukin-24	IL24	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01589	IL2RA	Interleukin-2 receptor subunit alpha	IL2RA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P14784	IL2RB	Interleukin-2 receptor subunit beta	IL2RB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P24001	IL32	Interleukin-32	IL32	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95760	IL33	Interleukin-33	IL33	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6ZMJ4	IL34	Interleukin-34	IL34	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P26951	IL3RA	Interleukin-3 receptor subunit alpha	IL3RA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05112	IL4	Interleukin-4	IL4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P24394	IL4R	Interleukin-4 receptor subunit alpha	IL4R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P05113	IL5	Interleukin-5	IL5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q01344	IL5RA	Interleukin-5 receptor subunit alpha	IL5RA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P05231	IL6	Interleukin-6	IL6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08887	IL6R	Interleukin-6 receptor subunit alpha	IL6R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P40189	IL6ST	Interleukin-6 receptor subunit beta	IL6ST	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13232	IL7	Interleukin-7	IL7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P16871	IL7R	Interleukin-7 receptor subunit alpha	IL7R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H0C8	ILKAP	Integrin-linked kinase-associated serine/threonine phosphatase 2C	ILKAP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P29218	IMPA1	Inositol monophosphatase 1	IMPA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UK53	ING1	Inhibitor of growth protein 1	ING1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55103	INHBC	Inhibin beta C chain	INHBC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P49441	INPP1	Inositol polyphosphate 1-phosphatase	INPP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15357	INPPL1	Phosphatidylinositol 3,4,5-trisphosphate 5-phosphatase 2	INPPL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WWN9	IPCEF1	Interactor protein for cytohesin exchange factors 1	IPCEF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13576	IQGAP2	Ras GTPase-activating-like protein IQGAP2	IQGAP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q12912	IRAG2	Inositol 1,4,5-triphosphate receptor associated 2	IRAG2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P51617	IRAK1	Interleukin-1 receptor-associated kinase 1	IRAK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NWZ3	IRAK4	Interleukin-1 receptor-associated kinase 4	IRAK4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UXK2	ISLR2	Immunoglobulin superfamily containing leucine-rich repeat protein 2	ISLR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+B1AKI9	ISM1	Isthmin-1	ISM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UKX5	ITGA11	Integrin alpha-11	ITGA11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08648	ITGA5	Integrin alpha-5	ITGA5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P23229	ITGA6	Integrin alpha-6	ITGA6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P11215	ITGAM	Integrin alpha-M	ITGAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06756	ITGAV	Integrin alpha-V	ITGAV	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P05556	ITGB1	Integrin beta-1	ITGB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O14713	ITGB1BP1	Integrin beta-1-binding protein 1	ITGB1BP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UKP3	ITGB1BP2	Integrin beta-1-binding protein 2	ITGB1BP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05107	ITGB2	Integrin beta-2	ITGB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P18084	ITGB5	Integrin beta-5	ITGB5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P18564	ITGB6	Integrin beta-6	ITGB6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P26010	ITGB7	Integrin beta-7	ITGB7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q06033	ITIH3	Inter-alpha-trypsin inhibitor heavy chain H3	ITIH3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43736	ITM2A	Integral membrane protein 2A	ITM2A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P26440	IVD	Isovaleryl-CoA dehydrogenase, mitochondrial	IVD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P57087	JAM2	Junctional adhesion molecule B	JAM2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01591	JCHAIN	Immunoglobulin J chain	JCHAIN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05412	JUN	Transcription factor Jun	JUN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96I82	KAZALD1	Kazal-type serine protease inhibitor domain-containing protein 1	KAZALD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6PIL6	KCNIP4	Kv channel-interacting protein 4	KCNIP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35968	KDR	Vascular endothelial growth factor receptor 2	KDR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P23276	KEL	Kell blood group glycoprotein	KEL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96EK5	KIFBP	KIF-binding protein	KIFBP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P43628	KIR2DL3	Killer cell immunoglobulin-like receptor 2DL3	KIR2DL3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P43629	KIR3DL1	Killer cell immunoglobulin-like receptor 3DL1	KIR3DL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6UWL6	KIRREL2	Kin of IRRE-like protein 2	KIRREL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P10721	KIT	Mast/stem cell growth factor receptor Kit	KIT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P21583	KITLG	Kit ligand	KITLG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q86Z14	KLB	Beta-klotho	KLB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06870	KLK1	Kallikrein-1	KLK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43240	KLK10	Kallikrein-10	KLK10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UBX7	KLK11	Kallikrein-11	KLK11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UKR0	KLK12	Kallikrein-12	KLK12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UKR3	KLK13	Kallikrein-13	KLK13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9P0G3	KLK14	Kallikrein-14	KLK14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y5K2	KLK4	Kallikrein-4	KLK4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92876	KLK6	Kallikrein-6	KLK6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60259	KLK8	Kallikrein-8	KLK8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q12918	KLRB1	Killer cell lectin-like receptor subfamily B member 1	KLRB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13241	KLRD1	Natural killer cells antigen CD94	KLRD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P02533	KRT14	Keratin, type I cytoskeletal 14	KRT14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05783	KRT18	Keratin, type I cytoskeletal 18	KRT18	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08727	KRT19	Keratin, type I cytoskeletal 19	KRT19	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P13647	KRT5	Keratin, type II cytoskeletal 5	KRT5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q16773	KYAT1	Kynurenine--oxoglutarate transaminase 1	KYAT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16719	KYNU	Kynureninase	KYNU	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P32004	L1CAM	Neural cell adhesion molecule L1	L1CAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q53H82	LACTB2	Endoribonuclease LACTB2	LACTB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P18627	LAG3	Lymphocyte activation gene 3 protein	LAG3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6GTX8	LAIR1	Leukocyte-associated immunoglobulin-like receptor 1	LAIR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6ISS4	LAIR2	Leukocyte-associated immunoglobulin-like receptor 2	LAIR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q16363	LAMA4	Laminin subunit alpha-4	LAMA4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13473	LAMP2	Lysosome-associated membrane glycoprotein 2	LAMP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UQV4	LAMP3	Lysosome-associated membrane glycoprotein 3	LAMP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P28838	LAP3	Cytosol aminopeptidase	LAP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43561	LAT	Linker for activation of T-cells family member 1	LAT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9GZY6	LAT2	Linker for activation of T-cells family member 2	LAT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6UX15	LAYN	Layilin	LAYN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P18428	LBP	Lipopolysaccharide-binding protein	LBP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14739	LBR	Delta	LBR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P80188	LCN2	Neutrophil gelatinase-associated lipocalin	LCN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01130	LDLR	Low-density lipoprotein receptor	LDLR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00292	LEFTY2	Left-right determination factor 2	LEFTY2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P41159	LEP	Leptin	LEP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P48357	LEPR	Leptin receptor	LEPR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09382	LGALS1	Galectin-1	LGALS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P17931	LGALS3	Galectin-3	LGALS3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P56470	LGALS4	Galectin-4	LGALS4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P47929	LGALS7	Galectin-7	LGALS7_LGALS7B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00214	LGALS8	Galectin-8	LGALS8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00182	LGALS9	Galectin-9	LGALS9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99538	LGMN	Legumain	LGMN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01229	LHB	Lutropin subunit beta	LHB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H008	LHPP	Phospholysine phosphohistidine inorganic pyrophosphate phosphatase	LHPP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15018	LIF	Leukemia inhibitory factor	LIF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P42702	LIFR	Leukemia inhibitory factor receptor	LIFR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8N149	LILRA2	Leukocyte immunoglobulin-like receptor subfamily A member 2	LILRA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+A6NI73	LILRA5	Leukocyte immunoglobulin-like receptor subfamily A member 5	LILRA5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NHL6	LILRB1	Leukocyte immunoglobulin-like receptor subfamily B member 1	LILRB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8N423	LILRB2	Leukocyte immunoglobulin-like receptor subfamily B member 2	LILRB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8NHJ6	LILRB4	Leukocyte immunoglobulin-like receptor subfamily B member 4	LILRB4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75023	LILRB5	Leukocyte immunoglobulin-like receptor subfamily B member 5	LILRB5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7L5N7	LPCAT2	Lysophosphatidylcholine acyltransferase 2	LPCAT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06858	LPL	Lipoprotein lipase	LPL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22079	LPO	Lactoperoxidase	LPO	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96JA1	LRIG1	Leucine-rich repeats and immunoglobulin-like domains protein 1	LRIG1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q07954	LRP1	Prolow-density lipoprotein receptor-related protein 1	LRP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q86VZ4	LRP11	Low-density lipoprotein receptor-related protein 11	LRP11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30533	LRPAP1	Alpha-2-macroglobulin receptor-associated protein	LRPAP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8N386	LRRC25	Leucine-rich repeat-containing protein 25	LRRC25	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UXK5	LRRN1	Leucine-rich repeat neuronal protein 1	LRRN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15116	LSM1	U6 snRNA-associated Sm-like protein LSm1	LSM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P33241	LSP1	Lymphocyte-specific protein 1	LSP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01374	LTA	Lymphotoxin-alpha	LTA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09960	LTA4H	Leukotriene A-4 hydrolase	LTA4H	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14767	LTBP2	Latent-transforming growth factor beta-binding protein 2	LTBP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NS15	LTBP3	Latent-transforming growth factor beta-binding protein 3	LTBP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P36941	LTBR	Tumor necrosis factor receptor superfamily member 3	LTBR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8WV07	LTO1	Protein LTO1 homolog	LTO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9BS40	LXN	Latexin	LXN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14210	LY6D	Lymphocyte antigen 6D	LY6D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60449	LY75	Lymphocyte antigen 75	LY75	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HBG7	LY9	T-lymphocyte surface antigen Ly-9	LY9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y6Y9	LY96	Lymphocyte antigen 96	LY96	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NX58	LYAR	Cell growth-regulating nucleolar protein	LYAR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P07948	LYN	Tyrosine-protein kinase Lyn	LYN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8N2G4	LYPD1	Ly6/PLAUR domain-containing protein 1	LYPD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95274	LYPD3	Ly6/PLAUR domain-containing protein 3	LYPD3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6UX82	LYPD8	Ly6/PLAUR domain-containing protein 8	LYPD8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y6D9	MAD1L1	Mitotic spindle assembly checkpoint protein MAD1	MAD1L1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q7L5Y9	MAEA	E3 ubiquitin-protein transferase MAEA	MAEA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y5V3	MAGED1	Melanoma-associated antigen D1	MAGED1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55145	MANF	Mesencephalic astrocyte-derived neurotrophic factor	MANF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H8J5	MANSC1	MANSC domain-containing protein 1	MANSC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P52564	MAP2K6	Dual specificity mitogen-activated protein kinase kinase 6	MAP2K6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q99683	MAP3K5	Mitogen-activated protein kinase kinase kinase 5	MAP3K5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y4K4	MAP4K5	Mitogen-activated protein kinase kinase kinase kinase 5	MAP4K5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P45984	MAPK9	Mitogen-activated protein kinase 9	MAPK9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P10636	MAPT	Microtubule-associated protein tau	MAPT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UEW3	MARCO	Macrophage receptor MARCO	MARCO	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48740	MASP1	Mannan-binding lectin serine protease 1	MASP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00339	MATN2	Matrilin-2	MATN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15232	MATN3	Matrilin-3	MATN3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7Z434	MAVS	Mitochondrial antiviral-signaling protein	MAVS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P61244	MAX	Protein max	MAX	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P02144	MB	Myoglobin	MB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P43121	MCAM	Cell surface glycoprotein MUC18	MCAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NI22	MCFD2	Multiple coagulation factor deficiency protein 2	MCFD2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NFP4	MDGA1	MAM domain-containing glycosylphosphatidylinositol anchor protein 1	MDGA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P21741	MDK	Midkine	MDK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BUE0	MED18	Mediator of RNA polymerase II transcription subunit 18	MED18	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96KG7	MEGF10	Multiple epidermal growth factor-like domains protein 10	MEGF10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H1U4	MEGF9	Multiple epidermal growth factor-like domains protein 9	MEGF9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16820	MEP1B	Meprin A subunit beta	MEP1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NQ76	MEPE	Matrix extracellular phosphoglycoprotein	MEPE	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q12866	MERTK	Tyrosine-protein kinase Mer	MERTK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14696	MESD	LRP chaperone MESD	MESD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08581	MET	Hepatocyte growth factor receptor	MET	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P53582	METAP1	Methionine aminopeptidase 1	METAP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6UB28	METAP1D	Methionine aminopeptidase 1D, mitochondrial	METAP1D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P50579	METAP2	Methionine aminopeptidase 2	METAP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55082	MFAP3	Microfibril-associated glycoprotein 3	MFAP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13361	MFAP5	Microfibrillar-associated protein 5	MFAP5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q08431	MFGE8	Lactadherin	MFGE8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q99685	MGLL	Monoglyceride lipase	MGLL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16455	MGMT	Methylated-DNA--protein-cysteine methyltransferase	MGMT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16674	MIA	Melanoma-derived growth regulatory protein	MIA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q29980	MICB	MHC class I polypeptide-related sequence B	MICB_MICA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P14174	MIF	Macrophage migration inhibitory factor	MIF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q7Z6M3	MILR1	Allergin-1	MILR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WV92	MITD1	MIT domain-containing protein 1	MITD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12872	MLN	Promotilin	MLN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08473	MME	Neprilysin	MME	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P03956	MMP1	Interstitial collagenase	MMP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09238	MMP10	Stromelysin-2	MMP10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P39900	MMP12	Macrophage metalloelastase	MMP12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P45452	MMP13	Collagenase 3	MMP13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08254	MMP3	Stromelysin-1	MMP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09237	MMP7	Matrilysin	MMP7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22894	MMP8	Neutrophil collagenase	MMP8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P14780	MMP9	Matrix metalloproteinase-9	MMP9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P41218	MNDA	Myeloid cell nuclear differentiation antigen	MNDA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q16653	MOG	Myelin-oligodendrocyte glycoprotein	MOG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99549	MPHOSPH8	M-phase phosphoprotein 8	MPHOSPH8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P34949	MPI	Mannose-6-phosphate isomerase	MPI	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95866	MPIG6B	Megakaryocyte and platelet inhibitory receptor G6b	MPIG6B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05164	MPO	Myeloperoxidase	MPO	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H2W6	MRPL46	Large ribosomal subunit protein mL46	MRPL46	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13421	MSLN	Mesothelin	MSLN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P08118	MSMB	Beta-microseminoprotein	MSMB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P21757	MSR1	Macrophage scavenger receptor types I and II	MSR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UJ68	MSRA	Mitochondrial peptide methionine sulfoxide reductase	MSRA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14793	MSTN	Growth/differentiation factor 8	MSTN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P58546	MTPN	Myotrophin	MTPN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H3R2	MUC13	Mucin-13	MUC13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WXI7	MUC16	Mucin-16	MUC16	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q03426	MVK	Mevalonate kinase	MVK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13459	MYO9B	Unconventional myosin-IXb	MYO9B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99972	MYOC	Myocilin	MYOC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8WU39	MZB1	Marginal zone B- and B1-cell-specific protein	MZB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q08AG7	MZT1	Mitotic-spindle organizing protein 1	MZT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q02083	NAAA	N-acylethanolamine-hydrolyzing acid amidase	NAAA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95544	NADK	NAD kinase	NADK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P43490	NAMPT	Nicotinamide phosphoribosyltransferase	NAMPT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P41271	NBL1	Neuroblastoma suppressor of tumorigenicity 1	NBL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60934	NBN	Nibrin	NBN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13591	NCAM1	Neural cell adhesion molecule 1	NCAM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15394	NCAM2	Neural cell adhesion molecule 2	NCAM2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14594	NCAN	Neurocan core protein	NCAN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P19878	NCF2	Neutrophil cytosol factor 2	NCF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43639	NCK2	Cytoplasmic protein NCK2	NCK2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q969V3	NCLN	BOS complex subunit NCLN	NCLN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O76036	NCR1	Natural cytotoxicity triggering receptor 1	NCR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P62166	NCS1	Neuronal calcium sensor 1	NCS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92597	NDRG1	Protein NDRG1	NDRG1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75380	NDUFS6	NADH dehydrogenase [ubiquinone] iron-sulfur protein 6, mitochondrial	NDUFS6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92692	NECTIN2	Nectin-2	NECTIN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96NY8	NECTIN4	Nectin-4	NECTIN4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07196	NEFL	Neurofilament light polypeptide	NEFL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92832	NELL1	Protein kinase C-binding protein NELL1	NELL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99435	NELL2	Protein kinase C-binding protein NELL2	NELL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O94856	NFASC	Neurofascin	NFASC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95644	NFATC1	Nuclear factor of activated T-cells, cytoplasmic 1	NFATC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q12968	NFATC3	Nuclear factor of activated T-cells, cytoplasmic 3	NFATC3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00221	NFKBIE	NF-kappa-B inhibitor epsilon	NFKBIE	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01138	NGF	Beta-nerve growth factor	NGF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P14543	NID1	Nidogen-1	NID1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14112	NID2	Nidogen-2	NID2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92982	NINJ1	Ninjurin-1	NINJ1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13232	NME3	Nucleoside diphosphate kinase C	NME3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HAN9	NMNAT1	Nicotinamide/nicotinic acid mononucleotide adenylyltransferase 1	NMNAT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15155	NOMO1	BOS complex subunit NOMO1	NOMO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P29475	NOS1	Nitric oxide synthase 1	NOS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P29474	NOS3	Nitric oxide synthase 3	NOS3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P46531	NOTCH1	Neurogenic locus notch homolog protein 1	NOTCH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UM47	NOTCH3	Neurogenic locus notch homolog protein 3	NOTCH3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NQX5	NPDC1	Neural proliferation differentiation and control protein 1	NPDC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P06748	NPM1	Nucleophosmin	NPM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P16860	NPPB	Natriuretic peptides B	NPPB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P23582	NPPC	C-type natriuretic peptide	NPPC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y639	NPTN	Neuroplastin	NPTN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15818	NPTX1	Neuronal pentraxin-1	NPTX1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95502	NPTXR	Neuronal pentraxin receptor	NPTXR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01303	NPY	Pro-neuropeptide Y	NPY	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92823	NRCAM	Neuronal cell adhesion molecule	NRCAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14786	NRP1	Neuropilin-1	NRP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O60462	NRP2	Neuropilin-2	NRP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99748	NRTN	Neurturin	NRTN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UNZ2	NSFL1C	NSFL1 cofactor p47	NSFL1C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H0P0	NT5C3A	Cytosolic 5'-nucleotidase 3A	NT5C3A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P21589	NT5E	5'-nucleotidase	NT5E	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20783	NTF3	Neurotrophin-3	NTF3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P34130	NTF4	Neurotrophin-4	NTF4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P16860	NPPB	Natriuretic peptides B	NTproBNP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q16620	NTRK2	BDNF/NT-3 growth factors receptor	NTRK2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16288	NTRK3	NT-3 growth factor receptor	NTRK3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y5A7	NUB1	NEDD8 ultimate buster 1	NUB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P80303	NUCB2	Nucleobindin-2	NUCB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y266	NUDC	Nuclear migration protein nudC	NUDC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P50583	NUDT2	Bis	NUDT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UKK9	NUDT5	ADP-sugar pyrophosphatase	NUDT5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P58417	NXPH1	Neurexophilin-1	NXPH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NPH6	OBP2B	Odorant-binding protein 2b	OBP2B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+A1E959	ODAM	Odontogenic ameloblast-associated protein	ODAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NZT2	OGFR	Opioid growth factor receptor	OGFR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P20774	OGN	Mimecan	OGN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P78380	OLR1	Oxidized low-density lipoprotein receptor 1	OLR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99983	OMD	Osteomodulin	OMD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P23515	OMG	Oligodendrocyte-myelin glycoprotein	OMG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UBM4	OPTC	Opticin	OPTC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8IYS5	OSCAR	Osteoclast-associated immunoglobulin-like receptor	OSCAR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13725	OSM	Oncostatin-M	OSM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99650	OSMR	Oncostatin-M-specific receptor subunit beta	OSMR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01178	OXT	Oxytocin-neurophysin 1 proprotein	OXT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07237	P4HB	Protein disulfide-isomerase	P4HB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y2J8	PADI2	Protein-arginine deiminase type-2	PADI2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UM07	PADI4	Protein-arginine deiminase type-4	PADI4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09466	PAEP	Glycodelin	PAEP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NWQ8	PAG1	Phosphoprotein associated with glycosphingolipid-enriched microdomains 1	PAG1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O96013	PAK4	Serine/threonine-protein kinase PAK 4	PAK4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P19021	PAM	Peptidyl-glycine alpha-amidating monooxygenase	PAM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6UXH9	PAMR1	Inactive serine protease PAMR1	PAMR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13219	PAPPA	Pappalysin-1	PAPPA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q99497	PARK7	Parkinson disease protein 7	PARK7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09874	PARP1	Poly [ADP-ribose] polymerase 1	PARP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30039	PBLD	Phenazine biosynthesis-like domain-containing protein	PBLD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q08174	PCDH1	Protocadherin-1	PCDH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14917	PCDH17	Protocadherin-17	PCDH17	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15113	PCOLCE	Procollagen C-endopeptidase enhancer 1	PCOLCE	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8NBP7	PCSK9	Proprotein convertase subtilisin/kexin type 9	PCSK9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15116	PDCD1	Programmed cell death protein 1	PDCD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BQ51	PDCD1LG2	Programmed cell death 1 ligand 2	PDCD1LG2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14737	PDCD5	Programmed cell death protein 5	PDCD5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75340	PDCD6	Programmed cell death protein 6	PDCD6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P04085	PDGFA	Platelet-derived growth factor subunit A	PDGFA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01127	PDGFB	Platelet-derived growth factor subunit B	PDGFB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NRA1	PDGFC	Platelet-derived growth factor C	PDGFC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16234	PDGFRA	Platelet-derived growth factor receptor alpha	PDGFRA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09619	PDGFRB	Platelet-derived growth factor receptor beta	PDGFRB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NR12	PDLIM7	PDZ and LIM domain protein 7	PDLIM7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9P0J1	PDP1	[Pyruvate dehydrogenase [acetyl-transferring]]-phosphatase 1, mitochondrial	PDP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q5VY43	PEAR1	Platelet endothelial aggregation receptor 1	PEAR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30086	PEBP1	Phosphatidylethanolamine-binding protein 1	PEBP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16284	PECAM1	Platelet endothelial cell adhesion molecule	PECAM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UHV9	PFDN2	Prefoldin subunit 2	PFDN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O60825	PFKFB2	6-phosphofructo-2-kinase/fructose-2,6-bisphosphatase 2	PFKFB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P49763	PGF	Placenta growth factor	PGF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75594	PGLYRP1	Peptidoglycan recognition protein 1	PGLYRP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8TCT1	PHOSPHO1	Phosphoethanolamine/phosphocholine phosphatase	PHOSPHO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P19957	PI3	Elafin	PI3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01833	PIGR	Polymeric immunoglobulin receptor	PIGR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6ZUJ8	PIK3AP1	Phosphoinositide 3-kinase adapter protein 1	PIK3AP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96FE7	PIK3IP1	Phosphoinositide-3-kinase-interacting protein 1	PIK3IP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UKJ1	PILRA	Paired immunoglobulin-like type 2 receptor alpha	PILRA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UKJ0	PILRB	Paired immunoglobulin-like type 2 receptor beta	PILRB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30613	PKLR	Pyruvate kinase PKLR	PKLR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15496	PLA2G10	Group 10 secretory phospholipase A2	PLA2G10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NCC3	PLA2G15	Lysosomal phospholipase A and acyltransferase	PLA2G15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04054	PLA2G1B	Phospholipase A2	PLA2G1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P14555	PLA2G2A	Phospholipase A2, membrane associated	PLA2G2A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P47712	PLA2G4A	Cytosolic phospholipase A2	PLA2G4A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13093	PLA2G7	Platelet-activating factor acetylhydrolase	PLA2G7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P00750	PLAT	Tissue-type plasminogen activator	PLAT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P00749	PLAU	Urokinase-type plasminogen activator	PLAU	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q03405	PLAUR	Urokinase plasminogen activator surface receptor	PLAUR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60240	PLIN1	Perilipin-1	PLIN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60664	PLIN3	Perilipin-3	PLIN3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O94903	PLPBP	Pyridoxal phosphate homeostasis protein	PLPBP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55058	PLTP	Phospholipid transfer protein	PLTP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8IUK5	PLXDC1	Plexin domain-containing protein 1	PLXDC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HCM2	PLXNA4	Plexin-A4	PLXNA4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15031	PLXNB2	Plexin-B2	PLXNB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9ULL4	PLXNB3	Plexin-B3	PLXNB3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6GTS8	PM20D1	N-fatty-acyl-amino acid synthase/hydrolase PM20D1	PM20D1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15126	PMVK	Phosphomevalonate kinase	PMVK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P54317	PNLIPRP2	Pancreatic lipase-related protein 2	PNLIPRP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8TCS8	PNPT1	Polyribonucleotide nucleotidyltransferase 1, mitochondrial	PNPT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00592	PODXL	Podocalyxin	PODXL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NZ53	PODXL2	Podocalyxin-like protein 2	PODXL2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P61218	POLR2F	DNA-directed RNA polymerases I, II, and III subunit RPABC2	POLR2F	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15165	PON2	Serum paraoxonase/arylesterase 2	PON2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15166	PON3	Serum paraoxonase/lactonase 3	PON3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96CD2	PPCDC	Phosphopantothenoylcysteine decarboxylase	PPCDC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P23284	PPIB	Peptidyl-prolyl cis-trans isomerase B	PPIB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35813	PPM1A	Protein phosphatase 1A	PPM1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y570	PPME1	Protein phosphatase methylesterase 1	PPME1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O14974	PPP1R12A	Protein phosphatase 1 regulatory subunit 12A	PPP1R12A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P41236	PPP1R2	Protein phosphatase inhibitor 2	PPP1R2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96SB3	PPP1R9B	Neurabin-2	PPP1R9B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P63098	PPP3R1	Calcineurin subunit B type 1	PPP3R1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01298	PPY	Pancreatic polypeptide prohormone	PPY	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O60828	PQBP1	Polyglutamine-binding protein 1	PQBP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P42785	PRCP	Lysosomal Pro-X carboxypeptidase	PRCP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q06830	PRDX1	Peroxiredoxin-1	PRDX1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P30048	PRDX3	Thioredoxin-dependent peroxide reductase, mitochondrial	PRDX3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30044	PRDX5	Peroxiredoxin-5, mitochondrial	PRDX5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P30041	PRDX6	Peroxiredoxin-6	PRDX6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HCU5	PREB	Guanine nucleotide-exchange factor SEC12	PREB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P51888	PRELP	Prolargin	PRELP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y478	PRKAB1	5'-AMP-activated protein kinase subunit beta-1	PRKAB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P10644	PRKAR1A	cAMP-dependent protein kinase type I-alpha regulatory subunit	PRKAR1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q04759	PRKCQ	Protein kinase C theta type	PRKCQ	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75569	PRKRA	Interferon-inducible double-stranded RNA-dependent protein kinase activator A	PRKRA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P01236	PRL	Prolactin	PRL	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P04070	PROC	Vitamin K-dependent protein C	PROC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P58294	PROK1	Prokineticin-1	PROK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07478	PRSS2	Trypsin-2	PRSS2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BQR3	PRSS27	Serine protease 27	PRSS27	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16651	PRSS8	Prostasin	PRSS8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NRG1	PRTFDC1	Phosphoribosyltransferase domain-containing protein 1	PRTFDC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q2VWP7	PRTG	Protogenin	PRTG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P24158	PRTN3	Myeloblastin	PRTN3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P11464	PSG1	Pregnancy-specific beta-1-glycoprotein 1	PSG1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75475	PSIP1	PC4 and SFRS1-interacting protein	PSIP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P25786	PSMA1	Proteasome subunit alpha type-1	PSMA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00233	PSMD9	26S proteasome non-ATPase regulatory subunit 9	PSMD9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q06323	PSME1	Proteasome activator complex subunit 1	PSME1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UL46	PSME2	Proteasome activator complex subunit 2	PSME2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BT73	PSMG3	Proteasome assembly chaperone 3	PSMG3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60542	PSPN	Persephin	PSPN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6PGN9	PSRC1	Proline/serine-rich coiled-coil protein 1	PSRC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P60484	PTEN	Phosphatidylinositol 3,4,5-trisphosphate 3-phosphatase and dual-specificity protein phosphatase PTEN	PTEN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P41222	PTGDS	Prostaglandin-H2 D-isomerase	PTGDS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q03431	PTH1R	Parathyroid hormone/parathyroid hormone-related peptide receptor	PTH1R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13308	PTK7	Inactive tyrosine-protein kinase 7	PTK7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P21246	PTN	Pleiotrophin	PTN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P18031	PTPN1	Tyrosine-protein phosphatase non-receptor type 1	PTPN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P29350	PTPN6	Tyrosine-protein phosphatase non-receptor type 6	PTPN6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P10586	PTPRF	Receptor-type tyrosine-protein phosphatase F	PTPRF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P28827	PTPRM	Receptor-type tyrosine-protein phosphatase mu	PTPRM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92932	PTPRN2	Receptor-type tyrosine-protein phosphatase N2	PTPRN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13332	PTPRS	Receptor-type tyrosine-protein phosphatase S	PTPRS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q03393	PTS	6-pyruvoyl tetrahydrobiopterin synthase	PTS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P26022	PTX3	Pentraxin-related protein PTX3	PTX3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P20472	PVALB	Parvalbumin alpha	PVALB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P15151	PVR	Poliovirus receptor	PVR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P49023	PXN	Paxillin	PXN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09417	QDPR	Dihydropteridine reductase	QDPR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16769	QPCT	Glutaminyl-peptide cyclotransferase	QPCT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96AX2	RAB37	Ras-related protein Rab-37	RAB37	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P20340	RAB6A	Ras-related protein Rab-6A	RAB6A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NRW1	RAB6B	Ras-related protein Rab-6B	RAB6B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7Z6M1	RABEPK	Rab9 effector protein with kelch motifs	RABEPK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q5R372	RABGAP1L	Rab GTPase-activating protein 1-like	RABGAP1L	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P54727	RAD23B	Lysine-specific demethylase RAD23B	RAD23B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P46060	RANGAP1	Ran GTPase-activating protein 1	RANGAP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P49788	RARRES1	Retinoic acid receptor responder protein 1	RARRES1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q99969	RARRES2	Retinoic acid receptor responder protein 2	RARRES2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20936	RASA1	Ras GTPase-activating protein 1	RASA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P50749	RASSF2	Ras association domain-containing protein 2	RASSF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H477	RBKS	Ribokinase	RBKS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P50120	RBP2	Retinol-binding protein 2	RBP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P82980	RBP5	Retinol-binding protein 5	RBP5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UKL0	RCOR1	REST corepressor 1	RCOR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05451	REG1A	Lithostathine-1-alpha	REG1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48304	REG1B	Lithostathine-1-beta	REG1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q06141	REG3A	Regenerating islet-derived protein 3-alpha	REG3A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BYZ8	REG4	Regenerating islet-derived protein 4	REG4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q969Z4	RELT	Tumor necrosis factor receptor superfamily member 19L	RELT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P00797	REN	Renin	REN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P07949	RET	Proto-oncogene tyrosine-protein kinase receptor Ret	RET	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HD89	RETN	Resistin	RETN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96B86	RGMA	Repulsive guidance molecule A	RGMA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6NW40	RGMB	Repulsive guidance molecule B	RGMB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P57771	RGS8	Regulator of G protein signaling 8	RGS8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08134	RHOC	Rho-related GTP-binding protein RhoC	RHOC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96NA2	RILP	Rab-interacting lysosomal protein	RILP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12724	RNASE3	Eosinophil cationic protein	RNASE3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00584	RNASET2	Ribonuclease T2	RNASET2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H4P4	RNF41	E3 ubiquitin-protein ligase NRDP1	RNF41	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y6N7	ROBO1	Roundabout homolog 1	ROBO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HCK4	ROBO2	Roundabout homolog 2	ROBO2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q01973	ROR1	Inactive tyrosine-protein kinase transmembrane receptor ROR1	ROR1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75695	RP2	Protein XRP2	RP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P31350	RRM2	Ribonucleoside-diphosphate reductase subunit M2	RRM2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7LG56	RRM2B	Ribonucleoside-diphosphate reductase subunit M2 B	RRM2B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q2MKA7	RSPO1	R-spondin-1	RSPO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BXY4	RSPO3	R-spondin-3	RSPO3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BSG5	RTBDN	Retbindin	RTBDN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BZR6	RTN4R	Reticulon-4 receptor	RTN4R	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y265	RUVBL1	RuvB-like 1	RUVBL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H446	RWDD1	RWD domain-containing protein 1	RWDD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P31949	S100A11	Protein S100-A11	S100A11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P80511	S100A12	Protein S100-A12	S100A12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96FQ6	S100A16	Protein S100-A16	S100A16	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P26447	S100A4	Protein S100-A4	S100A4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P25815	S100P	Protein S100-P	S100P	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8IVG5	SAMD9L	Sterile alpha motif domain-containing protein 9-like	SAMD9L	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14828	SCAMP3	Secretory carrier-associated membrane protein 3	SCAMP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6ZMJ2	SCARA5	Scavenger receptor class A member 5	SCARA5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8WTV0	SCARB1	Scavenger receptor class B member 1	SCARB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q14108	SCARB2	Lysosome membrane protein 2	SCARB2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14162	SCARF1	Scavenger receptor class F member 1	SCARF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96GP6	SCARF2	Scavenger receptor class F member 2	SCARF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13521	SCG2	Secretogranin-2	SCG2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WXD2	SCG3	Secretogranin-3	SCG3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P11684	SCGB1A1	Uteroglobin	SCGB1A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96PL1	SCGB3A2	Secretoglobin family 3A member 2	SCGB3A2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O76038	SCGN	Secretagogin	SCGN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96I15	SCLY	Selenocysteine lyase	SCLY	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P22307	SCP2	Sterol carrier protein 2	SCP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q12765	SCRN1	Secernin-1	SCRN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P18827	SDC1	Syndecan-1	SDC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P31431	SDC4	Syndecan-4	SDC4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16581	SELE	E-selectin	SELE	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P16109	SELP	P-selectin	SELP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14242	SELPLG	P-selectin glycoprotein ligand 1	SELPLG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13275	SEMA3F	Semaphorin-3F	SEMA3F	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9C0C4	SEMA4C	Semaphorin-4C	SEMA4C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92854	SEMA4D	Semaphorin-4D	SEMA4D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75326	SEMA7A	Semaphorin-7A	SEMA7A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UHD8	SEPTIN9	Septin-9	SEPTIN9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q86U17	SERPINA11	Serpin A11	SERPINA11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8IW75	SERPINA12	Serpin A12	SERPINA12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q86WD7	SERPINA9	Serpin A9	SERPINA9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P30740	SERPINB1	Leukocyte elastase inhibitor	SERPINB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P36952	SERPINB5	Serpin B5	SERPINB5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35237	SERPINB6	Serpin B6	SERPINB6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P50452	SERPINB8	Serpin B8	SERPINB8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P50453	SERPINB9	Serpin B9	SERPINB9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P05121	SERPINE1	Plasminogen activator inhibitor 1	SERPINE1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q86VW0	SESTD1	SEC14 domain and spectrin repeat-containing protein 1	SESTD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q53H47	SETMAR	Histone-lysine N-methyltransferase SETMAR	SETMAR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BYH1	SEZ6L	Seizure 6-like protein	SEZ6L	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UXD5	SEZ6L2	Seizure 6-like protein 2	SEZ6L2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15427	SF3B4	Splicing factor 3B subunit 4	SF3B4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8N474	SFRP1	Secreted frizzled-related protein 1	SFRP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8IWL2	SFTPA1	Pulmonary surfactant-associated protein A1	SFTPA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8IWL1	SFTPA2	Pulmonary surfactant-associated protein A2	SFTPA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P35247	SFTPD	Pulmonary surfactant-associated protein D	SFTPD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UQQ2	SH2B3	SH2B adapter protein 3	SH2B3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60880	SH2D1A	SH2 domain-containing protein 1A	SH2D1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P34896	SHMT1	Serine hydroxymethyltransferase, cytosolic	SHMT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9HAT2	SIAE	Sialate O-acetylesterase	SIAE	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BZZ2	SIGLEC1	Sialoadhesin	SIGLEC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96LC7	SIGLEC10	Sialic acid-binding Ig-like lectin 10	SIGLEC10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6ZMC9	SIGLEC15	Sialic acid-binding Ig-like lectin 15	SIGLEC15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O15389	SIGLEC5	Sialic acid-binding Ig-like lectin 5	SIGLEC5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43699	SIGLEC6	Sialic acid-binding Ig-like lectin 6	SIGLEC6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y286	SIGLEC7	Sialic acid-binding Ig-like lectin 7	SIGLEC7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y336	SIGLEC9	Sialic acid-binding Ig-like lectin 9	SIGLEC9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P78324	SIRPA	Tyrosine-protein phosphatase non-receptor type substrate 1	SIRPA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00241	SIRPB1	Signal-regulatory protein beta-1	SIRPB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8IXJ6	SIRT2	NAD-dependent protein deacetylase sirtuin-2	SIRT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NXA8	SIRT5	NAD-dependent protein deacylase sirtuin-5, mitochondrial	SIRT5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y3P8	SIT1	Signaling threshold-regulating transmembrane adapter 1	SIT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q86WV1	SKAP1	Src kinase-associated phosphoprotein 1	SKAP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O75563	SKAP2	Src kinase-associated phosphoprotein 2	SKAP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13291	SLAMF1	Signaling lymphocytic activation molecule	SLAMF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96DU3	SLAMF6	SLAM family member 6	SLAMF6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NQ25	SLAMF7	SLAM family member 7	SLAMF7	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9P0V8	SLAMF8	SLAM family member 8	SLAMF8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P53985	SLC16A1	Monocarboxylate transporter 1	SLC16A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6P1M0	SLC27A4	Long-chain fatty acid transport protein 4	SLC27A4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15043	SLC39A14	Metal cation symporter ZIP14	SLC39A14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6ZMH5	SLC39A5	Zinc transporter ZIP5	SLC39A5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O94813	SLIT2	Slit homolog 2 protein	SLIT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H156	SLITRK2	SLIT and NTRK-like protein 2	SLITRK2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H5Y7	SLITRK6	SLIT and NTRK-like protein 6	SLITRK6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15797	SMAD1	SMAD family member 1	SMAD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q99717	SMAD5	SMAD family member 5	SMAD5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P51531	SMARCA2	SWI/SNF-related matrix-associated actin-dependent regulator of chromatin subfamily A member 2	SMARCA2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H4F8	SMOC1	SPARC-related modular calcium-binding protein 1	SMOC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H3U7	SMOC2	SPARC-related modular calcium-binding protein 2	SMOC2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P17405	SMPD1	Sphingomyelin phosphodiesterase	SMPD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92484	SMPDL3A	Cyclic GMP-AMP phosphodiesterase SMPDL3A	SMPDL3A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00161	SNAP23	Synaptosomal-associated protein 23	SNAP23	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95721	SNAP29	Synaptosomal-associated protein 29	SNAP29	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O76070	SNCG	Gamma-synuclein	SNCG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y5X1	SNX9	Sorting nexin-9	SNX9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P00441	SOD1	Superoxide dismutase [Cu-Zn]	SOD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04179	SOD2	Superoxide dismutase [Mn], mitochondrial	SOD2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96PQ0	SORCS2	VPS10 domain-containing receptor SorCS2	SORCS2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q00796	SORD	Sorbitol dehydrogenase	SORD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99523	SORT1	Sortilin	SORT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BQB4	SOST	Sclerostin	SOST	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09486	SPARC	SPARC	SPARC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14515	SPARCL1	SPARC-like protein 1	SPARCL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P00995	SPINK1	Serine protease inhibitor Kazal-type 1	SPINK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60575	SPINK4	Serine protease inhibitor Kazal-type 4	SPINK4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NQ38	SPINK5	Serine protease inhibitor Kazal-type 5	SPINK5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UWN8	SPINK6	Serine protease inhibitor Kazal-type 6	SPINK6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43278	SPINT1	Kunitz-type protease inhibitor 1	SPINT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43291	SPINT2	Kunitz-type protease inhibitor 2	SPINT2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q08629	SPOCK1	Testican-1	SPOCK1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HCB6	SPON1	Spondin-1	SPON1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BUD6	SPON2	Spondin-2	SPON2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P10451	SPP1	Osteopontin	SPP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43597	SPRY2	Protein sprouty homolog 2	SPRY2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P12931	SRC	Proto-oncogene tyrosine-protein kinase Src	SRC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P37108	SRP14	Signal recognition particle 14 kDa protein	SRP14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P78362	SRPK2	SRSF protein kinase 2	SRPK2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P05455	SSB	Lupus La protein	SSB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WTU2	SSC4D	Scavenger receptor cysteine-rich domain-containing group B protein	SSC4D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+A1L4H1	SSC5D	Soluble scavenger receptor cysteine-rich domain-containing protein SSC5D	SSC5D	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q11201	ST3GAL1	CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 1	ST3GAL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15907	ST6GAL1	Beta-galactoside alpha-2,6-sialyltransferase 1	ST6GAL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95630	STAMBP	STAM-binding protein	STAMBP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P51692	STAT5B	Signal transducer and activator of transcription 5B	STAT5B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P52823	STC1	Stanniocalcin-1	STC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O76061	STC2	Stanniocalcin-2	STC2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P31948	STIP1	Stress-induced-phosphoprotein 1	STIP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15831	STK11	Serine/threonine-protein kinase STK11	STK11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y6E0	STK24	Serine/threonine-protein kinase 24	STK24	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13043	STK4	Serine/threonine-protein kinase 4	STK4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14662	STX16	Syntaxin-16	STX16	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q12846	STX4	Syntaxin-4	STX4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43752	STX6	Syntaxin-6	STX6	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9UNK0	STX8	Syntaxin-8	STX8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00186	STXBP3	Syntaxin-binding protein 3	STXBP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y2Z0	SUGT1	Protein SGT1 homolog	SUGT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P50225	SULT1A1	Sulfotransferase 1A1	SULT1A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q06520	SULT2A1	Sulfotransferase 2A1	SULT2A1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NBJ7	SUMF2	Inactive C-alpha-formylglycine-generating enzyme 2	SUMF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UWL2	SUSD1	Sushi domain-containing protein 1	SUSD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UGT4	SUSD2	Sushi domain-containing protein 2	SUSD2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y6A5	TACC3	Transforming acidic coiled-coil-containing protein 3	TACC3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P09758	TACSTD2	Tumor-associated calcium signal transducer 2	TACSTD2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7Z5A7	TAFA5	Chemokine-like protein TAFA-5	TAFA5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92844	TANK	TRAF family member-associated NF-kappa-B activator	TANK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15633	TARBP2	RISC-loading complex subunit TARBP2	TARBP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9HA65	TBC1D17	TBC1 domain family member 17	TBC1D17	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NUY8	TBC1D23	TBC1 domain family member 23	TBC1D23	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92609	TBC1D5	TBC1 domain family member 5	TBC1D5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q99426	TBCB	Tubulin-folding cofactor B	TBCB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15814	TBCC	Tubulin-specific chaperone C	TBCC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60907	TBL1X	F-box-like/WD repeat-containing protein TBL1X	TBL1X	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P56279	TCL1A	T-cell leukemia/lymphoma protein 1A	TCL1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95988	TCL1B	T-cell leukemia/lymphoma protein 1B	TCL1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P20062	TCN2	Transcobalamin-2	TCN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P13385	CRIPTO	Protein Cripto	TDGF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y2W6	TDRKH	Tudor and KH domain-containing protein	TDRKH	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q02763	TEK	Angiopoietin-1 receptor	TEK	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04155	TFF1	Trefoil factor 1	TFF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q03403	TFF2	Trefoil factor 2	TFF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q07654	TFF3	Trefoil factor 3	TFF3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P10646	TFPI	Tissue factor pathway inhibitor	TFPI	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P48307	TFPI2	Tissue factor pathway inhibitor 2	TFPI2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P02786	TFRC	Transferrin receptor protein 1	TFRC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01135	TGFA	Protransforming growth factor alpha	TGFA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01137	TGFB1	Transforming growth factor beta-1 proprotein	TGFB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q15582	TGFBI	Transforming growth factor-beta-induced protein ig-h3	TGFBI	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P37173	TGFBR2	TGF-beta receptor type-2	TGFBR2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q03167	TGFBR3	Transforming growth factor beta receptor type 3	TGFBR3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P21980	TGM2	Protein-glutamine gamma-glutamyltransferase 2	TGM2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07204	THBD	Thrombomodulin	THBD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P35442	THBS2	Thrombospondin-2	THBS2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P35443	THBS4	Thrombospondin-4	THBS4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P52888	THOP1	Thimet oligopeptidase	THOP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P40225	THPO	Thrombopoietin	THPO	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04216	THY1	Thy-1 membrane glycoprotein	THY1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P31483	TIA1	Cytotoxic granule associated RNA binding protein TIA1	TIA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35590	TIE1	Tyrosine-protein kinase receptor Tie-1	TIE1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NQ88	TIGAR	Fructose-2,6-bisphosphatase TIGAR	TIGAR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96H15	TIMD4	T-cell immunoglobulin and mucin domain-containing protein 4	TIMD4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01033	TIMP1	Metalloproteinase inhibitor 1	TIMP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P35625	TIMP3	Metalloproteinase inhibitor 3	TIMP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99727	TIMP4	Metalloproteinase inhibitor 4	TIMP4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9GZM7	TINAGL1	Tubulointerstitial nephritis antigen-like	TINAGL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q5JTD0	TJAP1	Tight junction-associated protein 1	TJAP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O15455	TLR3	Toll-like receptor 3	TLR3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P98073	TMPRSS15	Enteropeptidase	TMPRSS15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9H3S3	TMPRSS5	Transmembrane protease serine 5	TMPRSS5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P63313	TMSB10	Thymosin beta-10	TMSB10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P24821	TNC	Tenascin	TNC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01375	TNF	Tumor necrosis factor	TNF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95379	TNFAIP8	Tumor necrosis factor alpha-induced protein 8	TNFAIP8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00220	TNFRSF10A	Tumor necrosis factor receptor superfamily member 10A	TNFRSF10A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14763	TNFRSF10B	Tumor necrosis factor receptor superfamily member 10B	TNFRSF10B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14798	TNFRSF10C	Tumor necrosis factor receptor superfamily member 10C	TNFRSF10C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y6Q6	TNFRSF11A	Tumor necrosis factor receptor superfamily member 11A	TNFRSF11A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O00300	TNFRSF11B	Tumor necrosis factor receptor superfamily member 11B	TNFRSF11B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NP84	TNFRSF12A	Tumor necrosis factor receptor superfamily member 12A	TNFRSF12A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14836	TNFRSF13B	Tumor necrosis factor receptor superfamily member 13B	TNFRSF13B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q96RJ3	TNFRSF13C	Tumor necrosis factor receptor superfamily member 13C	TNFRSF13C	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q92956	TNFRSF14	Tumor necrosis factor receptor superfamily member 14	TNFRSF14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NS68	TNFRSF19	Tumor necrosis factor receptor superfamily member 19	TNFRSF19	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P19438	TNFRSF1A	Tumor necrosis factor receptor superfamily member 1A	TNFRSF1A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P20333	TNFRSF1B	Tumor necrosis factor receptor superfamily member 1B	TNFRSF1B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75509	TNFRSF21	Tumor necrosis factor receptor superfamily member 21	TNFRSF21	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P43489	TNFRSF4	Tumor necrosis factor receptor superfamily member 4	TNFRSF4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95407	TNFRSF6B	Tumor necrosis factor receptor superfamily member 6B	TNFRSF6B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P28908	TNFRSF8	Tumor necrosis factor receptor superfamily member 8	TNFRSF8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q07011	TNFRSF9	Tumor necrosis factor receptor superfamily member 9	TNFRSF9	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P50591	TNFSF10	Tumor necrosis factor ligand superfamily member 10	TNFSF10	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14788	TNFSF11	Tumor necrosis factor ligand superfamily member 11	TNFSF11	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43508	TNFSF12	Tumor necrosis factor ligand superfamily member 12	TNFSF12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O75888	TNFSF13	Tumor necrosis factor ligand superfamily member 13	TNFSF13	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9Y275	TNFSF13B	Tumor necrosis factor ligand superfamily member 13B	TNFSF13B	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43557	TNFSF14	Tumor necrosis factor ligand superfamily member 14	TNFSF14	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P19429	TNNI3	Troponin I, cardiac muscle	TNNI3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92752	TNR	Tenascin-R	TNR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P22105	TNXB	Tenascin-X	TNXB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P04637	TP53	Cellular tumor antigen p53	TP53	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96A56	TP53INP1	Tumor protein p53-inducible nuclear protein 1	TP53INP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P51580	TPMT	Thiopurine S-methyltransferase	TPMT	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O14773	TPP1	Tripeptidyl-peptidase 1	TPP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BW30	TPPP3	Tubulin polymerization-promoting protein family member 3	TPPP3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q15661	TPSAB1	Tryptase alpha/beta-1	TPSAB1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P13693	TPT1	Translationally-controlled tumor protein	TPT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q12933	TRAF2	TNF receptor-associated factor 2	TRAF2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9NZC2	TREM2	Triggering receptor expressed on myeloid cells 2	TREM2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q5T2D2	TREML2	Trem-like transcript 2 protein	TREML2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43715	TRIAP1	TP53-regulated inhibitor of apoptosis 1	TRIAP1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P19474	TRIM21	E3 ubiquitin-protein ligase TRIM21	TRIM21	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9C035	TRIM5	Tripartite motif-containing protein 5	TRIM5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P01222	TSHB	Thyrotropin subunit beta	TSHB	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q969D9	TSLP	Thymic stromal lymphopoietin	TSLP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O60635	TSPAN1	Tetraspanin-1	TSPAN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q16762	TST	Thiosulfate sulfurtransferase	TST	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P40222	TXLNA	Alpha-taxilin	TXLNA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96J42	TXNDC15	Thioredoxin domain-containing protein 15	TXNDC15	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NBS9	TXNDC5	Thioredoxin domain-containing protein 5	TXNDC5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q16881	TXNRD1	Thioredoxin reductase 1, cytoplasmic	TXNRD1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P19971	TYMP	Thymidine phosphorylase	TYMP	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q06418	TYRO3	Tyrosine-protein kinase receptor TYRO3	TYRO3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BSL1	UBAC1	Ubiquitin-associated domain-containing protein 1	UBAC1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9BZM5	ULBP2	UL16-binding protein 2	ULBP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P07911	UMOD	Uromodulin	UMOD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O60763	USO1	General vesicular transport factor p115	USO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P40818	USP8	Ubiquitin carboxyl-terminal hydrolase 8	USP8	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NBZ7	UXS1	UDP-glucuronic acid decarboxylase 1	UXS1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O95183	VAMP5	Vesicle-associated membrane protein 5	VAMP5	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7L8A9	VASH1	Tubulinyl-Tyr carboxypeptidase 1	VASH1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6EMK4	VASN	Vasorin	VASN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q99536	VAT1	NADPH-dependent quinone oxidoreductase VAT1	VAT1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P19320	VCAM1	Vascular cell adhesion protein 1	VCAM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P13611	VCAN	Versican core protein	VCAN	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P15692	VEGFA	Vascular endothelial growth factor A, long form	VEGFA	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P49767	VEGFC	Vascular endothelial growth factor C	VEGFC	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+O43915	VEGFD	Vascular endothelial growth factor D	VEGFD	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P08670	VIM	Vimentin	VIM	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7Z5L0	VMO1	Vitelline membrane outer layer protein 1 homolog	VMO1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O95498	VNN2	Pantetheine hydrolase VNN2	VNN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q8NEZ2	VPS37A	Vacuolar protein sorting-associated protein 37A	VPS37A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q5VIR6	VPS53	Vacuolar protein sorting-associated protein 53 homolog	VPS53	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y279	VSIG4	V-set and immunoglobulin domain-containing protein 4	VSIG4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9H7M9	VSIR	V-type immunoglobulin domain-containing suppressor of T-cell activation	VSIR	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q6UX27	VSTM1	V-set and transmembrane domain-containing protein 1	VSTM1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96N03	VSTM2L	V-set and transmembrane domain-containing protein 2-like protein	VSTM2L	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9NP79	VTA1	Vacuolar protein sorting-associated protein VTA1 homolog	VTA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q7Z7D3	VTCN1	V-set domain-containing T-cell activation inhibitor 1	VTCN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q6PCB0	VWA1	von Willebrand factor A domain-containing protein 1	VWA1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q2TAL6	VWC2	Brorin	VWC2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P04275	VWF	von Willebrand factor	VWF	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P23381	WARS1	Tryptophan--tRNA ligase, cytoplasmic	WARS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P42768	WAS	Actin nucleation-promoting factor WAS	WAS	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q92558	WASF1	Actin-binding protein WASF1	WASF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q9UPY6	WASF3	Actin-binding protein WASF3	WASF3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8WWY7	WFDC12	WAP four-disulfide core domain protein 12	WFDC12	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q14508	WFDC2	WAP four-disulfide core domain protein 2	WFDC2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q96NZ8	WFIKKN1	WAP, Kazal, immunoglobulin, Kunitz and NTR domain-containing protein 1	WFIKKN1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q8TEU8	WFIKKN2	WAP, Kazal, immunoglobulin, Kunitz and NTR domain-containing protein 2	WFIKKN2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q9Y5W5	WIF1	Wnt inhibitory factor 1	WIF1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O14904	WNT9A	Protein Wnt-9a	WNT9A	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O00308	WWP2	NEDD4-like E3 ubiquitin-protein ligase WWP2	WWP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+P47992	XCL1	Lymphotactin	XCL1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P55808	XG	Glycoprotein Xg	XG	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+O43895	XPNPEP2	Xaa-Pro aminopeptidase 2	XPNPEP2	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q13426	XRCC4	DNA repair protein XRCC4	XRCC4	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+P07947	YES1	Tyrosine-protein kinase Yes	YES1	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q7Z739	YTHDF3	YTH domain-containing family protein 3	YTHDF3	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
+Q05516	ZBTB16	Zinc finger and BTB domain-containing protein 16	ZBTB16	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	TRUE	FALSE
+Q13105	ZBTB17	Zinc finger and BTB domain-containing protein 17	ZBTB17	suhre_2023_rqtl_REPL_MULTI	suhre_2023_ppr694529	FALSE	FALSE
 P04217	A1BG	Alpha-1B-glycoprotein	OID30771	krishna_2023_EUR	krishna_2023_ppr697615	FALSE	FALSE
 Q9H7C9	AAMDC	Mth938 domain-containing protein	OID30236	krishna_2023_EUR	krishna_2023_ppr697615	FALSE	FALSE
 Q9BTE6	AARSD1	Alanyl-tRNA editing protein Aarsd1	OID21311	krishna_2023_EUR	krishna_2023_ppr697615	FALSE	FALSE
