@@ -239,7 +239,7 @@ payload <- list(
   strata = strata_enriched,
   cohort_membership = cohorts,
   protein_summary = protein_summary,
-  proteins_index = proteins_enriched,
+  proteins_index = proteins,
   search_runs = runs_sorted,
   preprints_replaced = preprints_replaced_list,
   candidate_queue = queue,
@@ -248,7 +248,7 @@ payload <- list(
 
 json_path <- file.path(site_data_dir, "catalogue.json")
 tmp_json  <- tempfile(fileext = ".json")
-jsonlite::write_json(payload, path = tmp_json, auto_unbox = TRUE, pretty = TRUE, na = "null")
+jsonlite::write_json(payload, path = tmp_json, auto_unbox = TRUE, pretty = FALSE, na = "null")
 copy_if_changed(tmp_json, json_path)
 unlink(tmp_json)
 message("Built ", json_path, " (", round(file.info(json_path)$size / 1024, 1), " KB)")

@@ -141,3 +141,26 @@ PMID:36346149	Secondary multiple sclerosis PWAS/SMR reusing Sun 2018 INTERVAL (N
 10.1101/2022.04.20.22274046	Multiplex VTE biomarker screen followed by single-protein GWAS of plasma CFHR5 only (<5 distinct proteins threshold)	2026-11-25
 10.1101/2022.12.25.22283936	Secondary PWAS-O statistical methods paper re-training weights on public ROS/MAP DLPFC data from Wingo 2021	2026-11-25
 10.1101/2022.02.11.22270813	Secondary two-sample MR / PWAS of body weight reusing public brain/plasma pQTL summary statistics	2026-11-25
+PMID:37787447	IgA nephropathy coding-variant GWAS performing single-protein haptoglobin lookup (<5 distinct proteins threshold)	2026-11-25
+PMID:37548539	Somatic tumor tissue RPPA proteogenomic reanalysis of public TCGA/TCPA portal data across 31 cancer types; not a germline population pGWAS	2026-11-25
+PMID:37940228	Observational and two-sample IHD Mendelian randomization study in China Kadoorie Biobank reusing CKB Olink cis-pQTL instruments formally reported in Said/Pozarickij et al. 2023 (10.1101/2023.11.13.23298365)	2026-11-25
+PMID:37676424	Observational and adiposity-GRS/MR study in China Kadoorie Biobank reusing CKB Olink cis-pQTL instruments formally reported in Said/Pozarickij et al. 2023 (10.1101/2023.11.13.23298365)	2026-11-25
+PMID:37429843	Heart failure GWAS + secondary two-sample Mendelian randomization reusing published Fenland SomaScan pQTL summary statistics from omicscience.org	2026-11-25
+PMID:37422510	Targeted single-locus LRRK2 (rs76904798, 11 conditional SNPs; <100 variants) CSF trans-pQTL PheWAS on the N=3,107 CSF dataset reported genome-wide in Cruchaga et al. 2023 (10.21203/rs.3.rs-2814616/v1)	2026-11-25
+PMID:37000968	Narrative review article on proteome-genome integration in obesity; no primary pGWAS	2026-11-25
+PMID:36973646	Rheumatoid arthritis RNA-modification SNP lookup against published Sun 2018 INTERVAL pQTL summary statistics	2026-11-25
+PMID:36931692	Erosive hand osteoarthritis GWAS meta-analysis performing colocalization lookup against published deCODE plasma pQTL summary statistics	2026-11-25
+PMID:36873953	Secondary two-sample Mendelian randomization of cardiovascular and cognitive traits reusing published Folkersen 2020 SCALLOP CVD-I summary statistics	2026-11-25
+PMID:36825008	Secondary primary biliary cholangitis two-sample MR pooling published pQTL instruments from 9 prior studies	2026-11-25
+PMID:37816758	Observational CRIC chronic kidney disease progression SomaScan biomarker study; no germline pGWAS performed	2026-11-25
+PMID:37196634	Multi-omics PTSD case-control study querying external public pQTL and MVP/PGC GWAS summary tables; no de novo pGWAS	2026-11-25
+PMID:37301908	Recessive lethality deficit-of-homozygosity scan testing single carrier PAV effects; not a multiplexed pGWAS	2026-11-25
+10.1101/2023.10.29.23297651	Alzheimer's disease CSF network analysis stratified solely by APOE e4 genotype (<100 variants; no genome-wide/cis-wide pGWAS)	2026-11-25
+10.1101/2023.12.15.23300008	Secondary Mendelian randomization statistical methods paper reusing published trans-pQTL summary statistics	2026-11-25
+10.1101/2023.06.01.23290252	Secondary disease-agnostic MR benchmarking resource reusing published pQTL summary statistics	2026-11-25
+10.1101/2023.10.17.23297115	Polycystic ovary syndrome (PCOS) disease GWAS meta-analysis; not a proteomic GWAS	2026-11-25
+PMID:37352370	Sputum mucin concentration GWAS measuring only 2 mucins (MUC5AC and MUC5B; <5 distinct proteins threshold)	2026-11-25
+PMID:37780799	Allergen-specific IgE sensitization GWAS; not a multiplexed proteomic abundance GWAS	2026-11-25
+PMID:36792583	Single-analyte neonatal dried-blood-spot vitamin D-binding protein (GC/DBP) GWAS (<5 distinct proteins threshold)	2026-11-25
+10.1101/2023.06.14.23291409	Single-analyte CSF soluble TREM2 (sTREM2) GWAS (<5 distinct proteins threshold)	2026-11-25
+PMID:37555575	Targeted 6-SNP genetic lookup against Tanzanian inflammatory proteins (<100 variants threshold)	2026-11-25

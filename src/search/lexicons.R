@@ -1,5 +1,5 @@
 # Canonical lexicons, controlled vocabularies, query compilers, ID normalizers,
-# and Unified Two-Stage Dual-Axis Triage Scorer (v4.8) for proteomic-gwas-catalogue.
+# and Unified Two-Stage Dual-Axis Triage Scorer (v4.9) for proteomic-gwas-catalogue.
 #
 # Single source of truth shared across discovery sources so PubMed E-utilities,
 # Europe PMC REST API, NHGRI-EBI GWAS Catalog v2, Citation Snowballing, and
@@ -415,8 +415,9 @@ build_epmc_prong2a_platforms_query <- function(since_date = NULL, until_date = N
 build_epmc_prong2a_proteome_query <- function(since_date = NULL, until_date = NULL,
                                               include_idate = TRUE, verify_pmids = NULL) {
   ana_or       <- format_epmc_or(compact_epmc_space_supersets(LEX_BLOCK_A2_PROTEOME_ANALYTES))
-  # Boolean absorption identity: ((A AND (B OR D)) OR D) == ((A AND B) OR D)
-  gen_or       <- format_epmc_or(compact_epmc_space_supersets(setdiff(LEX_BLOCK_B_GENETICS, LEX_BLOCK_D_MULTIOQTL_ANCHORS)))
+  # Boolean absorption across 2A-1 U 2A-2: 2A-1 already retrieves TITLE_ABS:C unconditionally,
+  # so ((A2 AND (B \ (C U D))) OR D) U 2A-1 == (((A1 OR A2) AND B) OR C OR D).
+  gen_or       <- format_epmc_or(compact_epmc_space_supersets(setdiff(LEX_BLOCK_B_GENETICS, c(LEX_BLOCK_C_PQTL_ANCHORS, LEX_BLOCK_D_MULTIOQTL_ANCHORS))))
   multioqtl_or <- format_epmc_or(LEX_BLOCK_D_MULTIOQTL_ANCHORS)
 
   core <- paste0(
@@ -1068,7 +1069,7 @@ score_triage_v2 <- function(title,
     )
     if (!has_sec_kw) return(FALSE)
     has_pwas_model_or_pqtl <- grepl(
-      "\\b(identif(y|ied|ies) cis-?pqtls?|mapping of cis-?pqtls?|models for proteome-wide association|genetic predictors of the [a-z ]*proteome|built predictive models for protein abundances)\\b",
+      "\\b(identif(y|ied|ies) cis-?pqtls?|mapping of cis-?pqtls?|models for proteome-wide association|genetic predictors of the [a-z ]*proteome|built predictive models for protein abundances|we measure[ds]? [1-9][0-9,]* (?:unique )?proteins? in (?:plasma|serum|csf|blood) from [1-9][0-9,]*|we present [1-9][0-9,]* cis-?(?:acting )?protein quantitative trait loci)\\b",
       sn, perl = TRUE
     )
     !has_pwas_model_or_pqtl
@@ -1077,10 +1078,10 @@ score_triage_v2 <- function(title,
 
   non_mr_yield_sents <- non_dl_sents[!grepl(paste0(
     "\\b(for use as (genetic )?instruments|as instrumental variables|instrumental variables?|",
-    "prioritized by ([a-z-]+ )?(mr|mendelian)|(mendelian randomi[sz]ation|\\bmr\\b) (identified|revealed|showed|suggested)|",
+    "(?<!we present [0-9]{3} cis-acting protein quantitative trait loci for [0-9]{3} proteins which are )(?<!we present [0-9]{4} cis-acting protein quantitative trait loci for [0-9]{3} proteins which are )(?:prioritized by ([a-z-]+ )?(mr|mendelian)|(mendelian randomi[sz]ation|\\bmr\\b) (identified|revealed|showed|suggested)|",
     "causally (linked|associated|related)|genetically predicted ([a-z]+ )?levels of [0-9,]+|",
-    "study that detected [0-9,]+ protein quantitative)\\b"
-  ), non_dl_sents, perl = TRUE)]
+    "study that detected [0-9,]+ protein quantitative))\\b"
+  ), non_dl_sents, perl = TRUE) | grepl("\\bwe (?:present|identif(?:y|ied)|map(?:ped)?) [1-9][0-9,]* cis-?(?:acting )?(?:protein quantitative trait loci|pqtls?) for [1-9][0-9,]* proteins\\b", non_dl_sents, perl = TRUE)]
 
   # -------------------------------------------------------------------------
   # STAGE 2: Dual-Axis Point Rubric (P_score vs S_score)
@@ -1107,17 +1108,17 @@ score_triage_v2 <- function(title,
   )
 
   # Single-analyte (< 5 proteins) & somatic/case-report & composite aging-clock guards
-  is_single_analyte <- !has_multi_protein_count && (!(!is.na(gwas_catalog_study_count) && gwas_catalog_study_count >= 5L)) && (
+  is_single_analyte <- (!has_multi_protein_count && (!(!is.na(gwas_catalog_study_count) && gwas_catalog_study_count >= 5L)) && (
     grepl(paste0(
       "\\b(gwas|genome-?wide|genome- and phenome-wide|genomic regions|genetic|genomic|linkage|association) ([a-z-]+ ){0,6}",
       "(of|for|on|with|associated with) (serum |plasma |circulating |soluble )?",
       "(alpha-fetoproteins?|histidine-rich glycoprotein|procalcitonin|vegfr1|svegfr1|soluble vegfr1|factor v\\b|",
       "etonogestrel|abiraterone|voriconazole|tramadol|apol1\\b|klotho|alpha-klotho|sex hormone-binding globulin|shbg|",
-      "trem2|plasma trem2|gdf15|igfbp7|25-hydroxyvitamin|folate|c-reactive protein|lipoprotein\\(a\\))\\b"
+      "trem2|plasma trem2|soluble trem2|strem2|gdf15|igfbp7|25-hydroxyvitamin|vitamin d[- ]binding protein|folate|c-reactive protein|lipoprotein\\(a\\)|sputum mucin)\\b"
     ), txt, perl = TRUE) ||
       grepl("\\b(?:gwa[a-z ]*|genome-wide\\s+association[a-z ]*)\\s+(?:for|of|on|using|to\\s+determine\\s+the\\s+genetic\\s+drivers\\s+of)\\s+(?:all\\s+(?:two|three|four)\\s+biomarkers|(?:the\\s+)?[a-z0-9-]+\\s+and\\s+[a-z0-9-]+\\s+protein\\s+levels|(?:proinflammatory\\s+cytokines\\s*)?[\\[(]\\s*(?:il-?6|crp|c-reactive\\s+protein|tnf-?alpha)\\s+and\\s+(?:il-?6|crp|c-reactive\\s+protein|tnf-?alpha)(?:\\s*\\([^)]+\\))?\\s*[\\])])", txt, perl = TRUE) ||
       grepl("^platform-dependent effects of genetic variants on plasma apol1", ttl, perl = TRUE)
-  )
+  )) || grepl("\\b(?:sputum mucin concentrations?|allergen component[- ]specific ige|allergen component sensitizations?)\\b", txt, perl = TRUE)
 
   is_somatic_or_case_only <- grepl(paste0(
     "\\b(case report|a novel pediatric case|a child with|a patient with|paired tumor and normal adjacent|",
@@ -1188,8 +1189,13 @@ score_triage_v2 <- function(title,
       "\\banaly[sz](?:e|ed|ing) the effect of genetics on protein levels \\((?:protein quantitative trait loci \\[?pqtls?\\]?|pqtls?) analysis\\)|",
       "\\bquantified the impact of cis-?acting (?:svs?|structural variants?|variants?) on (?:several |multiple )?molecular traits including [^.;]{0,90}\\bprotein (?:abundance|levels)\\b|",
       "\\bcompared genetic,\\s*technical,\\s*and phenotypic determinants of [1-9][0-9,]* protein targets\\b|",
-      "\\bevaluated the (?:shared )?genetic regulation of (?:mrna molecules,\\s*)?proteins\\b|",
+      "\\bevaluat(?:e|ed) the (?:shared )?genetic regulation of (?:mrna molecules,\\s*)?proteins\\b|",
       "\\bevaluate[ds]? the contribution of (?:rare |common )?genetic variants to [1-9][0-9,]* (?:plasma |serum |circulating |csf |brain )?proteins\\b|",
+      "\\bassessed the impact of (?:the )?common and rare genetic variations?[^.;]{0,65}\\bon [1-9][0-9,]* (?:plasma |serum |circulating )?proteins\\b|",
+      "\\bexamined the effect of hla genetic variation on the (?:expression|levels|abundance) of [1-9][0-9,]* (?:plasma |serum |circulating )?proteins\\b|",
+      "\\bconducting genome-wide (?:sv|structural variant) association studies[^.;]{0,140}\\b[1-9][0-9,]* protein levels\\b|",
+      "\\bperformed genome-wide association stud(?:y|ies) \\(gwas\\) for all [a-z0-9-]+-associated proteins\\b|",
+      "\\bfor precise pqtl mapping\\b|",
       "\\bcomprehensive mapping of cis-?pqtls?\\b|",
       "\\bnumber of genetic associations \\(\\s*cis-?pqtls? at p\\s*<\\s*5e-0?8\\)\\s+were\\b|",
       "\\bquantitative trait loci \\(qtls?\\) regulated [^.;]{0,45}\\bproteins?\\b|",
@@ -1211,7 +1217,7 @@ score_triage_v2 <- function(title,
       (if (has_multi_protein_count) "\\b(examined the association of [a-z0-9 ]+ single nucleotide polymorphisms \\(snps?\\) to [1-9][0-9]+ systemic biomarker concentrations|gwas was performed for two pneumoproteins[^.;]{0,95}and five systemic inflammatory markers|genome-wide association study[^.;]{0,95}il-6, il-8, il-10)\\b|" else ""),
       "\\bgenome-wide (genetic )?association stud(y|ies) (scans? for ([a-z0-9, ]+ and )?(over )?[1-9][0-9,]* protein quantitative trait loci|identified quantitative trait loci for ([a-z ]+ and )?protein levels|identified genetic loci associated with [^.;]{0,55}of [1-9][0-9]+ proteins)\\b|",
       (if (has_multi_protein_count) "\\bgenome-wide (genetic )?association stud(y|ies) identified ([a-z0-9, -]+ )?variants? [^.;]{0,90}\\b(modif(y|ied|ying)|associated with|influencing) (multiple )?(circulating |plasma |serum |csf |urinary |brain )?protein (levels|concentrations|abundances)\\b|" else ""),
-      "\\bused genome-wide association studies to discern genetic influences on these protein concentrations\\b|",
+      "\\bused genome-wide association studies to discern genetic influences on these protein (?:concentrations|levels)\\b|",
       "\\badmixture[- ]mapping (analysis )?(of the ([a-z-]+ )?proteome|reveals genetic determinants of the [a-z ]*proteome)\\b|",
       "\\bintegrate[ds]? (?:whole-)?(?:exome|genome) sequencing [^.;]{0,130}(proteograph|mass spectrometry)\\b|",
       "\\bintegrate[ds]? [^.;]{0,140}(proteograph|mass spectrometry)[^.;]{0,95}with (?:whole-)?(?:exome|genome) sequencing[^.;]{0,120}\\b(pqtls?|protein quantitative trait loc[a-z]*)\\b|",
@@ -1255,7 +1261,14 @@ score_triage_v2 <- function(title,
     "\\bidentified\\s+[1-9][0-9,]*\\s+associations,\\s+(?:[a-z0-9]+\\s+of\\s+which\\s+)?[^.;]{0,65}not\\s+detected\\s+by\\s+biomarker-specific\\s+analyses\\b|",
     "\\bidentified\\s+associations\\s+for\\s+[1-9][0-9,]*\\s+of\\s+(?:the\\s+)?[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteins\\b|",
     "\\bshared\\s+associations\\s+for\\s+[a-z ]+expression\\s+and\\s+[0-9.]+%\\s+for\\s+(?:plasma|serum|circulating)\\s+proteins\\b|",
-    "\\bidentified\\s+[1-9][0-9,]*\\s+eqtls?\\s+([a-z0-9 -]+\\s+){0,5}and\\s+[1-9][0-9,]*\\s+(cis-?|trans-?)?(pqtls?|vqtls?)\\b|",
+    "\\bidentified\\s+[1-9][0-9,]*\\s+(?:expression\\s+qtls?\\s*\\(eqtls?\\)|eqtls?)(?:,\\s*[1-9][0-9,]*\\s+[a-z ]+\\([a-z]+\\),?)?\\s+([a-z0-9 -]+\\s+){0,5}and\\s+[1-9][0-9,]*\\s+(cis-?|trans-?)?(?:protein\\s+qtls?\\s*\\(pqtls?\\)|pqtls?|vqtls?)\\b|",
+    "\\b(?:we\\s+present|present)\\s+[1-9][0-9,]*\\s+cis-?(?:acting\\s+)?(?:protein\\s+quantitative\\s+trait\\s+loc[a-z]*|pqtls?)\\s+for\\s+[1-9][0-9,]*\\s+proteins\\b|",
+    "\\b(?:more\\s+than|over|[>~])?\\s*[1-9][0-9,]*\\s+protein\\s+quantitative\\s+trait\\s+loc[a-z]*(?:\\s*\\(pqtls?\\))?(?:[^.;]{0,45})?\\bregulated\\s+protein\\s+levels\\b|",
+    "\\bidentif(?:y|ied)\\s+[1-9][0-9,]*\\s+(?:protein[- ]altering\\s+variants?|pavs?)\\b[^.;]{0,85}\\bassociated\\s+with\\s+their\\s+corresponding\\s+variant\\s+peptides\\b|",
+    "\\bratios\\s+between\\s+protein\\s+levels\\s*\\(rqtls?\\)|",
+    "\\baffected\\s+by\\s+hla\\s+genetic\\s+variation\\s*\\(hla-?pqtls?\\)|",
+    "\\bidentified\\s+[1-9][0-9,]*\\s+(?:cnvs?|copy\\s+number\\s+variants?)\\s+(?:to\\s+be\\s+)?associated\\s+with\\s+[1-9][0-9,]*\\s+proteins\\b|",
+    "\\bidentified\\s+[1-9][0-9,]*\\s+cis\\s+and\\s+[1-9][0-9,]*\\s+trans\\s+signals\\s+for\\s+[1-9][0-9,]*\\s+protein\\s+traits\\b|",
     "\\bidentified\\s+[1-9][0-9,]*\\s+([a-z-]+\\s+){0,4}associations\\s+with\\s+(circulating\\s+|plasma\\s+|serum\\s+|csf\\s+|urinary\\s+|brain\\s+)?(protein|peptide)\\s+levels\\b|",
     "\\bidentif(y|ies|ied)\\s+[1-9][0-9,]*\\s+independent\\s+associations\\s*\\([0-9,]+\\s+protein\\s+and\\s+[0-9,]+\\s+peptide\\)|",
     "\\bidentified\\s+genetic\\s+(components|determinants|loci)\\s+for\\s+([5-9]|[1-9][0-9,]+)\\s+([a-z-]+\\s+){0,2}proteins\\b|",
@@ -1269,6 +1282,7 @@ score_triage_v2 <- function(title,
     "(for|with|associated\\s+with)\\s+(the\\s+)?(abundance\\s+of\\s+|levels\\s+of\\s+|concentrations\\s+of\\s+|expression\\s+of\\s+|circulating\\s+|plasma\\s+|serum\\s+|csf\\s+|urine\\s+)?",
     "([>~]?([5-9]|[1-9][0-9,]+)\\s+)?([a-z-]+\\s+){0,2}(proteins?|protein\\s+levels|protein\\s+targets?|cytokines?|peptides?)\\b|",
     "\\b[1-9][0-9,]*\\s+olink\\s+and\\s+[1-9][0-9,]*\\s+somascan\\s+proteins\\s+had\\s+(cis-?|trans-?)?pqtls?\\b|",
+    "\\b(?:olink|somascan)[- ]proteins\\s+had\\s+(?:fewer|more)\\s+(?:trans-?|cis-?)?pqtls?\\b|",
     "\\b[1-9][0-9,]*\\s+plasma\\s+cis-?pqtls?\\s+colocalized\\b|",
     "\\bquantitative trait loci \\(qtls?\\) regulated at least (one-third|one-fourth|one-half|[0-9]+%) of the proteins\\b"
   ), non_mr_yield_sents, perl = TRUE) &
@@ -1514,7 +1528,9 @@ score_triage_v2 <- function(title,
         (!s1_hit && (p1_hit || p4_hit) && S == 0L &&
            grepl("\\bprotein quantitative trait loci \\(pqtls?\\) that influenced protein levels in the (?:patient|study|discovery) population\\b", txt, perl = TRUE)) ||
         (!s1_hit && p1_hit && p4_hit &&
-           grepl("\\b(?:compared the genetic determinants of protein levels|(?:genetic variants|snps?) [^.;]{0,65}were correlated to [1-9][0-9,]* proteins that were profiled)\\b", txt, perl = TRUE)) ||
+           grepl("\\b(?:compared (?:the |their )?genetic determinants(?: of protein levels)?|(?:genetic variants|snps?) [^.;]{0,65}were correlated to [1-9][0-9,]* proteins that were profiled)\\b", txt, perl = TRUE)) ||
+        (!s1_hit && (p1_hit || p4_hit) &&
+           grepl("\\bcis-?(?:protein quantitative (?:trait )?loci \\(pqtls?\\)|pqtls?) identified (?:for proteins )?in (?:genome-wide association studies of )?(?:ckb|china kadoorie biobank)\\b|\\b[1-9][0-9,]* had cis-?pqtls? in ckb\\b", txt, perl = TRUE)) ||
         ((p1_hit || p4_hit) && S == 0L && !s1_hit &&
            (grepl("\\breconstruct a causal network of (?:serum |plasma )?proteins\\b|\\bcausal (?:network|protein|serum protein|plasma protein)(?: [a-z-]+){0,2} (?:inference|networks?|subnetworks?|proteins?)\\b|\\bcausal (?:[a-z-]+ ){0,3}protein (?:sub)?networks?\\b", txt, perl = TRUE) &&
             grepl("\\bcis-?(?:acting )?(?:protein quantitative trait loc[a-z]*|pqtls?)\\b", txt, perl = TRUE)))

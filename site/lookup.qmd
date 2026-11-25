@@ -6,6 +6,7 @@ pagetitle: "Protein Lookup · Proteomic GWAS Catalogue"
 catData = FileAttachment("data/catalogue.json").json()
 protSummary = catData.protein_summary
 protIndex = catData.proteins_index
+strataById = new Map(catData.strata.map(s => [s.stratum_id, s]))
 ```
 
 ```{ojs}
@@ -188,7 +189,9 @@ activeProtMeta = protSummary.find(p => p.uniprot === selectedUniprot) || protSum
 activeProtRows = activeProtMeta.uniprot === "—"
   ? []
   : protIndex
-      .filter(r => r.uniprot === activeProtMeta.uniprot && r.status !== "Superseded Preprint")
+      .filter(r => r.uniprot === activeProtMeta.uniprot)
+      .map(r => ({ ...(strataById.get(r.stratum_id) || {}), ...r }))
+      .filter(r => r.status !== "Superseded Preprint")
       .sort((a, b) => (b.year - a.year) || (b.n_samples - a.n_samples))
 ```
 
