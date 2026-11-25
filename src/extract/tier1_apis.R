@@ -75,7 +75,7 @@ run_tier1_apis <- function(cand, session, existing_studies = NULL) {
     journal = "",
     title = clean_str(cand$title %||% ""),
     abstract_text = "",
-    is_preprint = grepl("^10\\.1101/|researchsquare", doi) || nzchar(epmc_id),
+    is_preprint = grepl("^10\\.(1101|64898)/|researchsquare", doi) || nzchar(epmc_id),
     is_open_access_epmc = "N",
     in_epmc = "N",
     in_pmc = "N",
@@ -94,6 +94,9 @@ run_tier1_apis <- function(cand, session, existing_studies = NULL) {
     datalinks_urls = character(0),
     databank_accessions = character(0),
     biorxiv_jats_url = "",
+    biorxiv_early_pdf_url = "",
+    biorxiv_direct_pdf_url = "",
+    biorxiv_version = "1",
     biorxiv_server = "",
     gwas_catalog_count = 0L,
     gwas_studies = list(),
@@ -357,8 +360,8 @@ run_tier1_apis <- function(cand, session, existing_studies = NULL) {
       }
     }
 
-    # bioRxiv / medRxiv details API when DOI is 10.1101/* ([C-6])
-    if (grepl("^10\\.1101/", out$doi)) {
+    # bioRxiv / medRxiv details API when DOI is 10.1101/* or 10.64898/* ([C-6])
+    if (grepl("^10\\.(1101|64898)/", out$doi)) {
       out$is_preprint <- TRUE
       for (srv in c("biorxiv", "medrxiv")) {
         bx_url <- sprintf("https://api.biorxiv.org/details/%s/%s/na/json", srv, out$doi)
@@ -372,8 +375,15 @@ run_tier1_apis <- function(cand, session, existing_studies = NULL) {
           coll <- jbx$collection %||% list()
           if (length(coll) > 0L) {
             rec_bx <- coll[[length(coll)]] # latest version
+            ver_bx <- clean_str(as.character(rec_bx$version %||% "1"))
+            if (!nzchar(ver_bx)) ver_bx <- "1"
             out$biorxiv_server <- srv
+            out$biorxiv_version <- ver_bx
             out$biorxiv_jats_url <- clean_str(rec_bx$jatsxml %||% "")
+            if (nzchar(out$biorxiv_jats_url) && grepl("\\.source\\.xml$", out$biorxiv_jats_url)) {
+              out$biorxiv_early_pdf_url <- sub("\\.source\\.xml$", ".full.pdf", out$biorxiv_jats_url)
+            }
+            out$biorxiv_direct_pdf_url <- sprintf("https://www.%s.org/content/%sv%s.full.pdf", srv, out$doi, ver_bx)
             if (!nzchar(out$journal) || identical(tolower(out$journal), "biorxiv")) {
               out$journal <- if (identical(srv, "medrxiv")) "medRxiv" else "bioRxiv"
             }
@@ -391,6 +401,10 @@ run_tier1_apis <- function(cand, session, existing_studies = NULL) {
             break
           }
         }
+      }
+      if (!nzchar(out$biorxiv_direct_pdf_url)) {
+        srv_guess <- if (grepl("medrxiv", out$journal, ignore.case = TRUE)) "medrxiv" else "biorxiv"
+        out$biorxiv_direct_pdf_url <- sprintf("https://www.%s.org/content/%sv1.full.pdf", srv_guess, out$doi)
       }
     }
   }

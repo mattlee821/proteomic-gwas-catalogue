@@ -2,7 +2,7 @@
 # Multi-resource literature discovery, connected-components + preprint-lineage
 # deduplication, 4-tier preprint-to-published upgrade detector, strict canonical
 # first-publication-date windowing, selective Stage B.5 PMC full-text multi-omic
-# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.8)
+# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.9)
 # for proteomic-gwas-catalogue.
 #
 # Usage:
@@ -170,7 +170,7 @@ q_epmc_snow   <- build_epmc_snowball_query(LANDMARK_PGWAS_SEEDS$pmid, since_date
                                            verify_pmids = if (is_verify) verify_pmids else NULL)
 
 message(sprintf(
-  "Proteomic GWAS Search v4.8 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
+  "Proteomic GWAS Search v4.9 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
   mode, since_date, until_date,
   if (is_verify) paste(verify_pmids, collapse = ",") else "none",
   dry_run, write_catalogue
@@ -1463,6 +1463,196 @@ recs_s4 <- query_snowball_v2(since_date, until_date,
                              verify_ids = if (is_verify) verify_pmids else NULL)
 
 all_raw_recs <- c(recs_s1, recs_s2a, recs_s2b, recs_s2_bio, recs_s3, recs_s4)
+
+# ---------------------------------------------------------------------------
+# 4-Tier Preprint-to-Published Upgrade Detector & Pre-Merge Hydration (v4.9)
+#   Resolves active catalogued preprints via bioRxiv/medRxiv /pubs/, EuropePMC
+#   commentCorrectionList, and Crossref is-preprint-of BEFORE merge_raw_records(),
+#   hydrating any newly published journal counterparts via PubMed efetch so
+#   generalized journal titles ("blood molecular phenotypes", Vinuela 2023) or
+#   transient EuropePMC gateway errors cannot drop a published preprint upgrade.
+# ---------------------------------------------------------------------------
+resolve_ppr_to_doi <- function(ppr_id) {
+  if (!grepl("^PPR[0-9]+$", ppr_id)) return("")
+  u <- sprintf("https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:%s%%20AND%%20SRC:PPR&resultType=lite&format=json", ppr_id)
+  resp <- perform_polite_http(
+    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(12),
+    sleep_s     = 0.45,
+    max_tries   = 2L,
+    label       = "EuropePMC resolve PPR",
+    expect_json = TRUE
+  )
+  if (is.null(resp) || httr2::resp_status(resp) != 200L) return("")
+  js <- tryCatch(httr2::resp_body_json(resp, simplifyVector = FALSE), error = function(e) NULL)
+  res <- js$resultList$result
+  if (is.null(res) || length(res) == 0L) return("")
+  normalize_doi_one(res[[1L]]$doi %||% "")
+}
+
+resolve_pmid_to_doi <- function(pmid_tok) {
+  pid <- sub("^PMID:", "", trimws(pmid_tok), ignore.case = TRUE)
+  if (!grepl("^[0-9]+$", pid)) return("")
+  ncbi_key <- Sys.getenv("NCBI_API_KEY", unset = "")
+  u <- sprintf(
+    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=%s&retmode=json%s",
+    pid, if (nzchar(ncbi_key)) paste0("&api_key=", ncbi_key) else ""
+  )
+  resp <- perform_polite_http(
+    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(20),
+    sleep_s     = 0.40,
+    max_tries   = 3L,
+    label       = "NCBI esummary resolve PMID->DOI",
+    expect_json = TRUE
+  )
+  if (is.null(resp) || httr2::resp_status(resp) != 200L) return("")
+  js <- tryCatch(httr2::resp_body_json(resp, simplifyVector = FALSE), error = function(e) NULL)
+  aids <- js$result[[pid]]$articleids %||% list()
+  for (aid in aids) {
+    if (identical(tolower(aid$idtype %||% ""), "doi") && nzchar(aid$value %||% "")) {
+      return(normalize_doi_one(aid$value))
+    }
+  }
+  ""
+}
+
+resolve_doi_to_pmid <- function(doi_str) {
+  d_clean <- normalize_doi_one(doi_str)
+  if (!nzchar(d_clean)) return("")
+  ncbi_key <- Sys.getenv("NCBI_API_KEY", unset = "")
+  u <- paste0(
+    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=",
+    utils::URLencode(paste0('"', d_clean, '"[DOI]'), reserved = TRUE),
+    "&retmode=json", if (nzchar(ncbi_key)) paste0("&api_key=", ncbi_key) else ""
+  )
+  resp <- perform_polite_http(
+    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(20),
+    sleep_s     = 0.35,
+    max_tries   = 3L,
+    label       = "NCBI esearch resolve DOI->PMID",
+    expect_json = TRUE
+  )
+  if (is.null(resp) || httr2::resp_status(resp) != 200L) return("")
+  js <- tryCatch(httr2::resp_body_json(resp, simplifyVector = FALSE), error = function(e) NULL)
+  ids <- as.character(unlist(js$esearchresult$idlist %||% list()))
+  if (length(ids) > 0L) normalize_pmid_one(ids[1L]) else ""
+}
+
+check_active_preprints_direct <- function(studies_df) {
+  active_idx <- which(studies_df$status == "Preprint")
+  upgrades <- list()
+  if (length(active_idx) == 0L) return(upgrades)
+
+  for (idx in active_idx) {
+    sid <- clean_cell(studies_df$study_id[idx])
+    p_doi <- normalize_doi_one(studies_df$doi[idx])
+    if (!nzchar(p_doi)) next
+    pub_doi <- ""; pub_pmid <- ""; via_tier <- ""
+
+    # Tier 1: bioRxiv / medRxiv /pubs/ endpoint
+    if (grepl("^10\\.(1101|64898)/", p_doi)) {
+      for (srv in c("biorxiv", "medrxiv")) {
+        u <- sprintf("https://api.biorxiv.org/pubs/%s/%s/na/json", srv, p_doi)
+        r <- perform_polite_http(
+          httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(25),
+          sleep_s     = 0.40,
+          max_tries   = 4L,
+          label       = "bioRxiv pubs API",
+          expect_json = TRUE
+        )
+        if (!is.null(r) && httr2::resp_status(r) == 200L) {
+          js <- tryCatch(httr2::resp_body_json(r, simplifyVector = FALSE), error = function(e) NULL)
+          if (!is.null(js$collection) && length(js$collection) > 0L) {
+            cand_d <- normalize_doi_one(js$collection[[1L]]$published_doi %||% "")
+            if (nzchar(cand_d)) { pub_doi <- cand_d; via_tier <- paste0("Tier1_biorxiv_pubs(", srv, ")"); break }
+          }
+        }
+      }
+    }
+
+    # Tier 2: Europe PMC commentCorrectionList ("Preprint of")
+    if (!nzchar(pub_doi) && !nzchar(pub_pmid)) {
+      u2 <- paste0("https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:",
+                   utils::URLencode(p_doi, reserved = TRUE), "&resultType=core&format=json")
+      r2 <- perform_polite_http(
+        httr2::request(u2) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(25),
+        sleep_s     = 0.40,
+        max_tries   = 3L,
+        label       = "EuropePMC preprint upgrade",
+        expect_json = TRUE
+      )
+      if (!is.null(r2) && httr2::resp_status(r2) == 200L) {
+        js2 <- tryCatch(httr2::resp_body_json(r2, simplifyVector = FALSE), error = function(e) NULL)
+        items <- js2$resultList$result %||% list()
+        for (it in items) {
+          for (cc in (it$commentCorrectionList$commentCorrection %||% list())) {
+            if (identical(clean_cell(cc$type), "Preprint of") && nzchar(clean_cell(cc$id))) {
+              pub_pmid <- normalize_pmid_one(cc$id)
+              via_tier <- "Tier2_EuropePMC_PreprintOf"
+            }
+          }
+        }
+      }
+    }
+
+    # Tier 3: Crossref is-preprint-of
+    if (!nzchar(pub_doi) && !nzchar(pub_pmid)) {
+      u3 <- paste0("https://api.crossref.org/works/", utils::URLencode(p_doi, reserved = TRUE))
+      r3 <- perform_polite_http(
+        httr2::request(u3) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(25),
+        sleep_s     = 0.40,
+        max_tries   = 3L,
+        label       = "Crossref preprint upgrade",
+        expect_json = TRUE
+      )
+      if (!is.null(r3) && httr2::resp_status(r3) == 200L) {
+        js3 <- tryCatch(httr2::resp_body_json(r3, simplifyVector = FALSE), error = function(e) NULL)
+        rel <- js3$message$relation[["is-preprint-of"]]
+        if (!is.null(rel) && length(rel) > 0L) {
+          pub_doi <- normalize_doi_one(rel[[1L]]$id %||% "")
+          if (nzchar(pub_doi)) via_tier <- "Tier3_Crossref_isPreprintOf"
+        }
+      }
+    }
+
+    if (nzchar(pub_doi) && !nzchar(pub_pmid)) {
+      pub_pmid <- resolve_doi_to_pmid(pub_doi)
+    }
+
+    if (nzchar(pub_doi) || nzchar(pub_pmid)) {
+      upgrades[[sid]] <- list(
+        preprint_study_id = sid, preprint_doi = p_doi,
+        published_doi = pub_doi, published_pmid = pub_pmid, via = via_tier
+      )
+    }
+  }
+  upgrades
+}
+
+direct_preprint_upgrades <- if (!is_verify) check_active_preprints_direct(studies) else list()
+if (!is_verify && length(direct_preprint_upgrades) > 0L) {
+  existing_raw_pmids <- unique(vapply(all_raw_recs, function(r) normalize_pmid_one(r$pmid %||% ""), character(1)))
+  up_pmids_to_fetch  <- character(0)
+  up_pmid_to_pdoi    <- list()
+  for (up in direct_preprint_upgrades) {
+    if (nzchar(up$published_pmid)) {
+      up_pmid_to_pdoi[[up$published_pmid]] <- up$preprint_doi
+      if (!(up$published_pmid %in% existing_raw_pmids)) {
+        up_pmids_to_fetch <- unique(c(up_pmids_to_fetch, up$published_pmid))
+      }
+    }
+  }
+  if (length(up_pmids_to_fetch) > 0L) {
+    up_recs <- fetch_pubmed_efetch_xml(up_pmids_to_fetch, source_tag = "PreprintUpgrade")
+    for (ui in seq_along(up_recs)) {
+      up_pid <- normalize_pmid_one(up_recs[[ui]]$pmid %||% "")
+      if (nzchar(up_pid) && !is.null(up_pmid_to_pdoi[[up_pid]])) {
+        up_recs[[ui]]$preprint_links <- unique(c(up_recs[[ui]]$preprint_links, up_pmid_to_pdoi[[up_pid]]))
+      }
+    }
+    all_raw_recs <- c(all_raw_recs, up_recs)
+  }
+}
+
 if (identical(mode, "retrospective") && !is_verify && nzchar(until_date)) {
   # Drop future-window (`> until_date`) journal articles before `merge_raw_records()` so `yr+1`
   # peer-reviewed publications cannot absorb in-window (`<= until_date`) preprints prior to date filtering.
@@ -1515,141 +1705,6 @@ if (identical(mode, "retrospective") && !is_verify && nzchar(since_date) && nzch
 } else {
   merged_recs <- merged_recs_all
 }
-
-# ---------------------------------------------------------------------------
-# 4-Tier Preprint-to-Published Upgrade Detector
-# ---------------------------------------------------------------------------
-resolve_ppr_to_doi <- function(ppr_id) {
-  if (!grepl("^PPR[0-9]+$", ppr_id)) return("")
-  u <- sprintf("https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:%s%%20AND%%20SRC:PPR&resultType=lite&format=json", ppr_id)
-  resp <- perform_polite_http(
-    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(12),
-    sleep_s     = 0.45,
-    max_tries   = 2L,
-    label       = "EuropePMC resolve PPR",
-    expect_json = TRUE
-  )
-  if (is.null(resp) || httr2::resp_status(resp) != 200L) return("")
-  js <- tryCatch(httr2::resp_body_json(resp, simplifyVector = FALSE), error = function(e) NULL)
-  res <- js$resultList$result
-  if (is.null(res) || length(res) == 0L) return("")
-  normalize_doi_one(res[[1L]]$doi %||% "")
-}
-
-resolve_pmid_to_doi <- function(pmid_tok) {
-  pid <- sub("^PMID:", "", trimws(pmid_tok), ignore.case = TRUE)
-  if (!grepl("^[0-9]+$", pid)) return("")
-  ncbi_key <- Sys.getenv("NCBI_API_KEY", unset = "")
-  u <- sprintf(
-    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=%s&retmode=json%s",
-    pid, if (nzchar(ncbi_key)) paste0("&api_key=", ncbi_key) else ""
-  )
-  resp <- perform_polite_http(
-    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(20),
-    sleep_s     = 0.40,
-    max_tries   = 3L,
-    label       = "NCBI esummary resolve PMID->DOI",
-    expect_json = TRUE
-  )
-  if (is.null(resp) || httr2::resp_status(resp) != 200L) return("")
-  js <- tryCatch(httr2::resp_body_json(resp, simplifyVector = FALSE), error = function(e) NULL)
-  aids <- js$result[[pid]]$articleids %||% list()
-  for (aid in aids) {
-    if (identical(tolower(aid$idtype %||% ""), "doi") && nzchar(aid$value %||% "")) {
-      return(normalize_doi_one(aid$value))
-    }
-  }
-  ""
-}
-
-check_active_preprints_direct <- function(studies_df) {
-  active_idx <- which(studies_df$status == "Preprint")
-  upgrades <- list()
-  if (length(active_idx) == 0L) return(upgrades)
-
-  for (idx in active_idx) {
-    sid <- clean_cell(studies_df$study_id[idx])
-    p_doi <- normalize_doi_one(studies_df$doi[idx])
-    if (!nzchar(p_doi)) next
-    pub_doi <- ""; pub_pmid <- ""; via_tier <- ""
-
-    # Tier 1: bioRxiv / medRxiv /pubs/ endpoint
-    if (grepl("^10\\.(1101|64898)/", p_doi)) {
-      for (srv in c("biorxiv", "medrxiv")) {
-        u <- sprintf("https://api.biorxiv.org/pubs/%s/%s/na/json", srv, p_doi)
-        r <- perform_polite_http(
-          httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(25),
-          sleep_s     = 0.50,
-          max_tries   = 4L,
-          label       = "bioRxiv pubs API",
-          expect_json = TRUE
-        )
-        if (!is.null(r) && httr2::resp_status(r) == 200L) {
-          js <- tryCatch(httr2::resp_body_json(r, simplifyVector = FALSE), error = function(e) NULL)
-          if (!is.null(js$collection) && length(js$collection) > 0L) {
-            cand_d <- normalize_doi_one(js$collection[[1L]]$published_doi %||% "")
-            if (nzchar(cand_d)) { pub_doi <- cand_d; via_tier <- paste0("Tier1_biorxiv_pubs(", srv, ")"); break }
-          }
-        }
-      }
-    }
-
-    # Tier 2: Europe PMC commentCorrectionList ("Preprint of")
-    if (!nzchar(pub_doi) && !nzchar(pub_pmid)) {
-      u2 <- paste0("https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:",
-                   utils::URLencode(p_doi, reserved = TRUE), "&resultType=core&format=json")
-      r2 <- perform_polite_http(
-        httr2::request(u2) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(25),
-        sleep_s     = 0.50,
-        max_tries   = 4L,
-        label       = "EuropePMC preprint upgrade",
-        expect_json = TRUE
-      )
-      if (!is.null(r2) && httr2::resp_status(r2) == 200L) {
-        js2 <- tryCatch(httr2::resp_body_json(r2, simplifyVector = FALSE), error = function(e) NULL)
-        items <- js2$resultList$result %||% list()
-        for (it in items) {
-          for (cc in (it$commentCorrectionList$commentCorrection %||% list())) {
-            if (identical(clean_cell(cc$type), "Preprint of") && nzchar(clean_cell(cc$id))) {
-              pub_pmid <- normalize_pmid_one(cc$id)
-              via_tier <- "Tier2_EuropePMC_PreprintOf"
-            }
-          }
-        }
-      }
-    }
-
-    # Tier 3: Crossref is-preprint-of
-    if (!nzchar(pub_doi) && !nzchar(pub_pmid)) {
-      u3 <- paste0("https://api.crossref.org/works/", utils::URLencode(p_doi, reserved = TRUE))
-      r3 <- perform_polite_http(
-        httr2::request(u3) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(25),
-        sleep_s     = 0.50,
-        max_tries   = 4L,
-        label       = "Crossref preprint upgrade",
-        expect_json = TRUE
-      )
-      if (!is.null(r3) && httr2::resp_status(r3) == 200L) {
-        js3 <- tryCatch(httr2::resp_body_json(r3, simplifyVector = FALSE), error = function(e) NULL)
-        rel <- js3$message$relation[["is-preprint-of"]]
-        if (!is.null(rel) && length(rel) > 0L) {
-          pub_doi <- normalize_doi_one(rel[[1L]]$id %||% "")
-          if (nzchar(pub_doi)) via_tier <- "Tier3_Crossref_isPreprintOf"
-        }
-      }
-    }
-
-    if (nzchar(pub_doi) || nzchar(pub_pmid)) {
-      upgrades[[sid]] <- list(
-        preprint_study_id = sid, preprint_doi = p_doi,
-        published_doi = pub_doi, published_pmid = pub_pmid, via = via_tier
-      )
-    }
-  }
-  upgrades
-}
-
-direct_preprint_upgrades <- if (!is_verify) check_active_preprints_direct(studies) else list()
 
 cat_pmids <- unique(vapply(studies$pmid, normalize_pmid_one, character(1)))
 cat_pmids <- cat_pmids[nzchar(cat_pmids)]
@@ -1888,7 +1943,7 @@ needs_ft_pqtl_check <- function(m) {
     grepl("\\b(donors?|participants?|individuals?|subjects?|patients?|multi-?omics? samples)\\b", comb_lc, perl = TRUE)
 }
 
-max_ft_checks_per_run <- 80L
+max_ft_checks_per_run <- 160L
 n_ft_candidates       <- 0L
 n_ft_checked          <- 0L
 n_ft_skipped_known    <- 0L
@@ -2017,19 +2072,20 @@ for (m in merged_recs) {
         m_au2 <- normalize_author_surname(m$last_author)
         if (nzchar(p_au) && (identical(p_au, m_au1) || identical(p_au, m_au2))) {
           jac <- title_jaccard(preprint_rows_df$title[pi], m$title)
-          if (jac >= 0.35 && has_compatible_phenotype(preprint_rows_df$title[pi], m$title)) {
+          if ((jac >= 0.35 || (identical(p_au, m_au1) && jac >= 0.30 && sc$P_score >= 12L && sc$S_score <= 4L)) &&
+              has_compatible_phenotype(preprint_rows_df$title[pi], m$title)) {
             matched_preprint_sid <- p_sid
             lineage_parts <- unique(c(lineage_parts, p_doi, paste0("Tier4_TitleJaccard=", round(jac, 2))))
-          } else if (identical(p_au, m_au1) && sc$P_score >= 12L && sc$S_score <= 4L && nrow(strata_cat) > 0L) {
+          } else if (identical(p_au, m_au1) && sc$P_score >= 4L && sc$S_score <= 6L && nrow(strata_cat) > 0L) {
             p_yr <- suppressWarnings(as.integer(preprint_rows_df$year[pi]))
             m_yr <- suppressWarnings(as.integer(m$pub_year))
             if (!is.na(p_yr) && !is.na(m_yr) && m_yr >= p_yr && (m_yr - p_yr) <= 3L) {
               st_rows <- strata_cat[strata_cat$study_id == p_sid, , drop = FALSE]
-              p_assays <- suppressWarnings(as.integer(gsub("[^0-9]", "", st_rows$n_assays)))
-              p_assays <- unique(p_assays[!is.na(p_assays) & p_assays >= 100L])
+              p_assays <- suppressWarnings(as.integer(gsub("[^0-9]", "", c(st_rows$n_assays, st_rows$n_unique_proteins))))
+              p_assays <- unique(p_assays[!is.na(p_assays) & (p_assays >= 100L | (p_assays >= 40L & sc$P_score >= 4L))])
               abs_digits <- gsub(",", "", normalize_si_thousands(m$abstract %||% ""))
               matched_panel <- Filter(function(na_v) {
-                grepl(sprintf("\\b%d\\s+(?:[a-z-]+\\s+){0,2}(?:proteins?|protein\\s+measurements?|aptamers?|somamers?)\\b", na_v),
+                grepl(sprintf("\\b%d\\s+(?:[a-z-]+\\s+){0,2}(?:proteins?|protein\\s+measurements?|aptamers?|somamers?|circulating\\s+cytokines?|cytokines?)\\b", na_v),
                       tolower(abs_digits), perl = TRUE)
               }, p_assays)
               if (length(matched_panel) > 0L) {
@@ -2043,7 +2099,7 @@ for (m in merged_recs) {
     }
   }
 
-  auto_cls <- if (nzchar(matched_preprint_sid) && sc$P_score >= 5L) {
+  auto_cls <- if (nzchar(matched_preprint_sid) && sc$P_score >= 4L) {
     sprintf("Preprint -> Published Match (%s)", matched_preprint_sid)
   } else {
     sc$classification
