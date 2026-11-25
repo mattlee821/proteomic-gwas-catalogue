@@ -280,8 +280,8 @@ carland_2023_37550624	RISC	768
 carland_2023_37550624	ASAP	538
 carland_2023_37550624	Fenland	484
 carland_2023_37550624	QMDiab	299
-gilly_2023_37778719	HELIC-MANOLIS	1407
-gilly_2023_37778719	HELIC-Pomak	1598
+gilly_2023_37778719	HELIC-MANOLIS	1405
+gilly_2023_37778719	HELIC-Pomak	1610
 wingo_2023_37653343	ROSMAP	565
 wingo_2023_37653343	Banner	151
 schmitz_2023_37793096	NSPHS	1021
@@ -289,25 +289,36 @@ xu_2023_36797296	GNHS	2410
 xu_2023_36797296	WEBIRTH	548
 malarstig_2023_37996402	KARMA	598
 boahen_2023_36681271	Bandim Health Project (Guinea-Bissau)	350
-cruchaga_2023_ppr673477	ADNI	750
-cruchaga_2023_ppr673477	PPMI	785
-cruchaga_2023_ppr673477	Fundacio ACE	377
-cruchaga_2023_ppr673477	Knight ADRC	800
-cruchaga_2023_ppr673477	DIAN	200
-cruchaga_2023_ppr673477	Barcelona-1	195
-repetto_2023_ppr616251	SCALLOP Consortium	12176
+cruchaga_2023_ppr673477	ADNI	758
+cruchaga_2023_ppr673477	PPMI	1158
+cruchaga_2023_ppr673477	Fundacio ACE	632
+cruchaga_2023_ppr673477	Knight ADRC	948
+cruchaga_2023_ppr673477	DIAN	495
+cruchaga_2023_ppr673477	Barcelona-1	232
+repetto_2023_ppr616251	INTERVAL	4662
+repetto_2023_ppr616251	HELIC-Pomak	1605
+repetto_2023_ppr616251	HELIC-MANOLIS	1407
+repetto_2023_ppr616251	Women's Health Initiative	1336
+repetto_2023_ppr616251	ORCADES	1070
+repetto_2023_ppr616251	NSPHS	825
+repetto_2023_ppr616251	LBC1936	750
+repetto_2023_ppr616251	STANLEY	632
+repetto_2023_ppr616251	Fenland	485
+repetto_2023_ppr616251	SAHLSIS	417
+repetto_2023_ppr616251	Rotterdam Study	281
 aherrahrou_2023_ppr757979	UVA Heart Transplant Donor SMC Cohort	123
 liu_2023_ppr766252	UK Biobank	41286
 quintanilha_2023_ppr768915	CALGB/SWOG 80405	869
 liang_2023_ppr670496	BrainGVEX	268
-yan_2023_ppr667900	nuMoM2b	2352
-niu_2023_ppr638798	HOLBAEK Study	2147
+yan_2023_ppr667900	nuMoM2b	2263
+niu_2023_ppr638798	HOLBAEK Study	1914
+niu_2023_ppr638798	GALAXY	558
 suhre_2023_ppr648726	QMDiab	325
 kalnapenkis_2023_ppr669340	Estonian Biobank	500
-suhre_2023_ppr694529	UK Biobank	54000
+suhre_2023_ppr694529	UK Biobank	51700
 krishna_2023_ppr697615	UK Biobank	45330
 hillary_2023_ppr748661	UK Biobank	53752
-hawkes_2023_ppr753336	UK Biobank	20000
+hawkes_2023_ppr753336	UK Biobank	20919
 said_2023_ppr758297	China Kadoorie Biobank	3974
 wang_2023_ppr767698	China Kadoorie Biobank	3976
-noyvert_2023_ppr777535	UK Biobank	50000
+noyvert_2023_ppr777535	UK Biobank	47468
