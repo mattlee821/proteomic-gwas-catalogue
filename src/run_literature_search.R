@@ -2,7 +2,7 @@
 # Multi-resource literature discovery, connected-components + preprint-lineage
 # deduplication, 4-tier preprint-to-published upgrade detector, strict canonical
 # first-publication-date windowing, selective Stage B.5 PMC full-text multi-omic
-# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.6)
+# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.7)
 # for proteomic-gwas-catalogue.
 #
 # Usage:
@@ -170,7 +170,7 @@ q_epmc_snow   <- build_epmc_snowball_query(LANDMARK_PGWAS_SEEDS$pmid, since_date
                                            verify_pmids = if (is_verify) verify_pmids else NULL)
 
 message(sprintf(
-  "Proteomic GWAS Search v4.0 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
+  "Proteomic GWAS Search v4.7 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
   mode, since_date, until_date,
   if (is_verify) paste(verify_pmids, collapse = ",") else "none",
   dry_run, write_catalogue
@@ -1236,6 +1236,22 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
     } else {
       pick_longest(vapply(sub, `[[`, "", "abstract"))
     }
+    if (isTRUE(resolve_remote_pubs) && !nzchar(best_abs) && length(pub_sub) == 0L && grepl("^10\\.1101/", chosen_doi)) {
+      for (srv_h in c("biorxiv", "medrxiv")) {
+        u_bh <- sprintf("https://api.biorxiv.org/details/%s/%s/na/json", srv_h, chosen_doi)
+        r_bh <- perform_polite_http(
+          httr2::request(u_bh) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(15),
+          sleep_s = 0.25, max_tries = 2L, label = "bioRxiv merge abstract hydrate", expect_json = TRUE
+        )
+        if (!is.null(r_bh) && httr2::resp_status(r_bh) == 200L) {
+          jbh <- tryCatch(httr2::resp_body_json(r_bh, simplifyVector = FALSE), error = function(e) NULL)
+          if (!is.null(jbh$collection) && length(jbh$collection) > 0L) {
+            best_abs <- clean_cell(jbh$collection[[1L]]$abstract %||% "")
+            if (nzchar(best_abs)) break
+          }
+        }
+      }
+    }
 
     list(
       matched_sources  = paste(unique(vapply(sub, `[[`, "", "source_tag")), collapse = ";"),
@@ -1270,28 +1286,113 @@ recs_s2a_1 <- run_epmc_windowed(build_epmc_prong2a_platforms_query, "EuropePMC",
 recs_s2a_2 <- run_epmc_windowed(build_epmc_prong2a_proteome_query, "EuropePMC", since_date, until_date,
                                 is_retro = identical(mode, "retrospective"),
                                 verify_ids = if (is_verify) verify_pmids else NULL)
-recs_s2a   <- c(recs_s2a_1, recs_s2a_2)
-message(sprintf("[Source 2A: Europe PMC MED+PMC+PPR (Platforms=%d + Proteome=%d)] matched %d raw record(s).",
-                length(recs_s2a_1), length(recs_s2a_2), length(recs_s2a)))
+
+# Rescue preprints first posted in `[since_d..until_d]` via Crossref `type:posted-content`
+# (immune to Europe PMC overwriting `FIRST_PDATE` when `v2`/`v3` revisions are uploaded in `yr+1`)
+query_crossref_posted_preprints <- function(since_d, until_d, is_retro, verify_ids = NULL) {
+  if (!isTRUE(is_retro) || (!is.null(verify_ids) && length(verify_ids) > 0L)) return(list())
+  if (is.null(since_d) || is.null(until_d) || !nzchar(since_d) || !nzchar(until_d)) return(list())
+  out <- list()
+  seen_d <- character(0)
+  cr_queries <- c("pQTL proteome", "SomaScan GWAS", "Olink GWAS", "aptamer pQTL")
+  for (cq in cr_queries) {
+    u_cr <- paste0(
+      "https://api.crossref.org/works?filter=type:posted-content,from-posted-date:", since_d,
+      ",until-posted-date:", until_d, "&query=", utils::URLencode(cq, reserved = TRUE), "&rows=50"
+    )
+    r_cr <- perform_polite_http(
+      httr2::request(u_cr) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(20),
+      sleep_s     = 0.35,
+      max_tries   = 3L,
+      label       = "Crossref posted-content preprints",
+      expect_json = TRUE
+    )
+    if (is.null(r_cr) || httr2::resp_status(r_cr) != 200L) next
+    js_cr <- tryCatch(httr2::resp_body_json(r_cr, simplifyVector = FALSE), error = function(e) NULL)
+    items <- js_cr$message$items %||% list()
+    for (it in items) {
+      d_raw <- normalize_doi_one(it$DOI %||% "")
+      if (!nzchar(d_raw) || d_raw %in% seen_d || !is_preprint_doi(d_raw)) next
+      seen_d <- c(seen_d, d_raw)
+      ttl <- clean_cell(if (length(it$title) > 0L) it$title[[1L]] else "")
+      abs <- strip_html_tags(it$abstract %||% "")
+      # Hydrate missing abstract on 10.1101/ preprints from bioRxiv/medRxiv details API
+      if (!nzchar(abs) && grepl("^10\\.1101/", d_raw)) {
+        for (srv in c("biorxiv", "medrxiv")) {
+          u_bx <- sprintf("https://api.biorxiv.org/details/%s/%s/na/json", srv, d_raw)
+          r_bx <- perform_polite_http(
+            httr2::request(u_bx) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(15),
+            sleep_s = 0.25, max_tries = 2L, label = "bioRxiv details hydrate", expect_json = TRUE
+          )
+          if (!is.null(r_bx) && httr2::resp_status(r_bx) == 200L) {
+            jb <- tryCatch(httr2::resp_body_json(r_bx, simplifyVector = FALSE), error = function(e) NULL)
+            if (!is.null(jb$collection) && length(jb$collection) > 0L) {
+              abs <- clean_cell(jb$collection[[1L]]$abstract %||% "")
+              if (!nzchar(ttl)) ttl <- clean_cell(jb$collection[[1L]]$title %||% "")
+              break
+            }
+          }
+        }
+      }
+      comb_lc <- tolower(paste(ttl, abs))
+      if (!grepl(BROAD_PROTEIN_REGEX, comb_lc, perl = TRUE) || !grepl(BROAD_GENETICS_REGEX, comb_lc, perl = TRUE)) next
+      au_l <- it$author %||% list()
+      f_au <- if (length(au_l) > 0L) clean_cell(au_l[[1L]]$family %||% "") else ""
+      l_au <- if (length(au_l) > 0L) clean_cell(au_l[[length(au_l)]]$family %||% f_au) else ""
+      dp_parts <- tryCatch(unlist(it$posted$`date-parts`[[1L]]), error = function(e) integer(0))
+      dt_str <- if (length(dp_parts) >= 3L) {
+        sprintf("%04d-%02d-%02d", as.integer(dp_parts[1]), as.integer(dp_parts[2]), as.integer(dp_parts[3]))
+      } else if (nzchar(extract_preprint_doi_date(d_raw))) {
+        extract_preprint_doi_date(d_raw)
+      } else {
+        sprintf("%s-01-01", substr(since_d, 1L, 4L))
+      }
+      rel_pub <- it$relation[["is-preprint-of"]]
+      pub_lnk <- if (!is.null(rel_pub) && length(rel_pub) > 0L) normalize_doi_one(rel_pub[[1L]]$id %||% "") else ""
+      out[[length(out) + 1L]] <- make_raw_rec(
+        source_tag     = "EuropePMC_PPR",
+        doi            = d_raw,
+        journal        = clean_cell(it$`group-title` %||% it$institution[[1L]]$name %||% "Preprint"),
+        pub_year       = substr(dt_str, 1L, 4L),
+        first_pub_date = dt_str,
+        first_author   = f_au,
+        last_author    = l_au,
+        title          = ttl,
+        abstract       = abs,
+        preprint_links = if (nzchar(pub_lnk)) pub_lnk else character(0)
+      )
+    }
+  }
+  out
+}
+recs_s2a_rev <- query_crossref_posted_preprints(since_date, until_date,
+                                                is_retro = identical(mode, "retrospective"),
+                                                verify_ids = if (is_verify) verify_pmids else NULL)
+recs_s2a   <- c(recs_s2a_1, recs_s2a_2, recs_s2a_rev)
+message(sprintf("[Source 2A: Europe PMC MED+PMC+PPR (Platforms=%d + Proteome=%d + RevisedPPR=%d)] matched %d raw record(s).",
+                length(recs_s2a_1), length(recs_s2a_2), length(recs_s2a_rev), length(recs_s2a)))
 
 recs_s2b <- run_epmc_windowed(build_epmc_prong2b_query, "EuropePMC_MethodsRescue", since_date, until_date,
                               is_retro = identical(mode, "retrospective"),
                               verify_ids = if (is_verify) verify_pmids else NULL)
 
-# Fast NCBI PMC full-text rescue backup (resilient to transient Europe PMC full-text search timeouts)
+# Fast NCBI PMC full-text rescue backup (resilient to transient Europe PMC full-text search timeouts;
+# note `[pt]` does not exist in `db=pmc` and must NOT be appended here — PubMed efetch handles pub_types!)
 query_pmc_methods_rescue_v2 <- function(since_d, until_d, verify_ids = NULL) {
   if (!is.null(verify_ids) && length(verify_ids) > 0L) return(list())
   if (is.null(since_d) || is.null(until_d) || !nzchar(since_d) || !nzchar(until_d)) return(list())
   d_from <- gsub("-", "/", since_d)
-  d_to   <- gsub("-", "/", until_d)
+  y_to_plus1 <- suppressWarnings(as.integer(substr(until_d, 1L, 4L))) + 1L
+  d_to_pmc   <- if (!is.na(y_to_plus1)) sprintf("%d/12/31", y_to_plus1) else gsub("-", "/", until_d)
   q_pmc <- paste0(
-    '("', d_from, '"[PubDate] : "', d_to, '"[PubDate]) AND ',
+    '("', d_from, '"[PubDate] : "', d_to_pmc, '"[PubDate]) AND ',
     '("SomaScan"[Body - All Words] OR "SOMAscan"[Body - All Words] OR "SomaLogic"[Body - All Words] OR "SOMAmer"[Body - All Words] OR ',
-    '"aptamer-based proteomics"[Body - All Words] OR "Olink"[Body - All Words] OR "proximity extension assay"[Body - All Words] OR ',
+    '"aptamer-based proteomics"[Body - All Words] OR "aptamer-based proteomic"[Body - All Words] OR "Olink"[Body - All Words] OR "proximity extension assay"[Body - All Words] OR ',
     '"NULISA"[Body - All Words] OR "Proteograph"[Body - All Words] OR "SWATH-MS"[Body - All Words] OR "DIA-MS"[Body - All Words] OR "OpenSWATH"[Body - All Words]) AND ',
     '("pQTL"[Body - All Words] OR "pQTLs"[Body - All Words] OR "cis-pQTL"[Body - All Words] OR "cis-pQTLs"[Body - All Words] OR ',
-    '"protein QTL"[Body - All Words] OR "protein QTLs"[Body - All Words] OR "protein quantitative trait loci"[Body - All Words]) ',
-    'NOT ("Review"[pt] OR "Editorial"[pt] OR "Comment"[pt])'
+    '"protein QTL"[Body - All Words] OR "protein QTLs"[Body - All Words] OR "protein quantitative trait loci"[Body - All Words] OR ',
+    '"GWAF"[Body - All Words] OR "seqMeta"[Body - All Words] OR "MatrixEQTL"[Body - All Words] OR "tensorQTL"[Body - All Words] OR ',
+    '"meta-analysis of genome-wide association"[Body - All Words])'
   )
   ncbi_key <- Sys.getenv("NCBI_API_KEY", unset = "")
   req_es <- httr2::request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi") |>
@@ -1300,7 +1401,7 @@ query_pmc_methods_rescue_v2 <- function(since_d, until_d, verify_ids = NULL) {
     httr2::req_body_form(
       db      = "pmc",
       term    = q_pmc,
-      retmax  = "500",
+      retmax  = "2000",
       retmode = "json",
       api_key = if (nzchar(ncbi_key)) ncbi_key else NULL
     )
@@ -1337,7 +1438,8 @@ query_pmc_methods_rescue_v2 <- function(since_d, until_d, verify_ids = NULL) {
   }
   pmids_out <- unique(pmids_out[nzchar(pmids_out)])
   if (length(pmids_out) == 0L) return(list())
-  fetch_pubmed_efetch_xml(pmids_out, source_tag = "EuropePMC_MethodsRescue")
+  recs_pmc_ef <- fetch_pubmed_efetch_xml(pmids_out, source_tag = "EuropePMC_MethodsRescue")
+  Filter(function(r) !nzchar(r$first_pub_date) || r$first_pub_date <= until_d, recs_pmc_ef)
 }
 
 recs_s2b_pmc <- query_pmc_methods_rescue_v2(since_date, until_date, verify_ids = if (is_verify) verify_pmids else NULL)
@@ -1360,6 +1462,13 @@ recs_s4 <- query_snowball_v2(since_date, until_date,
                              verify_ids = if (is_verify) verify_pmids else NULL)
 
 all_raw_recs <- c(recs_s1, recs_s2a, recs_s2b, recs_s2_bio, recs_s3, recs_s4)
+if (identical(mode, "retrospective") && !is_verify && nzchar(until_date)) {
+  # Drop future-window (`> until_date`) journal articles before `merge_raw_records()` so `yr+1`
+  # peer-reviewed publications cannot absorb in-window (`<= until_date`) preprints prior to date filtering.
+  all_raw_recs <- Filter(function(r) {
+    is_preprint_record(r) || !nzchar(r$first_pub_date) || r$first_pub_date <= until_date
+  }, all_raw_recs)
+}
 raw_n <- length(all_raw_recs)
 message(sprintf("Total raw multi-source hits prior to graph deduplication: %d", raw_n))
 
@@ -1367,12 +1476,32 @@ merged_recs_all <- merge_raw_records(all_raw_recs, resolve_remote_pubs = !is_ver
 message(sprintf("Unique works after cross-source & preprint-lineage merge: %d", length(merged_recs_all)))
 
 # Strict retrospective date-window enforcement on canonical post-merge `first_pub_date`
+# (preserving unseen Q4-prior-year Epub articles whose journal print `[dp]` / MEDLINE `[edat]`
+# fell inside `[since_date..until_date]` so late-year Epub -> Jan-print papers never fall between periods).
+prior_seen_ids <- tolower(unique(trimws(c(
+  vapply(studies$doi, normalize_doi_one, character(1)),
+  vapply(studies$doi, doi_dedup_key, character(1)),
+  vapply(studies$pmid, normalize_pmid_one, character(1)),
+  vapply(excluded$identifier, normalize_doi_one, character(1)),
+  extract_pmids_from_cell(paste(excluded$identifier, collapse = " ")),
+  vapply(queue$identifier, normalize_doi_one, character(1)),
+  extract_pmids_from_cell(paste(queue$identifier, collapse = " "))
+))))
+prior_seen_ids <- prior_seen_ids[nzchar(prior_seen_ids)]
+
 if (identical(mode, "retrospective") && !is_verify && nzchar(since_date) && nzchar(until_date)) {
   y_s <- substr(since_date, 1L, 4L)
   y_u <- substr(until_date, 1L, 4L)
+  q4_floor <- sprintf("%04d-10-01", as.integer(y_s) - 1L)
   merged_recs <- Filter(function(m) {
     if (nzchar(m$first_pub_date)) {
-      m$first_pub_date >= since_date && m$first_pub_date <= until_date
+      if (m$first_pub_date >= since_date && m$first_pub_date <= until_date) return(TRUE)
+      if (!is_preprint_doi(m$doi) && m$first_pub_date >= q4_floor && m$first_pub_date < since_date) {
+        m_ids <- tolower(c(m$pmid, normalize_doi_one(m$doi), doi_dedup_key(m$doi)))
+        m_ids <- m_ids[nzchar(m_ids)]
+        if (length(m_ids) > 0L && !any(m_ids %in% prior_seen_ids)) return(TRUE)
+      }
+      FALSE
     } else if (nzchar(m$pub_year)) {
       m$pub_year >= y_s && m$pub_year <= y_u
     } else {
@@ -1393,9 +1522,9 @@ resolve_ppr_to_doi <- function(ppr_id) {
   if (!grepl("^PPR[0-9]+$", ppr_id)) return("")
   u <- sprintf("https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:%s%%20AND%%20SRC:PPR&resultType=lite&format=json", ppr_id)
   resp <- perform_polite_http(
-    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(25),
-    sleep_s     = 0.50,
-    max_tries   = 4L,
+    httr2::request(u) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(12),
+    sleep_s     = 0.45,
+    max_tries   = 2L,
     label       = "EuropePMC resolve PPR",
     expect_json = TRUE
   )
@@ -1621,8 +1750,14 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
 
   has_body_secs <- length(xml2::xml_find_all(body_node, "./sec")) > 0L
   if (has_body_secs) {
-    # Strip untitled Nature-style leading Introduction <p> nodes directly under <body>
-    xml2::xml_remove(xml2::xml_find_all(body_node, "./p"))
+    # Strip only the first untitled Nature-style leading Introduction <p> directly under <body>,
+    # preserving subsequent main-text Results <p> nodes in Brief Communications (e.g. Nat Genet)
+    direct_ps <- xml2::xml_find_all(body_node, "./p")
+    if (length(direct_ps) >= 3L) {
+      xml2::xml_remove(direct_ps[1L])
+    } else if (length(direct_ps) > 0L && length(direct_ps) <= 2L) {
+      xml2::xml_remove(direct_ps)
+    }
     prune_non_evidence_secs(body_node)
   }
 
@@ -1640,9 +1775,12 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
   prot_assay_pat <- "\\b(proteom[a-z]*|protein (?:abundance|expression|levels|quantification|profiles?)|olink|somascan|somalogic|somamers?|aptamer[- ]based|nulisa[a-z]*|mass spectrometry|openswath[0-9]*|dia-ms|dia-pasef|swath(?:-ms)?|tandem mass tags?|lc-ms/ms|proteograph|orbitrap|myriad[- ]rbm|luminex)\\b"
   primary_evid_pat <- paste0(
     "\\b(we (?:aimed to |next |then |also |systematically |comprehensively )?(?:performed|applied|mapped|computed|tested|conducted|generated|identified|discovered) [^.;]{0,110}\\b(?:tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|trans-?pqtls?|sd-?pqtls?|pqtls?|protein[- ]qtls?|protein quantitative trait loc[a-z]*)|",
+    "we used plink [0-9 ]*to estimate (?:protein quantitative trait loc[a-z]*|pqtls?)|",
     "to test for (?:tr-?|sv-?|cis-?|trans-?)?pqtls?|",
     "was also used for cis[- ]?pqtl analysis|",
     "conducted genome-wide association studies \\(gwas\\) of these proteins|",
+    "meta-analysis of genome-wide association analyses was performed to identify variants associated with circulating protein levels|",
+    "gwas analyses were performed using the r gwaf package|",
     "(?:of the [1-9][0-9,]* pqtls? in cis|n\\s*=\\s*[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteom[a-z]*|[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteomics? samples)(?=[\\s\\S]{0,220}\\b(?:tr-?pqtls?|sv-?pqtls?|tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|susie))|",
     "(?:tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|pqtls?|protein[- ]qtls?) (?:were|was) (?:performed|mapped|computed|tested|generated)|",
     "tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|fastlmm|susie)\\b"
@@ -1670,6 +1808,17 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
       !grepl(ext_only_pat, para_txts, perl = TRUE)
   ) && any(grepl(prot_assay_pat, para_txts, perl = TRUE))
 
+  has_in_cohort_protein_gwas <- any(
+    grepl(paste0(
+      "\\b(meta-analysis of genome-wide association analyses was performed to identify variants associated with circulating protein levels|",
+      "gwas analyses were performed using the r gwaf package|",
+      "association between each protein and genetic variant was performed using a linear regression model[^.;]{0,120}\\bplink\\b|",
+      "we used fusion [0-9 ]*to estimate protein weights in the discovery|",
+      "significantly associated with at least 1 of [1-9][0-9,]* genetic variants \\(protein quantitative trait loci)\\b"
+    ), para_txts, perl = TRUE) &
+      !grepl(ext_only_pat, para_txts, perl = TRUE)
+  ) && any(grepl(prot_assay_pat, para_txts, perl = TRUE))
+
   para_ok <- (grepl(pqtl_pat, para_txts, perl = TRUE) &
     grepl(prot_assay_pat, para_txts, perl = TRUE) &
     grepl(primary_evid_pat, para_txts, perl = TRUE) &
@@ -1677,7 +1826,8 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
     (any(grepl("\\bwe conducted genome-wide association studies \\(gwas\\) of these proteins in [1-9][0-9,]+", para_txts, perl = TRUE)) &
        grepl(pqtl_pat, para_txts, perl = TRUE) &
        !grepl(ext_only_pat, para_txts, perl = TRUE)) |
-    has_cis_window_protein_regression
+    has_cis_window_protein_regression |
+    has_in_cohort_protein_gwas
 
   if (any(para_ok)) {
     kept_body_txt <- paste(para_txts, collapse = " ")
@@ -1708,18 +1858,23 @@ needs_ft_pqtl_check <- function(m) {
       doi                      = m$doi
     )
     if (!grepl("^Auto-Deprioritised", sc_pre$classification)) return(FALSE)
-    has_human_cohort_kw <- grepl("\\b(cohort|population-based|participants?|individuals?|subjects?|patients?|donors?|adults?|icelanders|twins?)\\b",
+    has_human_cohort_kw <- grepl("\\b(cohorts?|population-based|participants?|individuals?|subjects?|patients?|donors?|adults?|men|women|offspring|icelanders|twins?|human|humans)\\b",
                                  comb_lc, perl = TRUE)
-    # Case 2B-1: Source 2B full-text Methods/Results rescue on low-signal human cohort proteomic papers (S == 0)
+    # Case 2B-1: Source 2B full-text Methods/Results rescue on human cohort proteomic papers without external sumstats reuse (S1)
     is_methods_rescue_low_s <- grepl("EuropePMC_MethodsRescue", m$matched_sources %||% "", fixed = TRUE) &&
-      sc_pre$S_score == 0L && has_human_cohort_kw &&
-      !grepl("\\b(mendelian randomi[sz]ation|two-sample|proteome-wide association)\\b", comb_lc, perl = TRUE)
+      !("S1_PublicSumStatsReuse(+7)" %in% sc_pre$s_rules) &&
+      sc_pre$S_score <= 6L && has_human_cohort_kw &&
+      !grepl("\\b(two-sample mendelian|2-sample mendelian)\\b", comb_lc, perl = TRUE)
     # Case 2B-2: Primary cohort proteomics (P1 + P4, no external sumstats download S1) paired with bidirectional MR
     is_cohort_bidir_mr <- all(c("P1_DirectAssay(+5)", "P4_AssayScaleAndN(+4)") %in% sc_pre$p_rules) &&
       !("S1_PublicSumStatsReuse(+7)" %in% sc_pre$s_rules) &&
       sc_pre$S_score <= 6L && has_human_cohort_kw &&
       grepl("\\bbidirectional\\s+(?:two-sample\\s+)?mendelian\\s+randomi[sz]ation\\b", comb_lc, perl = TRUE)
-    return(is_methods_rescue_low_s || is_cohort_bidir_mr)
+    # Case 2B-3: Named proteomics platform + genomic architecture (P5, S=0) in a human cohort (e.g. Epub boundary papers missed by EPMC FIRST_PDATE)
+    is_named_plat_gen_cohort <- sc_pre$P_score >= 3L && sc_pre$S_score == 0L && has_human_cohort_kw &&
+      ("P5_GenomicArchitecture(+3)" %in% sc_pre$p_rules) &&
+      !identical(detect_platform_v2(comb_lc), "Unspecified Proteomics")
+    return(is_methods_rescue_low_s || is_cohort_bidir_mr || is_named_plat_gen_cohort)
   }
   has_multiomic_qtl_anchor <- grepl("\\b(molqtls?|xqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|(?:molecular|multi-?omic|quantile) (?:quantitative trait loc[a-z]*|qtls?))\\b",
                                     comb_lc, perl = TRUE)
@@ -1729,7 +1884,7 @@ needs_ft_pqtl_check <- function(m) {
     grepl("\\b(donors?|participants?|individuals?|subjects?|patients?|multi-?omics? samples)\\b", comb_lc, perl = TRUE)
 }
 
-max_ft_checks_per_run <- 60L
+max_ft_checks_per_run <- 80L
 n_ft_candidates       <- 0L
 n_ft_checked          <- 0L
 n_ft_skipped_known    <- 0L
@@ -1809,7 +1964,7 @@ for (m in merged_recs) {
   # Selective PPR* -> DOI and PMID* -> DOI resolution on actionable / primary-signal records
   lineage_parts <- m$preprint_links
   has_pre_doi_already <- any(is_preprint_doi(lineage_parts))
-  if (!has_pre_doi_already && (!grepl("^Auto-Deprioritised", sc$classification) || sc$P_score >= 5L)) {
+  if (!has_pre_doi_already && !grepl("^Auto-Deprioritised", sc$classification)) {
     ppr_tokens <- grep("^PPR[0-9]+$", lineage_parts, value = TRUE)
     for (ptok in ppr_tokens) {
       resolved_d <- resolve_ppr_to_doi(ptok)
