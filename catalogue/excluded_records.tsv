@@ -120,3 +120,23 @@ PMID:34548389	Kidney function polygenic risk score vs ARIC plasma proteome assoc
 PMID:34454697	Secondary psychiatric proteome-wide association study (PWAS) reusing Wingo et al. 2021 ROSMAP/Banner brain weights	2026-11-24
 10.1007/s11357-021-00376-4	Targeted candidate-SNP lookup testing only 56 longevity GWAS SNPs (2 APOE + 54 longevity SNPs across 4 loci; <100 variants threshold) against serum SomaScan aptamers in NECS (PMID:33948810)	2026-11-24
 10.1182/blood.2019004571	Targeted orthogonal validation testing only 91 preselected array/literature candidate SNPs across 5 proteins (Tables S9-S13; <100 variants threshold, unimputed gene-body + QTLbase lookup without multiple-testing correction; PMID:33529319)	2026-11-24
+PMID:36477976	Bioinformatics post-GWAS web application ('SysBiolPGWAS') where 'pGWAS' denotes post-GWAS rather than proteomic GWAS (Falola 2022)	2026-11-25
+PMID:36415660	Intracranial volume GWAS performing targeted LD lookup of 64 ICV sequence variants against pre-computed deCODE plasma pQTLs (<100 variants; Nawaz 2022)	2026-11-25
+PMID:36280732	Multiomics NAFLD/cirrhosis GWAS performing targeted association lookup of 20 liver-disease sequence variants against deCODE/UKB proteins (<100 variants; Sveinbjornsson 2022)	2026-11-25
+PMID:40855874	Single-analyte genetic colocalization study of serum IL-1ra only (<5 proteins threshold; Tran 2022)	2026-11-25
+PMID:35865545	Secondary two-sample Mendelian randomization reusing Ahola-Olli 2017 cytokine GWAS summary statistics for cancer risk (Song 2022)	2026-11-25
+PMID:35861070	Single-analyte exome/pQTL study of plasma MASP-2 levels only (<5 proteins threshold; Damoah 2022)	2026-11-25
+PMID:35830304	Publisher correction/erratum notice for Bartell 2020 PMID:32484228 without new primary pGWAS data	2026-11-25
+PMID:35790642	Cardiovascular Health Study (CHS) proteomics design and mentored-access resource profile paper describing consortium infrastructure without reporting pGWAS results (Austin 2022)	2026-11-25
+PMID:35425820	Secondary two-sample Mendelian randomization reusing public pQTL summary statistics for circulating cathepsin B and cardiovascular outcomes (Chai 2022)	2026-11-25
+PMID:35387486	Single-protein SCALLOP GWAS meta-analysis of circulating soluble ACE2 only (<5 proteins threshold; Yang 2022)	2026-11-25
+PMID:35970849	Secondary COVID-19 colocalization and fine-mapping study reusing Pietzner 2021 Fenland plasma pQTL summary statistics (Pietzner 2022)	2026-11-25
+PMID:35530264	Observational COVID-19 case-control plasma proteomics combined with secondary two-sample MR using PhenoScanner/MR-Base instruments (Roh 2022)	2026-11-25
+PMID:36334589	Non-human animal model QTL study mapping brown adipose tissue proteome QTLs in 163 Diversity Outbred mice (Xiao 2022)	2026-11-25
+PMID:35212764	Targeted lookup of 6 severe COVID-19 risk SNPs (ABO, OAS1, IL6R, etc.) against ARIC SomaScan plasma proteins (<100 variants threshold; Steffen 2022)	2026-11-25
+PMID:35941285	Secondary PWAS of substance use traits reusing Wingo 2021 Banner (N=152) and ROS/MAP (N=376) pre-computed brain proteome weights (Toikumo 2022)	2026-11-25
+PMID:36346149	Secondary PWAS of multiple sclerosis reusing Sun 2018 INTERVAL (N=3,301) plasma and Wingo 2021 ROS/MAP+Banner (N=376/152) brain weights (Lin 2022)	2026-11-25
+10.1101/2022.11.04.22281934	Secondary Mendelian randomization of IL-6 signalling on malaria using single-locus rs2228145 CRP/sIL6R instruments (<5 proteins; Hamilton 2022)	2026-11-25
+10.1101/2022.09.28.509838	Sputum mucin quantitative GWAS measuring only 2 mucin proteins MUC5AC and MUC5B (<5 proteins threshold; Van Buren 2022)	2026-11-25
+10.1101/2022.04.20.22274046	Multiplex VTE biomarker screen followed by single-protein GWAS of plasma CFHR5 only (<5 proteins threshold; Sanchez-Rivera 2022)	2026-11-25
+10.1101/2022.12.25.22283936	Secondary omnibus PWAS-O statistical methods paper re-training weights on public ROS/MAP DLPFC proteomics (N=355) for Alzheimer's disease (Hu 2022)	2026-11-25
