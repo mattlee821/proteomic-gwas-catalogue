@@ -32,8 +32,10 @@ new_http_session <- function(cache_dir,
   env$refresh_cache <- isTRUE(refresh_cache)
   env$strict_oa_only <- isTRUE(strict_oa_only)
   env$min_interval_sec <- as.numeric(min_interval_sec)
+  env$biorxiv_min_interval_sec <- 3.0
   env$contact_email <- clean_str(contact_email)
   env$last_req_time <- 0
+  env$last_biorxiv_time <- 0
   env$http_log <- list()
   env
 }
@@ -70,7 +72,16 @@ export_http_log <- function(session, out_path) {
   invisible(df)
 }
 
-throttle_session <- function(session) {
+throttle_session <- function(session, url = "") {
+  if (grepl("(biorxiv|medrxiv)\\.org", url, ignore.case = TRUE) && !grepl("api\\.biorxiv\\.org", url, ignore.case = TRUE)) {
+    now_bx <- as.numeric(Sys.time())
+    el_bx <- now_bx - (session$last_biorxiv_time %||% 0)
+    min_bx <- session$biorxiv_min_interval_sec %||% 3.0
+    if (el_bx < min_bx) {
+      Sys.sleep(min_bx - el_bx)
+    }
+    session$last_biorxiv_time <- as.numeric(Sys.time())
+  }
   now <- as.numeric(Sys.time())
   elapsed <- now - session$last_req_time
   if (elapsed < session$min_interval_sec) {
@@ -191,7 +202,7 @@ perform_cached_request <- function(session,
     ))
   }
 
-  throttle_session(session)
+  throttle_session(session, url)
   dest <- cache_chk$path
   meta_path <- paste0(dest, ".meta.json")
 

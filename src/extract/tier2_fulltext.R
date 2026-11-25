@@ -456,6 +456,42 @@ extract_methods_fields <- function(abstract_title_txt, buckets, has_fulltext) {
   )
 }
 
+extract_pdf_text_safe <- function(pdf_path) {
+  if (!nzchar(pdf_path) || !file.exists(pdf_path)) return("")
+  if (requireNamespace("pdftools", quietly = TRUE)) {
+    pages <- tryCatch(pdftools::pdf_text(pdf_path), error = function(e) character(0))
+    if (length(pages) > 0L) return(paste(pages, collapse = "\n"))
+  }
+  py_bin <- Sys.which("python3")
+  if (nzchar(py_bin)) {
+    py_code <- paste(
+      "import sys, pypdf",
+      "r = pypdf.PdfReader(sys.argv[1])",
+      "print(chr(10).join((p.extract_text() or '') for p in r.pages))",
+      sep = "; "
+    )
+    out <- tryCatch(
+      system2(py_bin, c("-c", shQuote(py_code), shQuote(normalizePath(pdf_path, mustWork = TRUE))), stdout = TRUE, stderr = FALSE),
+      error = function(e) character(0)
+    )
+    if (length(out) > 0L) return(paste(out, collapse = "\n"))
+  }
+  ""
+}
+
+parse_pdf_into_buckets <- function(pdf_txt) {
+  clean_pdf <- clean_str(pdf_txt)
+  if (!nzchar(clean_pdf)) return(list())
+  list(
+    ABSTRACT_OVERVIEW = substr(clean_pdf, 1L, min(8000L, nchar(clean_pdf))),
+    COHORT_SAMPLES = clean_pdf,
+    PROTEOMIC_QC = clean_pdf,
+    GENOMIC_IMPUTATION = clean_pdf,
+    GWAS_ASSOCIATION = clean_pdf,
+    DATA_AVAILABILITY = clean_pdf
+  )
+}
+
 run_tier2_fulltext <- function(t1, session, local_pdf = "", local_xml = "") {
   leg_pref <- legacy_prefix_for_study(t1$pmid, t1$doi)
   slug_base <- t1$study_id
@@ -472,11 +508,13 @@ run_tier2_fulltext <- function(t1, session, local_pdf = "", local_xml = "") {
     parsed <- parse_jats_sections(local_xml)
     ft_source <- "LOCAL_CURATOR_XML"
     verified_full_text <- TRUE
-  } else if (nzchar(local_pdf) && file.exists(local_pdf) && requireNamespace("pdftools", quietly = TRUE)) {
-    pdf_pages <- pdftools::pdf_text(local_pdf)
-    parsed$buckets$GWAS_ASSOCIATION <- paste(pdf_pages, collapse = "\n")
-    ft_source <- "LOCAL_CURATOR_PDF"
-    verified_full_text <- TRUE
+  } else if (nzchar(local_pdf) && file.exists(local_pdf)) {
+    pdf_txt <- extract_pdf_text_safe(local_pdf)
+    if (nzchar(clean_str(pdf_txt))) {
+      parsed$buckets <- parse_pdf_into_buckets(pdf_txt)
+      ft_source <- "LOCAL_CURATOR_PDF"
+      verified_full_text <- TRUE
+    }
   }
 
   # 2a. Europe PMC JATS /fullTextXML — ONLY for valid PMC[0-9]+ IDs (NEVER PPR* or EMS* — [C-6])
@@ -518,25 +556,62 @@ run_tier2_fulltext <- function(t1, session, local_pdf = "", local_xml = "") {
     }
   }
 
-  # 2c. Preprint JATS XML single polite attempt ([C-6]: NEVER retry or bypass 403/429 Cloudflare challenge!)
-  if (!verified_full_text && t1$is_preprint && nzchar(t1$biorxiv_jats_url)) {
+  # 2c. Preprint JATS XML + `.full.pdf` polite cascade ([C-6]: >=3s throttle; NEVER retry or bypass 403/429 Cloudflare challenge!)
+  if (!verified_full_text && isTRUE(t1$is_preprint) && nzchar(clean_str(t1$biorxiv_jats_url))) {
     r_bx_xml <- perform_cached_request(
       session, "Tier 2", "bioRxiv_jatsxml", t1$biorxiv_jats_url,
       cache_key = paste0(slug_base, "_biorxiv_source.xml"),
       accept = "application/xml",
-      timeout_sec = 12,
+      timeout_sec = 20,
       allow_transient_retry = FALSE
     )
     if (r_bx_xml$ok && grepl("<article", r_bx_xml$gates$head_text, ignore.case = TRUE)) {
       parsed <- parse_jats_sections(r_bx_xml$path)
-      ft_source <- "bioRxiv_JATS_XML"
-      verified_full_text <- TRUE
+      if (length(parsed$buckets) > 0L && sum(nchar(unlist(parsed$buckets))) >= 500L) {
+        ft_source <- "bioRxiv_JATS_XML"
+        verified_full_text <- TRUE
+      }
     } else {
       ft_gate_note <- sprintf(
-        "Preprint JATS XML unavailable via automated HTTP (status=%s%s); degraded cleanly to Tier 1 + datalinks without bypass",
+        "Preprint JATS XML unavailable via automated HTTP (status=%s%s)",
         as.character(r_bx_xml$status %||% "ERR"),
         if (isTRUE(r_bx_xml$gates$antibot)) ", Cloudflare bot gate" else ""
       )
+    }
+  }
+
+  # 2c-ii. Preprint `.full.pdf` fallback (early-path `.full.pdf` first for medRxiv+bioRxiv, then direct `/content/{doi}v{ver}.full.pdf`)
+  if (!verified_full_text && t1$is_preprint) {
+    pdf_candidates <- unique(c(t1$biorxiv_early_pdf_url %||% "", t1$biorxiv_direct_pdf_url %||% ""))
+    pdf_candidates <- pdf_candidates[nzchar(pdf_candidates)]
+    for (pi in seq_along(pdf_candidates)) {
+      pu <- pdf_candidates[[pi]]
+      r_bx_pdf <- perform_cached_request(
+        session, "Tier 2", paste0("preprint_full_pdf_", pi), pu,
+        cache_key = paste0(slug_base, "_preprint_v", t1$biorxiv_version %||% "1", "_", pi, ".pdf"),
+        accept = "application/pdf",
+        timeout_sec = 45,
+        expected_data_file = TRUE,
+        allow_transient_retry = FALSE
+      )
+      if (r_bx_pdf$ok && file.exists(r_bx_pdf$path)) {
+        pdf_txt <- extract_pdf_text_safe(r_bx_pdf$path)
+        if (nchar(clean_str(pdf_txt)) >= 500L) {
+          parsed$buckets <- parse_pdf_into_buckets(pdf_txt)
+          ft_source <- sprintf("preprint_full_pdf (%s)", pu)
+          verified_full_text <- TRUE
+          ft_gate_note <- ""
+          break
+        }
+      } else {
+        ft_gate_note <- sprintf(
+          "Preprint .full.pdf unavailable via automated HTTP (%s -> status=%s%s); manual download URL: %s",
+          pu,
+          as.character(r_bx_pdf$status %||% "ERR"),
+          if (isTRUE(r_bx_pdf$gates$antibot)) ", Cloudflare bot gate" else "",
+          t1$biorxiv_direct_pdf_url %||% pu
+        )
+      }
     }
   }
 

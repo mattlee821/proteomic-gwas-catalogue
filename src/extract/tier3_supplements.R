@@ -474,26 +474,44 @@ run_tier3_supplements <- function(t1, t2, session, repo_root = ".") {
     }
   }
 
-  # Parse first discovered .xlsx workbook using Zero-DOM Low-RSS parser ([C-4])
+  # 3b-ii. bioRxiv / medRxiv early-path `/DC1/embed/{filename}` .xlsx supplements
+  if (length(xlsx_urls) == 0L && isTRUE(t1$is_preprint) && nzchar(clean_str(t1$biorxiv_jats_url)) && grepl("\\.source\\.xml$", clean_str(t1$biorxiv_jats_url))) {
+    early_base <- sub("\\.source\\.xml$", "", clean_str(t1$biorxiv_jats_url))
+    supps_jats <- t2$jats_supplements %||% list()
+    for (si in seq_along(supps_jats)) {
+      fn <- clean_str(supps_jats[[si]]$filename %||% "")
+      if (grepl("\\.xlsx$", fn, ignore.case = TRUE)) {
+        media_fn <- sprintf("media-%d.xlsx", si)
+        xlsx_urls <- c(xlsx_urls, paste0(early_base, "/DC1/embed/", media_fn), paste0(early_base, "/DC1/embed/", fn))
+        xlsx_names <- c(xlsx_names, media_fn, fn)
+      }
+    }
+  }
+
+  # Parse first discovered & reachable .xlsx workbook using Zero-DOM Low-RSS parser ([C-4])
   if (length(xlsx_urls) > 0L) {
-    xu <- xlsx_urls[[1L]]
-    xnm <- xlsx_names[[1L]]
-    leg_xl <- if (nzchar(leg_pref)) paste0(leg_pref, "_", xnm) else character(0)
-    r_xl <- perform_cached_request(
-      session, "Tier 3", "Supplement_XLSX", xu,
-      cache_key = paste0(slug_base, "_", xnm),
-      timeout_sec = 180,
-      expected_data_file = TRUE,
-      legacy_candidates = leg_xl
-    )
-    if (r_xl$ok && file.exists(r_xl$path)) {
-      out$xlsx_parsed <- tryCatch(
-        parse_xlsx_supplement_low_rss(r_xl$path, xnm),
-        error = function(e) {
-          warning("Low-RSS XLSX parser error on ", xnm, ": ", conditionMessage(e))
-          NULL
-        }
+    for (xi in seq_along(xlsx_urls)) {
+      xu <- xlsx_urls[[xi]]
+      xnm <- xlsx_names[[xi]]
+      leg_xl <- if (nzchar(leg_pref)) paste0(leg_pref, "_", xnm) else character(0)
+      r_xl <- perform_cached_request(
+        session, "Tier 3", "Supplement_XLSX", xu,
+        cache_key = paste0(slug_base, "_", xnm),
+        timeout_sec = 180,
+        expected_data_file = TRUE,
+        allow_transient_retry = FALSE,
+        legacy_candidates = leg_xl
       )
+      if (r_xl$ok && file.exists(r_xl$path)) {
+        out$xlsx_parsed <- tryCatch(
+          parse_xlsx_supplement_low_rss(r_xl$path, xnm),
+          error = function(e) {
+            warning("Low-RSS XLSX parser error on ", xnm, ": ", conditionMessage(e))
+            NULL
+          }
+        )
+        break
+      }
     }
   }
 
