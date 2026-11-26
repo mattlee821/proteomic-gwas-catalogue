@@ -187,3 +187,17 @@ PMID:39103364	Multiple myeloma GWAS performing targeted lookup of only 35 MM ris
 PMID:38951643	Puberty timing GWAS meta-analysis performing secondary colocalization lookup against published plasma pQTL datasets	2026-11-25
 PMID:38263798	Adult asthma observational SomaScan study paired with two-sample Mendelian randomization using published cis-pQTLs	2026-11-25
 PMID:39589852	Post-gestational diabetes observational machine-learning proteomics study; no germline pGWAS performed	2026-11-25
+PMID:41040220	Deep-learning Borzoi sequence-to-function variant-effect fine-tuning paper evaluated on 688 UKB-PPP genes; no primary cohort pGWAS performed	2026-11-26
+PMID:40764432	Hospital Frailty Risk Score GWAS in FinnGen and UK Biobank with secondary external pQTL colocalization; non-proteomic primary GWAS	2026-11-26
+PMID:40505416	COPDGene SomaScan COPD subtype biomarker study testing only 83 candidate SNPs (82 COPD GWAS loci + rs28929474; <100 genetic variants threshold)	2026-11-26
+PMID:40335902	Japan Omics Browser (JOB) visualization portal re-hosting previously published Japan COVID-19 Task Force (Wang et al. 2024) eQTL/pQTL summary statistics	2026-11-26
+PMID:40118817	UK Biobank observational Cox proportional-hazards proteomics + secondary two-sample Mendelian randomization for incident IBD reusing published UKB-PPP cis-pQTLs	2026-11-26
+PMID:39837327	Serum metabolome (2,759 metabolites) mQTL GWAS in Han Chinese cohorts; non-proteomic trait	2026-11-26
+PMID:39787248	Statistical fine-mapping and regional heritability methods paper without primary human pGWAS generation	2026-11-26
+PMID:41286463	Multi-ancestry delirium GWAS meta-analysis paired with observational UK Biobank proteomics and secondary Mendelian randomization	2026-11-26
+PMID:41331235	Psoriatic disease proteome-wide Mendelian randomization aggregating published pQTL databases plus observational UK Biobank risk score	2026-11-26
+PMID:41230127	Erectile dysfunction routine blood-count nomogram paired with secondary two-sample Mendelian randomization reusing published immune/cytokine GWASs	2026-11-26
+PMID:41332622	cpiVAE deep generative cross-platform proteomics imputation method evaluated on existing CKB, INTERVAL, and MESA datasets; no new pGWAS	2026-11-26
+PMID:40666345	UK Biobank wrist-accelerometer physical-activity observational proteomics + secondary two-sample Mendelian randomization reusing published UKB-PPP cis-pQTLs	2026-11-26
+PMID:41338217	Published AJHG version of excluded 2024 medRxiv PMID:38853880; queries and meta-analyzes published UKB-PPP (syn51364943), ARIC, and deCODE cis-pQTL summary statistics across 710 cancer lead variants for colocalization/SMR without de novo genotype-protein association testing	2026-11-26
+10.1101/2025.10.08.25337413	Companion ADNI CSF TMT-MS (syn59804727, N=1,005) FragPipe/FUSION PWAS preprint overlapping the primary ADNI CSF pQTL discovery cohort of wingo_2025_ppr1088491 without multi-SNP CSF pQTL summary statistics (curatorial decision WJ1: Option B)	2026-11-26
