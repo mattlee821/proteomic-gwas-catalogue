@@ -1,5 +1,5 @@
 # Canonical lexicons, controlled vocabularies, query compilers, ID normalizers,
-# and Unified Two-Stage Dual-Axis Triage Scorer (v4.10) for proteomic-gwas-catalogue.
+# and Unified Two-Stage Dual-Axis Triage Scorer (v4.11) for proteomic-gwas-catalogue.
 #
 # Single source of truth shared across discovery sources so PubMed E-utilities,
 # Europe PMC REST API, NHGRI-EBI GWAS Catalog v2, Citation Snowballing, and
@@ -1343,7 +1343,7 @@ score_triage_v2 <- function(title,
     "\\bimput(ed|ation)\\b|\\btopmed\\b|\\bhaplotype reference consortium\\b|\\b1000 genomes\\b|",
     "\\bsequence variants\\b|\\brare (coding |noncoding |homozygous )?variants?\\b|\\bminor allele frequenc[a-z]*\\b|",
     "\\bregenie\\b|\\bbolt-lmm\\b|\\bfastgwa\\b|\\bsnptest\\b|\\bplink\\b|\\bsaige\\b|\\bmatrixeqtl\\b|\\btensorqtl\\b|\\bqtltools\\b|\\bmesusie\\b|\\bsushie\\b|",
-    "\\bsnp[- ]based heritability\\b|\\bsnp-h2\\b|\\bheritability\\b|\\bepitopes?\\b|\\bprotein[- ]altering variants?\\b|",
+    "\\bsnp[- ]based heritability\\b|\\bsnp-h2\\b|\\bheritability\\b|\\bgermline genetic\\b|\\bepitopes?\\b|\\bprotein[- ]altering variants?\\b|",
     "\\bpqtls?\\b|\\bcis-?pqtls?\\b|\\btrans-?pqtls?\\b|\\bsd-?pqtls?\\b|\\bsv-?pqtls?\\b|\\btr-?pqtls?\\b|\\bprotein[- ]qtls?\\b|",
     "\\bvqtls?\\b|\\bcis-?vqtls?\\b|\\bcis-?molqtls?\\b|\\bsv-?qtls?\\b|\\btr-?xqtls?\\b|\\bqqtls?\\b|\\b(?:protein|molecular|multi-?omic|quantile) quantitative (trait )?loc[a-z]*\\b)"
   ), txt, perl = TRUE)) {
@@ -1527,7 +1527,7 @@ score_triage_v2 <- function(title,
         (has_multi_protein_scale && grepl(paste0(
           "\\b(genetic dominance and epistasis|identify complex effects that are associated with protein quantitative trait loci|",
           "mapping protein quantitative trait loci \\(pqtls?\\) for these variants|",
-          "[1-9][0-9,]+ proteins were regulated by genetic [a-z ]+ loci|",
+          "[1-9][0-9,]+ (?:[a-z-]+ )?proteins were (?:regulated|influenced) by (?:known )?genetic [a-z ]+ loci|",
           "[1-9][0-9,]*(?:/[1-9][0-9,]*)? (?:validated |plasma |serum )?proteins exhibited genetic control|",
           "molecular xqtls?|",
           "mapping [1-9][0-9,]+ coding germline variants onto peptides)\\b"

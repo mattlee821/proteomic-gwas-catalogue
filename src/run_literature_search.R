@@ -2,7 +2,7 @@
 # Multi-resource literature discovery, connected-components + preprint-lineage
 # deduplication, 4-tier preprint-to-published upgrade detector, strict canonical
 # first-publication-date windowing, selective Stage B.5 PMC full-text multi-omic
-# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.10)
+# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.11)
 # for proteomic-gwas-catalogue.
 #
 # Usage:
@@ -170,7 +170,7 @@ q_epmc_snow   <- build_epmc_snowball_query(LANDMARK_PGWAS_SEEDS$pmid, since_date
                                            verify_pmids = if (is_verify) verify_pmids else NULL)
 
 message(sprintf(
-  "Proteomic GWAS Search v4.10 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
+  "Proteomic GWAS Search v4.11 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
   mode, since_date, until_date,
   if (is_verify) paste(verify_pmids, collapse = ",") else "none",
   dry_run, write_catalogue
@@ -954,7 +954,7 @@ query_snowball_v2 <- function(since_d, until_d, is_retro = FALSE, verify_ids = N
     is_retro   = is_retro,
     verify_ids = verify_ids
   )
-  message(sprintf("[Source 4: Snowball Forward CITES: (10 seeds)] matched %d record(s).", length(fwd)))
+  message(sprintf("[Source 4: Snowball Forward CITES: (%d seeds)] matched %d record(s).", nrow(LANDMARK_PGWAS_SEEDS), length(fwd)))
 
   bwd <- if (isTRUE(is_retro) && is.null(verify_ids)) {
     res_b <- query_snowball_backward_epmc(LANDMARK_PGWAS_SEEDS$pmid, since_d = since_d, until_d = until_d)
@@ -1855,11 +1855,18 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
     "protein quantitative trait locus analysis for (?:two|three|four|[1-9]) (?:previously reported )?snps|",
     "determine the genetic drivers of the [a-z0-9-]+ and [a-z0-9-]+ protein levels|",
     "using the data from sun and colleagues|",
+    "builds upon previously published datasets,\\s*including pqtl|",
+    "leveraged summary statistics for protein quantitative trait loci|",
+    "used pqtls? from the somascan|",
+    "using two large somascan cis-?pqtl studies|",
+    "gene expression at [0-9]+ h was compared to protein abundance|",
+    "analysed top snps from [1-9][0-9]? [a-z0-9 -]+ gwas loci|",
+    "performed gwass? for the metabolites|",
     "pan[- ]genomic pqtl analysis using [a-z0-9-]+ protein levels|",
     "[a-z0-9-]+ protein qtl analysis was performed on log10 transformed [a-z0-9-]+ protein levels)\\b"
   )
 
-  if (any(grepl("\\bthe gwas was conducted to determine the genetic drivers of the [a-z0-9-]+ and [a-z0-9-]+ protein levels\\b", para_txts, perl = TRUE))) {
+  if (any(grepl("\\b(the gwas was conducted to determine the genetic drivers of the [a-z0-9-]+ and [a-z0-9-]+ protein levels|gene expression at [0-9]+ h was compared to protein abundance|analysed top snps from [1-9][0-9]? [a-z0-9 -]+ gwas loci|builds upon previously published datasets,\\s*including pqtl|leveraged summary statistics for protein quantitative trait loci|used pqtls? from the somascan|using two large somascan cis-?pqtl studies)\\b", para_txts, perl = TRUE))) {
     return(list(verified = FALSE, platform = ""))
   }
 
@@ -1945,7 +1952,7 @@ needs_ft_pqtl_check <- function(m) {
     grepl("\\b(donors?|participants?|individuals?|subjects?|patients?|multi-?omics? samples)\\b", comb_lc, perl = TRUE)
 }
 
-max_ft_checks_per_run <- 160L
+max_ft_checks_per_run <- 250L
 n_ft_candidates       <- 0L
 n_ft_checked          <- 0L
 n_ft_skipped_known    <- 0L
@@ -2090,9 +2097,26 @@ for (m in merged_recs) {
                 grepl(sprintf("\\b%d\\s+(?:[a-z-]+\\s+){0,2}(?:proteins?|protein\\s+measurements?|aptamers?|somamers?|circulating\\s+cytokines?|cytokines?)\\b", na_v),
                       tolower(abs_digits), perl = TRUE)
               }, p_assays)
+              p_nsamp <- suppressWarnings(as.integer(gsub("[^0-9]", "", st_rows$n_samples)))
+              p_nsamp <- unique(p_nsamp[!is.na(p_nsamp) & p_nsamp >= 500L])
+              if (length(p_nsamp) >= 2L) p_nsamp <- unique(c(p_nsamp, sum(p_nsamp)))
+              matched_nsamp <- Filter(function(ns_v) {
+                grepl(sprintf("\\b%d\\b", ns_v), tolower(abs_digits), perl = TRUE)
+              }, p_nsamp)
+              pre_txt_lc <- tolower(ascii_fold(paste(preprint_rows_df$title[pi], paste(st_rows$harmonisation_notes, collapse = " "))))
+              pub_txt_lc <- tolower(ascii_fold(paste(m$title, m$abstract)))
+              same_sex_proteome <- grepl("\\bsex(?:es|\\s+differences)\\b", pre_txt_lc) &&
+                grepl("\\bsex(?:es|\\s+differences)\\b", pub_txt_lc) &&
+                grepl("\\bproteom[a-z]*\\b", pub_txt_lc)
               if (length(matched_panel) > 0L) {
                 matched_preprint_sid <- p_sid
                 lineage_parts <- unique(c(lineage_parts, p_doi, p_sid, sprintf("Tier4_SameAuthorPanel=%d", matched_panel[1L])))
+              } else if (length(matched_nsamp) > 0L && sc$P_score >= 7L && sc$S_score <= 4L) {
+                matched_preprint_sid <- p_sid
+                lineage_parts <- unique(c(lineage_parts, p_doi, p_sid, sprintf("Tier4_SameAuthorSampleN=%d", matched_nsamp[1L])))
+              } else if (same_sex_proteome && sc$P_score >= 12L && sc$S_score <= 4L) {
+                matched_preprint_sid <- p_sid
+                lineage_parts <- unique(c(lineage_parts, p_doi, p_sid, "Tier4_SameAuthorSexProteome"))
               }
             }
           }
@@ -2212,8 +2236,8 @@ if (nrow(dump_df) > 0L) {
 }
 
 sources_desc <- sprintf(
-  "PubMed(%s);EuropePMC(2A_Platforms+2A_Proteome+2B_Methods);GWASCatalog_v2;Snowball_10Seeds [%s..%s]",
-  pm_date_field, since_date, until_date
+  "PubMed(%s);EuropePMC(2A_Platforms+2A_Proteome+2B_Methods);GWASCatalog_v2;Snowball_%dSeeds [%s..%s]",
+  pm_date_field, nrow(LANDMARK_PGWAS_SEEDS), since_date, until_date
 )
 
 upg_details <- if (dedup_n > 0L) {
