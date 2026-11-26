@@ -11,7 +11,7 @@ on:
         required: false
         default: "37794186,34857953"
       since_date:
-        description: "Search start date (YYYY-MM-DD) when running a date-window scan."
+        description: "Search start date (YYYY-MM-DD) when running a date-window scan (end date defaults to yesterday, current_search_date - 1 day)."
         required: false
         default: ""
       max_extract:

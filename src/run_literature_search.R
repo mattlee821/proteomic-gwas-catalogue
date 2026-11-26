@@ -47,7 +47,7 @@ if (!(mode %in% c("incremental", "retrospective"))) {
 
 default_since <- if (identical(mode, "retrospective")) "2005-01-01" else format(Sys.Date() - 35L, "%Y-%m-%d")
 since_date    <- get_opt("--since", default_since)
-until_date    <- get_opt("--until", format(Sys.Date(), "%Y-%m-%d"))
+until_date    <- get_opt("--until", format(Sys.Date() - 1L, "%Y-%m-%d"))
 trigger_lb    <- get_opt("--trigger", "Scheduled GitHub Action")
 verify_raw    <- get_opt("--verify-pmids", "")
 out_dir       <- get_opt("--out-dir", "")

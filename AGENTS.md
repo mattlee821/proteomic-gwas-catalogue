@@ -15,3 +15,8 @@ When retrieving full-text PDFs (or JATS XML / supplementary files) for `bioRxiv`
    - Space requests to `biorxiv.org` and `medrxiv.org` by **`>= 3.0` seconds** to respect Cold Spring Harbor Laboratory rate limits (avoiding `HTTP 429` error `1015`).
    - Verify binary/XML magic headers (`%PDF` for `.full.pdf`, `<article` for `.source.xml`, `PK\x03\x04` for `.xlsx`/`.docx`) before accepting downloaded files, and also verify content authenticity on generic EBI BioStudies `S-EPMC*` `media-*`/`mmc*` files.
    - **Never** spoof browser headers or attempt to bypass any `HTTP 403` / `HTTP 429` Cloudflare Turnstile or anti-bot challenge (`allow_transient_retry = FALSE`). Whenever a preprint PDF or supplement remains gated, escalate cleanly in `search_report.md` (Sections 2 & 3) using the direct `.full.pdf` / `.supplementary-material` URL for manual download.
+
+## Search Window End-Date Rule (`current_search_date - 1 day`)
+
+- All literature search periods **must end on the calendar day immediately before the current search execution date** (`until_date = Sys.Date() - 1L`, e.g. `2026-11-25` when searching on `2026-11-26`).
+- Ending on `current_search_date - 1 day` guarantees every queried date is a complete 24-hour indexing day across PubMed, Europe PMC, bioRxiv/medRxiv, Crossref, and GWAS Catalog without partial-day boundary gaps, and subsequent incremental periods begin cleanly on `previous_date_to + 1 day`.
