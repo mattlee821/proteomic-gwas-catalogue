@@ -199,3 +199,4 @@ PMID:41331235	Psoriatic disease proteome-wide Mendelian randomization aggregatin
 PMID:41230127	Erectile dysfunction routine blood-count nomogram paired with secondary two-sample Mendelian randomization reusing published immune/cytokine GWASs	2026-11-26
 PMID:41332622	cpiVAE deep generative cross-platform proteomics imputation method evaluated on existing CKB, INTERVAL, and MESA datasets; no new pGWAS	2026-11-26
 PMID:40666345	UK Biobank wrist-accelerometer physical-activity observational proteomics + secondary two-sample Mendelian randomization reusing published UKB-PPP cis-pQTLs	2026-11-26
+PMID:41338217	Published AJHG version of excluded 2024 medRxiv PMID:38853880; queries and meta-analyzes published UKB-PPP (syn51364943), ARIC, and deCODE cis-pQTL summary statistics across 710 cancer lead variants for colocalization/SMR without de novo genotype-protein association testing	2026-11-26
