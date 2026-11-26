@@ -164,3 +164,26 @@ PMID:37780799	Allergen-specific IgE sensitization GWAS; not a multiplexed proteo
 PMID:36792583	Single-analyte neonatal dried-blood-spot vitamin D-binding protein (GC/DBP) GWAS (<5 distinct proteins threshold)	2026-11-25
 10.1101/2023.06.14.23291409	Single-analyte CSF soluble TREM2 (sTREM2) GWAS (<5 distinct proteins threshold)	2026-11-25
 PMID:37555575	Targeted 6-SNP genetic lookup against Tanzanian inflammatory proteins (<100 variants threshold)	2026-11-25
+PMID:38714679	Stimulated PBMC and whole-blood cytokine QTL study in Lyme borreliosis (LymeProspect N=1,060) measuring only 4 distinct cytokines (IL-1B, IL-1Ra, IL-6, IL-10 across 60 cytokine-stimulation pairs; <5 distinct proteins threshold)	2026-11-25
+PMID:38674351	Targeted secondary re-analysis of public ROSMAP DLPFC proteomics (syn17008935) testing single-protein TMEM106B pQTL and APOE mRNA eQTL (<5 distinct proteins threshold; no primary multiplexed pGWAS)	2026-11-25
+PMID:39506937	Chronic kidney disease RNA-modification SNP study querying external public CKDGen and pQTL summary statistics; no primary pGWAS performed	2026-11-25
+PMID:39386869	Coronary artery disease probabilistic Mendelian randomization study reusing published deCODE N=35,559 plasma pQTL summary statistics	2026-11-25
+PMID:39284855	Candidate-SNP lookup testing only 14 Alzheimer's disease risk SNPs against taste-receptor and protein traits (<100 genetic variants threshold)	2026-11-25
+PMID:39371150	Blood-cell variance-QTL medRxiv preprint testing protein associations for only 2 eosinophil chemokines (CCL24 and CCL26; <5 distinct proteins threshold)	2026-11-25
+PMID:39241967	Infection mortality study applying polygenic protein scores derived from published UKB-PPP Sun et al. 2023 pQTL summary statistics	2026-11-25
+10.1101/2024.01.21.24301569	medRxiv preprint of PMID:39241967 applying UKB-PPP polygenic MERTK/protein scores to infection mortality; no de novo pGWAS	2026-11-25
+PMID:39148824	Cardiac MRI aging medRxiv preprint performing two-sample Mendelian randomization with published Sun et al. 2023 UKB-PPP cis-pQTLs	2026-11-25
+PMID:38989470	Coronary artery disease cis-IV Mendelian randomization study pooling published pQTL summary statistics from three prior cohorts	2026-11-25
+PMID:38853880	Pan-cancer proteome-wide Mendelian randomization medRxiv preprint reusing published UKB-PPP, deCODE, and ARIC pQTL summary statistics	2026-11-25
+PMID:38783236	Idiopathic pulmonary fibrosis druggable-genome Mendelian randomization study reusing published eQTLGen and pQTL summary statistics	2026-11-25
+PMID:38431573	Leukocyte telomere length Mendelian randomization study reusing 3,606 published cis-pQTL instruments	2026-11-25
+10.1101/2024.10.02.616321	Protein-protein interaction trans-pQTL prioritization method re-weighting published UKB-PPP and INTERVAL summary statistics; no new cohort pGWAS	2026-11-25
+10.1101/2024.11.17.24317384	Aortic aneurysm proteome-wide Mendelian randomization medRxiv preprint reusing published pQTL summary statistics across 9 prior studies	2026-11-25
+PMID:38225249	Heart failure WGCNA eigenprotein co-expression module GWAS paired with external INTERVAL/AGES/Fenland two-sample MR; no individual-protein pGWAS	2026-11-25
+PMID:38477735	Observational Cox proportional-hazards proteomic risk score meta-analysis for hip fracture; no germline pGWAS performed	2026-11-25
+PMID:38429390	7-day human fasting observational plasma proteomic study (N=12) integrating published Fenland and UKB-PPP SuSiE summary statistics	2026-11-25
+PMID:38446993	Myeloid neoplasm study constructing polygenic protein scores from published Sun et al. 2023 UKB-PPP pQTL weights	2026-11-25
+PMID:39103364	Multiple myeloma GWAS performing targeted lookup of only 35 MM risk SNPs against plasma proteins (<100 genetic variants threshold)	2026-11-25
+PMID:38951643	Puberty timing GWAS meta-analysis performing secondary colocalization lookup against published plasma pQTL datasets	2026-11-25
+PMID:38263798	Adult asthma observational SomaScan study paired with two-sample Mendelian randomization using published cis-pQTLs	2026-11-25
+PMID:39589852	Post-gestational diabetes observational machine-learning proteomics study; no germline pGWAS performed	2026-11-25
