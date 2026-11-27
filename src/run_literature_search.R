@@ -2,7 +2,7 @@
 # Multi-resource literature discovery, connected-components + preprint-lineage
 # deduplication, 4-tier preprint-to-published upgrade detector, strict canonical
 # first-publication-date windowing, selective Stage B.5 PMC full-text multi-omic
-# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.11)
+# modality verification, and Unified Two-Stage Dual-Axis Triage engine (v4.12)
 # for proteomic-gwas-catalogue.
 #
 # Usage:
@@ -47,7 +47,7 @@ if (!(mode %in% c("incremental", "retrospective"))) {
 
 default_since <- if (identical(mode, "retrospective")) "2005-01-01" else format(Sys.Date() - 35L, "%Y-%m-%d")
 since_date    <- get_opt("--since", default_since)
-until_date    <- get_opt("--until", format(Sys.Date(), "%Y-%m-%d"))
+until_date    <- get_opt("--until", format(Sys.Date() - 1L, "%Y-%m-%d"))
 trigger_lb    <- get_opt("--trigger", "Scheduled GitHub Action")
 verify_raw    <- get_opt("--verify-pmids", "")
 out_dir       <- get_opt("--out-dir", "")
@@ -170,7 +170,7 @@ q_epmc_snow   <- build_epmc_snowball_query(LANDMARK_PGWAS_SEEDS$pmid, since_date
                                            verify_pmids = if (is_verify) verify_pmids else NULL)
 
 message(sprintf(
-  "Proteomic GWAS Search v4.11 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
+  "Proteomic GWAS Search v4.12 | mode=%s | window=%s..%s | verify_pmids=%s | dry_run=%s | write_catalogue=%s",
   mode, since_date, until_date,
   if (is_verify) paste(verify_pmids, collapse = ",") else "none",
   dry_run, write_catalogue
@@ -1237,7 +1237,7 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
     } else {
       pick_longest(vapply(sub, `[[`, "", "abstract"))
     }
-    if (isTRUE(resolve_remote_pubs) && !nzchar(best_abs) && length(pub_sub) == 0L && grepl("^10\\.1101/", chosen_doi)) {
+    if (isTRUE(resolve_remote_pubs) && !nzchar(best_abs) && length(pub_sub) == 0L && grepl("^10\\.(1101|64898)/", chosen_doi)) {
       for (srv_h in c("biorxiv", "medrxiv")) {
         u_bh <- sprintf("https://api.biorxiv.org/details/%s/%s/na/json", srv_h, chosen_doi)
         r_bh <- perform_polite_http(
@@ -1247,10 +1247,20 @@ merge_raw_records <- function(recs, resolve_remote_pubs = TRUE) {
         if (!is.null(r_bh) && httr2::resp_status(r_bh) == 200L) {
           jbh <- tryCatch(httr2::resp_body_json(r_bh, simplifyVector = FALSE), error = function(e) NULL)
           if (!is.null(jbh$collection) && length(jbh$collection) > 0L) {
-            best_abs <- clean_cell(jbh$collection[[1L]]$abstract %||% "")
+            best_abs <- clean_cell(jbh$collection[[length(jbh$collection)]]$abstract %||% "")
             if (nzchar(best_abs)) break
           }
         }
+      }
+    } else if (isTRUE(resolve_remote_pubs) && !nzchar(best_abs) && grepl("^10\\.(21203|20944)/", chosen_doi)) {
+      u_ch <- paste0("https://api.crossref.org/works/", chosen_doi)
+      r_ch <- perform_polite_http(
+        httr2::request(u_ch) |> httr2::req_user_agent(UA_STRING) |> httr2::req_timeout(15),
+        sleep_s = 0.25, max_tries = 2L, label = "Crossref preprint abstract hydrate", expect_json = TRUE
+      )
+      if (!is.null(r_ch) && httr2::resp_status(r_ch) == 200L) {
+        jch <- tryCatch(httr2::resp_body_json(r_ch, simplifyVector = FALSE), error = function(e) NULL)
+        best_abs <- clean_cell(strip_html_tags(jch$message$abstract %||% ""))
       }
     }
 
@@ -1317,8 +1327,8 @@ query_crossref_posted_preprints <- function(since_d, until_d, is_retro, verify_i
       seen_d <- c(seen_d, d_raw)
       ttl <- clean_cell(if (length(it$title) > 0L) it$title[[1L]] else "")
       abs <- strip_html_tags(it$abstract %||% "")
-      # Hydrate missing abstract on 10.1101/ preprints from bioRxiv/medRxiv details API
-      if (!nzchar(abs) && grepl("^10\\.1101/", d_raw)) {
+      # Hydrate missing abstract on 10.1101/ and 10.64898/ preprints from bioRxiv/medRxiv details API
+      if (!nzchar(abs) && grepl("^10\\.(1101|64898)/", d_raw)) {
         for (srv in c("biorxiv", "medrxiv")) {
           u_bx <- sprintf("https://api.biorxiv.org/details/%s/%s/na/json", srv, d_raw)
           r_bx <- perform_polite_http(
@@ -1839,11 +1849,15 @@ verify_pmc_fulltext_pqtl <- function(pmcid, xml_override = NULL) {
     "gwas analyses were performed using the r gwaf package|",
     "(?:of the [1-9][0-9,]* pqtls? in cis|n\\s*=\\s*[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteom[a-z]*|[1-9][0-9,]*\\s+(?:[a-z-]+\\s+){0,2}proteomics? samples)(?=[\\s\\S]{0,220}\\b(?:tr-?pqtls?|sv-?pqtls?|tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|susie))|",
     "(?:tr-?pqtls?|sv-?pqtls?|cis-?pqtls?|pqtls?|protein[- ]qtls?) (?:were|was) (?:performed|mapped|computed|tested|generated)|",
+    "tested for association [0-9, ]+ bulk eqtls?[^.;]{0,140}\\b[1-9][0-9,]* pqtls?|",
     "tensorqtl|matrixeqtl|qtltools|fastgwa|regenie|qrank|quail|fastlmm|susie)\\b"
   )
   ext_only_pat <- paste0(
     "\\b(protein qtls? from the [a-z0-9 -]{0,35}generated by|curated (?:tumor )?database integrating|",
     "(?:previous|prior|published|existing|publicly available|publically available) (?:eqtl and )?pqtl (?:stud(?:y|ies)|analys(?:is|es)|datasets?)|",
+    "(?:cis-?|trans-?)?(?:pqtls?|protein quantitative trait loc[a-z]*)(?:\\s+(?:data|signals?|instruments?|summary\\s+statistics|analysis\\s+results))?\\s+(?:were\\s+|was\\s+)?(?:from|obtained\\s+from|derived\\s+from|generated\\s+from(?:\\s+analysis\\s+of)?|among\\s+[0-9,]+\\s+[a-z ]+of)\\s+(?:the\\s+)?(?:ukb-?ppp|uk\\s+biobank|decode|aric|fenland|interval|scallop|holbaek|prior\\s+study)|",
+    "previously\\s+identified\\s+(?:cis-?)?(?:protein\\s+quantitative\\s+trait\\s+loc[a-z]*|pqtls?)|",
+    "for\\s+the\\s+pqtl\\s+mr\\s+analysis|",
     "pre-computed associations for (?:cis/?trans-?|cis-?|trans-?)?pqtls?|",
     "obtained locus-specific[^.;]{0,45}summary statistics from our genome-wide association|",
     "pqtls? acquired from phenoscanner|",
@@ -1942,7 +1956,11 @@ needs_ft_pqtl_check <- function(m) {
     is_named_plat_gen_cohort <- sc_pre$P_score >= 3L && sc_pre$S_score == 0L && has_human_cohort_kw &&
       ("P5_GenomicArchitecture(+3)" %in% sc_pre$p_rules) &&
       !identical(detect_platform_v2(comb_lc), "Unspecified Proteomics")
-    return(is_methods_rescue_low_s || is_cohort_bidir_mr || is_named_plat_gen_cohort)
+    # Case 2B-4: Multi-omic xQTL / molQTL atlas mentioning protein abundance/levels without explicit platform name in abstract
+    is_multiomic_xqtl_atlas <- sc_pre$P_score >= 3L && sc_pre$S_score == 0L && has_human_cohort_kw &&
+      grepl("\\b(xqtls?|molqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|(?:molecular|multi-?omic) quantitative trait loc[a-z]*)\\b", comb_lc, perl = TRUE) &&
+      grepl("\\bprotein (?:abundance|levels|expression)\\b", comb_lc, perl = TRUE)
+    return(is_methods_rescue_low_s || is_cohort_bidir_mr || is_named_plat_gen_cohort || is_multiomic_xqtl_atlas)
   }
   has_multiomic_qtl_anchor <- grepl("\\b(molqtls?|xqtls?|tr-?xqtls?|sv-?qtls?|qqtls?|(?:molecular|multi-?omic|quantile) (?:quantitative trait loc[a-z]*|qtls?))\\b",
                                     comb_lc, perl = TRUE)
@@ -2093,7 +2111,9 @@ for (m in merged_recs) {
               p_assays <- suppressWarnings(as.integer(gsub("[^0-9]", "", c(st_rows$n_assays, st_rows$n_unique_proteins))))
               p_assays <- unique(p_assays[!is.na(p_assays) & (p_assays >= 100L | (p_assays >= 40L & sc$P_score >= 4L))])
               abs_digits <- gsub(",", "", normalize_si_thousands(m$abstract %||% ""))
+              stock_consortium_panels <- c(2923L, 2922L, 2920L, 4907L, 4719L, 1463L)
               matched_panel <- Filter(function(na_v) {
+                if ((na_v %in% stock_consortium_panels) && jac < 0.12 && sc$S_score >= 4L) return(FALSE)
                 grepl(sprintf("\\b%d\\s+(?:[a-z-]+\\s+){0,2}(?:proteins?|protein\\s+measurements?|aptamers?|somamers?|circulating\\s+cytokines?|cytokines?)\\b", na_v),
                       tolower(abs_digits), perl = TRUE)
               }, p_assays)
@@ -2125,7 +2145,7 @@ for (m in merged_recs) {
     }
   }
 
-  auto_cls <- if (nzchar(matched_preprint_sid) && sc$P_score >= 4L) {
+  auto_cls <- if (nzchar(matched_preprint_sid) && (sc$P_score >= 4L || (!any(grepl("^Tier4_", lineage_parts)) && sc$S_score <= 4L))) {
     sprintf("Preprint -> Published Match (%s)", matched_preprint_sid)
   } else {
     sc$classification
