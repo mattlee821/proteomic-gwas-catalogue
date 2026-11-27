@@ -154,7 +154,10 @@ run_tier4_provenance_and_escalate <- function(t1, t2, t3_supp, t3_repo, out_dir,
         t2$ft_gate_note)
   add_p(sid, "studies.tsv", sid, "curation_tier", "OPTIONAL",
         "AI-extracted", "API_EXTRACTED", "Tier 1", "Pipeline provenance default",
-        "Automated 4-tier extraction; upgrades to Human-reviewed / Human-curated on sign-off")
+        "Automated 4-tier extraction; upgrades to Human-reviewed only when a Step 4 curatorial choice is required")
+  add_p(sid, "studies.tsv", sid, "curation_note", "OPTIONAL",
+        "", "API_EXTRACTED", "Tier 1", "Pipeline provenance default",
+        "Empty for AI-extracted; short summary of the human curatorial decision when curation_tier is Human-reviewed")
 
   # --- 3. Reconcile study-wide stratum attributes across Tier 1, Tier 2, and Tier 3 ---
   cohorts_vec <- t2$cohorts
@@ -488,7 +491,8 @@ run_tier4_provenance_and_escalate <- function(t1, t2, t3_supp, t3_repo, out_dir,
   studies_cols <- c(
     "study_id", "first_author", "year", "status", "superseded_by",
     "pmid", "doi", "journal", "title", "repository", "accession_or_url",
-    "access_level", "added_release", "verified_full_text", "curation_tier"
+    "access_level", "added_release", "verified_full_text", "curation_tier",
+    "curation_note"
   )
   strata_cols <- c(
     "stratum_id", "study_id", "cohorts_display", "ancestry_group", "ancestry_detail",

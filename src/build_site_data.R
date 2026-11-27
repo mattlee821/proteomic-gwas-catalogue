@@ -128,7 +128,7 @@ export_cols <- c(
   "n_assays", "n_unique_proteins", "data_label", "coverage", "cis_window_kb",
   "genome_build", "strand", "imputation_panel", "transformation", "effect_scale",
   "gwas_software", "covariates", "repository", "accession_or_url", "access_short",
-  "curation_tier", "harmonisation_notes"
+  "curation_tier", "curation_note", "harmonisation_notes"
 )
 tmp_full <- tempfile(fileext = ".tsv")
 utils::write.table(

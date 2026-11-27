@@ -54,8 +54,8 @@ Publish numbered catalogue release & data archive`"]:::manual
     style MANUAL fill:#f0f9ff,stroke:#38bdf8,stroke-width:2px,stroke-dasharray: 6 4,color:#075985
 ```
 
-* <span class="pg-badge cur-ai-extracted">Automated / AI-extracted</span> **(Steps 1–3 & 5):** Searches literature and preprint databases, links preprints to subsequent journal publications, filters out secondary Mendelian randomisation studies, extracts open-access metadata, validates the data schema, and rebuilds the website.
-* <span class="pg-badge cur-human-reviewed">Human-reviewed</span> **(Steps 4.1–4.4 & 6):** A human reviewer confirms borderline candidate studies, downloads any closed-access PDFs or missing supplementary files so their metadata can be extracted, verifies study/cohort/assay details, checks recall against positive-control studies, and publishes numbered version releases.
+* <span class="pg-badge cur-ai-extracted">Automated / AI-extracted</span> **(Steps 1–3 & 5):** Searches literature and preprint databases, links preprints to subsequent journal publications, filters out secondary Mendelian randomisation studies, extracts metadata from open-access and downloaded files, validates the data schema, and rebuilds the website.
+* <span class="pg-badge cur-human-reviewed">Human-reviewed</span> **(Steps 4.1–4.4 & 6):** A human reviewer downloads any gated PDFs or supplementary files for automated parsing (which remain `AI-extracted` unless a curatorial judgment call is required), resolves borderline study/stratum/metadata choices in Step 4 (marking only those studies `Human-reviewed` alongside a short summary such as `Strata check`), checks recall against positive-control studies, and publishes numbered version releases.
 :::
 
 ::: {.about-section}
@@ -114,8 +114,8 @@ Because ~85–90% of recent literature matching `"proteomics" AND "GWAS"` consis
 
 Automated searches never publish directly to the live catalogue; every update opens a **GitHub Pull Request** gated by schema validation and human review. Each row in the catalogue displays one of three explicit provenance badges inside its expanded **OTHER** panel (`CURATION`):
 
-* **`AI-extracted`** — Metadata was populated automatically by the 4-tier extraction pipeline from open-access text, supplements, and repository APIs, and has passed automated schema checks pending full human sign-off.
-* **`Human-reviewed`** — Automated extraction flagged one or more missing, closed-access, or ambiguous fields (`NEEDS_MANUAL_REVIEW`), and a human reviewer checked the paper/supplements to verify and complete the record.
+* **`AI-extracted`** — Metadata was extracted by the automated pipeline from APIs, full texts, and supplementary tables (including closed-access PDFs or supplements downloaded to feed the parser) without requiring a human curatorial judgment call in Step 4.
+* **`Human-reviewed`** — Step 4 required an explicit human curatorial choice (for example on study eligibility, stratum splitting, sample size, assay count, sample matrix, data coverage, or preprint lineage), with a concise note describing the decision (e.g. `Strata check`) displayed inline next to the badge. Published upgrades inherit `Human-reviewed` when the underlying stratum/study design choice carries forward.
 * **`Human-curated`** — Every phenotype, genetic, build/strand, cohort-overlap, and access field was curated and verified end-to-end by a human researcher against the full publication, supplementary tables, and downloaded summary statistics.
 :::
 
