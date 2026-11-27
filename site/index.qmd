@@ -5,43 +5,152 @@ pagetitle: "Proteomic GWAS Catalogue"
 ```{ojs}
 catData = FileAttachment("data/catalogue.json").json()
 strataAll = catData.strata
+studiesAll = catData.studies
+cohortsAll = catData.cohort_membership
+protSummary = catData.protein_summary
+protIndex = catData.proteins_index
+meta = catData.metadata
 ```
 
+{{< include _shared_detail.qmd >}}
+
 ```{ojs}
-platBadgeClass = p => p === "Mass Spectrometry" ? "plat-MS" : p === "Other Immunoassay" ? "plat-Other" : `plat-${p}`
+// Pre-compute Catalogue KPI metrics & 2-panel summary figure series from active (non-superseded) records
+catSummary = {
+  const activeStudies = studiesAll.filter(s => s.status !== "Superseded Preprint");
+  const activeStudyIds = new Set(activeStudies.map(s => s.study_id));
+  const activeStrata = strataAll.filter(s => s.status !== "Superseded Preprint");
 
-dataBadgeClass = d =>
-  d === "Genome-wide" ? "data-gw" :
-  d === "Gene-region" ? "data-cis" :
-  d === "Top-hits" ? "data-top" : "data-unavail"
+  const nPublished = activeStudies.filter(s => s.status === "Published").length;
+  const nPreprints = activeStudies.filter(s => s.status === "Preprint").length;
 
-curationBadgeClass = c =>
-  c === "Human-curated" ? "cur-human-curated" :
-  c === "Human-reviewed" ? "cur-human-reviewed" : "cur-ai-extracted"
+  const activeCohortsSet = new Set(
+    cohortsAll.filter(c => activeStudyIds.has(c.study_id)).map(c => c.cohort)
+  );
 
-accessBadgeClass = a =>
-  a === "open" ? "data-gw" :
-  a === "request" ? "data-cis" : "data-unavail"
+  const nGw = activeStrata.filter(s => s.data_label === "Genome-wide").length;
+  const nGwOpen = activeStrata.filter(s => s.data_label === "Genome-wide" && s.access_short === "open").length;
+  const nTopHits = activeStrata.filter(s => s.data_label === "Top-hits").length;
+  const nCis = activeStrata.filter(s => s.data_label === "Gene-region").length;
+  const nUnavail = activeStrata.filter(s => s.data_label === "Unavailable").length;
 
-matchNumericFilter = (val, rawExpr) => {
-  const expr = (rawExpr || "").trim().replace(/,/g, "");
-  if (!expr) return true;
-  const m = expr.match(/^(>=|<=|>|<|=)?\s*([0-9]+(?:\.[0-9]+)?)$/);
-  if (m) {
-    const op = m[1] || "=";
-    const num = Number(m[2]);
-    if (op === ">=") return val >= num;
-    if (op === "<=") return val <= num;
-    if (op === ">")  return val > num;
-    if (op === "<")  return val < num;
-    return val === num;
+  const platOrder = ["Olink", "SomaScan", "Mass Spectrometry", "Luminex", "Other Immunoassay", "NULISA"];
+  const platShort = {
+    "Olink": "Olink",
+    "SomaScan": "SomaScan",
+    "Mass Spectrometry": "MS",
+    "Luminex": "Luminex",
+    "Other Immunoassay": "Other",
+    "NULISA": "NULISA"
+  };
+  const platCounts = [];
+  for (const p of platOrder) {
+    const n = activeStrata.filter(s => s.platform_category === p).length;
+    if (n > 0) platCounts.push({ label: platShort[p] || p, full: p, count: n });
   }
-  return String(val).includes(expr);
+  platCounts.sort((a, b) => b.count - a.count);
+
+  const years = activeStudies.map(s => Number(s.year)).filter(Number.isFinite);
+  const minYear = years.length ? Math.min(...years) : 2008;
+  const maxYear = years.length ? Math.max(...years) : 2026;
+  const yearSeq = [];
+  for (let y = minYear; y <= maxYear; y++) yearSeq.push(y);
+
+  // Panel 1: Studies per year stacked by Status x Open Genome-Wide data availability
+  const studyHasOpenGw = new Set(
+    activeStrata
+      .filter(s => s.data_label === "Genome-wide" && s.access_short === "open")
+      .map(s => s.study_id)
+  );
+  const barCategories = [
+    "Published · Open genome-wide",
+    "Preprint · Open genome-wide",
+    "Published · Other tier / access",
+    "Preprint · Other tier / access"
+  ];
+  const barData = [];
+  for (const y of yearSeq) {
+    const inYr = activeStudies.filter(s => Number(s.year) === y);
+    const counts = {
+      "Published · Open genome-wide": 0,
+      "Preprint · Open genome-wide": 0,
+      "Published · Other tier / access": 0,
+      "Preprint · Other tier / access": 0
+    };
+    for (const s of inYr) {
+      const openGw = studyHasOpenGw.has(s.study_id);
+      const isPub = s.status === "Published";
+      if (isPub && openGw) counts["Published · Open genome-wide"] += 1;
+      else if (!isPub && openGw) counts["Preprint · Open genome-wide"] += 1;
+      else if (isPub) counts["Published · Other tier / access"] += 1;
+      else counts["Preprint · Other tier / access"] += 1;
+    }
+    for (const cat of barCategories) {
+      barData.push({
+        year: y,
+        category: cat,
+        count: counts[cat],
+        yearTotal: inYr.length,
+        yearOpenGw: counts["Published · Open genome-wide"] + counts["Preprint · Open genome-wide"]
+      });
+    }
+  }
+
+  // Panel 2: Cumulative unique cohorts & cumulative POPULATION records over time
+  const studyYearById = new Map(activeStudies.map(s => [s.study_id, Number(s.year)]));
+  const popOrder = ["EUR", "MULTI", "AFR", "EAS", "CSA", "AMR", "MID"];
+  const cumLines = [];
+
+  for (const y of yearSeq) {
+    const cohUpToY = new Set();
+    for (const c of cohortsAll) {
+      const sy = studyYearById.get(c.study_id);
+      if (sy !== undefined && sy <= y) cohUpToY.add(c.cohort);
+    }
+    cumLines.push({
+      year: y,
+      series: "Unique cohorts",
+      count: cohUpToY.size,
+      isCohort: true
+    });
+    for (const pop of popOrder) {
+      const nPop = activeStrata.filter(s => s.pop_super === pop && Number(s.year) <= y).length;
+      cumLines.push({
+        year: y,
+        series: pop,
+        count: nPop,
+        isCohort: false
+      });
+    }
+  }
+
+  return {
+    nStudies: activeStudies.length,
+    nPublished,
+    nPreprints,
+    nStrata: activeStrata.length,
+    nCohorts: activeCohortsSet.size,
+    nProteins: protSummary.length,
+    nAssayRecords: protIndex.length,
+    nGw,
+    nGwOpen,
+    nRemaining: activeStrata.length - nGw,
+    nTopHits,
+    nCis,
+    nUnavail,
+    platCounts,
+    minYear,
+    maxYear,
+    yearSeq,
+    barCategories,
+    barData,
+    cumLines
+  };
 }
 ```
 
 ```{ojs}
-// Full-width Catalogue view: Banner + 11-column filterable, paginated, inline-expandable table + bottom download
+// Full-width Catalogue view: 6 KPI boxes + 11-column filterable/paginated table + synced 2-row dropdown + 2-panel summary figure
 {
   const state = {
     hideSuperseded: true,
@@ -272,59 +381,19 @@ matchNumericFilter = (val, rawExpr) => {
         </td>
         <td class="mono center-col"><strong>${d.pop_super}</strong></td>
         <td class="center-col">${d.sex}</td>
-        <td class="num-col"><strong>${d.n_samples.toLocaleString()}</strong></td>
+        <td class="num-col"><strong>${fmtInt(d.n_samples)}</strong></td>
         <td>${d.sample_matrix}</td>
         <td class="center-col">
           <span class="pg-badge ${platBadgeClass(d.platform_category)}">${d.platform_category}</span>
           <div style="font-size:0.71rem;color:#64748b;margin-top:1px;">${d.platform_version}</div>
         </td>
-        <td class="num-col">${d.n_assays.toLocaleString()}</td>
+        <td class="num-col">${fmtInt(d.n_assays)}</td>
         <td class="center-col"><span class="pg-badge ${dataBadgeClass(d.data_label)}">${d.data_label}</span></td>
       </tr>`);
 
       if (isOpen) {
         trs.push(htl.html`<tr class="detail-row">
-          <td colspan="11">
-            <div class="detail-topbar">
-              <div>
-                <p class="detail-title">${d.title}</p>
-                <div style="font-size:0.78rem;color:#475569;margin-top:2px;">
-                  <span class="mono">${d.study_id}</span> · <em>${d.journal}</em> (${d.year})
-                </div>
-              </div>
-              <div class="detail-links">
-                ${d.doi ? htl.html`<a class="btn-pill" href="https://doi.org/${d.doi}" target="_blank" rel="noopener">DOI: ${d.doi} ↗</a>` : ""}
-                <a class="btn-pill btn-pill-primary" href=${d.accession_or_url} target="_blank" rel="noopener">Data Download (${d.repository}) ↗</a>
-              </div>
-            </div>
-
-            <div class="detail-3col">
-              <div class="detail-col-box">
-                <h4>PHENOTYPE</h4>
-                <div class="detail-kv"><strong>Platform:</strong> ${d.platform_version}</div>
-                <div class="detail-kv"><strong>Assays:</strong> ${d.n_assays.toLocaleString()} (${d.n_unique_proteins.toLocaleString()} unique targets)</div>
-                <div class="detail-kv"><strong>Matrix:</strong> ${d.sample_matrix}</div>
-                <div class="detail-kv"><strong>Transformation:</strong> ${d.transformation} (<span class="mono">${d.effect_scale}</span>)</div>
-              </div>
-
-              <div class="detail-col-box">
-                <h4>GENETIC</h4>
-                <div class="detail-kv"><strong>Population detail:</strong> ${d.ancestry_detail} (<span class="mono">${d.pop_super}</span>)</div>
-                <div class="detail-kv"><strong>Build:</strong> <span class="mono" style="font-weight:700;">${d.genome_build}</span></div>
-                <div class="detail-kv"><strong>Strand:</strong> <span class="mono" style="font-weight:700;">${d.strand || "Not reported"}</span></div>
-                <div class="detail-kv"><strong>Model &amp; covariates:</strong> ${d.gwas_software} — ${d.covariates}</div>
-                <div class="detail-kv"><strong>Imputation:</strong> ${d.imputation_panel}</div>
-              </div>
-
-              <div class="detail-col-box">
-                <h4>OTHER</h4>
-                <div class="detail-kv"><strong>CURATION:</strong> <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span>${d.curation_note ? htl.html` <span style="color:#334155;margin-left:0.3rem;">${d.curation_note}</span>` : ""}</div>
-                <div class="detail-kv"><strong>OVERLAP:</strong> <span class="mono">${d.overlap_ids}</span></div>
-                <div class="detail-kv"><strong>ACCESS:</strong> <span class="pg-badge ${accessBadgeClass(d.access_short)}">${d.access_short}</span></div>
-                ${d.harmonisation_notes ? htl.html`<div class="detail-kv" style="margin-top:0.35rem;"><strong>NOTES:</strong> ${d.harmonisation_notes}</div>` : ""}
-              </div>
-            </div>
-          </td>
+          <td colspan="11">${renderExpandedDetail(d, { isLookup: false })}</td>
         </tr>`);
       }
     }
@@ -337,11 +406,127 @@ matchNumericFilter = (val, rawExpr) => {
 
   renderRows();
 
+  const cs = catSummary;
+  const panel1Plot = Plot.plot({
+    width: 640,
+    height: 285,
+    marginLeft: 44,
+    marginRight: 16,
+    marginBottom: 38,
+    style: { background: "transparent", fontSize: "11.5px", width: "100%" },
+    x: {
+      label: "Year",
+      domain: cs.yearSeq,
+      tickFormat: d => (d % 2 === 0 ? String(d) : "")
+    },
+    y: {
+      label: "Studies (Published + Preprint)",
+      grid: true
+    },
+    color: {
+      legend: true,
+      domain: cs.barCategories,
+      range: ["#15803d", "#4ade80", "#334155", "#94a3b8"]
+    },
+    marks: [
+      Plot.barY(cs.barData, {
+        x: "year",
+        y: "count",
+        fill: "category",
+        tip: true,
+        title: d => `${d.year} · ${d.category}: ${d.count}\nTotal active studies in ${d.year}: ${d.yearTotal} (${d.yearOpenGw} open genome-wide)`
+      }),
+      Plot.ruleY([0])
+    ]
+  });
+
+  const seriesDomain = ["Unique cohorts", "EUR", "MULTI", "AFR", "EAS", "CSA", "AMR", "MID"];
+  const seriesColors = ["#0f172a", "#2563eb", "#7c3aed", "#d97706", "#0d9488", "#db2777", "#dc2626", "#64748b"];
+  const cohortSeries = cs.cumLines.filter(d => d.isCohort);
+  const popSeries = cs.cumLines.filter(d => !d.isCohort);
+
+  const panel2Plot = Plot.plot({
+    width: 640,
+    height: 285,
+    marginLeft: 48,
+    marginRight: 18,
+    marginBottom: 38,
+    style: { background: "transparent", fontSize: "11.5px", width: "100%" },
+    x: {
+      label: "Year",
+      tickFormat: d => String(d),
+      ticks: cs.yearSeq.filter(y => y % 2 === 0)
+    },
+    y: {
+      label: "Cumulative Count",
+      grid: true
+    },
+    color: {
+      legend: true,
+      domain: seriesDomain,
+      range: seriesColors
+    },
+    marks: [
+      Plot.lineY(popSeries, {
+        x: "year",
+        y: "count",
+        stroke: "series",
+        strokeWidth: 2
+      }),
+      Plot.lineY(cohortSeries, {
+        x: "year",
+        y: "count",
+        stroke: "series",
+        strokeWidth: 2.6,
+        strokeDasharray: "5,3"
+      }),
+      Plot.dot(cs.cumLines, {
+        x: "year",
+        y: "count",
+        fill: "series",
+        r: d => d.isCohort ? 3 : 2.2,
+        tip: true,
+        title: d => `${d.series} (${d.year})\nCumulative: ${d.count.toLocaleString()}`
+      }),
+      Plot.ruleY([0])
+    ]
+  });
+
   return htl.html`<div class="pg-shell">
-    <div class="hero-banner">
-      <div>
-        <h1>Proteomic GWAS Catalogue</h1>
-        <p>A searchable reference table of published and preprint genome-wide association studies (GWAS) of proteins across cohorts, platforms, and biological matrices.</p>
+    <div class="kpi-grid-6">
+      <div class="kpi-card">
+        <div class="kpi-label">LAST UPDATED</div>
+        <div class="kpi-value" style="font-size:1.18rem;">${meta.last_updated}</div>
+        <div class="kpi-sub">Version <span class="mono">${meta.current_version}</span> · ${cs.minYear}–${cs.maxYear}</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">STUDIES</div>
+        <div class="kpi-value">${cs.nStudies.toLocaleString()}</div>
+        <div class="kpi-sub">${cs.nPublished} published · ${cs.nPreprints} preprints</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">UNIQUE COHORTS</div>
+        <div class="kpi-value">${cs.nCohorts.toLocaleString()}</div>
+        <div class="kpi-sub">Across ${cs.nStrata.toLocaleString()} GWAS records</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">UNIQUE PROTEINS</div>
+        <div class="kpi-value">${cs.nProteins.toLocaleString()}</div>
+        <div class="kpi-sub">${cs.nAssayRecords.toLocaleString()} assay records</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">GENOME-WIDE DATA</div>
+        <div class="kpi-value">${cs.nGw} <span style="font-size:0.88rem;font-weight:500;color:#64748b;">/ ${cs.nStrata}</span> <span class="pg-badge data-gw" style="vertical-align:middle;margin-left:2px;">${cs.nGwOpen} open</span></div>
+        <div class="kpi-sub">${cs.nTopHits} top-hits · ${cs.nCis} cis · ${cs.nUnavail} unavail. (of ${cs.nRemaining})</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">RECORDS BY PLATFORM</div>
+        <div class="kpi-mini-grid">
+          ${cs.platCounts.map(p => htl.html`<div class="kpi-mini-item" title="${p.full}: ${p.count} records">
+            <span>${p.label}</span>
+            <strong class="mono">${p.count}</strong>
+          </div>`)}
+        </div>
       </div>
     </div>
 
@@ -371,6 +556,21 @@ matchNumericFilter = (val, rawExpr) => {
 
     <div class="bottom-download-bar">
       <a class="btn-pill btn-pill-primary" href="data/proteomic_gwas_catalogue_full.tsv" download>⬇ Download Full Table (.tsv)</a>
+    </div>
+
+    <div class="fig-grid-2col">
+      <div class="panel-card" style="margin-bottom:0;">
+        <div class="panel-title">
+          <span>Annual Protein GWAS Publications &amp; Open Genome-Wide Availability</span>
+        </div>
+        ${panel1Plot}
+      </div>
+      <div class="panel-card" style="margin-bottom:0;">
+        <div class="panel-title">
+          <span>Cumulative Unique Cohorts &amp; Population Records Over Time</span>
+        </div>
+        ${panel2Plot}
+      </div>
     </div>
   </div>`;
 }

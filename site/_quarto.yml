@@ -46,7 +46,7 @@ format:
     page-layout: custom
     toc: false
     smooth-scroll: true
-    code-copy: true
+    code-copy: false
 
 execute:
   echo: false
