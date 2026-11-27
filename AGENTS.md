@@ -20,3 +20,10 @@ When retrieving full-text PDFs (or JATS XML / supplementary files) for `bioRxiv`
 
 - All literature search periods **must end on the calendar day immediately before the current search execution date** (`until_date = Sys.Date() - 1L`, e.g. `2026-11-25` when searching on `2026-11-26`).
 - Ending on `current_search_date - 1 day` guarantees every queried date is a complete 24-hour indexing day across PubMed, Europe PMC, bioRxiv/medRxiv, Crossref, and GWAS Catalog without partial-day boundary gaps, and subsequent incremental periods begin cleanly on `previous_date_to + 1 day`.
+
+## Release Versioning Rule (`v0.X.Y`)
+
+All catalogue and repository releases follow `v0.X.Y` (continuing from `v0.1.20`):
+
+- **New literature search periods bump `X` and reset `Y` to `0` (`v0.(X+1).0`):** Every new search update increments the minor (`X`) integer and resets `Y` to `0` (e.g. `v0.1.20` -> `v0.2.0`, then `v0.3.0`, `v0.4.0`, etc.).
+- **All non-search changes bump `Y` (`v0.X.(Y+1)`):** Website/UI updates, pipeline/schema improvements, documentation edits, or metadata fixes outside a new literature search keep `X` unchanged and increment the patch (`Y`) integer (e.g. `v0.1.20` -> `v0.1.21`, or after `v0.2.0` -> `v0.2.1`, `v0.2.2`, etc.).
