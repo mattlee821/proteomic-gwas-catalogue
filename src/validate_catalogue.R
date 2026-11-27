@@ -38,7 +38,8 @@ check_cols <- function(df, name, req) {
 check_cols(studies, "studies.tsv", c(
   "study_id", "first_author", "year", "status", "superseded_by",
   "pmid", "doi", "journal", "title", "repository", "accession_or_url",
-  "access_level", "added_release", "verified_full_text", "curation_tier"
+  "access_level", "added_release", "verified_full_text", "curation_tier",
+  "curation_note"
 ))
 
 check_cols(strata, "strata.tsv", c(
@@ -120,6 +121,18 @@ if (!is.null(studies) && !is.null(strata)) {
   check_vocab(studies$status, c("Published", "Preprint", "Superseded Preprint"), "studies$status")
   check_vocab(studies$access_level, c("Open download", "Portal registration", "Controlled access", "Upon request", "Not available"), "studies$access_level")
   check_vocab(studies$curation_tier, c("AI-extracted", "Human-reviewed", "Human-curated"), "studies$curation_tier")
+
+  if ("curation_note" %in% names(studies)) {
+    cn_trim <- ifelse(is.na(studies$curation_note), "", trimws(as.character(studies$curation_note)))
+    hr_missing_note <- studies$study_id[studies$curation_tier == "Human-reviewed" & !nzchar(cn_trim)]
+    if (length(hr_missing_note) > 0) {
+      fail("Human-reviewed studies missing curation_note: ", paste(hr_missing_note, collapse = ", "))
+    }
+    ai_with_note <- studies$study_id[studies$curation_tier == "AI-extracted" & nzchar(cn_trim)]
+    if (length(ai_with_note) > 0) {
+      fail("AI-extracted studies must have empty curation_note: ", paste(ai_with_note, collapse = ", "))
+    }
+  }
   check_vocab(strata$ancestry_group, c("EUR", "AFR", "EAS", "CSA", "AMR", "MID", "Multi-ancestry"), "strata$ancestry_group")
   check_vocab(strata$sex, c("Combined", "Female", "Male"), "strata$sex")
   check_vocab(strata$sample_matrix, c(

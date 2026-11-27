@@ -2,7 +2,7 @@
 
 An all-encompassing, continuously updated catalogue and interactive web application of published and preprint genome-wide association studies (GWAS) of proteins — built so researchers can quickly locate, evaluate, and harmonise summary statistics for meta-analysis, Mendelian randomisation (MR), and colocalisation.
 
-**Current release:** `v0.1.1` (`2000–2016` curated; chronological annual updates `2017–2025` next) · **Website:** https://mattlee821.github.io/proteomic-gwas-catalogue/
+**Current release:** `v0.1.20` (`2000-01-01` to `2026-11-25` curated: `305` studies across `456` strata) · **Website:** https://mattlee821.github.io/proteomic-gwas-catalogue/
 
 ## Purpose & Scope
 
@@ -57,8 +57,8 @@ Publish numbered catalogue release & data archive`"]:::manual
 
 </div>
 
-- **Purple (`Automated / AI-extracted` — Steps 1–3 & 5):** Queries literature and preprint databases, links preprints to published journal articles, filters out secondary Mendelian randomisation studies, extracts open-access metadata, validates `catalogue/*.tsv` schemas, and rebuilds the website.
-- **Blue (`Human-reviewed` — Steps 4.1–4.4 & 6):** Human reviewer confirms borderline candidates, downloads paywalled PDFs or missing supplementary files so they can be parsed, verifies extracted study metadata, tests recall against positive-control studies, and publishes numbered releases.
+- **Purple (`Automated / AI-extracted` — Steps 1–3 & 5):** Queries literature and preprint databases, links preprints to published journal articles, filters out secondary Mendelian randomisation studies, extracts metadata from open-access and downloaded files, validates `catalogue/*.tsv` schemas, and rebuilds the website.
+- **Blue (`Human-reviewed` — Steps 4.1–4.4 & 6):** Human reviewer downloads gated PDFs/supplements for automated parsing (which remain `AI-extracted` unless a curatorial choice is required), resolves genuine Step 4 curatorial choices (marking only those studies `Human-reviewed` with a short inline summary such as `Strata check`), tests recall against positive-control studies, and publishes numbered releases.
 
 ## Repository Structure
 

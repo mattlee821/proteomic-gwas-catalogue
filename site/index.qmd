@@ -318,7 +318,7 @@ matchNumericFilter = (val, rawExpr) => {
 
               <div class="detail-col-box">
                 <h4>OTHER</h4>
-                <div class="detail-kv"><strong>CURATION:</strong> <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span></div>
+                <div class="detail-kv"><strong>CURATION:</strong> <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span>${d.curation_note ? htl.html` <span style="color:#334155;margin-left:0.3rem;">${d.curation_note}</span>` : ""}</div>
                 <div class="detail-kv"><strong>OVERLAP:</strong> <span class="mono">${d.overlap_ids}</span></div>
                 <div class="detail-kv"><strong>ACCESS:</strong> <span class="pg-badge ${accessBadgeClass(d.access_short)}">${d.access_short}</span></div>
                 ${d.harmonisation_notes ? htl.html`<div class="detail-kv" style="margin-top:0.35rem;"><strong>NOTES:</strong> ${d.harmonisation_notes}</div>` : ""}

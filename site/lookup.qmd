@@ -499,7 +499,7 @@ htl.html`<div class="pg-shell" style="padding-top:0;padding-bottom:0;">
 
               <div class="detail-col-box">
                 <h4>OTHER</h4>
-                <div class="detail-kv"><strong>CURATION:</strong> <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span></div>
+                <div class="detail-kv"><strong>CURATION:</strong> <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span>${d.curation_note ? htl.html` <span style="color:#334155;margin-left:0.3rem;">${d.curation_note}</span>` : ""}</div>
                 <div class="detail-kv"><strong>OVERLAP:</strong> <span class="mono">${d.overlap_ids}</span></div>
                 <div class="detail-kv"><strong>ACCESS:</strong> <span class="pg-badge ${accessBadgeClass(d.access_short)}">${d.access_short}</span></div>
               </div>

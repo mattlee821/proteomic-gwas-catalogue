@@ -28,7 +28,13 @@ read_tsv <- function(p) utils::read.delim(p, stringsAsFactors = FALSE, check.nam
 write_tsv <- function(df, p) utils::write.table(df, file = p, sep = "\t", row.names = FALSE, quote = FALSE, na = "")
 
 studies <- read_tsv(studies_path)
+strata  <- if (file.exists(strata_path)) read_tsv(strata_path) else NULL
 runs    <- read_tsv(runs_path)
+
+if (!("curation_note" %in% names(studies))) {
+  studies$curation_note <- ""
+}
+studies$curation_note[is.na(studies$curation_note)] <- ""
 
 if (!("preprints_replaced_details" %in% names(runs))) {
   runs$preprints_replaced_details <- ""
@@ -97,6 +103,22 @@ for (pr in pairs) {
   if (length(i_pre) == 1L && length(i_pub) == 1L) {
     studies$status[i_pre] <- "Superseded Preprint"
     studies$superseded_by[i_pre] <- pr$pub
+    # Carry forward Human-reviewed tier & note when the preprint's design/strata choice carries over to an AI-extracted published upgrade
+    pre_note <- trimws(as.character(studies$curation_note[i_pre] %||% ""))
+    if (identical(studies$curation_tier[i_pre], "Human-reviewed") &&
+        identical(studies$curation_tier[i_pub], "AI-extracted") &&
+        nzchar(pre_note) &&
+        !grepl("preprint scope|preprint supplement|preprint data", pre_note, ignore.case = TRUE)) {
+      same_strata_n <- if (!is.null(strata)) {
+        sum(strata$study_id == pr$pre) == sum(strata$study_id == pr$pub)
+      } else {
+        TRUE
+      }
+      if (same_strata_n) {
+        studies$curation_tier[i_pub] <- "Human-reviewed"
+        studies$curation_note[i_pub] <- pre_note
+      }
+    }
     applied <- c(applied, sprintf("%s -> %s", pr$pre, pr$pub))
   }
 }
