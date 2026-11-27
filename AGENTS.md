@@ -16,10 +16,13 @@ When retrieving full-text PDFs (or JATS XML / supplementary files) for `bioRxiv`
    - Verify binary/XML magic headers (`%PDF` for `.full.pdf`, `<article` for `.source.xml`, `PK\x03\x04` for `.xlsx`/`.docx`) before accepting downloaded files, and also verify content authenticity on generic EBI BioStudies `S-EPMC*` `media-*`/`mmc*` files.
    - **Never** spoof browser headers or attempt to bypass any `HTTP 403` / `HTTP 429` Cloudflare Turnstile or anti-bot challenge (`allow_transient_retry = FALSE`). Whenever a preprint PDF or supplement remains gated, escalate cleanly in `search_report.md` (Sections 2 & 3) using the direct `.full.pdf` / `.supplementary-material` URL for manual download.
 
-## Search Window End-Date Rule (`current_search_date - 1 day`)
+## Search Window & `"start next search"` Rule
 
-- All literature search periods **must end on the calendar day immediately before the current search execution date** (`until_date = Sys.Date() - 1L`, e.g. `2026-11-25` when searching on `2026-11-26`).
-- Ending on `current_search_date - 1 day` guarantees every queried date is a complete 24-hour indexing day across PubMed, Europe PMC, bioRxiv/medRxiv, Crossref, and GWAS Catalog without partial-day boundary gaps, and subsequent incremental periods begin cleanly on `previous_date_to + 1 day`.
+- **End-Date Rule (`implementation_run_date - 1 day`):** All literature search periods **must end on the calendar day immediately before the search implementation is run** (`until_date = Sys.Date() - 1L`, e.g. `2026-11-25` when run on `2026-11-26`). Ending on `implementation_run_date - 1 day` guarantees every queried date is a complete 24-hour indexing day across PubMed, Europe PMC, bioRxiv/medRxiv, Crossref, and GWAS Catalog without partial-day boundary gaps.
+- **`"start next search"` Trigger (`most_recent_search_date` -> `implementation_run_date - 1 day`):** Whenever the user says **`"start next search"`** (or `"start the next search"` / `"start the next period"`), implement the next literature search period (`Stage 1` search, triage, open-access extraction, catalogue preview, validation, Quarto build, and `search_report.md`) covering:
+  - **`date_from` (`--since`):** The date of the most recent search in `catalogue/search_runs.tsv` (`most_recent_run_date`, which equals `previous_date_to + 1 day` — e.g. `2026-11-26` after Period 12's `2026-11-26` run covering `2026-01-01` to `2026-11-25`), ensuring a contiguous, gapless, non-overlapping timeline across periods.
+  - **`date_to` (`--until`):** The calendar day immediately before the new search implementation is run (`implementation_run_date - 1 day`, i.e. `Sys.Date() - 1L`).
+  - **Target release tag:** Bump `X` by `+1` and reset `Y` to `0` (`v0.(X+1).0`, e.g. `v0.2.0` after `v0.1.20`) per the Release Versioning Rule below.
 
 ## Release Versioning Rule (`v0.X.Y`)
 
