@@ -6,10 +6,16 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
 $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
 /*-- scss:rules --*/
-/* Suppress Quarto's automatic page title header so only the banner box appears */
+/* Suppress Quarto's automatic page title header and hidden OJS code/clipboard scaffolds */
 #title-block-header,
 .quarto-title-block,
-.quarto-title-banner {
+.quarto-title-banner,
+.code-copy-button,
+div.sourceCode.cell-code.hidden {
+  display: none !important;
+}
+
+.code-copy-outer-scaffold:has(> .sourceCode.hidden) {
   display: none !important;
 }
 
@@ -58,7 +64,7 @@ $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
 
 .typeahead-wrap {
   position: relative;
-  width: 520px;
+  width: 100%;
   max-width: 100%;
   z-index: 110;
 }
@@ -67,7 +73,7 @@ $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  right: 0;
+  min-width: min(460px, 88vw);
   z-index: 120;
   background: #ffffff;
   border: 1px solid #cbd5e1;
@@ -145,7 +151,7 @@ $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
   cursor: not-allowed;
 }
 
-/* KPI Boxes (used on Lookup & Log pages) */
+/* KPI Boxes (used on Catalogue, Lookup & Log pages) */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -153,12 +159,60 @@ $font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
   margin-bottom: 1rem;
 }
 
+.kpi-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  overflow: visible;
+}
+
+@media (max-width: 1280px) {
+  .kpi-grid-6 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .kpi-grid-6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .kpi-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 0.9rem;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  min-width: 0;
+}
+
+.kpi-card-search {
+  border-left: 4px solid #0f4c81;
+  overflow: visible !important;
+  position: relative;
+  z-index: 105;
+}
+
+.kpi-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.16rem 0.45rem;
+  margin-top: 0.25rem;
+  font-size: 0.74rem;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.kpi-mini-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .kpi-label {
@@ -324,13 +378,58 @@ table.cat-table tbody tr.detail-row > td {
   gap: 0.45rem;
 }
 
+.detail-2row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  cursor: default;
+}
+
+.detail-row-top,
 .detail-3col {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.85rem;
+}
+
+.detail-row-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 0.85rem;
+}
+
+.detail-study-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 0.28rem;
+}
+
+.overlap-chip-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+  max-height: 5.2rem;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.overlap-chip {
+  display: inline-block;
+  padding: 0.1rem 0.42rem;
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+  border-radius: 4px;
+  font-size: 0.71rem;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 @media (max-width: 960px) {
+  .detail-row-top,
+  .detail-row-bottom,
   .detail-3col {
     grid-template-columns: 1fr;
   }

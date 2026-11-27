@@ -1,0 +1,165 @@
+```{ojs}
+platBadgeClass = p => p === "Mass Spectrometry" ? "plat-MS" : p === "Other Immunoassay" ? "plat-Other" : `plat-${p}`
+
+dataBadgeClass = d =>
+  d === "Genome-wide" ? "data-gw" :
+  d === "Gene-region" ? "data-cis" :
+  d === "Top-hits" ? "data-top" : "data-unavail"
+
+curationBadgeClass = c =>
+  c === "Human-curated" ? "cur-human-curated" :
+  c === "Human-reviewed" ? "cur-human-reviewed" : "cur-ai-extracted"
+
+accessBadgeClass = a =>
+  a === "open" ? "data-gw" :
+  a === "request" ? "data-cis" : "data-unavail"
+
+isTrueVal = v => v === true || String(v || "").toUpperCase() === "TRUE"
+
+fmtInt = v => (v !== null && v !== undefined && v !== "" && !Number.isNaN(Number(v)))
+  ? Number(v).toLocaleString()
+  : "—"
+
+fmtCompactN = n => {
+  const v = Number(n);
+  if (!Number.isFinite(v)) return "—";
+  if (v >= 10000) return `${(v / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+  return v.toLocaleString();
+}
+
+matchNumericFilter = (val, rawExpr) => {
+  const expr = (rawExpr || "").trim().replace(/,/g, "");
+  if (!expr) return true;
+  const m = expr.match(/^(>=|<=|>|<|=)?\s*([0-9]+(?:\.[0-9]+)?)$/);
+  if (m) {
+    const op = m[1] || "=";
+    const num = Number(m[2]);
+    if (op === ">=") return val >= num;
+    if (op === "<=") return val <= num;
+    if (op === ">")  return val > num;
+    if (op === "<")  return val < num;
+    return val === num;
+  }
+  return String(val).includes(expr);
+}
+
+resolveDownloadInfo = d => {
+  const raw = String(d.accession_or_url || "").trim();
+  const repo = String(d.repository || "Repository").trim();
+  if (!raw || raw.toLowerCase() === "not available" || raw.toLowerCase() === "none") {
+    return { href: "", label: "Data unavailable", accessionText: "" };
+  }
+  const urlMatch = raw.match(/https?:\/\/[^\s);,]+/);
+  let href = urlMatch ? urlMatch[0] : "";
+  if (!href) {
+    const gcstMatch = raw.match(/GCST\d+/);
+    const synMatch = raw.match(/syn\d+/i);
+    const phsMatch = raw.match(/phs\d+(?:\.v\d+)?(?:\.p\d+)?/i);
+    if (gcstMatch) {
+      href = d.pmid ? `https://www.ebi.ac.uk/gwas/publications/${d.pmid}` : `https://www.ebi.ac.uk/gwas/studies/${gcstMatch[0]}`;
+    } else if (synMatch) {
+      href = `https://www.synapse.org/#!Synapse:${synMatch[0]}`;
+    } else if (phsMatch) {
+      href = `https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=${phsMatch[0]}`;
+    } else if (d.doi && d.access_short !== "FALSE") {
+      href = `https://doi.org/${d.doi}`;
+    }
+  }
+  const cleanedAcc = raw.replace(/\(?\s*https?:\/\/[^\s)]+\s*\)?/g, "").replace(/^[;\s,]+|[;\s,]+$/g, "").trim();
+  return {
+    href,
+    label: `Data (${repo}) ↗`,
+    accessionText: cleanedAcc
+  };
+}
+
+renderExpandedDetail = (d, opts = {}) => {
+  const dl = resolveDownloadInfo(d);
+  const overlapList = d.overlap_count > 0 && d.overlap_ids && d.overlap_ids !== "None"
+    ? String(d.overlap_ids).split(",").map(s => s.trim()).filter(Boolean)
+    : [];
+  const stopProp = e => e.stopPropagation();
+
+  return htl.html`<div class="detail-2row" onclick=${stopProp}>
+    <div class="detail-row-top">
+      <div class="detail-col-box">
+        <h4>STUDY</h4>
+        <div class="detail-study-title">${d.title}</div>
+        <div class="detail-kv" style="color:#475569;">
+          <em>${d.journal}</em> (${d.year}) · <span class="pg-badge ${d.status === "Published" ? "data-gw" : "data-top"}">${d.status}</span> · <span class="mono">${d.study_id}</span>
+        </div>
+        <div class="detail-kv"><strong>Cohort(s):</strong> ${d.cohorts_display} (<span class="mono">N = ${fmtInt(d.n_samples)}</span>, ${d.sex})</div>
+        <div class="detail-kv">
+          <strong>Data access:</strong>
+          <span class="pg-badge ${dataBadgeClass(d.data_label)}">${d.data_label}</span>
+          <span class="pg-badge ${accessBadgeClass(d.access_short)}" style="margin-left:3px;">${d.access_level}</span>
+          ${dl.accessionText ? htl.html` <span class="mono" style="color:#475569;margin-left:4px;">${dl.accessionText}</span>` : ""}
+        </div>
+        <div class="detail-links" style="margin-top:0.45rem;">
+          ${d.doi ? htl.html`<a class="btn-pill" href="https://doi.org/${d.doi}" target="_blank" rel="noopener">DOI: ${d.doi} ↗</a>` : ""}
+          ${d.pmid ? htl.html`<a class="btn-pill" href="https://pubmed.ncbi.nlm.nih.gov/${d.pmid}/" target="_blank" rel="noopener">PMID: ${d.pmid} ↗</a>` : ""}
+          ${dl.href
+            ? htl.html`<a class="btn-pill btn-pill-primary" href=${dl.href} target="_blank" rel="noopener">${dl.label}</a>`
+            : htl.html`<span class="pg-badge data-unavail">${dl.label}</span>`}
+        </div>
+      </div>
+
+      <div class="detail-col-box">
+        <h4>PHENOTYPE</h4>
+        ${opts.isLookup ? htl.html`<div class="detail-kv">
+          <strong>Assay ID:</strong> <span class="mono" style="font-weight:700;color:#0f4c81;">${d.assay_id}</span>
+          <span class="mono" style="color:#64748b;margin-left:4px;">(${d.uniprot}_${d.assay_id})</span>
+        </div>
+        <div class="detail-kv">
+          <strong>Target flags:</strong>
+          <em>cis</em>-pQTL: <span class="pg-badge ${isTrueVal(d.cis_pqtl_reported) ? "data-gw" : "data-unavail"}">${isTrueVal(d.cis_pqtl_reported) ? "Reported" : "Not reported"}</span>
+          · PAV/epitope: <span class="pg-badge ${isTrueVal(d.pav_epitope_flag) ? "overlap-yes" : "data-unavail"}">${isTrueVal(d.pav_epitope_flag) ? "Flagged" : "None"}</span>
+        </div>` : ""}
+        <div class="detail-kv">
+          <strong>Platform:</strong>
+          <span class="pg-badge ${platBadgeClass(d.platform_category)}">${d.platform_category}</span>
+          <span style="margin-left:4px;">${d.platform_version}</span>
+        </div>
+        <div class="detail-kv"><strong>Assays:</strong> <span class="mono">${fmtInt(d.n_assays)}</span> (${fmtInt(d.n_unique_proteins)} unique protein targets)</div>
+        <div class="detail-kv"><strong>Sample matrix:</strong> ${d.sample_matrix}</div>
+        <div class="detail-kv"><strong>Transformation:</strong> ${d.transformation} (<span class="mono">${d.effect_scale}</span>)</div>
+      </div>
+
+      <div class="detail-col-box">
+        <h4>GENETIC</h4>
+        <div class="detail-kv"><strong>Population:</strong> <span class="mono" style="font-weight:700;">${d.pop_super}</span> — ${d.ancestry_detail}</div>
+        <div class="detail-kv">
+          <strong>Build &amp; strand:</strong>
+          <span class="mono" style="font-weight:700;">${d.genome_build}</span> · Strand: <span class="mono">${d.strand || "Not reported"}</span>${d.cis_window_kb !== null && d.cis_window_kb !== undefined && d.cis_window_kb !== "" ? htl.html` · <em>cis</em> window: <span class="mono">±${fmtInt(d.cis_window_kb)} kb</span>` : ""}
+        </div>
+        <div class="detail-kv"><strong>Imputation / sequencing:</strong> ${d.imputation_panel || "Not reported"}</div>
+        <div class="detail-kv"><strong>Model &amp; covariates:</strong> ${d.gwas_software || "Not reported"}${d.covariates ? ` — ${d.covariates}` : ""}</div>
+        <div class="detail-kv">
+          <strong>Summary stats:</strong>
+          Beta/SE: <span class="mono" style="font-weight:600;">${isTrueVal(d.has_beta_se) ? "Yes" : "No"}</span>
+          · EAF: <span class="mono" style="font-weight:600;">${isTrueVal(d.has_eaf) ? "Yes" : "No"}</span>${d.file_format ? htl.html` · Format: <span class="mono">${d.file_format}</span>` : ""}
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-row-bottom">
+      <div class="detail-col-box">
+        <h4>OVERLAP (${d.overlap_count > 0 ? d.overlap_compact : "0 studies"})</h4>
+        ${overlapList.length > 0
+          ? htl.html`<div class="overlap-chip-box">${overlapList.map(sid => htl.html`<span class="overlap-chip mono">${sid}</span>`)}</div>`
+          : htl.html`<div class="overlap-none">No cohort overlap with other active studies in the catalogue.</div>`}
+      </div>
+
+      <div class="detail-col-box">
+        <h4>CURATION &amp; OTHER</h4>
+        <div class="detail-kv">
+          <strong>Curation:</strong>
+          <span class="pg-badge ${curationBadgeClass(d.curation_tier)}">${d.curation_tier}</span>${d.curation_note ? htl.html` <span style="color:#0f172a;font-weight:600;margin-left:0.35rem;">${d.curation_note}</span>` : ""}
+          <span style="color:#64748b;font-size:0.75rem;margin-left:0.45rem;">· Full text verified: ${isTrueVal(d.verified_full_text) ? "Yes" : "No"}${d.added_release ? ` · Added ${d.added_release}` : ""}</span>
+        </div>
+        ${d.harmonisation_notes ? htl.html`<div class="detail-kv" style="margin-top:0.35rem;"><strong>Notes:</strong> ${d.harmonisation_notes}</div>` : ""}
+      </div>
+    </div>
+  </div>`;
+}
+```
