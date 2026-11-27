@@ -23,7 +23,7 @@ When retrieving full-text PDFs (or JATS XML / supplementary files) for `bioRxiv`
 
 ## Release Versioning Rule (`v0.X.Y`)
 
-All catalogue and repository releases follow `v0.X.Y` (continuing from `v0.1.20`):
+All catalogue and repository releases follow `v0.X.Y` (continuing from `v0.1.20`), incrementing strictly by **`+1` through every consecutive integer** (`1, 2, 3, ..., 9, 10, 11, ...` — **never** jumping by 10s or skipping integers such as `0.1.0 -> 0.11.0` or `0.1.1 -> 0.1.11`):
 
-- **New literature search periods bump `X` and reset `Y` to `0` (`v0.(X+1).0`):** Every new search update increments the minor (`X`) integer and resets `Y` to `0` (e.g. `v0.1.20` -> `v0.2.0`, then `v0.3.0`, `v0.4.0`, etc.).
-- **All non-search changes bump `Y` (`v0.X.(Y+1)`):** Website/UI updates, pipeline/schema improvements, documentation edits, or metadata fixes outside a new literature search keep `X` unchanged and increment the patch (`Y`) integer (e.g. `v0.1.20` -> `v0.1.21`, or after `v0.2.0` -> `v0.2.1`, `v0.2.2`, etc.).
+- **New literature search periods bump `X` by `+1` and reset `Y` to `0` (`v0.(X+1).0`):** Every new search update increments `X` sequentially (`v0.1.20 -> v0.2.0 -> v0.3.0 -> ... -> v0.9.0 -> v0.10.0 -> v0.11.0`, etc.).
+- **All non-search changes bump `Y` by `+1` (`v0.X.(Y+1)`):** Website/UI updates, pipeline/schema improvements, documentation edits, or metadata fixes outside a new literature search keep `X` unchanged and increment `Y` sequentially (`v0.1.20 -> v0.1.21 -> v0.1.22`, or after `v0.2.0 -> v0.2.1 -> v0.2.2 -> ... -> v0.2.9 -> v0.2.10 -> v0.2.11`, etc.).
